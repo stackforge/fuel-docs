@@ -3,7 +3,7 @@
 .. _savanna-deployment-label:
 
 Savanna Deployment
-==================
+------------------
 
 Savanna is a service for launching Hadoop clusters on OpenStack. It is
 designed to be vendor-agnostic and currently supports two distributions:

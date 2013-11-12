@@ -46,10 +46,6 @@ As you know, OpenStack provides the following basic services:
   * Ceph combines object and block storage and can replace either one or
     both of the above.
 
-  Unlike Swift and Ceph, Cinder LVM doesn't implement data redundancy,
-  you should use Ceph for volumes if you need your block storage to be
-  resilient.
-
 Compute, Networking, and Storage services can be combined in many
 different ways. Out of the box, Fuel supports the following deployment
 configurations:
