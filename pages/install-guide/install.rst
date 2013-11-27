@@ -67,27 +67,31 @@ itself. It is a simple, single-click installation.
 
 .. note:: 
 
-  These scripts are not supported on Windows, but you can still test on 
-  VirtualBox by creating the VMs by yourself. See :ref:`Install_Manual` for more 
-  details.
+  These scripts are not supported on Windows directly, but you can still test on 
+  Windows VirtualBox by running scripts on Cygwin or by creating the VMs by yourself. 
+  See :ref:`Install_Manual` for more details.
 
 The requirements for running Fuel on VirtualBox are:
 
-A host machine with Linux or Mac OS.
+A host machine with 64-bit Linux, Windows or Mac OS. We never tested on 32-bit.
   The scripts have been tested on Mac OS 10.7.5, Mac OS 10.8.3, Ubuntu 12.04,
-  Ubuntu 12.10, and Fedora 19.
+  Ubuntu 12.10, Fedora 19, OpenSUSE 12.2/12.3, and Windows 7 x64 + Cygwin_x64.
 
 VirtualBox 4.2.16 (or later) is required, along with the extension pack. 
 Both can be downloaded from `<http://www.virtualbox.org/>`_.
 
 8 GB+ of RAM
   Will support 4 VMs for Multi-node OpenStack installation (1 Master node, 
-  1 Controller node, 1 Compute node, 1 Cinder node) 
+  1 Controller node, 1 Compute node, 1 Cinder node) with reduced to 1536 MB VM RAM.
+  For dedicated Cinder node 512 MB of RAM is enough.
 
   or
 
   Will support 5 VMs for Multi-node with HA OpenStack installation (1 Master 
-  node, 3 Controller + Cinder nodes, 1 Compute node)
+  node, 3 combined Controller + Cinder nodes, 1 Compute node) with reduced 
+  to 1280 MB RAM amount per VM.
+  Such RAM amount per node is below the recommended requirements for HA 
+  configurations (2048+ MB per controller) and may lead to unwanted issues.
 
 .. _Install_Automatic:
 
@@ -147,7 +151,7 @@ First, create the Master node VM.
 
 * OS Type: Linux
 * Version: Red Hat (64bit)
-* RAM: 2048+ MB
+* RAM: 1536+ MB (2048+ MB recommended)
 * HDD: 50 GB with dynamic disk expansion
 
 3. Modify your VM settings:
@@ -168,8 +172,8 @@ Next, create Slave nodes where OpenStack needs to be installed.
 1. Create 3 or 4 additional VMs depending on your wish with the following parameters:
 
 * OS Type: Linux, Version: Red Hat (64bit)
-* RAM: 2048+ MB
-* HDD: 30 GB, with dynamic disk expansion
+* RAM: 1536+ MB (2048+ MB recommended)
+* HDD: 50+ GB, with dynamic disk expansion
 * Network 1: host-only interface vboxnet0, PCnet-FAST III device
 
 2. Set Network as first in the boot order:
@@ -185,7 +189,7 @@ Next, create Slave nodes where OpenStack needs to be installed.
 4. Open "advanced" collapse, and check following options:
 
 * Promiscuous mode is a "Allow All"
-* Adapter type is a "PCnet PCI II"
+* Adapter type is a "PCnet-FAST III"
 * Cable connected is a On
 
 
@@ -214,6 +218,8 @@ Within Fuel Setup you can configure the following parameters:
 The main function of this tool is to provide a simple way to configure Fuel for
 your particular networking environment, while helping to detect errors early 
 so you need not waste time troubleshooting individual configuration files.
+Please change `vm_master_ip` parameter in config.sh accordingly in case you use 
+VirtualBox automated scripts to deploy Fuel.
 
 .. image:: /_images/fuel-menu-interfaces.jpg
   :align: center
