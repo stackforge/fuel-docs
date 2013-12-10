@@ -304,6 +304,6 @@ It can be done in Horizon, or from OpenStack Controller using the following comm
   nova secgroup-add-rule default tcp 22 22 0.0.0.0/0
 
 IP ranges for Public and Management networks (172.16.*.*) are defined in ``config.sh`` 
-script. If default values doesn't fit your needs, you are free to change them, but before
+script. If default values don't fit your needs, you are free to change them, but before
 the installation of Fuel Master node.
   

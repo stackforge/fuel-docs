@@ -31,7 +31,7 @@ install process.
 
 Burning an ISO to optical media is a commonly supported function on all OSes. 
 On Linux, there are several programs available, such as `Brasero` or `Xfburn`, 
-two commonly pre-installed desktop applications. There are also 
+two commonly pre-installed desktop applications. There is also 
 a number for Windows such as `ImgBurn <http://www.imgburn.com/>`_ and the 
 open source `InfraRecorder <http://infrarecorder.org/>`_.
 
