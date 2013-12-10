@@ -241,7 +241,7 @@ PXE Booting Settings
 By default, `eth0` on Fuel Master node serves PXE requests. If you are planning 
 to use another interface, you configure this in :ref:`Network_Install`.
 
-If you want to to install Fuel on virtual machines, then you need to make sure
+If you want to install Fuel on virtual machines, then you need to make sure
 that dnsmasq on the Master node is configured to support the PXE client used by 
 your virtual machines. We enable *dhcp-no-override* option because without it,
 dnsmasq tries to move ``PXE filename`` and ``PXE servername`` special fields 
