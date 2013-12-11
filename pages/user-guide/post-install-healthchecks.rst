@@ -200,6 +200,9 @@ in HA mode:
 * Check galera environment state
 * RabbitMQ availability
 
+Savanna and Murano tests are located in Platform Tests which
+description could be found below.
+
 Platform Tests Description
 --------------------------
 
@@ -221,7 +224,7 @@ The platform tests are run in the tenant you've specified in
 
    * First download the following image:
 
-http://savanna-files.mirantis.com/savanna-0.2-vanilla-1.1.2-ubuntu-12.10.qcow2
+http://savanna-files.mirantis.com/savanna-0.3-vanilla-1.2.1-ubuntu-13.04.qcow2
    * Then upload the image into OpenStack Image Service (Glance) into
      'admin' tenant and name it 'savanna'.
    * In OpenStack Dashboard (Horizon) access 'Savanna' tab.
@@ -288,7 +291,7 @@ Platform Tests Details
   11. Delete the created flavor.
 
   For more information, see:
-  `Savanna documentation <http://savanna.readthedocs.org/en/0.2.2/>`_ 
+  `Savanna documentation <http://savanna.readthedocs.org/en/0.3/>`_
 
 .. topic:: Create stack, check its details, then update and delete stack
 
