@@ -9,7 +9,7 @@ Savanna is a service for launching Hadoop clusters on OpenStack. It is
 designed to be vendor-agnostic and currently supports two distributions:
 Vanilla Apache Hadoop and Hortonworks Data Platform. For Savanna usage
 guidelines consider reading User Guide section of the Savanna docs located
-here: http://savanna.readthedocs.org/en/0.2.2
+here: http://savanna.readthedocs.org/en/0.3/
 
 **Notes and Limitations**
 
