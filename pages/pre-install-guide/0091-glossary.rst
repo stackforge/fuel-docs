@@ -1,7 +1,9 @@
-Dictionary of terms used in this document
-=========================================
+Dictionary
+==========
 
-* **Tagged port** 802.1q frames from a switch to a server network card
+* **Tagged port** A mechanism for tunneling to allow traffic from multiple
+  VLANs to be sent through a single named (or "tagged") port on a different
+  VLAN. 802.1q frames from a switch to a server network card.
 * **Native VLAN** An untagged VLAN on a tagged port
 * **Mirantis OpenStack** Hardened OpenStack distribution plus additional 
   services for high availability deployed by Fuel

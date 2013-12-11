@@ -8,7 +8,7 @@ Preparing the Mirantis OpenStack Deployment
 ===========================================
 
 Before installation, plan your deployment. Determine the deployment type that 
-is appropriate for you configuration needs. You may want to print this 
+is appropriate for you configuration needs. You might want to print this 
 list and make notes indicating your selection so you can be sure 
 you have planned your deployment correctly.
 
@@ -18,20 +18,20 @@ complete to plan the Mirantis OpenStack deployment.
 +----+----------------------------+-------------------------------------------+
 |    | Step Description           | Additional Information                    |
 +====+============================+===========================================+
-| 1  | Consider which deployment  | For more information, see:                |
+| 1  | Consider which deployment  | For more information, see                 |
 |    | mode you will deploy       | :ref:`Reference Architecture <ref-arch>`. |
 |    | (Multi-node HA or non HA)  |                                           |
 +----+----------------------------+-------------------------------------------+
-| 2  | Select a network service   | For more information, see:                |
+| 2  | Select a network service   | For more information, see                 |
 |    | (Nova-Network: FlatDHCP,   | :ref:`Network <fuelui-network>`.          |
 |    | VLAN manager or Neutron:   |                                           |
 |    | GRE, VLAN).                |                                           |
 +----+----------------------------+-------------------------------------------+
-| 3  | Prepare all the necessary  | For more information, see: the Mirantis   |
+| 3  | Prepare all the necessary  | For more information, see  the Mirantis   |
 |    | hardware.                  | Hardware Bill of Materials calculator_,   |
 |    |                            | HardwarePrerequisites_                    |
 +----+----------------------------+-------------------------------------------+
-| 4  | Plan a role (or roles) to  | A node may act as a controller, compute   |
+| 4  | Plan a role (or roles) to  | A node can act as a controller, compute   |
 |    | be assigned to each node   | or storage node - or combine storage or   |
 |    | server.                    | compute role. Network services are        |
 |    |                            | automatically installed onto the          |
@@ -41,10 +41,10 @@ complete to plan the Mirantis OpenStack deployment.
 |    | and network association.   | IDs for your Public, floating, Management,|
 |    |                            | Storage, and virtual machine (fixed)      |
 |    |                            | networks. For more information on how to  |
-|    |                            | plan your network, see:                   |
+|    |                            | plan your network, see                    |
 |    |                            | NetworkConfiguration_                     |
 +----+----------------------------+-------------------------------------------+
-| 6  | Prepare a logical network  | For more information, see:                |
+| 6  | Prepare a logical network  | For more information, see                 |
 |    | diagram.                   | NetworkConfiguration_                     |
 +----+----------------------------+-------------------------------------------+
 | 7  | Connect the Fuel and node  | For more information, see the instructions|
@@ -69,7 +69,7 @@ complete to plan the Mirantis OpenStack deployment.
 |    | Ethernet port on each      |                                           |
 |    | server.                    |                                           |
 +----+----------------------------+-------------------------------------------+
-| 12 | Install the Fuel server    | For more information, see:                |
+| 12 | Install the Fuel server    | For more information, see                 |
 |    |                            | FuelQuickInstall_.                        |
 +----+----------------------------+-------------------------------------------+
 
@@ -136,7 +136,7 @@ including networking, storage, and optional parameters.
 |    | the icon with your named   |                                           |
 |    | environment.               |                                           |
 +----+----------------------------+-------------------------------------------+
-| 11 | In **Nodes** tab, assign a | A node may act as a controller, compute,  |
+| 11 | In **Nodes** tab, assign a | A node can act as a controller, compute,  |
 |    | role or roles to each node | or storage node. You can combine          |
 |    | server.                    | a storage role with a controller or       |
 |    |                            | compute role.                             |
@@ -150,7 +150,7 @@ including networking, storage, and optional parameters.
 |    | to check and confirm the   | tagged frames to each node server to      |
 |    | network configuration.     | confirm connectivity.                     |
 +----+----------------------------+-------------------------------------------+
-| 14 | (Optional) In the          | You may also modify your choices for      |
+| 14 | (Optional) In the          | You can also modify your choices for      |
 |    | **Settings** tab, you can  | hypervisor, storage, and Platform         |
 |    | configure or modify the    | Services configured before the            |
 |    | options for Horizon        | deployment.                               |
@@ -158,8 +158,8 @@ including networking, storage, and optional parameters.
 |    | logging, and other         |                                           |
 |    | OpenStack options.         |                                           |
 +----+----------------------------+-------------------------------------------+
-| 15 | Click the **Deploy**       | Mirantis OpenStack deployment may take    |
-|    | **Changes** button.        | 15-60 minutes, depending on your the      |
+| 15 | Click the **Deploy**       | Mirantis OpenStack deployment can take    |
+|    | **Changes** button.        | 15 to 60 minutes, depending on your the   |
 |    |                            | selected options. You can monitor status  |
 |    |                            | by opening the **Nodes** tab or by        |
 |    |                            | checking individual node logs in the Logs |

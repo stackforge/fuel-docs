@@ -50,6 +50,18 @@ PlantumUML requires java:
 
 To edit SVG images we use [Inkscape](http://inkscape.org/ "Inkscape") but 
 you may use any other SVG-capable tool you like. We're not picky.
+
+Structure of Directories
+========================
+Mirantis's formal books are stored in ubdirectories in the pages subdirectory:
+
+  * frequently-asked-questions
+  * install-guide
+  * pre-install-guide
+  * preface
+  * reference-architecture
+  * release-notes
+  * user-guide
     
 Building
 ========
