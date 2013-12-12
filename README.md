@@ -36,8 +36,9 @@ And Sphinx necessary extensions:
     sudo pip install -r requirements.txt
 
 In addition to these eggs you will need to install 
-[PlantUML](http://plantuml.sourceforge.net/ "PlantUML") and 
-[ImageMagick](http://www.imagemagick.org/ "ImageMagick").
+[PlantUML](http://plantuml.sourceforge.net/ "PlantUML"), 
+[ImageMagick](http://www.imagemagick.org/ "ImageMagick"), and
+[Inkscape](http://inkscape.org/ "Inkscape").
 
 To install PlantUML you run this wget process:
 
@@ -48,9 +49,10 @@ To install PlantUML you run this wget process:
 PlantumUML requires java:
     sudo apt-get install openjdk-7-jre
 
-To edit SVG images we use [Inkscape](http://inkscape.org/ "Inkscape") but 
-you may use any other SVG-capable tool you like. We're not picky.
-    
+We use [Inkscape](http://inkscape.org/ "Inkscape") to edit SVG images
+and convert them to PDF but you may use any other SVG-capable tool you
+like. We're not picky.
+
 Building
 ========
 

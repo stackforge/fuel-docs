@@ -48,7 +48,8 @@ of compromises as to the number and types of services that you can
 deploy. It is, however, extremely useful if you just want to see how
 OpenStack works from a user's point of view.
 
-.. image:: /_images/deployment-simple_svg.jpg
+.. image:: /_images/deployment-simple.*
+  :width: 60%
   :align: center
 
 More commonly, your OpenStack installation will consist of multiple
@@ -74,7 +75,8 @@ single points of failure. That's not to say, however, that you can't
 reduce hardware requirements by combining your storage, network, and controller
 nodes:
 
-.. image:: /_images/deployment-ha-compact-red-hat_svg.jpg
+.. image:: /_images/deployment-ha-compact-red-hat.*
+  :width: 80%
   :align: center
 
 OpenStack services are interconnected by RESTful HTTP-based APIs and AMQP-based 
@@ -86,5 +88,6 @@ availability. For example, MySQL uses built-in replication capabilities (plus
 the help of Pacemaker), while QPID is offered in three independent brokers with 
 virtual IP management to provide high availability.
 
-.. image:: /_images/ha-overview-red-hat_svg.jpg
+.. image:: /_images/ha-overview-red-hat.*
+  :width: 80%
   :align: center

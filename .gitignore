@@ -1,4 +1,5 @@
 /_build
 /_images/*_svg.png
 /_images/*_svg.jpg
+/_images/*.pdf
 /.idea

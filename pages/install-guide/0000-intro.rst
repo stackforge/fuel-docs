@@ -90,4 +90,6 @@ clouds:
 Fuel is designed to maintain the OpenStack environment while providing
 the flexibility to adapt it to your configuration.
 
-.. image:: /_images/how-it-works_svg.jpg
+.. image:: /_images/how-it-works.*
+  :width: 80%
+  :align: center

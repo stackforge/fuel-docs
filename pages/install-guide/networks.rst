@@ -59,6 +59,7 @@ FlatDHCPManager (single-interface scheme)
 -----------------------------------------
 
 .. image:: /_images/flatdhcpmanager-sh_scheme.jpg
+  :width: 100%
   :align: center
 
 In order for FlatDHCPManager to work, one designated switch port where each 
@@ -69,6 +70,10 @@ If the virtual machine sends IP packets to a different network, they will be
 routed on the host machine according to the routing table. The default route 
 will point to the gateway specified on the networks tab in the UI as the 
 gateway for the Public network.
+
+.. raw:: pdf
+
+   PageBreak
 
 VLANManager
 ------------
@@ -82,6 +87,7 @@ traffic from VMs of other projects. Again, like with FlatDHCPManager, switch
 ports must be configured as tagged (trunk) ports to allow this scheme to work.
 
 .. image:: /_images/vlanmanager_scheme.jpg
+  :width: 100%
   :align: center
 
 .. raw:: pdf
@@ -104,7 +110,7 @@ Configuring the network
 Once you choose a networking mode (FlatDHCP/VLAN), you must configure equipment 
 accordingly. The diagram below shows an example configuration.
 
-.. image:: /_images/physical-network.jpg
+.. image:: /_images/physical-network.png
   :width: 100%
   :align: center
 

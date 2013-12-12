@@ -47,7 +47,8 @@ In practice, Fuel works as follows:
 Fuel is designed to enable you to maintain your environment, while giving you 
 the flexibility to adapt it to your own business needs and scale.
 
-.. image:: /_images/how-it-works_svg.jpg
+.. image:: /_images/how-it-works.*
+  :width: 100%
   :align: center
 
 Fuel comes with several pre-defined deployment configurations, plus 

@@ -15,7 +15,8 @@ of compromises as to the number and types of services that you can
 deploy. It is, however, extremely useful if you just want to see how
 OpenStack works from a user's point of view. 
 
-.. image:: /_images/deployment-simple_svg.jpg
+.. image:: /_images/deployment-simple.*
+  :width: 60%
   :align: center
 
 More commonly, your OpenStack installation will consist of multiple
