@@ -9,7 +9,11 @@
 Multi-node Deployment
 ========================================
 
-For a production environment, you will typically create a high-availability deployment of OpenStack. However, the Multi-node (non-HA) deployment is extremely useful if you just want to see how OpenStack works from a user's point of view. 
+In a production environment, you will not likely ever have a Multi-node 
+deployment of OpenStack, partly because it forces you to make a number
+of compromises as to the number and types of services that you can
+deploy. It is, however, extremely useful if you just want to see how
+OpenStack works from a user's point of view. 
 
 .. image:: /_images/deployment-simple.*
   :width: 60%
