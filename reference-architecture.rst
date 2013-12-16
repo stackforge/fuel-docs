@@ -21,3 +21,4 @@ Reference Architectures
 .. include:: /pages/reference-architecture/0050-technical-considerations-overview.rst
 .. include:: /pages/reference-architecture/0080-swift-notes.rst
 .. include:: /pages/reference-architecture/0090-savanna.rst
+.. include:: /pages/reference-architecture/0100-bonding.rst
