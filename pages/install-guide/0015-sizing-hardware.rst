@@ -47,12 +47,12 @@ aggregate. Consider this example:
 * 16 EC2 compute units (16 GHz) max
 
 To make it possible to provide the maximum CPU in this example you will need at 
-least 5 CPU cores (16 GHz/(2.4 GHz per core * 1.3 to adjust for hyper-threading)) 
-per machine, and at least 84 CPU cores ((100 VMs * 2 GHz per VM)/2.4 GHz per 
-core) in total. If you were to select the Intel E5 2650-70 8 core CPU, that 
-means you need 11 sockets (84 cores / 8 cores per socket). This breaks down to 
-six dual socket servers (12 sockets / 2 sockets per server), for a "packing 
-density" of 17 VMs per server (102 VMs / 6 servers). 
+least 5 CPU cores (16 GHz/(2.4 GHz per core) per machine, and at least 
+84 CPU cores ((100 VMs * 2 GHz per VM)/2.4 GHz per core) in total. If you were 
+to select the Intel E5 2650-70 8 core CPU, that means you need 11 sockets 
+(84 cores / 8 cores per socket). This breaks down to six dual socket servers 
+(11 sockets / 2 sockets per server), for a "packing density" of 17 VMs per 
+server (102 VMs / 4 servers). 
 
 This process also accommodates growth since you now know what a single server 
 using this CPU configuration can support. You can add new servers accounting 
