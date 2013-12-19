@@ -26,17 +26,37 @@ can be used to communicate with cluster and its VMs from outside of cluster.
 
 To enable external access to VMs, the public network provides the address space 
 for the floating IPs assigned to individual VM instances by the project 
-administrator. Nova Network or Neutron services can then 
-configure this address on the public network interface of the Network controller
-node. E.g. environments based on Nova Network use iptables to create a 
-Destination NAT from this address to the private IP of the corresponding VM 
-instance through the appropriate virtual bridge interface on the Network 
-controller node.
+administrator.
+
+Nova Network can configure this address on the public interface of the Compute
+node the instance is running at and then creates a Destination NAT from this
+address to the private IP of the corresponding VM instance using iptables.
+Then traffic goes to the VM through the appropriate virtual bridge interface.
 
 In the other direction, the public network provides connectivity to the globally 
 routed address space for VMs. The IP address from the public network that has 
-been assigned to a compute node is used as the source for the Source NAT 
-performed for traffic going from VM instances on the compute node to Internet.
+been assigned to a Compute node is used as the destination for the Source NAT 
+performed for traffic going from VM instances on the Compute node to Internet.
+Without assigned floating IP address neither incoming Internet connection nor
+outgoing connections would be possible.
+
+Neutron on the other hand configures these addresses on the public interface of
+the Controller node using namespaces to separate different networks of tenants.
+Then it uses Destination NAT to direct the traffic to the Compute node either
+through special VLAN or through GRE tunnel depending on network configuration.
+On the Compute node the traffic goes through the same virtual bridge to
+the target VM instance.
+
+Both VLANs and tunnels are created using Open vSwitch connecting all Controller
+and Compute nodes allowing VMs to exchange traffic through the Private network.
+
+Traffic sent by the VM to the Internet goes to the Controller node where it
+passes through a Source NAT to the external IP address inside the Public network
+and then to the Internet. If there are no assigned floating IPs traffic goes
+through the common Public IP address. But if the is a floating IP address assigned
+it will be used as traffic exit point instead. So if you don't need to connect
+to your VM from the Internet you need no floating IPs because outgoing
+connections from the VM will work even without them.
 
 The public network also provides Virtual IPs for Endpoint nodes, which are used to 
 connect to OpenStack services APIs.
