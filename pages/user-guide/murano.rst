@@ -67,6 +67,11 @@ Conductor is the Murano orchestration engine that transformes objects sent by
 REST API service (such as Dashboard) into a series of Heat and Murano API
 commands.
 
+Metadata Repository
++++++++++++++++++++
+
+This service stores information about deployment scenarios and workflow
+making it aviable for other Murano services and to the user.
 
 .. index:: Murano: Troubleshooting
 
