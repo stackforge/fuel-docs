@@ -15,4 +15,5 @@ User Guide
 .. include:: /pages/user-guide/cli.rst
 .. include:: /pages/user-guide/custom-attributes.rst
 .. include:: /pages/user-guide/murano.rst
-
+.. include:: /pages/user-guide/savanna.rst
+.. include:: /pages/user-guide/ceilometer.rst

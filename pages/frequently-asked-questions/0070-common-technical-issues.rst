@@ -53,14 +53,15 @@ This is a Puppet bug.  See: http://projects.puppetlabs.com/issues/4680
 
 **Issue:**
   Timeout error for fuel-controller-XX when running ``puppet-agent --test`` to 
-  install OpenStack in a virtual deployment when using HDD instead of SSD ::
+  install OpenStack in a virtual deployment when using HDD instead of SSD
+  ::
 
-    | Sep 26 17:56:15 fuel-controller-02 puppet-agent[1493]: Could not retrieve 
-    | catalog from remote server: execution expired
-    | Sep 26 17:56:15 fuel-controller-02 puppet-agent[1493]: Not using cache on 
-    | failed catalog
-    | Sep 26 17:56:15 fuel-controller-02 puppet-agent[1493]: Could not retrieve 
-    | catalog; skipping run
+    Sep 26 17:56:15 fuel-controller-02 puppet-agent[1493]: Could not retrieve 
+    catalog from remote server: execution expired
+    Sep 26 17:56:15 fuel-controller-02 puppet-agent[1493]: Not using cache on 
+    failed catalog
+    Sep 26 17:56:15 fuel-controller-02 puppet-agent[1493]: Could not retrieve 
+    catalog; skipping run
 
 **Workaround**::
 
@@ -69,10 +70,11 @@ This is a Puppet bug.  See: http://projects.puppetlabs.com/issues/4680
 add: ``configtimeout = 1200``
 
 **Issue:**
-  On running ``puppet agent --test``, the error messages below occur::
+  On running ``puppet agent --test``, the error messages below occur:
+  ::
 
-    | err: /File[/var/lib/puppet/lib]: Could not evaluate: Could not retrieve 
-    | information from environment production source(s) puppet://fuel-pm.localdomain/plugins
+    err: /File[/var/lib/puppet/lib]: Could not evaluate: Could not retrieve 
+    information from environment production source(s) puppet://fuel-pm.localdomain/plugins
 
 **Workaround:**
   Refer to http://projects.reductivelabs.com/issues/2244 for information.

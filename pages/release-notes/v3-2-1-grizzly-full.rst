@@ -62,7 +62,7 @@ Mirantis Support
 Further, Mirantis OpenStack offers a subscription to our world-class support 
 with defined service level agreements based on the severity of your issue. For 
 example, the premium support guarantees a one-hour response for severity 1 
-issues.
+issues.
 
 New Features in Mirantis OpenStack 3.2.x
 ----------------------------------------
@@ -343,7 +343,7 @@ have default support for network namespaces. In this release, CentOS
 deployments have network namespaces support built in through upstream 
 fixes to the Linux kernel, which were contributed by Mirantis. This 
 built-in support allows greater flexibility with Neutron configurations 
-for tenant networks.
+for tenant networks.
 
 Issues Resolved in Mirantis OpenStack 3.2.1
 -------------------------------------------
@@ -589,8 +589,8 @@ performance of virtual machines using the paravirtualized VirtIO network
 adapters. A known workaround is to disable Generic and TCP Segmentation Offload 
 on the VMs by issuing the following commands::
 
-  ‘ethtool -K <iface_name> gso off
-  ethtool -K <iface_name> tso off’
+  ethtool -K <iface_name> gso off
+  ethtool -K <iface_name> tso off
 
 File injection into VMs fails on CentOS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
