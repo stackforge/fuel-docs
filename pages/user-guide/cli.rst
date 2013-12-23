@@ -2,10 +2,24 @@
 
    PageBreak
 
-.. index:: Fuel UI: Network Configuration
+.. index:: Understanding Environment deployment with Fuel CLI
 
-Understanding Environment deployment with Fuel-CLI
+.. _cli_usage:
+
+Understanding Environment deployment with Fuel CLI
 ==================================================
+
+Introduction
+------------
+
+Fuel CLI tool is a powerful tool that allows you:
+
+* Operate with environments using text console only
+* Modify some kind of internal data directly which you can't do via Web UI
+* Avoid some data verifications which are doing by Web UI logic
+
+Also Fuel CLI is a dangerous tool and you can easily break your environment with
+it. That is why you should use it carefully.
 
 .. contents :local:
 
@@ -149,7 +163,21 @@ Configuration of environment or some node is universal and done in three stages
 *Example*::
 
    fuel --env 1 provisioning upload
-   fuel node --node-id 2 --disk --upload  
+   fuel node --node-id 2 --disk --upload
+
+.. note::
+
+   To protect yourself from sudden errors, please, follow these simple rules:
+
+   * Make a backup of all configuration before you start modifying it
+   * If you remove something from a configuration file, be absolutely sure you
+     don't need it; Fuel CLI don't merge a new data with previous one - it just
+     completely overwrite an old data with a new one
+   * Keep in mind that if you upload any changes in ``provisioning`` or ``deployment``
+     operations, you will freeze the whole environment configuration - any changes
+     with networks, cluster settings or disk configurations will have no effect;
+     in order to modify such parameters you will need to change appropriate
+     section of each node configuration
 
 
 Deployment
