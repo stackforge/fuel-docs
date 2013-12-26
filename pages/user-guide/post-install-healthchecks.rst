@@ -251,14 +251,15 @@ To prepare Murano for testing:
 1. Configure key pair 'murano-lb-key' in the 'admin' tenant.
 2. Create a Windows image with Murano agent.
    See `Murano documentation (Image Builder) <http://murano-docs.github.io/latest/administrators-guide/content/ch03.html>`_
+   (Please note, the Murano Image Builder documentation referenced here cannot garantee success with image creation and could be outdated)
 3. Upload the image to the OpenStack Image Service (Glance) into the 'admin' tenant.
 4. Rename the image name to 'ws-2012-std'.
 5. In the OpenStack Dashboard, click the 'Project' tab.
 6. Switch to admin tenant if needed.
-7. Click the 'Environments' menu.
-8. Click the 'Marked Images' button.
+7. Open 'Murano' tab.
+8. Click the 'Images' menu.
 9. Click 'Mark Image'. The Image registration window displays.
-10. Select the image.
+10. Select the image (i.e. ws-2012-std).
 11. In the 'Title' field, select 'ws-2012-std'.
 12. Select the 'Windows Server 2012' type.
 13. Click 'Mark'.
