@@ -76,10 +76,8 @@ For example, the premium support guarantees a one-hour response for severity 1 i
 New Features in Mirantis OpenStack 4.0
 --------------------------------------
 
-Mirantis OpenStack hardened packages support the latest stable OpenStack Havana
-maintenance release
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-^^^^^^^^^^^^^^^^^^^
+Mirantis OpenStack hardened packages support the latest stable OpenStack Havana maintenance release
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The OpenStack core projects in the Mirantis OpenStack hardened packages
 support the `OpenStack Havana 2013.2.1 <http://tracker.ceph.com/issues/5426>`_ release.
 Fuel will deploy this version of OpenStack on CentOS or Ubuntu. For Red Hat Enterprise
@@ -106,8 +104,7 @@ Other Enhancements
 Internationalization of the Fuel UI is now available (experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The Fuel project has added a framework that enables partners and community
-members to localize the Fuel UI by modifying the `translate.json
-<https://github.com/stackforge/fuel-web/blob/master/nailgun/static/i18n/translation.json>`
+members to localize the Fuel UI by modifying the `translate.json <https://github.com/stackforge/fuel-web/blob/master/nailgun/static/i18n/translation.json>`_
 file. A sample that translates the UI into zh-CN (Simplified Chinese) has been
 created by a community partner, 99cloud, and can be found in the file.
 The framework is currently experimental.
@@ -121,7 +118,7 @@ OpenStack 4.0, it is possible to deploy the operating system and OpenStack
 components in separate actions. This option is not expected to be used
 for typical deployments but may be useful in focused development or
 testing scenarios like OpenStack scalability testing as part of the
-`OpenStack Rally <https://wiki.openstack.org/wiki/Rally>` project.
+`OpenStack Rally <https://wiki.openstack.org/wiki/Rally>`_ project.
 
 Validation of user-supplied network settings has been improved
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -150,10 +147,8 @@ extend your installation).
 Issues Resolved in Mirantis OpenStack 4.0
 -----------------------------------------
 
-Deployment process limited by scalability and performance issues due to the
-implementation of the Puppet server
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Deployment process limited by scalability and performance issues due to the implementation of the Puppet server
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 To address multiple issues including certificate signing, scalability,
 and performance issues, the Puppet Master server has been removed from
 the Fuel Master Node. Puppet modules and manifests are now synchronized
@@ -165,8 +160,7 @@ Slow network connection occurs between nodes when using Neutron and GRE
 Previously, network performance occasionally was slower than expected between
 nodes when using the Neutron with GRE segmentation as the network type on
 CentOS. This issue was primarily caused by packet fragmentation. This has
-been corrected in Mirantis OpenStack 4.0. Further detail can be found at
-https://bugs.launchpad.net/fuel/+bug/1256289.
+been corrected in Mirantis OpenStack 4.0. Further detail can be found at https://bugs.launchpad.net/fuel/+bug/1256289.
 
 The deployment progress bars were not as accurate as desired
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -202,9 +196,9 @@ Disabled feature can_set_mount_point in horizon
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 This option allows you to choose the device name for the mounted volume.
 Setting this parameter to "True" is `not supported by QEMU or KVM
-<https://bugs.launchpad.net/nova/+bug/1075971>` and causes `Cinder to
+<https://bugs.launchpad.net/nova/+bug/1075971>`_ and causes `Cinder to
 show the wrong device names for attached volumes
-<https://bugs.launchpad.net/nova/+bug/1217874>`.
+<https://bugs.launchpad.net/nova/+bug/1217874>`_.
 
 No way to specify range of IP addresses in public network
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -248,8 +242,9 @@ The Ceilometer section within Horizon is disabled by default
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The Ceilometer integration with Horizon in OpenStack Havana has several known
 issues:
-* The metering panel in Horizon requires the 'metadata_query' Ceilometer feature `that is not supported by Ceilometer with the MySQL driver <https://bugs.launchpad.net/horizon/+bug/1260528>`.
-* `Deleting the statistics tables from the resource usage page <https://review.openstack.org/#/c/60317/>` caused the tables to interpret some of the stats incorrectly, and in some cases it was not possible to get certain statistics. The panels with these tables have been removed from the OpenStack Havana release.
+
+* The metering panel in Horizon requires the 'metadata_query' Ceilometer feature `that is not supported by Ceilometer with the MySQL driver <https://bugs.launchpad.net/horizon/+bug/1260528>`_.
+* `Deleting the statistics tables from the resource usage page <https://review.openstack.org/#/c/60317/>`_ caused the tables to interpret some of the stats incorrectly, and in some cases it was not possible to get certain statistics. The panels with these tables have been removed from the OpenStack Havana release.
 
 Because of these conditions, Mirantis OpenStack disables the Ceilometer section
 within Horizon by default. Mirantis recommends that the customers who want to
@@ -395,10 +390,12 @@ number of interfaces. The minimum requirements are as follows:
 |                                | Private, Storage, Management, Public)        |
 +--------------------------------+----------------------------------------------+
 | Neutron with GRE Segmentation  | Two interfaces                               |
+|                                |                                              |
 |                                | * Admin (PXE)                                |
 |                                | * Private, Storage, Management, Public       |
 +--------------------------------+----------------------------------------------+
 | Neutron with VLAN Segmentation | Three interfaces                             |
+|                                |                                              |                                
 |                                | * Admin (PXE)                                |
 |                                | * Private                                    |
 |                                | * Storage, Management, Public                |
