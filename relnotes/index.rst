@@ -22,5 +22,5 @@
 
    PageBreak oneColumn
 
-.. include:: /pages/release-notes/v3-2-1-grizzly-full.rst
+.. include:: /pages/release-notes/v4-0-havana-full.rst
 
