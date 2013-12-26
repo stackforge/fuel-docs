@@ -58,6 +58,7 @@ Mirantis OpenStack hardened packages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 These packages include the core OpenStack projects, updated with each stable
 release of OpenStack. Also included are:
+
 * Packages to ensure High Availability.
 * Any defect fixes reported by our customers that may not yet have been merged into the community source.
 * Mirantis-driven premium OpenStack projects (for example, Savanna and Murano).
