@@ -39,3 +39,10 @@ configuration. We begin with an explanation of this architecture, then move
 on to the details of creating the configuration in a test environment using 
 VirtualBox. Finally, we provide you the information you need to know to create 
 this and other OpenStack architectures in a production environment.
+
+For community members or partners looking to take Fuel even further, we’ve
+supplied `developer documentation <http://docs.mirantis.com/fuel-dev/develop.html>`_
+on the internal architecture of Fuel, instructions on building the project,
+information on interacting with the REST API and other topics of interest to
+more advanced developers. You can also visit the `Fuel project <https://launchpad.net/fuel>`_
+for more detailed information and become a contributor.

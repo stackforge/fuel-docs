@@ -21,6 +21,7 @@ clustered cloud in terms of minutes.
 
 Deployment Modes
 -----------------------------
+
 You can use Fuel for OpenStack to create virtually any OpenStack 
 configuration. However, Mirantis provides several pre-defined 
 architectures for your convenience. 
@@ -44,10 +45,10 @@ additional components.
 
 For more information, contact `Mirantis <http://www.mirantis.com/contact/>`_.
 
-.. seealso:: `Reference Architecture<ref-arch>`
+.. seealso:: `Reference Architectures <http://docs.mirantis.com/fuel/fuel-4.0/reference-architecture.html>`_
 
-About Fuel Components
------------------------
+About Fuel and OpenStack Components
+-----------------------------------
 
 You can use Fuel to quickly deploy and manage the OpenStack environment.
 
@@ -74,6 +75,65 @@ Fuel includes the following components:
    node. Mirantis recommends to deploy standalone storage nodes for high 
    availability environments. 
 
+Supported Software
+------------------
+
+* **Operating Systems**
+
+  * CentOS 6.4 (x86_64 architecture only)
+  * RHEL 6.4 (x86_64 architecture only)
+  * Ubuntu 12.04 (x86_64 architecture only)
+
+* **Puppet (IT automation tool)** 2.7.23
+
+* **MCollective** 2.3.3
+
+* **Cobbler (bare-metal provisioning tool)** 2.2.3
+
+* **OpenStack Core Projects**
+  
+  * Havana release 2013.2.1
+
+    * Nova (OpenStack Compute)
+    * Swift (OpenStack Object Storage)
+    * Glance (OpenStack Image Service)
+    * Keystone (OpenStack Identity)
+    * Horizon (OpenStack Dashboard)
+    * Neutron (OpenStack Networking)
+    * Cinder (OpenStack Block Storage service)
+
+* **OpenStack Core Integrated Projects**
+
+  * Havana Release 2013.2.1
+  
+    * Ceilometer (OpenStack Telemetry)
+    * Heat (OpenStack Orchestration)
+
+* **OpenStack Related Projects**
+
+  * Savanna v0.3
+  * Murano v0.4
+
+* **Hypervisor**
+
+  * KVM
+  * QEMU
+
+* **Open vSwitch** 1.10.2 (CentOS), 1.10.1 (Ubuntu)
+
+* **HA Proxy** 1.4.19
+
+* **Galera** 23.2.2
+
+* **RabbitMQ** 2.8.7
+
+* **Pacemaker** 1.1.8
+
+* **Corosync** 1.4.3 (CentOS), 1.4.4 (Ubuntu)
+
+* **Keepalived** 1.2.4
+
+* **Ceph Dumpling** (v0.67)
 
 Fuel Installation Procedures
 ----------------------------
