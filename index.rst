@@ -50,4 +50,4 @@ Demos and tutorials:
 --------------------------
 Watch the Mirantis OpenStack demos:
 
-http://www.youtube.com/watch?feature=player_embedded&v=dm0sVDgodHw
+http://www.youtube.com/watch?feature=player_embedded&v=oHE9OC6OibE
