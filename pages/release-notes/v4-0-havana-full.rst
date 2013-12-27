@@ -114,7 +114,7 @@ clones of Glance images, recovered from Compute node failures thanks to
 Ceph object replication, and shared among Compute nodes to enable a live
 migration of VMs.
 
-Due to a `known Ceph issue <https://wiki.openstack.org/wiki/ReleaseNotes/2013.2.1>`_
+Due to a `known Ceph issue <http://tracker.ceph.com/issues/5426>`_
 that could lead to a `Ceph SEGV error while extracting cloned images from RBD <https://bugs.launchpad.net/fuel/+bug/1260911>`_,
 there is a small possibility that an ephemeral volume may become corrupted when
 using this feature. Due to such a possibility, this feature is considered
