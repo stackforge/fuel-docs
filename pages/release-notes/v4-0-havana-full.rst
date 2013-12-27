@@ -103,6 +103,26 @@ test the cluster deployment with the Murano service.
 Other Enhancements
 ------------------
 
+Ceph storage support expanded (experimental)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The Nova (Compute) service in Mirantis OpenStack now supports VM instances
+backed by ephemeral volumes stored in Ceph. With Glance, Cinder, and Nova
+all supporting the Ceph RBD backend; OpenStack VM instances can now take
+advantage of Ceph clustered storage capabilities through all of the steps
+of their life cycle. Ephemeral volumes can be created as copy-on-write
+clones of Glance images, recovered from Compute node failures thanks to
+Ceph object replication, and shared among Compute nodes to enable a live
+migration of VMs.
+	
+Due to a `known Ceph issue <https://wiki.openstack.org/wiki/ReleaseNotes/2013.2.1>`_
+that could lead to a `Ceph SEGV error while extracting cloned images from RBD <https://bugs.launchpad.net/fuel/+bug/1260911>`_,
+there is a small possibility that an ephemeral volume may become corrupted when
+using this feature. Due to such a possibility, this feature is considered
+experimental and should only be used for evaluation purposes. Use in production
+environments is not recommended. Mirantis is working closely with InkTank to
+resolve this issue as soon as possible and if a resolution is quickly found,
+a patch will be released to Mirantis OpenStack 4.0.
+
 Internationalization of the Fuel UI is now available (experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The Fuel project has added a framework that enables partners and community
