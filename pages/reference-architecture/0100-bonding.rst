@@ -180,7 +180,7 @@ Public networks use the last NIC ("eth1"). To achieve this goal, do the followin
 * Connect "br-prv" and "br-storage" bridges to "br-bond0" by OVS patches.
 * Leave all of the other things unchanged.
 
-Here is a example of "network_scheme" section in the node configuration:
+Here is an example of "network_scheme" section in the node configuration:
 
 ::
 
@@ -246,75 +246,96 @@ Here is a example of "network_scheme" section in the node configuration:
 Assign Admin Network to the OVS Bridge
 --------------------------------------
 
-Mirantis OpenStack now has a restriction to use an Admin network on a dedicated
+.. warning::
+
+   It's not a fully supported feature now. Use this guide carefully.
+
+Mirantis OpenStack now has a restriction to use the Admin network on a dedicated
 NIC. It is because we use Cobbler as the PXE boot server. Cobbler must know all of the node MAC
 addresses during the provisioning stage. Also, it includes static ARP entries
 in the ``/etc/ethers`` file. Further, bugs can occur if you simply assign an
 Admin network IP from a NIC to an OVS bridge. But, if you really want to solve this
 problem, here is a solution:
 
-* Go to the ``/etc/puppet/modules/l23network`` directory and modify the ``L2_ovs_bond``
-  custom Puppet provider according to this patch
-  https://github.com/alexeyklimenok/fuel/commit/0e012cc5578446c0c14459d1c8874e19d3499f38 .
-* Disable Cobbler's control of the ``/etc/ethers`` file. A simple way to do that is to
-  replace the body of the ``regen_ethers`` method in
-  ``/usr/lib/python2.6/site-packages/cobbler/modules/manage_dnsmasq.py``
-  file with a pass statement.
-* Design a good network scheme and apply it via the Fuel CLI tool.
-  For example, suppose you have a node with 2 NICs. To create a single bringe 'br-core', bond
-  both NICs to it and connect other bridges to it via patches. The Admin network
-  'fw-admin' should use 'br-core'. Here is a part of the node config:
+#. Install the ``patch`` program:
 
-::
+   ::
 
-  'network_scheme':
-    'provider': 'ovs'
-    'version': '1.0'
-    'endpoints':
-      'br-core':
-        'IP': ['10.20.0.4/24']
-      'br-ex':
-        'IP': ['172.16.0.2/24']
-        'gateway': '172.16.0.1'
-      'br-mgmt':
-        'IP': ['192.168.0.2/24']
-      'br-prv': {'IP': 'none'}
-      'br-storage':
-        'IP': ['192.168.1.2/24']
-      'eth0': {'IP': 'none'}
-      'eth1': {'IP': 'none'}
-    'interfaces':
-      'eth0': {}
-      'eth1': {}
-    'roles':
-      'ex': 'br-ex'
-      'fw-admin': 'br-core'
-      'management': 'br-mgmt'
-      'private': 'br-prv'
-      'storage': 'br-storage'
-    'transformations':
-    - 'action': 'add-br'
-      'name': 'br-ex'
-    - 'action': 'add-br'
-      'name': 'br-mgmt'
-    - 'action': 'add-br'
-      'name': 'br-storage'
-    - 'action': 'add-br'
-      'name': 'br-prv'
-    - 'action': 'add-br'
-      'name': 'br-core'
-    - 'action': 'add-bond'
-      'bridge': 'br-core'
-      'interfaces': ['eth0', 'eth1']
-      'name': 'bond0'
-    - 'action': 'add-patch'
-      'bridges': ['br-core', 'br-storage']
-      'tags': [103, 0]
-    - 'action': 'add-patch'
-      'bridges': ['br-core', 'br-ex']
-      'tags': [101, 0]
-    - 'action': 'add-patch'
-      'bridges': ['br-core', 'br-mgmt']
-      'tags': [102, 0]
-    - 'action': 'add-patch'
-      'bridges': ['br-core', 'br-prv']
+     [root@fuel ~]# yum install patch
+
+#. Modify some custom Puppet provider using these commands:
+
+   ::
+
+     [root@fuel ~]# wget -O /tmp/ovs_pp.diff https://github.com/stackforge/fuel-docs/blob/master/_static/l2_ovs_bond_ovs_pp.diff
+     [root@fuel ~]# patch -p0 < /tmp/ovs_pp.diff
+
+#. Disable Cobbler's control of the ``/etc/ethers`` file:
+
+   ::
+
+     [root@fuel ~]# wget -O /tmp/dnsmasq_py.diff https://github.com/stackforge/fuel-docs/blob/master/_static/manage_dnsmasq_py.diff
+     [root@fuel ~]# patch -p0 < /tmp/dnsmasq_py.diff
+     [root@fuel ~]# service cobbler restart
+
+#. Design a good network scheme and apply it via the Fuel CLI tool.
+   For example, suppose you have a node with 2 NICs. To create a single bringe 'br-core', bond
+   both NICs to it and connect other bridges to it via patches. The Admin network
+   role 'fw-admin' should use the 'br-core' bridge. Here is a part of the node config:
+
+   ::
+
+      'network_scheme':
+        'provider': 'ovs'
+        'version': '1.0'
+        'endpoints':
+          'br-core':
+            'IP': ['10.20.0.4/24']
+          'br-ex':
+            'IP': ['172.16.0.2/24']
+            'gateway': '172.16.0.1'
+          'br-mgmt':
+            'IP': ['192.168.0.2/24']
+          'br-prv': {'IP': 'none'}
+          'br-storage':
+            'IP': ['192.168.1.2/24']
+          'eth0': {'IP': 'none'}
+          'eth1': {'IP': 'none'}
+        'interfaces':
+          'eth0': {}
+          'eth1': {}
+        'roles':
+          'ex': 'br-ex'
+          'fw-admin': 'br-core'
+          'management': 'br-mgmt'
+          'private': 'br-prv'
+          'storage': 'br-storage'
+        'transformations':
+        - 'action': 'add-br'
+          'name': 'br-ex'
+        - 'action': 'add-br'
+          'name': 'br-mgmt'
+        - 'action': 'add-br'
+          'name': 'br-storage'
+        - 'action': 'add-br'
+          'name': 'br-prv'
+        - 'action': 'add-br'
+          'name': 'br-core'
+        - 'action': 'add-bond'
+          'bridge': 'br-core'
+          'interfaces': ['eth0', 'eth1']
+          'name': 'bond0'
+        - 'action': 'add-patch'
+          'bridges': ['br-core', 'br-storage']
+          'tags': [103, 0]
+        - 'action': 'add-patch'
+          'bridges': ['br-core', 'br-ex']
+          'tags': [101, 0]
+        - 'action': 'add-patch'
+          'bridges': ['br-core', 'br-mgmt']
+          'tags': [102, 0]
+        - 'action': 'add-patch'
+          'bridges': ['br-core', 'br-prv']
+
+#. When the new network configuration is applied nodes will go offline. It's
+   a normal behaviour in this case.
