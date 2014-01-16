@@ -16,11 +16,13 @@ enhancements, resolved issues, and known issues in this version.
 
 The following table lists the released revisions of this documentation:
 
-+----------+-------------+--------------+
-| Revision | Date        | Description  |
-+==========+=============+==============+
-| 4.0      | 27-Dec-2013 | Initial G.A. |
-+----------+-------------+--------------+
++----------+-------------+------------------------------------------+
+| Revision | Date        | Description                              |
++==========+=============+==========================================+
+| 4.0      | 27-Dec-2013 | Initial G.A.                             |
++----------+-------------+------------------------------------------+
+| 4.0      |  7-Feb-2014 | Correct ports used by Hadoop for Savanna |
++----------+-------------+------------------------------------------+
 
 .. include:: /pages/release-notes/v4-0/010-what-is-mirantis-openstack.rst
 .. include:: /pages/release-notes/v4-0/020-new-features.rst

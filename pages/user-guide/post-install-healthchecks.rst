@@ -203,6 +203,8 @@ in HA mode:
 Savanna and Murano tests are included in Platform Tests and are
 described in the next section.
 
+.. _platform-tests-label:
+
 Platform Tests Description
 --------------------------
 
@@ -218,8 +220,8 @@ The platform tests are run in the tenant you've specified in
 'OpenStack Settings' tab during OpenStack installation. By default that is
 'admin' tenant. Perform in the that tenant the following actions:
 
-1. Configure security groups in the 'admin' tenant. See
-   :ref:`savanna-deployment-label` for the details.
+1. Configure security groups in the 'admin' tenant for post-deployment checks.
+   See :ref:`savanna-deployment-label` for the details.
 2. Get an image with Hadoop for Savanna and register it with Savanna.
 
    * First download the following image:
