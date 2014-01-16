@@ -220,7 +220,10 @@ The platform tests are run in the tenant you've specified in
 
 1. Configure security groups in the 'admin' tenant. See
    :ref:`savanna-deployment-label` for the details.
-2. Get an image with Hadoop for Savanna and register it with Savanna.
+2. In addition to requirements listed in :ref:`savanna-deployment-label`
+   Platform Tests require the following ports to be open for inbound traffic:
+   50030, 50070, 50060, 50075, 50090.
+3. Get an image with Hadoop for Savanna and register it with Savanna.
 
    * First download the following image:
 
