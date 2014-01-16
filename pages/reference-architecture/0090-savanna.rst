@@ -23,21 +23,33 @@ requires the following network ports to be open for inbound traffic:
 
    Required for communication between Savanna and virtual machines.
 
- * Port 8080 (TCP)
+ * Port 50030 (TCP)
 
-   Ambari REST API [HDP plugin only]
+   JobTracker HTTP server address and port
+
+ * Port 50060 (TCP)
+
+   TaskTracker HTTP server address and port
 
  * Port 50070 (TCP)
 
-   NameNode web interface
+   NameNode HTTP server address and port
 
- * Port 50030 (TCP)
+ * Port 50075 (TCP)
 
-   JobTracker web interface
+   DataNode HTTP server address and port
+
+ * Port 50090 (TCP)
+
+   Secondary NameNode HTTP server address and port
 
  * Port 80 (TCP)
 
    Ambari web interface [HDP plugin only]
+
+ * Port 8080 (TCP)
+
+   Ambari REST API [HDP plugin only]
 
 Also verify that communication between virtual machines is not blocked.
 
