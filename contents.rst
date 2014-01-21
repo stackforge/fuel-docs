@@ -17,5 +17,6 @@ Documentation
   user-guide
   reference-architecture
   release-notes
+  openstack-patch-quick-ref
   frequently-asked-questions
   eula
