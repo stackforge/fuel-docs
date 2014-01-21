@@ -38,6 +38,11 @@ The following Mirantis OpenStack documentation is available in PDF:
  
   The Release Notes provide general information about new features,
   fixed issues, and known limitations in Mirantis OpenStack |version|.
+
+* `OpenStack Patching Quick Reference Guide 4.0 <pdf/Mirantis-OpenStack-4.0-OpenStack-Patch-Quick-Ref.pdf>`_
+  
+  Patching OpenStack nodes is a manual process, and this document describes the
+  basic steps required to patch one or more OpenStack components.
  
 Download Mirantis OpenStack
 ---------------------------
