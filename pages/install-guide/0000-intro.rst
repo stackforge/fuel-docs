@@ -7,17 +7,17 @@ Introduction
 This section introduces Fuel for OpenStack and its components. 
 
 
-Introducing Fuel for OpenStack
+Introducing Mirantis Fuel for OpenStack
 --------------------------------
 
 Mirantis Fuel for OpenStack is a set of deployment tools that helps you to 
-quickly deploy your cloud environment. Fuel includes the scripts that 
+quickly deploy your cloud environment. Fuel includes scripts that 
 dramatically facilitate and speed up the process of cloud deployment. 
-Typically, OpenStack installation requires you familiarize yourself 
-with the processes of installation of OpenStack environment components.
-Fuel eliminates the need to study these processes. With Fuel, system 
-administrators can provision an OpenStack single node, as well as 
-clustered cloud in terms of minutes.
+Without Fuel, installing and maintaining OpenStack can be a daunting task,
+requiring a deep understanding of all the OpenStack components.
+Fuel enables a system administrator to provision an OpenStack single node
+as well as a clustered cloud in an hour or so,
+without needing to first study all the components.
 
 Deployment Modes
 -----------------------------
