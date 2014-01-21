@@ -3,12 +3,12 @@
 .. _Introduction:
 
 Introduction
-================================
+============
 This section introduces Fuel for OpenStack and its components. 
 
 
 Introducing Fuel for OpenStack
-------------------------------------------------
+------------------------------
 
 Fuel for OpenStack is a set of deployment tools that helps you to 
 quickly deploy your cloud environment. Fuel includes scripts that 
@@ -20,7 +20,7 @@ as well as a clustered cloud in an hour or so,
 without needing to first study all the components.
 
 Deployment Modes
------------------------------
+----------------
 
 You can use Fuel for OpenStack to create virtually any OpenStack 
 configuration. However, Mirantis provides several pre-defined 
