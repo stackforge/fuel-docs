@@ -248,21 +248,31 @@ The 'admin' tenant is selected by default.
 
 To prepare Murano for testing:
 
-1. Configure key pair 'murano-lb-key' in the 'admin' tenant.
-2. Create a Windows image with Murano agent.
-   See `Murano documentation (Image Builder) <http://murano-docs.github.io/latest/administrators-guide/content/ch03.html>`_
+1. Create a Windows image with Murano agent.
+   See `Murano documentation (Windows Image Builder) <http://murano-docs.github.io/latest/administrators-guide/content/ch03.html>`_
    (Please note, the Murano Image Builder documentation referenced here cannot guarantee success with image creation and could be outdated)
-3. Upload the image to the OpenStack Image Service (Glance) into the 'admin' tenant.
-4. Rename the image name to 'ws-2012-std'.
-5. In the OpenStack Dashboard, click the 'Project' tab.
-6. Switch to admin tenant if needed.
-7. Open 'Murano' tab.
-8. Click the 'Images' menu.
-9. Click 'Mark Image'. The Image registration window displays.
-10. Select the image (i.e. ws-2012-std).
-11. In the 'Title' field, select 'ws-2012-std'.
-12. Select the 'Windows Server 2012' type.
-13. Click 'Mark'.
+2. Upload the image to the OpenStack Image Service (Glance) into the 'admin' tenant.
+3. In the OpenStack Dashboard, click the 'Project' tab.
+4. Switch to admin tenant if needed.
+5. Open 'Murano' tab.
+6. Click the 'Images' menu.
+7. Click 'Mark Image'. The Image registration window displays.
+8. Select the Windows image with Murano agent.
+9. In the 'Title' field, set title for this image.
+10. Select the 'Windows Server 2012' type.
+11. Click 'Mark'.
+12. Create a Linux image with Murano agent.
+    See `Murano documentation (Linux Image Builder) <http://murano-docs.github.io/latest/administrators-guide/content/ch04.html`_
+    (Please note, the Murano Image Builder documentation referenced here cannot guarantee success with image creation and could be outdated)
+13. Upload the image to the OpenStack Image Service (Glance) into the 'admin' tenant.
+14. Open 'Murano' tab.
+15. Click the 'Images' menu.
+16. Click 'Mark Image'. The Image registration window displays.
+17. Select the Linux image with Murano Agent.
+18. In the 'Title' field, set title for this image.
+19. Select the 'Generic Linux' type.
+20. Click 'Mark'.
+
 
 Murano is ready for testing.
 
@@ -350,27 +360,6 @@ Platform Tests Details
   For more infromation, see:
   `Murano documentation <https://wiki.openstack.org/wiki/Murano#Documentation>`_
 
-.. topic:: Murano environment with ASP.NET Servers Farm service deployment
-
-  The test verifies that the Murano service can create and deploy the ASP.NET Servers Farm service.
-
-  Target component: Murano
-
-  Scenario:
-
-  1. Check Windows Server 2012 image in glance.
-  2. Check that Key Pair 'murano-lb-key' exists.
-  3. Send request to create environment.
-  4. Send request to create session for environment.
-  5. Send request to create service ASPNet farm.
-  6. Request to deploy session.
-  7. Checking environment status.
-  8. Checking deployments status
-  9. Send request to delete environment.
-
-  For more infromation, see:
-  `Murano documentation <https://wiki.openstack.org/wiki/Murano#Documentation>`_
-
 .. topic:: Murano environment with IIS service deployment
 
   The test verifies that the Murano service can create and deploy the IIS service.
@@ -387,27 +376,6 @@ Platform Tests Details
   6. Checking environment status.
   7. Checking deployments status
   8. Send request to delete environment.
-
-  For more infromation, see:
-  `Murano documentation <https://wiki.openstack.org/wiki/Murano#Documentation>`_
-
-.. topic:: Murano environment with IIS Servers Farm service deployment
-
-  The test verifies that the Murano service can create and deploy the IIS Servers Farm service.
-
-  Target component: Murano
-
-  Scenario:
-
-  1. Check Windows Server 2012 image in glance.
-  2. Check that Key Pair 'murano-lb-key' exists.
-  3. Send request to create environment.
-  4. Send request to create session for environment.
-  5. Send request to create service IIS farm.
-  6. Request to deploy session.
-  7. Checking environment status.
-  8. Checking deployments status
-  9. Send request to delete environment.
 
   For more infromation, see:
   `Murano documentation <https://wiki.openstack.org/wiki/Murano#Documentation>`_
@@ -453,6 +421,67 @@ Platform Tests Details
   11. Checking environment status.
   12. Checking deployments status.
   13. Send request to delete environment.
+
+  For more infromation, see:
+  `Murano documentation <https://wiki.openstack.org/wiki/Murano#Documentation>`
+
+.. topic:: Murano environment with Demo service deployment
+
+  The test verifies that the Murano service can create and deploy the Demo service.
+
+  Target component: Murano                                                      
+                                                                                  
+  Scenario:
+
+  1. Check image for Demo service in glance.                                 
+  2. Send request to create environment.
+  3. Send request to create session for environment.
+  4. Send request to create service Demo.
+  5. Request to deploy session.
+  6. Checking environment status.
+  7. Checking deployments status.
+  8. Send request to delete environment.
+
+  For more infromation, see:
+  `Murano documentation <https://wiki.openstack.org/wiki/Murano#Documentation>`
+
+.. topic:: Murano environment with Linux Telnet service deployment
+
+  The test verifies that the Murano service can create and deploy the Linux Telnet service.
+
+  Target component: Murano
+
+  Scenario:
+
+  1. Check image for Linux Telnet service in glance.
+  2. Send request to create environment.
+  3. Send request to create session for environment.
+  4. Send request to create service Linux Telnet.
+  5. Request to deploy session.
+  6. Checking environment status.
+  7. Checking deployments status.
+  8. Send request to delete environment.
+
+  For more infromation, see:
+  `Murano documentation <https://wiki.openstack.org/wiki/Murano#Documentation>`
+
+.. topic:: Murano environment with Linux Apache service deployment
+
+  The test verifies that the Murano service can create and deploy the Linux Apache service.
+
+  Target component: Murano
+
+  Scenario:
+
+  1. Check image for Linux Apache service in glance.
+  2. Send request to create environment.
+  3. Send request to create session for environment.
+  4. Send request to create service Linux Apache.
+  5. Request to deploy session.
+  6. Checking environment status.
+  7. Checking deployments status.
+  8. Send request to delete environment.
+
 
   For more infromation, see:
   `Murano documentation <https://wiki.openstack.org/wiki/Murano#Documentation>`_
