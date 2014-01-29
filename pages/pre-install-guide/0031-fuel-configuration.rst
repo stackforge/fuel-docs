@@ -52,9 +52,12 @@ complete to plan the Mirantis OpenStack deployment.
 |    | switches.                  |                                           |
 +----+----------------------------+-------------------------------------------+
 | 8  | Connect the Fuel and node  | For more information, see the instructions|
-|    | servers' IPMI cards to the | for your hardware.                        |
-|    | out of band management     |                                           |
-|    | network.                   |                                           |
+|    | servers' IPMI cards to the | for your hardware. Note: Later, you can   |
+|    | out of band management     | use your IPMI/APC/PDU devices in HA       |
+|    | network. If you have any   | deployments to configure STONITH based    |
+|    | APC/PDU devices, make sure | fencing policy for controller nodes.      |
+|    | you have plugged your nodes|                                           |
+|    | into its power outlets.    |                                           |
 +----+----------------------------+-------------------------------------------+
 | 9  | Configure access to the    | For more information, see the IPMI        |
 |    | node servers through IPMI  | instructions for your hardware.           |
@@ -158,14 +161,20 @@ including networking, storage, and optional parameters.
 |    | logging, and other         |                                           |
 |    | OpenStack options.         |                                           |
 +----+----------------------------+-------------------------------------------+
-| 15 | Click the **Deploy**       | Mirantis OpenStack deployment may take    |
+| 15 | (Optional) For HA mode,    | You may also configure the types of       |
+|    | configure fencing policy   | fence devices to use with your            |
+|    | and settings in the        | hardware, such as APC or PDU devices for  |
+|    | **Fencing** tab            | power management as well as IPMI devices  |
+|    |                            | for remote management.                    |
++----+----------------------------+-------------------------------------------+
+| 16 | Click the **Deploy**       | Mirantis OpenStack deployment may take    |
 |    | **Changes** button.        | 15-60 minutes, depending on your the      |
 |    |                            | selected options. You can monitor status  |
 |    |                            | by opening the **Nodes** tab or by        |
 |    |                            | checking individual node logs in the Logs |
 |    |                            | tab.                                      |
 +----+----------------------------+-------------------------------------------+
-| 16 | Once deployed, run the     | You can run the test groups in parallel or|
+| 17 | Once deployed, run the     | You can run the test groups in parallel or|
 |    | tests in the **Health**    | one at a time.                            |
 |    | **Check** tab to confirm   |                                           |
 |    | success.                   |                                           |
