@@ -82,6 +82,10 @@ running Ceph Monitor service to `form a quorum
 and enough Ceph OSD nodes to satisfy the `object replication factor
 <http://ceph.com/docs/master/rados/operations/pools/>`_.
 
+note:: Plan Ceph OSD and MON roles for your deployment carefully, make sure
+both roles will not reside on the same controller nodes, in
+case you have enabled the fencing policy.
+
 .. _Ceph: http://ceph.com/docs/master/architecture/
 
 .. image:: /_images/ceph_nodes.*
@@ -112,3 +116,16 @@ Ceph, Cinder LVM doesn't implement data redundancy across nodes: if a
 Cinder node is lost, volumes stored on that node cannot be recovered
 from the data stored on other Cinder nodes. If you need your block
 storage to be resilient, use Ceph for volumes.
+
+Configuring Fencing/STONITH
+---------------------------
+
+It is recommended to use fencing for your controller nodes.
+Generally, STONITH based fencing is used to shoot the failed nodes down.
+There are three options you may chose to configure the fencing policy
+for your HA deployment: disabled (default), reboot and power off.
+Reboot policy will force the failed controllers to reboot, and power off
+will make them to shut down.
+
+note:: You should use IPMI devices **and** APC/PDU devices as well to
+ensure the fencing will be truly reliable.
