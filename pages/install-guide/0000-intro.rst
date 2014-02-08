@@ -135,6 +135,8 @@ Supported Software
 
 * **Ceph Dumpling** (v0.67)
 
+* **mySQL** (v5.5.28)
+
 Fuel Installation Procedures
 ----------------------------
 You must complete the following tasks to use Fuel to deploy OpenStack
