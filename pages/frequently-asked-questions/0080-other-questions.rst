@@ -28,3 +28,50 @@ Other Questions
    turn, reference these packages) corresponding to each release. With EPEL 
    this would not be possible, as that repository only keeps the latest version
    for OpenStack packages.
+
+2. **[Q]** Is MySQL with Galera an active/active HA? Does it support
+   multi-master writes? A simple workflow example would helpful.
+
+   **[A]** Yes, MySQL+Galera is a true multi-master solution. Although it is
+   possible to run MySQL+Galera in a true multi-master topology, starting from
+   Fuel 3.0, we configure MySQL+Galera to have only a single node to receive writes,
+   and use the remaining cluster nodes as read-only slaves. It is important to note,
+   however, that unlike regular MySQL, these read-only slaves do not have "slave lag",
+   as Galera employs synchronous replication and ensures each cluster node is identical.
+   Previous Fuel versions used HAProxy as a MySQL managment solution.
+   Starting from 3.0 version Mirantis OpenStack uses Pacemaker and HAProxy
+   to manage MySQL+Galera. It provides the Virtual IP address (VIP) for MySQL backend
+   and multi-master writes are not used because Openstack configuration does not support
+   it and can only work with a single connection. HAProxy makes one of the nodes an 
+   'active' and the other nodes a 'backup' (there are no "slave lag", though).
+   There is no single master node in Galera cluster, though there are nodes with the most
+   recent data replica and nodes which still have to sync with this recent replica.
+   The Workflow is simple: One node tied to the VIP serves new data updates and
+   increases its UUID number. The rest of the Galera cluster must then synchronize the
+   data from the nodes with global transaction ID (GTID) greater than their current
+   value. If the status falls too far behind, an entire replica is distributed to any
+   nodes that fall too far behind the Galera cache.
+
+3. **[Q]** Is Ceph-MON on controllers an active/active HA?
+
+   **[A]** Yes, CEPH monitors also work in master-master mode. As soon as any of the
+   monitor nodes gets cluster map change request which is not an ordinary data store
+   request, it becomes a leader. I.e. the leader is the node which has the most
+   recent cluster map replica. Other monitor nodes must sync their cluster map with the
+   current leader. Every monitor node that has already synced with the leader becomes
+   a provider. The leader knows which nodes are currently providers. The leader also
+   tells the other nodes which provider to use for data exchange.
+   The CEPH monitor synchronization algorithm works in a similar way to Galera.
+   CEPH nodes can be either monitor nodes or data storage nodes. This is contrary to
+   Galera, which runs the same service set on each member.
+   (FYI there are voting and donor node roles in galera we don't use)
+   CEPH monitor nodes manage where the data should actually be stored and maintain
+   data consistency between data storage nodes that actually store the data.
+
+4. **[Q]** Is Neutron an active/standy HA? I got this understanding from the docs
+   and I want to understand why. I was told that Grizzly and Havanna support multiple
+   L3 agents but we don't support it in Fuel for some reason.
+
+   **[A]** Neutron partly functions as a network router. If one of the L3 agents fail,
+   it loses data about the VM instances that it manages traffic for. This has been
+   worked around to some extent, but still operates with a single L3 agent.
