@@ -9,13 +9,39 @@ Overview
 
 .. contents :local:
 
-Before you install any hardware or software, you must know what 
-you're trying to achieve. This section looks at the basic components of
-an OpenStack infrastructure and organizes them into one of the more
-common reference architectures. You'll then use that architecture as a
-basis for installing OpenStack in the next section.
+This document provides in-depth architectural information
+about the various OpenStack components, projects, and technologies
+that Fuel can deploy.
+This can help you understand the deployment options you have
+so you can choose the components that are most appropriate.
 
-As you know, OpenStack provides the following basic services:
+This material is organized into the following sections:
+
+**Deployment Architecture**
+  Fuel supports a number of different deployment models out of
+  the box, including:
+  
+  * **Virtualized mode** -- Mirantis OpenStack deployed in VMs
+    on a non-dedicated machine.
+    This is a relatively easy deployment that is appropriate
+    for evaluations and demos.
+    This mode does not provide either the robustness or the performance
+    that is required for a production system.
+  * **Multi-node** -- OpenStack features deployed on bare-metal hardware.
+    Either Mirantis OpenStack or Red Hat OpenStack can be deployed in this mode.
+    This deployment is appropriate for more in-depth demos and evaluations
+    and some functional unit testing.
+    It does not provide either the robustness
+    that is required for a production system;
+    performance levels are determined by the hardware used.
+  * **Multi-node with HA** -- Adds High-Availability features
+    such as failover to the Multi-node features.
+  * **Murano Cluster** -- A deployment that uses Microsoft Windows
+    as the operating system for OpenStack features.
+    Fuel can deploy a Dashboard, the Conductor orchestration engine,
+    and a Metadata Repository on top of a Murano deployment.
+  * **Hadoop Cluster** -- An OpenStack deployment appropriate
+    for running Hadoop.
 
 **Compute:**
   Compute servers are the workhorses of your installation; they're 
