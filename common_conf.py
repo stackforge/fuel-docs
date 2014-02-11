@@ -51,7 +51,7 @@ source_suffix = '.rst'
 
 # General information about the project.
 project = u'Mirantis OpenStack'
-copyright = u'2013, Mirantis Inc.'
+copyright = u'2014, Mirantis Inc.'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
