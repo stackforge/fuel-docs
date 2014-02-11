@@ -167,8 +167,8 @@ the standard JVM startup overhead.
 See the `Nailgun web page <http://www.martiansoftware.com/nailgun/>`_
 for more information.
 
-Neutron
--------
+Neutron (Quantum)
+-----------------
 OpenStack Core project to provide networking as a service
 between interface devices such as vNICS
 that are managed by other OpenStack services such as Nova.
@@ -179,6 +179,9 @@ Mirantis OpenStack includes Neutron;
 see `Neutron Deployment <http://docs.mirantis.com/fuel/fuel-4.0/pre-install-guide.html#neutron>`_
 for a description of the recommended network configuration parameters
 for using the Neutron service.
+
+RedHat OpenStack 3.0 does not support Neutron
+because the Red Hat kernel lacks GRE tunneling support for OpenVSwitch.
 
 NIC
 ---
