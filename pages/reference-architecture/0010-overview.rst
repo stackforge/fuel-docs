@@ -21,13 +21,13 @@ This material is organized into the following sections:
   Fuel supports a number of different deployment models out of
   the box, including:
   
-  * **Virtualized mode** -- Mirantis OpenStack deployed in VMs
+  * **Virtualized Multi-node mode** -- Mirantis OpenStack deployed in VMs
     on a non-dedicated machine.
     This is a relatively easy deployment that is appropriate
     for evaluations and demos.
     This mode does not provide either the robustness or the performance
     that is required for a production system.
-  * **Multi-node** -- OpenStack features deployed on bare-metal hardware.
+  * **Bare-metal Multi-node** -- OpenStack features deployed on bare-metal hardware.
     Either Mirantis OpenStack or Red Hat OpenStack can be deployed in this mode.
     This deployment is appropriate for more in-depth demos and evaluations
     and some functional unit testing.
@@ -35,7 +35,10 @@ This material is organized into the following sections:
     that is required for a production system;
     performance levels are determined by the hardware used.
   * **Multi-node with HA** -- Adds High-Availability features
-    such as failover to the Multi-node features.
+    such as failover to the Multi-node features
+    to create a production quality deployment.
+    Either Mirantis OpenStack or Red Hat OpenStack can be deployed in this mode
+    but some details are different fort the different distros.
   * **Murano Cluster** -- A deployment that uses Microsoft Windows
     as the operating system for OpenStack features.
     Fuel can deploy a Dashboard, the Conductor orchestration engine,
@@ -50,14 +53,15 @@ This material is organized into the following sections:
 
 **Networking:**
   Typically, an OpenStack environment includes multiple servers that
-  need to communicate to each other and to outside world. Fuel supports
-  both old `nova-network` and new `neutron` based OpenStack Networking
-  implementations:
+  need to communicate with each other and to outside world.
+  Fuel supports both old `nova-network` and new `neutron` based
+  OpenStack Networking implementations:
 
   * With `nova-network`, Flat-DHCP and VLAN modes are available.
 
   * With `neutron`, GRE tunnels or VLANs can be used for network
-    segmentation.
+    segmentation.  The Red Hat OpenStack Platform
+    does not currently support this option.
 
 **Storage:**
   OpenStack requires block and object storage to be provisioned. Fuel
@@ -71,12 +75,3 @@ This material is organized into the following sections:
 
   * Ceph combines object and block storage and can replace either one or
     both of the above.
-
-Compute, Networking, and Storage services can be combined in many
-different ways. Out of the box, Fuel supports the following deployment
-configurations:
-
-- :ref:`Multi-node <Multi-node>`
-- :ref:`Multi-node with HA <Multi-node_HA>`
-- :ref:`RHOS Multi-node <RHOS_Multi-node>`
-- :ref:`RHOS Multi-node with HA <RHOS_Multi-node_HA>`
