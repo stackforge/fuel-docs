@@ -10,6 +10,17 @@ Block Storage technology
 
 Ceilometer
 ----------
+Ceilometer collects measurements for monitoring and metering within OpenStack;
+the framework can be expanded to collect measurements for other needs.
+See `Ceilometer wicki` <https://wiki.openstack.org/wiki/Ceilometer>`_
+for more information.
+
+Mirantis OpenStack 4.0 and later includes a hardened package
+that integrates the Heat and Ceilometer projects.
+Fuel automatically deploys Heat into each environment;
+Fuel can optionally deploy Ceilometer on any supported environment.
+See `Ceilometer deployment notes` <http://docs.mirantis.com/fuel/fuel-4.0/user-guide.html#ceilometer-deployment-notes>`_
+for more information.
 
 Ceph
 ----
@@ -57,6 +68,11 @@ Mirantis OpenStack supports MySQL/Galeria for HA deployments;
 see `<http://docs.mirantis.com/fuel/fuel-4.0/frequently-asked-questions.html#other-questions>`_
 for more information.
 
+Red Hat OpenStack does not support Galera.
+Instead, it sets up native replication in a Master/Slave configuration.
+The MySQL master is elected using Corosync;
+master and slave status is managed using Pacemaker.
+
 Grizzly
 -------
 Code name for the seventh release of the OpenStack software.
@@ -78,6 +94,13 @@ Main project in the OpenStack Orchestration program.
 Heat uses a template that humans can read and write
 and that can be maintained under source code control.
 See the `Heat wiki <https://wiki.openstack.org/wiki/Heat>`_
+for more information.
+
+Mirantis OpenStack 4.0 and later includes a hardened package
+that integrates the Heat and Ceilometer projects.
+Fuel automatically deploys Heat into each environment;
+Fuel can optionally deploy Ceilometer on any supported environment.
+See `Heat Deployment Notes` <http://docs.mirantis.com/fuel/fuel-4.0/user-guide.html#heat-deployment-notes>`_
 for more information.
 
 Inktank
@@ -112,6 +135,8 @@ Mirantis OpenStack
 ------------------
 Hardened OpenStack distribution plus additional services
 for high availability deployed by Fuel.
+Fuel deploys Mirantis OpenStack with an operating system
+based on either the Ubuntu or CentOS Linux distro.
 
 mySQL
 ------
@@ -218,6 +243,35 @@ See the `Puppet web page <http://puppetlabs.com/solutions/cloud-automation/compu
 Fuel uses Puppet as the configuration management system
 that compiles a set of instructions
 for a configurable, reproducible, and sharable installation process.
+
+Red Hat OpenStack Distribution
+------------------------------
+Red Hat partners with Mirantis to offer
+an end-to-end supported distribution of OpenStack powered by Fuel.
+Fuel 4.0 supports Red Hat OpenStack 3.0 which is based on
+the OpenStack Grizzly features.
+
+The Red Hat OpenStack Distribution has the following notable differences
+from the Mirantis OpenStack Distribution:
+
+Database backend:
+   Supports a native replication in a Master/Slave configuration
+   instead of the MySQL with Galera that Mirantis OpenStack uses.
+   The MySQL master is elected with Corosync;
+   the master/slave status is managed with Pacemaker.
+
+Messaging backend:
+   Uses QPID instead of RabbitMQ.
+   Qpid is an AMQP provider that Red Hat offers
+   but cannot include in its distro.
+   Consequently, Fuel configures three non-clustered, independent QPID brokers.
+   Fuel also offers HA for the messaging backend
+   using virtual IP management provided by Corosync.
+
+Nova networking:
+   The Red Hat kernel lacks GRE tunneling support for OpenVSwitch
+   so Neutron (Quantum) is not available for Red Hat OpenStack.
+   Only Nova networking is currently supported for red Hat OpenStack.
 
 Security groups
 ---------------
