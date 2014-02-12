@@ -12,7 +12,7 @@ web-site <http://fuel.mirantis.com/redirect-page/>`_.
 
 .. note::  You must sign in to download the Fuel image.
 
-Fuel supports the following OpenStack releases:
+Fuel 4.1 supports the following OpenStack releases:
 
 * **Grizzly** 
 
@@ -22,10 +22,11 @@ an OpenStack nodes’ host OS, and the Mirantis OpenStack hardened packages.
 Fuel provides the following installation options: 
 
 * **ISO image**
-  For installation from CD media devices.
+  Used as a disk file for a Virtualized deployment
+  or burned to DVD media for a bare-metal installation.
 
 * **Raw sector file (IMG)**
-  For installation from flash media devices (USB).
+  For bare-metal installation from flash media devices (USB).
   Both installation images contain the installer for Fuel Master node.
 
 .. seealso:: `Downloads <http://fuel.mirantis.com/your-downloads/>`_  
