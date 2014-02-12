@@ -1,10 +1,6 @@
 Dictionary of terms used in this document
 =========================================
 
-Astute
-------
-Fuel orchestration tool?
-
 Block Storage technology
 ------------------------
 
@@ -43,10 +39,10 @@ For information about deploying Cinder in Mirantis OpenStack,
 see `<Storage Architecture <http://docs.mirantis.com/fuel/fuel-4.0/reference-architecture.html#storage-architecture>`_.
 
 Corosync
-------
+--------
 
 DevStack
-------
+--------
 An OpenStack package that can be installed and deployed on your laptop
 or inside a VM on a cloud or other machine for evaluation purposes.
 DevStack runs in emulation mode so does not give the same performance
@@ -54,8 +50,8 @@ as OpenStack running on dedicated hardware.
 See the `DevStack web page <http://devstack.org/>`_
 for installation instructions.
 
-fencing
-------
+Fencing
+-------
 Process of locking resources away from a node whose status is uncertain.
 Ceph supports fencing but you must ensure
 that no controllers host both the Ceph OSD and Ceph Mon rolls.
@@ -103,6 +99,16 @@ Fuel can optionally deploy Ceilometer on any supported environment.
 See `Heat Deployment Notes` <http://docs.mirantis.com/fuel/fuel-4.0/user-guide.html#heat-deployment-notes>`_
 for more information.
 
+Horizon
+-------
+abcde
+
+Hypervisor
+----------
+The Fuel UI supports KVM and QEMU.
+Additional hypervisors are available through
+`Mirantis Services <http://www.mirantis.com/openstack-services/>`_.
+
 Inktank
 -------
 Company that supports and promotes Ceph.
@@ -112,6 +118,10 @@ Ironic
 ------
 OpenStack project forked from the Nova project's Baremetal driver.
 See the `Ironic wiki page <https://wiki.openstack.org/wiki/Ironic>`_.
+
+L2 network
+----------
+A separate Layer 2 network (VLAN) as a single broadcast domain.
 
 Murano
 ------
@@ -140,10 +150,6 @@ Node server
 -----------
 A server that used as a node (Controller, Compute, or Storage)
 within an OpenStack environment.
-
-L2 network
-----------
-A separate Layer 2 network (VLAN) as a single broadcast domain.
 
 Mirantis OpenStack
 ------------------
@@ -261,6 +267,10 @@ Fuel uses Puppet as the configuration management system
 that compiles a set of instructions
 for a configurable, reproducible, and sharable installation process.
 
+QEMU
+----
+One of the hypervisors supported by the Fuel UI.
+
 Red Hat OpenStack Distribution
 ------------------------------
 Red Hat partners with Mirantis to offer
@@ -309,3 +319,4 @@ Spanning Tree Protocol
 Tagged port
 -----------
 802.1q frames from a switch to a server network card.
+
