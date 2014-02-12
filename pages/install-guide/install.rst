@@ -181,7 +181,8 @@ Next, create Slave nodes where OpenStack needs to be installed.
 .. image:: /_images/vbox-image1.jpg
   :align: center
 
-3. Configure the network adapter on each VM:
+3. Configure two or more network adapters on each VM (in order to use single network
+   adapter for each VM you should chose "Use VLAN Tagging" later in the Fuel UI):
 
 .. image:: /_images/vbox-image2.jpg
   :align: center
