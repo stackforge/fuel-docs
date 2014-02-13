@@ -5,7 +5,7 @@
 Prerequisites
 ===========================
 
-The amount of hardware depends on your deployment requirements. 
+The amount of hardware needed depends on your deployment requirements. 
 When you plan your OpenStack environment, consider the following:
 
 * **CPU**
