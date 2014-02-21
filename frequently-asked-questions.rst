@@ -11,7 +11,6 @@ F.A.Q
 
 .. Known Issues and Workarounds
 
-.. include:: /pages/frequently-asked-questions/0070-common-technical-issues.rst
 .. include:: /pages/frequently-asked-questions/0040-corosync-crashes.rst
 .. include:: /pages/frequently-asked-questions/0010-rabbitmq.rst
 .. include:: /pages/frequently-asked-questions/0090-ha-notes.rst
