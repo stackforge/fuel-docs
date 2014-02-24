@@ -14,3 +14,4 @@ Installation Guide
 .. include:: /pages/install-guide/0060-download-fuel.rst
 .. include:: /pages/install-guide/networks.rst
 .. include:: /pages/install-guide/install.rst
+.. include:: /pages/install-guide/stop_reset.rst
