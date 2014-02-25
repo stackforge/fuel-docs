@@ -1,4 +1,4 @@
-.. index:: Introduction
+10. index:: Introduction
 
 .. _Introduction:
 
@@ -103,7 +103,7 @@ Supported Software
 
 * **OpenStack Core Integrated Projects**
 
-  * Havana Release 2013.2.1
+  * Havana Release 2013.2.2
 
     * Ceilometer (OpenStack Telemetry)
     * Heat (OpenStack Orchestration)
@@ -111,7 +111,7 @@ Supported Software
 * **OpenStack Related Projects**
 
   * Savanna v0.3
-  * Murano v0.4
+  * Murano v0.4.1
 
 * **Hypervisor**
 
@@ -120,21 +120,21 @@ Supported Software
 
 * **Open vSwitch** 1.10.2 (CentOS), 1.10.1 (Ubuntu)
 
-* **HA Proxy** 1.4.19
+* **MySQL** (v5.5.28)
 
 * **Galera** 23.2.2
 
 * **RabbitMQ** 2.8.7
 
-* **Pacemaker** 1.1.8
+* **HA Proxy** 1.4.24
 
-* **Corosync** 1.4.3 (CentOS), 1.4.4 (Ubuntu)
+* **Pacemaker** 1.1.10
+
+* **Corosync** 1.4.6
 
 * **Keepalived** 1.2.4
 
-* **Ceph Dumpling** (v0.67)
-
-* **MySQL** (v5.5.28)
+* **Ceph** (v0.67.5 "Dumpling")
 
 Fuel Installation Procedures
 ----------------------------
