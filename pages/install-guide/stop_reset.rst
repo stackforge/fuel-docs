@@ -47,6 +47,11 @@ This is quite similar to resetting the environment (:ref:`Reset_Environment`).
       reboot all nodes, unlock all parameters and redeploy an environmtent
       from scratch to apply them again.
 
+**IMPORTANT NOTE:** at this moment deployment can't be interrupted during
+provisioning stage. This means, user can click "Stop deployment" while nodes
+are provisioning, but they will be rebooted back to bootstrap only when OS
+installation is complete.
+
 
 .. index:: Resetting an environment after deployment
 
