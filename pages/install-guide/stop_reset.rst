@@ -44,8 +44,13 @@ This is quite similar to resetting the environment (:ref:`Reset_Environment`).
       bootstrap and deployed ones will remain intact.
     * Settings will remain locked because they have been already applied to
       some nodes. You may reset the environment (:ref:`Reset_Environment`) to
-      reboot all nodes, unlock all parameters and redeploy an environmtent
+      reboot all nodes, unlock all parameters and redeploy an environment
       from scratch to apply them again.
+
+**IMPORTANT NOTE:** at this moment deployment can't be interrupted during
+provisioning stage. This means, user can click "Stop deployment" while nodes
+are provisioning, but they will be rebooted back to bootstrap only when OS
+installation is complete.
 
 
 .. index:: Resetting an environment after deployment
