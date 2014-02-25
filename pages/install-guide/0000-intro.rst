@@ -1,4 +1,4 @@
-.. index:: Introduction
+10. index:: Introduction
 
 .. _Introduction:
 
@@ -81,7 +81,6 @@ Supported Software
 * **Operating Systems**
 
   * CentOS 6.4 (x86_64 architecture only)
-  * RHEL 6.4 (x86_64 architecture only)
   * Ubuntu 12.04 (x86_64 architecture only)
 
 * **Puppet (IT automation tool)** 2.7.23
@@ -104,7 +103,7 @@ Supported Software
 
 * **OpenStack Core Integrated Projects**
 
-  * Havana Release 2013.2.1
+  * Havana Release 2013.2.2
 
     * Ceilometer (OpenStack Telemetry)
     * Heat (OpenStack Orchestration)
@@ -112,7 +111,7 @@ Supported Software
 * **OpenStack Related Projects**
 
   * Savanna v0.3
-  * Murano v0.4
+  * Murano v0.4.1
 
 * **Hypervisor**
 
@@ -121,21 +120,21 @@ Supported Software
 
 * **Open vSwitch** 1.10.2 (CentOS), 1.10.1 (Ubuntu)
 
+* **mySQL** (v5.5.28)
+
 * **HA Proxy** 1.4.19
 
 * **Galera** 23.2.2
 
 * **RabbitMQ** 2.8.7
 
-* **Pacemaker** 1.1.8
+* **Pacemaker** 1.1.10
 
-* **Corosync** 1.4.3 (CentOS), 1.4.4 (Ubuntu)
+* **Corosync** 1.4.6
 
 * **Keepalived** 1.2.4
 
-* **Ceph Dumpling** (v0.67)
-
-* **mySQL** (v5.5.28)
+* **Ceph Dumpling** (v0.67.5)
 
 Fuel Installation Procedures
 ----------------------------
