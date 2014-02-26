@@ -13,7 +13,7 @@
         .. cssclass:: footer-table
         
         +--------------------------+----------------------+
-        | ©2013, Mirantis Inc.     |   .. cssclass:: right|
+        | ©2014, Mirantis Inc.     |   .. cssclass:: right|
         |                          |                      |
         | All rights reserved.     |      Page ###Page### |
         +--------------------------+----------------------+
