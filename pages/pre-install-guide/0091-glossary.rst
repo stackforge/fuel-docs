@@ -9,7 +9,7 @@ See the `Ceilometer wiki <https://wiki.openstack.org/wiki/Ceilometer>`_
 for more information.
 
 Fuel can optionally deploy Ceilometer on any supported environment.
-See `Ceilometer deployment notes <http://docs.mirantis.com/fuel/fuel-4.0/user-guide.html#ceilometer-deployment-notes>`_
+See `Ceilometer deployment notes <http://docs.mirantis.com/fuel/fuel-4.1/user-guide.html#ceilometer-deployment-notes>`_
 for more information.
 
 Ceph
@@ -22,7 +22,7 @@ Ceph is supported and promoted by
 `Inktank <http://www.inktank.com>`_.
 
 For information about deploying Ceph in Mirantis OpenStack,
-see `Storage Architecture <http://docs.mirantis.com/fuel/fuel-4.0/reference-architecture.html#storage-architecture>`_.
+see `Storage Architecture <http://docs.mirantis.com/fuel/fuel-4.1/reference-architecture.html#storage-architecture>`_.
 
 Cinder
 ------
@@ -36,7 +36,7 @@ Cinder can be deployed on its own OpenStack storage node
 (often called a "Cinder node")
 or can share a Controller node.
 For information about deploying Cinder in Mirantis OpenStack,
-see `Storage Architecture <http://docs.mirantis.com/fuel/fuel-4.0/reference-architecture.html#storage-architecture>`_.
+see `Storage Architecture <http://docs.mirantis.com/fuel/fuel-4.1/reference-architecture.html#storage-architecture>`_.
 
 Corosync
 --------
@@ -50,7 +50,7 @@ and how they are related, see
 
 Mirantis OpenStack uses Corosync with the Pacemaker cluster resource manager
 as the communication and quorum service; see
-`How HA with Pacemaker and Corosync Works <http://docs.mirantis.com/fuel/fuel-4.0/frequently-asked-questions.html#how-ha-with-pacemaker-and-corosync-works>`_
+`How HA with Pacemaker and Corosync Works <http://docs.mirantis.com/fuel/fuel-4.1/frequently-asked-questions.html#how-ha-with-pacemaker-and-corosync-works>`_
 for technical details about this implementation;
 the preceeding section of that documentation tells how to recover
 when Corosync's networking protocol (Totem) times out.
@@ -91,7 +91,7 @@ Galera Cluster for MySQL
 Galera is a synchronous multi-master cluster
 for the MySQL database.
 Mirantis OpenStack uses MySQL/Galeria for HA deployments;
-see the `FAQ <http://docs.mirantis.com/fuel/fuel-4.0/frequently-asked-questions.html#other-questions>`_
+see the `FAQ <http://docs.mirantis.com/fuel/fuel-4.1/frequently-asked-questions.html#other-questions>`_
 for more information.
 
 Red Hat OpenStack does not support Galera.
@@ -104,7 +104,7 @@ Grizzly
 Code name for the seventh release of the OpenStack software.
 For more information, see the
 `Grizzly web site <http://www.openstack.org/software/grizzly/>`_.
-Fuel 4.0 supports deployment of The RHEL OpenStack distribution
+Fuel 4.1 supports deployment of The RHEL OpenStack distribution
 that is based on the Grizzly code base.
 
 Havana
@@ -135,10 +135,10 @@ and that can be maintained under source code control.
 See the `Heat wiki <https://wiki.openstack.org/wiki/Heat>`_
 for more information.
 
-Mirantis OpenStack 4.0 and later includes
+Mirantis OpenStack 4.0 and later
 integrates the Heat project.
 Fuel automatically deploys Heat into each environment.
-See `Heat Deployment Notes <http://docs.mirantis.com/fuel/fuel-4.0/user-guide.html#heat-deployment-notes>`_
+See `Heat Deployment Notes <http://docs.mirantis.com/fuel/fuel-4.1/user-guide.html#heat-deployment-notes>`_
 for more information.
 
 Hypervisor
@@ -176,7 +176,7 @@ Fuel can deploy a Dashboard, the Murano API,
 the Conductor orchestration engine, and a Metadata Repository
 on top of the Windows components that the customer
 installs and deploys natively without using Fuel.
-See `Murano Deployment Notes <http://docs.mirantis.com/fuel/fuel-4.0/user-guide.html#murano-deployment-notes>`_
+See `Murano Deployment Notes <http://docs.mirantis.com/fuel/fuel-4.1/user-guide.html#murano-deployment-notes>`_
 for more information about deploying Murano with Fuel.
 
 MySQL
@@ -218,7 +218,7 @@ See the `Neutron web page <https://wiki.openstack.org/wiki/Neutron>`_
 for more information.
 
 Mirantis OpenStack includes Neutron;
-see `Neutron Deployment <http://docs.mirantis.com/fuel/fuel-4.0/pre-install-guide.html#neutron>`_
+see `Neutron Deployment <http://docs.mirantis.com/fuel/fuel-4.1/pre-install-guide.html#neutron>`_
 for a description of the recommended network configuration parameters
 for using the Neutron service.
 
@@ -238,26 +238,26 @@ The following documents provide information:
 
 * For a list of the types of networks used in OpenStack
   (Public, Storage, Administrative, and so forth), see
-  `Network Configuration Options <http://docs.mirantis.com/fuel/fuel-4.0/pre-install-guide.html#network-configuration-options>`_
+  `Network Configuration Options <http://docs.mirantis.com/fuel/fuel-4.1/pre-install-guide.html#network-configuration-options>`_
 
 * For diagrams, detailed discussions, and instructions for deploying
   the different networking models, see
-  `Network Deployment Models <http://docs.mirantis.com/fuel/fuel-4.0/pre-install-guide.html#network-deployment-models>`_,
-  `Understanding and Configuring the Network <http://docs.mirantis.com/fuel/fuel-4.0/install-guide.html#understanding-and-configuring-the-network>`_, and
-  `Fuel Deployment Schema <http://docs.mirantis.com/fuel/fuel-4.0/install-guide.html#fuel-deployment-schema>`_
+  `Network Deployment Models <http://docs.mirantis.com/fuel/fuel-4.1/pre-install-guide.html#network-deployment-models>`_,
+  `Understanding and Configuring the Network <http://docs.mirantis.com/fuel/fuel-4.1/install-guide.html#understanding-and-configuring-the-network>`_, and
+  `Fuel Deployment Schema <http://docs.mirantis.com/fuel/fuel-4.1/install-guide.html#fuel-deployment-schema>`_
 
 * For information about calculating the hardware required for your deployment, see
-  `Calculating Network <http://docs.mirantis.com/fuel/fuel-4.0/install-guide.html#calculating-network>`_.
+  `Calculating Network <http://docs.mirantis.com/fuel/fuel-4.1/install-guide.html#calculating-network>`_.
 
-* `Installing Fuel Master Node <http://docs.mirantis.com/fuel/fuel-4.0/install-guide.html#installing-fuel-master-node>`_
+* `Installing Fuel Master Node <http://docs.mirantis.com/fuel/fuel-4.1/install-guide.html#installing-fuel-master-node>`_
   includes instructions for changing network parameters
   during and after installation.
 
-* `Advanced Network Configuration Using VSwitch <http://docs.mirantis.com/fuel/fuel-4.0/reference-architecture.html#advanced-network-configuration-using-open-vswitch>`_
+* `Advanced Network Configuration Using VSwitch <http://docs.mirantis.com/fuel/fuel-4.1/reference-architecture.html#advanced-network-configuration-using-open-vswitch>`_
   describes Open VSwitch and includes instructions for adjusting the network configuration
   by editing configuration files and using the command-line tools.
 
-* `Network Architecture <http://docs.mirantis.com/fuel/fuel-4.0/reference-architecture.html#network-architecture>`_
+* `Network Architecture <http://docs.mirantis.com/fuel/fuel-4.1/reference-architecture.html#network-architecture>`_
 
 Node
 -----------
@@ -277,7 +277,7 @@ for more information.
 Mirantis OpenStack includes the Nova-network deployment model
 which offers the FlatDHCPManager and VLAN Manager options
 for deploying private networks for tenants;
-see `Nova-network Deployment Model <http://docs.mirantis.com/fuel/fuel-4.0/pre-install-guide.html#nova-network>`_
+see `Nova-network Deployment Model <http://docs.mirantis.com/fuel/fuel-4.1/pre-install-guide.html#nova-network>`_
 for more information about using Nova-network in Mirantis OpenStack.
 
 The Baremetal driver used for provisioning in Nova
@@ -321,7 +321,7 @@ to create a felxible network setup and to isolate tenants from each other on L2 
 You can do some basic configuration of OVS on the Fuel UI beginning with Fuel 4.1;
 additional customization can be done
 by editing configuration files and using the command-line tools; see
-`Advanced Network Configuration Using VSwitch <http://docs.mirantis.com/fuel/fuel-4.0/reference-architecture.html#advanced-network-configuration-using-open-vswitch>`_.
+`Advanced Network Configuration Using VSwitch <http://docs.mirantis.com/fuel/fuel-4.1/reference-architecture.html#advanced-network-configuration-using-open-vswitch>`_.
 
 Pacemaker
 ---------
@@ -348,14 +348,14 @@ See the `Puppet web page <http://puppetlabs.com/solutions/cloud-automation/compu
 Fuel uses Puppet as the configuration management system
 that compiles a set of instructions
 for a configurable, reproducible, and sharable installation process.
-In Fuel 4.0 and later, the Puppet modules and manifests are synchronized
+In Fuel 4.1 and later, the Puppet modules and manifests are synchronized
 between the master nodes and the managed nodes, then applied locally.
 This solves the security signing, scalability, and performance issues
 encountered on earlier releases where the Puppet Master Node ran on the Fuel Node Master.
 
 Passing custom attributes can be helpful when you have some Puppet manifests that should be run
 but are not supported by Fuel itself.  see
-`Passing Custom Attributes from Fuel to Puppet <http://docs.mirantis.com/fuel/fuel-4.0/user-guide.html#passing-custom-attributes-from-fuel-to-puppet>`_.
+`Passing Custom Attributes from Fuel to Puppet <http://docs.mirantis.com/fuel/fuel-4.1/user-guide.html#passing-custom-attributes-from-fuel-to-puppet>`_.
 
 QEMU
 ----
@@ -365,7 +365,7 @@ Red Hat OpenStack Distribution
 ------------------------------
 Red Hat partners with Mirantis to offer
 an end-to-end supported distribution of OpenStack powered by Fuel.
-Fuel 4.0 supports Red Hat OpenStack 3.0 which is based on
+Fuel 4.1 supports Red Hat OpenStack 3.0 which is based on
 the OpenStack Grizzly features.
 
 The Red Hat OpenStack Distribution has the following notable differences

@@ -42,8 +42,8 @@ users.
 Installation
 ------------
 
-When using Fuel 4.0, Heat is now installed by default if you deploy
-a CentOS or Ubuntu environment.
+When using Fuel 4.1, Heat is installed by default
+when you deploy a CentOS or Ubuntu environment.
 
 Notes
 -----

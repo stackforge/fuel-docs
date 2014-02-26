@@ -30,14 +30,15 @@ Notes
 
 Ceilometer collects a number of metering data and performs a high volume of database writes.
 It could be up to 13000 writes per hour for only 400 resources inside the cloud.
-Currently in Fuel 4.0i, Ceilometer uses only common MySQL database, thus we do not recommend
+In Fuel 4.x, Ceilometer uses only the common MySQL database, thus we do not recommend
 to deploy standard Ceilometer for large production installations.
 
-Also please note that Notification bus support for Ceilometer is not a part of 4.0 release,
-due to a number of issues with MySQl backend [1]_ [2]_.
+Also please note that Notification bus support for Ceilometer
+is not a part of 4.0 release
+because of a number of issues with the MySQl backend [1]_ [2]_.
 Implementation is planned in 4.1.
 
-Horizon Metering Panel disabled in 4.0. This panel requires the *metadata_query*.
+Horizon Metering Panel disabled in 4.x. This panel requires the *metadata_query*.
 Ceilometer feature that is not supported by Ceilometer with MySQL driver [3]_.
 A significant portion of the Metering panel is removed in the Havana release because
 this part displays inconsistent data. [4]_.
