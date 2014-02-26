@@ -135,7 +135,7 @@ Supported Software
 
 * **Ceph Dumpling** (v0.67)
 
-* **mySQL** (v5.5.28)
+* **MySQL** (v5.5.28)
 
 Fuel Installation Procedures
 ----------------------------

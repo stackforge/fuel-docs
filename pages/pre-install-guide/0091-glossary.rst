@@ -323,6 +323,12 @@ additional customization can be done
 by editing configuration files and using the command-line tools; see
 `Advanced Network Configuration Using VSwitch <http://docs.mirantis.com/fuel/fuel-4.0/reference-architecture.html#advanced-network-configuration-using-open-vswitch>`_.
 
+Bonding is supported in two modes:
+Balance SLB (Source Level Bonding);
+or Balance TCP with LACP
+(Link Aggregation Control Protocol).
+The Fuel UI prevents you from configuring Bonding TCP by itself, without LACP.
+
 Pacemaker
 ---------
 Master control process for OpenStack High Availability deployments.
@@ -389,6 +395,10 @@ Nova networking:
    Only Nova networking is currently supported for Red Hat OpenStack.
    The Red Hat kernel lacks GRE tunneling support for OpenVSwitch
    so Neutron (Quantum) is not available for Red Hat OpenStack.
+
+Support for the Red Hat OpenStack Distribution
+was temporarily removed from Fuel 4.1 because of an incompatibility problem;
+see `LP128307 <https://bugs.launchpad.net/fuel/+bug/1283072>`_.
 
 Security groups
 ---------------
