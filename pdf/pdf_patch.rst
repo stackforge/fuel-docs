@@ -4,7 +4,7 @@
   .. cssclass:: header-table
 
   +-------------------------------------+-----------------------------------+
-  | Mirantis OpenStack v4.0             |                .. cssclass:: right|
+  | Mirantis OpenStack v4.1             |                .. cssclass:: right|
   |                                     |                                   |
   | OpenStack Patching Quick Reference  |                    ###Section###  |
   +-------------------------------------+-----------------------------------+
