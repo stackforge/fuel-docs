@@ -3,7 +3,7 @@
         .. cssclass:: header-table
         
         +-------------------------------------+-----------------------------------+
-        | Mirantis OpenStack v4.0             |                .. cssclass:: right|
+        | Mirantis OpenStack v4.1             |                .. cssclass:: right|
         |                                     |                                   |
         |                                     |                     Release Notes |
         +-------------------------------------+-----------------------------------+
@@ -22,5 +22,5 @@
 
    PageBreak oneColumn
 
-.. include:: /pages/release-notes/v4-0-havana-full.rst
+.. include:: /pages/release-notes/v4-1-havana-full.rst
 
