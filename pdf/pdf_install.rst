@@ -4,7 +4,7 @@
   .. cssclass:: header-table
   
   +-------------------------------------+-----------------------------------+
-  | Mirantis OpenStack v4.0             |                .. cssclass:: right|
+  | Mirantis OpenStack v4.1             |                .. cssclass:: right|
   |                                     |                                   |
   | Installation Guide                  |                    ###Section###  |
   +-------------------------------------+-----------------------------------+
@@ -16,7 +16,7 @@
   +--------------------------+----------------------+
   |                          |   .. cssclass:: right|
   |                          |                      |
-  | ©2013, Mirantis Inc.     |      Page ###Page### |
+  | ©2014, Mirantis Inc.     |      Page ###Page### |
   +--------------------------+----------------------+
 
 .. raw:: pdf
