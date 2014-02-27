@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   viewBox="0 0 500 275"
+   stroke-miterlimit="10"
+   id="svg2"
+   inkscape:version="0.48.4 r9939"
+   width="100%"
+   height="100%"
+   sodipodi:docname="deployment-simple-red-hat.svg"
+   style="fill:none;stroke:none">
+  <metadata
+     id="metadata85">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs83" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1855"
+     inkscape:window-height="1056"
+     id="namedview81"
+     showgrid="true"
+     inkscape:zoom="1.6164213"
+     inkscape:cx="272.41586"
+     inkscape:cy="89.09621"
+     inkscape:window-x="65"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2"
+     inkscape:snap-global="false">
+    <inkscape:grid
+       type="xygrid"
+       id="grid3062"
+       empspacing="5"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true" />
+  </sodipodi:namedview>
+  <clipPath
+     id="p.0">
+    <path
+       d="M 0,0 766,0 766,412 0,412 0,0 z"
+       clip-rule="nonzero"
+       id="path5"
+       inkscape:connector-curvature="0" />
+  </clipPath>
+  <path
+     style="fill:#f3f3f3;fill-rule:nonzero;stroke:#000000;stroke-width:3.10986853;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:18.65921116, 3.10986853;stroke-dashoffset:0"
+     inkscape:connector-curvature="0"
+     d="m 266.5966,162.8666 0,0 c 0,-7.03494 11.5873,-12.73789 25.88094,-12.73789 l 155.70964,0 c 6.86405,0 13.44696,1.34202 18.30059,3.73084 4.85362,2.38882 7.58035,5.62875 7.58035,9.00705 l 0,50.94999 c 0,7.03493 -11.58731,12.73788 -25.88094,12.73788 l -155.70964,0 0,0 c -14.29364,0 -25.88094,-5.70295 -25.88094,-12.73788 z"
+     id="path15-0-8-13" />
+  <path
+     style="fill:#f3f3f3;fill-rule:nonzero;stroke:#000000;stroke-width:3.32760596;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     inkscape:connector-curvature="0"
+     d="m 270.89967,49.016718 0,0 c 0,-8.061987 11.57656,-14.597527 25.85698,-14.597527 l 155.56547,0 c 6.8577,0 13.43452,1.537957 18.28364,4.275521 4.84913,2.737557 7.57333,6.450504 7.57333,10.322006 l 0,58.388352 c 0,8.06196 -11.57657,14.59752 -25.85697,14.59752 l -155.56547,0 0,0 c -14.28042,0 -25.85698,-6.53556 -25.85698,-14.59752 z"
+     id="path15-0-1" />
+  <path
+     style="fill:#000000;fill-opacity:0;fill-rule:nonzero"
+     inkscape:connector-curvature="0"
+     d="m 9.9820862,53.67712 766.8714038,0 0,412.93176 -766.8714038,0 z"
+     id="path9" />
+  <path
+     style="fill:#f3f3f3;fill-rule:nonzero;stroke:#000000;stroke-width:5.39785433;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     inkscape:connector-curvature="0"
+     d="m 22.573748,58.526806 0,0 c 0,-21.430619 11.459509,-38.803567 25.595526,-38.803567 l 153.992456,0 c 6.78836,0 13.29869,4.088227 18.09878,11.365308 4.80008,7.277072 7.49676,17.146915 7.49676,27.438259 l 0,155.209584 c 0,21.43058 -11.45954,38.80356 -25.59554,38.80356 l -153.992456,0 0,0 c -14.136017,0 -25.595526,-17.37298 -25.595526,-38.80356 z"
+     id="path15" />
+  <path
+     style="fill:#fce5cd;fill-rule:nonzero;stroke:#000000;stroke-width:2.56397367;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     inkscape:connector-curvature="0"
+     d="m 54.818218,58.180903 0,0 c 0,-2.47038 2.002643,-4.47302 4.473023,-4.47302 l 131.783139,0 c 1.18631,0 2.32406,0.47127 3.16291,1.31012 0.83885,0.83886 1.31012,1.97658 1.31012,3.1629 l 0,17.89156 c 0,2.47038 -2.00265,4.47303 -4.47303,4.47303 l -131.783139,0 0,0 c -2.47038,0 -4.473023,-2.00265 -4.473023,-4.47303 z"
+     id="path21" />
+  <text
+     xml:space="preserve"
+     style="font-size:16px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans Bold"
+     x="126.02146"
+     y="43.096409"
+     id="text3080"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan3082"
+       x="126.02146"
+       y="43.096409">Controller Node</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:13.67452526px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans"
+     x="124.86733"
+     y="71.912842"
+     id="text3114-52"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan3116-7"
+       x="124.86733"
+       y="71.912842">Nova (Controller)</tspan></text>
+  <path
+     style="fill:#fce5cd;fill-rule:nonzero;stroke:#000000;stroke-width:2.56397367;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     inkscape:connector-curvature="0"
+     d="m 53.252929,96.030163 0,0 c 0,-2.47038 2.002643,-4.47302 4.473023,-4.47302 l 131.783138,0 c 1.18631,0 2.32406,0.47126 3.16291,1.31012 0.83885,0.83885 1.31012,1.97658 1.31012,3.1629 l 0,17.891547 c 0,2.47039 -2.00265,4.47303 -4.47303,4.47303 l -131.783138,0 0,0 c -2.47038,0 -4.473023,-2.00264 -4.473023,-4.47303 z"
+     id="path21-8" />
+  <text
+     xml:space="preserve"
+     style="font-size:13.67452526px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans"
+     x="123.30204"
+     y="109.76212"
+     id="text3114-52-6"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan3116-7-3"
+       x="123.30204"
+       y="109.76212">Keystone</tspan></text>
+  <path
+     style="fill:#fce5cd;fill-rule:nonzero;stroke:#000000;stroke-width:2.56397367;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     inkscape:connector-curvature="0"
+     d="m 53.252929,133.62342 0,0 c 0,-2.47038 2.002643,-4.47302 4.473023,-4.47302 l 131.783138,0 c 1.18631,0 2.32406,0.47126 3.16291,1.31012 0.83885,0.83885 1.31012,1.97658 1.31012,3.1629 l 0,17.89155 c 0,2.47039 -2.00265,4.47303 -4.47303,4.47303 l -131.783138,0 0,0 c -2.47038,0 -4.473023,-2.00264 -4.473023,-4.47303 z"
+     id="path21-8-8" />
+  <text
+     xml:space="preserve"
+     style="font-size:13.67452526px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans"
+     x="123.30204"
+     y="147.35538"
+     id="text3114-52-6-2"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan3116-7-3-4"
+       x="123.30204"
+       y="147.35538">Glance</tspan></text>
+  <path
+     style="fill:#fce5cd;fill-rule:nonzero;stroke:#000000;stroke-width:2.56397367;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     inkscape:connector-curvature="0"
+     d="m 52.864978,172.55904 0,0 c 0,-2.47038 2.002643,-4.47302 4.473023,-4.47302 l 131.783139,0 c 1.18631,0 2.32406,0.47126 3.16291,1.31012 0.83885,0.83885 1.31012,1.97658 1.31012,3.1629 l 0,17.89155 c 0,2.47039 -2.00265,4.47303 -4.47303,4.47303 l -131.783139,0 0,0 c -2.47038,0 -4.473023,-2.00264 -4.473023,-4.47303 z"
+     id="path21-8-8-4" />
+  <text
+     xml:space="preserve"
+     style="font-size:13.67452526px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans"
+     x="122.9141"
+     y="186.29097"
+     id="text3114-52-6-2-1"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan3116-7-3-4-6"
+       x="122.9141"
+       y="186.29097">Cinder</tspan></text>
+  <path
+     style="fill:#fce5cd;fill-rule:nonzero;stroke:#000000;stroke-width:2.564;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+     inkscape:connector-curvature="0"
+     d="m 52.621503,212.40855 0,0 c 0,-2.47038 2.002643,-4.47302 4.473023,-4.47302 l 131.783134,0 c 1.18631,0 2.32406,0.47126 3.16291,1.31012 0.83885,0.83885 1.31012,1.97658 1.31012,3.1629 l 0,17.89155 c 0,2.47039 -2.00265,4.47303 -4.47303,4.47303 l -131.783134,0 0,0 c -2.47038,0 -4.473023,-2.00264 -4.473023,-4.47303 z"
+     id="path21-8-8-6" />
+  <text
+     xml:space="preserve"
+     style="font-size:13.67452526px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans"
+     x="122.67062"
+     y="226.14049"
+     id="text3114-52-6-2-4"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan3116-7-3-4-0"
+       x="122.67062"
+       y="226.14049">Swift</tspan></text>
+  <path
+     style="fill:#f3f3f3;fill-rule:nonzero;stroke:#000000;stroke-width:3.22296476;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     inkscape:connector-curvature="0"
+     d="m 256.30519,33.105739 0,0 c 0,-7.559113 11.5824,-13.686979 25.87002,-13.686979 l 155.64401,0 c 6.86116,0 13.4413,1.442018 18.29288,4.008831 4.85158,2.566796 7.57715,6.048134 7.57715,9.678148 l 0,54.746234 c 0,7.5591 -11.58241,13.686967 -25.87003,13.686967 l -155.64401,0 0,0 c -14.28762,0 -25.87002,-6.127867 -25.87002,-13.686967 z"
+     id="path15-0" />
+  <path
+     style="fill:#fce5cd;fill-rule:nonzero;stroke:#000000;stroke-width:2.56397367;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     inkscape:connector-curvature="0"
+     d="m 289.6371,58.963873 0,0 c 0,-2.47038 2.00264,-4.47303 4.47302,-4.47303 l 131.78315,0 c 1.18631,0 2.32406,0.47127 3.16291,1.31012 0.83885,0.83886 1.31012,1.97659 1.31012,3.16291 l 0,17.89155 c 0,2.47039 -2.00265,4.47303 -4.47303,4.47303 l -131.78315,0 0,0 c -2.47038,0 -4.47302,-2.00264 -4.47302,-4.47303 z"
+     id="path21-1" />
+  <text
+     xml:space="preserve"
+     style="font-size:16px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans Bold"
+     x="364.55222"
+     y="40.167469"
+     id="text3080-9"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan3082-0"
+       x="364.55222"
+       y="40.167469">Compute Node</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:13.67452526px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans"
+     x="359.68622"
+     y="72.695808"
+     id="text3114-52-8"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan3116-7-7"
+       x="359.68622"
+       y="72.695808">Nova (Compute)</tspan></text>
+  <path
+     style="fill:#f3f3f3;fill-rule:nonzero;stroke:#000000;stroke-width:3.10986853;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:18.65921116, 3.10986853;stroke-dashoffset:0"
+     inkscape:connector-curvature="0"
+     d="m 256.50488,153.02639 0,0 c 0,-7.03494 11.5873,-12.73789 25.88094,-12.73789 l 155.70964,0 c 6.86405,0 13.44696,1.34202 18.30059,3.73084 4.85362,2.38882 7.58035,5.62875 7.58035,9.00705 l 0,50.94999 c 0,7.03493 -11.58731,12.73788 -25.88094,12.73788 l -155.70964,0 0,0 c -14.29364,0 -25.88094,-5.70295 -25.88094,-12.73788 z"
+     id="path15-0-8" />
+  <path
+     style="fill:#fce5cd;fill-rule:nonzero;stroke:#000000;stroke-width:2.56397367;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     inkscape:connector-curvature="0"
+     d="m 289.89335,179.89015 0,0 c 0,-2.47038 2.00264,-4.47302 4.47302,-4.47302 l 131.78315,0 c 1.18631,0 2.32406,0.47127 3.16291,1.31012 0.83885,0.83886 1.31012,1.97659 1.31012,3.1629 l 0,17.89156 c 0,2.47039 -2.00265,4.47303 -4.47303,4.47303 l -131.78315,0 0,0 c -2.47038,0 -4.47302,-2.00264 -4.47302,-4.47303 z"
+     id="path21-1-9" />
+  <text
+     xml:space="preserve"
+     style="font-size:16px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans Bold"
+     x="364.80847"
+     y="161.09377"
+     id="text3080-9-8"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan3082-0-1"
+       x="364.80847"
+       y="161.09377">Cinder Node</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:13.67452526px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans"
+     x="359.94247"
+     y="193.62209"
+     id="text3114-52-8-2"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan3116-7-7-4"
+       x="359.94247"
+       y="193.62209">Cinder Volume</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+     x="463.36929"
+     y="-34.325302"
+     id="text4477"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan4479"
+       x="463.36929"
+       y="-34.325302" /></text>
+</svg>

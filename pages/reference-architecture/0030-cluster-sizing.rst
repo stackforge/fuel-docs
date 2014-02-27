@@ -19,24 +19,20 @@ deployment is to allocate 4 nodes:
 
 - 1 compute node
 
-.. image:: /_images/deployment-ha-compact.*
-  :width: 80%
-  :align: center
-
-If you want to run storage separately from the controllers, you can do that as 
-well by raising the bar to 9 nodes:
+If you want to run storage separately from the controllers, you can do
+that as well by raising the bar to 9 nodes:
 
 - 3 Controller nodes
 
-- 3 Storage nodes
+- 3 Ceph OSD nodes
 
-- 2 Swift Proxy nodes
+- 1 Cinder node
 
 - 1 Compute node
 
-.. image:: /_images/deployment-ha-full.*
-  :width: 80%
-  :align: center
+.. note:: Placing Ceph OSD on Controllers is highly unadvisable.
+          It can severely degrade controller prefarmance.
+          Use separate storage nodes if you have enough hardware.
 
 Of course, you are free to choose how to deploy OpenStack based on the
 amount of available hardware and on your goals (such as whether you

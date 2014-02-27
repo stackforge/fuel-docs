@@ -17,5 +17,5 @@ nodes:
   :width: 80%
   :align: center
 
-We'll take a closer look at the details of this deployment configuration in 
+We'll take a closer look at the details of this deployment configuration in
 :ref:`Close_look_Multi-node_HA` section.
