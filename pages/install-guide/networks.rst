@@ -128,14 +128,14 @@ Fuel operates with following logical networks:
   Public network; in this case it's VLAN 101);
 
 **Management** network 
-  Is used for internal OpenStack communications (VLAN 102 on the scheme);
+  Is used for internal OpenStack communications (VLAN 100 on the scheme);
   
 **Storage** network 
-  Is used for Storage traffic (VLAN 103 on the scheme);
+  Is used for Storage traffic (VLAN 102 on the scheme);
 
 **Fixed** network
   One (for flat mode) or more (for VLAN mode) virtual machines 
-  networks (VLAN 104 on the scheme).
+  networks (VLANs 103-200 on the scheme).
 
 Mapping logical networks to physical interfaces on servers
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
