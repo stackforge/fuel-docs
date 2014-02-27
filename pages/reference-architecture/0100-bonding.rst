@@ -243,6 +243,73 @@ Here is an example of "network_scheme" section in the node configuration:
       'bridges': ['br-bond0', 'br-prv']
 
 
+NIC Aggregation in UI
+---------------------
+
+All configuration of interfaces bonding is done using "Configure Interfaces" tab.
+
+1. Select node(s) and click "Configure Interfaces".
+
+.. image:: /_images/bonding-setup-in-ui-1.*
+  :width: 50%
+  :align: center
+
+2. Select interfaces to be aggregated. All interfaces except Admin-PXE can be aggregated.
+
+.. image:: /_images/bonding-setup-in-ui-2.*
+  :width: 50%
+  :align: center
+
+3. Click "Bond interfaces".
+
+.. image:: /_images/bonding-setup-in-ui-3.*
+  :width: 50%
+  :align: center
+
+Now you can select appropriate bonding mode from drop-down list "Mode".
+
+4. Reassign networks, create additional bonds, etc. You can do all required changes and
+   click "Apply" after that.
+
+.. image:: /_images/bonding-setup-in-ui-4.*
+  :width: 50%
+  :align: center
+
+.. image:: /_images/bonding-setup-in-ui-5.*
+  :width: 50%
+  :align: center
+
+5. You can add an interface(s) to bond. Select one bond and interface(s) to add
+   and click "Bond Interfaces".
+
+.. image:: /_images/bonding-setup-in-ui-6.*
+  :width: 50%
+  :align: center
+
+.. image:: /_images/bonding-setup-in-ui-7.*
+  :width: 50%
+  :align: center
+
+6. You can unbond interfaces or remove some inteface(s) from bond when bond has
+   3 or more slave interfaces. To unbond interfaces select bond and click "Unbond Interfaces".
+   To remove interface from bond click "Remove" at the left-bottom from interface icon.
+
+.. image:: /_images/bonding-setup-in-ui-8.*
+  :width: 50%
+  :align: center
+
+.. image:: /_images/bonding-setup-in-ui-9.*
+  :width: 50%
+  :align: center
+
+.. image:: /_images/bonding-setup-in-ui-a.*
+  :width: 50%
+  :align: center
+
+.. image:: /_images/bonding-setup-in-ui-b.*
+  :width: 50%
+  :align: center
+
 Assign Admin Network to the OVS Bridge
 --------------------------------------
 
