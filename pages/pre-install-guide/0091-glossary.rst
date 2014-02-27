@@ -94,19 +94,6 @@ Mirantis OpenStack uses MySQL/Galeria for HA deployments;
 see the `FAQ <http://docs.mirantis.com/fuel/fuel-4.0/frequently-asked-questions.html#other-questions>`_
 for more information.
 
-Red Hat OpenStack does not support Galera.
-Instead, it sets up native replication in a Master/Slave configuration.
-The MySQL master is elected using Corosync;
-master and slave status is managed using Pacemaker.
-
-Grizzly
--------
-Code name for the seventh release of the OpenStack software.
-For more information, see the
-`Grizzly web site <http://www.openstack.org/software/grizzly/>`_.
-Fuel 4.0 supports deployment of The RHEL OpenStack distribution
-that is based on the Grizzly code base.
-
 Havana
 ------
 Code name for the eighth release of the OpenStack software.
@@ -193,7 +180,6 @@ for MySQL.
 Mirantis OpenStack uses MySQL/Galera for database replication
 in HA deployments that use the CentOS or Ubuntu kernel;
 see `Preparing MySQL for Pacemaker high availability <http://docs.openstack.org/trunk/openstack-ops/content/security_groups.html>`_.
-Red Hat OpenStack does not use Galera.
 
 Native VLAN
 -----------
@@ -221,9 +207,6 @@ Mirantis OpenStack includes Neutron;
 see `Neutron Deployment <http://docs.mirantis.com/fuel/fuel-4.0/pre-install-guide.html#neutron>`_
 for a description of the recommended network configuration parameters
 for using the Neutron service.
-
-RedHat OpenStack 3.0 does not support Neutron
-because the Red Hat kernel lacks GRE tunneling support for OpenVSwitch.
 
 NIC (Network Interface Card)
 ----------------------------
@@ -311,8 +294,6 @@ a stable version of the open source pieces
 into an installable package that deploys an operating system
 based on either Ubuntu or CentOS.
 and adds Fuel to simplify the deployment and management tasks.
-Fuel can also manage the Red Hat OpenStack distribution
-that deploys the Red Hat Operating System on the OpenStack nodes.
 
 OVS (Open vSwitch)
 ------------------
@@ -360,35 +341,6 @@ but are not supported by Fuel itself.  see
 QEMU
 ----
 One of the hypervisors that can be selected from the Fuel UI.
-
-Red Hat OpenStack Distribution
-------------------------------
-Red Hat partners with Mirantis to offer
-an end-to-end supported distribution of OpenStack powered by Fuel.
-Fuel 4.0 supports Red Hat OpenStack 3.0 which is based on
-the OpenStack Grizzly features.
-
-The Red Hat OpenStack Distribution has the following notable differences
-from the Mirantis OpenStack Distribution:
-
-Database backend:
-   Supports a native replication in a Master/Slave configuration
-   instead of the Galera/MySQL that Mirantis OpenStack uses.
-   The MySQL master is elected with Corosync;
-   the master/slave status is managed with Pacemaker.
-
-Messaging backend:
-   Uses QPID instead of RabbitMQ.
-   QPID is an AMQP provider that Red Hat offers
-   but cannot include in its distro.
-   Consequently, Fuel configures three non-clustered, independent QPID brokers.
-   Fuel also offers HA for the messaging backend
-   using virtual IP management provided by Corosync.
-
-Nova networking:
-   Only Nova networking is currently supported for Red Hat OpenStack.
-   The Red Hat kernel lacks GRE tunneling support for OpenVSwitch
-   so Neutron (Quantum) is not available for Red Hat OpenStack.
 
 Security groups
 ---------------

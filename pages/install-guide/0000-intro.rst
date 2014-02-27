@@ -81,7 +81,6 @@ Supported Software
 * **Operating Systems**
 
   * CentOS 6.4 (x86_64 architecture only)
-  * RHEL 6.4 (x86_64 architecture only)
   * Ubuntu 12.04 (x86_64 architecture only)
 
 * **Puppet (IT automation tool)** 2.7.23
