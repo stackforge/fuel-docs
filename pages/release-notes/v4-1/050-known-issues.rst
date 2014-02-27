@@ -92,19 +92,6 @@ If multiple environments are deployed or if the environments are slow,
 some tests may fail due to timeouts.
 Reducing the load on the environment allows the tests to run successfully.
 
-The ability to deploy Red Hat Enterprise Linux OpenStack Platform has been temporarily disabled
------------------------------------------------------------------------------------------------
-
-Previous versions of Mirantis OpenStack had an option to deploy
-the Red Hat Enterprise Linux OpenStack Platform 3.0 product offering,
-which includes Red Hat OpenStack on Red Hat Enterprise Linux.
-Due to incompatibilities between versions
-and orchestration changes in Fuel required to deploy the latest version of OpenStack Havana,
-this capability has been temporarily disabled.
-It is expected that Mirantis will re-introduce this capability
-for a later version of the Red Hat Enterprise Linux OpenStack Platform
-in a future release of Mirantis OpenStack.
-
 VMs that have ephemeral volumes stored in Ceph backend must be migrated from the command line
 ---------------------------------------------------------------------------------------------
 

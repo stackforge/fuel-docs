@@ -96,8 +96,7 @@ including networking, storage, and optional parameters.
 | 3  | Choose a name for your     | If you install Mirantis OpenStack, you can|
 |    | environment and choose the | select Ubuntu Enterprise Linux or CentOS  |
 |    | Operating System and       | OpenStack.                                |
-|    | OpenStack distribution.    | If you install Red Hat OpenStack, select  |
-|    |                            | Red Hat Enterprise Linux.                 | 
+|    | OpenStack distribution.    |                                           |
 +----+----------------------------+-------------------------------------------+
 | 4  | Choose your Deployment     | High Availability mode requires at        |
 |    | Mode (Multi-node HA or non | least 3 nodes to be assigned as           |

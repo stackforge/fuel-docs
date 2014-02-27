@@ -21,7 +21,7 @@ Suggested minimum configuration for installation in production environment:
 
 -  Quad-core CPU
 -  4GB RAM
--  1 gigabit network port (2 required for Red Hat OpenStack)
+-  1 gigabit network port
 -  128GB SAS Disk
 -  IPMI access through independent management network
 
@@ -29,7 +29,7 @@ Suggested minimum configuration for installation in lab environment:
 
 -  Dual-core CPU
 -  2GB RAM
--  1 gigabit network port (2 required for Red Hat OpenStack)
+-  1 gigabit network port
 -  50GB disk
 -  Physical console access
 

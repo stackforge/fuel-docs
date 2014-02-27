@@ -13,7 +13,6 @@ Reference Architectures
 .. include:: /pages/reference-architecture/0012-simple.rst
 .. include:: /pages/reference-architecture/0014-compact.rst
 .. include:: /pages/reference-architecture/0015-closer-look.rst
-.. include:: /pages/reference-architecture/0018-red-hat-differences.rst
 .. include:: /pages/reference-architecture/0020-logical-setup.rst
 .. include:: /pages/reference-architecture/0030-cluster-sizing.rst
 .. include:: /pages/reference-architecture/0040-network-setup.rst

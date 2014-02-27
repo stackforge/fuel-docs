@@ -52,5 +52,3 @@ configurations:
 
 - :ref:`Multi-node <Multi-node>`
 - :ref:`Multi-node with HA <Multi-node_HA>`
-- :ref:`RHOS Multi-node <RHOS_Multi-node>`
-- :ref:`RHOS Multi-node with HA <RHOS_Multi-node_HA>`

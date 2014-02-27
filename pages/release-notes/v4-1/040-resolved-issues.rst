@@ -59,7 +59,7 @@ Ubuntu deployment no longer fails due to disk ordering
 After deploying Mirantis OpenStack on Ubuntu,
 a single disk device showed when listed by path no matter what was configured;
 disks iterated by ID produces a correct list.
-The problem did not occur on CentOS or Red Hat.
+The problem did not occur on CentOS.
 The logic used to identify disks during bootstrap has been updated
 so that the proper number of disk nodes of the specified sizes are deployed on Ubuntu.
 As  background, Fuel and Mirantis OpenStack use the CentOS bootstrap image for hardware discovery.
