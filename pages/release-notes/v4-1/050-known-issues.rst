@@ -117,6 +117,13 @@ which is not the case for Ceph RBD.
 Live migrations do not exhibit this behavior and work correctly with Ceph RBD.
 Because the Horizon Dashboard in Havana does not support live migrations, you must use the command line.
 
+Master node PXE deployment may not work properly
+------------------------------------------------
+
+In the 4.0 we have documented the new feature
+`Fuel Master Node Deployment over PXE <http://docs.mirantis.com/fuel-dev/develop/pxe_deployment.html>`
+to deploy master node without any media. Currently it may not work properly.
+
 Other limitations
 -----------------
 
