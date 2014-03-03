@@ -154,9 +154,8 @@ includes the suite of sanity tests implemented:
 * Check all the services execute normally
 * Check Internet connectivity from a compute
 * Check DNS resolution on a compute
-* Check Default Key Pair 'murano-lb-key' For Server Farms
-* Check Windows Image With Murano Tag
-* Murano environment and service creation, listing and deletion
+* Create and delete Murano environment
+* Savanna tests to create/list/delete node group and cluster templates
 * Networks availability
 
 Smoke Tests Description
