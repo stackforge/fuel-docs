@@ -154,8 +154,6 @@ includes the suite of sanity tests implemented:
 * Check all the services execute normally
 * Check Internet connectivity from a compute
 * Check DNS resolution on a compute
-* Check Default Key Pair 'murano-lb-key' For Server Farms
-* Check Windows Image With Murano Tag
 * Murano environment and service creation, listing and deletion
 * Networks availability
 
@@ -248,7 +246,7 @@ The platform tests are run in the tenant you've specified in
 'OpenStack Settings' tab during OpenStack installation.
 The 'admin' tenant is selected by default.
 
-To prepare Murano for testing:
+To prepare Murano for Windows-based services deployment testing:
 
 1. Create a Windows image with Murano agent.
    See `Murano documentation (Windows Image Builder) <http://murano-docs.github.io/latest/administrators-guide/content/ch03.html>`_
@@ -263,18 +261,23 @@ To prepare Murano for testing:
 9. In the 'Title' field, set title for this image.
 10. Select the 'Windows Server 2012' type.
 11. Click 'Mark'.
-12. Create a Linux image with Murano agent.
+
+
+To prepare Murano for Linux-based services deployment testing:
+
+1. Create a Linux image with Murano agent.
     See `Murano documentation (Linux Image Builder) <http://murano-docs.github.io/latest/administrators-guide/content/ch04.html>`_
     (Please note, the Murano Image Builder documentation referenced here cannot guarantee success with image creation and could be outdated)
-13. Upload the image to the OpenStack Image Service (Glance) into the 'admin' tenant.
-14. Open 'Murano' tab.
-15. Click the 'Images' menu.
-16. Click 'Mark Image'. The Image registration window displays.
-17. Select the Linux image with Murano Agent.
-18. In the 'Title' field, set title for this image.
-19. Select the 'Generic Linux' type.
-20. Click 'Mark'.
-
+2. Upload the image to the OpenStack Image Service (Glance) into the 'admin' tenant.
+3. In the OpenStack Dashboard, click the 'Project' tab.
+4. Switch to admin tenant if needed.
+5. Open 'Murano' tab.
+6. Click the 'Images' menu.
+7. Click 'Mark Image'. The Image registration window displays.
+8. Select the Linux image with Murano Agent.
+9. In the 'Title' field, set title for this image.
+10. Select the 'Generic Linux' type.
+11. Click 'Mark'.
 
 Murano is ready for testing.
 
