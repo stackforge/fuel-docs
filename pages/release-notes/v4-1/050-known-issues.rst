@@ -8,15 +8,6 @@ Neutron default networks (net04 and net04-ext) are now properly created
 if a user changes the name of the default tenant.
 See `LP12267431 <https://bugs.launchpad.net/fuel/+bug/1267431>`_.
 
-The Murano project can only be deployed if Neutron is chosen as the network type
---------------------------------------------------------------------------------
-
-Murano is supported only when Neutron is chosen as the network type;
-if you choose nova-network as the network type during deployment,
-the option to install the Murano project is greyed out.
-This change has been made due to a lack of customer demand
-for Murano support on nova-network and to focus efforts on Neutron.
-
 Murano OSTF test for Linux Apache Service fails
 -----------------------------------------------
 
@@ -50,7 +41,7 @@ with a VLAN splinters workaround enabled in two separate modes -- soft trunks an
    This introduces additional performance overhead.
    In the hard trunks mode,  you should use fewer than 50 VLANs in the Neutron VLAN mode.
 
-See `Advanced Network Configuration using Open VSwitch <http://docs.mirantis.com/fuel/fuel-4.0/reference-architecture.html?highlight=vlan%20splinters#advanced-network-configuration-using-open-vswitch>`_
+See `Advanced Network Configuration using Open VSwitch <http://docs.mirantis.com/fuel/fuel-4.1/reference-architecture.html?highlight=vlan%20splinters#advanced-network-configuration-using-open-vswitch>`_
 for more information about using Open VSwitch..
 
 GRE-enabled Neutron installation runs inter VM traffic through management network
@@ -135,6 +126,14 @@ Other limitations
   When implementing bonding, at least three NICs are required:
   two for the bonding plus one for the Admin(PXE) network,
   which cannot reside on the bond and cannot be moved.
+
+* Murano is supported only when Neutron is chosen as the network type;
+  if you choose nova-network as the network type during deployment,
+  the option to install the Murano project is greyed out.
+  This change has been made due to a lack of customer demand
+  for Murano support on nova-network and to focus efforts on Neutron.
+
+* The ceph-mon and ceph-osd nodes should not be deployed on the same hardware.
 
 * Deployments done through the Fuel UI create all of the networks on all servers
   even if they are not required by a specific role.

@@ -32,5 +32,5 @@ The following table lists the released revisions of this documentation:
 +--------------------+----------------------------+
 |December, 2013      |4.0 GA                      |
 +--------------------+----------------------------+
-|February, 2014      |4.1 GA                      |
+|March, 2014         |4.1 GA                      |
 +--------------------+----------------------------+
