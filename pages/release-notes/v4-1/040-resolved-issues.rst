@@ -4,8 +4,8 @@ Issues Resolved in Mirantis OpenStack 4.1
 Ceph acting as a backend for ephemeral volumes is no longer experimental
 ------------------------------------------------------------------------
 
-In Mirantis OpenStack 4.0,
-Mirantis enabled the the Nova (Compute) service in Mirantis OpenStack
+In Mirantis OpenStack 4.1,
+Mirantis enables the the Nova (Compute) service in Mirantis OpenStack
 to support VM instances backed by ephemeral volumes stored in Ceph,
 with Glance, Cinder, and Nova all supporting the Ceph RBD backend.
 OpenStack VM instances can take advantage of Ceph clustered storage capabilities
@@ -14,7 +14,7 @@ Ephemeral volumes can be created as copy-on-write clones of Glance images,
 recovered from Compute node failures thanks to Ceph object replication,
 and shared among Compute nodes to enable a live migration of VMs.
 
-In Mirantis OpenStack 4.0,
+In Mirantis OpenStack 4.1
 a `known Ceph issue <http://tracker.ceph.com/issues/5426>`_
 could have led to a
 `Ceph SEGV error <https://bugs.launchpad.net/fuel/+bug/1260911>`_
@@ -26,14 +26,17 @@ The Ceilometer section within Horizon is now enabled by default
 ---------------------------------------------------------------
 
 The Ceilometer integration with Horizon in OpenStack Havana
-had a known issue that the metering panel in Horizon
+had a known
+`issue #1260528 <https://bugs.launchpad.net/horizon/+bug/1260528>`_
+that the metering panel in Horizon
 required the ‘metadata_query’ Ceilometer feature
 that was not supported by Ceilometer with the MySQL driver.
 This issue has now been resolved.
 
-However, there is still a known issue
+However, there is still a known
+`issue #1249279 <https://review.openstack.org/#/c/60317/>`_
 that deleting the statistics tables from the resource usage page
-causes the tables to interpret some of the stats incorrectly,
+causes the tables to interpret some of the statistics incorrectly,
 and in some cases it is not possible to get certain statistics.
 The panels with these tables are not included in the OpenStack Havana release.
 
@@ -48,7 +51,7 @@ Ubuntu deployment no longer fails because of NIC ordering issues
 
 Mirantis OpenStack sometimes failed to deploy on Ubuntu
 because the Ubuntu kernel uses different ordering rules to detect NICS
-compared to the CentOS kernel used by the Fuel  bootstrap image.
+compared to the CentOS kernel used by the Mirantis OpenStack bootstrap image.
 This has been corrected in Fuel 4.1
 by adding explicit interface ordering
 and identifying the hardware address that correspond to the admin interface.
@@ -62,7 +65,7 @@ disks iterated by ID produces a correct list.
 The problem did not occur on CentOS or Red Hat.
 The logic used to identify disks during bootstrap has been updated
 so that the proper number of disk nodes of the specified sizes are deployed on Ubuntu.
-As  background, Fuel and Mirantis OpenStack use the CentOS bootstrap image for hardware discovery.
+As background, Fuel and Mirantis OpenStack use the CentOS bootstrap image for hardware discovery.
 The Ubuntu kernel uses a different mechanism,
 mapping all hard drives on Vbox into a single address (sysfs PATH_ID).
 When the udev daemon creates by-path links,
@@ -94,7 +97,7 @@ Health Checks for Heat have been fixed for non-HA reference architectures
 -------------------------------------------------------------------------
 
 Because of Fuel's network architecture,
-it was previously not possible to access Heat API via a proxy connection.
+it was previously not possible to access the Heat API via a proxy connection.
 Now that the Heat client has been updated,
 Heat tests work as expected in non-HA reference architectures.
 An anomaly still occurs during testing within an HA reference architecture,
@@ -163,7 +166,7 @@ Other node roles (Compute, Cinder, Ceph) are not disrupted.
 
 /etc/hosts now updated after adding new nodes
 ---------------------------------------------
-All */etc/host* information is stored locally on every node
+All */etc/hosts* information is stored locally on every node
 to minimize the impact of losing a DNS server on the cluster.
 Now pre-existing hosts are updated with the latest host record data
 whenever new nodes are added or removed.

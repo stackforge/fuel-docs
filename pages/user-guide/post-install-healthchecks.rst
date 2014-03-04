@@ -16,22 +16,20 @@ components not working correctly. If this happens, Fuel offers the ability
 to perform post-deployment checks to verify operations. Part of Fuel's goal
 is to provide easily accessible status information about the most commonly
 used components and the most recently performed actions. To perform these
-checks you will use Sanity and Smoke checks, as described below:
+checks you will use Sanity and Functional checks, as described below:
 
 **Sanity Checks**
-  Reveal whether the overall system is functional. If it fails, you will most
-  likely need to restart some services to operate OpenStack.
+  Reveal whether the overall system is functional.
+  If these tests fail, you probably need to restart some services to operate OpenStack.
 
-**Smoke Checks**
+**Functional Checks**
   Dive in a little deeper and reveal networking, system-requirements,
   functionality issues.
 
 Sanity Checks will likely be the point on which the success of your
 deployment pivots, but it is critical to pay close attention to all
 information collected from theses tests. Another way to look at these tests
-is by their names. Sanity Checks are intended to assist in maintaining your
-sanity. Smoke Checks tell you where the fires are so you can put them out
-strategically instead of firehosing the entire installation.
+is by their names.
 
 Benefits
 --------
@@ -159,20 +157,20 @@ includes the suite of sanity tests implemented:
 * Murano environment and service creation, listing and deletion
 * Networks availability
 
-Smoke Tests Description
+Functional Tests Description
 -----------------------
 
-Smoke tests verify how your system handles basic OpenStack operations under
-normal circumstances. The Smoke test series uses timeout tests for
-operations that have a known completion time to determine if there is any
-smoke, and thusly fire. An additional benefit to the Smoke Test series is
-that you can observe how fast your environment is the first time you run it.
+Functional tests verify how your system handles basic OpenStack operations
+under normal circumstances.
+The Functional Test series gives you information about the speed of your environment 
+and runs timeout tests.
 
-All tests use the basic OpenStack services (Nova, Glance, Keystone, Cinder,
-etc), therefore if any of these are inactive, the test using it will fail. It
-is recommended to run all sanity checks prior to your smoke checks to determine
-that all services are alive. This helps ensure that you don't get any false
-negatives. The following is a description of each sanity test available:
+All tests use the basic OpenStack services (Nova, Glance, Keystone, Cinder, etc)
+so, if any of these are inactive, the test using it will fail.
+You should run all sanity checks before running the functional checks
+to verify that all services are alive.
+This helps ensure that you do not get false negatives.
+The following is a description of each sanity test available:
 
 * Create instance flavor
 * Create instance volume
@@ -189,7 +187,7 @@ negatives. The following is a description of each sanity test available:
 
 Additional Checks
 -----------------
-If you have installed OpenStack as a High Availability (HA) architecture
+If you have installed OpenStack to use a High Availability (HA) architecture
 or have installed related OpenStack projects like Savanna or Murano,
 additional tests will be shown. The following are the tests available
 in HA mode:

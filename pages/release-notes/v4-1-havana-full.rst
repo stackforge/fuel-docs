@@ -7,9 +7,11 @@ Release Notes for Mirantis OpenStack 4.1
 ========================================
 
 
-Mirantis, Inc. is releasing Mirantis OpenStack version 4.0. This generally
-available version of Mirantis OpenStack is based on the Havana release of
-OpenStack and includes support for deploying Ceilometer and Heat.
+Mirantis, Inc. is releasing Mirantis OpenStack version 4.1.
+This generally available version of Mirantis OpenStack
+is based on the latest stable Havana release of OpenStack
+and includes several important defect fixes to Mirantis OpenStack
+as well as some minor enhancements.
 
 These release notes supplement the product documentation and list
 enhancements, resolved issues, and known issues in this version.
@@ -19,7 +21,7 @@ The following table lists the released revisions of this documentation:
 +----------+-------------+--------------+
 | Revision | Date        | Description  |
 +==========+=============+==============+
-| 4.1      | 28-Feb-2014 | Initial G.A. |
+| 4.1      | 04-Mar-2014 | Initial G.A. |
 +----------+-------------+--------------+
 
 .. include:: /pages/release-notes/v4-1/010-what-is-mirantis-openstack.rst
