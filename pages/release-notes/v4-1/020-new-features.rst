@@ -21,7 +21,7 @@ Environments can be reset to pre-deployment state
 -------------------------------------------------
 Mirantis OpenStack 4.1 enables you to reset an existing environment
 back to its pre-deployment state.
-This returns the existing nodes to the bootstrap
+This returns the existing nodes to their pre-deployment bootstrap mode
 but keeps them allocated to the environment
 and retains the previously entered configuration screens.
 The configuration screens are also unlocked so you can make modifications.
