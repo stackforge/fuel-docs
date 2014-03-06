@@ -11,7 +11,7 @@
    viewBox="0 0 740 400"
    stroke-miterlimit="10"
    id="svg2"
-   inkscape:version="0.48.3.1 r9886"
+   inkscape:version="0.48.4 r9939"
    width="100%"
    height="100%"
    sodipodi:docname="logical-diagram-compute.svg"
@@ -48,15 +48,15 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1920"
-     inkscape:window-height="1031"
+     inkscape:window-width="1366"
+     inkscape:window-height="749"
      id="namedview187"
      showgrid="false"
      inkscape:zoom="1.18"
      inkscape:cx="528.32081"
      inkscape:cy="229.67165"
-     inkscape:window-x="0"
-     inkscape:window-y="25"
+     inkscape:window-x="-4"
+     inkscape:window-y="-4"
      inkscape:window-maximized="1"
      inkscape:current-layer="g7-8"
      showborder="true" />
@@ -255,7 +255,7 @@
          style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:3;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none" />
       <text
          xml:space="preserve"
-         style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans"
+         style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans;font-stretch:normal;font-variant:normal"
          x="549.31348"
          y="525.49567"
          id="text4021-1-4"
@@ -264,7 +264,7 @@
            id="tspan4023-1-5"
            x="549.31348"
            y="525.49567"
-           style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:PT Sans;-inkscape-font-specification:PT Sans">neutron-openvswitch-agent</tspan></text>
+           style="font-size:18px;-inkscape-font-specification:PT Sans;font-family:PT Sans;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">neutron-openvswitch-agent</tspan></text>
       <rect
          ry="17.772001"
          y="574.9295"

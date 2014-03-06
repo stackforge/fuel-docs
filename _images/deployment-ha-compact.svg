@@ -8,16 +8,14 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.1"
-   viewBox="0.0 0.0 766.0 412.0"
-   fill="none"
-   stroke="none"
-   stroke-linecap="square"
+   viewBox="0 0 770 450"
    stroke-miterlimit="10"
    id="svg2"
-   inkscape:version="0.48.3.1 r9886"
+   inkscape:version="0.48.4 r9939"
    width="100%"
    height="100%"
-   sodipodi:docname="deployment-ha-compact.svg">
+   sodipodi:docname="deployment-ha-compact.svg"
+   style="fill:none;stroke:none">
   <metadata
      id="metadata103">
     <rdf:RDF>
@@ -41,279 +39,440 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1920"
-     inkscape:window-height="1031"
+     inkscape:window-width="1855"
+     inkscape:window-height="1056"
      id="namedview99"
      showgrid="true"
      showguides="false"
      inkscape:snap-global="false"
      inkscape:zoom="1.4934726"
-     inkscape:cx="390.55965"
-     inkscape:cy="180.60664"
-     inkscape:window-x="0"
-     inkscape:window-y="25"
+     inkscape:cx="556.70233"
+     inkscape:cy="207.38986"
+     inkscape:window-x="65"
+     inkscape:window-y="24"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g7">
+     inkscape:current-layer="svg2">
     <inkscape:grid
        type="xygrid"
-       id="grid3118" />
+       id="grid3118"
+       empspacing="5"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true" />
   </sodipodi:namedview>
   <clipPath
      id="p.0">
     <path
-       d="m0 0l766.0 0l0 412.0l-766.0 0l0 -412.0z"
+       d="M 0,0 766,0 766,412 0,412 0,0 z"
        clip-rule="nonzero"
-       id="path5" />
+       id="path5"
+       inkscape:connector-curvature="0" />
   </clipPath>
-  <g
-     clip-path="url(#p.0)"
-     id="g7">
-    <path
-       fill="#000000"
-       fill-opacity="0.0"
-       d="m0 0l766.8714 0l0 412.93176l-766.8714 0z"
-       fill-rule="nonzero"
-       id="path9" />
-    <path
-       fill="#f3f3f3"
-       d="m24.945854 253.45992l0 0c0 -16.270264 13.189648 -29.459915 29.459908 -29.459915l175.09592 0c7.813263 0 15.306503 3.1038055 20.831314 8.628601c5.5247955 5.524811 8.628586 13.018051 8.628586 20.831314l0 117.836075c0 16.270264 -13.189636 29.45993 -29.4599 29.45993l-175.09592 0l0 0c-16.27026 0 -29.459908 -13.189667 -29.459908 -29.45993z"
-       fill-rule="nonzero"
-       id="path11"
-       style="stroke:#000000;stroke-opacity:1;stroke-width:5;stroke-miterlimit:10;stroke-dasharray:none" />
-    <path
-       fill="#f3f3f3"
-       d="m10.961601 37.192184l0 0c0 -16.122398 13.069786 -29.192184 29.192184 -29.192184l175.63138 0c7.7422485 0 15.167389 3.0755968 20.641998 8.550194c5.474594 5.474596 8.550186 12.899742 8.550186 20.64199l0 116.76524c0 16.12239 -13.069794 29.192184 -29.192184 29.192184l-175.63138 0l0 0c-16.122398 0 -29.192184 -13.069794 -29.192184 -29.192184z"
-       fill-rule="nonzero"
-       id="path15"
-       style="stroke:#000000;stroke-opacity:1;stroke-width:5;stroke-miterlimit:10;stroke-dasharray:none" />
-    <path
-       fill="#fce5cd"
-       d="m43.623013 58.72714l0 0c0 -2.8904915 2.3432045 -5.2337 5.2337 -5.2337l154.19403 0c1.3880615 0 2.719284 0.55140686 3.7007904 1.5329132c0.98150635 0.98151016 1.5329132 2.3127213 1.5329132 3.7007866l0 20.93417c0 2.8904953 -2.343216 5.2337036 -5.2337036 5.2337036l-154.19403 0l0 0c-2.8904953 0 -5.2337 -2.3432083 -5.2337 -5.2337036z"
-       fill-rule="nonzero"
-       id="path21"
-       style="stroke:#000000;stroke-opacity:1;stroke-width:2;stroke-miterlimit:10;stroke-dasharray:none" />
-    <path
-       d="m 43.623013,102.05393 0,0 c 0,-2.890493 2.343204,-5.233702 5.2337,-5.233702 l 154.194027,0 c 1.38806,0 2.71929,0.551407 3.70079,1.532921 0.98151,0.981507 1.53292,2.312721 1.53292,3.700781 l 0,20.93418 c 0,2.89048 -2.34322,5.23369 -5.23371,5.23369 l -154.194027,0 0,0 c -2.890495,0 -5.2337,-2.34321 -5.2337,-5.23369 z"
-       id="path27"
-       style="fill:#fce5cd;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
-       inkscape:connector-curvature="0" />
-    <path
-       fill="#f3f3f3"
-       d="m8.945853 237.45992l0 0c0 -16.270264 13.189651 -29.459915 29.459908 -29.459915l175.09592 0c7.813263 0 15.306503 3.1038055 20.831314 8.628601c5.5247955 5.524811 8.628601 13.018051 8.628601 20.831314l0 117.836075c0 16.270264 -13.1896515 29.45993 -29.459915 29.45993l-175.09592 0l0 0c-16.270258 0 -29.459908 -13.189667 -29.459908 -29.45993z"
-       fill-rule="nonzero"
-       id="path33"
-       style="stroke:#000000;stroke-opacity:1;stroke-width:5;stroke-miterlimit:10;stroke-dasharray:none" />
-    <path
-       d="m 43.623013,268.63528 0,0 c 0,-2.8905 2.343204,-5.2337 5.2337,-5.2337 l 154.194017,0 c 1.38808,0 2.71929,0.55139 3.70079,1.53289 0.98151,0.98151 1.53292,2.31275 1.53292,3.70081 l 0,20.93417 c 0,2.89048 -2.3432,5.23371 -5.23371,5.23371 l -154.194017,0 0,0 c -2.890496,0 -5.2337,-2.34323 -5.2337,-5.23371 z"
-       id="path39"
-       style="fill:#fce5cd;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
-       inkscape:connector-curvature="0" />
-    <path
-       fill="#f3f3f3"
-       d="m266.9616 38.04258l0 0c0 -16.1224 13.069763 -29.192186 29.19217 -29.192186l175.63138 0c7.7422485 0 15.167389 3.0755968 20.641998 8.550194c5.474579 5.474596 8.550171 12.899744 8.550171 20.641993l0 116.765236c0 16.122406 -13.069794 29.192184 -29.19217 29.192184l-175.63138 0l0 0c-16.122406 0 -29.19217 -13.069778 -29.19217 -29.192184z"
-       fill-rule="nonzero"
-       id="path45"
-       style="stroke:#000000;stroke-opacity:1;stroke-width:5;stroke-miterlimit:10;stroke-dasharray:none" />
-    <path
-       d="m522.5189 38.04258l0 0c0 -16.1224 13.069763 -29.192186 29.1922 -29.192186l175.63135 0c7.7422485 0 15.167358 3.0755968 20.641968 8.550194c5.4746094 5.474596 8.550232 12.899744 8.550232 20.641993l0 116.765236c0 16.122406 -13.069824 29.192184 -29.1922 29.192184l-175.63135 0l0 0c-16.122437 0 -29.1922 -13.069778 -29.1922 -29.192184z"
-       id="path63"
-       style="stroke:#000000;stroke-opacity:1;stroke-width:5;stroke-miterlimit:10;stroke-dasharray:none"
-       fill-rule="nonzero"
-       fill="#f3f3f3" />
-    <path
-       d="m 43.623013,145.38068 0,0 c 0,-2.89049 2.343208,-5.23369 5.2337,-5.23369 l 154.194017,0 c 1.38808,0 2.71929,0.55141 3.70079,1.53291 0.98151,0.98151 1.53292,2.31272 1.53292,3.70078 l 0,20.93417 c 0,2.89051 -2.3432,5.23371 -5.23371,5.23371 l -154.194017,0 0,0 c -2.890492,0 -5.2337,-2.3432 -5.2337,-5.23371 z"
-       id="path81"
-       style="fill:#fce5cd;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
-       inkscape:connector-curvature="0" />
-    <text
-       xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:bold;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans Bold;font-stretch:normal;font-variant:normal"
-       x="129.0437"
-       y="31.80772"
-       id="text3080"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan3082"
-         x="129.0437"
-         y="31.80772"
-         style="font-weight:bold;-inkscape-font-specification:PT Sans Bold;font-family:PT Sans;font-style:normal;font-stretch:normal;font-variant:normal">Controller Node #1</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:bold;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans Bold;font-stretch:normal;font-variant:normal"
-       x="384.84326"
-       y="31.852705"
-       id="text3080-1"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan3082-7"
-         x="384.84326"
-         y="31.852705"
-         style="font-weight:bold;-inkscape-font-specification:PT Sans Bold;font-family:PT Sans;font-style:normal;font-stretch:normal;font-variant:normal">Controller Node #2</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:bold;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans Bold;font-stretch:normal;font-variant:normal"
-       x="640.04083"
-       y="31.37924"
-       id="text3080-4"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan3082-0"
-         x="640.04083"
-         y="31.37924"
-         style="font-weight:bold;-inkscape-font-specification:PT Sans Bold;font-family:PT Sans;font-style:normal;font-stretch:normal;font-variant:normal">Controller Node #3</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans;font-stretch:normal;font-variant:normal"
-       x="125.45373"
-       y="74.920792"
-       id="text3114-52"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan3116-7"
-         x="125.45373"
-         y="74.920792">Controller</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans;font-stretch:normal;font-variant:normal"
-       x="125.93029"
-       y="116.66164"
-       id="text3120-6"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan3122-1"
-         x="125.93029"
-         y="116.66164">Storage</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans"
-       x="125.90685"
-       y="159.99231"
-       id="text3124-4"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan3126-2"
-         x="125.90685"
-         y="159.99231">Neutron (Active)</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:bold;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans Bold;font-stretch:normal;font-variant:normal"
-       x="125.96545"
-       y="231.97543"
-       id="text3080-3"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan3082-2"
-         x="125.96545"
-         y="231.97543"
-         style="font-weight:bold;-inkscape-font-specification:PT Sans Bold;font-family:PT Sans;font-style:normal;font-stretch:normal;font-variant:normal">Compute Nodes</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans;font-stretch:normal;font-variant:normal"
-       x="125.89123"
-       y="283.33673"
-       id="text3232"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan3234"
-         x="125.89123"
-         y="283.33673">Compute</tspan></text>
-    <path
-       inkscape:connector-curvature="0"
-       d="m 301.63874,58.72714 0,0 c 0,-2.890492 2.3432,-5.2337 5.2337,-5.2337 l 154.19403,0 c 1.38806,0 2.71929,0.551407 3.70079,1.532913 0.98151,0.98151 1.53292,2.312722 1.53292,3.700787 l 0,20.93417 c 0,2.890495 -2.34322,5.233703 -5.23371,5.233703 l -154.19403,0 0,0 c -2.89049,0 -5.2337,-2.343208 -5.2337,-5.233703 z"
-       id="path21-1"
-       style="fill:#fce5cd;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none" />
-    <path
-       d="m 301.63874,102.05392 0,0 c 0,-2.890495 2.3432,-5.233704 5.2337,-5.233704 l 154.19403,0 c 1.38806,0 2.71929,0.551407 3.70079,1.532921 0.98151,0.981507 1.53292,2.312723 1.53292,3.700783 l 0,20.93418 c 0,2.89048 -2.34322,5.23369 -5.23371,5.23369 l -154.19403,0 0,0 c -2.89049,0 -5.2337,-2.34321 -5.2337,-5.23369 z"
-       id="path27-7"
-       style="fill:#fce5cd;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
-       inkscape:connector-curvature="0" />
-    <path
-       d="m 301.63875,145.38068 0,0 c 0,-2.89049 2.34321,-5.23369 5.2337,-5.23369 l 154.19402,0 c 1.38808,0 2.71929,0.55141 3.70079,1.53291 0.98151,0.98151 1.53292,2.31272 1.53292,3.70078 l 0,20.93417 c 0,2.89051 -2.3432,5.23371 -5.23371,5.23371 l -154.19402,0 0,0 c -2.89049,0 -5.2337,-2.3432 -5.2337,-5.23371 z"
-       id="path81-4"
-       style="fill:#fce5cd;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
-       inkscape:connector-curvature="0" />
-    <text
-       xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans;font-stretch:normal;font-variant:normal"
-       x="383.46945"
-       y="74.920792"
-       id="text3114-52-0"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan3116-7-9"
-         x="383.46945"
-         y="74.920792">Controller</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans;font-stretch:normal;font-variant:normal"
-       x="383.94601"
-       y="116.66163"
-       id="text3120-6-4"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan3122-1-8"
-         x="383.94601"
-         y="116.66163">Storage</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans"
-       x="383.93137"
-       y="159.21521"
-       id="text3124-1"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan3126-1"
-         x="383.93137"
-         y="159.21521"
-         style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:PT Sans;-inkscape-font-specification:PT Sans">Neutron (Hot Standby)</tspan></text>
-    <path
-       inkscape:connector-curvature="0"
-       d="m 557.19606,58.72714 0,0 c 0,-2.890492 2.3432,-5.2337 5.2337,-5.2337 l 154.19402,0 c 1.38806,0 2.71929,0.551407 3.7008,1.532913 0.9815,0.98151 1.53291,2.312722 1.53291,3.700787 l 0,20.93417 c 0,2.890495 -2.34322,5.233703 -5.23371,5.233703 l -154.19402,0 0,0 c -2.89049,0 -5.2337,-2.343208 -5.2337,-5.233703 z"
-       id="path21-1-4"
-       style="fill:#fce5cd;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none" />
-    <path
-       d="m 557.19606,102.05392 0,0 c 0,-2.890494 2.3432,-5.233703 5.2337,-5.233703 l 154.19402,0 c 1.38806,0 2.71929,0.551407 3.7008,1.532921 0.9815,0.981507 1.53291,2.312722 1.53291,3.700782 l 0,20.93418 c 0,2.89048 -2.34322,5.23369 -5.23371,5.23369 l -154.19402,0 0,0 c -2.89049,0 -5.2337,-2.34321 -5.2337,-5.23369 z"
-       id="path27-7-5"
-       style="fill:#fce5cd;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
-       inkscape:connector-curvature="0" />
-    <path
-       d="m 557.16972,145.38068 0,0 c 0,-2.89049 2.34321,-5.23369 5.2337,-5.23369 l 154.19402,0 c 1.38808,0 2.71929,0.55141 3.70079,1.53291 0.98151,0.98151 1.53292,2.31272 1.53292,3.70078 l 0,20.93417 c 0,2.89051 -2.3432,5.23371 -5.23371,5.23371 l -154.19402,0 0,0 c -2.89049,0 -5.2337,-2.3432 -5.2337,-5.23371 z"
-       id="path81-4-5"
-       style="fill:#fce5cd;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
-       inkscape:connector-curvature="0" />
-    <text
-       xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans;font-stretch:normal;font-variant:normal"
-       x="639.02679"
-       y="74.920792"
-       id="text3114-52-0-1"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan3116-7-9-7"
-         x="639.02679"
-         y="74.920792">Controller</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans;font-stretch:normal;font-variant:normal"
-       x="639.50336"
-       y="116.66163"
-       id="text3120-6-4-1"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan3122-1-8-1"
-         x="639.50336"
-         y="116.66163">Storage</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans"
-       x="639.46234"
-       y="159.21521"
-       id="text3124-1-5"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan3126-1-2"
-         x="639.46234"
-         y="159.21521"
-         style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:PT Sans;-inkscape-font-specification:PT Sans">Neutron (Hot Standby)</tspan></text>
-  </g>
+  <path
+     style="fill:#000000;fill-opacity:0;fill-rule:nonzero"
+     inkscape:connector-curvature="0"
+     id="path9"
+     d="m 0.66958046,12.555944 766.87139954,0 0,412.931756 -766.87139954,0 z" />
+  <path
+     inkscape:connector-curvature="0"
+     style="fill:#f3f3f3;fill-rule:nonzero;stroke:#000000;stroke-width:6.30024624;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     id="path15"
+     d="m 12.281306,67.814176 0,0 c 0,-25.740948 12.997166,-46.608108 29.029984,-46.608108 l 174.65552,0 c 7.69924,0 15.08312,4.910483 20.52732,13.651199 5.44418,8.740716 8.50268,20.59567 8.50268,32.956909 l 0,186.426834 c 0,25.74094 -12.99718,46.60812 -29.03,46.60812 l -174.65552,0 0,0 c -16.032818,0 -29.029984,-20.86718 -29.029984,-46.60812 z" />
+  <path
+     inkscape:connector-curvature="0"
+     style="fill:#fce5cd;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     id="path21"
+     d="m 44.292594,71.283084 0,0 c 0,-2.890492 2.343204,-5.2337 5.2337,-5.2337 l 154.194026,0 c 1.38806,0 2.71929,0.551407 3.70079,1.532913 0.98151,0.98151 1.53292,2.312722 1.53292,3.700787 l 0,20.93417 c 0,2.890495 -2.34322,5.233703 -5.23371,5.233703 l -154.194026,0 0,0 c -2.890495,0 -5.2337,-2.343208 -5.2337,-5.233703 z" />
+  <path
+     inkscape:connector-curvature="0"
+     style="fill:#fce5cd;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     id="path27"
+     d="m 44.292594,114.60987 0,0 c 0,-2.89049 2.343204,-5.2337 5.2337,-5.2337 l 154.194026,0 c 1.38806,0 2.71929,0.55141 3.70079,1.53292 0.98151,0.98151 1.53292,2.31272 1.53292,3.70078 l 0,20.93418 c 0,2.89048 -2.34322,5.23369 -5.23371,5.23369 l -154.194026,0 0,0 c -2.890495,0 -5.2337,-2.34321 -5.2337,-5.23369 z" />
+  <path
+     inkscape:connector-curvature="0"
+     style="fill:#f3f3f3;fill-rule:nonzero;stroke:#000000;stroke-width:6.29288244;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     id="path45"
+     d="m 268.27762,68.550519 0,0 c 0,-25.679994 12.99756,-46.49774 29.03089,-46.49774 l 174.66106,0 c 7.69948,0 15.08359,4.898855 20.52795,13.618874 5.44434,8.720017 8.50294,20.5469 8.50294,32.878867 l 0,185.98537 c 0,25.67999 -12.9976,46.49774 -29.03089,46.49774 l -174.66106,0 0,0 c -16.03333,0 -29.03089,-20.81775 -29.03089,-46.49774 z" />
+  <path
+     inkscape:connector-curvature="0"
+     style="fill:#f3f3f3;fill-rule:nonzero;stroke:#000000;stroke-width:6.29288244;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     id="path63"
+     d="m 523.83492,68.550519 0,0 c 0,-25.679994 12.99756,-46.49774 29.03092,-46.49774 l 174.66103,0 c 7.69948,0 15.08356,4.898855 20.52792,13.618874 5.44437,8.720017 8.503,20.5469 8.503,32.878867 l 0,185.98537 c 0,25.67999 -12.99762,46.49774 -29.03092,46.49774 l -174.66103,0 0,0 c -16.03336,0 -29.03092,-20.81775 -29.03092,-46.49774 z" />
+  <path
+     inkscape:connector-curvature="0"
+     style="fill:#fce5cd;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     id="path81"
+     d="m 44.292594,157.93662 0,0 c 0,-2.89049 2.343208,-5.23369 5.2337,-5.23369 l 154.194016,0 c 1.38808,0 2.71929,0.55141 3.70079,1.53291 0.98151,0.98151 1.53292,2.31272 1.53292,3.70078 l 0,20.93417 c 0,2.89051 -2.3432,5.23371 -5.23371,5.23371 l -154.194016,0 0,0 c -2.890492,0 -5.2337,-2.3432 -5.2337,-5.23371 z" />
+  <text
+     sodipodi:linespacing="125%"
+     id="text3080"
+     y="44.363667"
+     x="129.71327"
+     style="font-size:16px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans Bold"
+     xml:space="preserve"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:PT Sans;-inkscape-font-specification:PT Sans Bold"
+       y="44.363667"
+       x="129.71327"
+       id="tspan3082"
+       sodipodi:role="line">Controller Node #1</tspan></text>
+  <text
+     sodipodi:linespacing="125%"
+     id="text3080-1"
+     y="44.408649"
+     x="385.51285"
+     style="font-size:16px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans Bold"
+     xml:space="preserve"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:PT Sans;-inkscape-font-specification:PT Sans Bold"
+       y="44.408649"
+       x="385.51285"
+       id="tspan3082-7"
+       sodipodi:role="line">Controller Node #2</tspan></text>
+  <text
+     sodipodi:linespacing="125%"
+     id="text3080-4"
+     y="43.935184"
+     x="640.71045"
+     style="font-size:16px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans Bold"
+     xml:space="preserve"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:PT Sans;-inkscape-font-specification:PT Sans Bold"
+       y="43.935184"
+       x="640.71045"
+       id="tspan3082-0"
+       sodipodi:role="line">Controller Node #3</tspan></text>
+  <text
+     sodipodi:linespacing="125%"
+     id="text3114-52"
+     y="87.476738"
+     x="126.12331"
+     style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans"
+     xml:space="preserve"><tspan
+       y="87.476738"
+       x="126.12331"
+       id="tspan3116-7"
+       sodipodi:role="line">RabbitMQ Cluster</tspan></text>
+  <text
+     sodipodi:linespacing="125%"
+     id="text3120-6"
+     y="129.21758"
+     x="126.59987"
+     style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans"
+     xml:space="preserve"><tspan
+       y="129.21758"
+       x="126.59987"
+       id="tspan3122-1"
+       sodipodi:role="line">MySQL Galera</tspan></text>
+  <text
+     sodipodi:linespacing="125%"
+     id="text3124-4"
+     y="172.54825"
+     x="126.57643"
+     style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans"
+     xml:space="preserve"><tspan
+       y="172.54825"
+       x="126.57643"
+       id="tspan3126-2"
+       sodipodi:role="line">Neutron (Active)</tspan></text>
+  <path
+     inkscape:connector-curvature="0"
+     style="fill:#fce5cd;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     id="path81-3"
+     d="m 42.880832,200.49269 0,0 c 0,-2.89049 2.3432,-5.23369 5.2337,-5.23369 l 154.194008,0 c 1.38808,0 2.71929,0.55141 3.7008,1.53291 0.9815,0.98151 1.53291,2.31272 1.53291,3.70078 l 0,20.93417 c 0,2.89051 -2.3432,5.23371 -5.23371,5.23371 l -154.194008,0 0,0 c -2.8905,0 -5.2337,-2.3432 -5.2337,-5.23371 z" />
+  <text
+     sodipodi:linespacing="125%"
+     id="text3124-4-7"
+     y="215.10432"
+     x="125.16467"
+     style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans"
+     xml:space="preserve"><tspan
+       y="215.10432"
+       x="125.16467"
+       id="tspan3126-2-4"
+       sodipodi:role="line">HAProxy (Active)</tspan></text>
+  <path
+     inkscape:connector-curvature="0"
+     style="fill:#fce5cd;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     id="path81-3-0"
+     d="m 43.550405,247.36332 0,0 c 0,-2.89049 2.3432,-5.23369 5.2337,-5.23369 l 154.194015,0 c 1.38808,0 2.71929,0.55141 3.7008,1.53291 0.9815,0.98151 1.53291,2.31272 1.53291,3.70078 l 0,20.93417 c 0,2.89051 -2.3432,5.23371 -5.23371,5.23371 l -154.194015,0 0,0 c -2.8905,0 -5.2337,-2.3432 -5.2337,-5.23371 z" />
+  <text
+     sodipodi:linespacing="125%"
+     id="text3124-4-7-4"
+     y="261.97498"
+     x="125.83424"
+     style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans"
+     xml:space="preserve"><tspan
+       y="261.97498"
+       x="125.83424"
+       id="tspan3126-2-4-4"
+       sodipodi:role="line">Pacemaker Cluster</tspan></text>
+  <path
+     inkscape:connector-curvature="0"
+     style="fill:#fce5cd;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     id="path21-5"
+     d="m 565.85943,70.938601 0,0 c 0,-2.8905 2.3432,-5.2337 5.2337,-5.2337 l 154.19403,0 c 1.38806,0 2.71929,0.5514 3.70079,1.53291 0.98151,0.98151 1.53292,2.31272 1.53292,3.70079 l 0,20.93417 c 0,2.89049 -2.34322,5.2337 -5.23371,5.2337 l -154.19403,0 0,0 c -2.8905,0 -5.2337,-2.34321 -5.2337,-5.2337 z" />
+  <path
+     inkscape:connector-curvature="0"
+     style="fill:#fce5cd;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     id="path27-2"
+     d="m 565.85943,114.26538 0,0 c 0,-2.89049 2.3432,-5.2337 5.2337,-5.2337 l 154.19403,0 c 1.38806,0 2.71929,0.55141 3.70079,1.53292 0.98151,0.98151 1.53292,2.31272 1.53292,3.70078 l 0,20.93418 c 0,2.89048 -2.34322,5.23369 -5.23371,5.23369 l -154.19403,0 0,0 c -2.8905,0 -5.2337,-2.34321 -5.2337,-5.23369 z" />
+  <path
+     inkscape:connector-curvature="0"
+     style="fill:#fce5cd;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     id="path81-1"
+     d="m 565.85943,157.59213 0,0 c 0,-2.89049 2.3432,-5.23369 5.2337,-5.23369 l 154.19402,0 c 1.38808,0 2.71929,0.55141 3.70079,1.53291 0.98151,0.98151 1.53292,2.31272 1.53292,3.70078 l 0,20.93418 c 0,2.89051 -2.3432,5.23371 -5.23371,5.23371 l -154.19402,0 0,0 c -2.8905,0 -5.2337,-2.3432 -5.2337,-5.23371 z" />
+  <text
+     sodipodi:linespacing="125%"
+     id="text3114-52-5"
+     y="87.132256"
+     x="647.69019"
+     style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans"
+     xml:space="preserve"><tspan
+       y="87.132256"
+       x="647.69019"
+       id="tspan3116-7-3"
+       sodipodi:role="line">RabbitMQ Cluster</tspan></text>
+  <text
+     sodipodi:linespacing="125%"
+     id="text3120-6-6"
+     y="128.87309"
+     x="648.16675"
+     style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans"
+     xml:space="preserve"><tspan
+       y="128.87309"
+       x="648.16675"
+       id="tspan3122-1-1"
+       sodipodi:role="line">MySQL Galera</tspan></text>
+  <text
+     sodipodi:linespacing="125%"
+     id="text3124-4-0"
+     y="172.20378"
+     x="648.14331"
+     style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans"
+     xml:space="preserve"><tspan
+       y="172.20378"
+       x="648.14331"
+       id="tspan3126-2-6"
+       sodipodi:role="line">Neutron (Standby)</tspan></text>
+  <path
+     inkscape:connector-curvature="0"
+     style="fill:#fce5cd;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     id="path81-3-3"
+     d="m 564.44766,200.14821 0,0 c 0,-2.89049 2.3432,-5.23369 5.2337,-5.23369 l 154.19402,0 c 1.38808,0 2.71929,0.55141 3.7008,1.53291 0.9815,0.98151 1.53291,2.31272 1.53291,3.70078 l 0,20.93417 c 0,2.89051 -2.3432,5.23371 -5.23371,5.23371 l -154.19402,0 0,0 c -2.8905,0 -5.2337,-2.3432 -5.2337,-5.23371 z" />
+  <text
+     sodipodi:linespacing="125%"
+     id="text3124-4-7-1"
+     y="214.75984"
+     x="646.73151"
+     style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans"
+     xml:space="preserve"><tspan
+       y="214.75984"
+       x="646.73151"
+       id="tspan3126-2-4-9"
+       sodipodi:role="line">HAProxy (Standby)</tspan></text>
+  <path
+     inkscape:connector-curvature="0"
+     style="fill:#fce5cd;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     id="path81-3-0-2"
+     d="m 565.11724,247.01884 0,0 c 0,-2.89049 2.3432,-5.23369 5.2337,-5.23369 l 154.19402,0 c 1.38808,0 2.71929,0.55141 3.7008,1.53291 0.9815,0.98151 1.53291,2.31272 1.53291,3.70078 l 0,20.93417 c 0,2.89051 -2.3432,5.23371 -5.23371,5.23371 l -154.19402,0 0,0 c -2.8905,0 -5.2337,-2.3432 -5.2337,-5.23371 z" />
+  <text
+     sodipodi:linespacing="125%"
+     id="text3124-4-7-4-9"
+     y="261.63049"
+     x="647.40112"
+     style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans"
+     xml:space="preserve"><tspan
+       y="261.63049"
+       x="647.40112"
+       id="tspan3126-2-4-4-7"
+       sodipodi:role="line">Pacemaker Cluster</tspan></text>
+  <path
+     inkscape:connector-curvature="0"
+     style="fill:#fce5cd;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     id="path21-4"
+     d="m 304.72307,70.269021 0,0 c 0,-2.890501 2.3432,-5.233701 5.2337,-5.233701 l 154.19402,0 c 1.38806,0 2.71929,0.5514 3.70079,1.53291 0.98151,0.98151 1.53292,2.312721 1.53292,3.700791 l 0,20.93417 c 0,2.89049 -2.34322,5.2337 -5.23371,5.2337 l -154.19402,0 0,0 c -2.8905,0 -5.2337,-2.34321 -5.2337,-5.2337 z" />
+  <path
+     inkscape:connector-curvature="0"
+     style="fill:#fce5cd;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     id="path27-5"
+     d="m 304.72307,113.59581 0,0 c 0,-2.89049 2.3432,-5.2337 5.2337,-5.2337 l 154.19402,0 c 1.38806,0 2.71929,0.55141 3.70079,1.53292 0.98151,0.98151 1.53292,2.31272 1.53292,3.70078 l 0,20.93418 c 0,2.89048 -2.34322,5.23369 -5.23371,5.23369 l -154.19402,0 0,0 c -2.8905,0 -5.2337,-2.34321 -5.2337,-5.23369 z" />
+  <path
+     inkscape:connector-curvature="0"
+     style="fill:#fce5cd;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     id="path81-12"
+     d="m 304.72307,156.92256 0,0 c 0,-2.89049 2.3432,-5.23369 5.2337,-5.23369 l 154.19401,0 c 1.38808,0 2.71929,0.55141 3.70079,1.53291 0.98151,0.98151 1.53292,2.31272 1.53292,3.70078 l 0,20.93417 c 0,2.89051 -2.3432,5.23371 -5.23371,5.23371 l -154.19401,0 0,0 c -2.8905,0 -5.2337,-2.3432 -5.2337,-5.23371 z" />
+  <text
+     sodipodi:linespacing="125%"
+     id="text3114-52-6"
+     y="86.462677"
+     x="386.5538"
+     style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans"
+     xml:space="preserve"><tspan
+       y="86.462677"
+       x="386.5538"
+       id="tspan3116-7-2"
+       sodipodi:role="line">RabbitMQ Cluster</tspan></text>
+  <text
+     sodipodi:linespacing="125%"
+     id="text3120-6-49"
+     y="128.20351"
+     x="387.03036"
+     style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans"
+     xml:space="preserve"><tspan
+       y="128.20351"
+       x="387.03036"
+       id="tspan3122-1-80"
+       sodipodi:role="line">MySQL Galera</tspan></text>
+  <text
+     sodipodi:linespacing="125%"
+     id="text3124-4-9"
+     y="171.53418"
+     x="387.00693"
+     style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans"
+     xml:space="preserve"><tspan
+       y="171.53418"
+       x="387.00693"
+       id="tspan3126-2-47"
+       sodipodi:role="line">Neutron (Standby)</tspan></text>
+  <path
+     inkscape:connector-curvature="0"
+     style="fill:#fce5cd;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     id="path81-3-9"
+     d="m 303.3113,199.47863 0,0 c 0,-2.89049 2.3432,-5.23369 5.2337,-5.23369 l 154.19401,0 c 1.38808,0 2.71929,0.55141 3.7008,1.53291 0.9815,0.98151 1.53291,2.31272 1.53291,3.70078 l 0,20.93417 c 0,2.89051 -2.3432,5.23371 -5.23371,5.23371 l -154.19401,0 0,0 c -2.8905,0 -5.2337,-2.3432 -5.2337,-5.23371 z" />
+  <text
+     sodipodi:linespacing="125%"
+     id="text3124-4-7-8"
+     y="214.09024"
+     x="385.59515"
+     style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans"
+     xml:space="preserve"><tspan
+       y="214.09024"
+       x="385.59515"
+       id="tspan3126-2-4-2"
+       sodipodi:role="line">HAProxy (Standby)</tspan></text>
+  <path
+     inkscape:connector-curvature="0"
+     style="fill:#fce5cd;fill-rule:nonzero;stroke:#000000;stroke-width:2;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     id="path81-3-0-6"
+     d="m 303.98088,246.34926 0,0 c 0,-2.89049 2.3432,-5.23369 5.2337,-5.23369 l 154.19401,0 c 1.38808,0 2.71929,0.55141 3.7008,1.53291 0.9815,0.98151 1.53291,2.31272 1.53291,3.70078 l 0,20.93417 c 0,2.89051 -2.3432,5.23371 -5.23371,5.23371 l -154.19401,0 0,0 c -2.8905,0 -5.2337,-2.3432 -5.2337,-5.23371 z" />
+  <text
+     sodipodi:linespacing="125%"
+     id="text3124-4-7-4-3"
+     y="260.96091"
+     x="386.26471"
+     style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans"
+     xml:space="preserve"><tspan
+       y="260.96091"
+       x="386.26471"
+       id="tspan3126-2-4-4-3"
+       sodipodi:role="line">Pacemaker Cluster</tspan></text>
+  <path
+     style="fill:#f3f3f3;fill-rule:nonzero;stroke:#000000;stroke-width:3.08378124;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:18.50268745, 3.08378124;stroke-dashoffset:0"
+     inkscape:connector-curvature="0"
+     d="m 542.03243,353.76108 0,0 c 0,-6.91654 11.58875,-12.5235 25.88419,-12.5235 l 155.72921,0 c 6.86491,0 13.44865,1.31943 18.30289,3.66805 4.85423,2.34861 7.5813,5.53401 7.5813,8.85545 l 0,50.09249 c 0,6.91653 -11.58876,12.5235 -25.88419,12.5235 l -155.72921,0 0,0 c -14.29544,0 -25.88419,-5.60697 -25.88419,-12.5235 z"
+     id="path15-0-8-1-8" />
+  <path
+     style="fill:#f3f3f3;fill-rule:nonzero;stroke:#000000;stroke-width:3.10986853;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:18.65921116, 3.10986853;stroke-dashoffset:0"
+     inkscape:connector-curvature="0"
+     d="m 291.67549,354.21932 0,0 c 0,-7.03494 11.5873,-12.73789 25.88094,-12.73789 l 155.70963,0 c 6.86405,0 13.44696,1.34202 18.30059,3.73084 4.85362,2.38882 7.58035,5.62875 7.58035,9.00705 l 0,50.94999 c 0,7.03493 -11.58731,12.73788 -25.88094,12.73788 l -155.70963,0 0,0 c -14.29364,0 -25.88094,-5.70295 -25.88094,-12.73788 z"
+     id="path15-0-8-13" />
+  <path
+     style="fill:#f3f3f3;fill-rule:nonzero;stroke:#000000;stroke-width:3.10986853;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:18.65921116, 3.10986853;stroke-dashoffset:0"
+     inkscape:connector-curvature="0"
+     d="m 281.58377,344.37911 0,0 c 0,-7.03494 11.5873,-12.73789 25.88094,-12.73789 l 155.70963,0 c 6.86405,0 13.44696,1.34202 18.30059,3.73084 4.85362,2.38882 7.58035,5.62875 7.58035,9.00705 l 0,50.94999 c 0,7.03493 -11.58731,12.73788 -25.88094,12.73788 l -155.70963,0 0,0 c -14.29364,0 -25.88094,-5.70295 -25.88094,-12.73788 z"
+     id="path15-0-8" />
+  <path
+     style="fill:#fce5cd;fill-rule:nonzero;stroke:#000000;stroke-width:2.56397367;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     inkscape:connector-curvature="0"
+     d="m 314.97224,371.24287 0,0 c 0,-2.47038 2.00264,-4.47302 4.47302,-4.47302 l 131.78314,0 c 1.18631,0 2.32406,0.47127 3.16291,1.31012 0.83885,0.83886 1.31012,1.97659 1.31012,3.1629 l 0,17.89156 c 0,2.47039 -2.00265,4.47303 -4.47303,4.47303 l -131.78314,0 0,0 c -2.47038,0 -4.47302,-2.00264 -4.47302,-4.47303 z"
+     id="path21-1-9" />
+  <text
+     xml:space="preserve"
+     style="font-size:16px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans Bold"
+     x="389.88736"
+     y="352.4465"
+     id="text3080-9-8"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan3082-0-1"
+       x="389.88736"
+       y="352.4465">Cinder Node</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:13.67452526px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans"
+     x="385.02133"
+     y="384.97482"
+     id="text3114-52-8-2"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan3116-7-7-4"
+       x="385.02133"
+       y="384.97482">Cinder Volume</tspan></text>
+  <path
+     style="fill:#f3f3f3;fill-rule:nonzero;stroke:#000000;stroke-width:3.08378124;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:18.50268745, 3.08378124;stroke-dashoffset:0"
+     inkscape:connector-curvature="0"
+     d="m 532.0954,343.94175 0,0 c 0,-6.91654 11.58875,-12.5235 25.88419,-12.5235 l 155.72921,0 c 6.86491,0 13.44865,1.31943 18.30289,3.66805 4.85423,2.34861 7.5813,5.53401 7.5813,8.85545 l 0,50.09249 c 0,6.91653 -11.58876,12.5235 -25.88419,12.5235 l -155.72921,0 0,0 c -14.29544,0 -25.88419,-5.60697 -25.88419,-12.5235 z"
+     id="path15-0-8-1" />
+  <path
+     style="fill:#fce5cd;fill-rule:nonzero;stroke:#000000;stroke-width:2.56397367;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     inkscape:connector-curvature="0"
+     d="m 565.49691,371.03294 0,0 c 0,-2.47038 2.00264,-4.47302 4.47302,-4.47302 l 131.78314,0 c 1.18631,0 2.32406,0.47127 3.16291,1.31012 0.83885,0.83886 1.31012,1.97659 1.31012,3.1629 l 0,17.89156 c 0,2.47039 -2.00265,4.47303 -4.47303,4.47303 l -131.78314,0 0,0 c -2.47038,0 -4.47302,-2.00264 -4.47302,-4.47303 z"
+     id="path21-1-9-2" />
+  <text
+     xml:space="preserve"
+     style="font-size:16px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans Bold"
+     x="640.41205"
+     y="352.23654"
+     id="text3080-9-8-8"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan3082-0-1-7"
+       x="640.41205"
+       y="352.23654">Ceph Node</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:13.67452526px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans"
+     x="635.54602"
+     y="384.76486"
+     id="text3114-52-8-2-7"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan3116-7-7-4-0"
+       x="635.54602"
+       y="384.76486">Ceph OSD</tspan></text>
+  <path
+     style="fill:#f3f3f3;fill-rule:nonzero;stroke:#000000;stroke-width:3.1099999;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+     inkscape:connector-curvature="0"
+     d="m 31.878294,354.45211 0,0 c 0,-7.03494 11.5873,-12.73789 25.88094,-12.73789 l 155.709616,0 c 6.86405,0 13.44696,1.34202 18.30059,3.73084 4.85362,2.38882 7.58035,5.62875 7.58035,9.00705 l 0,50.94999 c 0,7.03493 -11.58731,12.73788 -25.88094,12.73788 l -155.709616,0 0,0 c -14.29364,0 -25.88094,-5.70295 -25.88094,-12.73788 z"
+     id="path15-0-8-13-2" />
+  <path
+     style="fill:#f3f3f3;fill-rule:nonzero;stroke:#000000;stroke-width:3.10986853;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+     inkscape:connector-curvature="0"
+     d="m 21.786574,344.6119 0,0 c 0,-7.03494 11.5873,-12.73789 25.88094,-12.73789 l 155.709616,0 c 6.86405,0 13.44696,1.34202 18.30059,3.73084 4.85362,2.38882 7.58035,5.62875 7.58035,9.00705 l 0,50.94999 c 0,7.03493 -11.58731,12.73788 -25.88094,12.73788 l -155.709616,0 0,0 c -14.29364,0 -25.88094,-5.70295 -25.88094,-12.73788 z"
+     id="path15-0-8-3" />
+  <path
+     style="fill:#fce5cd;fill-rule:nonzero;stroke:#000000;stroke-width:2.56397367;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     inkscape:connector-curvature="0"
+     d="m 55.175044,371.47566 0,0 c 0,-2.47038 2.00264,-4.47302 4.47302,-4.47302 l 131.783126,0 c 1.18631,0 2.32406,0.47127 3.16291,1.31012 0.83885,0.83886 1.31012,1.97659 1.31012,3.1629 l 0,17.89156 c 0,2.47039 -2.00265,4.47303 -4.47303,4.47303 l -131.783126,0 0,0 c -2.47038,0 -4.47302,-2.00264 -4.47302,-4.47303 z"
+     id="path21-1-9-4" />
+  <text
+     xml:space="preserve"
+     style="font-size:16px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans Bold"
+     x="130.09015"
+     y="352.67926"
+     id="text3080-9-8-9"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan3082-0-1-5"
+       x="130.09015"
+       y="352.67926">Compute Node</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:13.67452526px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:PT Sans;-inkscape-font-specification:PT Sans"
+     x="125.22411"
+     y="385.20758"
+     id="text3114-52-8-2-9"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan3116-7-7-4-9"
+       x="125.22411"
+       y="385.20758">Compute</tspan></text>
 </svg>

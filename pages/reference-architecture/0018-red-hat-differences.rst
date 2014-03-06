@@ -18,7 +18,7 @@ a highly available OpenStack environment.
 Below is the list of modifications:
 
 **Database backend:**
-  MySQL with Galera has been replaced with native replication in a 
+  MySQL with Galera has been replaced with native replication in a
   Master/Slave configuration. MySQL master is elected via Corosync
   and master and slave status is managed via Pacemaker.
 
@@ -32,7 +32,7 @@ Below is the list of modifications:
 **Nova networking:**
   Neutron (Quantum) is not available for Red Hat OpenStack because the Red Hat kernel
   lacks GRE tunneling support for OpenVSwitch. This issue should be
-  fixed in a future release. As a result, Fuel for Red Hat OpenStack 
+  fixed in a future release. As a result, Fuel for Red Hat OpenStack
   Platform will only support Nova networking.
 
 .. index:: Reference Architectures: RHOS Multi-node
@@ -42,13 +42,13 @@ Below is the list of modifications:
 Multi-node Red Hat OpenStack Deployment
 --------------------------------------------
 
-In a production environment, it is not likely you will ever have a Multi-node 
+In a production environment, it is not likely you will ever have a Multi-node
 deployment of OpenStack, partly because it forces you to make a number
 of compromises as to the number and types of services that you can
 deploy. It is, however, extremely useful if you just want to see how
 OpenStack works from a user's point of view.
 
-.. image:: /_images/deployment-simple.*
+.. image:: /_images/deployment-simple-red-hat.*
   :width: 60%
   :align: center
 
@@ -79,15 +79,15 @@ nodes:
   :width: 80%
   :align: center
 
-OpenStack services are interconnected by RESTful HTTP-based APIs and AMQP-based 
-RPC messages. So redundancy for stateless OpenStack API services is implemented 
-through the combination of Virtual IP (VIP) management using Corosync and load 
-balancing using HAProxy. Stateful OpenStack components, such as the state database 
-and messaging server, rely on their respective active/passive modes for high 
-availability. For example, MySQL uses built-in replication capabilities (plus 
-the help of Pacemaker), while QPID is offered in three independent brokers with 
+OpenStack services are interconnected by RESTful HTTP-based APIs and AMQP-based
+RPC messages. So redundancy for stateless OpenStack API services is implemented
+through the combination of Virtual IP (VIP) management using Corosync and load
+balancing using HAProxy. Stateful OpenStack components, such as the state database
+and messaging server, rely on their respective active/passive modes for high
+availability. For example, MySQL uses built-in replication capabilities (plus
+the help of Pacemaker), while QPID is offered in three independent brokers with
 virtual IP management to provide high availability.
 
 .. image:: /_images/ha-overview-red-hat.*
-  :width: 80%
+  :width: 100%
   :align: center

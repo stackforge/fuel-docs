@@ -41,15 +41,15 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1600"
-     inkscape:window-height="877"
+     inkscape:window-width="1855"
+     inkscape:window-height="1056"
      id="namedview319"
      showgrid="false"
-     inkscape:zoom="1.3755102"
-     inkscape:cx="374.5"
-     inkscape:cy="245"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
+     inkscape:zoom="3.0547396"
+     inkscape:cx="648.31861"
+     inkscape:cy="277.69846"
+     inkscape:window-x="65"
+     inkscape:window-y="24"
      inkscape:window-maximized="1"
      inkscape:current-layer="g7" />
   <clipPath
@@ -1067,15 +1067,15 @@
          y="412.16956">HAProxy</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans"
-       x="615.04449"
-       y="300.97925"
-       id="text3146"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="607.25311"
+       y="299.80374"
+       id="text3150"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
-         id="tspan3148"
-         x="615.04449"
-         y="300.97925"
-         style="font-size:12px">neutron agents</tspan></text>
+         id="tspan3152"
+         x="607.25311"
+         y="299.80374"
+         style="font-size:14px">neutron agents</tspan></text>
   </g>
 </svg>
