@@ -66,7 +66,7 @@ redundancy to the end-users of Horizon and REST APIs, reaching out to
 controller nodes using the VIP and going through HAProxy.
 
 .. image:: /_images/logical-diagram-compute.*
-  :width: 80%
+  :width: 40%
   :align: center
 
 Storage Nodes
@@ -103,7 +103,7 @@ impact performance of other OpenStack services running on the same
 nodes, you should separate Swift from controllers.
 
 .. image:: /_images/logical-diagram-storage.*
-  :width: 80%
+  :width: 40%
   :align: center
 
 If you select Cinder LVM as the block storage backend for Cinder
