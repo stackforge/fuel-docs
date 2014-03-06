@@ -133,7 +133,7 @@ Known limitations
   +----------------------------------+----------+---------+
 
   | create one floating-ip address for admin tenant:
-  | # quantum floatingip-create --tenant-id=b796f91df6b84860a7cd474148fb2229 net04_ext
+  | # neutron floatingip-create --tenant-id=b796f91df6b84860a7cd474148fb2229 net04_ext
 
 * You can't combine Private or Admin network with any other networks on one NIC.
 * To deploy OpenStack using Neutron with GRE segmentation, each node requires at

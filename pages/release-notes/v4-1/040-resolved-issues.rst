@@ -26,15 +26,15 @@ The Ceilometer section within Horizon is now enabled by default
 ---------------------------------------------------------------
 
 The Ceilometer integration with Horizon in OpenStack Havana
-had a
-`known issue 1260528 <https://bugs.launchpad.net/horizon/+bug/1260528>`_
+had a known issue
+`(LP1260528) <https://bugs.launchpad.net/horizon/+bug/1260528>`_
 that the metering panel in Horizon
 required the ‘metadata_query’ Ceilometer feature
 that was not supported by Ceilometer with the MySQL driver.
 This issue has now been resolved.
 
-However, there is still a
-`known issue 1249279 <https://review.openstack.org/#/c/60317/>`_
+However, there is still a known issue
+`(OpenStack 60317) <https://review.openstack.org/#/c/60317/>`_
 that deleting the statistics tables from the resource usage page
 causes the tables to interpret some of the statistics incorrectly,
 and in some cases it is not possible to get certain statistics.
