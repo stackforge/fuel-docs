@@ -14,6 +14,40 @@ Murano OSTF test for Linux Apache Service fails
 The Murano OSTF test for the Linux Apache service fails with an AssertionError.
 See `LP1271089 <https://bugs.launchpad.net/fuel/+bug/1271089>`_.
 
+
+Fuel Logging does not work correctly for Savanna
+------------------------------------------------
+
+Fuel Logging does not work correctly for Savanna
+unless “OpenStack Debug Logging” is checked.
+See `LP 1287426 <https://bugs.launchpad.net/fuel/+bug/1287426>`_
+and LP `1285766 <https://bugs.launchpad.net/fuel/+bug/1285766>`_.
+
+As a work around, edit the  */etc/savanna/savanna.conf* file
+and delete (or comment) the following lines from the [DEFAULT] section:
+
+::
+
+  use_syslog=True
+  use_stderr=False
+  syslog_log_facility=LOG_LOCAL0
+  log_config=/etc/savanna/logging.conf
+
+Then add the following line to the [DEFAULT] section:
+
+::
+
+  log_dir=/var/log/savanna
+
+
+Fuel 4.1 EDP plug-in does not work for HDP or IHD
+-------------------------------------------------
+
+The Fuel 4.1 Elastic Data Processing (EDP) plug-in works for vanilla Hadoop
+but does not work for Hortonworks Hadoop Distribution (HDP)
+or Intel Hadoop Distribution (IHD).
+See `LP 1287426 <https://bugs.launchpad.net/fuel/+bug/1287426>`_.
+
 CentOS issues using Neutron-enabled installations with VLANS
 ------------------------------------------------------------
 
