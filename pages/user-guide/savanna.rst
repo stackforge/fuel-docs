@@ -31,8 +31,10 @@ Savanna can be installed on all operating systems supported by Fuel.
 Notes
 -----
 
-Savanna requires pre-built Hadoop images that are not included in Fuel
+Savanna requires pre-built Hadoop images
+and images for hadoop cluster provisioning
+that are not included in Fuel
 deployment.
-Check the `documentation of Savanna project
-<http://docs.openstack.org/developer/savanna/>`_ to find out how to
+Check the `documentation of the Savanna 0.3 project
+<https://savanna.readthedocs.org/en/0.3/>`_ to find out how to
 obtain these images, install them, and deploy them in your environment.
