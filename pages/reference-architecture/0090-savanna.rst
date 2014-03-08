@@ -5,25 +5,27 @@
 Savanna Deployment
 ------------------
 
-Savanna is a service for launching Hadoop clusters on OpenStack. It is
-designed to be vendor-agnostic and currently supports two distributions:
-Vanilla Apache Hadoop and Hortonworks Data Platform. For Savanna usage
-guidelines consider reading User Guide section of the Savanna docs located
-here: http://savanna.readthedocs.org/en/0.3/
+Savanna is a service for launching Hadoop clusters on OpenStack.
+It is designed to be vendor-agnostic and currently supports three distributions:
+Vanilla Apache Hadoop, Hortonworks Data Platform (HDP),
+and the Intel Distribution for Apache Hadoop (IDH).
+For Savanna usage guidelines, read the User Guide section of the
+`Savanna documentation <http://savanna.readthedocs.org/en/0.3/>`_.
 
 **Network Requirements**
 
 Fuel configures Savanna to use floating IPs to access and configure VMs.
 
 Savanna does not configure OpenStack Security Groups, so manual configuration
-is required in each tenant where Savanna is going to be used. Below is the
-table listing ports which should be considered to be opened for inbound
-traffic. The ports having 'yes' in column 'Required for Savanna' are
-required to be opened in order for Savanna to function properly.
+is required in each tenant where Savanna is going to be used.
+The following table lists the ports that should be opened for inbound traffic.
+The ports having 'yes' in the 'Required for Savanna' column
+must be open in order for Savanna to function properly.
 
-Also Fuel has post-deployment checks for Savanna, see details in
-:ref:`platform-tests-label`. If you want to run the checks, open ports
-having 'yes' in 'Required for Savanna post-deployment' check column.
+Also, Fuel has post-deployment checks for Savanna;
+see details in :ref:`platform-tests-label`.
+If you want to run the checks,
+open the ports that have 'yes' in the 'Required for Savanna post-deployment' column.
 
 +-----------------+-------------------+------------------------+--------------------------------------+
 | Port / protocol | Required for      | Required for Savanna   | Port                                 |
@@ -76,4 +78,3 @@ Also make sure that communication between virtual machines is not blocked.
 
 Hadoop requires at least 1G of memory to run. That means you must
 use flavors having not less than 1G of memory for Hadoop cluster nodes.
-

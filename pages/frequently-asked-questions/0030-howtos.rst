@@ -272,13 +272,13 @@ If there is only one IP in members list that means there is corosync connectivit
 issue because the node does not see the other ones. The same stays for the case 
 when members list is incomplete.
 
-.. index:: HowTo: Smoke Test HA
+.. index:: HowTo: Functional tests for HA
 
-How To Smoke Test HA
---------------------
+How to verify that Neutron HA is working
+----------------------------------------
 
-To test if NeutrnoHA is working, simply shut down the node hosting, e.g. 
-Neutron agents (either gracefully or hardly). You should see agents start on 
+To verify that Neutron HA is working, simply shut down the node hosting, e.g. 
+Neutron agents (either gracefully or with a hard shutdown). You should see agents start on 
 the other node::
 
 
