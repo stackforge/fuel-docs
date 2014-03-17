@@ -5,7 +5,7 @@ Ceph acting as a backend for ephemeral volumes is no longer experimental
 ------------------------------------------------------------------------
 
 Starting with Mirantis OpenStack 4.0,
-Mirantis enables the the Nova (Compute) service in Mirantis OpenStack
+Mirantis enables the Nova (Compute) service in Mirantis OpenStack
 to support VM instances backed by ephemeral volumes stored in Ceph.
 With Glance, Cinder, and Nova all supporting the Ceph RBD backend,
 OpenStack VM instances can take advantage of Ceph clustered storage capabilities
