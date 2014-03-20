@@ -11,4 +11,4 @@ registered trademarks of Mirantis, Inc. in the U.S. and/or certain other countri
 Red Hat Enterprise Linux is a registered trademark of Red Hat, Inc. Ubuntu is a
 registered trademark of Canonical Ltd. VirtualBox is a registered trademark of
 Oracle Corporation. All other registered trademarks or trademarks belong to their
-respective companies. Copyright 2013 Mirantis, Inc. All rights reserved.
+respective companies. Copyright 2014 Mirantis, Inc. All rights reserved.
