@@ -1,0 +1,11 @@
+Verified+2: Jenkins
+Code-Review+1: Alexander Ignatov <aignatov@mirantis.com>
+Approved+1: Dmitry Borodaenko <dborodaenko@mirantis.com>
+Code-Review+2: Dmitry Borodaenko <dborodaenko@mirantis.com>
+Verified+1: Fuel CI <fuel-ci-bot@mirantis.com>
+Code-Review+1: Meg McRoberts <mmcroberts@mirantis.com>
+Submitted-by: Jenkins
+Submitted-at: Mon, 24 Mar 2014 17:57:04 +0000
+Reviewed-on: https://review.openstack.org/82473
+Project: stackforge/fuel-docs
+Branch: refs/heads/master
