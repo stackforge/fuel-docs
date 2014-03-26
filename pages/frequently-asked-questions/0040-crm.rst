@@ -1,0 +1,3 @@
+.. include:: /pages/frequently-asked-questions/0040-crm/0100-crm-resources.rst
+.. include:: /pages/frequently-asked-questions/0040-crm/0500-verify-neutron-ha-crm.rst
+
