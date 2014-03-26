@@ -11,9 +11,8 @@ F.A.Q
 
 .. Known Issues and Workarounds
 
-.. include:: /pages/frequently-asked-questions/0040-corosync-crashes.rst
-.. include:: /pages/frequently-asked-questions/0010-rabbitmq.rst
-.. include:: /pages/frequently-asked-questions/0090-ha-notes.rst
-.. include:: /pages/frequently-asked-questions/0030-howtos.rst
-.. include:: /pages/frequently-asked-questions/0080-other-questions.rst
+.. include:: /pages/frequently-asked-questions/0000-common-issues-header.rst
+.. include:: /pages/frequently-asked-questions/0100-ha-notes.rst
+.. include:: /pages/frequently-asked-questions/0200-howtos.rst
+.. include:: /pages/frequently-asked-questions/0300-other-questions.rst
 
