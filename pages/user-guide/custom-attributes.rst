@@ -16,9 +16,6 @@ You can do this at your own risk, and some features might
 become unaccessible from UI after that. Also, there will be a warning 
 telling that some attributes were modified from the outside.
 
-Possible Use Cases
-------------------
-
 First, you should set up an environment as always, assign roles to nodes but don't 
 start deployment yet. Now you can dump provisioning after that as JSON using this 
 command::
