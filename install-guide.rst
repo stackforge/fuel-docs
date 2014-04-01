@@ -12,6 +12,6 @@ Installation Guide
 .. include:: /pages/install-guide/0000-intro.rst
 .. include:: /pages/install-guide/0010-prerequisites.rst
 .. include:: /pages/install-guide/0060-download-fuel.rst
-.. include:: /pages/install-guide/networks.rst
+.. include:: /pages/install-guide/0070-networks.rst
 .. include:: /pages/install-guide/install.rst
 .. include:: /pages/install-guide/stop_reset.rst
