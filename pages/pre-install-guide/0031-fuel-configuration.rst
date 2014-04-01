@@ -23,7 +23,7 @@ complete to plan the Mirantis OpenStack deployment.
 |    | (Multi-node HA or non HA)  |                                           |
 +----+----------------------------+-------------------------------------------+
 | 2  | Select a network service   | For more information, see:                |
-|    | (Nova-Network: FlatDHCP,   | :ref:`Network <fuelui-network>`.          |
+|    | (Nova-Network: FlatDHCP,   | :ref:`Network <_fuelui-network>`.          |
 |    | VLAN manager or Neutron:   |                                           |
 |    | GRE, VLAN).                |                                           |
 +----+----------------------------+-------------------------------------------+
