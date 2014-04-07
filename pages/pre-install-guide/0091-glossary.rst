@@ -363,9 +363,9 @@ that is applied to instances that have no security group defined.
 See the `Security groups web page <http://docs.openstack.org/trunk/openstack-ops/content/security_groups.html>`_
 for more information.
 
-Note that Savanna does does not provide a default security group.
+Note that Sahara does does not provide a default security group.
 See this `note in <https://review.openstack.org/#/c/71299/>`_
-for information about defining a default security group for Savanna).
+for information about defining a default security group for Sahara).
 
 STP
 ---

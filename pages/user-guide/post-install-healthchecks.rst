@@ -186,7 +186,7 @@ The following is a description of each sanity test available:
 Additional Checks
 -----------------
 If you have installed OpenStack to use a High Availability (HA) architecture
-or have installed related OpenStack projects like Savanna or Murano,
+or have installed related OpenStack projects like Sahara or Murano,
 additional tests will be shown. The following are the tests available
 in HA mode:
 
@@ -196,7 +196,7 @@ in HA mode:
 * Check galera environment state
 * RabbitMQ availability
 
-Savanna and Murano tests are included in Platform Tests and are
+Sahara and Murano tests are included in Platform Tests and are
 described in the next section.
 
 .. _platform-tests-label:
@@ -204,29 +204,29 @@ described in the next section.
 Platform Tests Description
 --------------------------
 
-Platform tests verify basic functionality of Heat, Savanna and Murano
+Platform tests verify basic functionality of Heat, Sahara and Murano
 services.
-Typically, preparation for Savanna testing is a lengthy process that
+Typically, preparation for Sahara testing is a lengthy process that
 involves several manual configuration steps.
 
-Preparing Savanna for Testing
-+++++++++++++++++++++++++++++
+Preparing Sahara for Testing
+++++++++++++++++++++++++++++
 The platform tests are run in the tenant you've specified in
 'OpenStack Settings' tab during OpenStack installation. By default that is
 'admin' tenant. Perform in the that tenant the following actions:
 
 1. Configure security groups in the 'admin' tenant for post-deployment checks.
-   See :ref:`savanna-deployment-label` for the details.
-2. Get an image with Hadoop for Savanna and register it with Savanna.
+   See :ref:`sahara-deployment-label` for the details.
+2. Get an image with Hadoop for Sahara and register it with Sahara.
 
    * First download the following image:
 
-     http://savanna-files.mirantis.com/savanna-0.3-vanilla-1.2.1-ubuntu-13.04.qcow2
+     http://sahara-files.mirantis.com/sahara-0.3-vanilla-1.2.1-ubuntu-13.04.qcow2
 
    * Then upload the image into OpenStack Image Service (Glance) into
-     'admin' tenant and name it 'savanna'.
+     'admin' tenant and name it 'sahara'.
 
-   * In OpenStack Dashboard (Horizon) access 'Savanna' tab.
+   * In OpenStack Dashboard (Horizon) access 'Sahara' tab.
 
    * Switch to 'admin' tenant if you are not in it already.
 
@@ -242,7 +242,7 @@ The platform tests are run in the tenant you've specified in
 
    * Finally push ‘Done’ button
 
-After the steps above are done, the Savanna is ready to be tested.
+After the steps above are done, the Sahara is ready to be tested.
 
 Preparing Murano for Testing
 +++++++++++++++++++++++++++++
@@ -334,14 +334,14 @@ Platform Tests Details
 
 .. topic:: Hadoop cluster operations
 
-  Test checks that Savanna can launch a Hadoop cluster
+  Test checks that Sahara can launch a Hadoop cluster
   using the Vanilla plugin.
 
-  Target component: Savanna
+  Target component: Sahara
 
   Scenario:
 
-  1. Create a flavor for Savanna VMs.
+  1. Create a flavor for Sahara VMs.
   2. Create a node group template for JobTracker and NameNode.
   3. Create a cluster template using the node group template.
   4. List current node group templates.
@@ -355,7 +355,7 @@ Platform Tests Details
   11. Delete the created flavor.
 
   For more information, see:
-  `Savanna documentation <http://savanna.readthedocs.org/en/0.3/>`_
+  `Sahara documentation <http://sahara.readthedocs.org/en/0.3/>`_
 
 .. topic:: Typical stack actions: create, update, delete, show details, etc
 

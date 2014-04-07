@@ -1,26 +1,26 @@
-.. index:: Savanna Deployment
+.. index:: Sahara Deployment
 
-.. _savanna-deployment-label:
+.. _sahara-deployment-label:
 
-Savanna Deployment
-------------------
+Sahara Deployment
+-----------------
 
-Savanna is a service for launching Hadoop clusters on OpenStack.
+Sahara is a service for launching Hadoop clusters on OpenStack.
 It is vendor-agnostic and currently supports three distributions:
 Vanilla Apache Hadoop, Hortonworks Data Platform (HDP),
 and the Intel Distribution for Apache Hadoop (IDH).
-For Savanna usage guidelines, read the User Guide section of the
-`Savanna documentation <http://savanna.readthedocs.org/en/0.3/>`_.
+For Sahara usage guidelines, read the User Guide section of the
+`Sahara documentation <http://sahara.readthedocs.org/en/0.3/>`_.
 
 **Network Requirements**
 
-Fuel configures Savanna to use floating IPs to access and configure VMs.
+Fuel configures Sahara to use floating IPs to access and configure VMs.
 
-Savanna does not configure OpenStack Security Groups so the default security
-group must be configured manually in each tenant where Savanna will be used.
+Sahara does not configure OpenStack Security Groups so the default security
+group must be configured manually in each tenant where Sahara will be used.
 The table below lists the ports that must be open for inbound traffic
-(marked with 'yes' in the 'Required for Savanna' column) and the ports that
-are used for running Savanna post-deployment health checks.
+(marked with 'yes' in the 'Required for Sahara' column) and the ports that
+are used for running Sahara post-deployment health checks.
 
 For the post-deployment checks details see :ref:`platform-tests-label`.
 If you want to run the checks, open the ports that have 'yes' in the
@@ -30,11 +30,11 @@ that is where you need to configure the default Security Group.
 By default 'admin' tenant is used for post-deployment checks.
 
 +-----------------+-------------------+------------------------+--------------------------------------+
-| Port / protocol | Required for      | Required for Savanna   | Port                                 |
-|                 | Savanna           | post-deployment checks | Description                          |
+| Port / protocol | Required for      | Required for Sahara    | Port                                 |
+|                 | Sahara            | post-deployment checks | Description                          |
 +=================+===================+========================+======================================+
 | 22 / TCP        | yes               | yes                    | Required for communication           |
-|                 |                   |                        | between Savanna and virtual machines |
+|                 |                   |                        | between Sahara and virtual machines  |
 +-----------------+-------------------+------------------------+--------------------------------------+
 | 80 / TCP        | yes (HDP          | no                     | Ambari web interface                 |
 |                 |      plugin only) |                        |                                      |
