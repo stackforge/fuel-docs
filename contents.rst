@@ -9,7 +9,7 @@
 Documentation
 =============================
 
-.. toctree:: 
+.. .. toctree:: 
   :maxdepth: 2
   
   pre-install-guide

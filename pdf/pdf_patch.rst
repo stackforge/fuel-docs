@@ -23,6 +23,6 @@
 
    PageBreak oneColumn
 
-.. toctree:: Table of Contents
+.. .. toctree:: Table of Contents
   :maxdepth: 2
 .. include:: ../contents/contents-openstack-patch-quick-ref.rst
