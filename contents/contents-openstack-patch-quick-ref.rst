@@ -1,7 +1,7 @@
 .. index Table of Contents
 
 
-.. toctree:: Table of Contents
+.. .. toctree:: Table of Contents
   :maxdepth: 2
 
 .. include:: /pages/openstack-patch-quick-ref/0010-intro.rst
