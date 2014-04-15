@@ -39,6 +39,62 @@ virtual switch licensed under the open source `Apache
 For more information about networks,  see
 :ref:`Reference Architecture<ref-arch>`.
 
+Public and Floating IP address requirements
+===========================================
+
+This section describes the OpenStack requirements for available IP addresses
+in Public and Floating ranges by network type.
+
+Nova-Network general requirements
+---------------------------------
+
+It is recommended to define both Public and Floating IP ranges inside the
+same network segment (CIDR), otherwise additional routing settings between
+these ranges required on your hardware router to connect both.
+
+Public and Floating IP ranges must not intersect!
+
+Public range with Nova-Network requirements:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* Every deployed node require one IP address from Public IP range.
+
+* For HA environments - one extra IP address required for cluster Virtual IP.
+
+Floating range with Nova-Network requirements:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* Every VM (instance) connected to external network require one IP address from
+  Floating IP range. These IP addresses assigned on demand and may be released
+  from VM and returned back to the pool of non-assigned Floating IP addresses.
+
+Neutron (with both VLAN and GRE segmentation) general requirements
+------------------------------------------------------------------
+
+It is mandatory to define both Public and Floating IP ranges inside the 
+same network segment (CIDR)! There is no external routing possible with Neutron.
+
+Public and Floating IP ranges must not intersect!
+
+Public range with Neutron requirements:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* Every deployed node require one IP address from Public network.
+  This IP goes to node virtual router.
+
+* For HA environments - one extra IP address required for cluster Virtual IP.
+
+Floating range with Neutron requirements:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* Every defined tenant, including Admin tenant requires one IP from Floating range.
+  This IP goes to tenant virtual router. So, one Floating IP will be assigned
+  to Admin tenant automatically in scope of OpenStack deployment process.
+
+* Every VM (instance) connected to external network require one IP address from
+  Floating IP range. These IP addresses assigned on demand and may be released
+  from VM and returned back to the pool of non-assigned Floating IP addresses.
+
 Network Deployment Models
 =========================
 
