@@ -83,14 +83,14 @@ It is important to note:
 A typical network configuration for Neutron with VLAN segmentation might look
 like this:
 
-.. image:: /_images/Neutron_32_vlan_v2.png
+.. image:: /_images/Neutron_32_vlan_v2.pngCORRECT_IMAGE_LINK
   :align: center
 
 
 A typical network configuration for Neutron with GRE segmentation might look
 like this:
 
-.. image:: /_images/Neutron_32_gre_v2.png
+.. image:: /_images/Neutron_32_gre_v2.pngCORRECT_IMAGE_LINK
   :align: center
   
 The most likely configuration for different number NICs on cluster nodes:
@@ -101,10 +101,10 @@ The most likely configuration for different number NICs on cluster nodes:
 |   2  |  Not supported                       | .. image:: /_images/q32_gre_2nic.*   | 
 |      |                                      |    :align: center                    |
 +------+--------------------------------------+--------------------------------------+
-|   3  | .. image:: /_images/q32_vlan_3nic.*  | .. image:: /_images/q32_gre_3nic.*   |
+|   3  | .. image:: /_images/q32_vlan_3nic.*CORRECT_IMAGE_LINK  | .. image:: /_images/q32_gre_3nic.*CORRECT_IMAGE_LINK   |
 |      |    :align: center                    |    :align: center                    |
 +------+--------------------------------------+--------------------------------------+
-|   4  | .. image:: /_images/q32_vlan_4nic.*  | .. image:: /_images/q32_gre_4nic.*   |
+|   4  | .. image:: /_images/q32_vlan_4nic.*CORRECT_IMAGE_LINK  | .. image:: /_images/q32_gre_4nic.*CORRECT_IMAGE_LINK   |
 |      |    :align: center                    |    :align: center                    |
 +------+--------------------------------------+--------------------------------------+
 
