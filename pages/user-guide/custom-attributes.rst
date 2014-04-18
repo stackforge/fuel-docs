@@ -4,6 +4,8 @@
 
 .. index:: Passing Custom Attributes From Fuel To Puppet
 
+.. _pass-attributes-from-fuel-to-puppet:
+
 Passing Custom Attributes From Fuel To Puppet
 =============================================
 
