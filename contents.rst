@@ -19,4 +19,5 @@ Documentation
   release-notes
   openstack-patch-quick-ref
   frequently-asked-questions
+  terminology
   eula
