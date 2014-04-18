@@ -1,6 +1,3 @@
-.. index:: Introduction
-
-.. _QSIntro:
 
 Introduction
 ============

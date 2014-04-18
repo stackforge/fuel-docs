@@ -6,4 +6,3 @@
 .. include:: /pages/pre-install-guide/0080-reference-configuration.rst
 .. include:: /pages/pre-install-guide/0090-appendix.rst
 .. include:: /pages/pre-install-guide/0030-pre-installation-checklist.rst
-.. include:: /pages/pre-install-guide/0091-glossary.rst

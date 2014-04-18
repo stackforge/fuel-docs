@@ -1,0 +1,9 @@
+
+.. _nic-term:
+
+NIC (Network Interface Card)
+----------------------------
+The physical networking port and hardware used for networking.
+In a virtualized deployment,
+NIC can also refer to the software interfaces
+between virtual machines.
