@@ -1,3 +1,7 @@
+Introduction
+============
+
+.. index:: Introduction
 
 .. include:: /pages/install-guide/0000-intro/0000-intro-header.rst
 .. include:: /pages/install-guide/0000-intro/0100-fuel-intro.rst

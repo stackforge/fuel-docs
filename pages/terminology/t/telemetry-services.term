@@ -1,0 +1,13 @@
+
+.. _telemetry-services-term:
+
+Telemetry Services
+------------------
+
+The OpenStack Telemetry service
+aggregates usage and performance data
+across the services deployed in an OpenStack cloud.
+This powerful capability provides visibility and insight
+into the usage of the cloud across dozens of data points
+and allows cloud operators to view metrics globally
+or by individual deployed resources.
