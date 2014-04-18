@@ -4,6 +4,8 @@
 
 .. index:: Ceilometer
 
+.. _ceilometer-deployment-notes:
+
 Ceilometer deployment notes
 ===========================
 
