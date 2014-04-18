@@ -39,6 +39,11 @@ The following Mirantis OpenStack documentation is available in PDF:
   A deep dive into the structure of the Fuel OpenStack environment,
   network considerations, and deployment options.
 
+* `Terminology Reference <pdf/Terminology-Reference.pdf>`_
+
+  Short articles about OpenStack terminology and technology
+  with references to other documentation and other useful information.
+
 * `Release Notes 4.1 <pdf/Mirantis-OpenStack-4.1-RelNotes.pdf>`_
  
   The Release Notes provide general information about new features,
