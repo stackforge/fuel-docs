@@ -1,6 +1,6 @@
-.. index:: Release Notes: Mirantis OpenStack 4.1
+.. index:: Release Notes: Mirantis OpenStack 4.1`
 
-.. _RelNotes_41:
+5. _RelNotes_41:
 
 
 Release Notes for Mirantis OpenStack 4.1
