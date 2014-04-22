@@ -10,5 +10,3 @@ Release Notes
    :depth: 3
 
 .. include:: /contents/contents-release-notes.rst
-
-
