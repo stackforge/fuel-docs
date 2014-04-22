@@ -33,7 +33,7 @@ Supported Software
 
 * **OpenStack Related Projects**
 
-  * Savanna v0.3
+  * Sahara v0.3
   * Murano v0.4.1
 
 * **Hypervisor**

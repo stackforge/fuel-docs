@@ -49,7 +49,7 @@ release of OpenStack. Also included are:
 
 * Packages to ensure High Availability.
 * Any defect fixes reported by our customers that may not yet have been merged into the community source.
-* Mirantis-driven premium OpenStack projects (for example, Savanna and Murano).
+* Mirantis-driven premium OpenStack projects (for example, Sahara and Murano).
 * Mirantis-certified partner plug-ins, drivers, and integrations.
 
 Another benefit you get from Mirantis OpenStack compared with some competitors 
@@ -75,7 +75,7 @@ Following is a list of features that are new in version 3.2.x:
 * Ability to combine multiple roles onto a single node for hardware consolidation
 * Inclusion of Inktank’s Ceph software-defined storage system in the hardened packages and the ability to deploy Ceph via Fuel
 * Neutron (Quantum) as a deployment choice from the Fuel UI
-* Inclusion of OpenStack Savanna and Murano projects in the hardened packages and the ability to deploy them via Fuel
+* Inclusion of OpenStack Sahara and Murano projects in the hardened packages and the ability to deploy them via Fuel
 * A published API in Fuel for Create, Read, Update and Delete (CRUD) operations
 * New High Availability tests added to OpenStack Health Check
 * Ability to register Fuel from within the UI
@@ -116,7 +116,7 @@ wizard will enable you to select:
 * Networking service.
 * Storage backend for Cinder.
 * Storage backend for Glance.
-* Installation of Savanna premium project (Hadoop for OpenStack).
+* Installation of Sahara premium project (Hadoop for OpenStack).
 * Installation of Murano premium project (Application Catalog for OpenStack).
 
 You can review and change your decisions about the hypervisor, network, storage 
@@ -172,14 +172,14 @@ configured to use the Generic Routing Encapsulation (GRE) segmentation or
 VLAN segmentation. Additional settings can be configured through the Network 
 settings tab prior to deploying the OpenStack environment.
 
-Inclusion of OpenStack Savanna and Murano projects in the hardened packages and the ability to deploy them via Fuel
+Inclusion of OpenStack Sahara and Murano projects in the hardened packages and the ability to deploy them via Fuel
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Savanna and Murano are related OpenStack projects initially led by Mirantis. 
-Savanna enables on-demand provisioning of Hadoop clusters that can run on top 
-of OpenStack. Savanna includes support for many different distributions of 
+Sahara and Murano are related OpenStack projects initially led by Mirantis. 
+Sahara enables on-demand provisioning of Hadoop clusters that can run on top 
+of OpenStack. Sahara includes support for many different distributions of 
 Hadoop including Hortonworks, Cloudera, and even Intel. This empowers Big 
 Data solutions to take full advantage of the elastic nature of OpenStack. 
-Savanna is currently a project that’s in incubation, but we’re confident 
+Sahara is currently a project that’s in incubation, but we’re confident 
 that it will become a full project in OpenStack in a future release of 
 OpenStack.
 
@@ -193,12 +193,12 @@ or other offerings.
 Both of these projects are now included in the Mirantis OpenStack packages 
 and can be configured for deployment on top of OpenStack through Fuel. 
 The initial configuration may be performed through the Fuel UI. Because 
-Savanna and Murano are also integrated into Horizon, further configuration 
+Sahara and Murano are also integrated into Horizon, further configuration 
 may be done natively from the OpenStack Dashboard.
 
-In addition to the ability to deploy Savanna or Murano, new tests have been 
+In addition to the ability to deploy Sahara or Murano, new tests have been 
 added to the OpenStack Health Check to confirm the successful deployment 
-and operational readiness of Savanna and Murano.
+and operational readiness of Sahara and Murano.
 
 A published API in Fuel for create, read, update, and delete (CRUD) operations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -393,7 +393,7 @@ Health Check platform tests have been fixed
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Mirantis OpenStack Health Check Platform tests were introduced in Mirantis 
 OpenStack 3.2. They ensure that the platform-level services operate correctly 
-after an OpenStack environment is deployed. Heat, Savanna, and Murano services 
+after an OpenStack environment is deployed. Heat, Sahara, and Murano services 
 are verified by platform tests. However, due to a bug, the tests occasionally 
 did not work properly. The issue has been fixed in Mirantis OpenStack 3.2.1 
 and the tests now work consistently.

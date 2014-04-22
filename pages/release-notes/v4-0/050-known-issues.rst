@@ -68,11 +68,11 @@ In this situation, Nova service will fail to inject files into VM instances.
 This is due to a Nova/QEMU bug that may be related to an incorrect path, but
 the details of the failure have not yet been determined.
 
-Heat, Savanna, and Murano do not configure send logs to the remote syslog
+Heat, Sahara, and Murano do not configure send logs to the remote syslog
 -------------------------------------------------------------------------
-At the time of this release, Heat, Savanna, and Murano services do not send
+At the time of this release, Heat, Sahara, and Murano services do not send
 logs to the remote syslog. To handle any issues with these services,
-attach the corresponding logs (/var/log/murano*|/var/log/heat*|/var/log/savanna*)
+attach the corresponding logs (/var/log/murano*|/var/log/heat*|/var/log/sahara*)
 from all of the nodes to the corresponding support requests and bug reports.
 
 Ceph RadosGW might not start on all controllers
