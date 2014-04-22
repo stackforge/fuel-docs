@@ -40,10 +40,10 @@ you do not need to specify the location in your configuration.
 For detailed information, please refer to the
 `Release Notes for Murano version 0.4.1 <https://wiki.openstack.org/wiki/Murano/ReleaseNotes_v0.4.1>`_.
 
-Savanna includes the Intel Distribution for Apache Hadoop plugin
+Sahara includes the Intel Distribution for Apache Hadoop plugin
 ----------------------------------------------------------------
 
-The Savanna project provided with Mirantis OpenStack 4.1
+The Sahara project provided with Mirantis OpenStack 4.1
 includes the Intel Distribution for Apache Hadoop version 2.5.1.
 This plug-in enables features such as:
 
@@ -56,8 +56,8 @@ This plug-in enables features such as:
 
 
 More information about this integration is available in the
-`blueprint <https://blueprints.launchpad.net/savanna/+spec/idh-savanna-plugin>`_.
-Additional information about Savanna can be found on the
-`Savanna project home page <https://wiki.openstack.org/wiki/Savanna>`_.
+`blueprint <https://blueprints.launchpad.net/sahara/+spec/idh-sahara-plugin>`_.
+Additional information about Sahara can be found on the
+`Sahara project home page <https://wiki.openstack.org/wiki/Sahara>`_.
 Information about Intel Hadoop can be found at the
 `Intel Distribution for Apache Hadoop web page <https://hadoop.intel.com/>`_.

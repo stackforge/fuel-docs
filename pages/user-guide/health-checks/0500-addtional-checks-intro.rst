@@ -1,7 +1,7 @@
 Additional Checks
 -----------------
 If you have installed OpenStack to use a High Availability (HA) architecture
-or have installed related OpenStack projects like Savanna or Murano,
+or have installed related OpenStack projects like Sahara or Murano,
 additional tests will be shown. The following are the tests available
 in HA mode:
 
@@ -11,6 +11,6 @@ in HA mode:
 * Check galera environment state
 * RabbitMQ availability
 
-Savanna and Murano tests are included in Platform Tests and are
+Sahara and Murano tests are included in Platform Tests and are
 described in the next section.
 

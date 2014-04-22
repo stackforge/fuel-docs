@@ -50,7 +50,7 @@ including networking, storage, and optional parameters.
 |    |                            | must assign at least 2 nodes as Ceph-OSD  |
 |    |                            | nodes.                                    |
 +----+----------------------------+-------------------------------------------+
-| 9  | Choose additional Platform | Savanna enables on-demand provisioning of |
+| 9  | Choose additional Platform | Sahara enables on-demand provisioning of  |
 |    | Services.                  | Hadoop clusters on OpenStack.             |
 |    |                            | Murano enables Windows-based datacenter   |
 |    |                            | services to be deployed on OpenStack.     |

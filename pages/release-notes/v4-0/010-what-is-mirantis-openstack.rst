@@ -32,7 +32,7 @@ release of OpenStack. Also included are:
 
 * Packages to ensure High Availability.
 * Any defect fixes reported by our customers that may not yet have been merged into the community source.
-* Mirantis-driven premium OpenStack projects (for example, Savanna and Murano).
+* Mirantis-driven premium OpenStack projects (for example, Sahara and Murano).
 * Mirantis-certified partner plug-ins, drivers, and integrations.
 
 Another benefit you get from Mirantis OpenStack, compared with some competitors,
