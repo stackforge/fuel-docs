@@ -14,6 +14,7 @@ Documentation
   
   pre-install-guide
   install-guide
+  virtualbox
   user-guide
   operations
   reference-architecture
