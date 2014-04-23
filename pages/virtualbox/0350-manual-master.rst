@@ -1,5 +1,5 @@
-Master Node Deployment
-^^^^^^^^^^^^^^^^^^^^^^
+Deploying the Master Node Manually
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 First, create the Master node VM.
 

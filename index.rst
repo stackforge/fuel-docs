@@ -24,6 +24,11 @@ The following Mirantis OpenStack documentation is available in PDF:
   
   This document describes how to pre-configure your
   OpenStack environment and install the Fuel Master Node.
+
+* `Running Fuel on VirtualBox <pdf/Running-Fuel-on-VirtualBox.pdf>`_
+  
+  This document provides information about running Fuel on VirtualBox
+  for demonstration and evaluation purposes.
   
 * `User Guide <pdf/Mirantis-OpenStack-4.1-UserGuide.pdf>`_
   
