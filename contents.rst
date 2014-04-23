@@ -15,6 +15,7 @@ Documentation
   pre-install-guide
   install-guide
   user-guide
+  operations
   reference-architecture
   release-notes
   openstack-patch-quick-ref

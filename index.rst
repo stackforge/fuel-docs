@@ -29,6 +29,11 @@ The following Mirantis OpenStack documentation is available in PDF:
   
   This document describes how to deploy compute nodes for Fuel.
 
+* `Operations Guide <pdf/Mirantis-OpenStack-4.1-OperationsGuide.pdf>`_
+
+  A collection of useful procedures for using and managing
+  your Mirantis OpenStack environment.
+
 * `Reference Architecture <pdf/Mirantis-OpenStack-4.1-ReferenceArchitecture.pdf>`_
   
   A deep dive into the structure of the Fuel OpenStack environment,
