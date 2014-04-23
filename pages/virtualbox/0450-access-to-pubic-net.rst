@@ -1,17 +1,17 @@
 .. _access_to_public_net:
 
 Deployment configuration to access OpenStack API and VMs from host machine
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+==========================================================================
 
 Helper scripts for VirtualBox create network adapters `eth0`, `eth1`, `eth2`
 which are represented on host machine as `vboxnet0`, `vboxnet1`, `vboxnet2`
-correspondingly, and assign IP addresses for adapters: 
+correspondingly, and assign IP addresses for adapters:
 
-  vboxnet0 - 10.20.0.1/24, 
-  vboxnet1 - 172.16.1.1/24, 
+  vboxnet0 - 10.20.0.1/24,
+  vboxnet1 - 172.16.1.1/24,
   vboxnet2 - 172.16.0.1/24.
 
-For the demo environment on VirtualBox, the first network adapter is used to run Fuel 
+For the demo environment on VirtualBox, the first network adapter is used to run Fuel
 network traffic, including PXE discovery.
 
 To access the Horizon and OpenStack RESTful API via Public network from the host machine,
@@ -45,7 +45,7 @@ For Ubuntu, the following command, executed on the host, can make this happen::
 
   sudo iptables -t nat -A POSTROUTING -s 172.16.1.0/24 \! -d 172.16.1.0/24 -j MASQUERADE
 
-To access VMs managed by OpenStack it is needed to provide IP addresses from 
+To access VMs managed by OpenStack it is needed to provide IP addresses from
 Floating IP range. When OpenStack environment is deployed and VM is provisioned there,
 you have to associate one of the Floating IP addresses from the pool to this VM,
 whether in Horizon or via Nova CLI. By default, OpenStack blocks all the traffic to the VM.
@@ -56,6 +56,6 @@ It can be done in Horizon, or from OpenStack Controller using the following comm
   nova secgroup-add-rule default icmp -1 -1 0.0.0.0/0
   nova secgroup-add-rule default tcp 22 22 0.0.0.0/0
 
-IP ranges for Public and Management networks (172.16.*.*) are defined in ``config.sh`` 
+IP ranges for Public and Management networks (172.16.*.*) are defined in ``config.sh``
 script. If default values don't fit your needs, you are free to change them, but before
 the installation of Fuel Master node.
