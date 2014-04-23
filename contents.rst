@@ -16,6 +16,7 @@ Documentation
   install-guide
   user-guide
   operations
+  virtualbox
   reference-architecture
   release-notes
   terminology
