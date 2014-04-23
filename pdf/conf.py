@@ -21,6 +21,7 @@ pdf_documents = [
     u'2014, Mirantis Inc.'),
     ('pdf/pdf_install', u'Mirantis-OpenStack-4.1-InstallGuide', u'Installation Guide', u'2014, Mirantis Inc.'),
     ('pdf/pdf_operations', u'Mirantis-OpenStack-4.1-OperationsGuide', u'Operations Guide', u'2014, Mirantis Inc.'),
+   ('pdf/pdf_virtualbox', u'Running-Mirantis-OpenStack-on-VirtualBox', u'Running Fuel on VirtualBox', u'2014, Mirantis Inc.'),
     ('pdf/pdf_reference', u'Mirantis-OpenStack-4.1-ReferenceArchitecture', u'Reference Architecture', u'2014, Mirantis Inc.'),
     ('pdf/pdf_preinstall', u'Mirantis-OpenStack-4.1-Pre-InstallationGuide', u'Pre-Installation Guide', u'2014, Mirantis Inc.'),
     ('pdf/pdf_terminology', u'Mirantis-OpenStack-4.1-Terminology-Reference', u'Terminology Reference', u'2014, Mirantis Inc.'),
