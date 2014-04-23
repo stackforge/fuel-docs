@@ -1,10 +1,5 @@
 .. include:: /pages/install-guide/install/0100-install-master-header.rst
 .. include:: /pages/install-guide/install/0200-install-bare-metal.rst
-.. include:: /pages/install-guide/install/0300-install-virtualbox.rst
-.. include:: /pages/install-guide/install/0330-install-automatic-virtualbox.rst
-.. include:: /pages/install-guide/install/0340-install-manual-virtualbox.rst
-.. include:: /pages/install-guide/install/0350-manual-master.rst
-.. include:: /pages/install-guide/install/0360-manual-slave.rst
 .. include:: /pages/install-guide/install/0400-network-install.rst
 .. include:: /pages/install-guide/install/0420-change-net-params.rst
 .. include:: /pages/install-guide/install/0500-pxe.rst

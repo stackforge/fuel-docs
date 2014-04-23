@@ -1,7 +1,7 @@
 .. _access_to_public_net:
 
 Deployment configuration to access OpenStack API and VMs from host machine
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+==========================================================================
 
 Helper scripts for VirtualBox create network adapters `eth0`, `eth1`, `eth2`
 which are represented on host machine as `vboxnet0`, `vboxnet1`, `vboxnet2`
