@@ -1,4 +1,5 @@
 .. index:: Pre-install Guide
+
 .. _Pre-install_Guide:
 
 ======================
@@ -16,4 +17,4 @@ Pre-Installation Guide
 .. include:: /pages/pre-install-guide/0080-reference-configuration.rst
 .. include:: /pages/pre-install-guide/0090-appendix.rst
 .. include:: /pages/pre-install-guide/0030-pre-installation-checklist.rst
-.. include:: /pages/pre-install-guide/0091-glossary.rst
+.. include:: /pages/pre-install-guide/7000-sahara-plan.rst
