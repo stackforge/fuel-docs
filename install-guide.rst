@@ -15,3 +15,4 @@ Installation Guide
 .. include:: /pages/install-guide/0070-networks.rst
 .. include:: /pages/install-guide/install.rst
 .. include:: /pages/install-guide/stop_reset.rst
+.. include:: /pages/install-guide/7000-sahara-install.rst
