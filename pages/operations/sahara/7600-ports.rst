@@ -1,40 +1,30 @@
-.. index:: Savanna Deployment
 
-.. _savanna-deployment-label:
 
-Savanna Deployment
-------------------
+.. _sahara-ports:
 
-Savanna is a service for launching Hadoop clusters on OpenStack.
-It is vendor-agnostic and currently supports three distributions:
-Vanilla Apache Hadoop, Hortonworks Data Platform (HDP),
-and the Intel Distribution for Apache Hadoop (IDH).
-For Savanna usage guidelines, read the User Guide section of the
-`Savanna documentation <http://savanna.readthedocs.org/en/0.3/>`_.
+Ports Used by Sahara
+--------------------
 
-**Network Requirements**
+The table below lists:
 
-Fuel configures Savanna to use floating IPs to access and configure VMs.
+- Ports that must be open for inbound traffic
+  (marked with 'yes' in the 'Required for Sahara' column)
 
-Savanna does not configure OpenStack Security Groups so the default security
-group must be configured manually in each tenant where Savanna will be used.
-The table below lists the ports that must be open for inbound traffic
-(marked with 'yes' in the 'Required for Savanna' column) and the ports that
-are used for running Savanna post-deployment health checks.
+- Ports that are used for running Sahara post-deployment health checks.
+  They must be opened for inbound traffic for post-deployment health
+  checks to succeed.
 
-For the post-deployment checks details see :ref:`platform-tests-label`.
-If you want to run the checks, open the ports that have 'yes' in the
-corresponding column. Note that the checks are run in the tenant you've
-specified in 'OpenStack Settings' tab during OpenStack installation, so
-that is where you need to configure the default Security Group.
-By default 'admin' tenant is used for post-deployment checks.
+The ports must be opened in the 'default' security group in each
+tenant where Sahara is to be used.
+
 
 +-----------------+-------------------+------------------------+--------------------------------------+
-| Port / protocol | Required for      | Required for Savanna   | Port                                 |
-|                 | Savanna           | post-deployment checks | Description                          |
+| Port / protocol | Required for      | Required for Sahara    | Port                                 |
+|                 | Sahara            | post-deployment checks | Description                          |
+|                 |                   | health checks          |                                      |
 +=================+===================+========================+======================================+
 | 22 / TCP        | yes               | yes                    | Required for communication           |
-|                 |                   |                        | between Savanna and virtual machines |
+|                 |                   |                        | between Sahara and virtual machines  |
 +-----------------+-------------------+------------------------+--------------------------------------+
 | 80 / TCP        | yes (HDP          | no                     | Ambari web interface                 |
 |                 |      plugin only) |                        |                                      |
@@ -70,13 +60,11 @@ By default 'admin' tenant is used for post-deployment checks.
 |                 |                   |                        |                                      |
 +-----------------+-------------------+------------------------+--------------------------------------+
 
-.. note:: The above listed ports are defaults. If some of them are changed
-    while launching a Hadoop cluster, the corresponding ports must be opened
-    instead of the default ones.
+
+.. note:: The ports listed above are defaults.
+    if some of them are changed while launching a Hadoop cluster,
+    the corresponding ports must be opened instead of the default ones.
+
 
 Also make sure that communication between virtual machines is not blocked.
 
-**VM Flavor Requirements**
-
-Hadoop requires at least 1G of memory to run. That means you must
-use flavors having not less than 1G of memory for Hadoop cluster nodes.
