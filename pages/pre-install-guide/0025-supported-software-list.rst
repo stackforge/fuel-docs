@@ -1,12 +1,12 @@
 Supported Software
-------------------
+==================
 
 * **Operating Systems**
 
-  * CentOS 6.4 (x86_64 architecture only)
-  * Ubuntu 12.04 (x86_64 architecture only)
+  * CentOS 6.5 (x86_64 architecture only)
+  * Ubuntu 12.04.4 (x86_64 architecture only)
 
-* **Puppet (IT automation tool)** 2.7.23
+* **Puppet (IT automation tool)** 3.4.2
 
 * **MCollective** 2.3.3
 
@@ -14,7 +14,7 @@ Supported Software
 
 * **OpenStack Core Projects**
 
-  * Havana release 2013.2.2
+  * Icehouse release 2014.1
 
     * Nova (OpenStack Compute)
     * Swift (OpenStack Object Storage)
@@ -26,28 +26,32 @@ Supported Software
 
 * **OpenStack Core Integrated Projects**
 
-  * Havana Release 2013.2.2
+  * Icehouse Release 2014.1
 
     * Ceilometer (OpenStack Telemetry)
     * Heat (OpenStack Orchestration)
 
+* **OpenStack Core Incubated Projects**
+
+    * Sahara (OpenStack Data Processing) v0.3
+
 * **OpenStack Related Projects**
 
-  * Savanna v0.3
-  * Murano v0.4.1
+  * Murano v0.5
 
 * **Hypervisor**
 
   * KVM
   * QEMU
+  * vCenter
 
-* **Open vSwitch** 1.10.2 (CentOS), 1.10.1 (Ubuntu)
+* **Open rSwitch** 1.10.2
 
 * **HA Proxy** 1.4.24
 
 * **Galera** 23.2.2
 
-* **RabbitMQ** 2.8.7
+* **RabbitMQ** 3.2.3
 
 * **Pacemaker** 1.1.10
 
@@ -55,6 +59,8 @@ Supported Software
 
 * **Keepalived** 1.2.4
 
-* **Ceph Dumpling** (v0.67.5)
+* **MongoDB** 2.4.6
 
-* **MySQL** (v5.5.28)
+* **Ceph** (v0.67.5, "Dumpling")
+
+* **MySQL** 5.5.28 (Centos) 5.5.37 (Ubuntu)
