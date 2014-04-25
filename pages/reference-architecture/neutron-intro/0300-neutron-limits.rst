@@ -7,11 +7,12 @@ Known limitations
   prevent them from receiving incoming connections. You, the administrator,
   should assign a floating IP addresses for the tenant. Below are steps you can
   follow to do this:
+  ::
 
-  | get admin credentials:
-  | # source /root/openrc
-  | get admin tenant-ID:
-  | # keystone tenant-list
+    # get admin credentials:
+    source /root/openrc
+    # get admin tenant-ID:
+    keystone tenant-list
 
   +----------------------------------+----------+---------+
   |                id                |   name   | enabled |
@@ -21,8 +22,10 @@ Known limitations
   | cba7b0ff68ee4985816ac3585c8e23a9 | services |   True  |
   +----------------------------------+----------+---------+
 
-  | create one floating-ip address for admin tenant:
-  | # neutron floatingip-create --tenant-id=b796f91df6b84860a7cd474148fb2229 net04_ext
+  ::
+
+    # create one floating-ip address for admin tenant:
+    neutron floatingip-create --tenant-id=b796f91df6b84860a7cd474148fb2229 net04_ext
 
 * You can't combine Private or Admin network with any other networks on one NIC.
 * To deploy OpenStack using Neutron with GRE segmentation, each node requires at
