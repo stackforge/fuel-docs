@@ -57,6 +57,14 @@ styles:
         backColor: #FFFFCC
         borderColor: #FFFF66
         parent: admonition 
+
+    seealso-heading:
+        parent: heading
+        fontName: PT Sans
+        fontSize: 150%
+        keepWithNext: true
+        spaceBefore: 0
+        spaceAfter: 10
         
     right:
         parent: bodytext

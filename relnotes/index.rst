@@ -23,4 +23,3 @@
    PageBreak oneColumn
 
 .. include:: /pages/release-notes/v4-1-havana-full.rst
-

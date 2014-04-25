@@ -1,4 +1,3 @@
-
 .. header::
 
   .. cssclass:: header-table
@@ -23,6 +22,16 @@
 
    PageBreak oneColumn
 
-.. toctree:: Table of Contents
+.. toctree::
   :maxdepth: 2
-.. include:: ../contents/contents-user.rst
+
+.. include:: /pages/preface/preface.rst
+.. include:: /pages/user-guide/0070-introduction.rst
+.. include:: /pages/user-guide/post-install-healthchecks.rst
+.. include:: /pages/user-guide/troubleshooting-ug/network-issues.rst
+.. include:: /pages/user-guide/cli.rst
+.. include:: /pages/user-guide/custom-attributes.rst
+.. include:: /pages/user-guide/murano.rst
+.. include:: /pages/user-guide/savanna.rst
+.. include:: /pages/user-guide/ceilometer.rst
+.. include:: /pages/user-guide/heat.rst

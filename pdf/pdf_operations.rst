@@ -1,4 +1,3 @@
-
 .. header::
 
   .. cssclass:: header-table
@@ -23,9 +22,8 @@
 
    PageBreak oneColumn
 
-.. toctree:: Table of Contents
+.. toctree::
    :maxdepth: 2     
-.. include:: ../contents/contents-operations.rst
 
-
-   
+.. include:: /pages/preface/preface.rst
+.. include:: /pages/operations/0000-intro.rst
