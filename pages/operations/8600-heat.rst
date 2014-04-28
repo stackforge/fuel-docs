@@ -4,6 +4,8 @@
 
 .. index:: Heat
 
+.. _heat-operations:
+
 Heat Deployment Notes
 ==================================
 
@@ -29,27 +31,28 @@ This component provides a native REST API and processes API requests.
 heat-api-cfn
 ++++++++++++
 
-This component is similar to *heat-api*, but provides AWS CloudFormation
-compatible API.
+This component is similar to *heat-api*,
+but provides AWS CloudFormation compatible API.
 
 heat-engine
 +++++++++++
 
-This is the main component of the Heat framework. It does all the work
-of reading templates, launching instances and providing events to the API
-users.
+This is the main component of the Heat framework.
+It does all the work of reading templates,
+launching instances and providing events to the API users.
 
 Installation
 ------------
 
-When using Fuel 4.1, Heat is installed by default
+When using Fuel 4.1 and later, Heat is installed by default
 when you deploy a CentOS or Ubuntu environment.
 
-Notes
------
+For more information:
 
 * The official `documentation of the Heat project <https://wiki.openstack.org/wiki/Heat>`_
-  can be found here.
 * `Development documentation <http://docs.openstack.org/developer/heat/>`_
-  can be found here.
 * Mirantis `blog record <http://www.mirantis.com/blog/heat-things-up-with-openstack-before-your-competitors-do/>`_ about Heat.
+
+
+.. include:: /pages/operations/health-checks/0630-heat-prepare-test.rst
+.. include:: /pages/operations/health-checks/0650-heat-test-details.rst

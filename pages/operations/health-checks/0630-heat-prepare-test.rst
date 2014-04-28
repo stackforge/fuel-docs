@@ -1,5 +1,5 @@
 Preparing Heat for Testing
-+++++++++++++++++++++++++++
+--------------------------
 
 The platform tests are run in the tenant you've specified in
 'OpenStack Settings' tab during OpenStack installation. By default that is
