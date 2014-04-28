@@ -4,51 +4,57 @@
 
 .. index Reference Architectures
 
-Overview 
-========
+OpenStack Environment Architecture
+==================================
 
 .. contents :local:
 
-Before you install any hardware or software, you must know what 
-you're trying to achieve. This section looks at the basic components of
-an OpenStack infrastructure and organizes them into one of the more
-common reference architectures. You'll then use that architecture as a
-basis for installing OpenStack in the next section.
+Fuel deploys an OpenStack Environment
+with nodes that provide a specific set of functionality.
+Beginning with Fuel 5.0,
+a single architecture model can support HA (High Availability)
+and non-HA deployments;
+you can deploy a non-HA environment
+and then add additional nodes to implement HA
+rather than needing to redeploy the environment from scratch.
 
-As you know, OpenStack provides the following basic services:
+The OpenStack environment consists of multiple physical server nodes
+(or an equivalent VM),
+each of which is one of the following node types:
+
+**Controller:**
+  The Controller manages all activities in the environment.
+  `nova-controller` maintains the life cycle of the Controller.
+  along with RabbitMQ, HAProxy, MySQL/Galera,
+  the Pacemaker Cluster (Corosync and Pacemaker),
+  Keystone, Glance, and Cinder.
+  Other services that may optionally run on the Controller include
+  Heat, Neutron, Swift, Ceph Monitor, Ceilometer,
+  Sahara, and Murano.
 
 **Compute:**
-  Compute servers are the workhorses of your installation; they're 
-  the servers on which your users' virtual machines are created. 
-  `nova-compute` controls the life cycle of these VMs.
-
-**Networking:**
-  Typically, an OpenStack environment includes multiple servers that
-  need to communicate to each other and to outside world. Fuel supports
-  both old `nova-network` and new `neutron` based OpenStack Networking
-  implementations:
-
-  * With `nova-network`, Flat-DHCP and VLAN modes are available.
-
-  * With `neutron`, GRE tunnels or VLANs can be used for network
-    segmentation.
+  Compute servers are the workhorses of your installation;
+  they are the servers on which your users' virtual machines are created.
+  `nova-compute` controls the life cycle of these VMs;
+  Neutron Agent and Ceilometer Compute may also run on Compute nodes.
 
 **Storage:**
-  OpenStack requires block and object storage to be provisioned. Fuel
-  provides the following storage options out of the box:
+  OpenStack requires block and object storage to be provisioned.
+  These can be provisioned as Storage nodes
+  or as roles that run on Compute nodes.
+  Fuel provides the following storage options out of the box:
 
   * Cinder LVM provides persistent block storage to virtual machines
-    over iSCSI protocol
+    over iSCSI protocol.  The Cinder Storage node runs a Cinder Volume.
 
-  * Swift object store can be used by Glance to store VM images and
-    snapshots, it may also be used directly by applications
+  * Swift object store can be used by Glance to store VM images and snapshots;
+    it may also be used directly by applications
+    Swift is the default storage provider that is provisioned
+    if another storage option is not chosen when the environment is deployed.
 
   * Ceph combines object and block storage and can replace either one or
     both of the above.
+    The Ceph Storage node runs Ceph OSD.
 
-Compute, Networking, and Storage services can be combined in many
-different ways. Out of the box, Fuel supports the following deployment
-configurations:
-
-- :ref:`Multi-node <Multi-node>`
-- :ref:`Multi-node with HA <Multi-node_HA>`
+The key principle is that your controller(s) are separate from
+the compute servers on which your user's VMs run.

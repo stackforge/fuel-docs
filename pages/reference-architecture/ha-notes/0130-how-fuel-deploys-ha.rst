@@ -3,10 +3,11 @@
 How Fuel Deploys HA
 -------------------
 
-Fuel installs Corosync service, configures ``corosync.conf`` and includes Pacemaker
-service plugin into ``/etc/corosync/service.d``. Then Corosync service starts and
-spawns corresponding Pacemaker processes. Fuel configures cluster properties of
-Pacemaker and then injects resources configuration for virtual IPs, HAProxy,
+Fuel installs Corosync service, configures ``corosync.conf``,
+and includes the Pacemaker service plugin into ``/etc/corosync/service.d``.
+Then Corosync service starts and spawns corresponding Pacemaker processes.
+Fuel configures the cluster properties of Pacemaker
+and then injects resource configurations for virtual IPs, HAProxy,
 MySQL and Neutron agent resources::
 
   primitive p_haproxy ocf:pacemaker:haproxy \
