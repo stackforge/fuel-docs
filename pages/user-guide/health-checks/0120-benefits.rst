@@ -8,14 +8,16 @@ Benefits
   operations and tell you which component or components are not working
   properly.
 
-* Previously, performing these checks manually would have consumed a
-  great deal of time. Now, with these checks the process will take only a
-  few minutes.
+* Performing these checks manually would consumed a great deal of time,
+  but it only take a few minutes to run the full suite of tests
+  from the Fuel console.
 
-* Aside from verifying that everything is working correctly, the process
-  will also determine how quickly your system works.
+* Aside from verifying that everything is working correctly,
+  the process also determines how quickly your system works.
 
-* Post-deployment checks continue to be useful, for example after
-  sizable changes are made in the system you can use the checks to
-  determine if any new failure points have been introduced.
+* Post-deployment checks continue to be useful
+  after you initially deploy your environment.
+  For example, after sizable changes are made in the environment,
+  you can use the checks to determine
+  if any new failure points have been introduced.
 
