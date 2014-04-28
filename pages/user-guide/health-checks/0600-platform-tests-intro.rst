@@ -10,6 +10,5 @@ involves several manual configuration steps.
 
 .. include:: /pages/user-guide/health-checks/0610-sahara-prepare-test.rst
 .. include:: /pages/user-guide/health-checks/0620-murano-prepare-test.rst
-.. include:: /pages/user-guide/health-checks/0630-heat-prepare-test.rst
 .. include:: /pages/user-guide/health-checks/0640-platform-test-details.rst
 
