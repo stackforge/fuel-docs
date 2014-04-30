@@ -1,0 +1,11 @@
+
+.. _esxi-term:
+
+ESXi
+----
+
+ESXi is a Type 1 :ref:`hypervisor-term`
+that serves as a virtualization server
+for :ref:`vsphere-term` and `vcenter-term`.
+All virtual machines and guest operating systems
+are installed on ESXi servers.
