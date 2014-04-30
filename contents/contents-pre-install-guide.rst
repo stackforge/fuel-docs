@@ -8,6 +8,8 @@
 .. include:: /pages/pre-install-guide/4400-nodes-roles.rst
 .. include:: /pages/pre-install-guide/4500-hardware.rst
 .. include:: /pages/pre-install-guide/7000-sahara-plan.rst
+.. include:: /pages/pre-install-guide/7000-vcenter-plan.rst
 .. include:: /pages/pre-install-guide/0060-quick-install-fuel.rst
+.. include:: /pages/pre-install-guide/0080-reference-configuration.rst
 .. include:: /pages/pre-install-guide/0080-reference-configuration.rst
 .. include:: /pages/pre-install-guide/0090-appendix.rst
