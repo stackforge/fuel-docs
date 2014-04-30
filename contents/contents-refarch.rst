@@ -1,3 +1,4 @@
+
 .. include:: /pages/reference-architecture/0010-overview.rst
 .. include:: /pages/reference-architecture/0012-simple.rst
 .. include:: /pages/reference-architecture/0014-compact.rst
@@ -8,4 +9,6 @@
 .. include:: /pages/reference-architecture/0045-storage.rst
 .. include:: /pages/reference-architecture/0050-technical-considerations-overview.rst
 .. include:: /pages/reference-architecture/0060-neutron-vs-nova-network.rst
+.. include:: /pages/reference-architecture/0090-savanna.rst
+.. include:: /pages/reference-architecture/7000-vcenter.rst
 .. include:: /pages/reference-architecture/0100-bonding.rst
