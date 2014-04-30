@@ -23,6 +23,7 @@ Terminology Reference
 .. include:: /pages/terminology/i/identity-service.rst
 .. include:: /pages/terminology/i/image-service.rst
 .. include:: /pages/terminology/i/ironic.rst
+.. include:: /pages/terminology/k/keystone.rst
 .. include:: /pages/terminology/m/mirantis-openstack.rst
 .. include:: /pages/terminology/m/mongodb.rst
 .. include:: /pages/terminology/m/murano.rst
