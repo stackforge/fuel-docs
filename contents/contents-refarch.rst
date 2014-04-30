@@ -12,3 +12,4 @@
 .. include:: /pages/reference-architecture/6050-neutron-topologies.rst
 .. include:: /pages/reference-architecture/0100-openvswitch.rst
 .. include:: /pages/reference-architecture/0110-bonding.rst
+.. include:: /pages/reference-architecture/7000-vcenter.rst
