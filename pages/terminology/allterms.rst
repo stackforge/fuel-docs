@@ -12,6 +12,7 @@ Terminology Reference
 .. include:: /pages/terminology/c/crm.rst
 .. include:: /pages/terminology/d/devstack.rst
 .. include:: /pages/terminology/d/docker.rst
+.. include:: /pages/terminology/e/esxi.rst
 .. include:: /pages/terminology/f/fencing.rst
 .. include:: /pages/terminology/f/fuel-master-node.rst
 .. include:: /pages/terminology/g/galera-cluster.rst
@@ -60,4 +61,6 @@ Terminology Reference
 .. include:: /pages/terminology/t/tagged-port.rst
 .. include:: /pages/terminology/t/telemetry-services.rst
 .. include:: /pages/terminology/t/tenant.rst
+.. include:: /pages/terminology/v/vcenter.rst
 .. include:: /pages/terminology/v/vlan.rst
+.. include:: /pages/terminology/v/vsphere.rst
