@@ -10,17 +10,16 @@ you need to consider a few special conditions.
 
 **Floating IPs**
 
-In an OpenStack deployment that uses Neutron networking,
-Fuel configures Sahara to use floating IPs to reach the VMs.
+Fuel configures Sahara to use floating IPs to manage the VMs.
 This means that you must provide a Floating IP pool
 in each Node Group Template you define.
 
-If you are using Nova-Network,
+A special case is if you are using Nova-Network and you have
 set the **auto_assign_floating_ip** parameter to true
 by checking the appropriate box on the Fuel UI.
 In this case, a floating IP is automatically assigned to each VM
 and the "floating ip pool" dropdown menu
-is hidden in the Sahara UI.
+is hidden in the OpenStack Dashboard.
 
 In either case, Sahara assigns a floating IP to each VM it spawns
 so be sure to allocate enough floating IPs.
@@ -30,21 +29,13 @@ so be sure to allocate enough floating IPs.
 Sahara does not configure OpenStack Security Groups
 so you must manually configure the default security group
 in each tenant where Sahara will be used.
-The table below lists the ports that must be open for inbound traffic
-(marked with 'yes' in the 'Required for Savanna' column) and the ports that
-are used for running Savanna post-deployment health checks.
+See :ref:`sahara-ports` for a list of ports which need to opened.
 
 **VM Flavor Requirements**
 
 Hadoop requires at least 1G of memory to run.
 That means you must use flavors that have
 at least 1G of memory for Hadoop cluster nodes.
-
-**Ports used by Sahara**
-
-A number of ports must be open for inbound traffic
-in order to run and test your Sahara deployment.
-See :ref:`sahara-ports` for a list of these ports.
 
 **Communication between virtual machines**
 

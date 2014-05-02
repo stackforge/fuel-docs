@@ -8,12 +8,19 @@ The table below lists:
 
 - Ports that must be open for inbound traffic
   (marked with 'yes' in the 'Required for Sahara' column)
-  Ports that are used for running Sahara post-deployment health checks.
+  in order for Sahara to work properly.
 
+- Ports that are used for running Sahara post-deployment health checks.
+  They must be opened for inbound traffic for post-deployment health
+  checks to succeed.
+
+The ports must be opened in the 'default' security group in each
+tenant where Sahara is to be used.
 
 +-----------------+-------------------+------------------------+--------------------------------------+
-| Port / protocol | Required for      | Required for Sahara    | Port                                 |
-|                 | Sahara            | post-deployment checks | Description                          |
+| Port / protocol | Required for      | Required for Sahara    | Port Description                     |
+|                 | Sahara            | post-deployment        |                                      |
+|                 |                   | health checks          |                                      |
 +=================+===================+========================+======================================+
 | 22 / TCP        | yes               | yes                    | Required for communication           |
 |                 |                   |                        | between Sahara and virtual machines  |
