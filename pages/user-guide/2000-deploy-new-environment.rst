@@ -1,8 +1,55 @@
-Post-installation Configuration Tasks
-========================================
+
+.. _deploy-environment-ug:
+
+Deploy a New OpenStack Environment
+==================================
+
+After Fuel completes the installation,
+point your browser to default Fuel UI
+URL: `http://10.20.0.2:8000 <http://10.20.0.2:8000>`__.
+
+Alternatively, point your browser
+to the IP address and port number that you specified.
+
+In the Fuel UI, create a new OpenStack environment.
+
+#. Configure the network settings using the address plan.
+
+#. Verify the network configuration by clicking **Verify Networks**.
+
+#. In the **Settings** tab, modify additional options:
+
+   * Access
+
+   * OpenStack Components
+
+   * Hypervisor type
+
+   * Scheduler driver
+
+   * Syslog
+
+   * Storage
+
+#. Assign a role for each node server.
+
+#. Optionally, associate NICs with the OpenStack networks:
+
+   #. Select the nodes.
+   #. Click **Configure Interfaces**.
+   #. Drag and drop the appropriate networks onto the physical interfaces.
+   #. Click **Apply**.
+
+#. Click **Deploy Changes**.
+    Depending on your environment deployment of Mirantis OpenStack may take
+    some time.
+
+After you deployed Mirantis OpenStack, verify the configuration by
+running the tests from the **Health Check** tab.
+
 
 You must complete the following steps
-for configuring your OpenStack environment.
+to deploy your OpenStack environment.
 After completing this stage, configure the parameters for deployment,
 including networking, storage, and optional parameters.
 
@@ -26,10 +73,9 @@ including networking, storage, and optional parameters.
 |    | Mode (Multi-node HA or non | least 3 nodes to be assigned as           |
 |    | HA).                       | controllers.                              |
 +----+----------------------------+-------------------------------------------+
-| 5  | Choose your hypervisor.    | Current choices from the UI are KVM or    |
-|    |                            | QEMU. Additional hypervisors are          |
-|    |                            | available through the `Mirantis Services`_|
-|    |                            | engagement.                               |
+| 5  | Choose your                | Current choices from the UI are           |
+|    | :ref:`hypervisor-term`     | :ref:`kvm-term`, :ref:`qemu-term`, or     |
+|    |                            | vcenter.                                  |
 +----+----------------------------+-------------------------------------------+
 | 6  | Select your network        | If you choose Nova-network, you can       |
 |    | service (Nova-network,     | choose FlatDHCP or VLAN Manager later in  |
@@ -94,9 +140,66 @@ including networking, storage, and optional parameters.
 |    | success.                   |                                           |
 +----+----------------------------+-------------------------------------------+
 
+
 After you complete these tasks, Mirantis OpenStack is ready to use.
 
 In the following sections, you can view specific examples of deploying
 Mirantis OpenStack, including complete switch configuration and cabling.  
 
 .. see also:: :ref:`Nova-network <novanetwork>`, :ref:`Neutron <neutron>`
+
+Create a new environment
+========================
+
+.. image:: /_images/fuel-wizard.png
+   :align: center
+   :width: 70%
+
+Network settings page
+=====================
+
+.. image:: /_images/fuel-network-settings.png
+   :align: center
+   :width: 70%
+
+Settings page
+=============
+
+.. image:: /_images/fuel-settings1.png
+   :align: center
+   :width: 70%
+
+.. image:: /_images/fuel-settings2.png
+   :align: center
+   :width: 70%
+
+.. image:: /_images/fuel-settings3.png
+   :align: center
+   :width: 70%
+
+.. image:: /_images/fuel-settings4.png
+   :align: center
+   :width: 70%
+
+Add nodes to environment
+========================
+
+.. image:: /_images/fuel-nodes.png
+   :align: center
+   :width: 70%
+
+Select discovered nodes
+=======================
+
+.. image:: /_images/fuel-nodes-selected.png
+   :align: center
+   :width: 70%
+
+Node's network settings
+=======================
+
+.. image:: /_images/fuel-node-network.png
+   :align: center
+   :width: 70%
+
+
