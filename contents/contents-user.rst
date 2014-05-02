@@ -1,4 +1,5 @@
 .. include:: /pages/user-guide/0070-introduction.rst
+.. include:: /pages/user-guide/2000-deploy-new-environment.rst
 .. include:: /pages/user-guide/post-install-healthchecks.rst
 .. include:: /pages/user-guide/troubleshooting-ug/network-issues.rst
 .. include:: /pages/user-guide/cli.rst
