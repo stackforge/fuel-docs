@@ -5,3 +5,4 @@
 .. include:: /pages/user-guide/7000-sahara-install.rst
 .. include:: /pages/user-guide/post-install-healthchecks.rst
 .. include:: /pages/user-guide/cli.rst
+.. include:: /pages/user-guide/docker-on-master.rst
