@@ -2,6 +2,7 @@
 .. include:: /pages/user-guide/post-install-healthchecks.rst
 .. include:: /pages/user-guide/troubleshooting-ug/network-issues.rst
 .. include:: /pages/user-guide/cli.rst
+.. include:: /pages/user-guide/docker-on-master.rst
 .. include:: /pages/user-guide/custom-attributes.rst
 .. include:: /pages/user-guide/savanna.rst
 .. include:: /pages/user-guide/ceilometer.rst
