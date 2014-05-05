@@ -11,6 +11,6 @@ in HA mode:
 * Check galera environment state
 * RabbitMQ availability
 
-Savanna and Murano tests are included in Platform Tests and are
-described in the next section.
+Savanna, Murano, and Heat tests are included in Platform Tests
+and are described in the sections that discuss those services.
 

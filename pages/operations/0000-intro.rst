@@ -3,6 +3,8 @@
 
    PageBreak
 
+.. _Operations-Guide-top:
+
 .. index Operations Guide
 
 Introduction
