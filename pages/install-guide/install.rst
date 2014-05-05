@@ -5,7 +5,6 @@
 .. include:: /pages/install-guide/install/0340-install-manual-virtualbox.rst
 .. include:: /pages/install-guide/install/0350-manual-master.rst
 .. include:: /pages/install-guide/install/0360-manual-slave.rst
-.. include:: /pages/install-guide/install/0400-network-install.rst
 .. include:: /pages/install-guide/install/0420-change-net-params.rst
 .. include:: /pages/install-guide/install/0500-pxe.rst
 .. include:: /pages/install-guide/install/0900-master-finish.rst

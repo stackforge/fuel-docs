@@ -1,15 +1,13 @@
-.. index:: Pre-Installation Checklist
-.. index:: Pre-Installation Checklist
+.. index:: Hardware configuration, confirm
 
-.. _Pre-installChecklist:
+.. _confirm-hardware-config:
 
-Pre-Installation Checklist
-==========================
+Confirm hardware
+================
 
-Careful preparation before you begin will save time later. 
-To help plan your OpenStack deployment, you can use the following
-checklist to quickly identify and confirm the basic steps necessary for
-a successful deployment.
+Before you boot the Fuel Master and deploy your OpenStack environment,
+use the following checklist to ensure
+that your hardware is configured correctly:
 
 +--------------------------------------------------------+--------------+
 | Item to confirm                                        | Status [tick |

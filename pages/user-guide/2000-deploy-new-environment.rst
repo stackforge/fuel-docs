@@ -4,24 +4,419 @@
 Deploy a New OpenStack Environment
 ==================================
 
-After Fuel completes the installation,
-point your browser to default Fuel UI
-URL: `http://10.20.0.2:8000 <http://10.20.0.2:8000>`__.
+You must complete the following steps
+to deploy your OpenStack environment.
+After completing this stage, configure the parameters for deployment,
+including networking, storage, and optional parameters.
 
-Alternatively, point your browser
-to the IP address and port number that you specified.
++----------------------------+-------------------------------------------+
+| Step Description           | Additional Information                    |
++============================+===========================================+
+| Initialize Fuel            | See :ref:`initialize-fuel`                |
+| Fuel server (on port 8000) |                                           |
++----------------------------+-------------------------------------------+
+| If necessary, modify the   | See :ref:`Network_Install`                |
+| network settings for the   |                                           |
+| Admin (PXE) logical network|                                           |
++----------------------------+-------------------------------------------+
+| Boot the node servers in   | See :ref:`boot-nodes-ug`                  |
+| PXE mode                   |                                           |
++----------------------------+-------------------------------------------+
+| Click on the "New"         | See :ref:`create-env-ug`                  |
+| OpenStack environment"     |                                           |
+| icon to create a new       |                                           |
+| environment.               |                                           |
++----------------------------+-------------------------------------------+
+| Choose the name for your   | Select either Ubuntu or CentOS to use     |
+| environment and choose the | as the operating system for the OpenStack |
+| Operating System (distro)  | nodes.                                    |
++----------------------------+-------------------------------------------+
+| Choose your Deployment     | See :ref:`mode-ha-ug`                     |
+| Mode (Multi-node HA or non |                                           |
+| HA).                       |                                           |
++----------------------------+-------------------------------------------+
+| Choose your                | See :ref:`hypervisor-ug`                  |
+| :ref:`hypervisor-term`     |                                           |
++----------------------------+-------------------------------------------+
+| Select your network        | See :ref:`choose-network-ug`.             |
+| service (Nova-network,     | If you choose Nova-network, you can       |
+| Neutron with GRE           | choose FlatDHCP or VLAN Manager later in  |
+| segmentation or Neutron    | the **Network** settings tab.             |
+| with VLAN segmentation.    |                                           |
++----------------------------+-------------------------------------------+
+| Select your storage        | See :ref:`cinder-glance-backend-ug`       |
+| backends for Cinder and    |                                           |
+| Glance.                    |                                           |
++----------------------------+-------------------------------------------+
+| Choose additional related  | See :ref:`platform-services-ug`           |
+| projects.                  |                                           |
++----------------------------+-------------------------------------------+
+| Select Create and click on | See :ref:`deploy-ug`                      |
+| the icon with your named   |                                           |
+| environment.               |                                           |
++----------------------------+-------------------------------------------+
+| Assign a role or roles to  | See :ref:`assign-roles-ug`                |
+| each node server.          |                                           |
++----------------------------+-------------------------------------------+
+| Customize disk partitions  | See :ref:`customize-partitions-ug`        |
++----------------------------+-------------------------------------------+
+| In **Network** tab,        | See :ref:`network-settings-ug`            |
+| configure the network      |                                           |
+| settings from the address  |                                           |
+| plan prepared earlier.     |                                           |
++----------------------------+-------------------------------------------+
+| Set up NIC bonding         | See :ref:`nic-bonding-ui`                 |
+| (optional)                 |                                           |
++----------------------------+-------------------------------------------+
+| Map logical networks to    | See :ref:`map-logical-to-physical`        |
+| NICs                       |                                           |
++----------------------------+-------------------------------------------+
+| Click **Verify Networks**  | See :ref:`verify-networks-ug`             |
+| to check and confirm the   |                                           |
+| network configuration.     |                                           |
++----------------------------+-------------------------------------------+
+| (Optional) In the          | See :ref:`settings-ug`                    |
+| **Settings** tab, you can  |                                           |
+| configure or modify the    |                                           |
+| options for Horizon        |                                           |
+| access, scheduler type,    |                                           |
+| logging, and other         |                                           |
+| OpenStack options.         |                                           |
++----------------------------+-------------------------------------------+
+| Click the **Deploy**       | See :ref:`deploy-changes`                 |
+| **Changes** button.        |                                           |
++----------------------------+-------------------------------------------+
+| (Optional) Set up and test | See :ref:`sahara-install`                 |
+| Sahara                     |                                           |
++----------------------------+-------------------------------------------+
+| (Optional) Set up Murano   |                                           |
++----------------------------+-------------------------------------------+
+| Set up VMs containers,     |                                           |
+| load your applications     |                                           |
+| and storage                |                                           |
++----------------------------+-------------------------------------------+
 
-In the Fuel UI, create a new OpenStack environment.
+Each of these steps is discussed below in more detail.
 
-#. Configure the network settings using the address plan.
+If necessary, you can :ref:`stop deployment<Stop_Deployment>`
+or :ref:`reset the environment<Reset_Environment>`.
 
-#. Verify the network configuration by clicking **Verify Networks**.
+.. _initialize-fuel:
 
-#. In the **Settings** tab, modify additional options:
+Initialize Fuel
+===============
 
-   * Access
+After Fuel is installed,
+point your browser to the default Fuel UI
+URL: `http://10.20.0.2:8000 <http://10.20.0.2:8000>`__
+or to the IP address and port number that you specified.
 
-   * OpenStack Components
+The following screen appears:
+
+.. image:: /_images/user_screen_shots/fuel_starts.png
+   :width: 50%
+
+Boot settings (optional)
+------------------------
+
+If you need to modify the boot settings,
+press the "Tab" key to display the **grub** command line;
+you can edit this line to modify the boot settings
+for the Fuel Master Node.
+Normally this is not necessary.
+
+.. include:: /pages/user-guide/create-environ/0400-pxe-config.rst
+.. include:: /pages/user-guide/create-environ/0500-fuel-boot.rst
+.. include:: /pages/user-guide/create-environ/0450-boot-nodes.rst
+
+
+.. raw:: pdf
+
+   PageBreak
+
+
+.. _create-env-ug:
+
+Create a new environment
+========================
+
+In the Fuel UI, click on the "New OpenStack environment" icon
+to launch the wizard that is creates a new OpenStack environment.
+
+.. image:: /_images/user_screen_shots/name_environ.png
+   :width: 50%
+
+
+Give the environment a name
+and select the Linux distribution from the drop-down list.
+This is the operating system that will be installed
+on the Controller, Compute, and Storage nodes in the environment.
+
+.. raw:: pdf
+
+  PageBreak
+
+.. _mode-ha-ug:
+
+High-availability (HA) or non-HA mode
+-------------------------------------
+
+
+.. image:: /_images/user_screen_shots/choose_deploy_mode.png
+   :width: 50%
+
+All new deployments should use the Multi-node HA mode.
+Beginning with Mirantis OpenStack 5.0,
+HA mode can be deployed with a single Controller node
+plus a compute node;
+you will need to add additional Controller nodes
+to achieve high-availability
+(which is strongly recommended for production environments),
+but you do not need to redeploy the OpenStack environment
+to implement high-availability.
+
+The multi-node mode without HA is supported
+for backward compatibility
+but will be deprecated in a later release.
+
+.. raw:: pdf
+
+  PageBreak
+
+.. _hypervisor-ug:
+
+Hypervisor
+----------
+
+
+.. image:: /_images/user_screen_shots/choose-hypervisor-ug.png
+   :width: 50%
+
+Choose one of the following:
+
+- :ref:`kvm-term` -- Choose this option for bare-metal installations
+
+- :ref:`qemu-term` -- Choose this option for VirtualBox installations
+
+- vCenter -- Choose this option if you have a vCenter environment
+  with ESXi servers to be used as hypervisors.
+
+
+.. raw:: pdf
+
+  PageBreak
+
+.. _choose-network-ug:
+
+Network service
+---------------
+
+Four network topologies are supported.
+You can choose either either of the Neutron topologies here.
+If you choose Nova-network here,
+you can choose between the FlatDHCP or VLAN topologies
+on the Network Settings page.
+
+.. raw:: pdf
+
+  PageBreak
+
+.. _cinder-glance-backend-ug:
+
+Storage background for Cinder and Glance
+----------------------------------------
+
+
+.. image:: /_images/user_screen_shots/cinder-storage-backend.png
+   :width: 50%
+
+Select the storage backend for :ref:`cinder-term`:
+
+- If you select "Default",
+  then the Local Volumes over iSCSI are used as the backend for Cinder.
+- If you select "Ceph",
+  you must assign at least two nodes as Ceph-OSD nodes.
+
+Select the storage backend for Glance:
+
+- If you select "Default" and are using the Multi-node HA mode,
+  Swift is used as a backend for Cinder
+  and is automatically installed on the Controller nodes.
+- If you select "Default" and are using the Multi-node (no HA) mode,
+  local storage is used as the backed for Glance.
+- If you selected Ceph,
+  you must assign at least two nodes as Ceph-OSD nodes.
+
+
+.. raw:: pdf
+
+  PageBreak
+
+.. _platform-services-ug:
+
+Related projects
+----------------
+
+Choose additional related projects
+that should be included in your environment:
+
+.. image:: /_images/user_screen_shots/platform_services.png
+   :width: 50%
+
+Specify any services that you want to deploy on your system:
+
+- For additional information about deploying :ref: `ceilometer-term`,
+  see :ref:`ceilometer-deployment-notes`.
+- For additional infomration about deploying :ref:`sahara-term`,
+  see :ref:`sahara-install`.
+- For additional infomration about deploying :ref:`murano-term`,
+  see the Murano deployment notes.
+
+.. raw:: pdf
+
+  PageBreak
+
+.. _deploy-ug:
+
+Complete the creation of your environment
+-----------------------------------------
+
+
+.. image:: /_images/user_screen_shots/deploy_env.png
+   :width: 50%
+
+
+Select "Create" and click on the icon for your named environment.
+
+.. raw:: pdf
+
+  PageBreak
+
+.. _configure-env-ug:
+
+Configure your Environment
+==========================
+
+After you exit from the "Create a New OpenStack Environment" wizard,
+Fuel displays a set of configuration tabs
+that you use to finish configuring your environment.
+
+
+.. raw:: pdf
+
+  PageBreak
+
+.. _assign-roles-ug:
+
+Assign a role or roles to each node server
+------------------------------------------
+
+
+.. image:: /_images/user_screen_shots/assign-roles1.png
+   :width: 50%
+
+
+.. image:: /_images/user_screen_shots/assign-roles2.png
+   :width: 50%
+
+
+.. _customize-partitions-ug:
+
+Disk partitioning
+-----------------
+
+.. image:: /_images/user_screen_shots/partition-disks.png
+   :width: 80%
+
+Note that the disk partitions can be customized
+only after a role is assigned to the node.
+
+.. raw:: pdf
+
+  PageBreak
+
+.. _network-settings-ug:
+
+Network settings
+----------------
+
+Use the network settings screens to notify Fuel
+about the network hardware that is configured.
+
+Neutron network settings
+++++++++++++++++++++++++
+
+These example screens are for a Neutron deployment,
+which includes sections for setting the L2 and L3 configuration
+that are not provided for Nova-network deployments.
+
+.. image:: /_images/user_screen_shots/net-settings1.png
+   :width: 80%
+
+
+.. image:: /_images/user_screen_shots/net-settings2.png
+   :width: 80%
+
+
+.. image:: /_images/user_screen_shots/net-settings3.png
+   :width: 80%
+
+.. raw:: pdf
+
+  PageBreak
+
+Nova-network settings
+++++++++++++++++++++++++
+
+These example screens illustrate the Network Settings page
+when using Nova-network:
+
+.. image:: /_images/fuel-network-settings.png
+   :width: 80%
+
+
+.. include:: /pages/user-guide/config-envir/3000-nic-bonding-ui.rst
+.. include:: /pages/user-guide/config-envir/0220-map-logical-to-physical-nic.rst
+
+
+.. raw:: pdf
+
+  PageBreak
+
+.. _verify-networks-ug:
+
+Verify Networks
+---------------
+
+When you have applied all your information to the "Network Settings" screen,
+click the "Verify Networks" button at the bottom of the screen.
+This checks and confirms the network configuration
+
+The network check includes tests for connectivity between
+nodes via configured VLANs on configured host interfaces.
+Additionally, checks for an unexpected DHCP server are done
+to ensure that outside DHCP servers will not interfere with deployment.
+The image below shows a sample result of the check.
+If there are errors, it is either in your configuration of interfaces
+or possibly the VLAN tagging feature is disabled on your switch port.
+
+.. image:: /_images/net_verify_failure.jpg
+   :width: 90%
+
+Resolve any errors before attempting to deploy your environment.
+
+.. raw:: pdf
+
+  PageBreak
+
+.. _settings-ug:
+
+Settings tab
+------------
+
+   * Modify access permissions for Horizon
+
+   * Modify OpenStack Components to include
 
    * Hypervisor type
 
@@ -31,175 +426,154 @@ In the Fuel UI, create a new OpenStack environment.
 
    * Storage
 
-#. Assign a role for each node server.
+.. _access-horizon-ug:
 
-#. Optionally, associate NICs with the OpenStack networks:
+Access permissions for Horizon
+++++++++++++++++++++++++++++++
 
-   #. Select the nodes.
-   #. Click **Configure Interfaces**.
-   #. Drag and drop the appropriate networks onto the physical interfaces.
-   #. Click **Apply**.
+The first part of the screen allows you to modify
+the user name, password, and tenant used
+to access the Horizon screens.
 
-#. Click **Deploy Changes**.
-    Depending on your environment deployment of Mirantis OpenStack may take
-    some time.
-
-After you deployed Mirantis OpenStack, verify the configuration by
-running the tests from the **Health Check** tab.
+.. image:: /_images/user_screen_shots/settings-access.png
+   :width: 80%
 
 
-You must complete the following steps
-to deploy your OpenStack environment.
-After completing this stage, configure the parameters for deployment,
-including networking, storage, and optional parameters.
+.. raw:: pdf
 
-+----+----------------------------+-------------------------------------------+
-|    | Step Description           | Additional Information                    |
-+====+============================+===========================================+
-| 1  | Point your browser to the  | For example: http://10.20.0.2:8000/       |
-|    | Fuel server (on port 8000) |                                           |
-+----+----------------------------+-------------------------------------------+
-| 2  | Click on the **New**       | The **Create a new OpenStack              |
-|    | *OpenStack environment*    | Environment** wizard launches             |
-|    | icon to create a new       | automatically.                            |
-|    | environment.               |                                           |
-+----+----------------------------+-------------------------------------------+
-| 3  | Choose a name for your     | If you install Mirantis OpenStack, you can|
-|    | environment and choose the | select Ubuntu Enterprise Linux or CentOS  |
-|    | Operating System and       | OpenStack.                                |
-|    | OpenStack distribution.    |                                           |
-+----+----------------------------+-------------------------------------------+
-| 4  | Choose your Deployment     | High Availability mode requires at        |
-|    | Mode (Multi-node HA or non | least 3 nodes to be assigned as           |
-|    | HA).                       | controllers.                              |
-+----+----------------------------+-------------------------------------------+
-| 5  | Choose your                | Current choices from the UI are           |
-|    | :ref:`hypervisor-term`     | :ref:`kvm-term`, :ref:`qemu-term`, or     |
-|    |                            | vcenter.                                  |
-+----+----------------------------+-------------------------------------------+
-| 6  | Select your network        | If you choose Nova-network, you can       |
-|    | service (Nova-network,     | choose FlatDHCP or VLAN Manager later in  |
-|    | Neutron with GRE           | the **Network** settings tab.             |
-|    | segmentation or Neutron    |                                           |
-|    | with VLAN segmentation.    |                                           |
-+----+----------------------------+-------------------------------------------+
-| 7  | Select your storage        | If you select **default**, then the Local |
-|    | backend for Cinder.        | Volumes over iSCSI are used as backend for|
-|    |                            | Cinder. If you select **Ceph**, you must  |
-|    |                            | assign at least 2 nodes as Ceph-OSD nodes.|
-+----+----------------------------+-------------------------------------------+
-| 8  | Select your storage        | If you select **default**, then the local |
-|    | backend for Glance.        | storage in non-HA mode and Swift in HA    |
-|    |                            | mode is used as backend for Cinder. Swift |
-|    |                            | will be automatically installed on the    |
-|    |                            | controllers. If you select **Ceph**, you  |
-|    |                            | must assign at least 2 nodes as Ceph-OSD  |
-|    |                            | nodes.                                    |
-+----+----------------------------+-------------------------------------------+
-| 9  | Choose additional Platform | Sahara enables on-demand provisioning of  |
-|    | Services.                  | Hadoop clusters on OpenStack.             |
-|    |                            | Murano enables Windows-based datacenter   |
-|    |                            | services to be deployed on OpenStack.     |
-+----+----------------------------+-------------------------------------------+
-| 10 | Select Create and click on | Additional configuration tabs appear.     |
-|    | the icon with your named   |                                           |
-|    | environment.               |                                           |
-+----+----------------------------+-------------------------------------------+
-| 11 | In **Nodes** tab, assign a | A node may act as a controller, compute,  |
-|    | role or roles to each node | or storage node. You can combine          |
-|    | server.                    | a storage role with a controller or       |
-|    |                            | compute role.                             |
-+----+----------------------------+-------------------------------------------+
-| 12 | In **Network** tab,        | If you chose Neutron as your network      |
-|    | configure the network      | service, additional sections are          |
-|    | settings from the address  | available for setting your L2 and L3      |
-|    | plan prepared earlier.     | configuration.                            |
-+----+----------------------------+-------------------------------------------+
-| 13 | Click **Verify Networks**  | This sends test frames and 802.1Q         |
-|    | to check and confirm the   | tagged frames to each node server to      |
-|    | network configuration.     | confirm connectivity.                     |
-+----+----------------------------+-------------------------------------------+
-| 14 | (Optional) In the          | You may also modify your choices for      |
-|    | **Settings** tab, you can  | hypervisor, storage, and Platform         |
-|    | configure or modify the    | Services configured before the            |
-|    | options for Horizon        | deployment.                               |
-|    | access, scheduler type,    |                                           |
-|    | logging, and other         |                                           |
-|    | OpenStack options.         |                                           |
-+----+----------------------------+-------------------------------------------+
-| 15 | Click the **Deploy**       | Mirantis OpenStack deployment may take    |
-|    | **Changes** button.        | 15-60 minutes, depending on your the      |
-|    |                            | selected options. You can monitor status  |
-|    |                            | by opening the **Nodes** tab or by        |
-|    |                            | checking individual node logs in the Logs |
-|    |                            | tab.                                      |
-+----+----------------------------+-------------------------------------------+
-| 16 | Once deployed, run the     | You can run the test groups in parallel or|
-|    | tests in the **Health**    | one at a time.                            |
-|    | **Check** tab to confirm   |                                           |
-|    | success.                   |                                           |
-+----+----------------------------+-------------------------------------------+
+   PageBreak
+
+.. _modify-services-ug:
+
+Services included in the environment
++++++++++++++++++++++++++++++++++++++++++++
+
+The next part of the Settings screen
+allows you to modify the services
+you chose when you first created your environment.
+
+.. image:: /_images/user_screen_shots/settings-mod-services.png
+   :width: 50%
 
 
-After you complete these tasks, Mirantis OpenStack is ready to use.
+.. raw:: pdf
 
-In the following sections, you can view specific examples of deploying
-Mirantis OpenStack, including complete switch configuration and cabling.  
+   PageBreak
 
-.. see also:: :ref:`Nova-network <novanetwork>`, :ref:`Neutron <neutron>`
+.. _vcenter-config-ug:
 
-Create a new environment
-========================
+vCenter
++++++++
 
-.. image:: /_images/fuel-wizard.png
-   :align: center
-   :width: 70%
+If you selected vCenter as your hypervisor,
+you must complete the steps in this section
+to configure communication with vCenter:
 
-Network settings page
-=====================
+.. image:: /_images/user_screen_shots/settings-vcenter.png
+   :width: 50%
 
-.. image:: /_images/fuel-network-settings.png
-   :align: center
-   :width: 70%
+Common settings
++++++++++++++++
 
-Settings page
-=============
+This section of the screen enables you to:
 
-.. image:: /_images/fuel-settings1.png
-   :align: center
-   :width: 70%
+- Turn debug logging on/off
+- Define Nova quotas
+- Modify the Hypervisor choice you made when first creating your environment
+- Choose whether to auto-assign floating IPs
+- Choose the scheduler driver to use in the environment
+- Select whether to use qcow format for images
+- Select whether to start/restart guests when the host boots
+- Set Public key for deployed nodes
 
-.. image:: /_images/fuel-settings2.png
-   :align: center
-   :width: 70%
+.. raw:: pdf
 
-.. image:: /_images/fuel-settings3.png
-   :align: center
-   :width: 70%
+   PageBreak
 
-.. image:: /_images/fuel-settings4.png
-   :align: center
-   :width: 70%
+.. _vlan-splinters-ug:
 
-Add nodes to environment
-========================
+VLAN splinters
+++++++++++++++
 
-.. image:: /_images/fuel-nodes.png
-   :align: center
-   :width: 70%
-
-Select discovered nodes
-=======================
-
-.. image:: /_images/fuel-nodes-selected.png
-   :align: center
-   :width: 70%
-
-Node's network settings
-=======================
-
-.. image:: /_images/fuel-node-network.png
-   :align: center
-   :width: 70%
+VLAN splinters are provided so that CentOS deployments
+can support Neutron VLANS or GRE
+(with VLAN tags on the management, storage, or public networks).
+The kernel used for the CentOS version used with OpenStack
+is based on a pre-3.3 kernel
+and so has poor support for VLAN tagged packets
+moving through :ref:`ovs-term` bridges.
+Without VLAN splinters,
+CentOS deployments may experience poor performance issues,
+intermittent connectivity problems,
+situations where one VLAN is working but others are not,
+or a total failure to pass traffic.
+Ubuntu deployments use a kernel that includes strong VLAN support
+and so are not affected by these issues.
 
 
+.. image:: /_images/user_screen_shots/settings-vlan-splinters.png
+   :width: 50%
+
+You can select either the soft trunks or hard trunks mode:
+
+*  The **soft trunks mode** configures OVS to enable splinters
+   and attempts to automatically detect in-use VLANs.
+   This provides the least amount of performance overhead
+   but the traffic may not be passed onto the OVS bridge in some edge cases.
+
+*  The **hard trunks mode** also configures OVS to enable splinters
+   but uses an explicitly defined list of all VLANs across all interfaces.
+   This should prevent the occasional failures associated with the soft mode
+   but requires that corresponding tags be created on all of the interfaces.
+   This introduces additional performance overhead.
+   You should use fewer than 50 VLANs
+   if you run the Neutron VLAN mode and use the hard trunks mode.
+
+
+.. raw:: pdf
+
+   PageBreak
+
+.. _settings-syslog-ug:
+
+Syslog
+++++++
+
+
+.. raw:: pdf
+
+   PageBreak
+
+.. _settings-storage-ug:
+
+Modify access permissions for Horizon
++++++++++++++++++++++++++++++++++++++
+
+The first part of the screen allows you to modify
+the user name, password, and tenant used
+to access the Horizon screens.
+
+Storage
++++++++
+
+.. image:: /_images/user_screen_shots/settings-storage.png
+
+
+.. raw:: pdf
+
+   PageBreak
+
+.. _deploy-changes:
+
+Deploy Changes
+--------------
+
+When you have made all the configuration changes you want to make,
+click the "Deploy Changes" button
+to deploy the environment you have defined.
+
+It can take fifteen minutes to an hour to deploy Mirantis OpenStack,
+depending on the options chosen;
+deployment times out at two hours.
+You can monitor the progress by opening the **Nodes** tab
+or by checking individual node logs in the **Logs** tab.

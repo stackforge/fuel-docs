@@ -12,19 +12,3 @@ network:
 
 .. image:: /_images/fuel-network-scheme.jpg
    :align: center
-.. image:: /_images/grub-screen.png
-   :align: center
-.. image:: /_images/grub-cmdline.png
-   :align: center
-.. image:: /_images/fuel-wizard.png
-   :align: center
-.. image:: /_images/fuel-network-settings.png
-   :align: center
-.. image:: /_images/fuel-settings.png
-   :align: center
-.. image:: /_images/fuel-nodes.png
-   :align: center
-.. image:: /_images/fuel-nodes-selected.png
-   :align: center
-.. image:: /_images/fuel-node-network.png
-   :align: center
