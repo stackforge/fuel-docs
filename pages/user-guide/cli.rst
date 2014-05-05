@@ -6,7 +6,7 @@
 
 .. _cli_usage:
 
-Understanding Environment deployment with Fuel CLI
+Using Fuel CLI
 ==================================================
 
 Introduction
