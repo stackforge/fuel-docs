@@ -20,6 +20,7 @@ Any of these three possibilities will lead to the "Reset" button in the
 
 .. image:: /_images/reset_environment_button.png
   :align: center
+  :width: 100%
 
 By clicking it, you will reset the whole environment to the same state
 as right before "Deploy changes" button was clicked at the first time.

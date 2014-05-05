@@ -8,6 +8,7 @@ button to the right of the progress bar will appear:
 
 .. image:: /_images/stop_deployment_button.png
   :align: center
+  :width: 100%
 
 By clicking this button, you may interrupt deployment process (in case of any
 errors, for example). This may lead to two possible results:

@@ -1,3 +1,6 @@
+
+.. _nic-bonding-ui:
+
 NIC Aggregation in UI
 ---------------------
 
