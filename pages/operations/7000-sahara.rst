@@ -12,10 +12,10 @@ Sahara is a service for launching Hadoop clusters on OpenStack.
 It is vendor-agnostic and currently supports two distributions:
 Vanilla Apache Hadoop and Hortonworks Data Platform (HDP).
 
-Savanna can install Hadoop clusters on demand.
+Sahara can install Hadoop clusters on demand.
 The user must populate several parameters
 such as the Hadoop version and cluster topology
-and Savanna will deploy this cluster in a few minutes.
+and Sahara will deploy this cluster in a few minutes.
 It can also scale the cluster by adding or removing nodes as needed.
 
 - For Sahara usage guidelines, read the User Guide section of the

@@ -7,14 +7,14 @@ Sahara Test Details
 
 .. topic:: Hadoop cluster operations
 
-  Test checks that Savanna can launch a Hadoop cluster
+  Test checks that Sahara can launch a Hadoop cluster
   using the Vanilla plugin.
 
-  Target component: Savanna
+  Target component: Sahara
 
   Scenario:
 
-  1. Create a flavor for Savanna VMs.
+  1. Create a flavor for Sahara VMs.
   2. Create a node group template for JobTracker and NameNode.
   3. Create a cluster template using the node group template.
   4. List current node group templates.
@@ -28,5 +28,5 @@ Sahara Test Details
   11. Delete the created flavor.
 
   For more information, see:
-  `Savanna documentation <http://savanna.readthedocs.org/en/0.3/>`_
+  `Sahara documentation <http://sahara.readthedocs.org/en/stable-icehouse/>`_.
 
