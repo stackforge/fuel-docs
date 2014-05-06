@@ -23,6 +23,7 @@ pdf_documents = [
     ('pdf/pdf_operations', u'Mirantis-OpenStack-4.1-OperationsGuide', u'Operations Guide', u'2014, Mirantis Inc.'),
     ('pdf/pdf_reference', u'Mirantis-OpenStack-4.1-ReferenceArchitecture', u'Reference Architecture', u'2014, Mirantis Inc.'),
     ('pdf/pdf_preinstall', u'Mirantis-OpenStack-4.1-Pre-InstallationGuide', u'Pre-Installation Guide', u'2014, Mirantis Inc.'),
+    ('pdf/pdf_commandref', u'Mirantis-OpenStack-4.1-Command-Reference', u'Command Reference', u'2014, Mirantis Inc.'),
     ('pdf/pdf_terminology', u'Mirantis-OpenStack-4.1-Terminology-Reference', u'Terminology Reference', u'2014, Mirantis Inc.'),
 #    (master_doc, project, project, copyright),
 ]

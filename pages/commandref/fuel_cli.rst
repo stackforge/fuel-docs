@@ -2,15 +2,12 @@
 
    PageBreak
 
-.. index:: Understanding Environment deployment with Fuel CLI
+.. index:: Fuel CLI
 
 .. _cli_usage:
 
-Understanding Environment deployment with Fuel CLI
-==================================================
-
-Introduction
-------------
+Fuel CLI
+========
 
 Fuel CLI tool is a powerful tool that allows you to:
 
@@ -23,7 +20,7 @@ Fuel CLI may break your environment if not used carefully.
 .. contents :local:
 
 Basic usage
------------------------------------------
+-----------
 
 Fuel CLI has the following usage pattern:
 
@@ -50,7 +47,7 @@ and for getting actions and optional args for some namespace run:
   fuel <namespace> --help
 
 CLI commands reference
------------------------------------------
+----------------------
 
 Release
 +++++++
@@ -196,3 +193,4 @@ Also, you can deploy and provision only some nodes like this
 
   fuel --env 1 node --provision --node 1,2
   fuel --env 1 node --deploy --node 1,2
+
