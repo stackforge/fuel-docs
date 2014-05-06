@@ -4,6 +4,8 @@
 
 .. index:: Advanced Network Configuration using OVS
 
+.. _ovs-arch:
+
 Advanced Network Configuration using Open VSwitch
 =================================================
 
