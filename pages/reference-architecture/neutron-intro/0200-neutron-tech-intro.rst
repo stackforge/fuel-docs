@@ -8,7 +8,7 @@ virtualization provided by nova-network. This is the main difference between
 the two networking models for OpenStack. Virtual networks (one or more) can be
 created for a single tenant, forming an isolated L2 network called a
 "private network". Each private network can support one or many IP subnets.
-Private networks can be segmented using two different technologies:
+Private networks can be segmented using one of two different topologies:
 
 * **VLAN segmentation** "Private network" traffic is managed by
   Neutron by the use of a dedicated network adapter. This network adapter must be

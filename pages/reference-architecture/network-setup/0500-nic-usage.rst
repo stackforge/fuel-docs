@@ -2,9 +2,10 @@ NIC usage
 ---------
 
 The current architecture assumes the presence of 3 NICs, but it can be
-customized for two or 4+ network interfaces. Most servers are built with at least
-two network interfaces. In this case, let's consider a typical example of three
-NIC cards. They're utilized as follows:
+customized for two or 4+ network interfaces.
+Most servers are built with at least two network interfaces.
+In this case, let's consider a typical example of three NIC cards.
+They are utilized as follows:
 
 **eth0**:
   The Admin (PXE) network, used for communication with Fuel Master for
