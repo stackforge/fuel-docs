@@ -1,80 +1,228 @@
+
+
 Known Issues in Mirantis OpenStack 5.0
 ======================================
 
-TODO: Move fixed bugs from this list to "Resolved issues"
-as appropriate
+Known limitations for the vCenter integration
+---------------------------------------------
 
-Murano OSTF test for Linux Apache Service fails
------------------------------------------------
+The vCenter integration with Mirantis OpenStack 5.0 is fully supported
+but it has some known limitations:
 
-The Murano OSTF test for the Linux Apache service fails with an AssertionError.
-See `LP1271089 <https://bugs.launchpad.net/fuel/+bug/1271089>`_.
+* vCenter integration can be enabled
+  only if Nova-network is the network type.
+  vCenter integration is not yet supported with the Neutron network type.
+* vCenter integration does not provide high availability
+  for the Nova-compute service.
+  Only one compute service is enabled
+  and, if the service or the controller on which the service is deployed fail,
+  OpenStack is unable to access the ESXi server resources
+  for scheduling the VMs.
+* When vCenter is selected as the hypervisor,
+  all Ceph, Cinder, and Nova options are disabled
+  in the storage settings.
+  It is possible to use Ceph as the storage backend for Glance
+  and for Swift/S3 object storage
+  but you must configure this manually.
+  See `LP1316377 <https://bugs.launchpad.net/fuel/+bug/1316377>`_.
+
+Additional MongoDB roles cannot be added to an existing deployment
+------------------------------------------------------------------
+
+Any number of MongoDB roles (or standalone nodes)
+can initially be deployed into an OpenStack environment
+but, after the environment is deployed,
+additional MongoDB roles cannot be added.
+Be sure to deploy an adequate number of MongoDB
+roles during the initial deployment.
+See `LP1308990 <https://bugs.launchpad.net/fuel/+bug/1308990>`_.
+
+Network verification does not check OVS and bonding
+---------------------------------------------------
+
+The Fuel "Verify Networks" functionality
+does not check :ref:`ovs-term` and :ref:`bonding-term` connections.
+See the `Network checks for Neutron blueprint <https://blueprints.launchpad.net/fuel/+spec/network-checker-neutron-vlan>`_.
+
+Controllers are deployed sequentially rather than in parallel
+-------------------------------------------------------------
+
+Multiple controllers are deployed sequentially
+rather than in parallel.
+This increases the deployment time
+but does not otherwise adversely affect the environment.
+See `LP1310494 <https://bugs.launchpad.net/fuel/+bug/1310494>`_.
+
+RAID-1 spans all configured disks on a node
+-------------------------------------------
+
+RAID-1 spans all configured disks on a node,
+putting a boot partition on each disk
+because OpenStack does not have access to the BIOS.
+It is not currently possible to exclude some drives
+from the Fuel configuration on the Fuel UI.
+This means that one cannot, for example,
+configure some drives to be used for backup and recover
+or as b-cache.
+
+You can work around this issue as follows.
+This example is for a system that has three disks: sda, sdb, and sdc.
+Fuel will provision sda and sdb as RAID-1 for OpenStack
+but sdc will not be used  as part of the RAID-1 array:
+
+1. Use the Fuel CLI to remove the boot sector:
+   ::
+
+     fuel provisioning --env-id 1 --default -d
+
+2. Remove this sector from sdc
+   ::
+
+     - size: 300
+       type: boot
+     - file_system: ext2
+       mount: /boot
+       name: Boot
+       size: 200
+       type: raid
+
+     fuel provisioning --env-id 1 -u
+
+3. Run deployment
+
+4. Confirm that sdc does not contain a RAID partition:
+   ::
+
+     [root@node-2 ~]# cat /proc/mdstat
+     Personalities : [raid1]
+     md0 : active raid1 sda3[0] sdb3[1] 204736 blocks
+           super 1.0 [2/2] [UU]
 
 
-Savanna does not write logs unless "OpenStack debug logging" is selected
-------------------------------------------------------------------------
+See `LP1267569 <https://bugs.launchpad.net/fuel/+bug/1267569>`_.
 
-Savanna does not write logs unless you select "OpenStack debug logging" in the Fuel settings.
-When debug logging is not selected,
-the */var/log/savanna-all.log* file
-contains only log records from the external modules;
-it does not contain logs from Savanna itself.
-An example of a log from an external module is:
+Some UEFI servers cannot be used for Fuel Master Node
+-----------------------------------------------------
+
+Some UEFI chips (such as the Lenovo W520)
+do not emulate legacy BIOS
+in a way that is compatible with the grub settings
+used for the Fuel Master node.
+This issue does not affect servers used
+as Controller, Compute, and Storage nodes
+because they are booted from PXE rom
+and then the chain32 loader boots from the hard drive.
+See `LP1291128 <https://bugs.launchpad.net/fuel/+bug/1291128>`_.
+
+Fuel may not allocate enough IP addresses for expansion
+-------------------------------------------------------
+
+The pool of IP addresses to be used by all nodes
+in the OpenStack environment
+is allocated when the Fuel Master Node is initially deployed.
+The IP settings cannot be changed
+after the initial boot of the Fuel Master Node.
+This may mean that the IP pool
+is too small to support additional nodes
+added to the environment
+without redeploying the environment.
+See `LP1271571 <https://bugs.launchpad.net/fuel/+bug/1271571>`_
+for a detailed description of the issues
+and pointers to blueprints of proposed solutions.
+
+Adding new Compute node with CLI causes Puppet to run on all nodes
+------------------------------------------------------------------
+
+Using the Fuel CLI to add a new Compute node to an environment
+causes Puppet to run on all nodes in the environment.
+Use the following work-around to resolve this issue:
 
 ::
 
-  savanna-savanna.openstack.common.db.sqlalchemy.session
-  WARNING: Got mysql server has gone away: (2006, 'MySQL server has gone away')
+    psql -U nailgun -W -h 127.0.0.1
+    update clusters set is_customized=false where id=${ID};
 
-See `LP1285766 <https://bugs.launchpad.net/fuel/+bug/1285766>`_.
+See `LP1280318 <https://bugs.launchpad.net/fuel/+bug/1280318>`_.
 
-As a work around, edit the  */etc/savanna/savanna.conf* file
-and delete (or comment) the following lines from the [DEFAULT] section:
+GRE-enabled Neutron installation runs inter VM traffic through management network
+---------------------------------------------------------------------------------
 
+In Neutron GRE installations configured with the Fuel UI,
+a single physical interface is used
+for both OpenStack management traffic and VM-to-VM communications.
+This limitation only affects implementations deployed using the Fuel UI;
+you can use the :ref:`Fuel CLI<cli_usage>` to use other physical interfaces
+when you configure your environment.
+See `LP1285059 <https://bugs.launchpad.net/fuel/+bug/1285059>`_.
+
+CentOS issues booting on Dell servers
+-------------------------------------
+
+Because of a CentOS bug
+(see `CentOS6492 <http://bugs.centos.org/view.php?id=6492>`_),
+kernel parameters must be adjusted
+to allow OpenStack to be provisioned on Dell servers.
+See `LP1312671 <https://bugs.launchpad.net/fuel/+bug/1312671>`_.
+
+CentOS kernel issues on certain hardware
+----------------------------------------
+
+Deployments that use CentOS as the host OS on the OpenStack nodes
+may get stuck at the very beginning of the provisioning stage
+because of boot issues on some hardware.
+To resolve this situation,
+add the following kernel parameters
+on the "Settings" tab in the Fuel UI:
 ::
 
-  use_syslog=True
-  use_stderr=False
-  syslog_log_facility=LOG_LOCAL0
-  log_config=/etc/savanna/logging.conf
+    ipmi_si.tryacpi=0 ipmi_si.trydefaults=0 ipmi_si.trydmi=0
 
-Then add the following line to the [DEFAULT] section:
-
+Then run this command in the Fuel Master node shell:
 ::
 
-  log_dir=/var/log/savanna
+    dockerctl shell cobbler cobbler profile edit --name centos-x86_64
+    --kopts="ipmi_si.tryacpi=0 ipmi_s i.trydefaults=0 ipmi_si.trydmi=0" --in-place
 
+See `LP1312671 <https://bugs.launchpad.net/fuel/+bug/1312671>`_.
 
-Enabling "Open Stack debug logs" does not enable debug logs for Savanna
------------------------------------------------------------------------
+Bootstrap does not see Brocade NICs
+-----------------------------------
 
-Enabling the "OpenStack debug logs" checkbox in the Fuel settings
-enables INFO level logging but does not enable DEBUG level logging.
-See `LP 1288475 <https://bugs.launchpad.net/fuel/+bug/1288475>`_.
+The bootstrap process does not detect Brocade NICs
+so they cannot be configured from the Fuel UI.
+The work-around is to use the Fuel CLI to configure all brocade NICS
+that are to be included in the environment
+then upload this information into the Fuel UI.
+See `LP1260492 <https://bugs.launchpad.net/fuel/+bug/1260492>`_.
 
-You can enable debug logging for Savanna
-by editing the  */etc/savanna/savanna.conf* file
-and adding the following line to the [DEFAULT] section:
+Ubuntu does not support NetFPGA cards
+-------------------------------------
 
-::
+CentOS does include drivers for netFPGA devices.
+See `LP1270889 <https://bugs.launchpad.net/fuel/+bug/1270889>`_.
 
-  debug=TRUE
+Bootstrap does not see Broadcom 10gig NICS
+------------------------------------------
 
+See `LP1260492 <https://bugs.launchpad.net/fuel/+bug/1260492>`_.
 
 CentOS issues using Neutron-enabled installations with VLANS
 ------------------------------------------------------------
 
 Deployments using CentOS may run into problems
-using Neutron VLANs or GRE (with VLAN tags on the management, storage or public networks).
+using Neutron VLANs or GRE
+(with VLAN tags on the management, storage or public networks).
 The problems include poor performance, intermittent connectivity problems,
 one VLAN but not others working, or total failure to pass traffic.
 This is because the CentOS kernel is based on a pre-3.3 kernel
-and so has poor support for VLAN tagged packets moving through OpenVSwitch (OVS) Bridges.
+and so has poor support for VLAN tagged packets
+moving through :ref:`ovs-term`  Bridges.
 Ubuntu is not affected by this issue.
 
 A workaround is to enable VLAN Splinters in OVS.
 For CentOS, The Fuel UI Settings page can now deploy
-with a VLAN splinters workaround enabled in two separate modes -- soft trunks and hard trunks:
+with a VLAN splinters workaround enabled in two separate modes --
+soft trunks and hard trunks:
 
 *  The **soft trunks mode** configures OVS to enable splinters
    and attempts to automatically detect in-use VLANs.
@@ -82,7 +230,7 @@ with a VLAN splinters workaround enabled in two separate modes -- soft trunks an
    but the traffic may not be passed onto the OVS bridge in some edge cases.
 
 *  The **hard trunks mode** also configureS OVS to enable splinters
-   but useS an explicitly defined list of all VLANs across all interfaces.
+   but uses an explicitly defined list of all VLANs across all interfaces.
    This should prevent the occasional failures associated with the soft mode
    but requires that corresponding tags be created on all of the interfaces.
    This introduces additional performance overhead.
@@ -91,17 +239,10 @@ with a VLAN splinters workaround enabled in two separate modes -- soft trunks an
 See `Advanced Network Configuration using Open VSwitch <http://docs.mirantis.com/fuel/fuel-4.1/reference-architecture.html?highlight=vlan%20splinters#advanced-network-configuration-using-open-vswitch>`_
 for more information about using Open VSwitch..
 
-GRE-enabled Neutron installation runs inter VM traffic through management network
----------------------------------------------------------------------------------
 
-In all Neutron GRE installations,
-a physical interface is used for both OpenStack management traffic and VM-to-VM communications.
-This limitation is restricted to the UI only.
-It is possible to use other physical interfaces when configured via the Fuel CLI.
-See `LP 1285059 <https://bugs.launchpad.net/fuel/+bug/1285059>`_.
 
-File injection into VMs fails on CentOS
----------------------------------------
+File injection into VMs fails on CentOS -- Fixed?
+-------------------------------------------------
 
 VM creation may fail, issuing the following error:
 
@@ -116,88 +257,139 @@ In this situation, the Nova service fails to inject files into VM instances.
 This is due to a Nova/QEMU bug that may be related to an incorrect path,
 but the details of the failure have not yet been determined.
 
-Ceph RadosGW might not start on all controllers
------------------------------------------------
-
-In HA mode, RadosGW services may fail on some controller nodes during deployment
-This can be fixed by manually starting the rados-gw service.
-See `LP1261955 <https://bugs.launchpad.net/fuel/+bug/1261966>`_.
-
-Health Check tests may fail in slow environments
-------------------------------------------------
+Health Check tests may fail in slow environments -- Fixed?
+----------------------------------------------------------
 
 If multiple environments are deployed or if the environments are slow,
 some tests may fail due to timeouts.
 Reducing the load on the environment allows the tests to run successfully.
 
-Placing Ceph OSD on Controller nodes is not recommended
--------------------------------------------------------
+Placing Ceph OSD on Controller nodes is not recommended -- Fixed?
+-----------------------------------------------------------------
 
 Placing Ceph OSD on Controllers is highly unadvisable because it can severely
-degrade controller's performance. It's better to use separate storage nodes
+degrade controller's performance.
+It is better to use separate storage nodes
 if you have enough hardware.
 
-VMs that have ephemeral volumes stored in Ceph backend must be migrated from the command line
----------------------------------------------------------------------------------------------
+VMs with ephemeral volumes stored in Ceph backend must be migrated from the command line -- Fixed?
+--------------------------------------------------------------------------------------------------
 
 Use the “nova live-migration” command to migrate such VMs.
 Using the “Migrate instance” button in Horizon or the “nova migrate” command line
 for such instances causes the migration to fail.
 The Nova Compute non-live migration process assumes
-that all image backends store ephemeral drives in a filesystem path on a compute host,
-which is not the case for Ceph RBD.
+that all image backends store ephemeral drives in a filesystem path
+on a compute host, which is not the case for Ceph RBD.
 Live migrations do not exhibit this behavior and work correctly with Ceph RBD.
 Because the Horizon Dashboard in Havana does not support live migrations,
 you must use the command line.
 
+MySQL may not be available after full restart of environment
+------------------------------------------------------------
+
+The current version of Galera
+(which manages MySQL in an OpenStack environment)
+may fail if the Controllers in an HA environment
+come back online in a different order than Galera expects.
+We expect a new version of Galera to support
+arbitrary orders of shutdown and startup,
+which will fix this issue.
+See `LP1297355 <https://bugs.launchpad.net/fuel/+bug/1297355>`_.
+
+Corosync is not fully scalable
+------------------------------
+
+Corosync does not scale up correctly
+which may degrade performance in large environments.
+See `LP1312627 <https://bugs.launchpad.net/fuel/+bug/1312627>`_.
+
+Glance may not send notifications to Ceilometer
+------------------------------------------------
+
+Glance may not send notifications to Ceilometer
+so notifications such as "image.update" and "image.upload"
+are not reported in the "ceilometer meter-list" output.
+See `LP1314196 <https://bugs.launchpad.net/fuel/+bug/1314196>`_.
+
+Stopping deployment in VirtualBox may damage filesystem
+-------------------------------------------------------
+
+Clicking the "Stop Deployment" button when modifying
+a provisioned node may destroy the nodes's filesystem
+when running OpenStack on VirtualBox.
+See `LP <https://bugs.launchpad.net/fuel/+bug/1316583>`_.
+
+
 Other limitations
 -----------------
 
-* The Fuel Master Node can only be installed with CentOS as the host OS.
-  While Mirantis OpenStack nodes can be installed with Ubuntu or CentOS as the host OS,
+* **The Fuel Master Node can only be installed with CentOS as the host OS.**
+  While Mirantis OpenStack nodes can be installed
+  with Ubuntu or CentOS as the host OS,
   the Fuel Master Node is only supported on CentOS.
 
-* When using the Fuel UI, the floating VLAN and public networks
-  must use the same L2 network and L3 Subnet.
+* **When using the Fuel UI, the floating VLAN and public networks
+  must use the same L2 network and L3 Subnet.**
   In the UI, these two networks are locked together
   and can only run via the same physical interface on the server.
   This is due to a limitation in Neutron.
 
-* The Admin(PXE) network cannot be assigned to a bonded interface.
+* **The Admin(PXE) network cannot be assigned to a bonded interface.**
   When implementing bonding, at least three NICs are required:
   two for the bonding plus one for the Admin(PXE) network,
   which cannot reside on the bond and cannot be moved.
+  See `LP1290513 <https://bugs.launchpad.net/fuel/+bug/1290513>`_.
 
-* Murano is supported only when Neutron is chosen as the network type;
-  if you choose nova-network as the network type during deployment,
+* **Murano requires the Neutron network type.**
+  If you choose nova-network as the network type during deployment,
   the option to install the Murano project is greyed out.
-  This change has been made due to a lack of customer demand
-  for Murano support on nova-network and to focus efforts on Neutron.
+  This is a design decision made by the OpenStack community;
+  it allows us to focus our efforts on Neutron,
+  and we see little demand for Murano support on Nova-network.
 
-* The ceph-mon and ceph-osd nodes should not be deployed on the same hardware.
+* The ceph-mon and ceph-osd nodes should not be deployed on the same hardware
+  in a production environment.
 
 * Deployments done through the Fuel UI create all of the networks on all servers
   even if they are not required by a specific role.
-  For example, a Cinder node has VLANs created and addresses obtained from the public network.
+  For example, a Cinder node has VLANs created
+  and addresses obtained from the public network.
 
 * Some of OpenStack’s services listen to all of the interfaces,
-  a situation that may be detected and reported by third-party scanning tools not provided by Mirantis.
-  Please discuss this issue with your security administrator if it is a concern for your organization.
+  a situation that may be detected and reported
+  by third-party scanning tools not provided by Mirantis.
+  Please discuss this issue with your security administrator
+  if it is a concern for your organization.
 
-* The provided scripts that enable Fuel to be automatically installed on VirtualBox
-  will create separate host interfaces.
-  If a user associates logical networks to different physical interfaces on different nodes,
-  that will lead to network connectivity issues between OpenStack components.
+* The provided scripts that enable Fuel
+  to be automatically installed on VirtualBox
+  create separate host interfaces.
+  If a user associates logical networks
+  to different physical interfaces on different nodes,
+  it causes to network connectivity issues between OpenStack components.
   Please check to see if this has happened prior to deployment
   by clicking on the “Verify Networks” button on the Networks tab.
 
 * When configuring disks on nodes where Ubuntu has been selected as the host OS,
   the Base System partition modifications are not properly applied.
-  The default Base System partition will be applied regardless of the user choice
+  The default Base System partition
+  is applied regardless of the user choice
   due to limitations in Ubuntu provisioning.
 
-* The “Verify Networks” button on the Networks tab
-  allows you to check the network connectivity between nodes
-  both before deployment and on an installed environment.
-  However, this verification is not available on the environments
-  that have already been deployed with Neutron.
+* The Fuel Master node services (such as PostgrSQL and RabbitMQ)
+  are not restricted by a firewall.
+  The Fuel Master node should live in a restricted L2 network
+  so this should not create a security vulnerability.
+
+* Do not recreate the RadosGW region map after initial deployment
+  of the OpenStack environment;
+  this may cause the map to be corrupted so that RadosGW cannot start.
+  If this happens, you can repair the RadosGW region map
+  with the following command sequence:
+  ::
+
+     radosgw-admin region-map update
+     service ceph-radosgw start
+
+  See `LP1287166 <https://bugs.launchpad.net/fuel/+bug/1287166>`_.
