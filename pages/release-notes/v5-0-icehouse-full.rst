@@ -20,7 +20,7 @@ The following table lists the released revisions of this documentation:
 +----------+-------------+--------------+
 | Revision | Date        | Description  |
 +==========+=============+==============+
-| 5.0      | 07-Mar-2014 | Initial G.A. |
+| 5.0      | 23-May-2014 | Initial G.A. |
 +----------+-------------+--------------+
 
 .. include:: /pages/release-notes/v5-0/010-what-is-mirantis-openstack.rst
