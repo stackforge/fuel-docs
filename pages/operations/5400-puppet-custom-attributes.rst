@@ -93,6 +93,6 @@ if it's not default.
 This operation has following effects:
 	
 	* parameters which are about to send to orchestrator are replaced completely with 
-	  the ones you specified
+	  the  ones you specified
 	* cluster sets *is_customized* flag, which is checked by UI, so you will get a 
 	  message about attributes customization
