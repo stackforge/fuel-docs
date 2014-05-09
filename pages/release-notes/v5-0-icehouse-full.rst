@@ -8,7 +8,7 @@ Release Notes for Mirantis OpenStack 5.0
 
 Mirantis, Inc. is releasing Mirantis OpenStack version 5.0.
 This generally available version of Mirantis OpenStack
-is based on the latest stable Havana release of OpenStack
+is based on the latest stable Icehouse release of OpenStack
 and includes several important defect fixes to Mirantis OpenStack
 as well as some minor enhancements.
 
@@ -20,7 +20,7 @@ The following table lists the released revisions of this documentation:
 +----------+-------------+--------------+
 | Revision | Date        | Description  |
 +==========+=============+==============+
-| 5.0      | 07-Mar-2014 | Initial G.A. |
+| 5.0      | 23-May-2014 | Initial G.A. |
 +----------+-------------+--------------+
 
 .. include:: /pages/release-notes/v5-0/010-what-is-mirantis-openstack.rst

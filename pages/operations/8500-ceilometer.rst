@@ -35,5 +35,6 @@ and thus perform a high volume of database writes.
 For example, with a short polling cycle,
 one could see up to 13000 writes per hour
 for an environment with 400 instances inside the cloud.
-In Fuel 4.x, Ceilometer uses only the common MySQL database,
-thus we do not recommend deploying standard Ceilometer for large production installations.
+In Fuel 5.0, Ceilometer defaults to using the MongoDB database,
+which enables it to handle large production installations
+without creating a bottleneck at the database.
