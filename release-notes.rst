@@ -1,6 +1,6 @@
 .. index:: Release Notes
 
-.. _Release_Notes:
+.. _Release_Notes_50:
 
 =============
 Release Notes
