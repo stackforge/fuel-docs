@@ -33,7 +33,7 @@ Murano is still to some degree a do-it-yourself project.
 Fuel is able to configure Murano's dashboard, API, and engine services,
 but you will need to read documention on the steps
 to set up a Murano base image;
-see `Creating a Murano Image <http://murano-docs.github.io/0.4.1/administrators-guide/content/ch01.html>`_.
+see `Creating a Murano Image <http://murano-api.readthedocs.org/en/latest/>`_.
 Images can be uploaded via Glance.
 
 Fuel can install Murano on either CentOS or Ubuntu;
