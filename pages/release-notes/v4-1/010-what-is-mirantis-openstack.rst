@@ -37,7 +37,7 @@ Also included are:
 * Any defect fixes reported by our customers that may not yet have been merged into the community source.
 * Mirantis-driven premium OpenStack projects
   such as Savanna (which provides a simple means to provision a Hadoop cluster on top of OpenStack)
-  and Murano (that enables you to deploy data ceter services such as Windows and Linux on OpenStack.
+  and Murano (that enables you to deploy data center services such as Windows and Linux on OpenStack.
 * Mirantis-certified partner plug-ins, drivers, and integrations.
 
 Mirantis Support
