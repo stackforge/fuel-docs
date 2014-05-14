@@ -15,36 +15,36 @@ PDFs
 ---------
 The following Mirantis OpenStack documentation is available in PDF:
 
-* `Pre-Installation Guide <pdf/Mirantis-OpenStack-4.1-Pre-InstallationGuide.pdf>`_
+* `Pre-Installation Guide <pdf/Mirantis-OpenStack-5.0-Pre-InstallationGuide.pdf>`_
 
   Prerequisites and pre-installation steps that you must execute before 
   installing Fuel.
 
-* `Installation Guide <pdf/Mirantis-OpenStack-4.1-InstallGuide.pdf>`_
+* `Installation Guide <pdf/Mirantis-OpenStack-5.0-InstallGuide.pdf>`_
   
   This document describes how to pre-configure your
   OpenStack environment and install the Fuel Master Node.
   
-* `User Guide <pdf/Mirantis-OpenStack-4.1-UserGuide.pdf>`_
+* `User Guide <pdf/Mirantis-OpenStack-5.0-UserGuide.pdf>`_
   
   This document describes how to deploy compute nodes for Fuel.
 
-* `Operations Guide <pdf/Mirantis-OpenStack-4.1-OperationsGuide.pdf>`_
+* `Operations Guide <pdf/Mirantis-OpenStack-5.0-OperationsGuide.pdf>`_
 
   A collection of useful procedures for using and managing
   your Mirantis OpenStack environment.
 
-* `Reference Architecture <pdf/Mirantis-OpenStack-4.1-ReferenceArchitecture.pdf>`_
+* `Reference Architecture <pdf/Mirantis-OpenStack-5.0-ReferenceArchitecture.pdf>`_
   
   A deep dive into the structure of the Fuel OpenStack environment,
   network considerations, and deployment options.
 
-* `Terminology Reference <pdf/Mirantis-OpenStack-4.1-Terminology-Reference.pdf>`_
+* `Terminology Reference <pdf/Mirantis-OpenStack-5.0-Terminology-Reference.pdf>`_
 
   Short articles about OpenStack terminology and technology
   with references to other documentation and other useful information.
 
-* `Release Notes 4.1 <pdf/Mirantis-OpenStack-4.1-RelNotes.pdf>`_
+* `Release Notes 5.0 <pdf/Mirantis-OpenStack-5.0-RelNotes.pdf>`_
  
   The Release Notes provide general information about new features,
   fixed issues, and known limitations in Mirantis OpenStack |version|.
