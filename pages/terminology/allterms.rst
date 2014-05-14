@@ -11,6 +11,7 @@ Terminology Reference
 .. include:: /pages/terminology/c/corosync.rst
 .. include:: /pages/terminology/c/crm.rst
 .. include:: /pages/terminology/d/devstack.rst
+.. include:: /pages/terminology/d/docker.rst
 .. include:: /pages/terminology/f/fencing.rst
 .. include:: /pages/terminology/f/fuel-master-node.rst
 .. include:: /pages/terminology/g/galera-cluster.rst
@@ -25,6 +26,7 @@ Terminology Reference
 .. include:: /pages/terminology/i/ironic.rst
 .. include:: /pages/terminology/k/keystone.rst
 .. include:: /pages/terminology/k/kvm.rst
+.. include:: /pages/terminology/l/lxc.rst
 .. include:: /pages/terminology/m/mirantis-openstack.rst
 .. include:: /pages/terminology/m/mongodb.rst
 .. include:: /pages/terminology/m/murano.rst
