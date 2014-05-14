@@ -1,2 +1,2 @@
-Issues Resolved in Mirantis OpenStack 4.1
+Issues Resolved in Mirantis OpenStack 5.0
 =========================================

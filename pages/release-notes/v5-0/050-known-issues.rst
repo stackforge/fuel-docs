@@ -88,7 +88,7 @@ with a VLAN splinters workaround enabled in two separate modes -- soft trunks an
    This introduces additional performance overhead.
    In the hard trunks mode,  you should use fewer than 50 VLANs in the Neutron VLAN mode.
 
-See `Advanced Network Configuration using Open VSwitch <http://docs.mirantis.com/fuel/fuel-4.1/reference-architecture.html?highlight=vlan%20splinters#advanced-network-configuration-using-open-vswitch>`_
+See `Advanced Network Configuration using Open VSwitch <http://docs.mirantis.com/fuel/fuel-5.0/reference-architecture.html?highlight=vlan%20splinters#advanced-network-configuration-using-open-vswitch>`_
 for more information about using Open VSwitch..
 
 GRE-enabled Neutron installation runs inter VM traffic through management network
