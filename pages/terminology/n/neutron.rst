@@ -16,6 +16,6 @@ Each tenant has a virtual Neutron router with one or more private networks,
 each of which can communicate with the outside world.
 This allows full routing isolation for each tenant private network.
 
-See `Neutron Deployment <http://docs.mirantis.com/fuel/fuel-4.1/pre-install-guide.html#neutron>`_
+See `Neutron Deployment <http://docs.mirantis.com/fuel/fuel-5.0/pre-install-guide.html#neutron>`_
 for a description of the recommended network configuration parameters
 for using the Neutron service.

@@ -3,7 +3,7 @@
   .. cssclass:: header-table
 
   +-------------------------------------+-----------------------------------+
-  | Mirantis OpenStack v4.1             |                .. cssclass:: right|
+  | Mirantis OpenStack v5.0             |                .. cssclass:: right|
   |                                     |                                   |
   | Terminology Reference               |                    ###Section###  |
   +-------------------------------------+-----------------------------------+
