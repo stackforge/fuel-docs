@@ -2,9 +2,9 @@
 
 .. _install-guide:
 
-=====================
+==================
 Installation Guide
-=====================
+==================
 
 .. contents:: :local:
    :depth: 3
