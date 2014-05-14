@@ -17,12 +17,12 @@ execfile('../common_conf.py')
 exclude_patterns = ['_*', "pages", 'relnotes', 'contents', 'index', '*-guide', '*.rst']
 
 pdf_documents = [ 
-    ('pdf/pdf_user', u'Mirantis-OpenStack-4.1-UserGuide',  u'User Guide',
+    ('pdf/pdf_user', u'Mirantis-OpenStack-5.0-UserGuide',  u'User Guide',
     u'2014, Mirantis Inc.'),
-    ('pdf/pdf_install', u'Mirantis-OpenStack-4.1-InstallGuide', u'Installation Guide', u'2014, Mirantis Inc.'),
-    ('pdf/pdf_operations', u'Mirantis-OpenStack-4.1-OperationsGuide', u'Operations Guide', u'2014, Mirantis Inc.'),
-    ('pdf/pdf_reference', u'Mirantis-OpenStack-4.1-ReferenceArchitecture', u'Reference Architecture', u'2014, Mirantis Inc.'),
-    ('pdf/pdf_preinstall', u'Mirantis-OpenStack-4.1-Pre-InstallationGuide', u'Pre-Installation Guide', u'2014, Mirantis Inc.'),
-    ('pdf/pdf_terminology', u'Mirantis-OpenStack-4.1-Terminology-Reference', u'Terminology Reference', u'2014, Mirantis Inc.'),
+    ('pdf/pdf_install', u'Mirantis-OpenStack-5.0-InstallGuide', u'Installation Guide', u'2014, Mirantis Inc.'),
+    ('pdf/pdf_operations', u'Mirantis-OpenStack-5.0-OperationsGuide', u'Operations Guide', u'2014, Mirantis Inc.'),
+    ('pdf/pdf_reference', u'Mirantis-OpenStack-5.0-ReferenceArchitecture', u'Reference Architecture', u'2014, Mirantis Inc.'),
+    ('pdf/pdf_preinstall', u'Mirantis-OpenStack-5.0-Pre-InstallationGuide', u'Pre-Installation Guide', u'2014, Mirantis Inc.'),
+    ('pdf/pdf_terminology', u'Mirantis-OpenStack-5.0-Terminology-Reference', u'Terminology Reference', u'2014, Mirantis Inc.'),
 #    (master_doc, project, project, copyright),
 ]
