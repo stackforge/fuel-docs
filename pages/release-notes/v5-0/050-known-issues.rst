@@ -150,6 +150,26 @@ Live migrations do not exhibit this behavior and work correctly with Ceph RBD.
 Because the Horizon Dashboard in Havana does not support live migrations,
 you must use the command line.
 
+CentOS kernel issues on certain hardware
+----------------------------------------
+
+There is an issue with the kernel that causes it to fail booting on certain hardware.
+Due to this deployments using CentOS may stuck at the very beginning of provisioning
+stage. This issue can be fixed by adding the following kernel parameters on Settings
+tab in Fuel UI:
+
+::
+
+  ipmi_si.tryacpi=0 ipmi_si.trydefaults=0 ipmi_si.trydmi=0
+
+And running this command in Fuel master node shell:
+
+::
+
+  dockerctl shell cobbler cobbler profile edit --name centos-x86_64 --kopts="ipmi_si.tryacpi=0 ipmi_si.trydefaults=0 ipmi_si.trydmi=0" --in-place
+
+See `LP1312671 <https://bugs.launchpad.net/fuel/+bug/1312671>`_.
+
 Other limitations
 -----------------
 
