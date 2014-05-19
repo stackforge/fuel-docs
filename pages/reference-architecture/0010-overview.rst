@@ -36,7 +36,7 @@ each of which is one of the following node types:
   Compute servers are the workhorses of your installation;
   they are the servers on which your users' virtual machines are created.
   `nova-compute` controls the life cycle of these VMs;
-  Neutron Agent and Ceilometer Compute may also run on Compute nodes.
+  Neutron Agent and Ceilometer Compute Agent may also run on Compute nodes.
 
 **Storage:**
   OpenStack requires block and object storage to be provisioned.

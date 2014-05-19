@@ -32,8 +32,11 @@ Notes
 
 Ceilometer can be configured to collect a large amount of metering data
 and thus perform a high volume of database writes.
-For example, with a short polling cycle,
-one could see up to 13000 writes per hour
-for an environment with 400 instances inside the cloud.
-In Fuel 4.x, Ceilometer uses only the common MySQL database,
-thus we do not recommend deploying standard Ceilometer for large production installations.
+For example, with 100 resources and default configs
+Ceilometer could to collect more than 16k samples per hour.
+Mirantis OpenStack 5.0 now defaults to installing MongoDB
+as the recommended back-end database for OpenStack Telemetry.
+The Fuel Master Node enables you to choose
+the installation of MongoDB as a role onto a node.
+This resolves the Ceilometer performance issues caused
+by the volume of concurrent read/write operations.

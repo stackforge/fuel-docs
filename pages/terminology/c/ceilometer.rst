@@ -6,7 +6,7 @@ Ceilometer (OpenStack Telemetry)
 
 Ceilometer aggregates usage and performance data
 across all the services deployed in an OpenStack environment.
-This data provides visibiity and insight
+This data provides visibility and insight
 into the usage of the cloud across dozens of data points
 and allows cloud operators to view metrics globally
 or by individual deployed resources.
@@ -20,28 +20,23 @@ either the CentOS or Ubuntu operating system;
 check the appropriate box when configuring your environment.
 
 Note that Ceilometer collects a great deal of data
-and performas a large volume of database writes;
-for 400 resources inside the cloud,
-Ceilometer could do up to 13000 writes per office.
-In Fuel 4.x, Ceilometer uses only the common MySQL database,
-thus we do not recommend deploying standard Ceilometer
-for large production installations.
+and performance a large volume of database writes;
+with 100 resources and default configs Ceilometer could to collect more
+than 16k samples per hour.
 
-Notification bus support for Ceilometer is not part of the Fuel 4.x release
-because of issues with the MySQL backend.
-.. See
-.. `Bug 1255107 <https://bugs.launchpad.net/ceilometer/havana/+bug/1255107>`_ and
-.. `Bug 1257908 <https://bugs.launchpad.net/ceilometer/+bug/1257908>`_
-for more details.
+Mirantis OpenStack 5.0 now defaults to installing MongoDB
+as the recommended back-end database for OpenStack Telemetry.
+The Fuel Master Node enables you to choose
+the installation of MongoDB as a role onto a node.
+This resolves the Ceilometer performance issues caused
+by the volume of concurrent read/write operations.
 
-The Horizon Metering Panel is disabled in Fuel 4.1;
-this functionality requires Ceilomter to run with the *metadata_query* feature
-which Ceilometer does not support with the MySQL driver.
-.. See `Bug 60317 <https://review.openstack.org/#/c/60317/>`_
-
+The Ceilometer (Resource Usage) tab is restored to Horizon.
+It was disabled in earlier releases to solve another problem.
+.. See `LP <https://bugs.launchpad.net/fuel/+bug/1284578>`_.
 
 For more information, see
 *  :ref:`ceilometer-deployment-notes`
 * `Ceilometer wiki <https://wiki.openstack.org/wiki/Ceilometer>`_
-* `Ceilometer blob <https://github.com/openstack/ceilometer/blob/stable/havana/doc/source/install/dbreco.rst>`_
+* `Ceilometer blob <https://github.com/openstack/ceilometer/blob/stable/icehouse/doc/source/install/dbreco.rst>`_
 
