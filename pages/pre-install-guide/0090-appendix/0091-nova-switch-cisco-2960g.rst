@@ -1,7 +1,7 @@
-.. _cisco-2960g-config:
+.. _cisco-2960g-nova:
 
-Switch configuration (Cisco Catalyst 2960G)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nova-network Switch configuration (Cisco Catalyst 2960G)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Use the following configuration to deploy Mirantis OpenStack using a Cisco
 Catalyst 2960G network switch.::

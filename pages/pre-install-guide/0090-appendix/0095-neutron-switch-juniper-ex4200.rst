@@ -1,5 +1,8 @@
-Switch configuration (Juniper EX4200)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. _juniper-ex4200-neutron:
+
+Neutron Switch configuration (Juniper EX4200)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Use the following configuration to deploy Mirantis OpenStack using
 Juniper EX4200 network switch.
