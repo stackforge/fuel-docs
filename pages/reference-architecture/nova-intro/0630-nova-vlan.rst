@@ -1,5 +1,9 @@
-VLAN Manager Network Diagram
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+.. _nova-vlan-arch:
+
+Nova-network VLAN Manager Network Diagram
+-----------------------------------------
 
 The following diagram describes network configuration when you use
 Nova-network with VLAN Manager:
