@@ -32,5 +32,5 @@ to act as a virtual Neutron router in HA (if deploying in HA mode).
 
 .. include:: /pages/reference-architecture/neutron-intro/0200-neutron-tech-intro.rst
 .. include:: /pages/reference-architecture/neutron-intro/0300-neutron-limits.rst
-.. include:: /pages/reference-architecture/network-setup/0500-nic-usage.rst
+.. include:: /pages/reference-architecture/neutron-intro/0500-nic-usage.rst
 
