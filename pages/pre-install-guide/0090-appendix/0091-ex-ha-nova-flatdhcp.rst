@@ -1,5 +1,5 @@
 Example 1: HA + Nova-network FlatDHCP manager
----------------------------------------------
+=============================================
 
 As a model example, the following configuration is used:
 

@@ -4,6 +4,8 @@
 
 .. index Reference Architectures
 
+.. _nodes-roles-arch:
+
 OpenStack Environment Architecture
 ==================================
 

@@ -1,16 +1,39 @@
+
+
 .. raw:: pdf
 
    PageBreak
 
-.. index:: Cluster Sizing
+.. _nodes-roles-plan:
 
-Cluster Sizing
-==============
+Nodes and Roles
+===============
 
-This reference architecture is well suited for production-grade
-OpenStack deployments on a medium and large scale when you can afford
-allocating several servers for your OpenStack controller nodes in
-order to build a fully redundant and highly available environment.
+Your OpenStack environment contains a set of
+specialized nodes and roles;
+see :ref:`nodes-roles-arch` for a description.
+When planning your OpenStack deployment,
+you must determine the proper mix of node types
+and what roles will be installed on each.
+
+Some general guiding principles:
+
+- When deploying a production-grade OpenStack environment,
+  it is best to spread the roles (and, hence, the workload)
+  over as many servers as possible
+  in order to have a fully redundant, highly-available OpenStack environment
+  and to avoid performance bottlenecks.
+- For demonstration and study purposes,
+  you can deploy OpenStack on VirtualBox;
+  see :ref:`virtualbox` for more information.
+  This option has the lowest hardware requirements
+- OpenStack can be deployed on smaller hardware configurations
+  by combining multiple roles on the nodes
+  and mapping multiple :ref:`logical-networks-arch`
+  to a single physical NIC.
+
+This section provides information to help you decide
+how many nodes you need and which roles to assign to each.
 
 The absolute minimum requirement for a highly-available OpenStack
 deployment is to allocate 4 nodes:

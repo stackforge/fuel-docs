@@ -1,0 +1,17 @@
+
+.. _neutron-gre-ovs-arch:
+
+Neutron with GRE segmentation and OVS
+++++++++++++++++++++++++++++++++++++++
+
+A typical network configuration for Neutron with GRE segmentation might look
+like this:
+
+.. image:: /_images/Neutron_32_gre_v2.png
+  :align: center
+
+Open vSwitch (OVS) GRE tunnels are provided through Management Network.
+
+.. note:: This setup does not include physical Private network.
+
+

@@ -1,0 +1,16 @@
+
+.. _neutron-vlan-ovs-arch:
+
+Neutron with VLAN segmentation and OVS
+++++++++++++++++++++++++++++++++++++++
+
+The following diagram shows the network isolation
+using :ref:`ovs-term` and VLANs:
+
+
+.. image:: /_images/Neutron_32_vlan_v2.png
+  :align: center
+
+.. note:: You must have at least three network interfaces for this
+          configuration
+

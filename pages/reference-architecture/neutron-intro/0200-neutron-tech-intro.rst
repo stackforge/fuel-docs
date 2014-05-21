@@ -33,32 +33,5 @@ It is important to note:
   separate NIC to ensure that traffic is separated adequately.
 * Admin and Private networks must be located together
   on a NIC that is separate from the other networks.
-
-A typical network configuration for Neutron with VLAN segmentation might look
-like this:
-
-.. image:: /_images/Neutron_32_vlan_v2.png
-  :align: center
-
-
-A typical network configuration for Neutron with GRE segmentation might look
-like this:
-
-.. image:: /_images/Neutron_32_gre_v2.png
-  :align: center
- 
-The most likely configuration for different number NICs on cluster nodes:
-
-+------+--------------------------------------+--------------------------------------+
-| NICs | VLAN                                 |                        GRE           |
-+======+======================================+======================================+
-|   2  |  Not supported                       | .. image:: /_images/q32_gre_2nic.*   |
-|      |                                      |    :align: center                    |
-+------+--------------------------------------+--------------------------------------+
-|   3  | .. image:: /_images/q32_vlan_3nic.*  | .. image:: /_images/q32_gre_3nic.*   |
-|      |    :align: center                    |    :align: center                    |
-+------+--------------------------------------+--------------------------------------+
-|   4  | .. image:: /_images/q32_vlan_4nic.*  | .. image:: /_images/q32_gre_4nic.*   |
-|      |    :align: center                    |    :align: center                    |
-+------+--------------------------------------+--------------------------------------+
-
+* :ref:`ovs-term` improves the flexiblity and performance
+  of both Neutron topologies.

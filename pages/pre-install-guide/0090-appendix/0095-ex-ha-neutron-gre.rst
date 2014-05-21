@@ -1,5 +1,6 @@
 Example 2: HA + Neutron with GRE
---------------------------------
+================================
+
 As a model example, the following configuration is used:
 
 * **Deploying mode:** Multi-node HA

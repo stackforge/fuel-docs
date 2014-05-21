@@ -1,5 +1,5 @@
 Detailed port configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------
 
 The following table describes port configuration for this deployment.
 

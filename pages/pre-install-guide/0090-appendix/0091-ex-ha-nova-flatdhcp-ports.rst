@@ -1,5 +1,5 @@
 Detailed Port Configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------
 
 The following table describes the detailed  port configuration and VLAN
 assignment.
@@ -44,11 +44,9 @@ assignment.
 Connect the servers to the switch as in the diagram below:
 
 .. image:: /_images/preinstall_d_switch_connect.jpg
-   :align: center
    :width: 75%
 
 The following diagram describes the network topology for this environment.
 
 .. image:: /_images/preinstall_d_logic_network.jpg
-   :align: center
    :width: 75%

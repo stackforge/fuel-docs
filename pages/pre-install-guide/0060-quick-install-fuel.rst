@@ -22,23 +22,6 @@ To install Fuel using the ISO image:
 #. Optionally, set the ``showmenu`` property to **Yes** to open the extended
    network configuration menu during installation.
 
-When Fuel is installed,
-you can follow the instructions in :ref:`deploy-environment-ug`
-to deploy a new Mirantis OpenStack environment.
-
-Booting the ISO image
----------------------
-
-.. image:: /_images/grub-cmdline.png
    :align: center
    :width: 70%
-
-
-Editing grub command line
--------------------------
-
-.. image:: /_images/grub-screen.png
-   :align: center
-   :width: 70%
-
 
