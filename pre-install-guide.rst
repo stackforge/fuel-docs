@@ -2,9 +2,9 @@
 
 .. _Pre-install_Guide:
 
-======================
-Pre-Installation Guide
-======================
+==============
+Planning Guide
+==============
 
 .. contents:: :local:
    :depth: 3

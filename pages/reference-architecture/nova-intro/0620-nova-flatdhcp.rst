@@ -1,5 +1,9 @@
-FlatDHCP Manager Network Diagram
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+.. _nova-flatdhcp-arch:
+
+Nova-network FlatDHCP Manager Network Diagram
+---------------------------------------------
 
 The following diagram describes network configuration when you use
 Nova-network with FlatDHCP Manager:
