@@ -1,5 +1,8 @@
-Switch configuration (Cisco Catalyst 2960G)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. _cisco-2960g-neutron:
+
+Neutron Switch configuration (Cisco Catalyst 2960G)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Use the following configuration to deploy Mirantis OpenStack using a Cisco
 Catalyst 2960G network switch.

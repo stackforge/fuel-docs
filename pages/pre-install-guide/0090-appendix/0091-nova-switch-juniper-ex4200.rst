@@ -1,3 +1,6 @@
+
+.. _juniper-ex4200-nova:
+
 Switch configuration (Juniper EX4200)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
