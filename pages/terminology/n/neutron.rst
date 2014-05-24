@@ -1,21 +1,23 @@
 
 .. _neutron-term:
 
-Neutron (formerly know as Quantum)
-------------------------------------
+Neutron
+-------
 
-OpenStack Core project to provide networking as a service
+Neutron (formerly know as Quantum) is
+one of the network models used in OpenStack deployments.
+It is an OpenStack Core project
+to provide networking as a service
 between interface devices such as vNICS
 that are managed by other OpenStack services such as Nova.
 See the `Neutron web page <https://wiki.openstack.org/wiki/Neutron>`_
 for more information.
 
-Mirantis OpenStack includes Neutron;
-Fuel deploys per-tenant Routers with Private Networks.
-Each tenant has a virtual Neutron router with one or more private networks,
-each of which can communicate with the outside world.
-This allows full routing isolation for each tenant private network.
+See
 
-See `Neutron Deployment <http://docs.mirantis.com/fuel/fuel-5.0/pre-install-guide.html#neutron>`_
-for a description of the recommended network configuration parameters
-for using the Neutron service.
+- :ref:`net-topology-plan` for information
+  about choosing a network topology
+- :ref:`neutron-topologies-arch` for more detailed information
+  about the neutron implementation
+  and how to configure it.
+

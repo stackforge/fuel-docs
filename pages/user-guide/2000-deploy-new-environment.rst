@@ -165,7 +165,7 @@ High-availability (HA) or non-HA mode
 .. image:: /_images/user_screen_shots/choose_deploy_mode.png
    :width: 50%
 
-All new deployments should use the Multi-node HA mode.
+All new deployments should use the Multi-node :ref:`ha-term` mode.
 Beginning with Mirantis OpenStack 5.0,
 HA mode can be deployed with a single Controller node
 plus a compute node;

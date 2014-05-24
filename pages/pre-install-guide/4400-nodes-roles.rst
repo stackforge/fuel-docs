@@ -16,12 +16,22 @@ When planning your OpenStack deployment,
 you must determine the proper mix of node types
 and what roles will be installed on each.
 
+All production environments should be deployed
+for :ref:`high availability<ha-term>`
+although you can deploy your environment
+without the replicated servers required for high availability
+and then add the replicated servers later.
+But part of your Nodes and Roles planning
+is to determine the level of HA you want to implement
+and to plan for adequate hardware.
+
 Some general guiding principles:
 
 - When deploying a production-grade OpenStack environment,
   it is best to spread the roles (and, hence, the workload)
   over as many servers as possible
-  in order to have a fully redundant, highly-available OpenStack environment
+  in order to have a fully redundant,
+  highly-available OpenStack environment
   and to avoid performance bottlenecks.
 - For demonstration and study purposes,
   you can deploy OpenStack on VirtualBox;
