@@ -2,7 +2,7 @@
 .. _neutron-gre-ovs-arch:
 
 Neutron with GRE segmentation and OVS
-++++++++++++++++++++++++++++++++++++++
+-------------------------------------
 
 A typical network configuration for Neutron with GRE segmentation might look
 like this:

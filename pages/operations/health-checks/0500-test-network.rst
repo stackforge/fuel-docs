@@ -16,4 +16,4 @@ If there are errors, it is either in your configuration of interfaces or
 possibly the VLAN tagging feature is disabled on your switch port. 
 
 .. image:: /_images/net_verify_failure.jpg
-  :align: center
+  :width: 100%

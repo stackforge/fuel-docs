@@ -1,5 +1,5 @@
 Nova-network FlatDHCP
-+++++++++++++++++++++
+---------------------
 
 Depending on the number of NICs you have in your node servers, you can use the
 following examples to plan your NIC assignment:
