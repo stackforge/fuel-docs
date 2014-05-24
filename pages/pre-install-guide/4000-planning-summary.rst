@@ -18,10 +18,6 @@ complete to plan the Mirantis OpenStack deployment.
 +----------------------------+-------------------------------------------+
 | Step Description           | Additional Information                    |
 +============================+===========================================+
-| Choose a deployment mode   | See :ref:`mode-ha-plan`                   |
-| and whether or not to      |                                           |
-| deploy high availability   |                                           |
-+----------------------------+-------------------------------------------+
 | Select a network topology  | See :ref:`net-topology-plan`              |
 |                            |                                           |
 +----------------------------+-------------------------------------------+
@@ -30,7 +26,9 @@ complete to plan the Mirantis OpenStack deployment.
 +----------------------------+-------------------------------------------+
 | Determine how many nodes   | See :ref:`nodes-roles-plan`               |
 | to deploy and which roles  |                                           |
-| to assign to each          |                                           |
+| to assign to each and      |                                           |
+| the high-availability      |                                           |
+| to implement.              |                                           |
 +----------------------------+-------------------------------------------+
 | Calculate the server and   | See :ref:`hardware-plan`                  |
 | network hardware needed    |                                           |

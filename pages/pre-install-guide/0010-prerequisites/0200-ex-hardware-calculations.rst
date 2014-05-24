@@ -1,5 +1,11 @@
+
+.. _hardware-calculation:
+
 Example of Hardware Requirements Calculation 
---------------------------------------------
+============================================
+
+.. TODO: verify that this is useful, accurate, and current
+
 When you calculate resources for your OpenStack environment, consider
 the resources required for expanding your environment.
 
