@@ -1,7 +1,8 @@
-.. index:: User Guide
-.. _User_Guide:
 
-=====================
+.. index:: User Guide
+
+.. _user-guide:
+
 User Guide
 =====================
 

@@ -2,7 +2,7 @@
 .. _neutron-config-gen:
 
 Neutron Configuration Planning -- General
-+++++++++++++++++++++++++++++++++++++++++
+-----------------------------------------
 
 The most likely configuration for different number NICs on cluster nodes:
 
@@ -22,7 +22,7 @@ The most likely configuration for different number NICs on cluster nodes:
 .. _neutron-config-vlan:
 
 Neutron VLAN Segmentation Planning
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Depending on the number of NICs you have in your node servers, you can use the
 following examples to plan your NIC assignment:

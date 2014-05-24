@@ -16,7 +16,7 @@ Use "Configure Interfaces" tab to configure interfaces bonding.
    Select interfaces to be aggregated. All interfaces except Admin-PXE can be aggregated.
 
 .. image:: /_images/bonding-setup-in-ui-2.*
-  :width: 45%
+  :width: 75%
 
 3. Click "Bond interfaces". Now you can select the appropriate bonding mode from the "Mode" drop-down list.
 

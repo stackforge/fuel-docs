@@ -1,6 +1,6 @@
 .. index:: VirtualBox Installation
 
-.. _virtualbox:
+.. _virtualbox-guide:
 
 ==========================
 Running Fuel on VirtualBox

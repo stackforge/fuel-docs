@@ -2,7 +2,7 @@
 .. _neutron-vlan-ovs-arch:
 
 Neutron with VLAN segmentation and OVS
-++++++++++++++++++++++++++++++++++++++
+--------------------------------------
 
 The following diagram shows the network isolation
 using :ref:`ovs-term` and VLANs:

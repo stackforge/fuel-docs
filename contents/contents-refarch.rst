@@ -8,8 +8,6 @@
 .. include:: /pages/reference-architecture/1700-ceph.rst
 .. include:: /pages/reference-architecture/0045-storage.rst
 .. include:: /pages/reference-architecture/6000-network-architecture.rst
-.. include:: /pages/reference-architecture/6030-router.rst
-.. include:: /pages/reference-architecture/6034-switch.rst
 .. include:: /pages/reference-architecture/6050-neutron-topologies.rst
 .. include:: /pages/reference-architecture/6070-nova-topologies.rst
 .. include:: /pages/reference-architecture/0100-openvswitch.rst
