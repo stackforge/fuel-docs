@@ -1,19 +1,56 @@
 
-.. _deploy-environment-ug:
+.. _download-install-ug:
 
-Deploy a New OpenStack Environment
-==================================
+Download and Install Fuel
+=========================
 
-You must complete the following steps
-to deploy your OpenStack environment.
-After completing this stage, configure the parameters for deployment,
-including networking, storage, and optional parameters.
+Mirantis provides the Fuel ISO image.
+To install Fuel using this image:
+
+#. Download the Fuel ISO from the `Mirantis web-site <http://software.mirantis.com/>`_.
+
+#. Mount or burn the ISO.
+
+#. Power on your machine.
+   The Fuel boot menu appears.
+
+#. Optionally, configure the IP address, default gateway, and DNS server by
+   pressing TAB.
+
+#. Optionally, set the ``showmenu`` property to **Yes** to open the extended
+   network configuration menu during installation.
+
+When Fuel is installed,
+you can follow the instructions in :ref:`create-env-ug`
+to deploy a new Mirantis OpenStack environment.
+
+Booting the ISO image
+---------------------
+
+.. image:: /_images/grub-cmdline.png
+   :align: center
+   :width: 70%
+
+
+Editing grub command line
+-------------------------
+
+.. image:: /_images/grub-screen.png
+   :align: center
+   :width: 70%
+
+
+
+.. _boot-fuel-ug:
+
+Boot Fuel
+=========
 
 +----------------------------+-------------------------------------------+
 | Step Description           | Additional Information                    |
 +============================+===========================================+
 | Initialize Fuel            | See :ref:`initialize-fuel`                |
-| Fuel server (on port 8000) |                                           |
+| server (on port 8000)      |                                           |
 +----------------------------+-------------------------------------------+
 | If necessary, modify the   | See :ref:`Network_Install`                |
 | network settings for the   |                                           |
@@ -22,14 +59,57 @@ including networking, storage, and optional parameters.
 | Boot the node servers in   | See :ref:`boot-nodes-ug`                  |
 | PXE mode                   |                                           |
 +----------------------------+-------------------------------------------+
-| Click on the "New"         | See :ref:`create-env-ug`                  |
+
+.. _initialize-fuel:
+
+Initialize Fuel
+===============
+
+After Fuel is installed,
+point your browser to the default Fuel UI
+URL: `http://10.20.0.2:8000 <http://10.20.0.2:8000>`__
+or to the IP address and port number that you specified.
+
+The following screen appears:
+
+.. image:: /_images/user_screen_shots/fuel_starts.png
+   :width: 30%
+
+Boot settings (optional)
+------------------------
+
+To modify the boot settings,
+press the "Tab" key to display the **grub** command line;
+you can edit this line to modify the boot settings
+for the Fuel Master Node.
+Normally this is not necessary.
+
+.. include:: /pages/user-guide/initialize-fuel/0400-pxe-config.rst
+.. include:: /pages/user-guide/initialize-fuel/0500-fuel-boot.rst
+.. include:: /pages/user-guide/initialize-fuel/0600-boot-nodes.rst
+
+
+.. raw:: pdf
+
+   PageBreak
+
+
+.. _create-env-ug:
+
+Create a new environment
+========================
+
++----------------------------+-------------------------------------------+
+| Step Description           | Additional Information                    |
++============================+===========================================+
+| Click on the "New"         | See :ref:`start-create-env-ug`            |
 | OpenStack environment"     |                                           |
 | icon to create a new       |                                           |
 | environment.               |                                           |
 +----------------------------+-------------------------------------------+
-| Choose the name for your   | Select either Ubuntu or CentOS to use     |
-| environment and choose the | as the operating system for the OpenStack |
-| Operating System (distro)  | nodes.                                    |
+| Choose the name for your   | See :ref:`name-distro-ug`                 |
+| environment and choose the |                                           |
+| Operating System (distro)  |                                           |
 +----------------------------+-------------------------------------------+
 | Choose your Deployment     | See :ref:`mode-ha-ug`                     |
 | Mode (Multi-node HA or non |                                           |
@@ -55,100 +135,26 @@ including networking, storage, and optional parameters.
 | the icon with your named   |                                           |
 | environment.               |                                           |
 +----------------------------+-------------------------------------------+
-| Assign a role or roles to  | See :ref:`assign-roles-ug`                |
-| each node server.          |                                           |
-+----------------------------+-------------------------------------------+
-| Customize disk partitions  | See :ref:`customize-partitions-ug`        |
-+----------------------------+-------------------------------------------+
-| In **Network** tab,        | See :ref:`network-settings-ug`            |
-| configure the network      |                                           |
-| settings from the address  |                                           |
-| plan prepared earlier.     |                                           |
-+----------------------------+-------------------------------------------+
-| Set up NIC bonding         | See :ref:`nic-bonding-ui`                 |
-| (optional)                 |                                           |
-+----------------------------+-------------------------------------------+
-| Map logical networks to    | See :ref:`map-logical-to-physical`        |
-| NICs                       |                                           |
-+----------------------------+-------------------------------------------+
-| Click **Verify Networks**  | See :ref:`verify-networks-ug`             |
-| to check and confirm the   |                                           |
-| network configuration.     |                                           |
-+----------------------------+-------------------------------------------+
-| (Optional) In the          | See :ref:`settings-ug`                    |
-| **Settings** tab, you can  |                                           |
-| configure or modify the    |                                           |
-| options for Horizon        |                                           |
-| access, scheduler type,    |                                           |
-| logging, and other         |                                           |
-| OpenStack options.         |                                           |
-+----------------------------+-------------------------------------------+
-| Click the **Deploy**       | See :ref:`deploy-changes`                 |
-| **Changes** button.        |                                           |
-+----------------------------+-------------------------------------------+
-| (Optional) Set up and test | See :ref:`sahara-install`                 |
-| Sahara                     |                                           |
-+----------------------------+-------------------------------------------+
-| (Optional) Set up Murano   |                                           |
-+----------------------------+-------------------------------------------+
-| Set up VMs containers,     |                                           |
-| load your applications     |                                           |
-| and storage                |                                           |
-+----------------------------+-------------------------------------------+
 
-Each of these steps is discussed below in more detail.
+.. _start-create-env-ug:
 
-If necessary, you can :ref:`stop deployment<Stop_Deployment>`
-or :ref:`reset the environment<Reset_Environment>`.
-
-.. _initialize-fuel:
-
-Initialize Fuel
-===============
-
-After Fuel is installed,
-point your browser to the default Fuel UI
-URL: `http://10.20.0.2:8000 <http://10.20.0.2:8000>`__
-or to the IP address and port number that you specified.
-
-The following screen appears:
-
-.. image:: /_images/user_screen_shots/fuel_starts.png
-   :width: 50%
-
-Boot settings (optional)
-------------------------
-
-If you need to modify the boot settings,
-press the "Tab" key to display the **grub** command line;
-you can edit this line to modify the boot settings
-for the Fuel Master Node.
-Normally this is not necessary.
-
-.. include:: /pages/user-guide/initialize-fuel/0400-pxe-config.rst
-.. include:: /pages/user-guide/initialize-fuel/0500-fuel-boot.rst
-.. include:: /pages/user-guide/initialize-fuel/0600-boot-nodes.rst
-
-
-.. raw:: pdf
-
-   PageBreak
-
-
-.. _create-env-ug:
-
-Create a new environment
-========================
+Launch Wizard to Create New Environment
+---------------------------------------
 
 In the Fuel UI, click on the "New OpenStack environment" icon
-to launch the wizard that is creates a new OpenStack environment.
+to launch the wizard that creates a new OpenStack environment.
 
 .. image:: /_images/user_screen_shots/name_environ.png
    :width: 50%
 
+.. _name-distro-ug:
+
+Name Environment and Choose Distribution
+----------------------------------------
 
 Give the environment a name
-and select the Linux distribution from the drop-down list.
+and select the Linux distribution from the drop-down list;
+see :ref:`linux-distro-plan`.
 This is the operating system that will be installed
 on the Controller, Compute, and Storage nodes in the environment.
 
@@ -165,19 +171,7 @@ High-availability (HA) or non-HA mode
 .. image:: /_images/user_screen_shots/choose_deploy_mode.png
    :width: 50%
 
-All new deployments should use the Multi-node HA mode.
-Beginning with Mirantis OpenStack 5.0,
-HA mode can be deployed with a single Controller node
-plus a compute node;
-you will need to add additional Controller nodes
-to achieve high-availability
-(which is strongly recommended for production environments),
-but you do not need to redeploy the OpenStack environment
-to implement high-availability.
-
-The multi-node mode without HA is supported
-for backward compatibility
-but will be deprecated in a later release.
+All new deployments should use the Multi-node :ref:`ha-term` mode.
 
 .. raw:: pdf
 
@@ -216,6 +210,7 @@ You can choose either either of the Neutron topologies here.
 If you choose Nova-network here,
 you can choose between the FlatDHCP or VLAN topologies
 on the Network Settings page.
+See :ref:`net-topology-plan`.
 
 .. raw:: pdf
 
@@ -301,6 +296,54 @@ After you exit from the "Create a New OpenStack Environment" wizard,
 Fuel displays a set of configuration tabs
 that you use to finish configuring your environment.
 
++----------------------------+-------------------------------------------+
+| Step Description           | Additional Information                    |
++============================+===========================================+
+| Assign a role or roles to  | See :ref:`assign-roles-ug`                |
+| each node server.          |                                           |
++----------------------------+-------------------------------------------+
+| Customize disk partitions  | See :ref:`customize-partitions-ug`        |
++----------------------------+-------------------------------------------+
+| In **Network** tab,        | See :ref:`network-settings-ug`            |
+| configure the network      |                                           |
+| settings from the address  |                                           |
+| plan prepared earlier.     |                                           |
++----------------------------+-------------------------------------------+
+| Set up NIC bonding         | See :ref:`nic-bonding-ui`                 |
+| (optional)                 |                                           |
++----------------------------+-------------------------------------------+
+| Map logical networks to    | See :ref:`map-logical-to-physical`        |
+| NICs                       |                                           |
++----------------------------+-------------------------------------------+
+| Click **Verify Networks**  | See :ref:`verify-networks-ug`             |
+| to check and confirm the   |                                           |
+| network configuration.     |                                           |
++----------------------------+-------------------------------------------+
+| (Optional) In the          | See :ref:`settings-ug`                    |
+| **Settings** tab, you can  |                                           |
+| configure or modify the    |                                           |
+| options for Horizon        |                                           |
+| access, scheduler type,    |                                           |
+| logging, and other         |                                           |
+| OpenStack options.         |                                           |
++----------------------------+-------------------------------------------+
+| Click the **Deploy**       | See :ref:`deploy-changes`                 |
+| **Changes** button.        |                                           |
++----------------------------+-------------------------------------------+
+| (Optional) Set up and test | See :ref:`sahara-install`                 |
+| Sahara                     |                                           |
++----------------------------+-------------------------------------------+
+| (Optional) Set up Murano   |                                           |
++----------------------------+-------------------------------------------+
+| Set up VMs containers,     |                                           |
+| load your applications     |                                           |
+| and storage                |                                           |
++----------------------------+-------------------------------------------+
+
+Each of these steps is discussed below in more detail.
+
+If necessary, you can :ref:`stop deployment<Stop_Deployment>`
+or :ref:`reset the environment<Reset_Environment>`.
 
 .. raw:: pdf
 

@@ -36,19 +36,20 @@ Please change `vm_master_ip` parameter in config.sh accordingly in case you use
 VirtualBox automated scripts to deploy Fuel.
 
 .. image:: /_images/fuel-menu-interfaces.jpg
-  :align: center
-  :width: 70%
+  :width: 50%
 
-Use the arrow keys to navigate through the tool. Once you have made your
-changes, go to Save & Quit.
+Use the arrow keys to navigate through the tool.
+Once you have made your changes,
+go to Save & Quit.
 
-It is also possible to run "fuelmenu" from a root shell on Fuel Master node after
-deployment to make minor changes to network interfaces, DNS, and gateway. The
-PXE settings, however, cannot be changed after deployment as it will lead to
-deployment failure.
+You can run "fuelmenu" from a root shell on the Fuel Master node
+after deployment to make minor changes
+to network interfaces, DNS, and the gateway.
+The PXE settings, however,
+cannot be changed after deployment as it will lead to deployment failure.
 
 .. warning::
 
   Once IP settings are set at the boot time for Fuel Master node, they
-  **should not be changed during the whole lifecycle of Fuel.**
+  **should not be changed during the entire lifecycle of Fuel.**
 
