@@ -15,4 +15,4 @@ See:
 *  `Pacemaker web page <http://clusterlabs.org/doc/>`_
    contains more in-depth information about Pacemaker.
 
-Fuel uses Pacemaker to implement its Multi-Node-HA deployment.
+Fuel uses Pacemaker to implement its :ref:`ha-term` deployment.

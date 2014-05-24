@@ -2,7 +2,6 @@
 .. include:: /pages/pre-install-guide/0020-system-requirements.rst
 .. include:: /pages/pre-install-guide/0025-supported-software-list.rst
 .. include:: /pages/pre-install-guide/4000-planning-summary.rst
-.. include:: /pages/pre-install-guide/4100-mode-ha.rst
 .. include:: /pages/pre-install-guide/4200-net-topology.rst
 .. include:: /pages/pre-install-guide/4300-linux-distro.rst
 .. include:: /pages/pre-install-guide/4400-nodes-roles.rst

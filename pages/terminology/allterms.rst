@@ -15,6 +15,7 @@ Terminology Reference
 .. include:: /pages/terminology/f/fencing.rst
 .. include:: /pages/terminology/f/fuel-master-node.rst
 .. include:: /pages/terminology/g/galera-cluster.rst
+.. include:: /pages/terminology/h/ha.rst
 .. include:: /pages/terminology/h/hadoop.rst
 .. include:: /pages/terminology/h/havana-term.rst
 .. include:: /pages/terminology/h/heat.rst
