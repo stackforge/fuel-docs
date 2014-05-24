@@ -1,19 +1,61 @@
 
-.. _deploy-environment-ug:
+.. _download-install-ug:
 
-Deploy a New OpenStack Environment
-==================================
+Download and Install Fuel
+=========================
 
-You must complete the following steps
-to deploy your OpenStack environment.
-After completing this stage, configure the parameters for deployment,
-including networking, storage, and optional parameters.
+Mirantis provides the images you will use to
+install Fuel and Mirantis OpenStack.
+You can download an ISO file to burn to DVD
+or an IMG file to burn to a USB drive.
+For a bare-metal installation,
+you must burn this to media
+(either burn the ISO image to a DVD or
+burn the IMG file to a USB drive)
+then use that media to install the software.
+
+.. note:: You can use the same ISO image
+   to install Fuel and Mirantis OpenStack
+   in VirtualBox.
+   In that case, copy the ISO file to the disk
+   and boot directly from that disk file.
+   See the `Quick Start Guide <http://software.mirantis.com/quick-start/>`_.
+   and :ref:`virtualbox`.
+
+
+Download the Fuel image from the
+`Mirantis web-site <http://software.mirantis.com/>`_ web page.
+Depending on the speed of your Internet connection,
+this could take a half hour or more.
+
+You can burn the image to a writeable DVD
+using any standard software.
+Some popular options:
+
+**Linux** --
+`Brasero` and `Xfburn` are commonly pre-installed applications
+
+**Mac OS X** --
+Open `Disk Utility` from `Applications > Utilities`,
+drag the ISO into the disk list on the left side of the window and select it,
+insert a blank DVD, and click `Burn`.
+If you prefer a different utility,
+check out the open source
+`Burn <http://burn-osx.sourceforge.net/Pages/English/home.html>`_.
+
+**Windows** -- 
+Use `ImgBurn <http://www.imgburn.com/>`_ and the
+open source `InfraRecorder <http://infrarecorder.org/>`_
+
+.. _initialize-fuel-ug:
+
+Initialize Fuel
+===============
 
 +----------------------------+-------------------------------------------+
 | Step Description           | Additional Information                    |
 +============================+===========================================+
-| Initialize Fuel server     | See :ref:`initialize-fuel`                |
-| (on port 8000)             |                                           |
+| Boot Fuel                  | See :ref:boot-fuel-ug:                    |
 +----------------------------+-------------------------------------------+
 | If necessary, modify the   | See :ref:`Network_Install`                |
 | network settings for the   |                                           |
@@ -22,14 +64,61 @@ including networking, storage, and optional parameters.
 | Boot the node servers in   | See :ref:`boot-nodes-ug`                  |
 | PXE mode                   |                                           |
 +----------------------------+-------------------------------------------+
-| Click on the "New"         | See :ref:`create-env-ug`                  |
+
+.. _boot-fuel-ug:
+
+Boot Fuel
+---------
+
+Power-on the server that will be your Fuel Master Node
+with the media you created in :ref:`download-install-ug` mounted,
+just as you would for any operating system installation.
+
+The following screen appears.
+
+.. image:: /_images/user_screen_shots/fuel_starts.png
+   :width: 30%
+
+Modify Boot settings (optional)
+-------------------------------
+
+Optionally, you can modify the boot settings
+to configure the IP address, default gateway, and DNS server
+for the Fuel Master Node.
+To do this,
+press the "Tab" key to display the **grub** command line
+which you can then edit.
+Normally this is not necessary.
+
+.. include:: /pages/user-guide/initialize-fuel/0400-pxe-config.rst
+.. include:: /pages/user-guide/initialize-fuel/0500-fuel-boot.rst
+.. include:: /pages/user-guide/initialize-fuel/0600-boot-nodes.rst
+
+
+.. raw:: pdf
+
+   PageBreak
+
+
+.. _create-env-ug:
+
+Create a new environment
+========================
+
++----------------------------+-------------------------------------------+
+| Step Description           | Additional Information                    |
++============================+===========================================+
+| Initialize Fuel            | See :ref:`initialize-fuel`                |
+| server (on port 8000)      |                                           |
++----------------------------+-------------------------------------------+
+| Click on the "New"         | See :ref:`start-create-env-ug`            |
 | OpenStack environment"     |                                           |
 | icon to create a new       |                                           |
 | environment.               |                                           |
 +----------------------------+-------------------------------------------+
-| Choose the name for your   | Select either Ubuntu or CentOS to use     |
-| environment and choose the | as the operating system for the OpenStack |
-| Operating System (distro)  | nodes.                                    |
+| Choose the name for your   | See :ref:`name-distro-ug`                 |
+| environment and choose the |                                           |
+| Operating System (distro)  |                                           |
 +----------------------------+-------------------------------------------+
 | Choose your Deployment     | See :ref:`mode-ha-ug`                     |
 | Mode (Multi-node HA or non |                                           |
@@ -55,51 +144,6 @@ including networking, storage, and optional parameters.
 | the icon with your named   |                                           |
 | environment.               |                                           |
 +----------------------------+-------------------------------------------+
-| Assign a role or roles to  | See :ref:`assign-roles-ug`                |
-| each node server.          |                                           |
-+----------------------------+-------------------------------------------+
-| Customize disk partitions  | See :ref:`customize-partitions-ug`        |
-+----------------------------+-------------------------------------------+
-| In **Network** tab,        | See :ref:`network-settings-ug`            |
-| configure the network      |                                           |
-| settings from the address  |                                           |
-| plan prepared earlier.     |                                           |
-+----------------------------+-------------------------------------------+
-| Set up NIC bonding         | See :ref:`nic-bonding-ui`                 |
-| (optional)                 |                                           |
-+----------------------------+-------------------------------------------+
-| Map logical networks to    | See :ref:`map-logical-to-physical`        |
-| NICs                       |                                           |
-+----------------------------+-------------------------------------------+
-| Click **Verify Networks**  | See :ref:`verify-networks-ug`             |
-| to check and confirm the   |                                           |
-| network configuration.     |                                           |
-+----------------------------+-------------------------------------------+
-| (Optional) In the          | See :ref:`settings-ug`                    |
-| **Settings** tab, you can  |                                           |
-| configure or modify the    |                                           |
-| options for Horizon        |                                           |
-| access, scheduler type,    |                                           |
-| logging, and other         |                                           |
-| OpenStack options.         |                                           |
-+----------------------------+-------------------------------------------+
-| Click the **Deploy**       | See :ref:`deploy-changes`                 |
-| **Changes** button.        |                                           |
-+----------------------------+-------------------------------------------+
-| (Optional) Set up and test | See :ref:`sahara-install`                 |
-| Sahara                     |                                           |
-+----------------------------+-------------------------------------------+
-| (Optional) Set up Murano   |                                           |
-+----------------------------+-------------------------------------------+
-| Set up VMs containers,     |                                           |
-| load your applications     |                                           |
-| and storage                |                                           |
-+----------------------------+-------------------------------------------+
-
-Each of these steps is discussed below in more detail.
-
-If necessary, you can :ref:`stop deployment<Stop_Deployment>`
-or :ref:`reset the environment<Reset_Environment>`.
 
 .. _initialize-fuel:
 
@@ -113,42 +157,25 @@ or to the IP address and port number that you specified.
 
 The following screen appears:
 
-.. image:: /_images/user_screen_shots/fuel_starts.png
-   :width: 50%
+.. _start-create-env-ug:
 
-Boot settings (optional)
-------------------------
-
-If you need to modify the boot settings,
-press the "Tab" key to display the **grub** command line;
-you can edit this line to modify the boot settings
-for the Fuel Master Node.
-Normally this is not necessary.
-
-.. include:: /pages/user-guide/initialize-fuel/0400-pxe-config.rst
-.. include:: /pages/user-guide/initialize-fuel/0500-fuel-boot.rst
-.. include:: /pages/user-guide/initialize-fuel/0600-boot-nodes.rst
-
-
-.. raw:: pdf
-
-   PageBreak
-
-
-.. _create-env-ug:
-
-Create a new environment
-========================
+Launch Wizard to Create New Environment
+---------------------------------------
 
 In the Fuel UI, click on the "New OpenStack environment" icon
-to launch the wizard that is creates a new OpenStack environment.
+to launch the wizard that creates a new OpenStack environment.
 
 .. image:: /_images/user_screen_shots/name_environ.png
    :width: 50%
 
+.. _name-distro-ug:
+
+Name Environment and Choose Distribution
+----------------------------------------
 
 Give the environment a name
-and select the Linux distribution from the drop-down list.
+and select the Linux distribution from the drop-down list;
+see :ref:`linux-distro-plan`.
 This is the operating system that will be installed
 on the Controller, Compute, and Storage nodes in the environment.
 
@@ -165,19 +192,7 @@ High-availability (HA) or non-HA mode
 .. image:: /_images/user_screen_shots/choose_deploy_mode.png
    :width: 50%
 
-All new deployments should use the Multi-node HA mode.
-Beginning with Mirantis OpenStack 5.0,
-HA mode can be deployed with a single Controller node
-plus a compute node;
-you will need to add additional Controller nodes
-to achieve high-availability
-(which is strongly recommended for production environments),
-but you do not need to redeploy the OpenStack environment
-to implement high-availability.
-
-The multi-node mode without HA is supported
-for backward compatibility
-but will be deprecated in a later release.
+All new deployments should use the Multi-node :ref:`ha-term` mode.
 
 .. raw:: pdf
 
@@ -216,6 +231,7 @@ You can choose either either of the Neutron topologies here.
 If you choose Nova-network here,
 you can choose between the FlatDHCP or VLAN topologies
 on the Network Settings page.
+See :ref:`net-topology-plan`.
 
 .. raw:: pdf
 
@@ -301,6 +317,54 @@ After you exit from the "Create a New OpenStack Environment" wizard,
 Fuel displays a set of configuration tabs
 that you use to finish configuring your environment.
 
++----------------------------+-------------------------------------------+
+| Step Description           | Additional Information                    |
++============================+===========================================+
+| Assign a role or roles to  | See :ref:`assign-roles-ug`                |
+| each node server.          |                                           |
++----------------------------+-------------------------------------------+
+| Customize disk partitions  | See :ref:`customize-partitions-ug`        |
++----------------------------+-------------------------------------------+
+| In **Network** tab,        | See :ref:`network-settings-ug`            |
+| configure the network      |                                           |
+| settings from the address  |                                           |
+| plan prepared earlier.     |                                           |
++----------------------------+-------------------------------------------+
+| Set up NIC bonding         | See :ref:`nic-bonding-ui`                 |
+| (optional)                 |                                           |
++----------------------------+-------------------------------------------+
+| Map logical networks to    | See :ref:`map-logical-to-physical`        |
+| NICs                       |                                           |
++----------------------------+-------------------------------------------+
+| Click **Verify Networks**  | See :ref:`verify-networks-ug`             |
+| to check and confirm the   |                                           |
+| network configuration.     |                                           |
++----------------------------+-------------------------------------------+
+| (Optional) In the          | See :ref:`settings-ug`                    |
+| **Settings** tab, you can  |                                           |
+| configure or modify the    |                                           |
+| options for Horizon        |                                           |
+| access, scheduler type,    |                                           |
+| logging, and other         |                                           |
+| OpenStack options.         |                                           |
++----------------------------+-------------------------------------------+
+| Click the **Deploy**       | See :ref:`deploy-changes`                 |
+| **Changes** button.        |                                           |
++----------------------------+-------------------------------------------+
+| (Optional) Set up and test | See :ref:`sahara-install`                 |
+| Sahara                     |                                           |
++----------------------------+-------------------------------------------+
+| (Optional) Set up Murano   |                                           |
++----------------------------+-------------------------------------------+
+| Set up VMs containers,     |                                           |
+| load your applications     |                                           |
+| and storage                |                                           |
++----------------------------+-------------------------------------------+
+
+Each of these steps is discussed below in more detail.
+
+If necessary, you can :ref:`stop deployment<Stop_Deployment>`
+or :ref:`reset the environment<Reset_Environment>`.
 
 .. raw:: pdf
 
@@ -319,6 +383,16 @@ Assign a role or roles to each node server
 .. image:: /_images/user_screen_shots/assign-roles2.png
    :width: 50%
 
+
+For each role you want to assign,
+drag it to the appropriate node
+in the "Unallocated Nodes" list.
+
+For more information, see:
+
+- :ref:`nodes-roles-arch`
+- :ref:`Storage_Architecture`
+- :ref:`mongodb-term`
 
 .. _customize-partitions-ug:
 
@@ -342,6 +416,9 @@ Network settings
 
 Use the network settings screens to notify Fuel
 about the network hardware that is configured.
+Different pages are used,
+depending on the network topology you chose
+on the :ref:`choose-network-ug` screen.
 
 Neutron network settings
 ++++++++++++++++++++++++
