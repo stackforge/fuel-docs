@@ -12,8 +12,8 @@ including networking, storage, and optional parameters.
 +----------------------------+-------------------------------------------+
 | Step Description           | Additional Information                    |
 +============================+===========================================+
-| Initialize Fuel            | See :ref:`initialize-fuel`                |
-| Fuel server (on port 8000) |                                           |
+| Initialize Fuel server     | See :ref:`initialize-fuel`                |
+| (on port 8000)             |                                           |
 +----------------------------+-------------------------------------------+
 | If necessary, modify the   | See :ref:`Network_Install`                |
 | network settings for the   |                                           |
@@ -237,7 +237,7 @@ Select the storage backend for :ref:`cinder-term`:
 - If you select "Ceph",
   you must assign at least two nodes as Ceph-OSD nodes.
 
-Select the storage backend for Glance:
+Select the storage backend for :ref:`glance-term`:
 
 - If you select "Default" and are using the Multi-node HA mode,
   Swift is used as a backend for Cinder
@@ -245,7 +245,7 @@ Select the storage backend for Glance:
 - If you select "Default" and are using the Multi-node (no HA) mode,
   local storage is used as the backed for Glance.
 - If you selected Ceph,
-  you must assign at least two nodes as Ceph-OSD nodes.
+  you must assign the Ceph-OSD role on at least two nodes.
 
 
 .. raw:: pdf
@@ -265,7 +265,7 @@ that should be included in your environment:
 
 Specify any services that you want to deploy on your system:
 
-- For additional information about deploying :ref: `ceilometer-term`,
+- For additional information about deploying :ref:`ceilometer-term`,
   see :ref:`ceilometer-deployment-notes`.
 - For additional infomration about deploying :ref:`sahara-term`,
   see :ref:`sahara-install`.
