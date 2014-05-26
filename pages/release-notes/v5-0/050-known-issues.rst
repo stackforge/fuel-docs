@@ -68,12 +68,12 @@ This example is for a system that has three disks: sda, sdb, and sdc.
 Fuel will provision sda and sdb as RAID-1 for OpenStack
 but sdc will not be used  as part of the RAID-1 array:
 
-1. Use the Fuel CLI to remove the boot sector:
+1. Use the Fuel CLI to obtain provisioning data:
    ::
 
      fuel provisioning --env-id 1 --default -d
 
-2. Remove this sector from sdc
+2. Remove the part you don't need part:
    ::
 
      - size: 300
@@ -84,11 +84,13 @@ but sdc will not be used  as part of the RAID-1 array:
        size: 200
        type: raid
 
-     fuel provisioning --env-id 1 -u
 
 3. Run deployment
+   ::
 
-4. Confirm that sdc does not contain a RAID partition:
+     fuel provisioning --env-id 1 -u
+
+4. Confirm that your partition is not included into RAID:
    ::
 
      [root@node-2 ~]# cat /proc/mdstat

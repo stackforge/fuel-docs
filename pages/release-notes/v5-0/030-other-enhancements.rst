@@ -1,33 +1,6 @@
 Other Enhancements
 ==================
 
-Highly Available architecture can run with one controller
----------------------------------------------------------
-
-Mirantis OpenStack 5.0 can be deployed with the
-Highly Available architecture
-(also known as Multi-node HA)
-onto any number of controllers, including just one;
-in earlier releases, at least three controllers had to be configured
-in order to use the HA architecture.
-
-The environment is not considered highly available
-if installed on a single controller
-because no secondary controller is present for failover,
-but controllers can be added to the environment at a later time
-and will be properly configured for High Availability
-in conjunction with the initially deployed controller.
-This means you can scale up to a highly-available environment
-by adding additional controllers to meet your desired level of tolerance,
-and you will not have to redeploy your OpenStack environment
-to implement HA.
-
-The multi-node mode,
-previously used to deploy an environment with only one controller,
-is retained as a legacy option in Mirantis OpenStack for 5.0
-but it is not recommended for deploying new environments;
-we expect to remove this option in a future release.
-
 The CentOS 6.5 operating system is included
 -------------------------------------------
 

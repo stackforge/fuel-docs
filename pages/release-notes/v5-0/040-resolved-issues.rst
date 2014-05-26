@@ -38,8 +38,8 @@ Network verification correctly verifies Neutron connectivity
 ------------------------------------------------------------
 
 The Fuel "Verify Networks" function
-now correctly verifies the connectivity of the underlying Neutron network,
-no matter which bridge is used on the target nodes.
+now correctly verifies network connectivity on Neutron-enabled
+deployments.
 See the `Network checks for Neutron blueprint <https://blueprints.launchpad.net/fuel/+spec/network-checker-neutron-vlan>`_.
 
 Network verification now works with Netgear gs108e switch
@@ -49,8 +49,8 @@ Issues that prevented network verification from working
 with the Netgear gs108e switch have been resolved.
 See `LP1291655 <https://bugs.launchpad.net/fuel/+bug/1291655>`_.
 
-Network verification now checks floating IP pools for Nova-network
-------------------------------------------------------------------
+Network validation now checks floating IP pools for Nova-network
+----------------------------------------------------------------
 
 Nova-network cannot use floating IP pools
 that have names and do not use auto_assignment for the floating IP's.
@@ -110,20 +110,20 @@ deleting expired tokens from the Keystone database.
 This issue is tracked in
 `LP1269819 <https://bugs.launchpad.net/fuel/+bug/1269819>`_.
 
-"Stop Deployment" now works during operating system deployment stage
---------------------------------------------------------------------
+"Stop Deployment" now works during operating system provisioning stage
+----------------------------------------------------------------------
 
 The "Stop Deployment" button was added to the Fuel UI
 in Mirantis OpenStack 4.1;
 see :ref:`Stop_Deployment`.
 However, this failed if you attempted to stop the deployment
-during the operating system deployment phase
+during the operating system provisioning phase
 because the operating system remained in a state
 where it could not receive commands over the network
 until the entire operating system had been installed.
 This has been resolved
 and the "Stop Deployment" function
-can now be used successfully at any time during the deployment.
+can now be used successfully at any time during the environment deployment.
 
 SQLAlchemy connection pool is now tuned for the deployment
 ----------------------------------------------------------
@@ -134,8 +134,8 @@ to better accomodate Nova-network, Neutron,
 Cinder, and Glance on larger hardware configurations.
 See `LP1274784 <https://bugs.launchpad.net/fuel/+bug/1274784>`_.
 
-Nailgund now scales properly for large environments
----------------------------------------------------
+Nailgund now scales better for large environments
+-------------------------------------------------
 
 The nailgund daemon has been redesigned to better accomodate
 environments with more than 50 nodes.
@@ -233,30 +233,20 @@ Upgrading the version of RabbitMQ used
 in Mirantis OpenStack solved the problem.
 See `LP1288831 <https://bugs.launchpad.net/fuel/+bug/1288831>`_.
 
-RabbitMQ deployment issues have been resolved
----------------------------------------------
-
-RabbitMQ sometimes prevented deployment
-when using a custom ISO
-because it had a very long TTL set.
-This issue is resolved in RabbitMQ 3,
-which is used in current versions of Mirantis OpenStack.
-See `LP1278336 <https://bugs.launchpad.net/fuel/+bug/1278336>`_.
-
 Ceilometer (Resource Usage) tab is activated in Horizon
 -------------------------------------------------------
 
 The Ceilometer (Resource Usage) tab is restored to Horizon.
-It was disabled in earlier releases to solve another problem.
+It was disabled in earlier releases to avoid another, more severe problem.
 See `LP1284578 <https://bugs.launchpad.net/fuel/+bug/1284578>`_.
 
 Kernel parameters are now set by Nailgun rather than grub
 ---------------------------------------------------------
 
 Beginning with Mirantis OpenStack 5.0,
-kernel parameters are set by Nailgun
-rather than grub
-so they are easier to modify.
+kernel parameters for nodes in an environment can be
+provided on Settings tab of Fuel UI. It can be useful
+when adding some special parameter allows to workaround some bug.
 See `LP1295131 <https://bugs.launchpad.net/fuel/+bug/1295131>`_.
 
 Parsing errors in nova.conf have been fixed
@@ -267,9 +257,10 @@ that sometimes caused initialization errors for nova-compute
 have been resolved.
 See `LP1312627 <https://bugs.launchpad.net/fuel/+bug/1312627>`_.
 
-File injection to XFS filesystems with 4K logical blocks now works
-------------------------------------------------------------------
+Some disk drivers do not allow to have 4K XFS sector size
+---------------------------------------------------------
 
+Issue was workarounded by using 512 bytes sectors.
 See `LP1316266 <https://bugs.launchpad.net/fuel/+bug/1316266>`_.
 
 Health Check tests now work in slow environments
