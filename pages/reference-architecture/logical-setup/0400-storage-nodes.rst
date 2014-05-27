@@ -1,7 +1,7 @@
 Storage Nodes
 -------------
 
-Depending on the :ref:`storage options <Storage_Architecture>` you
+Depending on the :ref:`storage options <Storage-Architecture-arch>` you
 select for your environment, you may have Ceph, Cinder, and Swift
 services running on your storage nodes.
 
