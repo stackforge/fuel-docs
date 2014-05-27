@@ -339,7 +339,7 @@ pdf_page_template = 'oneColumn'
 pdf_use_toc = True
 
 # How many levels deep should the table of contents be?
-pdf_toc_depth = 2
+pdf_toc_depth = 3
 
 # Add section number to section references
 #pdf_use_numbered_links = False
