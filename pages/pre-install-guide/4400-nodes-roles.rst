@@ -15,6 +15,8 @@ see :ref:`nodes-roles-arch` for a description.
 When planning your OpenStack deployment,
 you must determine the proper mix of node types
 and what roles will be installed on each.
+When you create your OpenStack environment,
+you will :ref:`assign-roles-ug`.
 
 All production environments should be deployed
 for :ref:`high availability<ha-term>`
@@ -35,7 +37,7 @@ Some general guiding principles:
   and to avoid performance bottlenecks.
 - For demonstration and study purposes,
   you can deploy OpenStack on VirtualBox;
-  see :ref:`virtualbox-top` for more information.
+  see :ref:`Running Fuel on VirtualBox<virtualbox-top>` for more information.
   This option has the lowest hardware requirements
 - OpenStack can be deployed on smaller hardware configurations
   by combining multiple roles on the nodes
@@ -52,8 +54,8 @@ deployment is to allocate 4 nodes:
 
 - 1 compute node
 
-If you want to run storage separately from the controllers, you can do
-that as well by raising the bar to 9 nodes:
+If you want to run storage separately from the controllers,
+add additional Controller and Ceph OSD nodes:
 
 - 3 Controller nodes
 
@@ -63,8 +65,10 @@ that as well by raising the bar to 9 nodes:
 
 - 1 Compute node
 
-.. note:: Placing Ceph OSD on Controllers is highly unadvisable.
-          It can severely degrade controller performance.
+.. note:: Placing Ceph OSD on Controllers is highly unadvisable,
+          as is deploying the Ceph Mon and Ceph OSD roles
+          on the same server.
+          This can severely degrade controller performance.
           Use separate storage nodes if you have enough hardware.
 
 Of course, you are free to choose how to deploy OpenStack based on the

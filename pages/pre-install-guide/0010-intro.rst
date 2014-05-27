@@ -26,15 +26,6 @@ without requiring you to completely familiarize yourself
 with the intricate processes required
 to install the OpenStack environment components.
 
-You can run Fuel to deploy a Mirantis OpenStack Environment
-on Oracle VirtualBox.
-VirtualBox deployment is useful for demonstrations
-and is a good way to begin your exploration of the tools and technologies
-and is discussed in :ref:`Running Fuel on VirtualBox<virtualbox-top>`.
-However, it is worth noting that deployments on top of VirtualBox
-generally do not meet the performance and robustness requirements
-of most production environments.
-
 This guide provides details
 to get you started with Mirantis OpenStack and Fuel
 on a set of physical servers ("bare-metal installation")
@@ -56,6 +47,15 @@ Other documents in the guide provide additional information:
 - :ref:`Reference Architecture<ref-arch>` provides background information
   about how Mirantis OpenStack and its supporting HA architecture
   is implemented.
+
+You can also run Fuel to deploy a Mirantis OpenStack Environment
+on Oracle VirtualBox.
+VirtualBox deployment is useful for demonstrations
+and is a good way to begin your exploration of the tools and technologies.
+It is discussed in :ref:`Running Fuel on VirtualBox<virtualbox-top>`.
+However, it is worth noting that deployments on top of VirtualBox
+do not generally meet the performance and robustness requirements
+of most production environments.
 
 For community members or partners looking to take Fuel even further,
 see the `developer documentation <http://docs.mirantis.com/fuel-dev/develop.html>`_

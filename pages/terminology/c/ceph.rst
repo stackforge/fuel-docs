@@ -10,5 +10,5 @@ Ceph is supported and promoted by
 `Inktank <http://www.inktank.com>`_.
 
 For information about deploying Ceph in Mirantis OpenStack,
-see :ref:`Storage_Architecture`.
+see :ref:`Storage-Architecture-arch`.
 
