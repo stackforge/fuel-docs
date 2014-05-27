@@ -16,7 +16,7 @@ For architectural descriptions of the four topologies, see:
 **Nova-network** is a simple legacy network manager.
 It can operate with predefined Private IP spaces only.
 
-* If you do not want to split your VMs to an isolated groups (tenants),
+* If you do not want to split your VMs into isolated groups (tenants),
   you can choose the **Nova-network with FlatDHCP topology**.
   In this case, you will have one big tenant for all VMs.
 
@@ -48,7 +48,7 @@ and manipulate them on the fly.
 * The **Neutron with GRE** topology
   does not restrict the maximum number of VLANs
   and you can spawn a very large number of tenants.
-  But GRE encapsulation decreases the speed of comminication between the VMs
+  But GRE encapsulation decreases the speed of communication between the VMs
   and decreases the CPU utilization of the Compute and Controller nodes.
   So, if you do not need really fast interconnections between VMs,
   do not want to predetermine the maximum number of tenants,
