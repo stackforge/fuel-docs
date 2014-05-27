@@ -6,12 +6,18 @@ Download and Install Fuel
 
 Mirantis provides the images you will use to
 install Fuel and Mirantis OpenStack.
-You can download an ISO file to burn to DVD
-or an IMG file to burn to a USB drive.
+You can download an ISO file and,
+for many modern servers,
+use a remote control utility such as
+`ipmitool <http://sourceforge.net/projects/ipmitool/>`_,
+`HP iLO <http://h17007.www1.hp.com/us/en/enterprise/servers/management/ilo/index.aspx#.U4UJYnWx22h>`_,
+or `Dell iDRAC <http://h17007.www1.hp.com/us/en/enterprise/servers/management/ilo/index.aspx#.U4UJYnWx22h>`_
+to mount the ISO image directly
+to the server's virtual DVD drive.
+
 For a bare-metal installation,
-you must burn this to media
-(either burn the ISO image to a DVD or
-burn the IMG file to a USB drive)
+you can instead burn the ISO image to a DVD or
+burn the IMG file to a USB drive
 then use that media to install the software.
 
 .. note:: You can use the same ISO image
@@ -28,8 +34,7 @@ Download the Fuel image from the
 Depending on the speed of your Internet connection,
 this could take a half hour or more.
 
-You can burn the image to a writeable DVD
-using any standard software.
+Use and standard software to burn the ISO to a writeable DVD.
 Some popular options:
 
 - **Linux** --
@@ -222,7 +227,7 @@ Choose one of the following:
 
 - :ref:`qemu-term` -- Choose this option for VirtualBox installations
 
-- vCenter -- Choose this option if you have a vCenter environment
+- :ref:`vcenter-term` -- Choose this option if you have a vCenter environment
   with ESXi servers to be used as hypervisors.
 
 
@@ -398,7 +403,7 @@ in the "Unallocated Nodes" list.
 For more information, see:
 
 - :ref:`nodes-roles-arch`
-- :ref:`Storage_Architecture`
+- :ref:`Storage-Architecture-arch`
 - :ref:`mongodb-term`
 
 .. _customize-partitions-ug:
