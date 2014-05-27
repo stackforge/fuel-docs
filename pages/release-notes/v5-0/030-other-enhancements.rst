@@ -8,13 +8,13 @@ Mirantis OpenStack 5.0 includes CentOS 6.5,
 which can be used as the operating system for the Fuel Master Node
 or the Host Operating System for OpenStack nodes.
 
-CentOS 6.5 is protected against the "Heartbleed" defect in OpenSSL
-------------------------------------------------------------------
+The supplied operating systems are protected against the “Heartbleed” defect in OpenSSL
+---------------------------------------------------------------------------------------
 
-Mirantis OpenStack 5.0 packages of OpenSSL
-have been updated with the patched 1.0.1g version
-and thus are protected against the "Heartbleed" vulnerability
-in OpenSSL.
+While the standard distribution of CentOS 6.5 and Ubuntu 12.04.4 were
+vulnerable to the Heartbleed defect in OpenSSL, the Mirantis OpenStack 5.0
+packages have been updated with the patched 1.0.1g version and are thus
+protected against the vulnerability.
 
 Ubuntu 12.04.4 operating system is included
 -------------------------------------------
@@ -56,34 +56,14 @@ for OpenStack.
 This minor release of Murano includes several bug fixes
 and the following enhancements:
 
-* Basic application catalog functionality
+* Introductory application catalog functionality for OpenStack
+* A new metadata language for application definition
+* Improved syntax for Dynamic UI definitions
+* An improved UI
+* Application statistics that can be used for billing purposes
 
-  * Application Publishing
-
-  * Application Sharing
-
-  * Application Deletion
-
-  * Application Search
-
-  * Adding Applications to an environment
-
-  * A billing feature pilot with:
-
-    * Application deployment uptime
-    * Instance Count / Total uptime
-
-* A new metadata DSL and execution engine
-
-* Repository enhancements:
-
-  * A new Repository API
-  * The murano-repository has been moved to a database storage backend
-
-* UI enhancements
-
-  * A new Search / Browse Catalog UI
-  * Updated "configure application" forms
+For detailed information, please refer to the `Release Notes for Murano 
+version 0.5 <https://wiki.openstack.org/wiki/Murano/ReleaseNotes_v0.5>`
 
 Addition of "Live Migrate" option in Horizon
 --------------------------------------------
