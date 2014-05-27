@@ -1,12 +1,15 @@
 Storage Nodes
 -------------
 
-Depending on the :ref:`storage options <Storage_Architecture>` you
-select for your environment, you may have Ceph, Cinder, and Swift
+Depending on the :ref:`storage options <Storage-Architecture-arch>` you
+select for your environment, you may have
+:ref:`ceph-term`, :ref:`cinder-term`,
+and :ref:`Swift<swift-object-storage-term>`
 services running on your storage nodes.
 
-Ceph_ implements its own HA, all you need is enough controller nodes
-running Ceph Monitor service to `form a quorum
+Ceph implements its own HA;
+all you need is enough controller nodes
+running the Ceph Monitor service to `form a quorum
 <http://ceph.com/docs/master/rados/troubleshooting/troubleshooting-mon/>`_,
 and enough Ceph OSD nodes to satisfy the `object replication factor
 <http://ceph.com/docs/master/rados/operations/pools/>`_.
