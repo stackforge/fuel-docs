@@ -23,6 +23,6 @@
    PageBreak oneColumn
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
 .. include:: ../contents/contents-virtualbox.rst
