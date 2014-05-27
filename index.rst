@@ -15,9 +15,9 @@ PDFs
 ----
 The following Mirantis OpenStack documentation is available in PDF:
 
-* `Pre-Installation Guide <pdf/Mirantis-OpenStack-5.0-PlanningGuide.pdf>`_
+* `Planning Guide <pdf/Mirantis-OpenStack-5.0-PlanningGuide.pdf>`_
 
-  Prerequisites and pre-installation steps that you must execute before 
+  Planning information you should consider before 
   installing Fuel and deploying Mirantis OpenStack.
 
 .. * `Installation Guide <pdf/Mirantis-OpenStack-5.0-InstallGuide.pdf>`_

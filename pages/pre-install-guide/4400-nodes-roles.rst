@@ -15,6 +15,9 @@ see :ref:`nodes-roles-arch` for a description.
 When planning your OpenStack deployment,
 you must determine the proper mix of node types
 and what roles will be installed on each.
+When you create your OpenStack environment,
+you will :ref:`assign a role or roles<assign-roles-ug>`
+to each node server.
 
 All production environments should be deployed
 for :ref:`high availability<ha-term>`
@@ -35,7 +38,7 @@ Some general guiding principles:
   and to avoid performance bottlenecks.
 - For demonstration and study purposes,
   you can deploy OpenStack on VirtualBox;
-  see :ref:`virtualbox-top` for more information.
+  see :ref:`Running Fuel on VirtualBox<virtualbox-top>` for more information.
   This option has the lowest hardware requirements
 - OpenStack can be deployed on smaller hardware configurations
   by combining multiple roles on the nodes
@@ -48,24 +51,25 @@ how many nodes you need and which roles to assign to each.
 The absolute minimum requirement for a highly-available OpenStack
 deployment is to allocate 4 nodes:
 
-- 3 controller nodes, combined with storage
-
-- 1 compute node
-
-If you want to run storage separately from the controllers, you can do
-that as well by raising the bar to 9 nodes:
-
-- 3 Controller nodes
-
-- 3 Ceph OSD nodes
-
-- 1 Cinder node
+- 3 Controller nodes, combined with Storage
 
 - 1 Compute node
 
-.. note:: Placing Ceph OSD on Controllers is highly unadvisable.
-          It can severely degrade controller performance.
-          Use separate storage nodes if you have enough hardware.
+In production environments, it is highly recommended to separate storage nodes
+from controllers. This helps avoid resource contention, isolates failure
+domains, and allows to optimize hardware configurations for specific workloads.
+To achieve that, you will need a minimum of 5 nodes when using Swift and Cinder
+storage backends, or 7 nodes for a fully redundant :ref:`Ceph<ceph-term>`
+storage cluster:
+
+- 3 Controller nodes
+
+- 1 Cinder node or 3 Ceph OSD nodes
+
+- 1 Compute node
+
+.. note:: You don't need Cinder storage nodes if you are using
+          Ceph RBD as storage backend for Cinder volumes.
 
 Of course, you are free to choose how to deploy OpenStack based on the
 amount of available hardware and on your goals (such as whether you

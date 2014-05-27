@@ -21,5 +21,5 @@ Some specific considerations:
   does not include native support for VLANs
   while the Ubuntu version does.
   In order to use VLANs on CentOS based nodes,
-  you must configure VLAN splinters.
+  you must configure :ref:`vlan-splinters-ug`.
 - CentOS supports .rpm packages; Ubuntu supports .deb packages.

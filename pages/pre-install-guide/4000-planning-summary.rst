@@ -7,7 +7,7 @@
 Planning Summary
 ================
 
-Before installation, plan your deployment. Determine the deployment type that
+Before installation, determine the deployment type that
 is appropriate for you configuration needs. You may want to print this
 list and make notes indicating your selection so you can be sure
 you have planned your deployment correctly.
@@ -36,9 +36,7 @@ complete to plan the Mirantis OpenStack deployment.
 | Prepare an IP address      | Identify the network addresses and VLAN   |
 | management plan and        | IDs for your Public, floating, Management,|
 | network association.       | Storage, and virtual machine (fixed)      |
-|                            | networks.                                 |
-+----------------------------+-------------------------------------------+
-| Prepare a logical network  |                                           |
-| diagram.                   |                                           |
+|                            | networks. Prepare a logical network       |
+|                            | diagram.                                  |
 +----------------------------+-------------------------------------------+
 
