@@ -207,6 +207,17 @@ Then run this command in the Fuel Master node shell:
 
 See `LP1312671 <https://bugs.launchpad.net/fuel/+bug/1312671>`_.
 
+Bootstrap kernel issues on certain hardware
+-------------------------------------------
+
+We use bootstrap image based on 3.10 kernel with firmware built from in-kernel
+tree. This leads to issues with some hardware, e.g. with some modifications of
+Dell R410/R610s servers. See `LP1323354 <https://bugs.launchpad.net/fuel/+bug/1323354>`_
+for details. As a workaround use `bootstrap image with 2.6 kernel <http://9f2b43d3ab92f886c3f0-e8d43ffad23ec549234584e5c62a6e24.r60.cf1.rackcdn.com/bootstrap-5.0-kernel-2.6.zip>`_.
+Files from this zip archive needs to be placed to
+/var/lib/tftpboot/images/bootstrap in cobbler container on master node.
+Bootstrap node needs to be restarted in order to boot with 2.6 kernel.
+
 Bootstrap does not see Brocade NICs
 -----------------------------------
 
