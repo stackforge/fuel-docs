@@ -13,7 +13,6 @@ Documentation
   :maxdepth: 3
   
   pre-install-guide
-  install-guide
   user-guide
   operations
   virtualbox

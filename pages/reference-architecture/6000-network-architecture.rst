@@ -17,8 +17,8 @@ Fuel places different types of traffic into separate logical networks.
 This section describes how to distribute
 the network traffic in an OpenStack cluster.
 
-Refer to :ref:`User_Guide` for instructions on how to configure network for
-your OpenStack environment.
+Refer to :ref:`User-Guide` for instructions on how to configure
+the network for your OpenStack environment.
 
 .. index:: Admin (PXE) Network
 

@@ -1,4 +1,5 @@
 .. index:: Release Notes
+
 .. _release-notes:
 
 =============

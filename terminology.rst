@@ -1,4 +1,5 @@
-.. _terminology:
+
+.. _terminology-ref:
 
 =====================
 Terminology Reference

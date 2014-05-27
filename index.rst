@@ -20,7 +20,7 @@ The following Mirantis OpenStack documentation is available in PDF:
   Prerequisites and pre-installation steps that you must execute before 
   installing Fuel and deploying Mirantis OpenStack.
 
-* `Installation Guide <pdf/Mirantis-OpenStack-5.0-InstallGuide.pdf>`_
+.. * `Installation Guide <pdf/Mirantis-OpenStack-5.0-InstallGuide.pdf>`_
 
   This document describes how to pre-configure your
   OpenStack environment and install the Fuel Master Node.
