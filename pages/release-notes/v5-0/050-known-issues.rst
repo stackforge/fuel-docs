@@ -357,9 +357,6 @@ Other limitations
   it allows us to focus our efforts on Neutron,
   and we see little demand for Murano support on Nova-network.
 
-* The ceph-mon and ceph-osd nodes should not be deployed on the same hardware
-  in a production environment.
-
 * Deployments done through the Fuel UI create all of the networks on all servers
   even if they are not required by a specific role.
   For example, a Cinder node has VLANs created
