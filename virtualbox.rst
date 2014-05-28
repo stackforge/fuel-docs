@@ -2,9 +2,9 @@
 
 .. _virtualbox-top:
 
-==========================
-Running Fuel on VirtualBox
-==========================
+========================================
+Running Mirantis OpenStack on VirtualBox
+========================================
 
 .. contents:: :local:
   :depth: 3
