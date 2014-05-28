@@ -5,7 +5,7 @@ Mirantis OpenStack hardened packages support the latest stable OpenStack Havana 
 ---------------------------------------------------------------------------------------------------
 
 The OpenStack core projects in the Mirantis OpenStack hardened packages
-support the `OpenStack Havana 2013.2.2 <https://wiki.openstack.org/wiki/ReleaseNotes/2013.2.2>`_ release.
+support the `OpenStack Havana 2013.2.3 <https://wiki.openstack.org/wiki/ReleaseNotes/2013.2.3>`_ release.
 Fuel 4.1 deploys this version of OpenStack on CentOS or Ubuntu.
 
 Deployments can be stopped prior to completion

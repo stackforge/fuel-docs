@@ -91,7 +91,7 @@ Supported Software
 
 * **OpenStack Core Projects**
 
-  * Havana release 2013.2.2
+  * Havana release 2013.2.3
 
     * Nova (OpenStack Compute)
     * Swift (OpenStack Object Storage)
@@ -103,7 +103,7 @@ Supported Software
 
 * **OpenStack Core Integrated Projects**
 
-  * Havana Release 2013.2.2
+  * Havana Release 2013.2.3
 
     * Ceilometer (OpenStack Telemetry)
     * Heat (OpenStack Orchestration)
