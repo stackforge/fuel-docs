@@ -34,7 +34,7 @@ how to download and install Fuel on the Fuel Master Node
 and then how to use the Fuel interface
 to deploy your OpenStack environment.
 
-Other documents in the guide provide additional information:
+Further reading is available in the following documents:
 
 - :ref:`Terminology Reference<terminology-ref>` is an alphabetical listing
   of technologies and concepts

@@ -156,11 +156,8 @@ communication among OpenStack VMs
 and between OpenStack VMs and the outside world.
 See `LP1275650 <https://bugs.launchpad.net/fuel/+bug/1275650>`_.
 
-Various hardware issues have been resolved
-------------------------------------------
-
 Support for HP Smart Array CCISS devices has been restored
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------------------------------------
 
 Issues with support for HP Smart Array CCISS devices
 have been resolved.
@@ -172,7 +169,7 @@ Fuel Master Node now runs on HP systems with Smart Array RAID hardware
 See `LP1312311 <https://bugs.launchpad.net/fuel/+bug/1312311>`_.
 
 Fuel UI now represents multiple disks correctly for Ubuntu on Vbox
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------------------------------------------
 
 This bug occurred because the Ubuntu kernel maps all hard drives on Vbox
 into one address (sysfs PATH_ID)

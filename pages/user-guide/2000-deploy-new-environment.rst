@@ -228,6 +228,8 @@ Choose one of the following:
 
 - :ref:`vcenter-term` -- Choose this option if you have a vCenter environment
   with ESXi servers to be used as hypervisors.
+  You must also :ref:`configure communication<vcenter-config-ug>`
+  with vCenter;
 
 
 .. raw:: pdf
@@ -556,8 +558,8 @@ you chose when you first created your environment.
 vCenter
 +++++++
 
-If you selected vCenter as your hypervisor,
-you must complete the steps in this section
+If you selected vCenter as your :ref:`hypervisor<hypervisor-ug>`,
+you must fill in this section
 to configure communication with vCenter:
 
 .. image:: /_images/user_screen_shots/settings-vcenter.png

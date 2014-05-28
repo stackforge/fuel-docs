@@ -15,10 +15,10 @@ Mirantis OpenStack with vCenter integration.
 
 To deploy an OpenStack cloud that is integrated with the vCenter server:
 
-- Select the vCenter hypervisor on the Settings page.
-- When you select vCenter,
-  Fuel displays a window where you specify the credentials used
-  to access the VMware vCenter.
+- Select the vCenter :ref:`hypervisor<hypervisor-ug>`
+  when you create your OpenStack Environment.
+- Specify the credentials used to access the vCenter
+  on the :ref:`vcenter-config-ug` screen.
 
 For more information about how vCenter support is implemented,
 see :ref:`vcenter-arch`.

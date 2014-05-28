@@ -7,6 +7,6 @@ Release Notes
 =============
 
 .. contents:: :local:
-   :depth: 3
+   :depth: 2
 
 .. include:: /contents/contents-release-notes.rst
