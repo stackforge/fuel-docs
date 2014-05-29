@@ -6,6 +6,15 @@ Download and Install Fuel
 
 Mirantis provides the images you will use to
 install Fuel and Mirantis OpenStack.
+Download the Fuel image from the
+`Mirantis web-site <http://software.mirantis.com/>`_.
+Depending on the speed of your Internet connection,
+this could take a half hour or more.
+
+.. _create-media-ug:
+
+Create the Installation Media
+-----------------------------
 You can download an ISO file and,
 for many modern servers,
 use a remote control utility such as
@@ -16,24 +25,19 @@ to the server's virtual DVD drive.
 
 For a bare-metal installation,
 you can instead burn the ISO image to a DVD or
-burn the IMG file to a USB drive
+burn the IMG file to a USB drive,
 then use that media to install the software.
 
 .. note:: You can use the same ISO image
    to install Fuel and Mirantis OpenStack
    in VirtualBox.
-   In that case, copy the ISO file to the disk
+   In that case, copy the ISO file to the approriate directory
    and boot directly from that disk file.
    See the `Quick Start Guide <http://software.mirantis.com/quick-start/>`_.
    and :ref:`virtualbox-top`.
 
 
-Download the Fuel image from the
-`Mirantis web-site <http://software.mirantis.com/>`_ web page.
-Depending on the speed of your Internet connection,
-this could take a half hour or more.
-
-Use and standard software to burn the ISO to a writeable DVD.
+Use any standard software to burn the ISO to a writeable DVD.
 Some popular options:
 
 - **Linux** --
@@ -48,58 +52,36 @@ Some popular options:
   `Burn <http://burn-osx.sourceforge.net/Pages/English/home.html>`_.
 
 - **Windows** -- 
-  Use `ImgBurn <http://www.imgburn.com/>`_ and the
+  Use `ImgBurn <http://www.imgburn.com/>`_ or the
   open source `InfraRecorder <http://infrarecorder.org/>`_
 
 .. _initialize-fuel-ug:
 
-Initialize Fuel
-===============
-
-+----------------------------+-------------------------------------------+
-| Step Description           | Additional Information                    |
-+============================+===========================================+
-| Boot Fuel.  If necessary,  | See :ref:`boot-fuel-ug` and               |
-| modify the boot settings   | :ref:`modify-boot-settings-ug`            |
-+----------------------------+-------------------------------------------+
-| If necessary, modify the   | See :ref:`Network_Install`                |
-| network settings for the   |                                           |
-| Admin (PXE) logical network|                                           |
-+----------------------------+-------------------------------------------+
-| Boot the node servers in   | See :ref:`boot-nodes-ug`                  |
-| PXE mode                   |                                           |
-+----------------------------+-------------------------------------------+
-
 .. _boot-fuel-ug:
 
-Boot Fuel
----------
+Install Mirantis OpenStack
+--------------------------
 
-Insert the media you created in :ref:`download-install-ug`
-in the the server that will be your Fuel Master Node
+Insert and mount the media you created in :ref:`download-install-ug`
+on the the server that will be your Fuel Master Node
 and power the machine on,
 just as you would for any operating system installation.
-
+Set the boot order for the system with the hard drive as the first device,
+then select the location of the media that contains
+the installation file to install the software.
 The following screen appears.
 
 .. image:: /_images/user_screen_shots/fuel_starts.png
    :width: 50%
 
-
-.. _modify-boot-settings-ug:
-
-Modify Boot settings (optional)
--------------------------------
-
-If necessary, you can modify the boot settings from this screen.
+If necessary, you can modify the boot settings from this screen;
+press the "Tab" key to display the **grub** command line
+and edit that line.
 This allows you to configure the IP address,
 default gateway, and DNS server for the Fuel Master Node.
-To do this,
-press the "Tab" key to display the **grub** command line
-and then edit that line.
-This is not normally necessary.
 
 .. include:: /pages/user-guide/initialize-fuel/0400-pxe-config.rst
+
 .. include:: /pages/user-guide/initialize-fuel/0500-fuel-boot.rst
 .. include:: /pages/user-guide/initialize-fuel/0600-boot-nodes.rst
 
@@ -111,15 +93,20 @@ This is not normally necessary.
 
 .. _create-env-ug:
 
-Create a new environment
-========================
+Create a new OpenStack environment
+==================================
+
+After you install Mirantis OpenStack,
+boot the Fuel Master node,
+and boot the node servers,
+you can create, configure, and deploy
+your first OpenStack environment.
+One Fuel Master can deploy and manage multiple OpenStack environments
+but you must create each environment separately.
 
 +----------------------------+-------------------------------------------+
 | Step Description           | Additional Information                    |
 +============================+===========================================+
-| Initialize Fuel            | See :ref:`initialize-fuel-ug`             |
-| server (on port 8000)      |                                           |
-+----------------------------+-------------------------------------------+
 | Click on the "New"         | See :ref:`start-create-env-ug`            |
 | OpenStack environment"     |                                           |
 | icon to create a new       |                                           |
@@ -160,10 +147,8 @@ Create a new environment
 Launch Wizard to Create New Environment
 ---------------------------------------
 
-After Fuel is installed,
-point your browser to the default Fuel UI
-URL: `http://10.20.0.2:8000 <http://10.20.0.2:8000>`__
-or to the IP address and port number that you specified.
+Follow the instructions in :ref:`boot-fuel-master-ug`
+to log into the Fuel UI if you have not already done so.
 
 The Fuel UI screen appears:
 
