@@ -1,3 +1,6 @@
+
+.. _restart-rabbitmq-ops:
+
 RabbitMQ Cluster Restart Issues Following A Systemwide Power Failure
 --------------------------------------------------------------------
 

@@ -20,4 +20,7 @@ See
 - :ref:`neutron-topologies-arch` for more detailed information
   about the neutron implementation
   and how to configure it.
+- :ref:`crm-verify-neutron` for instructions about using
+  :ref:`crm-term` to verify that the Neutron :ref:`ha-term` cluster
+  is working properly.
 

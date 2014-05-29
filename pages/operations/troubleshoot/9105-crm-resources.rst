@@ -1,14 +1,20 @@
+
+.. _crm-ops:
+
 crm - Cluster Resource Manager
 ++++++++++++++++++++++++++++++
 
-This is the main pacemaker utility it shows you state of pacemaker cluster.
-Several most popular commands that you can use to understand whether your
-cluster is consistent:
+The **crm** utility shows you
+the state of the :ref:`pacemaker<pacemaker-term>` cluster
+and can be used to analyze whether the cluster is consistent
+and to use other maintenance tasks for the cluster.
+This section discusses some frequently-used commands.
 
 **crm status**
 
-This command shows you the main information about pacemaker cluster and state of
-resources being managed::
+rhis command shows you the main information
+about the Pacemaker cluster and the state of the resources being managed.
+For example::
 
   crm(live)# status
   ============
@@ -40,14 +46,17 @@ Here you can enter resource-specific commands::
 
 **crm(live)resource#  start|restart|stop|cleanup <resource_name>**
 
-These commands allow you to respectively start, stop, and restart resources.
+These commands, in order, allow you to start, stop, and restart resources.
 
 **cleanup**
 
-The pacemaker cleanup command resets a resource's state on the node if it is
-currently in a failed state or due to some unexpected operation, such as some
-side effects of a SysVInit operation on the resource. In such an event,
-pacemaker will manage it by itself, deciding which node will run the resource.
+The cleanup command resets a resource's state on the node
+if it is currently in a failed state
+because of some unexpected operation,
+such as some side effects of a System V **init** operation on the resource.
+If this happens,
+Pacemaker can do the clean-up,
+deciding which node will run the resource.
 
 Example::
 
@@ -74,19 +83,20 @@ Example::
    p_quantum-dhcp-agent   (ocf::mirantis:quantum-agent-dhcp): 	Started controller-01
    p_quantum-l3-agent 	(ocf::mirantis:quantum-agent-l3):   	Started controller-03
 
-In this case there were residual OpenStack agent processes that were started by
-pacemaker in case of network failure and cluster partitioning. After the
-restoration of connectivity pacemaker saw these duplicate resources running on
-different nodes. You can let it clean up this situation automatically or, if you
+In this case,
+CRM found residual OpenStack agent processes
+that had been started by Pacemaker
+because of network failure and cluster partitioning.
+After the restoration of connectivity,
+Pacemaker saw these duplicate resources running on different nodes.
+You can let it clean up this situation automatically or, if you
 do not want to wait, cleanup them manually.
 
-.. seealso::
+For more information, see `crm interactive help and documentation
+<http://doc.opensuse.org/products/draft/SLE-HA/SLE-ha-guide_sd_draft/cha.ha.manual_config.html>`_.
 
-  crm interactive help and documentation resources for Pacemaker
-  (e.g. http://doc.opensuse.org/products/draft/SLE-HA/SLE-ha-guide_sd_draft/cha.ha.manual_config.html).
-
-In some network scenarios one can get cluster split into several parts and
-``crm status`` showing something like this::
+Sometimes a cluster gets split into several parts.
+In this case, ``crm status`` shows something like this::
 
   On ctrl1
   ============
@@ -103,19 +113,20 @@ In some network scenarios one can get cluster split into several parts and
   ….
   Online: [ ctrl3 ]
 
-You can troubleshoot this by checking corosync connectivity between nodes.
-There are several points:
+You can troubleshoot this by checking connectivity between nodes.
+Look for the following:
 
-1) Multicast should be enabled in the network, IP address configured as
-   multicast should not be filtered. The mcast port, a single udp port should
-   be accepted on the management network among all controllers
+#. Multicast should be enabled in the network
+   and the IP address configured as multicast should not be filtered.
+   The mcast port, a single UDP port,
+   should be accepted on the management network among all controllers.
 
-2) Corosync should start after network interfaces are activated.
+#. Corosync should start after the network interfaces are activated.
 
-3) `bindnetaddr` should be located in the management network or at least in
-   the same multicast reachable segment
+#. `bindnetaddr` should be located in the management network
+   or at least in the same multicast reachable segment.
 
-You can check this in output of ``ip maddr show``:
+You can check this in the output of ``ip maddr show``:
 
 .. code-block:: none
    :emphasize-lines: 1,8
@@ -134,8 +145,8 @@ You can check this in output of ``ip maddr show``:
 
 **corosync-objctl**
 
-This command is used to get/set runtime corosync configuration values including
-status of corosync redundant ring members::
+This command can get/set runtime Corosync configuration values
+including the status of Corosync redundant ring members::
 
   runtime.totem.pg.mrp.srp.members.134245130.ip=r(0) ip(10.107.0.8)
   runtime.totem.pg.mrp.srp.members.134245130.join_count=1
@@ -145,10 +156,11 @@ status of corosync redundant ring members::
   runtime.totem.pg.mrp.srp.members.201353994.status=joined
 
 
-If IP of the node is 127.0.0.1 it means that corosync started when only loopback
-interfaces was available and bound to it.
+If the IP of the node is 127.0.0.1,
+it means that Corosync started
+when only the loopback interface was available and bound to it.
 
-If there is only one IP in members list that means there is corosync connectivity
-issue because the node does not see the other ones. The same stays for the case
-when members list is incomplete.
+If the members list contains only one IP address or is incomplete,
+it indicates that there is a Corosync connectivity issue
+because this node does not see the other ones.
 
