@@ -1,0 +1,10 @@
+Verified+2: Jenkins
+Code-Review+1: Timur Nurlygayanov <tnurlygayanov@mirantis.com>
+Code-Review+2: Dmitry Pyzhov <dpyzhov+gerrit@mirantis.com>
+Workflow+1: Dmitry Pyzhov <dpyzhov+gerrit@mirantis.com>
+Verified+1: Fuel CI <fuel-ci-bot@mirantis.com>
+Submitted-by: Jenkins
+Submitted-at: Thu, 29 May 2014 15:46:27 +0000
+Reviewed-on: https://review.openstack.org/96076
+Project: stackforge/fuel-docs
+Branch: refs/heads/stable/4.1
