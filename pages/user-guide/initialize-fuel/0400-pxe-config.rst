@@ -4,24 +4,32 @@
 Changing PXE Network Parameters During Installation
 ---------------------------------------------------
 
-You may also need to customize the network settings for the Admin
+You may need to customize the network settings for the Admin
 (PXE) logical network.
+To do this, press the <TAB> key on the very first installation screen
+(the one that says "Welcome to Fuel Installer!")
+and update the kernel option ``showmenu=no`` to ``showmenu=yes``.
+Alternatively, you can press a key to start Fuel Setup
+during the first boot after installation.
 
 By default, `eth0` on the Fuel Master node listens to PXE requests
 from the Fuel Admin (PXE booting) network, which has a default
 network of ``10.20.0.2/24`` and the gateway ``10.20.0.1``.
+Note that, changing the IP address here
+also changes the CIDR for the Admin network.
+Note that changing the IP address on the Admin network interface
+requires changes to the DHCP range values
+in the PXE Settings screen.
+New default DHCP values that fit into this range are auto-populated,
+but be sure that the range does not conflict
+with other devices on the network.
 
 The console-based Fuel Setup allows you to customize the Admin (PXE)
 logical network if you want to use a different network interface.
 See :ref:`logical-networks-arch` for more information about
 the Admin (PXE) logical network.
 
-In order to do so, press the <TAB> key on the very first installation screen
-which says "Welcome to Fuel Installer!" and update the kernel option
-``showmenu=no`` to ``showmenu=yes``. Alternatively, you can press a key to
-start Fuel Setup during the first boot after installation.
-
-Within Fuel Setup, you can configure the following parameters:
+Within Fuel Setup, you can configure the following:
 
 * DHCP/Static configuration for each network interface
 * Select interface for Fuel Admin network
@@ -29,13 +37,18 @@ Within Fuel Setup, you can configure the following parameters:
 * Root password
 * DNS options
 
-The main function of this tool is to provide a simple way to configure Fuel for
-your particular networking environment, while helping to detect errors early
-so you need not waste time troubleshooting individual configuration files.
+This tool provides a simple way to configure Fuel
+for your particular networking environment,
+while helping to detect errors early
+so you do not need to troubleshoot individual configuration files.
 
-If you are using the VirtualBox automated scripts to deploy Fuel
-you can modify the `vm_master_ip` parameter in the *config.sh* file
-to get to this functionality.
+.. note::  The VirtualBox automated scripts
+   depend on the network configuration in the *config.sh* file
+   so it can connect to the virtual nodes correctly.
+   Do not use Fuel Setup to configure the Admin network interface
+   when using VirtualBox,
+   but you can view this Fuel Setup screen
+   by modifying the `vm_master_ip` parameter in the *config.sh* file.
 
 .. image:: /_images/fuel-menu-interfaces.jpg
   :width: 60%
