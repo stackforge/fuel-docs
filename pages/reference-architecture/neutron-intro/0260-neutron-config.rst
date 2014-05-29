@@ -6,18 +6,32 @@ Neutron Configuration Planning -- General
 
 The most likely configuration for different number NICs on cluster nodes:
 
-+------+--------------------------------------+--------------------------------------+
-| NICs | VLAN                                 |                        GRE           |
-+======+======================================+======================================+
-|   2  |  Not supported                       | .. image:: /_images/q32_gre_2nic.*   |
-|      |                                      |    :align: center                    |
-+------+--------------------------------------+--------------------------------------+
-|   3  | .. image:: /_images/q32_vlan_3nic.*  | .. image:: /_images/q32_gre_3nic.*   |
-|      |    :align: center                    |    :align: center                    |
-+------+--------------------------------------+--------------------------------------+
-|   4  | .. image:: /_images/q32_vlan_4nic.*  | .. image:: /_images/q32_gre_4nic.*   |
-|      |    :align: center                    |    :align: center                    |
-+------+--------------------------------------+--------------------------------------+
++------+-----------------+----------------+
+| NICs | VLAN            |  GRE           |
++======+=================+================+
+|   2  | |q32_vlan_2nic| | |q32_gre_2nic| |
++------+-----------------+----------------+
+|   3  | |q32_vlan_3nic| | |q32_gre_3nic| |
++------+-----------------+----------------+
+|   4  | |q32_vlan_4nic| | |q32_gre_4nic| |
++------+-----------------+----------------+
+
+.. |q32_vlan_2nic| replace:: Not supported
+
+.. |q32_gre_2nic| image:: /_images/q32_gre_2nic.png
+    :align: middle
+
+.. |q32_vlan_3nic| image:: /_images/q32_vlan_3nic.png
+    :align: middle
+
+.. |q32_gre_3nic| image:: /_images/q32_gre_3nic.png
+    :align: middle
+
+.. |q32_vlan_4nic| image:: /_images/q32_vlan_4nic.png
+    :align: middle
+
+.. |q32_gre_4nic| image:: /_images/q32_gre_4nic.png
+    :align: middle
 
 .. _neutron-config-vlan:
 
