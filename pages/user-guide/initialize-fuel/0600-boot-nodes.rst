@@ -2,19 +2,19 @@
 .. _boot-nodes-ug:
 
 Boot the node servers
----------------------
+=====================
 
-After the Fuel Master Node is booted and is installed,
+After the Fuel Master Node is installed and booted,
 power on all slave nodes that you are going to use for the OpenStack environment.
 First, ensure that servers are physically installed
 in the same network Master node is or,
 if you are using virtual servers,
 are bridged to it so they are in the same L2 network segment.
 Then you can boot each node (other than the Fuel master) in PXE boot mode
-by either modifying BIOS boot order
+by either modifying the BIOS boot order
 or using F12 (or another key your server uses) to enable PXE booting.
 
-#. Each node sends out DHCP discovery requests and get the response from
+#. Each node sends out DHCP discovery requests and gets the response from
    the Fuel Master node that runs the DHCP server.
 #. When a node receives the response from the Fuel Master node,
    it fetches the pxelinux bootloader
@@ -24,13 +24,12 @@ or using F12 (or another key your server uses) to enable PXE booting.
    it reports the node's readiness and configuration to the Fuel Master.
    This can take a few minutes.
 
-Now you can login into the Fuel UI.
-The login prompt on the console of the master node
-shows you the URL you need to use;
-The default address is http://10.20.0.2:8000/.
+Follow the instructions in :ref:`boot-fuel-master-ug`
+to log into the Fuel UI if you have not already done so.
 You will see notifications in the user interface about the discovered nodes.
-The count of "Discovered nodes" is incremented with every new node
-and displayed in the upper right corner of the Fuel Web UI.
+Find the count of "Discovered nodes"
+in the upper right area of the Fuel Web UI;
+this value is incremented as each new node is ready.
 When the count of "Discovered nodes"
 becomes equal to the amount of the servers you have booted in the network,
 you can create an OpenStack environment,
