@@ -5,7 +5,7 @@
 Confirm hardware
 ================
 
-Before you boot the Fuel Master and deploy your OpenStack environment,
+Before you download and boot the Fuel Master,
 use the following checklist to ensure
 that your hardware is configured correctly:
 

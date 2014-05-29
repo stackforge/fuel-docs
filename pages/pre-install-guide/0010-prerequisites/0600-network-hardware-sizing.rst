@@ -1,3 +1,6 @@
+
+.. _network-hardware-sizing:
+
 Calculating Network
 --------------------
 

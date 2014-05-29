@@ -3,4 +3,6 @@
 
 KVM
 ---
-One of the hypervisors that can be selected from the Fuel UI.
+One of the :ref:`hypervisors<hypervisor-term>`
+that can be selected from the
+:ref:`hypervisor-ug` screen in the Fuel UI.

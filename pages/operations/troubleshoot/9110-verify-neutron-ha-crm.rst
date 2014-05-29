@@ -1,5 +1,7 @@
 .. index:: HowTo: Functional tests for HA
 
+.. _crm-verify-neutron:
+
 How to verify that Neutron HA is working
 ++++++++++++++++++++++++++++++++++++++++
 
@@ -26,8 +28,9 @@ and see corresponding Neutron interfaces on the new Neutron node::
   12: qr-829736b7-34: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc
   13: qg-814b8c84-8f: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc
 
-You can also check ``ovs-vsctl show output`` to see that all corresponding
-tunnels/bridges/interfaces are created and connected properly::
+You can also check ``ovs-vsctl show output``
+to see that all corresponding tunnels/bridges/interfaces
+are created and connected properly::
 
   ce754a73-a1c4-4099-b51b-8b839f10291c
     Bridge br-mgmt

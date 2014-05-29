@@ -14,4 +14,3 @@ Open vSwitch (OVS) GRE tunnels are provided through Management Network.
 
 .. note:: This setup does not include physical Private network.
 
-

@@ -51,6 +51,7 @@ Terminology Reference
 .. include:: /pages/terminology/p/pxe.rst
 .. include:: /pages/terminology/q/qemu.rst
 .. include:: /pages/terminology/q/quotas.rst
+.. include:: /pages/terminology/r/rabbitmq.rst
 .. include:: /pages/terminology/r/rally.rst
 .. include:: /pages/terminology/r/resource-agents.rst
 .. include:: /pages/terminology/s/sahara.rst

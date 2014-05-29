@@ -401,6 +401,11 @@ For each role you want to assign,
 drag it to the appropriate node
 in the "Unallocated Nodes" list.
 
+Be sure to deploy an adequate number of MongoDB roles;
+you can deploy any number of MongoDB roles
+at this stage but, after the environment is deployed,
+you cannot add additional MongoDB roles.
+
 For more information, see:
 
 - :ref:`nodes-roles-arch`
@@ -659,7 +664,7 @@ Storage
 .. _deploy-changes:
 
 Deploy Changes
---------------
+==============
 
 When you have made all the configuration changes you want to make,
 click the "Deploy Changes" button
@@ -670,3 +675,6 @@ depending on the options chosen;
 deployment times out at two hours.
 You can monitor the progress by opening the **Nodes** tab
 or by checking individual node logs in the **Logs** tab.
+
+.. include:: /pages/user-guide/stop_reset/0200-stop-deploy-ui.rst
+.. include:: /pages/user-guide/stop_reset/0500-reset-environment.rst

@@ -12,7 +12,7 @@ issues with Corosync and MySQL.
 
 1. Verify that Corosync is really broken: ``service corosync status``.
 
-* You should see next error
+* You should see this error:
   ::
 
     corosync dead but pid file exists
