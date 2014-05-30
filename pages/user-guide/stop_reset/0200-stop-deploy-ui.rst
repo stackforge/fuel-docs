@@ -8,7 +8,7 @@ after you click "Deploy changes" and deployment itself starts:
 
 .. image:: /_images/stop_deployment_button.png
   :align: center
-  :width: 90%
+  :width: 70%
 
 Clicking this button interrupts the deployment process;
 this is useful if, for example, you realize you made an error in the configuration.
