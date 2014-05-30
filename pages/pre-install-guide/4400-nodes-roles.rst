@@ -68,7 +68,7 @@ storage cluster:
 
 - 1 Compute node
 
-.. note:: You don't need Cinder storage nodes if you are using
+.. note:: You do not need Cinder storage nodes if you are using
           Ceph RBD as storage backend for Cinder volumes.
 
 Of course, you are free to choose how to deploy OpenStack based on the

@@ -4,7 +4,8 @@
 Pacemaker
 ---------
 Master control process for OpenStack High Availability deployments.
-Pacemaker is part of the Corosync services and is not specific to OpenStack.
+Pacemaker is part of the :ref:`corosync-term` services
+and is not specific to OpenStack.
 
 See:
 
@@ -16,3 +17,8 @@ See:
    contains more in-depth information about Pacemaker.
 
 Fuel uses Pacemaker to implement its :ref:`ha-term` deployment.
+See:
+
+- :ref:`pacemaker-corosync` discusses how Mirantis OpenStack
+  uses Pacemaker and Corosync to implement :ref:`ha-term`.
+- :ref:`crm-term` is the utility used to manage Pacemaker
