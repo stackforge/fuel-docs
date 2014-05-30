@@ -250,7 +250,7 @@ on the Network Settings page.
 
 .. _cinder-glance-backend-ug:
 
-Storage background for Cinder and Glance
+Storage backend for Cinder and Glance
 ----------------------------------------
 
 .. image:: /_images/user_screen_shots/cinder-storage-backend.png
@@ -258,10 +258,15 @@ Storage background for Cinder and Glance
 
 Select the storage backend for :ref:`cinder-term`:
 
-- If you select "Default",
+- If you select "Default" here,
   then the Local Volumes over iSCSI are used as the backend for Cinder.
+  You must configure at least one node with the "cinder" role
+  and allocate at least one Cinder LVM volume
+  on the :ref:`assign-roles-ug` screen.
+  Disk space for Cinder will be allocated automatically.
 - If you select "Ceph",
-  you must assign at least two nodes as Ceph-OSD nodes.
+  you must assign at least two nodes as Ceph-OSD nodes
+  on the :ref:`assign-roles-ug` screen.
 
 Select the storage backend for :ref:`glance-term`:
 
@@ -269,10 +274,17 @@ Select the storage backend for :ref:`glance-term`:
   Swift is used as a backend for Cinder
   and is automatically installed on the Controller nodes.
 - If you select "Default" and are using the Multi-node (no HA) mode,
-  local storage is used as the backed for Glance.
-- If you selected Ceph,
-  you must assign the Ceph-OSD role on at least two nodes.
+  local storage is used as the backend for Glance.
+- If you select Ceph,
+  you must assign the Ceph-OSD role on at least two nodes
+  on the :ref:`assign-roles-ug` screen.
 
+You can later change these settings
+on the :ref:`settings-storage-ug` screen,
+where you can also set the Ceph Replication factor.
+
+See :ref:`Storage-Architecture-arch` for more information
+about Cinder, Glance, and Ceph.
 
 .. raw:: pdf
 
@@ -283,20 +295,21 @@ Select the storage backend for :ref:`glance-term`:
 Related projects
 ----------------
 
-Choose additional related projects
-that should be included in your environment:
-
 .. image:: /_images/user_screen_shots/platform_services.png
    :width: 50%
 
-Specify any services that you want to deploy on your system:
+Choose additional related projects
+that should be included in your environment:
 
 - For additional information about deploying :ref:`ceilometer-term`,
   see :ref:`ceilometer-deployment-notes`.
 - For additional information about deploying :ref:`sahara-term`,
   see :ref:`sahara-install`.
-- For additional infomration about deploying :ref:`murano-term`,
+- For additional information about deploying :ref:`murano-term`,
   see :ref:`Murano-deployment-notes`.
+
+Note that you can modify these choices later
+on the :ref:`modify-services-ug` screen.
 
 .. raw:: pdf
 
@@ -506,8 +519,6 @@ Settings tab
 
    * Scheduler driver
 
-   * Syslog
-
    * Storage
 
 .. _access-horizon-ug:
@@ -515,13 +526,13 @@ Settings tab
 Access permissions for Horizon
 ++++++++++++++++++++++++++++++
 
-The first part of the screen allows you to modify
-the user name, password, and tenant used
-to access the Horizon screens.
-
 .. image:: /_images/user_screen_shots/settings-access.png
    :width: 80%
 
+
+This section of the Settings screen allows you to modify
+the user name, password, and tenant used
+to access the Horizon dashboard.
 
 .. raw:: pdf
 
@@ -532,13 +543,13 @@ to access the Horizon screens.
 Services included in the environment
 +++++++++++++++++++++++++++++++++++++++++++
 
-The next part of the Settings screen
-allows you to modify the services
-you chose when you first created your environment.
-
 .. image:: /_images/user_screen_shots/settings-mod-services.png
    :width: 50%
 
+
+Use this screen to modify the services
+you chose on the :ref:`platform-services-ug` screen
+when you first created your environment.
 
 .. raw:: pdf
 
@@ -618,30 +629,36 @@ You can select either the soft trunks or hard trunks mode:
 
    PageBreak
 
-.. _settings-syslog-ug:
-
-Syslog
-++++++
-
 
 .. raw:: pdf
 
    PageBreak
 
+
 .. _settings-storage-ug:
-
-Modify access permissions for Horizon
-+++++++++++++++++++++++++++++++++++++
-
-The first part of the screen allows you to modify
-the user name, password, and tenant used
-to access the Horizon screens.
 
 Storage
 +++++++
 
 .. image:: /_images/user_screen_shots/settings-storage.png
 
+You can use this screen to modify the choices made
+on the :ref:`cinder-glance-backend-ug` screen.
+Be sure that you have assigned the appropriate roles
+on the :ref:`assign-roles-ug` screens.
+For example, if you configure any Ceph storage options here,
+you must configure an appropriate number of Ceph roles on that screen;
+if you configure a Cinder LVM over iSCSI role here,
+you must configure a Cinder LVM role.
+
+The "Ceph object replication factor" can only be defined on this screen.
+This is the minimum number of Ceph roles required to run Ceph,
+not the total number of replicated Ceph Storage Clusters
+that are configured.
+The default value of 2 specifies that the Ceph Storage Cluster
+will continue to run as long as there are
+at least two functional replicated nodes
+in the cluster.
 
 .. raw:: pdf
 
