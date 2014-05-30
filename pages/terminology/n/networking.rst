@@ -39,3 +39,5 @@ The following documents provide information:
   and includes instructions for adjusting the network configuration
   by editing configuration files and using the command-line tools.
 
+* :ref:`Network_Install` gives instructions
+  for changing the PXE network parameters during installation.
