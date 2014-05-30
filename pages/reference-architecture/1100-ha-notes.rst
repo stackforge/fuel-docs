@@ -4,6 +4,8 @@
 
 .. index:: HA with Pacemaker and Corosync
 
+.. _pacemaker-corosync-arch:
+
 How HA with Pacemaker and Corosync Works
 ========================================
 

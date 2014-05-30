@@ -282,6 +282,12 @@ Select the storage backend for :ref:`glance-term`:
 - If you selected Ceph,
   you must assign the Ceph-OSD role on at least two nodes.
 
+You must also assign the appropriate roles to nodes
+on the :ref:`assign-roles-ug` screen
+and set appropriate values on the :ref:`settings-storage-ug` screen.
+
+See :ref:`Storage-Architecture-arch` for more information
+about Cinder and Glance.
 
 .. raw:: pdf
 
@@ -292,13 +298,11 @@ Select the storage backend for :ref:`glance-term`:
 Related projects
 ----------------
 
-Choose additional related projects
-that should be included in your environment:
-
 .. image:: /_images/user_screen_shots/platform_services.png
    :width: 50%
 
-Specify any services that you want to deploy on your system:
+Choose additional related projects
+that should be included in your environment:
 
 - For additional information about deploying :ref:`ceilometer-term`,
   see :ref:`ceilometer-deployment-notes`.
@@ -306,6 +310,9 @@ Specify any services that you want to deploy on your system:
   see :ref:`sahara-install`.
 - For additional infomration about deploying :ref:`murano-term`,
   see :ref:`Murano-deployment-notes`.
+
+Note that you can modify these choices
+on the :ref:`modify-services-ug` screen.
 
 .. raw:: pdf
 
@@ -515,8 +522,6 @@ Settings tab
 
    * Scheduler driver
 
-   * Syslog
-
    * Storage
 
 .. _access-horizon-ug:
@@ -524,13 +529,13 @@ Settings tab
 Access permissions for Horizon
 ++++++++++++++++++++++++++++++
 
-The first part of the screen allows you to modify
-the user name, password, and tenant used
-to access the Horizon screens.
-
 .. image:: /_images/user_screen_shots/settings-access.png
    :width: 80%
 
+
+This section of the Settings screen allows you to modify
+the user name, password, and tenant used
+to access the Horizon screens.
 
 .. raw:: pdf
 
@@ -541,13 +546,13 @@ to access the Horizon screens.
 Services included in the environment
 +++++++++++++++++++++++++++++++++++++++++++
 
-The next part of the Settings screen
-allows you to modify the services
-you chose when you first created your environment.
-
 .. image:: /_images/user_screen_shots/settings-mod-services.png
    :width: 50%
 
+
+Use this screen to modify the services
+you chose on the :ref:`platform-services-ug` screen
+when you first created your environment.
 
 .. raw:: pdf
 
@@ -627,30 +632,22 @@ You can select either the soft trunks or hard trunks mode:
 
    PageBreak
 
-.. _settings-syslog-ug:
-
-Syslog
-++++++
-
 
 .. raw:: pdf
 
    PageBreak
 
+
 .. _settings-storage-ug:
-
-Modify access permissions for Horizon
-+++++++++++++++++++++++++++++++++++++
-
-The first part of the screen allows you to modify
-the user name, password, and tenant used
-to access the Horizon screens.
 
 Storage
 +++++++
 
 .. image:: /_images/user_screen_shots/settings-storage.png
 
+Information configured here must be compatible
+with information set on the :ref:`cinder-glance-backend-ug`
+and :ref:`assign-roles-ug` screens.
 
 .. raw:: pdf
 
