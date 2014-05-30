@@ -14,3 +14,18 @@ to group nodes with related functions
 into their own separate, logical LAN segments.
 Fuel supports the Neutron with VLAN segmentation
 and Nova-network VLAN Manager topologies:
+
+For more information:
+
+- :ref:`neutron-vlan-ovs-arch` describes the Neutron VLAN topology.
+  :ref:`neutron-config-vlan` provides examples
+  to help you plan your NIC assignment for this topology.
+
+- :ref:`nova-vlan-arch` describes the Nova-network VLAN topology.
+  :ref:`nova-config-vlan` provides examples
+  to help you plan your NIC assignment for this topology.
+
+- :ref:`vlan-splinters` gives instructions for setting up
+  VLAN splinters, which improve the performance of VLANs
+  when using the CentOS operating system
+  for your OpenStack nodes.

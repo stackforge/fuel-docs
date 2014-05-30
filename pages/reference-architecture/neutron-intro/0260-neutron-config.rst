@@ -21,8 +21,11 @@ The most likely configuration for different number NICs on cluster nodes:
 Neutron VLAN Segmentation Planning
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Depending on the number of NICs you have in your node servers, you can use the
-following examples to plan your NIC assignment:
+Depending on the number of NICs you have in your node servers,
+you can use the following examples to plan your NIC assignment
+to the OpenStack :ref:`logical-networks-arch`.
+Note that you must have at least three NICS configured
+to use the Neutron VLAN topology.
 
 3 NIC deployment
 
