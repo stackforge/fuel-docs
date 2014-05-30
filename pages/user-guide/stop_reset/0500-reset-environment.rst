@@ -20,7 +20,7 @@ in the "Actions" tab to become unlocked:
 
 .. image:: /_images/reset_environment_button.png
   :align: center
-  :width: 90%
+  :width: 60%
 
 Click this button to reset the whole environment
 back to the state it was in
