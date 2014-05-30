@@ -1,8 +1,12 @@
+
+.. _nova-config-vlan:
+
 Nova-network VLAN Manager
 -------------------------
 
-Depending on the number of NICs you have in your node servers, you can use the
-following examples to plan your NIC assignment:
+Depending on the number of NICs you have in your node servers,
+you can use the following examples to plan your NIC assignment
+to the OpenStack :ref:`logical-networks-arch`:
 
 1 NIC deployment
 

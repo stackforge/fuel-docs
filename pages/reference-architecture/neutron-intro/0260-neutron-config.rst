@@ -1,28 +1,14 @@
 
-.. _neutron-config-gen:
-
-Neutron Configuration Planning -- General
------------------------------------------
-
-The most likely configuration for different number NICs on cluster nodes:
-
-+------+--------------------------------------+--------------------------------------+
-| NICs | VLAN                                 |                        GRE           |
-+======+======================================+======================================+
-|   2  |  Not supported                       | .. image:: /_images/q32_gre_2nic.*   |
-+------+--------------------------------------+--------------------------------------+
-|   3  | .. image:: /_images/q32_vlan_3nic.*  | .. image:: /_images/q32_gre_3nic.*   |
-+------+--------------------------------------+--------------------------------------+
-|   4  | .. image:: /_images/q32_vlan_4nic.*  | .. image:: /_images/q32_gre_4nic.*   |
-+------+--------------------------------------+--------------------------------------+
-
 .. _neutron-config-vlan:
 
 Neutron VLAN Segmentation Planning
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Depending on the number of NICs you have in your node servers, you can use the
-following examples to plan your NIC assignment:
+Depending on the number of NICs you have in your node servers,
+you can use the following examples to plan your NIC assignment
+to the OpenStack :ref:`logical-networks-arch`.
+Note that you must have at least three NICS configured
+to use the Neutron VLAN topology.
 
 3 NIC deployment
 
