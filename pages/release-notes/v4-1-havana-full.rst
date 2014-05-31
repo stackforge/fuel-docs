@@ -18,15 +18,18 @@ enhancements, resolved issues, and known issues in this version.
 
 The following table lists the released revisions of this documentation:
 
-+----------+-------------+--------------+
-| Revision | Date        | Description  |
-+==========+=============+==============+
-| 4.1      | 07-Mar-2014 | Initial G.A. |
-+----------+-------------+--------------+
++----------+-------------+---------------------+
+| Revision | Date        | Description         |
++==========+=============+=====================+
+| 4.1      | 07-Mar-2014 | Initial G.A.        |
++----------+-------------+---------------------+
+| 4.1.1    | 05-May-2014 | Maintenance Release |
++----------+-------------+---------------------+
 
 .. include:: /pages/release-notes/v4-1/010-what-is-mirantis-openstack.rst
 .. include:: /pages/release-notes/v4-1/020-new-features.rst
 .. include:: /pages/release-notes/v4-1/030-other-enhancements.rst
+.. include:: /pages/release-notes/v4-1/038-resolved-in-411-issues.rst
 .. include:: /pages/release-notes/v4-1/040-resolved-issues.rst
 .. include:: /pages/release-notes/v4-1/050-known-issues.rst
 .. include:: /pages/release-notes/v4-1/060-obtain-the-product.rst
