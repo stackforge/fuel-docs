@@ -162,6 +162,9 @@ The Fuel UI screen appears:
 Click on the "New OpenStack environment" icon
 to launch the wizard that creates a new OpenStack environment.
 
+If you are deploying a Mirantis OpenStack environment
+that is integrated with VMware vSphere,
+follow the instructions in :ref:`vcenter-deploy`.
 
 .. _name-distro-ug:
 
