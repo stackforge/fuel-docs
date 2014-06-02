@@ -20,7 +20,6 @@ The official vSphere installation guide can be found here:
   `vSphere Installation and Setup <http://pubs.vmware.com/vsphere-55/index.jsp#com.vmware.vsphere.install.doc/GUID-7C9A1E23-7FCD-4295-9CB1-C932F2423C63.html>`_.
 
 Please check that you completed the following steps:
-
 * Install vSphere
 * Install vCenter
 * Install ESXi 
