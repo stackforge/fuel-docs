@@ -16,6 +16,7 @@ but it has some known limitations:
   and, if the service or the controller on which the service is deployed fail,
   OpenStack is unable to access the ESXi server resources
   for scheduling the VMs.
+  See `LP1312653 <https://bugs.launchpad.net/fuel/+bug/1312653>`_.
 * When vCenter is selected as the hypervisor,
   all Ceph, Cinder, and Nova options are disabled
   in the storage settings.

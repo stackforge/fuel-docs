@@ -5,6 +5,7 @@
 .. include:: /pages/reference-architecture/1000-logical-setup.rst
 .. include:: /pages/reference-architecture/1100-ha-notes.rst
 .. include:: /pages/reference-architecture/1200-mysql-galera.rst
+.. include:: /pages/reference-architecture/7000-vcenter.rst
 .. include:: /pages/reference-architecture/1700-ceph.rst
 .. include:: /pages/reference-architecture/0045-storage.rst
 .. include:: /pages/reference-architecture/6000-network-architecture.rst

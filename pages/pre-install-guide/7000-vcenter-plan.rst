@@ -1,82 +1,116 @@
 
 .. _vcenter-plan:
 
-Preparing for vCenter Integration
+Preparing for vSphere Integration
 =================================
+Fuel 5.0 and later can deploy a Mirantis OpenStack environment
+that boots and manages virtual machines in VMware vSphere.
+VMware provides a vCenter driver for OpenStack
+that enables the Nova-compute service to
+communicate with a VMware vCenter server
+that manages one or more ESX host clusters.
+The vCenter driver makes management convenient
+from both the OpenStack Dashboard (:ref:`horizon-term`)
+and from vCenter,
+where advanced vSphere features can be accessed.
 
 This section summarizes the planning you should do
 and other steps that are required
 before you attempt to deploy Mirantis OpenStack
 with vCenter intergration.
 
-Note the following requirements for your OpenStack environment:
+For more information:
 
-- The network must use the :ref:`nova-network-term` networking topology.
+- See :ref:`vcenter-arch` for information about how vCenter support
+  is implemented in Mirantis OpenStack;
 
-The following tasks are required:
+- :ref:`vcenter-deploy` gives instructions for creating and deploying
+  a Mirantis OpenStack environment that is integrated with VMware vSphere.
 
-- Deploy VMware vCenter as discussed in
-  `vSphere Installation and Setup <http://pubs.vmware.com/vsphere-50/topic/com.vmware.ICbase/PDF/vsphere-esxi-vcenter-server-50-installation-setup-guide.pdf>`_.
+- For background information about VMware vSphere support in OpenStack,
+  see the `VMware vSphere - OpenStack Manuals
+  <http://docs.openstack.org/trunk/config-reference/content/vmware.html>`_.
 
-- Configure the appropriate network devices on the Fuel Master node:
+- The official vSphere installation guide can be found here:
+  `vSphere Installation and Setup
+  <http://pubs.vmware.com/vsphere-55/index.jsp#com.vmware.vsphere.install.doc/GUID-7C9A1E23-7FCD-4295-9CB1-C932F2423C63.html>`_.
 
-  - A `vlance` (old AMD) network card is recommended;
-    these work with all versions of vCenter.
-  - An `e1000` network card works with most enterprise vCenters.
 
-  To determine which network card is configured,
-  open the .VMX file for each virtual machine and 
-  check for one of the following settings:
+vSphere Installation
+--------------------
+Before installing Fuel and using it
+to create a Mirantis OpenStack environment
+that is integrated with VMware vSphere,
+the vSphere installation must be up and running.
+Please check that you completed the following steps:
 
-::
+* Install vSphere
+* Install vCenter
+* Install ESXi
+* Configure vCenter
 
-    ethernetXXX.virtualDev=`vlance`
-    or
-    ethernetXXX.virtualDev=`e1000`
+	* Create DataCenter
+	* Create vCenter cluster
+	* Add ESXi host(s)
 
-- Allow promiscuous mode for each network card.
-  The following string should appear in the .VMX file:
+.. raw:: pdf
 
-::
+   PageBreak
 
-    ethernetXXX.noPromisc = "false"
+ESXi Host Networks Configuration
+--------------------------------
+The ESXi host(s) network must be configured appropriately
+in order to enable intergration of Mirantis OpenStack with vCenter.
+Follow the steps below:
 
-- PXE boot must not be turned off for any card that uses the vCenter driver;
-  the following string in the VMX file is correct:
+1. Open the ESXi host page,
+   select the "Manage" tab and click on "Networking".
+   vSwitch0 and all its networks are shown.
+   Click the Add Network button:
 
-::
+.. image:: /_images/esx-manage-networks.png
+  :width: 70%
 
-  vlance.noOprom = "false"
+2. In the "Add Networking" wizard, select the Virtual Machine Port group:
 
-- If you use ESXi/vSphere with vSwitch as the networking solution:
+.. image:: /_images/esx-target-device.png
+  :width: 70%
 
-  - Create a separate port group or separate vSwitch instance
-    with the port group for each virtual network.
+.. raw: pdf
 
-  - Allow promiscuous mode for each port group.
+   PageBreak
 
-  Note that some multicast/broadcast traffic
-  does not go outside the port group,
-  so always use port groups for Neutron.
+3. On the next page, select the "Virtual Machine Port Group" option
+   to ensure that the network will be created in vSwitch0:
 
-vSwitch does not support native VLAN for Trunk ports
-and removes all VLAN tags from traffic
-that goes through Access ports.
-Therefore, you cannot mix VLAN tagged and untagged traffic;
-you must create different port groups for Trunk and Access ports.
+.. image:: /_images/esx-connection-type.png
+  :width: 70%
 
-VMware vCenter can be deployed on Mirantis OpenStack
-with or without high-availability (HA) configured.
-Note, however, that the vCenter Nova plugin runs on only one 
-Controller node, even if that Controller node is replicated 
-to provide HA.
+4. Always name the network **br100**;
+   this is the only value that works with Fuel;
+   type a VLAN Tag in the VLAN ID field;
+   (the value must be equal to the VLAN Tag at *VM Fixed*
+   on Fuel’s :ref:`network-settings-vcenter-ug` tab):
+
+.. image:: /_images/esx-connection-settings.png
+  :width: 70%
+  
+Limitations
+------------------------------
+- Only :ref:`nova-network-term` with flatDHCP mode is supported
+  in the current version of the integration.
+- OpenStack Block Storage service (Cinder)
+  with VMware VMDK datastore driver is not supported.
+- Each OpenStack environment can support one vCenter cluster.
+- VMware vCenter can be deployed on Mirantis OpenStack
+  with or without high-availability (HA) configured.
+  Note, however, that the vCenter Nova plugin
+  runs on only one Controller node,
+  even if that Controller node is replicated to provide HA.
+  See `LP1312653 <https://bugs.launchpad.net/fuel/+bug/1312653>`_.
 
 For background information about how vCenter support
 is integrated into Mirantis OpenStack, see :ref:`vcenter-arch`.
 
 Follow the instructions in :ref:`vcenter-deploy`
-to deploy your Mirantis OpenStack environment
-with vCenter support.
-
-The following blog post contains useful suggestions
-`Deploying OpenStack on vSphere with Fuel <http://vbyron.com/blog/deploy-openstack-on-vsphere-with-fuel/>`_.
+to deploy your Mirantis OpenStack environment with vCenter support.
