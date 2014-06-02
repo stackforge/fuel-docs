@@ -16,7 +16,7 @@ Mirantis OpenStack with vSphere integration.
 To deploy an OpenStack cloud that is integrated with the vSphere environment click on the "New OpenStack environment" icon to launch the wizard that creates a new OpenStack environment.
 
 Create Environment and Choose Distribution
-------------------------------------------
+----------------------------------------
 
 Both CentOS and Ubuntu host operating systems support integration with vSphere
 
