@@ -1,11 +1,11 @@
-Issues Resolved in Mirantis OpenStack 4.1
-=========================================
+Issues First Resolved in Mirantis OpenStack 4.1
+===============================================
 
 Ceph acting as a backend for ephemeral volumes is no longer experimental
 ------------------------------------------------------------------------
 
 Starting with Mirantis OpenStack 4.0,
-Mirantis enables the the Nova (Compute) service in Mirantis OpenStack
+Mirantis enables the Nova (Compute) service in Mirantis OpenStack
 to support VM instances backed by ephemeral volumes stored in Ceph.
 With Glance, Cinder, and Nova all supporting the Ceph RBD backend,
 OpenStack VM instances can take advantage of Ceph clustered storage capabilities
@@ -20,7 +20,7 @@ could have led to a
 `Ceph SEGV error <https://bugs.launchpad.net/fuel/+bug/1260911>`_
 while extracting cloned images from RBD,
 which left a small possibility that an ephemeral volume became corrupted.
-This issue has been corrected in Mirantis OpenStack 4.1 and the feature is now fully supported.
+This issue has been corrected in Mirantis OpenStack 4.1.x and the feature is now fully supported.
 
 The Ceilometer section within Horizon is now enabled by default
 ---------------------------------------------------------------
@@ -52,7 +52,7 @@ Ubuntu deployment no longer fails because of NIC ordering issues
 Mirantis OpenStack sometimes failed to deploy on Ubuntu
 because the Ubuntu kernel uses different ordering rules to detect NICS
 compared to the CentOS kernel used by the Mirantis OpenStack bootstrap image.
-This has been corrected in Fuel 4.1
+This has been corrected in Fuel 4.1.x
 by adding explicit interface ordering
 and identifying the hardware address that correspond to the admin interface.
 
@@ -71,7 +71,7 @@ mapping all hard drives on Vbox into a single address (sysfs PATH_ID).
 When the udev daemon creates by-path links,
 it rewrites the previous links with the new ones,
 resulting in a single by-path link for each sdc hard drive.
-Fuel 4.1 includes an internal workaround
+Fuel 4.1.x includes an internal workaround
 so that the number and sizes of the disk nodes match what is configured,
 although the internal IDs are different after deployment.
 See `LP1263648 <https://bugs.launchpad.net/fuel/+bug/1263648>`_.
@@ -126,7 +126,7 @@ that was identified during the bootstrap discovery process.
 
 Multiple network roles can share a single physical NIC
 ------------------------------------------------------
-In Mirantis OpenStack 4.1,
+In Mirantis OpenStack 4.1.x,
 the  earlier restrictions about networks sharing a physical NIC are removed.
 One NIC can be used for all networks --
 including Admin(PXE), Private, Storage, Management, and Public --
