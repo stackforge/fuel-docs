@@ -1,5 +1,5 @@
-Known Issues in Mirantis OpenStack 4.1
-======================================
+Known Issues in Mirantis OpenStack 4.1.x
+========================================
 
 Murano OSTF test for Linux Apache Service fails
 -----------------------------------------------
