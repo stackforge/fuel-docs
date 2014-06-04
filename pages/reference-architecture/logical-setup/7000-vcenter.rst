@@ -46,4 +46,10 @@ Multi-node HA Deployment with vSphere integration
 .. image:: /_images/vcenter-reference-architecture.png
    :width: 50%
 
+Example of network topology 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: /_images/vcenter-network-topology.png
+   :width: 100%
+
 
