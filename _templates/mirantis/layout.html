@@ -58,26 +58,19 @@
 {% block extrahead -%}
         {{ super() }}
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        {%- if theme_googleanalytics_id -%}
-            <script type="text/javascript">
-            var ga_enabled = !$.cookie('disable-ga');
-            if(ga_enabled){
-              var _gaq = _gaq || [];
-              _gaq.push(['_setAccount', '{{ theme_googleanalytics_id }}']);
-              _gaq.push(['_setDomainName', '{{ theme_googleanalytics_domain }}']);
-              _gaq.push(['_trackPageview']);
-
-              (function() {
-                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-                ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-              })();
-            }
-            </script>
-        {%- endif %}
 {%- endblock %}
 
 {% block header %}
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-K2J65K"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){wl=wl||[];wl.push(
+{'gtm.start': new Date().getTime(),event:'gtm.js'}
+);var f=d.getElementsByTagName(s)0,
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-K2J65K');</script>
+<!-- End Google Tag Manager -->
     <div id="masthead">
         <div id="globalNav">
             <div id="globalLink">
@@ -132,17 +125,5 @@
 
 {% block footer -%}
     {{ super() }}
-    {%- if theme_googleanalytics_id -%}
-<script type="text/javascript">
-    if(ga_enabled){
-        document.write("<div class=\"footer\">This page uses <a href=\"http://analytics.google.com\">Google Analytics</a> to collect statistics. ");
-        document.write("Click <button title=\"set cookie to disable analytics for this site\" class=\"link\" onclick=\"$.cookie('disable-ga', 'true', {expires: 3650, path: '{{ theme_googleanalytics_path }}'}); window.location.reload(); return false; \">here</button> to disable analytics for this site.");
-        document.write("</div>");
-    }else{
-        document.write("<div class=\"footer\">Google Analytics has been disabled. ");
-        document.write("Click <button title=\"set cookie to re-enable analytics for this site\" class=\"link\" onclick=\"$.cookie('disable-ga', null, {path: '{{ theme_googleanalytics_path }}'}); window.location.reload(); return false; \">here</button> to re-enable analytics for this site.");
-    };
-</script>
-    {%- endif %}
     <!-- cloud_sptheme 1.4 -->
 {%- endblock %}
