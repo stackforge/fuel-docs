@@ -3,10 +3,13 @@
 Terminology Reference
 =====================
 
+.. include:: /pages/terminology/a/amqp.rst
+.. include:: /pages/terminology/a/astute.rst
 .. include:: /pages/terminology/b/bonding.rst
 .. include:: /pages/terminology/c/ceilometer.rst
 .. include:: /pages/terminology/c/ceph.rst
 .. include:: /pages/terminology/c/cinder.rst
+.. include:: /pages/terminology/c/cobbler.rst
 .. include:: /pages/terminology/c/compute-nodes.rst
 .. include:: /pages/terminology/c/corosync.rst
 .. include:: /pages/terminology/c/crm.rst
@@ -14,11 +17,12 @@ Terminology Reference
 .. include:: /pages/terminology/d/docker.rst
 .. include:: /pages/terminology/e/esxi.rst
 .. include:: /pages/terminology/f/fencing.rst
+.. include:: /pages/terminology/f/fuel.rst
 .. include:: /pages/terminology/f/fuel-master-node.rst
 .. include:: /pages/terminology/g/galera-cluster.rst
 .. include:: /pages/terminology/g/glance.rst
 .. include:: /pages/terminology/h/ha.rst
-.. include:: /pages/terminology/h/hadoop.rst
+.. include:: /pages/terminology/h/haproxy.rst
 .. include:: /pages/terminology/h/havana-term.rst
 .. include:: /pages/terminology/h/heat.rst
 .. include:: /pages/terminology/h/horizon.rst
