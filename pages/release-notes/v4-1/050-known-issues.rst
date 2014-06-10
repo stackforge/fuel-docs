@@ -4,12 +4,17 @@ Known Issues in Mirantis OpenStack 4.1.x
 Murano OSTF test for Linux Apache Service fails
 -----------------------------------------------
 
-The Murano OSTF test for the Linux Apache service fails with an AssertionError.
+The Murano OSTF test for the Linux Apache service
+fails with an AssertionError.
 See `LP1271089 <https://bugs.launchpad.net/fuel/+bug/1271089>`_.
 
 
-Savanna does not write logs unless "OpenStack debug logging" is selected
-------------------------------------------------------------------------
+Savanna logging now works correctly
+-----------------------------------
+
+Issues with Savanna logging are resolved.
+See `LP1285766 <https://bugs.launchpad.net/fuel/+bug/1285766>`_
+and `LP1288475 <https://bugs.launchpad.net/fuel/+bug/1288475>`_.
 
 Savanna does not write logs unless you select "OpenStack debug logging" in the Fuel settings.
 When debug logging is not selected,

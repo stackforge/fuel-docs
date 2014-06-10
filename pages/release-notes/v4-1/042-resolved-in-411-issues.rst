@@ -6,6 +6,14 @@ Security Fixes
 
 The following vulnerabilities are addressed:
 
+- **The supplied operating systems are protected
+  against the "Heartbleed" defect in OpenSSL.**
+  While the standard distributions of CentOS 6.4 and Ubuntu 12.04
+  were vulnerable to the Heartbleed defect in OpenSSL,
+  the Mirantis OpenStack 4.1.1 packages have been updated
+  with the patched 1.0.1g version
+  and are thus protected against the vulnerability.
+
 - `LP1297848 <https://bugs.launchpad.net/fuel/+bug/1297848>`_.
 
 Some disk drivers do not support a 4K sector size for XFS file systems
