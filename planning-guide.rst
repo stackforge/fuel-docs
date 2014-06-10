@@ -9,4 +9,4 @@ Planning Guide
 .. contents:: :local:
    :depth: 3
   
-.. include:: /contents/contents-pre-install-guide.rst
+.. include:: /contents/contents-planning-guide.rst
