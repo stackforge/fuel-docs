@@ -22,16 +22,5 @@ Private networks can be segmented using one of two different topologies:
   each compute node and controller nodes to every other node. Private networks
   for each tenant make use of this mesh for isolated traffic.
 
-It is important to note:
+Both Neutron topologies are based on :ref:`ovs-term`.
 
-* If you use tagged networks for your configuration
-  and combine multiple networks onto one NIC,
-  you should make the Public network untagged on this NIC.
-  This is not a requirement, but best for access to the OpenStack Dashboard
-  and public OpenStack API.
-* You should place the Private, Admin, Public and Management networks on a
-  separate NIC to ensure that traffic is separated adequately.
-* Admin and Private networks must be located together
-  on a NIC that is separate from the other networks.
-* :ref:`ovs-term` improves the flexiblity and performance
-  of both Neutron topologies.
