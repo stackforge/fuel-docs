@@ -1,0 +1,13 @@
+.. include:: /pages/plan-guide/0010-intro.rst
+.. include:: /pages/plan-guide/0020-system-requirements.rst
+.. include:: /pages/plan-guide/0025-supported-software-list.rst
+.. include:: /pages/plan-guide/4000-planning-summary.rst
+.. include:: /pages/plan-guide/4200-net-topology.rst
+.. include:: /pages/plan-guide/4300-linux-distro.rst
+.. include:: /pages/plan-guide/4400-nodes-roles.rst
+.. include:: /pages/plan-guide/7000-sahara-plan.rst
+.. include:: /pages/plan-guide/7000-vcenter-plan.rst
+.. include:: /pages/plan-guide/4500-hardware.rst
+.. include:: /pages/plan-guide/0010-prerequisites.rst
+.. include:: /pages/plan-guide/0080-reference-configuration.rst
+.. include:: /pages/plan-guide/0090-appendix.rst

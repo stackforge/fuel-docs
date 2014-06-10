@@ -12,7 +12,7 @@ Documentation
 .. toctree:: 
   :maxdepth: 1
   
-  pre-install-guide
+  plan-guide
   user-guide
   operations
   virtualbox
