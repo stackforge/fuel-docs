@@ -47,6 +47,24 @@ This limitation is restricted to the UI only.
 It is possible to use other physical interfaces when configured via the Fuel CLI.
 See `LP 1285059 <https://bugs.launchpad.net/fuel/+bug/1285059>`_.
 
+Neutron reports an error when terminating a large group of VMs
+--------------------------------------------------------------
+
+When terminating 100+ VMs with one request via Horizon dashboard, it is
+possible that some of the VMs will fail to terminate due to an inefficient
+database operation in Neutron. This problem can be worked around by increasing
+the value of `api_workers` variable in `neutron.conf`.
+See `LP1321647 <https://bugs.launchpad.net/fuel/+bug/1321647>`_.
+
+Fuel UI intermittently reports an online node as offline
+--------------------------------------------------------
+
+Hardware profile reporting tool used by Fuel agent can intermittently omit
+network interface data from the node profile. When that happens, Fuel UI
+reports the node as offline until the agent runs again and returns a complete
+hardware profile.
+See `LP1327243 <https://bugs.launchpad.net/fuel/+bug/1327243>`_.
+
 File injection into VMs fails on CentOS
 ---------------------------------------
 
