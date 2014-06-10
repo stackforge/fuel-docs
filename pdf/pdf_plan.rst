@@ -26,4 +26,4 @@
    :maxdepth: 3
 
 .. include:: /pages/preface/preface.rst
-.. include:: /contents/contents-pre-install-guide.rst
+.. include:: /contents/contents-plan-guide.rst
