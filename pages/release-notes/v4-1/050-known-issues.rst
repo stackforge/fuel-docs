@@ -4,59 +4,9 @@ Known Issues in Mirantis OpenStack 4.1.x
 Murano OSTF test for Linux Apache Service fails
 -----------------------------------------------
 
-The Murano OSTF test for the Linux Apache service fails with an AssertionError.
+The Murano OSTF test for the Linux Apache service
+fails with an AssertionError.
 See `LP1271089 <https://bugs.launchpad.net/fuel/+bug/1271089>`_.
-
-
-Savanna does not write logs unless "OpenStack debug logging" is selected
-------------------------------------------------------------------------
-
-Savanna does not write logs unless you select "OpenStack debug logging" in the Fuel settings.
-When debug logging is not selected,
-the */var/log/savanna-all.log* file
-contains only log records from the external modules;
-it does not contain logs from Savanna itself.
-An example of a log from an external module is:
-
-::
-
-  savanna-savanna.openstack.common.db.sqlalchemy.session
-  WARNING: Got mysql server has gone away: (2006, 'MySQL server has gone away')
-
-See `LP1285766 <https://bugs.launchpad.net/fuel/+bug/1285766>`_.
-
-As a work around, edit the  */etc/savanna/savanna.conf* file
-and delete (or comment) the following lines from the [DEFAULT] section:
-
-::
-
-  use_syslog=True
-  use_stderr=False
-  syslog_log_facility=LOG_LOCAL0
-  log_config=/etc/savanna/logging.conf
-
-Then add the following line to the [DEFAULT] section:
-
-::
-
-  log_dir=/var/log/savanna
-
-
-Enabling "Open Stack debug logs" does not enable debug logs for Savanna
------------------------------------------------------------------------
-
-Enabling the "OpenStack debug logs" checkbox in the Fuel settings
-enables INFO level logging but does not enable DEBUG level logging.
-See `LP 1288475 <https://bugs.launchpad.net/fuel/+bug/1288475>`_.
-
-You can enable debug logging for Savanna
-by editing the  */etc/savanna/savanna.conf* file
-and adding the following line to the [DEFAULT] section:
-
-::
-
-  debug=TRUE
-
 
 CentOS issues using Neutron-enabled installations with VLANS
 ------------------------------------------------------------

@@ -124,7 +124,7 @@ Supported Software
 
 * **Galera** 23.2.2
 
-* **RabbitMQ** 2.8.7
+* **RabbitMQ** 3.2.3
 
 * **Pacemaker** 1.1.10
 
@@ -132,9 +132,9 @@ Supported Software
 
 * **Keepalived** 1.2.4
 
-* **Ceph Dumpling** (v0.67.5)
+* **Ceph Dumpling** (v0.67.9)
 
-* **MySQL** (v5.5.28)
+* **MySQL** v5.1.69 (CentOS), 5.5.32 (Ubuntu)
 
 Fuel Installation Procedures
 ----------------------------
