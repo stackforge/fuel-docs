@@ -115,6 +115,19 @@ Live migrations do not exhibit this behavior and work correctly with Ceph RBD.
 Because the Horizon Dashboard in Havana does not support live migrations,
 you must use the command line.
 
+Murano repository service misconfiguration
+-----------------------------------------------
+
+* In simple (non HA) mode lead to an error in the horizon UI and issuing trace log during 
+  modification of the service description in the murano UI part of horizon, but modifiable data is saved.
+
+* Lack of option data_dir in the configuration file murano-repository.conf lead to the use
+  of default values​​, ie - data_dir=/tmp/muranorepository-data.
+
+This can be fixed by manually by applying patch on master node before environment would been deployed
+or in manual way, ie - modification of the /etc/murano/murano-repository.conf file with proper values.
+See `LP1328490 <https://bugs.launchpad.net/fuel/+bug/1328490>`_.
+
 Other limitations
 -----------------
 
