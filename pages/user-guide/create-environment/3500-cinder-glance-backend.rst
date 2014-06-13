@@ -18,7 +18,7 @@ Select the storage backend for :ref:`cinder-term`:
   You must configure at least one node with the "cinder" role
   on the :ref:`assign-roles-ug` screen.
   Disk space for Cinder will be allocated automatically.
-- If you select "Ceph",
+- If you select :ref:`Ceph<ceph-term>`,
   you must assign at least two nodes as Ceph-OSD nodes
   on the :ref:`assign-roles-ug` screen.
 
@@ -37,6 +37,4 @@ You can later change these settings
 on the :ref:`settings-storage-ug` screen,
 where you can also set the Ceph replication factor.
 
-See :ref:`Storage-Architecture-arch` for more information
-about Cinder, Glance, and Ceph.
 
