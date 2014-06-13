@@ -1,4 +1,12 @@
-.. include:: /pages/reference-architecture/storage/0000-storage-intro.rst
-.. include:: /pages/reference-architecture/storage/0100-object-store-for-images.rst
-.. include:: /pages/reference-architecture/storage/0200-object-storage-for-apps.rst
-.. include:: /pages/reference-architecture/storage/0300-block-storage-for-volumes.rst
+
+.. index:: Storage architecture, Object storage, Cinder, Swift, Glance, Ceph
+
+.. _Storage-Architecture-arch:
+
+Storage Architecture
+====================
+
+.. include:: /pages/reference-architecture/storage/0100-glance-arch.rst
+.. include:: /pages/reference-architecture/storage/0200-cinder-arch.rst
+.. include:: /pages/reference-architecture/storage/0300-swift-arch.rst
+.. include:: /pages/reference-architecture/storage/0500-ceph-arch.rst

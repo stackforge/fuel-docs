@@ -4,7 +4,7 @@ Storage Nodes
 Depending on the :ref:`storage options <Storage-Architecture-arch>` you
 select for your environment, you may have
 :ref:`ceph-term`, :ref:`cinder-term`,
-and :ref:`Swift<swift-object-storage-term>`
+and :ref:`Swift<swift-term>`
 services running on your storage nodes.
 
 Ceph implements its own HA;

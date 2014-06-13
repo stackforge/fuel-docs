@@ -1,0 +1,7 @@
+
+.. _swift-arch:
+
+Swift
+=====
+
+
