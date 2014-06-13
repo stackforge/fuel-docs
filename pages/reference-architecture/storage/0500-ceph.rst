@@ -1,0 +1,20 @@
+
+.. _ceph-arch:
+
+Ceph RBD storage
+----------------
+
+The OpenStack Ceph cluster consists of:
+
+- A small number of Ceph Mon (monitor) daemons
+  that run on the OpenStack controller node.
+- Two or more Ceph OSD (Object Storage Device) nodes
+  that store the actual data in :ref:`rados` format.
+  Ideally, each of these runs on a dedicated node
+  but they can be run on a Compute node.
+- :ref:`glance` serves as the Ceph client.
+
+For more details about Ceph and RADOS,
+including capabilities you can configure manually
+after deploying your OpenStack environment with Fuel,
+see the references in the :ref:`ceph-term` and :ref:`rados` articles.

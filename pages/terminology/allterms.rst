@@ -12,6 +12,7 @@ Terminology Reference
 .. include:: /pages/terminology/c/crm.rst
 .. include:: /pages/terminology/d/devstack.rst
 .. include:: /pages/terminology/d/docker.rst
+.. include:: /pages/terminology/e/ephemeral-storage.rst
 .. include:: /pages/terminology/e/esxi.rst
 .. include:: /pages/terminology/f/fencing.rst
 .. include:: /pages/terminology/f/fuel-master-node.rst
@@ -47,12 +48,14 @@ Terminology Reference
 .. include:: /pages/terminology/o/orchestration-service.rst
 .. include:: /pages/terminology/o/ovs.rst
 .. include:: /pages/terminology/p/pacemaker.rst
+.. include:: /pages/terminology/p/persistent-storage.rst
 .. include:: /pages/terminology/p/puppet.rst
 .. include:: /pages/terminology/p/pxe.rst
 .. include:: /pages/terminology/q/qemu.rst
 .. include:: /pages/terminology/q/quotas.rst
 .. include:: /pages/terminology/r/rabbitmq.rst
-.. include:: /pages/terminology/r/rally.rst
+.. include:: /pages/terminology/r/rados.rst
+.. include:: /pages/terminology/r/radosgw.rst
 .. include:: /pages/terminology/r/resource-agents.rst
 .. include:: /pages/terminology/s/sahara.rst
 .. include:: /pages/terminology/s/security-groups.rst

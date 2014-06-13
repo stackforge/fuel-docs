@@ -1,0 +1,7 @@
+
+.. _cinder-arch:
+
+Cinder
+======
+
+
