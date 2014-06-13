@@ -45,24 +45,20 @@ backend, you should only use images in **raw** format. Images in other
 formats such as qcow2 have to be converted to raw format first and
 cannot be cloned without conversion.
 
-As of this writing, vanilla OpenStack Havana release placed several
+As of this writing, the vanilla OpenStack Icehouse release places several
 important limitations on the copy-on-write capability of the Ceph
 backend:
 
- * You have to create an RBD backed bootable volume from a raw image for
-   copy-on-write and live migrations to work;
+ * You must create an RBD backed bootable volume from a raw image for
+   copy-on-write and live migrations to work.
 
- * Launching an instance directly from image results in a full copy on
-   the compute node instead of a copy-on-write clone in Ceph;
+ * Launching an instance directly from an image results in a full copy on
+   the compute node instead of a copy-on-write clone in Ceph.
 
  * Ephemeral drives are stored in local files on compute nodes instead
    of Ceph, preventing live migration of instances with ephemenral
-   drives;
+   drives.
 
- * Non-raw images are not converted to raw automatically when creating a
-   bootable volume: if you don't convert the image yourself, you will
-   end up with a clone of a qcow2 image that will not be bootable.
-
-These limitations are removed in Mirantis OpenStack distribution
+These limitations are removed in Mirantis OpenStack distributions
 starting with release 4.0.
 
