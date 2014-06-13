@@ -52,7 +52,8 @@ Terminology Reference
 .. include:: /pages/terminology/q/qemu.rst
 .. include:: /pages/terminology/q/quotas.rst
 .. include:: /pages/terminology/r/rabbitmq.rst
-.. include:: /pages/terminology/r/rally.rst
+.. include:: /pages/terminology/r/rados.rst
+.. include:: /pages/terminology/r/radosgw.rst
 .. include:: /pages/terminology/r/resource-agents.rst
 .. include:: /pages/terminology/s/sahara.rst
 .. include:: /pages/terminology/s/security-groups.rst

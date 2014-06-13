@@ -23,5 +23,14 @@ Some key characteristics of Swift object storage are:
 Fuel can deploy Swift on either a dedicated server storage node
 or as a role on a compute node.
 
-See `Introducing OpenStack Swift' <https://swiftstack.com/openstack-swift/architecture/>`_
-for a good general introduction to Swift.
+See:
+
+- :ref:`storage-plan` for recommendations about when to use Swift
+  in your Mirantis OpenStack environment.
+
+- `Swift object store <http://swift.openstack.org/>`_
+   OpenStack object storage component,
+
+- `Introducing OpenStack Swift'
+  <https://swiftstack.com/openstack-swift/architecture/>`_
+  for a good general introduction to Swift.
