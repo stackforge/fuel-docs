@@ -1,10 +1,10 @@
 Storage Nodes
 -------------
 
-Depending on the :ref:`storage options <Storage-Architecture-arch>` you
+Depending on the :ref:`storage options <storage-plan>` you
 select for your environment, you may have
 :ref:`ceph-term`, :ref:`cinder-term`,
-and :ref:`Swift<swift-object-storage-term>`
+and :ref:`Swift<swift-term>`
 services running on your storage nodes.
 
 Ceph implements its own HA;
@@ -20,16 +20,20 @@ and enough Ceph OSD nodes to satisfy the `object replication factor
   :width: 80%
   :align: center
 
-Swift API relies on the same HAProxy setup with VIP on controller nodes
-as the other REST APIs. If don't expect too much data traffic in Swift,
+The Swift API relies on the same HAProxy setup,
+with VIP on the controller nodes and the other REST APIs.
+If don't expect too much data traffic in Swift,
 you can also deploy Swift Storage and Proxy services on controller
 nodes. For a larger production environment you'll need dedicated nodes:
 two for Swift Proxy and at least three for Swift Storage.
 
-Whether or not you'd want separate Swift nodes depends primarily on how
-much data you expect to keep there. A simple test is to fully populate
-your Swift object store with data and then fail one controller node. If
-replication of the degraded Swift objects between the remaining nodes
+Whether or not to deploy separate Swift nodes
+depends primarily on how much data you expect to keep there
+and how much disk space is available on the node.
+A simple test is to fully populate your Swift object store with data
+and then fail one controller node.
+If replication of the degraded Swift objects
+between the remaining nodes
 controller generates enough network traffic, CPU load, or disk I/O to
 impact performance of other OpenStack services running on the same
 nodes, you should separate Swift from controllers.

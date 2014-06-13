@@ -32,8 +32,10 @@ that are acceptable for a production environment
 but it works for evaluation and demonstration purposes.
 You could also run DataNodes and TaskTrackers in separate VMs.
 
-Sahara can use either :ref:`swift-object-storage-term` or :ref:`ceph-term`
+Sahara can use either :ref:`swift-term` or :ref:`ceph-term`
 for object storage.
+See :ref:`storage-plan` for general information about
+selecting the storage for your environment.
 Special steps are required to implement data locality for Swift;
 see `Data-locality <http://docs.openstack.org/developer/sahara/userdoc/features.html#data-locality>`_
 for details.

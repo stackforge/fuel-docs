@@ -38,8 +38,6 @@ For more information, see:
 
 - :ref:`nodes-roles-arch` describes the Controller,
   Compute, and Storage nodes.
-- :ref:`Storage-Architecture-arch` for more details about the
-  ramifications of the different Storage roles.
 - :ref:`nodes-roles-plan` includes guidelines about setting up nodes.
 - :ref:`mongodb-term` for information about MongoDB.
 
