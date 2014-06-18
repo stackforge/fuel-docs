@@ -4,6 +4,43 @@
 Planning a Sahara Deployment
 ============================
 
+:ref:`Sahara<sahara-term>` enables users
+to easily provision and manage Apache Hadoop clusters
+in an OpenStack environment.
+Sahara works with either Release 1.x or 2.x of Hadoop.
+
+The Sahara control processes run on the Controller node.
+The entire Hadoop cluster runs in VMs
+that run on Compute Nodes.
+A typical set-up is:
+
+- One VM that serves as the Hadoop master node
+  to run JobTracker (ResourceManager for Hadoop Release 2.x) and NameNode.
+- Many VMs that serve as Hadoop worker nodes,
+  each of which runs TaskTracker (NodeManager for Hadoop Release 2.x)
+  and DataNodes.
+
+You must have exactly one NameNode and one JobTracker
+running in the environment
+and you cannot run Hadoop HA under Sahara.
+Other than that,
+you are free to use other configurations.
+For example, you can run the TaskTracker/NodeManager and Datanodes
+in the same VM that runs JobTracker/ResourceManager and NameNode;
+such a configuration may not produce performance levels
+that are acceptable for a production environment
+but it works for evaluation and demonstration purposes.
+You could also run DataNodes and TaskTrackers in separate VMs.
+
+Sahara can use either :ref:`swift-object-storage-term` or :ref:`ceph-term`
+for object storage,
+although special steps are required to implement data locality;
+see `Data-locality <http://docs.openstack.org/developer/sahara/userdoc/features.html#data-locality>`_
+for details.
+
+Plan the size and number of nodes for your environment
+based on the information in :ref:`nodes-roles-plan`.
+
 When deploying an OpenStack Environment
 that includes Sahara for running Hadoop
 you need to consider a few special conditions.
@@ -13,6 +50,8 @@ you need to consider a few special conditions.
 Fuel configures Sahara to use floating IPs to manage the VMs.
 This means that you must provide a Floating IP pool
 in each Node Group Template you define.
+See :ref:`public-floating-ips-arch` for general information
+about floating IPs.
 
 A special case is if you are using Nova-Network
 and you have set the **auto_assign_floating_ip** parameter to true
@@ -26,7 +65,8 @@ so be sure to allocate enough floating IPs.
 
 **Security Groups**
 
-Sahara does not configure OpenStack Security Groups
+Sahara does not configure
+OpenStack :ref:`Security Groups<security-groups-term>`
 so you must manually configure the default security group
 in each tenant where Sahara will be used.
 See :ref:`sahara-ports` for a list of ports that need to be opened.
@@ -40,3 +80,7 @@ at least 1G of memory for Hadoop cluster nodes.
 **Communication between virtual machines**
 
 Be sure that communication between virtual machines is not blocked.
+
+For additional information about using Sahara to run
+Apache Hadoop, see the
+`Sahara documentation <http://docs.openstack.org/developer/sahara/overview.html>`_.
