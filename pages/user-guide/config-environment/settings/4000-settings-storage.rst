@@ -20,3 +20,10 @@ For example, if you configure any Ceph storage options here,
 you must configure an appropriate number of Ceph OSD nodes;
 if you configure a Cinder LVM over iSCSI role here,
 you must configure a Cinder LVM node.
+
+The "Ceph replica" value represents the minimum number of
+Ceph OSD replicas that must be running for Ceph to be viable.
+At least two Ceph OSD nodes are required
+so this value cannot be set to a value lower than 2,
+but the Ceph replica could be set to 2 even for environments
+with very large numbers of Ceph OSD roles configured.

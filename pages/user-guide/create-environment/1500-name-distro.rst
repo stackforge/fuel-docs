@@ -12,7 +12,8 @@ on the Fuel UI, the following screen is displayed:
 
 Give the environment a name
 and select the Linux distribution from the drop-down list;
-see :ref:`linux-distro-plan`.
-This is the operating system that will be installed
+this is the operating system that will be installed
 on the Controller, Compute, and Storage nodes in the environment.
+See :ref:`linux-distro-plan` for guidelines
+about choosing the distribution to use.
 
