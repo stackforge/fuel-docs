@@ -45,6 +45,7 @@ Terminology Reference
 .. include:: /pages/terminology/o/object-storage.rst
 .. include:: /pages/terminology/o/openstack.rst
 .. include:: /pages/terminology/o/orchestration-service.rst
+.. include:: /pages/terminology/o/overcommit.rst
 .. include:: /pages/terminology/o/ovs.rst
 .. include:: /pages/terminology/p/pacemaker.rst
 .. include:: /pages/terminology/p/puppet.rst
@@ -55,6 +56,7 @@ Terminology Reference
 .. include:: /pages/terminology/r/rally.rst
 .. include:: /pages/terminology/r/resource-agents.rst
 .. include:: /pages/terminology/s/sahara.rst
+.. include:: /pages/terminology/s/scheduler.rst
 .. include:: /pages/terminology/s/security-groups.rst
 .. include:: /pages/terminology/s/stateless-and-stateful-services.rst
 .. include:: /pages/terminology/s/storage-nodes-and-roles.rst
