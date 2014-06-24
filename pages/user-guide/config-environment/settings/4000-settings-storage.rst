@@ -20,3 +20,9 @@ For example, if you configure any Ceph storage options here,
 you must configure an appropriate number of Ceph OSD nodes;
 if you configure a Cinder LVM over iSCSI role here,
 you must configure a Cinder LVM node.
+
+The "Ceph replication factor" value represents the minimum number of
+Ceph OSD instances that must be running for Ceph to be viable.
+At least two Ceph OSD nodes are recommended for production environments
+but it is possible to set this value to 1
+and then run OpenStack with a single Ceph OSD node.
