@@ -23,6 +23,36 @@ Mirantis OpenStack 5.0 includes Ubuntu 12.04.4,
 which can be used as the Host operating system
 for OpenStack nodes.
 
+Filter Scheduler improves how compute requests are dispatched
+-------------------------------------------------------------
+
+The Filter Scheduler is enabled by default for the nova-compute service.
+The scheduler determines how to allocate
+new VM instances among the configured Compute Nodes.
+The Filter Scheduler uses filtering and weighting
+to make better decisions
+than the older scheduler.
+Users can, however, select the traditional ("naive") scheduler
+from the Fuel "Settings" page.
+This is discussed more in the :ref:`scheduler-term` article.
+See `Some improvements in Nova Scheduler config
+<https://blueprints.launchpad.net/fuel/+spec/scheduler-config-improvements>`_.
+
+Overcommit ratio allows better resource allocation
+--------------------------------------------------
+
+The overcommit ratio allows you to assign more
+CPU, memory, and disk resources to allocated instances
+than is physically available on the Compute nodes.
+This allows you to better utilize the available resources
+because most instances are not fully active at the same time.
+
+See :ref:`overcommit-term` for information about
+modifying the overcommit ratio for your environment
+by manually editing a configuration file.
+The overcommit ratio is not configurable from the Fuel UI; see
+`LP1333436 <https://bugs.launchpad.net/fuel/+bug/1333436>`_.
+
 Sahara (Savanna) has been updated to the latest Icehouse version
 ----------------------------------------------------------------
 
