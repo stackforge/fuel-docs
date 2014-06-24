@@ -8,7 +8,7 @@
 Network settings
 ----------------
 
-Use the network settings screens to notify Fuel
+Use the "Network Settings" tab to notify Fuel
 about the network hardware that is configured.
 Different pages are used,
 depending on the network topology you chose

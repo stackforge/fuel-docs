@@ -8,7 +8,8 @@
 Configure your Environment
 ==========================
 
-After you exit from the "Create a New OpenStack Environment" wizard,
+After you create your OpenStack environment,
+click on the icon for that environment.
 Fuel displays a set of configuration tabs
 that you use to finish configuring your environment.
 
