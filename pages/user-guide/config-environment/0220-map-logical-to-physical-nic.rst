@@ -5,15 +5,18 @@ Mapping logical networks to physical interfaces on servers
 ----------------------------------------------------------
 
 Fuel allows you to use different physical interfaces
-to handle different types of traffic.
+to handle different types of traffic;
+see :ref:`logical-networks-arch` for more information.
 A logical network can be mapped
 to either a NIC or to a bond of NICs.
 
-When a node is added to the environment,
-click at the bottom line of the node icon.
-In the detailed information window,
-click the "Configure Interfaces" button
+To access this screen,
 to open the physical interfaces configuration screen.
+selecting a node or nodes and click the "Configure Interfaces" button.
+You can also access this screen
+by clicking the gear wheel to the right of the node listing;
+in the detailed information window that is displayed,
+click the "Configure Interfaces" button.
 
 .. image:: /_images/network_settings.jpg
   :align: center
