@@ -8,15 +8,38 @@
 Settings tab
 ------------
 
-   * Modify access permissions for Horizon
+The "Settings" tab allows you to set or modify
+various values for the system.
+Many other values can be set by editing configuration files
+and running command-line tools on the nodes.
 
-   * Modify OpenStack Components to include
+The "Settings" tab provides configuration access to:
 
-   * Hypervisor type
+* Security:  reset login credentials for Horizon,
+  set/reset login credentials for vCenter,
+  set the SSH Public Key
 
-   * Scheduler driver
+* Logging: set configuration parameters for Syslog,
+  turn debug logging on/off
 
-   * Storage
+* Modify characteristics defined when you first created
+  the Fuel environment, including which additional components
+  (Sahara, Murano, and Ceilometer) are included,
+  the hypervisor type, and the storage backend that are configured.
+
+* Instance management: whether to automatically assign a floating IP
+  to a new instance, whether to restart guests when the host reboots,
+  and which scheduler to use to determine how to dispatch
+  compute and volume requests.
+
+* Configure VLAN Splinters for environments
+  running CentOS on the target nodes
+  with the Neutron VLAN network topology.
+
+After you modify values on the "Settings" screen,
+click the "Load Settings" button at the bottom of the screen.
+If you want to go back to the Fuel default values,
+you can click on the "Load Defaults" button at the bottom of the screen.
 
 .. include:: /pages/user-guide/config-environment/settings/1000-access-horizon.rst
 .. include:: /pages/user-guide/config-environment/settings/1500-modify-services.rst
