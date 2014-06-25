@@ -7,9 +7,13 @@ Changing PXE Network Parameters During Installation
 You may also need to customize the network settings for the Admin
 (PXE) logical network.
 
-If you are using the VirtualBox automated scripts to deploy Fuel
-you can modify the ``vm_master_ip`` parameter in the *config.sh* file
-to get to this functionality.
+.. note::  The VirtualBox automated scripts
+   depend on the network configuration in the *config.sh* file
+   so the virtual Fuel Master Node can connect to the virtual nodes correctly.
+   Do not use Fuel Setup to configure the Admin network interface
+   when using VirtualBox,
+   but you can view this Fuel Setup screen
+   by modifying the ``vm_master_ip`` parameter in the *config.sh* file.
 
 By default, ``eth0`` on the Fuel Master node listens to PXE requests
 from the Fuel Admin (PXE booting) network, which has a default
@@ -354,13 +358,5 @@ master node manual settings
 
   Once IP settings are set at boot time for Fuel Master node,
   they **should not be changed during the entire lifecycle of Fuel.**
-
-.. note::  The VirtualBox automated scripts
-   depend on the network configuration in the *config.sh* file
-   so it can connect to the virtual nodes correctly.
-   Do not use Fuel Setup to configure the Admin network interface
-   when using VirtualBox,
-   but you can view this Fuel Setup screen
-   by modifying the ``vm_master_ip`` parameter in the *config.sh* file.
 
 
