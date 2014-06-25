@@ -23,7 +23,6 @@
    PageBreak oneColumn
 
 .. toctree::
-   :maxdepth: 3
 
 .. include:: /pages/preface/preface.rst
 .. include:: /contents/contents-release-notes.rst

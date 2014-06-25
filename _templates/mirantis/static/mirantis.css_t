@@ -106,7 +106,7 @@ div.sphinxsidebar
 }
 
 div.sphinxsidebar #searchbox input[type="text"] {
-    width: 145px;
+    width: {{ theme_sidebarwidth|replace('px','')|int - 50 }}px;
 }
 
 div.sphinxsidebar .searchtip

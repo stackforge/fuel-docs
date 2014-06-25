@@ -7,6 +7,5 @@ Running Mirantis OpenStack on VirtualBox
 ========================================
 
 .. contents:: :local:
-  :depth: 3
 
 .. include:: /contents/contents-virtualbox.rst

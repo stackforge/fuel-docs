@@ -9,9 +9,8 @@
 Documentation
 =============================
 
-.. toctree:: 
-  :maxdepth: 1
-  
+.. toctree::
+
   planning-guide
   user-guide
   operations
