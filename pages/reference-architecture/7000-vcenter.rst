@@ -106,3 +106,15 @@ as the OpenStack Controller nodes.
 The Nova Compute service must be able to reach
 the vCenter management IP from the OpenStack Public network
 in order to connect to the vSphere API.
+
+.. _fuel-on-vsphere-arch:
+
+Fuel running under vSphere
+--------------------------
+
+.. image:: /_images/vCenter/Fuel_in_vCenter_networking.png
+   :width: 80%
+
+For information about configuring your vSphere environment
+so that you can install Fuel in it,
+see :ref:`fuel-on-vsphere-plan`.
