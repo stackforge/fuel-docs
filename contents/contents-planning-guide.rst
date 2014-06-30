@@ -7,6 +7,7 @@
 .. include:: /pages/planning-guide/4400-nodes-roles.rst
 .. include:: /pages/planning-guide/7000-sahara-plan.rst
 .. include:: /pages/planning-guide/7000-vcenter-plan.rst
+.. include:: /pages/planning-guide/7300-fuel-on-vsphere-prepare.rst
 .. include:: /pages/planning-guide/4500-hardware.rst
 .. include:: /pages/planning-guide/0010-prerequisites.rst
 .. include:: /pages/planning-guide/0080-reference-configuration.rst

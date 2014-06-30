@@ -106,8 +106,8 @@ Complete the creation of your vCenter environment
 
 Select "Create" and click on the icon for your named environment.
 
-Configure your environment
-==========================
+Configure your environment for vCenter
+======================================
 
 After you exit from the "Create a New OpenStack Environment" wizard,
 Fuel displays a set of configuration tabs
@@ -119,9 +119,10 @@ integrated with vSphere.
 
 Assign a role or roles to each node server
 ------------------------------------------
-For VMware vCenter integration.
-Nova plugin runs on the Controller node.
-Compute and Controller roles are combined on one node.
+
+For VMware vCenter integration,
+the Nova plugin runs on the Controller node.
+The Compute and Controller roles are combined on one node.
 
 .. image:: /_images/user_screen_shots/vcenter-add-nodes.png
    :width: 50%
