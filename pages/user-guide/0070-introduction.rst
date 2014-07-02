@@ -9,6 +9,7 @@ Introduction to the User Guide
 This guide gives instructions for using
 the Fuel Master node and the graphical Fuel screens
 to deploy a Mirantis OpenStack environment.
+
 Before you do the procedures in this document,
 you should work through the information and procedures in the
 :ref:`Planning Guide<planning-guide>`.
