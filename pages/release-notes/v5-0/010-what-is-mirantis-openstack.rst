@@ -19,8 +19,10 @@ Fuel also eases the complexities of network and storage configurations
 through a simple-to-use graphical user experience. Baked into Fuel are:
 
 * Mirantis reference architectures that we have tested and certified
-  to ensure that your deployed clouds are scalable, reliable, and production quality.
-* An open and flexible library that enables customers to make configuration changes
+  to ensure that your deployed clouds are scalable, reliable,
+  and production quality.
+* An open and flexible library
+  that enables customers to make configuration changes
   that may be more advanced or focused than the default choices within Fuel.
   This library also empowers organizations to fold additional drivers
   or integrations into the deployed environment.

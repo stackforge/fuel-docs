@@ -8,6 +8,13 @@ Mirantis OpenStack 5.0 includes CentOS 6.5,
 which can be used as the operating system for the Fuel Master Node
 or the Host Operating System for OpenStack nodes.
 
+The Ubuntu 12.04.4 operating system is included
+-----------------------------------------------
+
+Mirantis OpenStack 5.0 includes Ubuntu 12.04.4,
+which can be used as the Host operating system
+for OpenStack nodes.
+
 The supplied operating systems are protected against the “Heartbleed” defect in OpenSSL
 ---------------------------------------------------------------------------------------
 
@@ -15,13 +22,6 @@ While the standard distribution of CentOS 6.5 and Ubuntu 12.04.4 were
 vulnerable to the Heartbleed defect in OpenSSL, the Mirantis OpenStack 5.0
 packages have been updated with the patched 1.0.1g version and are thus
 protected against the vulnerability.
-
-Ubuntu 12.04.4 operating system is included
--------------------------------------------
-
-Mirantis OpenStack 5.0 includes Ubuntu 12.04.4,
-which can be used as the Host operating system
-for OpenStack nodes.
 
 Filter Scheduler improves how compute requests are dispatched
 -------------------------------------------------------------
