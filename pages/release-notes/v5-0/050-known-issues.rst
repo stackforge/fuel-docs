@@ -1,5 +1,5 @@
-Known Issues in Mirantis OpenStack 5.0
-======================================
+Known Issues in Mirantis OpenStack 5.0.1
+========================================
 
 Known limitations for the vCenter integration
 ---------------------------------------------
@@ -100,7 +100,8 @@ but sdc will not be used  as part of the RAID-1 array:
            super 1.0 [2/2] [UU]
 
 
-See `LP1267569 <https://bugs.launchpad.net/fuel/+bug/1267569>`_.
+See `LP1267569 <https://bugs.launchpad.net/fuel/+bug/1267569>`_
+and `LP1258347 <https://bugs.launchpad.net/fuel/+bug/1258347>`_.
 
 Some UEFI hardware cannot be used
 ---------------------------------
@@ -161,15 +162,6 @@ you can use the :ref:`Fuel CLI<cli_usage>` to use other physical interfaces
 when you configure your environment.
 See `LP1285059 <https://bugs.launchpad.net/fuel/+bug/1285059>`_.
 
-CentOS issues booting on Dell servers
--------------------------------------
-
-Because of a CentOS bug
-(see `CentOS6492 <http://bugs.centos.org/view.php?id=6492>`_),
-kernel parameters must be adjusted
-to allow OpenStack to be provisioned on Dell servers.
-See `LP1312671 <https://bugs.launchpad.net/fuel/+bug/1312671>`_.
-
 CentOS does not support some newer CPUs
 ---------------------------------------
 
@@ -189,10 +181,12 @@ such as QEMU or KVM, to emulate an older CPU on such systems.
 Note that VirtualBox has no CPU model emulation feature.
 See `LP1322502 <https://bugs.launchpad.net/fuel/+bug/1322502>`_.
 
-CentOS kernel issues on certain hardware
-----------------------------------------
+CentOS issues booting on some servers
+-------------------------------------
 
-Deployments that use CentOS as the host OS on the OpenStack nodes
+Because of a CentOS bug
+(see `CentOS6492 <http://bugs.centos.org/view.php?id=6492>`_),
+deployments that use CentOS as the host OS on the OpenStack nodes
 may get stuck at the very beginning of the provisioning stage
 because of boot issues on some hardware.
 To resolve this situation,
@@ -209,39 +203,6 @@ Then run this command in the Fuel Master node shell:
     --kopts="ipmi_si.tryacpi=0 ipmi_s i.trydefaults=0 ipmi_si.trydmi=0" --in-place
 
 See `LP1312671 <https://bugs.launchpad.net/fuel/+bug/1312671>`_.
-
-Bootstrap kernel issues on certain hardware
--------------------------------------------
-
-The bootstrap image shipped with Mirantis OpenStack
-is based on a 3.10 kernel with firmware built from 
-the in-kernel tree.
-This can lead to issues with some hardware configurations,
-(including some Dell R410/R610s servers).
-See `LP1323354 <https://bugs.launchpad.net/fuel/+bug/1323354>`_
-for details.
-As a workaround, use `bootstrap image with 2.6 kernel <http://9f2b43d3ab92f886c3f0-e8d43ffad23ec549234584e5c62a6e24.r60.cf1.rackcdn.com/bootstrap-5.0-kernel-2.6.zip>`_.
-Copy the downloaded zip archive to the Fuel master node
-::
-
-    scp bootstrap-5.0-kernel-2.6.zip root@10.20.0.2:/root/
-
-Log in to Fuel master node and run the following commands to install new bootstrap:
-::
-
-    cd /root/
-    yum -y install unzip
-    unzip bootstrap-5.0-kernel-2.6.zip
-    cp -b linux /var/www/nailgun/bootstrap/
-    chmod +x /var/www/nailgun/bootstrap/linux
-    chmod -w /var/www/nailgun/bootstrap/linux
-    cp -b initramfs.img /var/www/nailgun/bootstrap/
-    cobbler sync
-
-.. note:: Existing bootstrap files will be renamed to linux~ and initramfs.img~.
-
-To apply changes to already bootstrapped nodes, simply reboot the
-affected nodes to boot with the 2.6 kernel.
 
 Bootstrap does not see Brocade NICs
 -----------------------------------
@@ -331,14 +292,6 @@ Glance may not send notifications to Ceilometer
 so notifications such as "image.update" and "image.upload"
 are not reported in the "ceilometer meter-list" output.
 See `LP1314196 <https://bugs.launchpad.net/fuel/+bug/1314196>`_.
-
-Stopping deployment in VirtualBox may damage filesystem
--------------------------------------------------------
-
-Clicking the "Stop Deployment" button when modifying
-a provisioned node may destroy the nodes's filesystem
-when running OpenStack on VirtualBox.
-See `LP1316583 <https://bugs.launchpad.net/fuel/+bug/1316583>`_.
 
 Live Migration does not work if the instance has floating IP assigned
 ---------------------------------------------------------------------
