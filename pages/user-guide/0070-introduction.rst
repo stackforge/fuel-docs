@@ -9,6 +9,13 @@ Introduction to the User Guide
 This guide gives instructions for using
 the Fuel Master node and the graphical Fuel screens
 to deploy a Mirantis OpenStack environment.
+Note that, beginning with Fuel 5.0.1,
+you can upgrade an existing Mirantis Open Stack environment
+to the new version without redeploying that environment,
+or you can manage an existing 5.0 environment
+along with new 5.0.1 environments from Fuel 5.0.1.
+See :ref:`upgrade-ug` for instructions.
+
 Before you do the procedures in this document,
 you should work through the information and procedures in the
 :ref:`Planning Guide<planning-guide>`.
