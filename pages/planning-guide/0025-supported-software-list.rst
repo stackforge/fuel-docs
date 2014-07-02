@@ -14,7 +14,7 @@ Supported Software
 
 * **OpenStack Core Projects**
 
-  * Icehouse release 2014.1
+  * Icehouse release 2014.1.1
 
     * Nova (OpenStack Compute)
     * Swift (OpenStack Object Storage)
@@ -26,14 +26,14 @@ Supported Software
 
 * **OpenStack Core Integrated Projects**
 
-  * Icehouse release 2014.1
+  * Icehouse release 2014.1.1
 
     * Ceilometer (OpenStack Telemetry)
     * Heat (OpenStack Orchestration)
 
 * **OpenStack Incubated Projects**
 
-  * Icehouse release 2014.1
+  * Icehouse release 2014.1.1
 
     * Sahara (OpenStack Data Processing)
 
