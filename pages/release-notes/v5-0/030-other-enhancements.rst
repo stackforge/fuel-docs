@@ -4,24 +4,24 @@ Other Enhancements
 The CentOS 6.5 operating system is included
 -------------------------------------------
 
-Mirantis OpenStack 5.0 includes CentOS 6.5,
+Mirantis OpenStack 5.x includes CentOS 6.5,
 which can be used as the operating system for the Fuel Master Node
 or the Host Operating System for OpenStack nodes.
+
+The Ubuntu 12.04.4 operating system is included
+-----------------------------------------------
+
+Mirantis OpenStack 5.x includes Ubuntu 12.04.4,
+which can be used as the Host operating system
+for OpenStack nodes.
 
 The supplied operating systems are protected against the “Heartbleed” defect in OpenSSL
 ---------------------------------------------------------------------------------------
 
-While the standard distribution of CentOS 6.5 and Ubuntu 12.04.4 were
-vulnerable to the Heartbleed defect in OpenSSL, the Mirantis OpenStack 5.0
+While the standard distribution of CentOS 6.5 and Ubuntu 12.04.4 are
+vulnerable to the Heartbleed defect in OpenSSL, the Mirantis OpenStack 5.x
 packages have been updated with the patched 1.0.1g version and are thus
 protected against the vulnerability.
-
-Ubuntu 12.04.4 operating system is included
--------------------------------------------
-
-Mirantis OpenStack 5.0 includes Ubuntu 12.04.4,
-which can be used as the Host operating system
-for OpenStack nodes.
 
 Filter Scheduler improves how compute requests are dispatched
 -------------------------------------------------------------
@@ -34,9 +34,10 @@ to make better decisions
 than the older scheduler.
 Users can, however, select the traditional ("naive") scheduler
 from the Fuel "Settings" page.
-This is discussed more in the :ref:`scheduler-term` article.
+This is discussed more in the :ref:`Scheduler, Nova<scheduler-term>` article.
 See `Some improvements in Nova Scheduler config
-<https://blueprints.launchpad.net/fuel/+spec/scheduler-config-improvements>`_.
+<https://blueprints.launchpad.net/fuel/+spec/scheduler-config-improvements>`_
+for background information.
 
 Overcommit ratio allows better resource allocation
 --------------------------------------------------
@@ -47,7 +48,7 @@ than is physically available on the Compute nodes.
 This allows you to better utilize the available resources
 because most instances are not fully active at the same time.
 
-See :ref:`overcommit-term` for information about
+See :ref:`Overcommit ration<overcommit-term>` for information about
 modifying the overcommit ratio for your environment
 by manually editing a configuration file.
 The overcommit ratio is not configurable from the Fuel UI; see
@@ -56,7 +57,7 @@ The overcommit ratio is not configurable from the Fuel UI; see
 Sahara (Savanna) has been updated to the latest Icehouse version
 ----------------------------------------------------------------
 
-The Sahara project provided with Mirantis OpenStack 5.0
+The Sahara project provided with Mirantis OpenStack 5.x
 has been updated to the Icehouse version.
 This major release of Sahara includes several bug fixes
 and the following enhancements:
@@ -72,13 +73,15 @@ Note that what was previously known as the Savanna project
 is now called the Sahara project;
 this resolves a trademark infringement issue.
 
+See :ref:`Planning a Sahara Deployment<sahara-plan>`
+to get started implementing Sahara on Mirantis OpenStack.
 Additional information about Sahara can be found on the
 `Sahara project web page <https://wiki.openstack.org/wiki/Sahara>`_.
 
 Murano has been updated to the latest Icehouse version
 ------------------------------------------------------
 
-Mirantis OpenStack 5.0 includes
+Mirantis OpenStack 5.x includes
 `version 0.5 <https://launchpad.net/murano/+milestone/0.5>`_
 of `Murano <https://wiki.openstack.org/wiki/Murano>`_,
 an application catalog and data services lifecycle management addition
@@ -94,13 +97,16 @@ and the following enhancements:
 - An improved UI
 - Application statistics that can be used for billing purposes
 
-For detailed information, please refer to the `Release Notes for Murano 
+For detailed information about Murano,
+see the `Release Notes for Murano 
 version 0.5 <https://wiki.openstack.org/wiki/Murano/ReleaseNotes_v0.5>`_.
+For information about deploying Murano with Fuel,
+see :ref:`Murano Deployment Notes<Murano-deployment-notes>`.
 
 Addition of "Live Migrate" option in Horizon
 --------------------------------------------
 
-The Icehouse version of Horizon that is included in Mirantis OpenStack 5.0
+The Icehouse version of Horizon that is included in Mirantis OpenStack 5.x
 includes a "Live Migrate" option.
 This solves some issues that occurred in earlier versions
 when migrating instances using Horizon.
