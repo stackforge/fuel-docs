@@ -100,7 +100,8 @@ but sdc will not be used  as part of the RAID-1 array:
            super 1.0 [2/2] [UU]
 
 
-See `LP1267569 <https://bugs.launchpad.net/fuel/+bug/1267569>`_.
+See `LP1267569 <https://bugs.launchpad.net/fuel/+bug/1267569>`_
+and `LP1258347 <https://bugs.launchpad.net/fuel/+bug/1258347>`_.
 
 Some UEFI hardware cannot be used
 ---------------------------------
@@ -161,15 +162,6 @@ you can use the :ref:`Fuel CLI<cli_usage>` to use other physical interfaces
 when you configure your environment.
 See `LP1285059 <https://bugs.launchpad.net/fuel/+bug/1285059>`_.
 
-CentOS issues booting on Dell servers
--------------------------------------
-
-Because of a CentOS bug
-(see `CentOS6492 <http://bugs.centos.org/view.php?id=6492>`_),
-kernel parameters must be adjusted
-to allow OpenStack to be provisioned on Dell servers.
-See `LP1312671 <https://bugs.launchpad.net/fuel/+bug/1312671>`_.
-
 CentOS does not support some newer CPUs
 ---------------------------------------
 
@@ -189,10 +181,12 @@ such as QEMU or KVM, to emulate an older CPU on such systems.
 Note that VirtualBox has no CPU model emulation feature.
 See `LP1322502 <https://bugs.launchpad.net/fuel/+bug/1322502>`_.
 
-CentOS kernel issues on certain hardware
-----------------------------------------
+CentOS issues booting on some servers
+-------------------------------------
 
-Deployments that use CentOS as the host OS on the OpenStack nodes
+Because of a CentOS bug
+(see `CentOS6492 <http://bugs.centos.org/view.php?id=6492>`_),
+deployments that use CentOS as the host OS on the OpenStack nodes
 may get stuck at the very beginning of the provisioning stage
 because of boot issues on some hardware.
 To resolve this situation,
@@ -331,14 +325,6 @@ Glance may not send notifications to Ceilometer
 so notifications such as "image.update" and "image.upload"
 are not reported in the "ceilometer meter-list" output.
 See `LP1314196 <https://bugs.launchpad.net/fuel/+bug/1314196>`_.
-
-Stopping deployment in VirtualBox may damage filesystem
--------------------------------------------------------
-
-Clicking the "Stop Deployment" button when modifying
-a provisioned node may destroy the nodes's filesystem
-when running OpenStack on VirtualBox.
-See `LP1316583 <https://bugs.launchpad.net/fuel/+bug/1316583>`_.
 
 Live Migration does not work if the instance has floating IP assigned
 ---------------------------------------------------------------------
