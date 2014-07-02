@@ -1,5 +1,5 @@
-Issues Resolved in Mirantis OpenStack 5.0
-=========================================
+Issues First Resolved in Mirantis OpenStack 5.0
+===============================================
 
 Sahara logging now works correctly
 ----------------------------------
@@ -137,7 +137,7 @@ See `LP1274784 <https://bugs.launchpad.net/fuel/+bug/1274784>`_.
 Nailgund now scales better for large environments
 -------------------------------------------------
 
-The nailgund daemon has been redesigned to better accomodate
+The nailgund daemon has been redesigned to better accommodate
 environments with more than 50 nodes.
 See `LP1274614 <https://bugs.launchpad.net/fuel/+bug/1274614>`_.
 Additional improvements to the scalability of nailgund
