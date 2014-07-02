@@ -1,5 +1,5 @@
-Known Issues in Mirantis OpenStack 5.0
-======================================
+Known Issues in Mirantis OpenStack 5.0.1
+========================================
 
 Known limitations for the vCenter integration
 ---------------------------------------------
@@ -22,7 +22,7 @@ but it has some known limitations:
   in the storage settings.
   It is possible to use Ceph as the storage backend for Glance
   and for Swift/S3 object storage,
-  but it must be configured .
+  but it must be configured manually.
   See `LP1316377 <https://bugs.launchpad.net/fuel/+bug/1316377>`_.
 
 Additional MongoDB roles cannot be added to an existing deployment
