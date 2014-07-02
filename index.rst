@@ -50,7 +50,7 @@ The following Mirantis OpenStack documentation is available in PDF:
   Short articles about OpenStack terminology and technology
   with references to other documentation and other useful information.
 
-* `Release Notes 5.0 <pdf/Mirantis-OpenStack-5.0-RelNotes.pdf>`_
+* `Release Notes 5.0.1 <pdf/Mirantis-OpenStack-5.0.1-RelNotes.pdf>`_
 
   The Release Notes provide general information about new features,
   fixed issues, and known limitations in Mirantis OpenStack |version|.
