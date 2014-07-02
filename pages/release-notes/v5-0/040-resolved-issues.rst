@@ -1,5 +1,5 @@
-Issues Resolved in Mirantis OpenStack 5.0
-=========================================
+Issues First Resolved in Mirantis OpenStack 5.0
+===============================================
 
 Sahara logging now works correctly
 ----------------------------------
@@ -137,7 +137,7 @@ See `LP1274784 <https://bugs.launchpad.net/fuel/+bug/1274784>`_.
 Nailgund now scales better for large environments
 -------------------------------------------------
 
-The nailgund daemon has been redesigned to better accomodate
+The nailgund daemon has been redesigned to better accommodate
 environments with more than 50 nodes.
 See `LP1274614 <https://bugs.launchpad.net/fuel/+bug/1274614>`_.
 Additional improvements to the scalability of nailgund
@@ -168,15 +168,15 @@ Fuel Master Node now runs on HP systems with Smart Array RAID hardware
 
 See `LP1312311 <https://bugs.launchpad.net/fuel/+bug/1312311>`_.
 
-Fuel UI now represents multiple disks correctly for Ubuntu on Vbox
-------------------------------------------------------------------
+Fuel UI now represents multiple SATA disks correctly for Ubuntu
+---------------------------------------------------------------
 
-This bug occurred because the Ubuntu kernel maps all hard drives on Vbox
+This bug occurred because the Ubuntu kernel maps all SATA drives
 into one address (sysfs PATH_ID)
 so, when multiple disks were configured,
 all the links were mapped to this one address.
-The solution was to rewrite Fuel so it identifies disks
-by ID and path rather than using the path that Vbox populates.
+The solution was to change Fuel provisioning script to identify disks
+by ID and path rather than using the sysfs PATH_ID.
 See `LP1263648 <https://bugs.launchpad.net/fuel/+bug/1263648>`_.
 
 Disk partitions are now unmounted before partitions are updated
