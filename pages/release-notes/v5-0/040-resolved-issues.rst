@@ -1,5 +1,5 @@
-Issues Resolved in Mirantis OpenStack 5.0
-=========================================
+Issues First Resolved in Mirantis OpenStack 5.0
+===============================================
 
 Sahara logging now works correctly
 ----------------------------------
