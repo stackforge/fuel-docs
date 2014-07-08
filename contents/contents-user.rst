@@ -4,4 +4,5 @@
 .. include:: /pages/user-guide/post-install-healthchecks.rst
 .. include:: /pages/user-guide/7000-sahara-install.rst
 .. include:: /pages/user-guide/vcenter.rst
+.. include:: /pages/user-guide/8000-upgrade.rst
 .. include:: /pages/user-guide/cli.rst
