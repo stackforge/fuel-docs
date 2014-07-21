@@ -11,49 +11,61 @@ Welcome to Mirantis OpenStack Documentation
 This page contains the most recent Mirantis OpenStack documentation.
 Select a document from the left menu and navigate through the topics.
 
-PDFs
-----
-The following Mirantis OpenStack documentation is available in PDF:
-
-* `Planning Guide <pdf/Mirantis-OpenStack-5.0-PlanningGuide.pdf>`_
+* **Planning Guide**
 
   Planning information you should consider before
   installing Fuel and deploying Mirantis OpenStack.
 
-.. * `Installation Guide <pdf/Mirantis-OpenStack-5.0-InstallGuide.pdf>`_
+  `HTML <./planning-guide.html>`__
+  `PDF  <pdf/Mirantis-OpenStack-5.0-PlanningGuide.pdf>`__
 
-  This document describes how to pre-configure your
-  OpenStack environment and install the Fuel Master Node.
-
-* `User Guide <pdf/Mirantis-OpenStack-5.0-UserGuide.pdf>`_
+* **User Guide**
 
   This document describes how to deploy Mirantis OpenStack environments
   using Fuel.
 
-* `Operations Guide <pdf/Mirantis-OpenStack-5.0-OperationsGuide.pdf>`_
+  `HTML <./user-guide.html>`__
+  `PDF  <pdf/Mirantis-OpenStack-5.0-UserGuide.pdf>`__
+
+* **Operations Guide**
 
   A collection of useful procedures for using and managing
   your Mirantis OpenStack environment.
 
-* `Running Mirantis OpenStack on VirtualBox <pdf/Mirantis-OpenStack-5.0-Running-Mirantis-OpenStack-on-VirtualBox.pdf>`_
+  `HTML <./operations.html>`__
+  `PDF  <pdf/Mirantis-OpenStack-5.0-OperationsGuide.pdf>`__
+
+* **Running Mirantis OpenStack on VirtualBox**
 
   This document provides information about running Mirantis OpenStack on VirtualBox
   for demonstration and evaluation purposes.
 
-* `Reference Architecture <pdf/Mirantis-OpenStack-5.0-ReferenceArchitecture.pdf>`_
+  `HTML <./virtualbox.html>`__
+  `PDF  <pdf/Mirantis-OpenStack-5.0-Running-Mirantis-OpenStack-on-VirtualBox.pdf>`__
+
+* **Reference Architecture**
 
   A deep dive into the structure of the Mirantis OpenStack environment,
   network considerations, and deployment options.
 
-* `Terminology Reference <pdf/Mirantis-OpenStack-5.0-Terminology-Reference.pdf>`_
+  `HTML <./reference-architecture.html>`__
+  `PDF  <pdf/Mirantis-OpenStack-5.0-ReferenceArchitecture.pdf>`__
+
+* **Terminology Reference**
 
   Short articles about OpenStack terminology and technology
   with references to other documentation and other useful information.
 
-* `Release Notes 5.0 <pdf/Mirantis-OpenStack-5.0-RelNotes.pdf>`_
+  `HTML <./terminology.html>`__
+  `PDF  <pdf/Mirantis-OpenStack-5.0-Terminology-Reference.pdf>`__
+
+* **Release Notes 5.0**
 
   The Release Notes provide general information about new features,
   fixed issues, and known limitations in Mirantis OpenStack |version|.
+
+  `HTML <./release-notes.html>`__
+  `PDF  <pdf/Mirantis-OpenStack-5.0-RelNotes.pdf>`__
 
 Download Mirantis OpenStack
 ---------------------------
