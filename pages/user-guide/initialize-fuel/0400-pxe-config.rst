@@ -65,6 +65,7 @@ start Fuel Setup during the first boot after installation.
 .. image:: /_images/fuel_welcome_customized_settings.jpg
   :width: 50%
 
+
 Within Fuel Setup, you can configure the following parameters:
 
 * DHCP/Static configuration for each network interface
@@ -73,6 +74,7 @@ Within Fuel Setup, you can configure the following parameters:
 * Define DHCP pool (bootstrap) and static range (installed nodes)
 * Set NTP servers for Time settings
 * Root password
+* Fuel password
 * DNS options
 * Launch shell for optional pre-deployment tasks
 
@@ -323,6 +325,26 @@ Shell login
 
 This section gives you the ability to log in to the master node console as root.
 You will be redirected back to the Fuel Setup after exit from shell.
+
+.. _fuel-passwd-ug:
+
+Fuel login
+----------
+
+This section enables you to modify the password
+used to log into the Fuel Dashboard:
+
+.. image:: /_images/authx/f_menu_pass.png
+  :width: 50%
+
+Changing this password here
+changes the password value in the *astute.yaml* file,
+which is necessary for the upgrade facilities to work.
+You can also modify the password from the Fuel UI screens
+and the Fuel CLI, but that only modifies the password in keystone
+and may prevent upgrade from running.
+See :ref:`fuel-passwd-ops` for more information
+about Fuel passwords.
 
 Quit Setup
 ----------
