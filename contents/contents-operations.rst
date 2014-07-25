@@ -5,6 +5,7 @@
 .. include:: /pages/operations/5400-puppet-custom-attributes.rst
 .. include:: /pages/operations/docker-on-master.rst
 .. include:: /pages/operations/2800-experimental.rst
+.. include:: /pages/operations/6500-fuel-auth.rst
 .. include:: /pages/operations/7000-sahara.rst
 .. include:: /pages/operations/7400-murano.rst
 .. include:: /pages/operations/7800-vcenter.rst
