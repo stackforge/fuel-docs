@@ -17,15 +17,33 @@ The boot messages display on your screen as Fuel boots up:
    :width: 50%
 
 When the system has booted,
-use the URL, administrator login name and password
-that are displayed on the boot screen.
-The default URL is http://10.20.0.2:8000/.
-This is your URL unless you modified the IP address
-during installation.
+you can log in:
 
+- Use the administrator login and password
+  that are displayed on the boot screen
+  (default root/r00tme)
+  to log into a shell on the Fuel Master node.
+  After you log in, use the **passwd** command
+  to change this password.
+
+- Use the URL displayed on this screen
+  to launch the Fuel UI;
+  the default URL is http://10.20.0.2:8000/.
+  This is your URL
+  unless you modified the IP address on the Fuel Setup screens.
+
+  Use the **admin** user name
+  and the Fuel password you set in in the Fuel Setup screens
+  (see :ref:`fuel-passwd-ug`)
+  to log in.
+  If you did not set a Fuel password during installation,
+  log in using **admin/admin** as the username/password.
+  You can change the password from the Fuel UI;
+  see :ref:`change-fuel-passwd-ug`.
+  
 Alternately, if the server on which the Fuel Master is installed
 has more than one NIC,
-you can use the second NIC to access the Fuel web interface:
+you can use the second NIC to access the Fuel UI:
 
 - Connect the NIC to the appropriate switch
 - Set the IP address for this NIC

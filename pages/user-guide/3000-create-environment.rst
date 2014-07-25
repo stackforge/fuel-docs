@@ -25,6 +25,9 @@ but you must create each environment separately.
 | icon to create a new       |                                           |
 | environment.               |                                           |
 +----------------------------+-------------------------------------------+
+| Modify the Fuel password   | See :ref:`change-fuel-passwd-ug`          |
+| (optional)                 |                                           |
++----------------------------+-------------------------------------------+
 | Choose the name for your   | See :ref:`name-distro-ug`                 |
 | environment and choose the |                                           |
 | Operating System (distro)  |                                           |
@@ -55,6 +58,7 @@ but you must create each environment separately.
 +----------------------------+-------------------------------------------+
 
 .. include:: /pages/user-guide/create-environment/1000-start-create-env.rst
+.. include:: /pages/user-guide/create-environment/1050-change-password.rst
 .. include:: /pages/user-guide/create-environment/1500-name-distro.rst
 .. include:: /pages/user-guide/create-environment/2000-mode-ha.rst
 .. include:: /pages/user-guide/create-environment/2500-hypervisor.rst
