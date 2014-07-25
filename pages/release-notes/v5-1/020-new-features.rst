@@ -77,8 +77,8 @@ are handled by a local instance of Keystone
 that is present on the Fuel Master Node.
 Users can change their passwords within the Fuel UI.
 
-More information on setting and updating the user names and passwords
-for the system can be found in the on-line documentation.
+Information about setting and updating the user names and passwords
+for the system can be found in :ref:`fuel-passwd-ops`.
 
 Mirantis OpenStack now deploys the ML2 Open vSwitch plug-in for Neutron
 -----------------------------------------------------------------------
