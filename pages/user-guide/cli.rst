@@ -184,7 +184,7 @@ Configuration of environment or some node is universal and done in three stages
 Deployment
 ++++++++++
 
-Finally you can deploying environmnet changes with
+You can deploy environment changes with:
 
 ::
 
@@ -196,3 +196,24 @@ Also, you can deploy and provision only some nodes like this
 
   fuel --env 1 node --provision --node 1,2
   fuel --env 1 node --deploy --node 1,2
+<<<<<<< HEAD
+=======
+
+.. _cli-fuel-password:
+
+Change Fuel password
+++++++++++++++++++++
+
+You can change the Fuel Master Node password with:
+
+::
+
+   fuel user --change-password --new-pass=*new*
+
+You can use flags to provide user name and password
+to other fuel cli commands:
+
+:: --os-username=admin --os-password=test
+
+See :ref:`fuel-passwd-ops` for more information
+about Fuel authentication.
