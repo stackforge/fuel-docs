@@ -4,13 +4,24 @@
 Launch Wizard to Create New Environment
 ---------------------------------------
 
-Follow the instructions in :ref:`boot-fuel-master-ug`
-to log into the Fuel UI if you have not already done so.
+If you have not already done so,
+point a browser window to http://10.20.0.2:8000/
+to log into the Fuel UI.
+See :ref:`boot-fuel-master-ug` for more information.
+
+The Fuel Login screen appears:
+
+.. image:: /_images/user_screen_shots/fuel_log_in_panel_blank.png
+   :width: 40%
+
+Use the **admin** username
+and the Fuel password you created above;
+the password is **admin** if you did not reset it during installation.
 
 The Fuel UI screen appears:
 
 .. image:: /_images/user_screen_shots/create_new_environ.png
-   :width: 50%
+   :width: 80%
 
 
 Click on the "New OpenStack environment" icon
