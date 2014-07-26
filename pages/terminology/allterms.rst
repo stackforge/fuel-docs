@@ -3,6 +3,7 @@
 Terminology Reference
 =====================
 
+.. include:: /pages/terminology/a/availability-zone.rst
 .. include:: /pages/terminology/b/bonding.rst
 .. include:: /pages/terminology/c/ceilometer.rst
 .. include:: /pages/terminology/c/ceph.rst
@@ -22,6 +23,7 @@ Terminology Reference
 .. include:: /pages/terminology/h/havana-term.rst
 .. include:: /pages/terminology/h/heat.rst
 .. include:: /pages/terminology/h/horizon.rst
+.. include:: /pages/terminology/h/host-aggregates.rst
 .. include:: /pages/terminology/h/hypervisor.rst
 .. include:: /pages/terminology/i/icehouse.rst
 .. include:: /pages/terminology/i/identity-service.rst

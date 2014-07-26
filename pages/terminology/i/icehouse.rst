@@ -12,8 +12,6 @@ the Icehouse code base.
 The following features in Icehouse are not deployed by Fuel 5.x
 but can be configured manually using the standard OpenStack practices:
 
-* Nova Compute: Cells, Availability zones, Host aggregates
-
 * Neutron: Load Balancer as a Service (LBaaS),
 
 * Multiple L3 and DHCP agents per cloud
