@@ -1,3 +1,16 @@
+function close_toc() {
+  $('.sphinxglobaltoc').removeClass('addshadow');
+  $('.sphinxglobaltoc ul ul').hide();
+};
+
+function focus_toc() {
+  $('.sphinxglobaltoc').addClass('addshadow');
+}
+
+function toc_is_focused() {
+  return $('.sphinxglobaltoc').hasClass('addshadow')
+}
+
 jQuery(window).load(function() {
   var toc_open_timer;
   var toc_close_timer;
@@ -7,7 +20,7 @@ jQuery(window).load(function() {
   $('.sphinxglobaltoc ul ul').hide();
 
   $('.sphinxglobaltoc li').on({
-    'click': function (event) {
+    'click tap' : function (event) {
       var children = $(this).children('ul');
       if ((children.length > 0) && !children.first().is(":visible")) {
         event.preventDefault();
@@ -17,17 +30,31 @@ jQuery(window).load(function() {
   });
 
   $('.sphinxglobaltoc').on({
-    'mouseout' :function() {
-      var that = this;
+    'mouseout' : function() {
       toc_close_timer = setTimeout(function() {
-        $('.sphinxglobaltoc ul ul').hide();
+        close_toc();
       },
       close_time);
     },
     'mouseover' : function() {
+      focus_toc();
       if (typeof toc_close_timer != undefined) {
         clearTimeout(toc_close_timer);
       }
+    },
+    'click tap' : function(event) {
+      if (event.target != this) return;
+      if (toc_is_focused()) {
+        close_toc();
+      } else {
+        focus_toc();
+      }
+    }
+  });
+
+  $('.body').on({
+    'click tap' : function() {
+      close_toc();
     }
   });
 

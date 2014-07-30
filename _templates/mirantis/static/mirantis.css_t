@@ -9,10 +9,9 @@
  *
  *****************************************************/
 
-@import url("cloud.css");
-
+@import url("bootstrap.css");
+@import url("cloud_.css");
 @import url("mirantis_style.css");
-@import url("menu.css");
 
 .highlight .hll {
     background-color: #C0FF7C !important;
@@ -61,33 +60,8 @@ div.sidebartoggle button
    border-top: 1px solid {{ theme_sidebartrimcolor }};
 } 
 
-div.body h1 {
-    text-align: left;
-    font-size: 200%;
-}
-
-div.body h2 {
-    font-size: 180%;
-    margin: 1em 0 0 0;
-}
-
-div.body h3 {
-    font-size: 160%;
-    margin: 1em 0 .25em 0;
-}
-
-div.body h4 {
-    font-size: 140%;
-    margin: 1em 0 .25em 0;
-}
-
-div.body h5 {
-    font-size: 130%;
-    margin: 1em 0 .25em 0;
-}
-
 div.body h6 {
-    font-size: 120%;
+
     margin: 1em 0 .25em 0;
 }
 
@@ -105,9 +79,11 @@ div.sphinxsidebar
     line-height: 100%;
 }
 
+/*
 div.sphinxsidebar #searchbox input[type="text"] {
     width: {{ theme_sidebarwidth|replace('px','')|int - 50 }}px;
 }
+*/
 
 div.sphinxsidebar .searchtip
 {
