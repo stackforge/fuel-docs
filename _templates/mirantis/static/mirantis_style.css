@@ -1,7 +1,121 @@
+html, body {
+	font-family: 'PT Sans', arial, sans-serif;
+	font-size: 14px;
+	color:#495061;
+	line-height: 1.428571429;
+	margin:0;
+	background: white;
+}
+div.clear {clear:both;}
+
+p {
+	font-style: normal;
+	margin:6px 0px 15px 0px;
+}
+
+a {
+	/*color:#276AA8;*/
+	color:#207CD1;
+	text-decoration:none;
+}
+a:hover {
+	color:#31b3ed;
+	text-decoration:none;	
+}
+
+.section img {margin:10px auto;display:block}
+
+/*
+ul {
+list-style-image: url("http://www.mirantis.com/wp-content/themes/carrington-jam-1.4/imgresp/bull.png");
+}
+
+ul ul {
+list-style-image: url("http://www.mirantis.com/wp-content/themes/carrington-jam-1.4/imgresp/bull_sm_red.png");
+}
+
+ul ul ul {
+list-style-image: url("http://www.mirantis.com/wp-content/themes/carrington-jam-1.4/imgresp/bull_gray.png");
+}
+*/
+
+li {margin-bottom: 3px; margin-top: 3px;}
+ul ul li  {}
+
+
+h1 {
+font-family: 'PT Sans Caption', arial, sans-serif;
+margin-top:0;
+margin-bottom:20px;
+font-weight: bold;
+font-style: normal;
+font-size: 2em;
+color: black;
+line-height: 1.0em;
+}
+
+h1 a {color: black;}
+
+header h1 {font-weight: bold; color: white;line-height:1.0em; margin-bottom:10px;}
+
+h2 {
+    color: #D3301A;
+    font-family: 'PT Sans Caption', Verdana, sans-serif;
+	font-size: 1.4em;
+    font-weight: normal;
+    letter-spacing: 0;
+    word-spacing: 0;
+	line-height: 1.0em;
+	margin-top: 5px;
+	margin-bottom: 8px;	
+	text-transform: uppercase;
+}
+
+h2 a  {color: #D3301A;} 
+h2 a.external {color:#207CD1;}
+
+h3 {
+font-family: 'PT Sans Caption', arial, sans-serif;
+font-size: 1.3em;
+font-weight: normal;
+margin-top: 0px;
+margin-bottom: 14px;
+color: black;
+line-height: 1.1em;
+text-transform: uppercase;
+}
+
+h3 a {color: black;}
+
+h4 {
+font-family: 'PT Sans Caption', Verdana, sans-serif;
+font-size: 19px;
+font-weight: normal;
+margin-top: 15px;
+margin-bottom: 14px;
+color: #455C74;
+text-transform: uppercase;
+line-height: 1.0em;
+}
+
+h4 a {color: #455C74;}
+
+h5, h6 {
+font-family: 'PT Sans Caption', Verdana, sans-serif;
+font-size: 17px;
+font-weight: normal;
+margin-top: 15px;
+margin-bottom: 14px;
+color: #455C74;
+text-transform: uppercase;
+line-height: 1.0em;
+}
+
+h5 a, h6 a {color: #455C74;}
+
 div.sphinxsidebar p.logo
 {
-    margin: 1em 10px 0 -10px;
-    text-align: right;
+    margin: 1em 10px 0 0px;
 }
 
 div.sphinxsidebar img.logo
@@ -18,12 +132,15 @@ div.sphinxsidebar img.logo
 
 .sphinxglobaltoc li.current a
 {
-    font-weight: bold;
+   /* font-weight: bold;*/
+   color:black;
 }
 
-li.toctree-l1, li.toctree-l2
+li.toctree-l1, li.toctree-l2, li.toctree-l3, li.toctree-l4, li.toctree-l5
 {
   margin-top: 4px;
+  text-indent:-20px;
+  padding-left: 20px;
 }
 
 div#disqus_thread
@@ -56,49 +173,10 @@ div.relbar-top div.related, div.relbar-bottom div.related
   -webkit-border-radius: 0 0 0 0;
 }
 
-html, body {
-  font-family: 'PT Sans', arial, sans-serif;
-  font-size: 14px;
-  color: #41454d;
-}
-
-body.inner {background: url(inner_body_tile.jpg) repeat-x;}
-
 table.pageheader {
 width: 100%;
 }
 
-a {
-  color: #D32F1A;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #F00;
-}
-
-p {
-  font-size: 15px;
-  color: #41454D;
-  font-style: normal;
-  margin: 6px 0px 15px 0px;
-}
-
-div.page {
-  width: 960px;
-  margin: 0 auto;
-}
-
-div.page h2 {
-  font-family: 'PT Sans Narrow', 'Arial Narrow', arial, sans-serif;
-  font-size: 23px;
-  font-weight: normal;
-  font-style: normal;
-  padding-top: 10px;
-  margin-bottom: 10px;
-  padding-left: 10px;
-  text-shadow: 1px 1px 0 #fff;
-}
 
 input[type="text"],
 input[type="password"] {
@@ -482,6 +560,76 @@ a.active {
   text-shadow: 1px 1px 0px white;
 
 }
+#headerground {background: #161b24 url(http://www.mirantis.com/wp-content/themes/carrington-jam-1.4/imgresp/gears_light.jpg) no-repeat center center;transition: all 0.2s ease;background-size: cover;}
+header  {transition: all 0.2s ease;background-size:cover;background: linear-gradient(to bottom, rgba(13,15,2,0.7) 0%,rgba(0,0,0,0) 100%);}
+
+
+
+#mira-right{float: right;background:#202538; font-family: 'PT Sans Caption', 'PT Sans', arial, sans-serif;position: absolute;display: none; right:0;z-index:10; top: 50px;transition: all 0.2s ease; padding:0 0 15px 0;box-shadow:0 0 20px rgba(0,0,0,0.5);}
+
+
+#mira-right ul {list-style-image: none; list-style-type: none; margin:0; padding:0;}
+#mira-right ul li{margin:0; padding:0;}
+
+#mira-right ul li a {text-transform: uppercase; color: white; display: block; padding:10px 10px 10px 15px;margin:0;transition: all 0.2s ease;}
+#mira-right ul li a:hover {color: #41c4ff; background:#3f4f69;}
+#mira-right ul ul li a {font-size: 90%; color: #59A4D6; padding: 5px 5px 5px 30px;}
+#mira-right ul ul li a:hover {color: #41c4ff;}
+.mirarignt_selected {background: #d63327;}
+
+#mira-menu {margin-top: 20px; text-align: right; padding:0;}
+#mira-menu-int {margin-top: 10px; text-align: right; padding:0;}
+#mira-menu-switch{display: none; float: right;}
+div.innermenu_sw {position: relative;float: right;padding: 9px 10px;margin-top: 8px;margin-bottom: 8px;background: #5f8cb6;color: white;box-shadow: 0 3px 0 #436281;}
+div.innermenu_sw:hover {cursor:pointer;background:#2d9ed0; color:white;  box-shadow: 0 3px 0 #2789b5;}
+div.innermenu_sw span {display: block;background:white;width: 22px;height: 2px;border-radius: 1px;}
+div.innermenu_sw span  + span {margin-top:5px;}
+
+div.col_miramenu_int {padding:0;}
+
+a.glink {
+
+color: white;
+display: inline-block;
+font-family: 'PT Sans Narrow', 'Arial Narrow', arial,sans-serif;
+font-size: 19px;
+letter-spacing: 1px;
+padding: 5px 16px;
+margin:0;
+white-space: nowrap;
+text-decoration: none;
+transition: all 0.2s ease;
+/*text-transform: uppercase;
+border-bottom: 2px solid black;
+background: rgba(0,0,0,0.5);*/
+}
+
+a.glink:hover {color:#c0200c; background: white; border-bottom: 2px solid black;}
+
+
+
+
+
+footer {padding: 20px 0 0 0; background: #161b24 url(http://www.mirantis.com/wp-content/themes/carrington-jam-1.4/imgresp/gearcloud_dark_footer.jpg) no-repeat center center;}
+footer ul  {margin: 0 0 15px 0; list-style-type:none; list-style-image:none;padding: 0;}
+footer ul  li {line-height: 16px; margin-bottom:0;}
+footer a {font-family: 'PT Sans Caption', 'PT Sans', arial, sans-serif;font-size: 11px;text-transform: uppercase;color: #58B7F5;}
+footer a:hover {color: #8BD1FF}
+footer p {margin-bottom: 6px;}
+footer p a {font-family: 'PT Sans Narrow', 'Arial Narrow', arial, sans-serif; font-size: 15px; color: black; text-transform: uppercase;}
+span.pureplay_btm {color: #d63327; font-size: 12px;}
+span.mira_btm {color: white}
+span.copy_btm {color:#929aa2;}
+.footer_copy {margin-top: 30px; background:rgba(0,0,0,0.5); padding: 10px 0;}
+div.col-copy {text-align: center;}
+div.col-address {text-align:right;}
+
+a.fmenu_section {
+font-size: 1.2em;
+padding-bottom: 12px;
+display: inline-block;
+color: white;
+}
 
 #foottable  td {
   padding-top: 20px;
@@ -525,4 +673,178 @@ a.external:before {
 tt.literal
 {
   border: none;
+}
+
+/*  MEGAMENU  */
+
+#miramenu1:hover, #miramenu2:hover, #miramenu4:hover, #miramenu5:hover, #miramenu7:hover {background: white;
+color: #d63327;
+border-radius: 3px 3px 0 0;}
+
+div.megamenu_container {
+position: absolute;
+top: 42px;
+left: -9000px;
+background: white;
+border-radius: 3px 3px 6px 6px;
+box-shadow: 0 15px 20px rgba(31,48,60,0.1);
+z-index:10;
+padding: 0 15px 5px 15px;
+}
+
+/*#mega6 {left: 50% !Important;}*/
+div.megahidden {display: none;}
+div.megamenu div {/*border-right: 1px solid #eceded;*/}
+div.megamenu div:last-child {border: none;}
+
+h3.megamenu_capt {font-family:'PT Sans Caption', verdana, sans-serif; font-size: 18px; color:black; margin: 15px 0 15px 0; font-weight: bold; width:100%;line-height:1em;text-transform: uppercase;}
+a h3.megamenu_capt {}
+a h3.megamenu_capt:hover {color:#207CD1;}
+h4.megamenu_subcapt {font-size: 16px; font-family:'PT Sans', arial, sans-serif; color:#d63327; font-style:italic;font-weight: normal;margin: 15px 0 6px 0;text-transform: none;line-height:1em;}
+a h4.megamenu_subcapt:hover {color:#207CD1;}
+div.megamenu {}
+/*div.megamenu a{color:#1da2dd;font-size: 13px; font-style: italic; display: inline-block; margin-bottom: 5px;}
+div.megamenu a:hover{color:#36c1ff;}*/
+div.megamenu p{font-size: 12px; line-height: 14px; color:#5c5e63;}
+div.megamenu a.mmcta{background:#f2f6f9; font-family:'PT Sans Caption', verdana, sans-serif; padding: 3px 5px;display: inline-block; margin: 0 0 10px 0;border:1px solid #eaf0f4;border-radius:2px;font-size:1.0em;width:100%;text-align:center;}
+div.megamenu a.mmcta span {display: block;font-size: 10px; font-family: 'PT Sans', arial, sans-serif;}
+div.megamenu a.mmcta:hover {background:#edf7ff;}
+div.megafoot {min-height: 30px;}
+div.megafoot a.mmcta{display: inline-block; font-family:'PT Sans Caption', verdana, sans-serif; font-style: normal; color: white; padding: 6px 13px; border-radius: 5px; background:#18B8FF; margin: 10px 0 15px 0; font-size: 16px;transition: all 0.2s ease;}
+div.megafoot a.mmcta:hover{background:#43c5ff;}
+div.megamenu ul  {list-style-image: url("../imgresp/bull_sm_red.png");margin: 0 0 20px 0;padding-left: 20px;}
+div.megamenu ul li {margin-bottom: 2px;font-size: 14px;line-height: 1em;font-style: italic;color: #5D666B;}
+
+a.megatrain {
+display: block;
+width: 80%;
+text-align: center;
+background: #5f8cb6;
+color: white; 
+box-shadow: 0 2px 0 #436281;
+text-transform: uppercase;
+font-size: 1.1em;
+margin: 0 0 20px 0;
+font-family: 'PT Sans Caption', Verdana, arial, sans-serif;
+padding: 3px;
+border-radius: 6px;
+font-style:normal;
+text-decoration: none;
+}
+a.megatrain:hover {background:#2d9ed0; color:white; box-shadow: 0 2px 0 #2b99ca;}
+
+a.megatrain span {
+display: block;
+font-size: 0.6em;
+text-transform: none;
+}
+
+div.blogpost_url a {line-height: 1em;}
+div.blogpost_item {margin-bottom: 20px;}
+
+/*  END of MEGAMENU  */
+
+
+
+
+@media (min-width: 1199px)  {
+h1 {font-size: 2.5em;}
+div.footer_icon_set a span {font-size: 150%!important;}
+div.col_miralogo img  {margin: 5px 0 5px -14px;max-height: 80px;}
+div.megamenu_container {/*margin-left: -575px;*/margin-left: -385px;width: 970px;}
+.showonmobile  {display:none!important;}
+.section img {max-width:50%;}
+div.sphinxsidebar, div.sidebartoggle {width:320px;}
+div.bodywrapper {margin: 0 0 0 320px;}
+div.sphinxsidebar #searchbox input[type="text"] {width:260px;}
+html, body {font-size: 18px;}
+}
+
+
+@media (min-width: 992px) and (max-width: 1199px)  {
+h1 {font-size: 2.5em;}
+.homeheader h2 {font-size: 3em; margin:0 !important;}
+a.glink {letter-spacing: 1px;padding: 5px 10px;}
+div.col_miralogo img  {margin: 5px 0 5px -14px;max-height: 80px;}
+div.megamenu_container {/*margin-left: -485px;*/ margin-left: -265px;width: 750px;}
+.showonmobile  {display:none!important;}
+.homeheader, .mpslide, #slider_imgs {height: 527px;}
+div.megafoot a.mmcta {font-size:14px; padding: 4px 9px;font-family: 'PT Sans', arial, sans-serif;}
+div.col-copy span, div.col-address span {font-size:13px;}
+.section img {max-width:70%;}
+div.sphinxsidebar, div.sidebartoggle {width:300px;}
+div.bodywrapper {margin: 0 0 0 300px;}
+div.sphinxsidebar #searchbox input[type="text"] {width:250px;}
+html, body {font-size: 16px;}
+}
+
+
+@media (min-width: 768px) and (max-width: 992px) {
+h1 {font-size: 2em;}
+#mira-menu-int {margin-top:13px;}
+a.glink {letter-spacing: 0px;padding: 5px 7px;font-size: 16px;}
+div.col_miralogo img  {margin: 5px 0 5px -8px;max-height: 80px;}
+div.megamenu_container {/*margin-left: -375px;*/margin-left: -250px;width: 625px;}
+a.hideonmobile {display: none;}
+.homeheader, .mpslide, #slider_imgs {height: 508px;}
+div.megafoot a.mmcta {font-size:14px; padding: 4px 9px;font-family: 'PT Sans', arial, sans-serif;}
+h3.megamenu_capt {font-size:16px;}
+div.megamenu ul li {font-size:13px;}
+h4.megamenu_subcapt {font-size:14px;}
+div.megamenu a.mmcta {padding: 3px 4px;font-family: 'PT Sans', arial, sans-serif;}
+div.megamenu a.megatrain span {display: none;}
+div.col-copy span, div.col-address span {font-size:11px;}
+div.sphinxsidebar #searchbox input[type="text"] {width:200px;}
+}
+
+
+@media (min-width: 399px) and (max-width: 767px) {
+footer {background-size: cover;}
+#mira-menu-int {display: none;}
+#mira-menu-switch {display: block;}
+h1 {font-size: 2.0em}
+h2 {font-size: 1.5em;line-height: 1.2em;}
+div.col_miralogo {max-height:58px;}
+div.col_miralogo img  {margin: 5px 0 5px -8px;max-height: 42px;}
+.notsobigplz {max-width: 50%; margin-bottom:20px;}
+div.megamenu_container {margin-left: -200px;}
+.hideonmobile {display: none !important;}
+.showonmobile  {display: inline-block;}
+div.fadeonmobile {background:rgba(0,0,0,0.5);height:100%;}
+div.col_miramenu_int {padding-left:15px; padding-right:15px}
+.homeheader, .mpslide, #slider_imgs {height: 508px;}
+div.col-copy, div.col-address {text-align:left;padding-top: 6px;}
+div.col-copy span, div.col-address span {font-size:12px;text-align:left;}
+div.sphinxsidebar, div.sidebartoggle {width:200px;}
+div.sphinxsidebar {font-size: 80%;}
+div.bodywrapper {margin: 0 0 0 200px;}
+div.sphinxsidebar #searchbox input[type="text"] {width:150px;}
+html, body {font-size: 13px;}
+div.body p, div.body dd, div.body li {line-height:1.1em;}
+}
+
+@media (max-width: 398px) {
+footer {background-size: cover;}
+
+#mira-menu {display: none;}
+#mira-menu-int{display: none;}
+#mira-menu-switch{display: block;}
+h1 {font-size: 1.7em;}
+h2 {font-size: 1.3em;line-height: 1.3em;}
+div.col_miralogo {max-height:44px;}
+div.col_miralogo img  {margin: 5px 0 5px -4px;max-height: 42px;}
+.notsobigplz {max-width: 50%; margin-bottom:20px;}
+.hideonmobile {display: none !important;}
+.showonmobile  {display: inline-block;}
+div.fadeonmobile {background:rgba(0,0,0,0.7);height:100%;}
+div.col_miramenu_int {padding-left:15px; padding-right:15px}
+.homeheader, .mpslide, #slider_imgs {height: 400px;}
+div.col-copy, div.col-address {text-align:left;padding-top: 6px;}
+div.col-copy span, div.col-address span {font-size:12px;}
+div.sphinxsidebar, div.sidebartoggle {width:150px;}
+div.sphinxsidebar {font-size: 70%;}
+div.bodywrapper {margin: 0 0 0 150px;}
+div.sphinxsidebar #searchbox input[type="text"] {width:100px;}
+html, body {font-size: 12px;}
+div.body p, div.body dd, div.body li {line-height:1.1em;}
 }
