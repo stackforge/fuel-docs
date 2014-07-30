@@ -1,20 +1,16 @@
-.. index:: HowTo: Redeploy a node from scratch
 
-.. _Redeploy_node_from_scratch:
+.. _redeploy-node-ops:
 
-HowTo: Redeploy a node from scratch
-------------------------------------
+Adding, Redeploying, and Replacing Nodes
+========================================
 
-Compute and Storage nodes can be redeployed
-in environments that use HA and environments that do not.
-Note that Controller nodes cannot be redeployed
-without completely redeploying the environment.
+This section discusses how to add, redeploy, and replace
+:ref:`nodes<node-term>` in your OpenStack environment.
+Compute and Storage nodes have always been expandable;
+Controller nodes could not be added or replaced
+before Mirantis OpenStack 5.0.1.
 
-To deploy a Compute or Storage node, follow these steps:
-
-1. Remove the node from your environment in the Fuel UI
-2. Deploy Changes
-3. Wait for the host to become available as an unallocated node
-4. Add the node to the environment with the same role as before
-5. Deploy Changes
-
+.. include:: /pages/operations/redeploy/1000-redeploy.rst
+.. include:: /pages/operations/redeploy/2000-add-compute-storage.rst
+.. include:: /pages/operations/redeploy/3000-add-controller.rst
+.. include:: /pages/operations/redeploy/4000-remove-controller.rst
