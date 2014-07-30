@@ -1,4 +1,4 @@
-{#
+﻿{#
     cloud/layout.html
     ~~~~~~~~~~~~~~~~~
 
@@ -22,7 +22,6 @@
 {% set script_files = script_files + [
                                        '_static/jquery.cookie.js',
                                        '_static/cloud.js',
-                                       '_static/menu.js',
                                        '_static/toc.js'
                                      ]
 %}
@@ -76,59 +75,202 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','{{ theme_googletag }}');</script>
 <!-- End Google Tag Manager -->
 {%- endif %}
-    <div id="masthead">
-        <div id="globalNav">
-            <div id="globalLink">
-                <a href="http://software.mirantis.com/" id="gl1" class="glink active" name="gl1">Software</a>
-                <a href="http://www.mirantis.com/openstack-services/" id="gl2" class="glink"  name="gl2">Services</a>
-                <a href="http://training.mirantis.com" id="gl3" class="glink" name="gl3">Training</a>
-                <a href="http://www.mirantis.com/openstack/" id="gl4" class="glink"  name="gl4">OpenStack</a>
-                <a href="http://www.mirantis.com/openstack-use-cases/" id="gl5" class="glink" name="gl5">Use Cases</a>
-                <a href="http://www.mirantis.com/company/" id="gl6" class="glink" name="gl6">Company</a>
-            </div>
-        </div>
-
-        <div id="subglobal1" class="subglobalNav" style="visibility: hidden;">
-			<div class="subglobal_vis">
-				<a href="http://software.mirantis.com/">Downloads</a>
-				<a href="http://software.mirantis.com/core-openstack/">Core OpenStack</a>
-				<a href="http://software.mirantis.com/key-related-openstack-projects/">Key Related Projects</a>
-				<a href="http://software.mirantis.com/plugins-and-drivers/">Plugins & Drivers</a>
-			</div>
-        </div>
-
-        <div id="subglobal2" class="subglobalNav" style="visibility: hidden;">
-			<div class="subglobal_vis">
-				<a href="http://www.mirantis.com/openstack-services/solutions-engineering/">Solutions Engineering</a>
-				<a href="http://www.mirantis.com/openstack-services/custom-deployment/">Custom Deployment</a>
-				<a href="http://www.mirantis.com/openstack-services/custom-support/">Custom Support</a>
-				<a href="http://www.mirantis.com/openstack-services/driver-development/">Drivers</a>
-			</div>
-		</div>
-
-        <div id="subglobal5" class="subglobalNav" style="visibility: hidden;">
-			<div class="subglobal_vis">
-				<a href="http://www.mirantis.com/openstack-use-cases/saas-web/">SaaS/Web Vendors</a>
-				<a href="http://www.mirantis.com/openstack-use-cases/service-providers/">Service Providers</a>
-				<a href="http://www.mirantis.com/openstack-use-cases/enterprise-private-cloud/">Enterprise Cloud</a>
-				<a href="http://www.mirantis.com/openstack-use-cases/infrastructure-technology/">Infrastructure Vendors</a>
+<div id="headerground" style="">
+	<header>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-2 col-sm-2 col-xs-3 col_miralogo">
+					<a href="http://www.mirantis.com/" title="Home" alt="Mirantis | The #1 Pure Play OpenStack Company" rel="home"><img src="{{ pathto('_static/' + 'responsove_logo_tag_inverted.png', 1) }}" class="img-responsive"></a>
+				</div>
+				<div class="col-md-10 col-sm-10 col-xs-9 col_miramenu_int">
+					<div id="mira-menu-int">
+						<a href="http://express.mirantis.com/" class="glink" id="miramenu0">On-Demand</a>
+						<a href="http://software.mirantis.com/" class="glink" id="miramenu1">Software</a>
+						<a href="/openstack-services/" class="glink" id="miramenu2">Services</a>
+						<a href="/partners/" class="glink" id="miramenu3">Partners</a>
+						<a href="http://training.mirantis.com" class="glink" id="miramenu4">Training</a>
+						<a href="/openstack/" class="glink" id="miramenu5">OpenStack:Now</a>
+						<a href="/company/" class="glink" id="miramenu7">Company</a>
+						<div class="clear"></div>
+					</div>
+					<div id="mira-menu-switch">
+						<div class="innermenu_sw">
+							<span class="sw-stripe"></span>
+							<span class="sw-stripe"></span>
+							<span class="sw-stripe"></span>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
 			</div>
 		</div>
+	</header>
+</div>
 
-        <div id="subglobal6" class="subglobalNav" style="visibility: hidden;">
-			<div class="subglobal_vis">
-				<a href="http://www.mirantis.com/company/about/">About</a>
-				<a href="http://www.mirantis.com/company/our-philosophy/">Our Philosophy</a>
-				<a href="http://www.mirantis.com/company/customer-successes/">Customer Successes</a>
-				<a href="http://www.mirantis.com/company/leadership/">Leadership</a>
-				<a href="http://www.mirantis.com/company/investors/">Investors</a>
-				<a href="http://www.mirantis.com/company/press-center/info/">Press Center</a>
-			</div>
-        </div>
-    </div>
+<div id="mira-right" onmouseover="$('#mira-right').css('display','block');" onmouseout="$('#mira-right').css('display','none');" >
+	<ul>
+		<li><a href="http://express.mirantis.com/" class="fmenu_section">On-Demand</a></li>
+		<li><a href="http://software.mirantis.com/" class="fmenu_section">Software</a>
+			<ul>
+				<li><a href="http://software.mirantis.com/">Downloads</a></li>
+				<li><a href="http://software.mirantis.com/core-openstack/">Core OpenStack</a></li>
+				<li><a href="http://software.mirantis.com/key-related-openstack-projects/">Key Related Projects</a></li>
+				<li><a href="http://software.mirantis.com/plugins-and-drivers/">Plug-ins &amp; Drivers</a></li>
+				<li><a href="http://software.mirantis.com/support-options/">Support Options</a></li>
+				<li><a href="http://software.mirantis.com/resources/">Resources</a></li>
+			</ul>
+		</li>
+		<li><a href="http://www.mirantis.com/openstack-services/" class="fmenu_section">Services</a>
+			<ul>
+				<li><a href="http://www.mirantis.com/openstack-services/solutions-engineering/">Solutions Engineering</a></li>
+				<li><a href="http://www.mirantis.com/openstack-services/custom-deployment/">Custom Deployment</a></li>
+				<li><a href="http://www.mirantis.com/openstack-services/driver-development/">Drivers</a></li>
+				<li><a href="http://www.mirantis.com/openstack-services/custom-support/">Custom Support</a></li>
+			</ul>	
+		</li>
+		<li><a href="http://www.mirantis.com/partners/" class="fmenu_section">Partners</a></li>
+		<li><a href="http://training.mirantis.com" class="fmenu_section">Training</a>
+			<ul>
+				<li><a href="http://training.mirantis.com/certification">Certification</a></li>
+				<li><a href="http://training.mirantis.com/course/openstack-bootcamp">OpenStack Bootcamp</a></li>
+				<li><a href="http://training.mirantis.com/course/3-day-bootcamp-for-openstack">Upcoming Classes</a></li>
+				<li><a href="http://training.mirantis.com/training/onsite.html">Onsite Training</a></li>
+			</ul>
+		</li>
+		<li><a href="http://www.mirantis.com/openstack/" class="fmenu_section">OpenStack: Now</a>
+			<ul>
+				<li><a href="http://www.mirantis.com/blog/">Blog</a></li>
+				<li><a href="http://www.mirantis.com/openstack/news/">News</a></li>
+				<li><a href="http://www.mirantis.com/openstack/tutorials/">Tutorials</a></li>
+			</ul>
+		</li>
+		<li><a href="http://www.mirantis.com/company/" class="fmenu_section">Company</a>
+			<ul>
+				<li><a href="http://www.mirantis.com/company/about/">About</a></li>
+				<li><a href="http://www.mirantis.com/company/our-philosophy/">Our Philosophy</a></li>
+				<li><a href="http://www.mirantis.com/contact-us/">Get In Touch</a></li>
+				<li><a href="http://www.mirantis.com/careers/">Careers</a></li>
+				<li><a href="http://www.mirantis.com/openstack-use-cases/">Use Cases</a></li>
+				<li><a href="http://www.mirantis.com/company/customer-successes/">Customer Successes</a></li>
+				<li><a href="http://www.mirantis.com/company/leadership/">Leadership</a></li>
+				<li><a href="http://www.mirantis.com/company/investors/">Investors</a></li>
+				<li><a href="http://www.mirantis.com/company/leadership/board-of-directors/">Board of Directors</a></li>
+				<li><a href="http://www.mirantis.com/company/press-center/info/">Press Center</a></li>
+			</ul>
+		</li>
+	</ul>
+</div>
+
 {% endblock %}
 
 {% block footer -%}
+<footer>
+<div id="text-5" class="widget widget_text"><div class="textwidget"><div class="container">
+<div class="row">
+<div class="col-md-4 col-sm-4">	  
+<div class="row">
+	<div class="col-md-6 leftplz">	  
+	<ul>
+		<li><a class="fmenu_section" title="Mirantis OpenStack" href="http://software.mirantis.com">Software</a></li>
+		<li><a title="Download Mirantis OpenStack" href="http://software.mirantis.com">Downloads</a></li>
+		<li><a title="Mirantis OpenStack - Core" href="http://software.mirantis.com/core-openstack/">Core OpenStack</a></li>
+		<li><a title="Mirantis OpenStack - Projects" href="http://software.mirantis.com/key-related-openstack-projects/">Key Related Projects</a></li>
+		<li><a title="Mirantis OpenStack Plug-ins &amp; Drivers" href="http://software.mirantis.com/plugins-and-drivers/">Plug-ins &amp; Drivers</a></li>
+	</ul>
+	</div>	  
+	<div class="col-md-6 leftplz">	  
+	<ul>
+		<li><a class="fmenu_section" title="OpenStack Services" href="http://www.mirantis.com/openstack-services/">Services</a></li>
+		<li><a title="OpenStack Solutions Engineering" href="http://www.mirantis.com/openstack-services/solutions-engineering/">Solutions Engineering</a></li>
+		<li><a title="OpenStack Custom Deployment" href="http://www.mirantis.com/openstack-services/custom-deployment/">Custom Deployment</a></li>
+		<li><a title="OpenStack Custom Support" href="http://www.mirantis.com/openstack-services/custom-support/">Custom Support</a></li>
+		<li><a title="OpenStack Drivers" href="http://www.mirantis.com/openstack-services/driver-development/">Drivers</a></li>
+
+	</ul>
+	</div>	  
+</div>	
+</div>
+<div class="col-md-4 col-sm-4">	  
+<div class="row">	
+	<div class="col-md-6 leftplz">
+	<ul>
+		<li><a title="OpenStack Training" class="fmenu_section" href="http://training.mirantis.com">Training</a></li>
+		<li><a title="OpenStack Certification" href="http://training.mirantis.com/certification">OpenStack Certification</a></li>
+		<li><a title="Mirantis OpenStack Administration" href="http://training.mirantis.com/course/openstack-bootcamp">OpenStack Bootcamp</a></li>
+		<li><a title="OpenStack Onsite Training" href="http://training.mirantis.com/training/onsite.html">Onsite Training</a></li>
+		<li><a title="OpenStack Instructors" href="http://training.mirantis.com/meet-our-instructors">Our Instructors</a></li>
+		<li><a title="Online Resources" href="http://training.mirantis.com/online-resources">Online Resources</a></li>
+	</ul>
+	</div>
+	<div class="col-md-6 leftplz">	  
+	<ul>
+		<li><a class="fmenu_section" href="http://www.mirantis.com/openstack/">OpenStack:Now</a></li>
+		<li><a title="OpenStack Blog" href="http://www.mirantis.com/blog/">Blog</a></li>		
+		<li><a title="OpenStack News" href="http://www.mirantis.com/openstack/news/">News</a></li>
+		<li><a title="OpenStack Tutorials" href="http://www.mirantis.com/openstack/tutorials/">Tutorials</a></li>
+	</ul>	
+	</div>
+</div>	
+</div>
+<div class="col-md-4 col-sm-4">	  
+<div class="row">		
+	<div class="col-md-6 leftplz">	  
+	<ul>
+		<li><a class="fmenu_section" href="http://www.mirantis.com/openstack-use-cases/">Use Cases</a></li>
+		<li><a href="http://www.mirantis.com/openstack-use-cases/saas-web/">SaaS/Web Vendors</a></li>
+		<li><a href="http://www.mirantis.com/openstack-use-cases/service-providers/">Service Providers</a></li>
+		<li><a href="http://www.mirantis.com/openstack-use-cases/enterprise-private-cloud/">Enterprise Cloud</a></li>
+		<li><a href="http://www.mirantis.com/openstack-use-cases/infrastructure-technology/">Infrastructure Vendors</a></li>
+	</ul>		
+	</div>
+	<div class="col-md-6 leftplz">	  
+	<ul>
+		<li><a class="fmenu_section" href="http://www.mirantis.com/company/about-pure-play-openstack/">Company</a></li>
+		<li><a href="http://www.mirantis.com/company/our-philosophy/">Our Philosophy</a></li>
+		<li><a href="http://www.mirantis.com/company/customer-successes/">Customer Successes</a></li>
+		<li><a href="http://www.mirantis.com/careers/">Careers</a></li>
+		<li><a href="http://www.mirantis.com/company/leadership/">Leadership</a></li>
+		<li><a href="http://www.mirantis.com/company/investors/">Investors</a></li>
+		<li><a href="http://www.mirantis.com/company/leadership/board-of-directors/">Board of Directors</a></li>
+		<li><a href="http://www.mirantis.com/company/partners/">Partners</a></li>
+		<li><a href="http://www.mirantis.com/company/press-center/info/">Press Center</a></li>
+		<li><a href="http://www.mirantis.com/company/privacy-policy/">Privacy Policy</a></li>
+	</ul>
+	</div>	
+	
+</div>
+</div>
+
+</div></div>
+<div class="clear"></div>
+
+	
+	
+<div class="footer_copy">
+<div class="container">
+<div class="row">
+
+<div class="col-md-3 col-sm-3 col-logo">
+<span class="mira_btm">Mirantis Inc.</span> <br>
+<span class="pureplay_btm"><em>Pure Play OpenStack.</em></span>
+</div>	 
+
+<div class="col-md-4 col-sm-4 col-copy">
+<span class="copy_btm">© 2005 - 2014 All Rights Reserved</span>
+</div>
+
+<div class="col-md-5 col-sm-5 col-address">
+<span class="mira_btm">615 National Avenue, Suite 100 Mountain View, CA 94043<br>
++1-650-963-9828</span>
+</div>	
+
+</div>	  
+</div>	  
+</div>	  
+</div>
+		<div class="clear"></div></div>  
+</footer>
+
     {{ super() }}
     <!-- cloud_sptheme 1.4 -->
 {%- endblock %}

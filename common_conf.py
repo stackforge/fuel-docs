@@ -125,7 +125,7 @@ html_title = project + ' v' + release + ' | Documentation'
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
 # html_logo = '_static/fuel-logo.png'
-html_logo = '_static/fuel_gradient_200.png'
+html_logo = '_static/mos_logo_docs.png'
 
 # The name of an image file (within the static path) to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
@@ -170,7 +170,7 @@ html_show_sourcelink = False
 html_show_sphinx = False
 
 # If true, "(C) Copyright ..." is shown in the HTML footer. Default is True.
-html_show_copyright = True
+html_show_copyright = False
 
 # If true, an OpenSearch description file will be output, and all pages will
 # contain a <link> tag referring to it.  The value of this option must be the
