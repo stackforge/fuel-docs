@@ -31,7 +31,7 @@ bodyfont        = "PT Sans", arial, sans-serif
 bodytrimcolor   = #D0D0D0
 bgcolor         = #ffffff
 textcolor       = #000000
-linkcolor       = #207CD1
+linkcolor       = #D32F1A
 highlightcolor  = rgba(0,0,0,.125)
 quotebgcolor     = rgba(0,0,0,.075)
 quotetrimcolor   = rgba(0,0,0,.05)
@@ -44,7 +44,7 @@ codeblockfont    = "Droid Sans Mono", monospace
 # styling for document headers
 headfont        = "PT Sans", arial, sans-serif
 headtextcolor   = #000000
-headlinkcolor   = #207CD1
+headlinkcolor   = #D32F1A
 
 # styling for section headers
 sectionbgcolor  =  #FFFFFF
@@ -66,7 +66,7 @@ table_shade_color = rgba(0,0,0,.06)
 table_trim_color = rgba(0,0,0,.15)
 
 # styling for footer / html background
-footerbgcolor   = #fff
+footerbgcolor   = #f5f5f5 url(fuel_tile.jpg)
 footertextcolor = #D32F1A
 
 # styling for sidebar
