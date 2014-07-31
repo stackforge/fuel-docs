@@ -2,6 +2,7 @@
 .. include:: /pages/operations/2310-create-xfs.rst
 .. include:: /pages/operations/2320-redeploy-node.rst
 .. include:: /pages/operations/2410-galera-autorebuild.rst
+.. include:: /pages/operations/3000-ml2-create.rst
 .. include:: /pages/operations/5400-puppet-custom-attributes.rst
 .. include:: /pages/operations/docker-on-master.rst
 .. include:: /pages/operations/2800-experimental.rst

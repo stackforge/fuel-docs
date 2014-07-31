@@ -83,12 +83,14 @@ for the system can be found in :ref:`fuel-passwd-ops`.
 Mirantis OpenStack now deploys the ML2 Open vSwitch plug-in for Neutron
 -----------------------------------------------------------------------
 Starting with Havana, the legacy plug-in structure for Neutron
-has been deprecated and replaced with a Modular Layer 2 (ML2) plugin structure.
+has been deprecated and replaced with
+a Modular Layer 2 (:ref:`ML2<ml2-term>`) plugin structure.
 This change enables Neutron to utilize a variety of Layer 2 network technologies
 rather than being locked into the monolithic structure
 found in previous releases of OpenStack.
 Mirantis OpenStack 5.1 now defaults to this new ML2 Open vSwitch plugin
 when deploying Neutron into an environment.
+See also :ref:`ml2-create-ops`.
 
 Experimental features must be explicitly enabled for Mirantis OpenStack
 -----------------------------------------------------------------------
