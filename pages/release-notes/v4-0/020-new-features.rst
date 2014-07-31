@@ -1,11 +1,12 @@
 New Features in Mirantis OpenStack 4.0
-======================================
+====================================== 
 
 Mirantis OpenStack hardened packages support the latest stable OpenStack Havana maintenance release
 ---------------------------------------------------------------------------------------------------
 
 The OpenStack core projects in the Mirantis OpenStack hardened packages
-support the `OpenStack Havana 2013.2.1 <http://tracker.ceph.com/issues/5426>`_ release.
+support the `OpenStack Havana 2013.2.1
+<https://wiki.openstack.org/wiki/ReleaseNotes/2013.2.1>`_ release.
 Fuel will deploy this version of OpenStack on CentOS or Ubuntu. For Red Hat Enterprise
 Linux OpenStack Platform (RHEL-OSP), Fuel will deploy RHEL-OSP version 3.0,
 which is based on Grizzly.
