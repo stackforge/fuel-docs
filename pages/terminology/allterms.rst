@@ -38,6 +38,7 @@ Terminology Reference
 .. include:: /pages/terminology/k/kvm.rst
 .. include:: /pages/terminology/l/lxc.rst
 .. include:: /pages/terminology/m/mirantis-openstack.rst
+.. include:: /pages/terminology/m/ml2.rst
 .. include:: /pages/terminology/m/mongodb.rst
 .. include:: /pages/terminology/m/murano.rst
 .. include:: /pages/terminology/m/mysql.rst
