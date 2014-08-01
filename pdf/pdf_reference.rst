@@ -25,4 +25,7 @@
 .. toctree::
 
 .. include:: /pages/preface/preface.rst
+
+.. _ref-arch:
+
 .. include:: /contents/contents-refarch.rst

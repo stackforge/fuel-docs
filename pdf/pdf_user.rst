@@ -25,4 +25,7 @@
 .. toctree::
 
 .. include:: /pages/preface/preface.rst
+
+.. _user-guide:
+
 .. include:: /contents/contents-user.rst

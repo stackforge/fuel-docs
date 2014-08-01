@@ -1,3 +1,4 @@
+.. index:: Terminology Reference
 
 .. _terminology-ref:
 

@@ -25,4 +25,7 @@
 .. toctree::
 
 .. include:: /pages/preface/preface.rst
+
+.. _planning-guide:
+
 .. include:: /contents/contents-planning-guide.rst

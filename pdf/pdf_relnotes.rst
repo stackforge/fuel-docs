@@ -1,7 +1,7 @@
 .. header::
 
   .. cssclass:: header-table
- 
+
   +-------------------------------------+-----------------------------------+
   | Mirantis OpenStack v5.0             |                .. cssclass:: right|
   |                                     |                                   |
@@ -11,7 +11,7 @@
 .. footer::
 
   .. cssclass:: footer-table
- 
+
   +--------------------------+----------------------+
   |                          |   .. cssclass:: right|
   |                          |                      |
@@ -25,4 +25,7 @@
 .. toctree::
 
 .. include:: /pages/preface/preface.rst
+
+.. _release-notes:
+
 .. include:: /contents/contents-release-notes.rst

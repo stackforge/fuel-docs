@@ -29,7 +29,7 @@ to install the OpenStack environment components.
 This guide provides details
 to get you started with Mirantis OpenStack and Fuel
 on a set of physical servers ("bare-metal installation")
-See the :ref:`User Guide<User-Guide>` for detailed instructions about
+See the :ref:`User Guide<user-guide>` for detailed instructions about
 how to download and install Fuel on the Fuel Master Node
 and then how to use the Fuel interface
 to deploy your OpenStack environment.

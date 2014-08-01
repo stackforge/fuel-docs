@@ -25,4 +25,7 @@
 .. toctree::
 
 .. include:: /pages/preface/preface.rst
+
+.. _operations-guide:
+
 .. include:: /contents/contents-operations.rst

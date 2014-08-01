@@ -1,4 +1,3 @@
-
 .. index:: User Guide
 
 .. _user-guide:

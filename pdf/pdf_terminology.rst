@@ -22,4 +22,10 @@
 
    PageBreak oneColumn
 
+.. toctree::
+
+.. include:: /pages/preface/preface.rst
+
+.. _terminology-ref:
+
 .. include:: /contents/contents-terminology.rst

@@ -4,8 +4,6 @@
 
 .. index: Preface
 
-.. _Preface:
-
 Preface
 =======
 

@@ -1,4 +1,3 @@
-
 .. include:: /pages/virtualbox/0300-install-virtualbox.rst
 .. include:: /pages/virtualbox/0330-install-automatic-virtualbox.rst
 .. include:: /pages/virtualbox/0340-install-manual-virtualbox.rst

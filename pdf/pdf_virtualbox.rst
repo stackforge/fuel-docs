@@ -24,4 +24,8 @@
 
 .. toctree::
 
-.. include:: ../contents/contents-virtualbox.rst
+.. include:: /pages/preface/preface.rst
+
+.. _virtualbox:
+
+.. include:: /contents/contents-virtualbox.rst

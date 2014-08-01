@@ -1,9 +1,6 @@
-:orphan:
+.. index:: Documentation
 
-.. index Documentation
-
-
-.. Documentation:
+.. _Documentation:
 
 =============================
 Documentation
