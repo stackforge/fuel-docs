@@ -1,0 +1,13 @@
+
+.. _neutron-nsx-arch:
+
+Neutron with NSX
+----------------
+
+A typical network configuration for Neutron with NSX might look like this:
+
+.. image:: /_images/Neutron_nsx_topology.png
+  :width: 90%
+
+.. note:: This setup does not include physical Private network.
+

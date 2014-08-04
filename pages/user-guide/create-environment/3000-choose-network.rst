@@ -11,7 +11,7 @@ Network service
 .. image:: /_images/user_screen_shots/network-services.png
    :width: 50%
 
-Four network topologies are supported;
+Five network topologies are supported;
 see :ref:`net-topology-plan`.
 
 You can choose either of the Neutron topologies on this screen.
