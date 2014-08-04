@@ -1,0 +1,15 @@
+
+.. _neutron-nsx-arch:
+
+Neutron with VMware NSX
+-----------------------
+
+A typical network configuration for Neutron with VMware NSX
+might look like this:
+
+.. image:: /_images/Neutron_nsx_topology.png
+  :width: 80%
+
+.. note:: You do not need a physically separate Private network for this
+          setup.
+
