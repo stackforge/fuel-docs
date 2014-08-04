@@ -4,12 +4,13 @@
 Choose Network Topology
 =======================
 
-OpenStack supports two network modes,
-each of which supports two topologies.
-For architectural descriptions of the four topologies, see:
+OpenStack supports two network modes, first one supports
+two topologies and second one three topologies.
+For architectural descriptions of the five topologies, see:
 
 * :ref:`neutron-vlan-ovs-arch`
 * :ref:`neutron-gre-ovs-arch`
+* :ref:`neutron-nsx-arch`
 * :ref:`nova-flatdhcp-arch`
 * :ref:`nova-vlan-arch`
 
@@ -55,8 +56,17 @@ and manipulate them on the fly.
   and do not want to configure your network equipment,
   you can choose the Neutron + GRE topology.
 
+* The **Neutron with NSX** topology requires installed and configured
+  NSX network hypervisor.
+  As with GRE segmetation it does not restrict the maximum number of
+  available VLANs.
+  It also required to obtain NSX specific packages and host them so
+  that Puppet can download and install on controllers and compute nodes
+  during deployment stage.
+
 Some other considerations when choosing a network topology:
 
 - :ref:`ovs-term` and :ref:`bonding-term` can only be implemented on Neutron.
 - VMWare vCenter can only be implemented on Nova-network.
+- Neutron with NSX can only be implemented with KVM/QEMU hypervisor.
 - Murano is supported only on Neutron.
