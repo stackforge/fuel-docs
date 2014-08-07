@@ -70,15 +70,24 @@ to deploy vCenter with Fuel 5.0.
 Choose Backend for Cinder and Glance with vCenter
 -------------------------------------------------
 
-Ceph cannot be used as a Cinder backend;
-you should select the LVM over iSCSI option.
+Ceph cannot be used as a Cinder or Glance backend;
+the only choice here is to leave default options.
+The default options are LVM over iSCSI for Cinder and
+Swift for Glance.
+Starting with Fuel 5.1, you must use the VMDK driver as
+Cinder storage backend.
 
 .. image:: /_images/user_screen_shots/vcenter-cinder.png
    :width: 50%
 
-- If you are using the Multi-node HA mode,
-  Swift is used as a backend for Cinder
-  and is automatically installed on the Controller nodes.
+After you create the environment, you must enable the VMDK
+driver for Cinder on Settings tab.  First you must uncheck
+LVM over iSCSI option, after that VMware vCenter for volumes
+becomes available.
+
+.. image:: /_images/user_screen_shots/cinder-vmdk-backend.png
+   :width: 50%
+
 - If you are using the Multi-node (no HA) mode,
   local storage is used as the backend for Glance.
 
