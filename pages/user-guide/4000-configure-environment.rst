@@ -16,6 +16,9 @@ that you use to finish configuring your environment.
 +----------------------------+-------------------------------------------+
 | Step Description           | Additional Information                    |
 +============================+===========================================+
+| Add nodes to your          | See :ref:`add-nodes-ug`                   |
+| environment                |						 |
++----------------------------+-------------------------------------------+
 | Assign a role or roles to  | See :ref:`assign-roles-ug`                |
 | each node server.          |                                           |
 +----------------------------+-------------------------------------------+
@@ -60,6 +63,7 @@ or :ref:`reset the environment<Reset_Environment>`.
 
   PageBreak
 
+.. include:: /pages/user-guide/config-environment/0900-add-nodes.rst
 .. include:: /pages/user-guide/config-environment/1000-assign-roles.rst
 .. include:: /pages/user-guide/config-environment/1200-customize-partitions.rst
 .. include:: /pages/user-guide/config-environment/1400-network-settings.rst

@@ -6,17 +6,27 @@ Assign a role or roles to each node server
 
 
 .. image:: /_images/user_screen_shots/assign-roles1.png
-   :width: 50%
+   :width: 80%
 
 
 .. image:: /_images/user_screen_shots/assign-roles2.png
-   :width: 50%
+   :width: 80%
 
 
-Select the role or roles you want to assign,
-then click on the appropriate node(s)
-in the "Unallocated Nodes" list,
-then click on the "Apply Changes" button.
+To assign roles to the nodes:
+
+- Select the role or roles you want to assign
+- Click on the appropriate node(s) in the "Unallocated Nodes" list
+- Click on the "Apply Changes" button.
+
+As you make your selections,
+Fuel displays information about combinations
+that are not allowed
+and other configurations that are required.
+For example, in this sample screen,
+it tells you that the Controller role
+cannot be combined with the Compute and Cinder LVM roles
+that you have selected.
 
 If you want to modify the roles assigned to a node:
 
@@ -33,6 +43,30 @@ If you want to modify the roles assigned to a node:
   (in this case, click the "Ceph OSD" node
   and leave the "Compute" role selected);
   click the "Apply Changes" button.
+
+When you click the "Apply Changes" button,
+Fuel displays the configuration you have chosen:
+
+
+.. image:: /_images/user_screen_shots/assign-role-confirm.png
+   :width: 80%
+
+To rename the nodes, double-click on the "Unnamed nodes" string
+for each node and then type in the name you want to use.
+
+When you are satisfied with your configuration,
+click on the "Deploy Changes" button.
+
+
+.. image:: /_images/user_screen_shots/assign-role-confirm2.png
+   :width: 50%
+
+This is your last chance to change the configuration;
+after you click "Deploy", 
+you cannot modify the node configuration
+without starting over.
+
+
 
 For more information, see:
 
