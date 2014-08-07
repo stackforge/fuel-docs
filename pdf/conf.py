@@ -18,11 +18,11 @@ exclude_patterns = ['_*', 'pages', 'contents', 'index', '*-guide', '*.rst']
 
 pdf_documents = [ 
 #   (master_doc, project, project, copyright),
-    ('pdf/pdf_planning-guide', u'Mirantis-OpenStack-5.0-PlanningGuide', u'Planning Guide', u'2014, Mirantis Inc.'),
-    ('pdf/pdf_user', u'Mirantis-OpenStack-5.0-UserGuide',  u'User Guide', u'2014, Mirantis Inc.'),
-    ('pdf/pdf_operations', u'Mirantis-OpenStack-5.0-OperationsGuide', u'Operations Guide', u'2014, Mirantis Inc.'),
-    ('pdf/pdf_virtualbox', u'Mirantis-OpenStack-5.0-Running-Mirantis-OpenStack-on-VirtualBox', u'Running Mirantis OpenStack on VirtualBox', u'2014, Mirantis Inc.'),
-    ('pdf/pdf_reference', u'Mirantis-OpenStack-5.0-ReferenceArchitecture', u'Reference Architecture', u'2014, Mirantis Inc.'),
-    ('pdf/pdf_terminology', u'Mirantis-OpenStack-5.0-Terminology-Reference', u'Terminology Reference', u'2014, Mirantis Inc.'),
-    ('pdf/pdf_relnotes', u'Mirantis-OpenStack-5.0-RelNotes', u'Release Notes', u'2014, Mirantis Inc.'),
+    ('pdf/pdf_planning-guide', u'Mirantis-OpenStack-5.1-PlanningGuide', u'Planning Guide', u'2014, Mirantis Inc.'),
+    ('pdf/pdf_user', u'Mirantis-OpenStack-5.1-UserGuide',  u'User Guide', u'2014, Mirantis Inc.'),
+    ('pdf/pdf_operations', u'Mirantis-OpenStack-5.1-OperationsGuide', u'Operations Guide', u'2014, Mirantis Inc.'),
+    ('pdf/pdf_virtualbox', u'Mirantis-OpenStack-5.1-Running-Mirantis-OpenStack-on-VirtualBox', u'Running Mirantis OpenStack on VirtualBox', u'2014, Mirantis Inc.'),
+    ('pdf/pdf_reference', u'Mirantis-OpenStack-5.1-ReferenceArchitecture', u'Reference Architecture', u'2014, Mirantis Inc.'),
+    ('pdf/pdf_terminology', u'Mirantis-OpenStack-5.1-Terminology-Reference', u'Terminology Reference', u'2014, Mirantis Inc.'),
+    ('pdf/pdf_relnotes', u'Mirantis-OpenStack-5.1-RelNotes', u'Release Notes', u'2014, Mirantis Inc.'),
 ]
