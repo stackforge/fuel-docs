@@ -4,19 +4,45 @@
 Assign a role or roles to each node server
 ------------------------------------------
 
+The first screen that is displayed has a list of roles at the top
+and a list of unallocated nodes at the bottom.
+
+* A **node** is a physical or virtual server
+  that is provisioned to run a specific set of OpenStack services.
+
+* A **role** is a functional set of services
+  that Fuel installs as a whole on a node,
+  usually in its own disk partition.
+
+
 
 .. image:: /_images/user_screen_shots/assign-roles1.png
-   :width: 50%
+   :width: 80%
 
 
 .. image:: /_images/user_screen_shots/assign-roles2.png
-   :width: 50%
+   :width: 80%
 
 
-Select the role or roles you want to assign,
-then click on the appropriate node(s)
-in the "Unallocated Nodes" list,
-then click on the "Apply Changes" button.
+To assign roles to the nodes:
+
+- Select the role or roles you want to assign
+- Click on the appropriate node(s) in the "Unallocated Nodes" list
+- Click on the "Apply Changes" button.
+- Proceed to do this until all roles have been assigned to all nodes.
+
+In this example,
+both the "Compute" and "Storage - Cinder LVM" roles
+are being assigned to this node.
+
+As you make your selections,
+Fuel displays information about combinations
+that are not allowed
+and other configurations that are required.
+For example, in this sample screen,
+it tells you that the Controller role
+cannot be combined with the Compute and Cinder LVM roles
+that you have selected.
 
 If you want to modify the roles assigned to a node:
 
@@ -34,6 +60,16 @@ If you want to modify the roles assigned to a node:
   and leave the "Compute" role selected);
   click the "Apply Changes" button.
 
+When you click the "Apply Changes" button,
+Fuel displays the configuration you have chosen:
+
+
+.. image:: /_images/user_screen_shots/assign-role-confirm.png
+   :width: 80%
+
+To rename the nodes, click on the "Unnamed nodes" string
+for each node and then type in the name you want to use.
+
 For more information, see:
 
 - :ref:`nodes-roles-arch` describes the Controller,
@@ -42,4 +78,6 @@ For more information, see:
   ramifications of the different Storage roles.
 - :ref:`nodes-roles-plan` includes guidelines about setting up nodes.
 - :ref:`mongodb-term` for information about MongoDB.
+
+
 
