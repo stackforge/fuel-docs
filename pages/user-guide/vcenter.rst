@@ -71,14 +71,20 @@ Choose Backend for Cinder and Glance with vCenter
 -------------------------------------------------
 
 Ceph cannot be used as a Cinder backend;
-you should select the LVM over iSCSI option.
+you should leave the default option for Cinder which
+is LVM over iSCSI.
+Starting with Fuel 5.1, you must use the VMDK driver as
+Cinder storage backend.
 
 .. image:: /_images/user_screen_shots/vcenter-cinder.png
    :width: 50%
 
-- If you are using the Multi-node HA mode,
-  Swift is used as a backend for Cinder
-  and is automatically installed on the Controller nodes.
+After you create the environment, you must enable the VMDK
+driver for Cinder on Settings tab.
+
+.. image:: /_images/user_screen_shots/cinder-vmdk-backend.png
+   :width: 50%
+
 - If you are using the Multi-node (no HA) mode,
   local storage is used as the backend for Glance.
 
