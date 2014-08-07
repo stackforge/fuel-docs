@@ -63,6 +63,6 @@ Supported Software
 
 * **MongoDB** 2.4.6
 
-* **Ceph** v0.67.9 "Dumpling"
+* **Ceph** v0.80.5 "Firefly"
 
 * **MySQL** 5.5.28 (CentOS), 5.5.37 (Ubuntu)
