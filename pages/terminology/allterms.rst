@@ -75,4 +75,5 @@ Terminology Reference
 .. include:: /pages/terminology/t/tenant.rst
 .. include:: /pages/terminology/v/vcenter.rst
 .. include:: /pages/terminology/v/vlan.rst
+.. include:: /pages/terminology/v/vmdk.rst
 .. include:: /pages/terminology/v/vsphere.rst
