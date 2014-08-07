@@ -28,3 +28,5 @@ If you combine RBD backends for Cinder and Glance, you gain another
 important advantage over Cinder LVM: copy-on-write cloning of Glance
 images into bootable Ceph volumes.
 
+If you are using :ref:`vcenter-term` as the hypervisor,
+you must use the **VMDK** driver to store your volumes in vCenter datastore.

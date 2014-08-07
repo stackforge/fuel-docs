@@ -4,8 +4,8 @@
 VMDK
 ----
 
-VMDK is a virtual machine disk format used by VMware :ref:`esxi-term`.
-
+The :ref:`vcenter-term` VMDK driver
+is a virtual machine disk format used by VMware :ref:`esxi-term`.
 You can use Fuel 5.1 and later
 to deploy a Mirantis OpenStack environment
 that can utilize VMDK support.
