@@ -3,7 +3,7 @@
   .. cssclass:: header-table
 
   +-------------------------------------+-----------------------------------+
-  | Mirantis OpenStack v5.0             |                .. cssclass:: right|
+  | Mirantis OpenStack v5.1             |                .. cssclass:: right|
   |                                     |                                   |
   | Release Notes                       |                    ###Section###  |
   +-------------------------------------+-----------------------------------+
@@ -21,10 +21,6 @@
 .. raw:: pdf
 
    PageBreak oneColumn
-
-.. toctree::
-
-.. include:: /pages/preface/preface.rst
 
 .. _release-notes:
 

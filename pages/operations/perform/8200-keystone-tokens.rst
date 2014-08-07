@@ -12,7 +12,7 @@ such as that required after a security breach.
 However, the accumulation of the expired tokens in the database
 can seriously degrade the performance of the entire OpenStack.
 
-Beginning with Release 5.0,
+Beginning with version 5.0,
 Mirantis OpenStack includes the
 `pt-archiver <http://www.percona.com/doc/percona-toolkit/2.1/pt-archiver.html>`_
 command from the
@@ -24,7 +24,7 @@ script from TripleO is a good example:
 
 ::
 
-    pt-archiver --source h=$KEYSTONE_DB_HOST,u=$KEYSTONE_DB_USER,p=$KEYSTONE_DB_PASS,D=$KEYSTONE_DB_NAME,t=token \
+    pt-archiver --source h=$DB_HOST,u=$DB_USER,p=$DB_PASS,D=$DB_NAME,t=token \
         --charset utf8 \
         --where "expires < UTC_TIMESTAMP()" \
         --purge \
