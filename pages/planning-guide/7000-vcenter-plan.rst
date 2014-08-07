@@ -99,10 +99,6 @@ Limitations
 ------------------------------
 - Only :ref:`nova-network-term` with flatDHCP mode is supported
   in the current version of the integration.
-- OpenStack Block Storage service (Cinder)
-  with VMware VMDK datastore driver is not supported;
-  you can only use Cinder with the LVM over iSCSI option
-  as the Cinder backend.
 - Each OpenStack environment can support one vCenter cluster.
 - VMware vCenter can be deployed on Mirantis OpenStack
   with or without high-availability (HA) configured.
