@@ -1,4 +1,5 @@
-.. include:: /pages/release-notes/v5-0-icehouse-full.rst
+.. include:: /pages/release-notes/v5-1-icehouse-full.rst
+.. include /pages/release-notes/v5-0-icehouse-full.rst
 .. include /pages/release-notes/v4-1-havana-full.rst
 .. include /pages/release-notes/v4-0-havana-full.rst
 .. include /pages/release-notes/v3-2-1-grizzly-full.rst
