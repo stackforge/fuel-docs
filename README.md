@@ -31,11 +31,11 @@ To get started, you need to install all necesasary tools.
 
 On Debian/Ubuntu:
     
-    sudo apt-get install git python-pip python-dev make imagemagick libjpeg-dev inkscape
+    sudo apt-get install git python-pip python-dev make imagemagick libjpeg-dev inkscape aspell
 
 On Fedora:
 
-	sudo yum install git python-pip python-devel make ImageMagick libjpeg-turbo-devel inkscape
+	sudo yum install git python-pip python-devel make ImageMagick libjpeg-turbo-devel inkscape aspell
 
 Among other things that installs
 [ImageMagick](http://www.imagemagick.org/ "ImageMagick") and
