@@ -4,7 +4,7 @@ Bare-Metal Environment
 ----------------------
 
 To install Fuel on bare-metal hardware, you need to burn the provided ISO to 
-a writeable DVD or create a bootable USB stick. You would then begin the 
+a writable DVD or create a bootable USB stick. You would then begin the 
 installation process by booting from that media, very much like any other OS
 install process.
 

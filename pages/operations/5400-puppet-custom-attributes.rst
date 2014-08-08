@@ -15,7 +15,7 @@ Passing custom attributes can be helpful in case you have some Puppet manifests
 which should be run, but are not supported by Fuel itself.
 
 You can do this at your own risk, and some features might 
-become unaccessible from UI after that. Also, there will be a warning 
+become inaccessible from UI after that. Also, there will be a warning 
 telling that some attributes were modified from the outside.
 
 First, you should set up an environment as always, assign roles to nodes but don't 
@@ -31,7 +31,7 @@ number of JSON files corresponding to roles, which are currently assigned to nod
 Each file includes parameters for current role, so you can freely modify and save 
 them.
 
-**Customizing Passwords**: All passwords used in Fuel are automaticly randomly 
+**Customizing Passwords**: All passwords used in Fuel are automatically randomly 
 generated before deployment. You may want to set your own passwords in some cases. 
 
 You can edit files and modify password values. For 

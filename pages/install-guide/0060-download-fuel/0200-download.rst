@@ -7,7 +7,7 @@ and fill out the information to opt in to the Mirantis community.
 
 2. You should receive a response from Mirantis within the hour;
 this mail includes credential you can use to download Fuel.
-If you do not receive the acknowledgement from Mirantis,
+If you do not receive the acknowledgment from Mirantis,
 write to: sw-access@mirantis.com.
 
 Fuel provides the following installation options: 

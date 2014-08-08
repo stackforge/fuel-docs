@@ -26,7 +26,7 @@ This document describes the actual tests that are run.
   7. Checking deployments status.
   8. Send request to delete environment.
 
-  For more infromation, see:
+  For more information, see:
   `Murano documentation <https://wiki.openstack.org/wiki/Murano#Documentation>`_
 
 .. topic:: Murano environment with Linux Apache service deployment
@@ -47,6 +47,6 @@ This document describes the actual tests that are run.
   8. Send request to delete environment.
 
 
-  For more infromation, see:
+  For more information, see:
   `Murano documentation <https://wiki.openstack.org/wiki/Murano#Documentation>`_
 

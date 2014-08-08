@@ -25,7 +25,7 @@ Ceph monitors implement HA using a master-master model:
 Ceph Monitors use the Paxos algorithm
 to determine all updates to the data they manage.
 All monitors that are in quorum
-have consistant up-to-date data because of this.
+have consistent up-to-date data because of this.
 
 You can read more in `Ceph documentation <http://ceph.com/docs/master/architecture>`_.
 

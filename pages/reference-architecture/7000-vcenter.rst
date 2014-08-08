@@ -24,8 +24,8 @@ This enables Nova Compute to deploy workloads on vSphere
 and allows vSphere features such as vMotion workload migration,
 vSphere High Availability, and Dynamic Resource Scheduling (DRS).
 DRS is enabled
-by architecting the driver to aggregate ESXi hosts in each clster
-to present one large hypervisor entitiy to the Nova scheduler,
+by architecting the driver to aggregate ESXi hosts in each cluster
+to present one large hypervisor entity to the Nova scheduler,
 thus enabling OpenStack to schedule to the granularity of clusters,
 then call vSphere DRS to schedule
 the individual ESXi host within the cluster.

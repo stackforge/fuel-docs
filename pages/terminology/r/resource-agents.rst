@@ -3,7 +3,7 @@
 
 Resource Agents (RAs)
 ---------------------
-Resource Agents are used by Pacemaker to interract with applications.
+Resource Agents are used by Pacemaker to interact with applications.
 Pacemaker includes native that are used
 in OpenStack high-availability deployments
 such as those that manage the MySQL databases or virtual IP addresses.

@@ -9,7 +9,7 @@ HowTo: Enable/Disable Galera Cluster Autorebuild Mechanism
 
 By default, Fuel reassembles a Galera cluster automatically
 without any user interaction.
-The OCF script looks for the existense of the `mysqlprimaryinit` variable
+The OCF script looks for the existence of the `mysqlprimaryinit` variable
 and tries to assemble the cluster in a following way:
 
   - The script checks for this variabe and
@@ -18,7 +18,7 @@ and tries to assemble the cluster in a following way:
     then the script enters the autorebuild phase; otherwise it is skipped.
 
   - The script checks for the status of the current node,
-    If it is syncronized with the quorum, the procedure stops;
+    If it is synchronized with the quorum, the procedure stops;
     otherwise, the latest epoch takes place
     as a Corosync variable parameter for the selected node.
 
@@ -34,7 +34,7 @@ and tries to assemble the cluster in a following way:
     if no higher epochs are found,
     the script checks for the temporary `mysqlmaster` flag
     and neither sets it if the flag does not exist
-    nor falls back to the standalong mode.
+    nor falls back to the standalone mode.
 
   - The MySQL process launches with an empty `gcomm://` string,
     forming a new quorum,

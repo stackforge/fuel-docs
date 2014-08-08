@@ -130,7 +130,7 @@ SQLAlchemy connection pool is now tuned for the deployment
 
 The SQLAlchemy (and, if appropriate, the Neutron database pool)
 are now tuned to scale
-to better accomodate Nova-network, Neutron,
+to better accommodate Nova-network, Neutron,
 Cinder, and Glance on larger hardware configurations.
 See `LP1274784 <https://bugs.launchpad.net/fuel/+bug/1274784>`_.
 
@@ -215,7 +215,7 @@ it still accepts connections
 but it is not able to process them.
 This means that HAProxy does not know that RabbitMQ is down
 and continues to funnel all connections to the primary controller.
-Eventually none of the OpenStack sercies can talk to RabbitMQ
+Eventually none of the OpenStack services can talk to RabbitMQ
 and the entire cluster stops working.
 Increasing the default size of the pool of file descriptors
 greatly reduces the possibility of this happening.

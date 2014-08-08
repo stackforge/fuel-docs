@@ -131,7 +131,7 @@ Stop and destroy a container
 System changes for Docker affecting Fuel 5.0 and later
 ------------------------------------------------------
 
-The Fuel Master base sytem is modified in 5.0.
+The Fuel Master base system is modified in 5.0.
 These changes were made mostly to enable directory sharing
 between containers to operate smoothly:
 

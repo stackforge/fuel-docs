@@ -26,7 +26,7 @@ this is recommended for environments that have six or more nodes:
 
 - Only one MySQL/Galera master is active in the VIP;
   this single direction synchronous replication
-  usually provides better preformance than other implementations.
+  usually provides better performance than other implementations.
 
 The workflow is:
 

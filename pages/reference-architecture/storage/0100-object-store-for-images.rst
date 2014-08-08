@@ -56,7 +56,7 @@ backend:
    the compute node instead of a copy-on-write clone in Ceph.
 
  * Ephemeral drives are stored in local files on compute nodes instead
-   of Ceph, preventing live migration of instances with ephemenral
+   of Ceph, preventing live migration of instances with ephemeral
    drives.
 
 These limitations are removed in

@@ -8,7 +8,7 @@ protocol. It uses it in order to provide connectivity between cluster nodes,
 decide if cluster is quorate to provide services, to provide data layer for
 services that want to use features of Virtual Synchrony.
 
-Corosync fuctions in Fuel as the communication and quorum service via Pacemaker
+Corosync functions in Fuel as the communication and quorum service via Pacemaker
 cluster resource manager (`crm`). It's main configuration file is located in
 ``/etc/corosync/corosync.conf``.
 

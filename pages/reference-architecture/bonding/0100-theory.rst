@@ -36,8 +36,8 @@ One Side Bonding Policies:
 * **Active-backup** - Active-backup policy: Only one slave in the bond is active.This mode provides fault tolerance.
 * **Balance-xor** - XOR policy: Transmit based on the selected transmit hash policy. This mode provides load balancing and fault tolerance.
 * **Broadcast** - Broadcast policy: transmits everything on all slave interfaces. This mode provides fault tolerance.
-* **balance-tlb** - Adaptive transmit load balancing based on a current links' utilisation. This mode provides load balancing and fault tolerance.
-* **balance-alb** - Adaptive transmit and receive load balancing based on the current links' utilisation. This mode provides load balancing and fault tolerance.
+* **balance-tlb** - Adaptive transmit load balancing based on a current links' utilization. This mode provides load balancing and fault tolerance.
+* **balance-alb** - Adaptive transmit and receive load balancing based on the current links' utilization. This mode provides load balancing and fault tolerance.
 * **balance-slb** - Modification of balance-alb mode. SLB bonding allows a limited form of load balancing without the
   remote switch's knowledge or cooperation. SLB assigns each source MAC+VLAN pair to a link and transmits all packets from
   that MAC+VLAN through that link. Learning in the remote switch causes it to send packets to that MAC+VLAN through the same link.

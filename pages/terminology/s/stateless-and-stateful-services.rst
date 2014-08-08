@@ -16,7 +16,7 @@ A stateful service is one where subsequent requests to the service
 depend on the results of each previous request.
 Stateful services are more difficult to manage
 because a single action typically involves multiple requests,
-so simply providing addiitonal instances and load balancing
+so simply providing additional instances and load balancing
 does not solve the problem.
 For example, if the Horizon user interface reset itself
 every time you went to a new page,

@@ -31,7 +31,7 @@ Note that, because Microsoft Windows and other necessary components
 can only be obtained directly from Microsoft,
 Murano is still to some degree a do-it-yourself project.
 Fuel is able to configure Murano's dashboard, API, and engine services,
-but you will need to read documention on the steps
+but you will need to read documentation on the steps
 to set up a Murano base image;
 see `Creating a Murano Image <http://murano-api.readthedocs.org/en/latest/image_builders/index.html>`_.
 Images can be uploaded via Glance.

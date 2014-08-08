@@ -55,7 +55,7 @@ CLI commands reference
 Release
 +++++++
 
-Get list of all avaliable releases:
+Get list of all available releases:
 
 ::
 
@@ -123,7 +123,7 @@ and filter them by environment
 
   fuel --env-id 1 node list
 
-Assign some nodes to environemnt with with specific roles
+Assign some nodes to environment with with specific roles
 
 ::
 
@@ -136,7 +136,7 @@ Remove some nodes from environment
 
   fuel node remove --node 2,3 --env 1
 
-Also you can do it without ``--env`` or ``--node`` to remove some nodes without knowing their environment and remove all nodes of some environment respectevly.
+Also you can do it without ``--env`` or ``--node`` to remove some nodes without knowing their environment and remove all nodes of some environment respectively.
 
 ::
 
@@ -184,7 +184,7 @@ Configuration of environment or some node is universal and done in three stages
 Deployment
 ++++++++++
 
-Finally you can deploying environmnet changes with
+Finally you can deploying environment changes with
 
 ::
 

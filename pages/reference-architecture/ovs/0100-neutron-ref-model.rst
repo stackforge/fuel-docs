@@ -12,8 +12,8 @@ The FuelWeb UI uses the following per-node network model:
   * **br-mgmt** for the Management network
   * **br-storage** for the Storage network
 
-* Connect each network's bridge with an apropriate NIC bridge using an OVS patch with
-  an apropriate VLAN tag.
+* Connect each network's bridge with an appropriate NIC bridge using an OVS patch with
+  an appropriate VLAN tag.
 * Assign network IP addresses to the corresponding bridges.
 
 Note that the Admin network IP address is assigned to its NIC directly.

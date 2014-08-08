@@ -37,7 +37,7 @@ then use that media to install the software.
    and :ref:`virtualbox`.
 
 
-Use any standard software to burn the ISO to a writeable DVD.
+Use any standard software to burn the ISO to a writable DVD.
 Some popular options:
 
 - **Linux** --

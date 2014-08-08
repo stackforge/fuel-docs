@@ -47,8 +47,8 @@ Routing recommendations
 Neutron GRE Segmentation Planning
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Depdnding on the number of NICs you have in your node servers, you can use the
-foldowing examples to plan your NIC assignment:
+Depending on the number of NICs you have in your node servers, you can use the
+following examples to plan your NIC assignment:
 
 2  NIC deployment 
 

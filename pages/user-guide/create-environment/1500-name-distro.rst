@@ -38,6 +38,6 @@ match the Icehouse release provided for Fuel 5.0.1.
 The "2014.1" string in the first and second options
 match the Icehouse release that was provided for Fuel 5.0.
 
-If you did a fresh install of Mirantis OpentStack 5.0.1
+If you did a fresh install of Mirantis OpenStack 5.0.1
 rather than upgrading from 5.0,
 you will only see the options for 5.0.1.

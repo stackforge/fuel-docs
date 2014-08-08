@@ -17,7 +17,7 @@ where advanced vSphere features can be accessed.
 This section summarizes the planning you should do
 and other steps that are required
 before you attempt to deploy Mirantis OpenStack
-with vCenter intergration.
+with vCenter integration.
 
 For more information:
 
@@ -60,7 +60,7 @@ Please check that you completed the following steps:
 ESXi Host Networks Configuration
 --------------------------------
 The ESXi host(s) network must be configured appropriately
-in order to enable intergration of Mirantis OpenStack with vCenter.
+in order to enable integration of Mirantis OpenStack with vCenter.
 Follow the steps below:
 
 1. Open the ESXi host page,
