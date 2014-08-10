@@ -72,4 +72,7 @@ Some other considerations when choosing a network topology:
 - VMWare :ref:`vcenter-term` and :ref:`vsphere-term`
   can only be implemented on Nova-network.
 - Neutron with VMware NSX can only be implemented with the KVM/QEMU hypervisor.
-
+- :ref:`bonding-term` is not supported when using SR-IOV over
+  Mellanox connectX-3 adapters family.
+- Mellanox :ref:`sr-iov-term` and :ref:`iser-term` are supported only when
+  choosing Neutron with VLAN.
