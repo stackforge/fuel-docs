@@ -34,6 +34,7 @@ Terminology Reference
 .. include:: /pages/terminology/i/identity-service.rst
 .. include:: /pages/terminology/i/image-service.rst
 .. include:: /pages/terminology/i/ironic.rst
+.. include:: /pages/terminology/i/iser.rst
 .. include:: /pages/terminology/k/keystone.rst
 .. include:: /pages/terminology/k/kvm.rst
 .. include:: /pages/terminology/l/lxc.rst
@@ -61,10 +62,12 @@ Terminology Reference
 .. include:: /pages/terminology/q/quotas.rst
 .. include:: /pages/terminology/r/rabbitmq.rst
 .. include:: /pages/terminology/r/rally.rst
+.. include:: /pages/terminology/r/rdma.rst
 .. include:: /pages/terminology/r/resource-agents.rst
 .. include:: /pages/terminology/s/sahara.rst
 .. include:: /pages/terminology/s/scheduler.rst
 .. include:: /pages/terminology/s/security-groups.rst
+.. include:: /pages/terminology/s/sr-iov.rst
 .. include:: /pages/terminology/s/stateless-and-stateful-services.rst
 .. include:: /pages/terminology/s/storage-nodes-and-roles.rst
 .. include:: /pages/terminology/s/stp.rst
