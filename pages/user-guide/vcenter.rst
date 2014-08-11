@@ -49,6 +49,9 @@ Select vCenter Hypervisor for vCenter
 
 Select the vCenter :ref:`hypervisor<hypervisor-ug>`
 when you create your OpenStack Environment.
+After that you need to fill corresponding fields.
+You can modify the vCenter specific values on the Settings tab after you
+create the environment.
 
 .. image:: /_images/user_screen_shots/vcenter-hv.png
    :width: 50%
