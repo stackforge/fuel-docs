@@ -59,7 +59,7 @@ Some other considerations when choosing a network topology:
 
 - :ref:`ovs-term` and :ref:`bonding-term` can only be implemented on Neutron.
 - :ref:`bonding-term` is not supported when using SR-IOV over
-  Mellanox connectX-3 adapters family.
+  :ref:`mellanox-adapters` family.
 - VMWare vCenter can only be implemented on Nova-network.
 - Murano is supported only on Neutron.
 - Mellanox :ref:`sr-iov-term` and :ref:`iser-term` are supported only when
