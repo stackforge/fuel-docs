@@ -2,7 +2,7 @@
 .. _scheduler-ug:
 
 Choose the Compute Node Scheduler
----------------------------------
++++++++++++++++++++++++++++++++++
 
 .. image:: /_images/user_screen_shots/settings-scheduler.png
    :width: 80%
