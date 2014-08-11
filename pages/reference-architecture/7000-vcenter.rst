@@ -42,7 +42,7 @@ The Nova Compute service runs on a Controller node,
 not on a separate Compute node.
 This means that, in the Multi-node Deployment mode,
 a user has a single Controller node
-with both controller and compute services running.
+with both compute and network services running.
 
 Unlike other hypervisor drivers
 that require the Nova Compute service to be running
@@ -63,18 +63,11 @@ Multi-node HA Deployment with vSphere integration
 .. image:: /_images/vcenter-reference-architecture.png
    :width: 50%
 
-In the Multi-node HA Deployment mode,
-the Nova Compute and Nova Network services run on a Controller node
-that is called the "Primary Controller".
-This is the first node in the Fuel database,
-which usually makes it the top node in the "Nodes" list in the Web UI
-and the node with the lowest ID in Fuel CLI output.
-These services cannot be moved to another Controller node
-if the Primary Controller node goes offline.
-This means that,
-while all the other OpenStack services operate in HA mode,
-the Nova Compute and Nova Network services are not protected from failure.
-See `LP1312653 <https://bugs.launchpad.net/fuel/+bug/1312653>`_.
+In the Multi-node HA Deployment mode, the Nova Compute and Nova Network
+services run on same or distinct Controller nodes.
+If some service fails it is restarted by :ref:`pacemaker-term` several times,
+if service fails to start or whole Controller node fails service is
+started on one of available Controllers.
 
 .. raw: pdf
 

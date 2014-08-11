@@ -43,7 +43,6 @@ to create a Mirantis OpenStack environment
 that is integrated with VMware vSphere,
 the vSphere installation must be up and running.
 Please check that you completed the following steps:
-
 * Install vSphere
 * Install vCenter
 * Install ESXi
@@ -94,22 +93,20 @@ Follow the steps below:
 
 .. image:: /_images/esx-connection-settings.png
   :width: 70%
-  
+
 Limitations
 ------------------------------
-- Only :ref:`nova-network-term` with flatDHCP mode is supported
+- Only vCenter versions 5.1 and later are supported
+- There is no way to deliberately select certain vCenter cluster
+  where virtual instances will be launched.
+- Only :ref:`nova-network-term` with FlatDHCP mode is supported
   in the current version of the integration.
 - OpenStack Block Storage service (Cinder)
   with VMware VMDK datastore driver is not supported;
   you can only use Cinder with the LVM over iSCSI option
   as the Cinder backend.
 - Each OpenStack environment can support one vCenter cluster.
-- VMware vCenter can be deployed on Mirantis OpenStack
-  with or without high-availability (HA) configured.
-  Note, however, that the vCenter Nova plugin
-  runs on only one Controller node,
-  even if that Controller node is replicated to provide HA.
-  See `LP1312653 <https://bugs.launchpad.net/fuel/+bug/1312653>`_.
+- :ref:`security-groups-term` are not supported.
 
 For background information about how vCenter support
 is integrated into Mirantis OpenStack, see :ref:`vcenter-arch`.
