@@ -9,6 +9,10 @@ VMware provides a vCenter driver for OpenStack
 that enables the Nova-compute service to
 communicate with a VMware vCenter server
 that manages one or more ESX host clusters.
+If your vCenter manages multiple ESX host clusters, you can specify
+several or all clusters for single OpenStack environment, so that
+Nova-compute service will manage multiple ESX host clusters via single
+vCenter server.
 The vCenter driver makes management convenient
 from both the OpenStack Dashboard (:ref:`horizon-term`)
 and from vCenter,
@@ -94,7 +98,7 @@ Follow the steps below:
 
 .. image:: /_images/esx-connection-settings.png
   :width: 70%
-  
+
 Limitations
 ------------------------------
 - Only :ref:`nova-network-term` with flatDHCP mode is supported
@@ -103,7 +107,6 @@ Limitations
   with VMware VMDK datastore driver is not supported;
   you can only use Cinder with the LVM over iSCSI option
   as the Cinder backend.
-- Each OpenStack environment can support one vCenter cluster.
 - VMware vCenter can be deployed on Mirantis OpenStack
   with or without high-availability (HA) configured.
   Note, however, that the vCenter Nova plugin
