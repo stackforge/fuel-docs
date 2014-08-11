@@ -44,6 +44,15 @@ Some general guiding principles:
   by combining multiple roles on the nodes
   and mapping multiple :ref:`logical-networks-arch`
   to a single physical NIC.
+- If performance is critical for your compute and storage nodes,
+  consider using :ref:`mellanox-adapters` for these nodes.
+- When looking to maximize performance,
+  carefully choose your hardware components
+  and make sure that the performance features of the selected hardware
+  are supported and enabled.
+  For an example of what tight integration
+  of hardware and software can do for you,
+  see :ref:`mellanox-adapters`.
 
 This section provides information to help you decide
 how many nodes you need and which roles to assign to each.
