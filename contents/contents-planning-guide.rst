@@ -5,6 +5,7 @@
 .. include:: /pages/planning-guide/4200-net-topology.rst
 .. include:: /pages/planning-guide/4300-linux-distro.rst
 .. include:: /pages/planning-guide/4400-nodes-roles.rst
+.. include:: /pages/planning-guide/4450-monitoring.rst
 .. include:: /pages/planning-guide/7000-sahara-plan.rst
 .. include:: /pages/planning-guide/7000-vcenter-plan.rst
 .. include:: /pages/planning-guide/7300-fuel-on-vsphere-prepare.rst
