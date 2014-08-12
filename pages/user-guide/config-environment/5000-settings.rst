@@ -48,4 +48,5 @@ you can click on the "Load Defaults" button at the bottom of the screen.
 .. include:: /pages/user-guide/config-environment/settings/3300-scheduler.rst
 .. include:: /pages/user-guide/config-environment/settings/3500-vlan-splinters.rst
 .. include:: /pages/user-guide/config-environment/settings/4000-settings-storage.rst
+.. include:: /pages/user-guide/config-environment/settings/8000-zabbix-access.rst
 
