@@ -30,6 +30,8 @@ complete to plan the Mirantis OpenStack deployment.
 | the high-availability      |                                           |
 | to implement.              |                                           |
 +----------------------------+-------------------------------------------+
+| Plan monitoring facilities | See :ref:`monitoring-plan`                |
++----------------------------+-------------------------------------------+
 | Calculate the server and   | See :ref:`hardware-plan`                  |
 | network hardware needed    |                                           |
 +----------------------------+-------------------------------------------+
