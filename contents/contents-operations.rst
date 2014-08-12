@@ -12,6 +12,7 @@
 .. include:: /pages/operations/8000-performance.rst
 .. include:: /pages/operations/8100-backup.rst
 .. include:: /pages/operations/8500-ceilometer.rst
+.. include:: /pages/operations/8550-zabbix.rst
 .. include:: /pages/operations/8600-heat.rst
 .. include:: /pages/operations/8900-testing-details.rst
 .. include:: /pages/operations/9000-troubleshoot.rst
