@@ -22,6 +22,8 @@
 
    PageBreak oneColumn
 
+.. toctree::
+
 .. _release-notes:
 
 .. include:: /contents/contents-release-notes.rst
