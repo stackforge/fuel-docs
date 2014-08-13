@@ -1,31 +1,55 @@
-.. raw:: pdf
 
-   PageBreak
+.. _ceilometer-ops:
 
-.. index:: Ceilometer
+Running Ceilometer
+==================
 
-.. _ceilometer-deployment-notes:
+Fuel can configure :ref:`Ceilometer<ceilometer-term>`
+to run in your OpenStack environment.
+See :ref:`ceilometer-mongodb-plan` for information
+about the resources required to run Ceilometer.
 
-Ceilometer deployment notes
-===========================
+QUESTION:
 
-.. contents :local:
+- How does Fuel deploy Ceilometer?  Does it provide some default
+  metering and configuration choices that are a reasonable starting point
+  or is it a blank canvas that the user must configure in order to get
+  any data out of it?
+- Is there a configuration file that shows what data Ceilometer
+  is collecting?
 
-Overview
---------
+For complete information about configuring and running Ceilometer,
+see `Ceilometer Developer Documentation <http://docs.openstack.org/developer/ceilometer/>`_.
 
-Fuel can deploy the OpenStack Telemetry component *Ceilometer*.
-When enabled, Ceilometer collects and shares measurement data
-gathered from all OpenStack components. This data cam be used for monitoring
-and capacity planning purposes as well as for an alarming service.
-Ceilometer's REST API can also provide data to external monitoring software
-for a customer's billing system.
+.. _ceilometer-config-ops:
 
-Installation
-------------
+Configuring Ceilometer
+----------------------
 
-To install Ceilometer with Fuel,
-check the appropriate box when configuring your environment.
+Three types of measurement are defined:
+
+- Cumulative -- increasing over time (instance hours)
+- Gauge -- Discrete items (floating IPs, image uploads)
+  and fluctuating values (disk I/O)
+- Delta -- Changing over time (bandwidth)
+
+For a complete list of meter types by component
+that are currently implemented, see
+
+- `<http://ceilometer.readthedocs.org/en/latest/measurements.html>`_
+- `<http://docs.openstack.org/developer/ceilometer/measurements.html>`_
+
+For a complete list of Configuration Options, see
+
+- `<http://ceilometer.readthedocs.org/en/latest/configuration.html>`_
+- `<http://docs.openstack.org/developer/ceilometer/configuration.html>`_
+
+.. ceilometer-run-ops:
+
+Running Ceilometer
+------------------
+
+.. ceilometer-api-ops:
 
 Performance and database backend
 --------------------------------
@@ -42,3 +66,4 @@ the installation of MongoDB as a role onto a node;
 see :ref:`assign-roles-ug` for instructions.
 This resolves the Ceilometer performance issues caused
 by the volume of concurrent read/write operations.
+
