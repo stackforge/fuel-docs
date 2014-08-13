@@ -1,31 +1,44 @@
-.. raw:: pdf
 
-   PageBreak
+.. _ceilometer-ops:
 
-.. index:: Ceilometer
+Running Ceilometer
+==================
 
-.. _ceilometer-deployment-notes:
-
-Ceilometer deployment notes
-===========================
-
-.. contents :local:
-
-Overview
---------
-
-Fuel can deploy the OpenStack Telemetry component *Ceilometer*.
+Fuel can deploy the OpenStack Telemetry component
+:ref:`Ceilometer<ceilometer-term>`
+to run in your OpenStack environment.
 When enabled, Ceilometer collects and shares measurement data
-gathered from all OpenStack components. This data can be used for monitoring
-and capacity planning purposes as well as for an alarming service.
-Ceilometer's REST API can also provide data to external monitoring software
-for a customer's billing system.
+gathered from all OpenStack components.
+This data can be used for monitoring and capacity planning purposes
+as well as for an alarming service.
+Ceilometer's REST API can also provide data
+to external monitoring software for a customer's billing system.
+See :ref:`ceilometer-mongodb-plan` for information
+about the resources required to run Ceilometer.
 
-Installation
-------------
+For complete information about configuring and running Ceilometer,
+see `Ceilometer Developer Documentation <http://docs.openstack.org/developer/ceilometer/>`_.
 
-To install Ceilometer with Fuel,
-check the appropriate box when configuring your environment.
+.. _ceilometer-config-ops:
+
+Configuring Ceilometer
+----------------------
+
+Three types of measurement are defined:
+
+- Cumulative -- increasing over time (instance hours)
+- Gauge -- Discrete items (floating IPs, image uploads)
+  and fluctuating values (disk I/O)
+- Delta -- Changing over time (bandwidth)
+
+For a complete list of meter types by component
+that are currently implemented, see
+`<http://docs.openstack.org/developer/ceilometer/measurements.html>`_
+
+For a complete list of Configuration Options, see
+`<http://docs.openstack.org/developer/ceilometer/configuration.html>`_
+
+.. ceilometer-api-ops:
 
 Performance and database backend
 --------------------------------
@@ -42,3 +55,4 @@ the installation of MongoDB as a role onto a node;
 see :ref:`assign-roles-ug` for instructions.
 This resolves the Ceilometer performance issues caused
 by the volume of concurrent read/write operations.
+
