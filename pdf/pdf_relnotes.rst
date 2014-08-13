@@ -24,8 +24,6 @@
 
 .. toctree::
 
-.. include:: /pages/preface/preface.rst
-
 .. _release-notes:
 
 .. include:: /contents/contents-release-notes.rst
