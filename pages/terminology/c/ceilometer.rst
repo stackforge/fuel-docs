@@ -17,14 +17,15 @@ The framework can be expanded to collect measurements for other needs.
 
 Fuel can install Ceilometer on systems running
 either the CentOS or Ubuntu operating system;
-check the appropriate box when configuring your environment.
+check the appropriate box on the :ref:`platform-services-ug` screen
+when configuring your environment.
 
 Note that Ceilometer collects a great deal of data
 and performs a large volume of database writes;
 with 100 resources and default configs Ceilometer collects around
 16k samples per hour.
 
-Mirantis OpenStack 5.0 now defaults to installing :ref:`mongodb-term`
+Mirantis OpenStack 5.x defaults to installing :ref:`mongodb-term`
 as the recommended back-end database for OpenStack Telemetry.
 The Fuel Master Node enables you to choose
 the installation of MongoDB as a role onto a node;
@@ -33,7 +34,7 @@ This resolves the Ceilometer performance issues caused
 by the volume of concurrent read/write operations.
 
 For more information, see
-*  :ref:`ceilometer-deployment-notes`
+*  :ref:`ceilometer-mongodb-plan`
 * `Ceilometer wiki <https://wiki.openstack.org/wiki/Ceilometer>`_
 * `Ceilometer blob <https://github.com/openstack/ceilometer/blob/stable/icehouse/doc/source/install/dbreco.rst>`_
 

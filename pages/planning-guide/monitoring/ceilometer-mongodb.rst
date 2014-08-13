@@ -1,34 +1,18 @@
-.. raw:: pdf
 
-   PageBreak
+.. _ceilometer-mongodb-plan:
 
-.. index:: Ceilometer
+Ceilometer and MongoDB
+----------------------
 
-.. _ceilometer-deployment-notes:
-
-Ceilometer deployment notes
-===========================
-
-.. contents :local:
-
-Overview
---------
-
-Fuel can deploy the OpenStack Telemetry component *Ceilometer*.
+Fuel can deploy :ref:`ceilometer-term`,
+ the OpenStack Telemetry component.
 When enabled, Ceilometer collects and shares measurement data
-gathered from all OpenStack components. This data cam be used for monitoring
-and capacity planning purposes as well as for an alarming service.
-Ceilometer's REST API can also provide data to external monitoring software
+gathered from all OpenStack components.
+This data cam be used for monitoring and capacity planning purposes
+as well as for an alarming service.
+Ceilometer's REST API can also provide data
+to external monitoring software
 for a customer's billing system.
-
-Installation
-------------
-
-To install Ceilometer with Fuel,
-check the appropriate box when configuring your environment.
-
-Notes
------
 
 Ceilometer can be configured to collect a large amount of metering data
 and thus perform a high volume of database writes.
@@ -40,3 +24,9 @@ The Fuel Master Node enables you to choose
 the installation of MongoDB as a role onto a node.
 This resolves the Ceilometer performance issues caused
 by the volume of concurrent read/write operations.
+
+To install Ceilometer with Fuel:
+
+- Check the appropriate box on the :ref:`platform-services-ug` screen
+  when configuring your environment.
+- Assign the 
