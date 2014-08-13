@@ -14,8 +14,8 @@ Related projects
 Choose additional related projects
 that should be included in your environment:
 
-- For additional information about deploying :ref:`ceilometer-term`,
-  see :ref:`ceilometer-deployment-notes`.
+- For information about planning your :ref:`ceilometer-term` deployment,
+  see :ref:`ceilometer-mongodb-plan`.
 - For additional information about deploying :ref:`sahara-term`,
   see :ref:`sahara-install`.
 - For additional information about deploying :ref:`murano-term`,
