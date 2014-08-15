@@ -36,5 +36,5 @@ As a user, OpenStack Identity enables you to:
 Pacemaker uses an OpenStack Resource Agent to manage
 the Identity Service in OpenStack High Availability deployments.
 For information about the High Availability Identity service, see
-`Highly Available OpenStack Identity <http://docs.openstack.org/high-availability-guide/content/s-keystone.html>`.
+`Highly Available OpenStack Identity <http://docs.openstack.org/high-availability-guide/content/s-keystone.html>`_.
 
