@@ -23,7 +23,7 @@ instances may suffer spurious disk I/O errors.
 Overcommit ratios can be set for CPUs, RAM, and disk.
 By default, Fuel sets the overcommit ratio for CPUs at 8:1;
 This means that, if your physical node has 12 cores,
-the Filter :ref:`scheduler-term` sees 96 available virtual cores
+the Filter :ref:`Scheduler<scheduler-term>` sees 96 available virtual cores
 and so could provision 24 4-core instances on that physical node.
 
 Fuel sets the overcommit ratio for RAM and disks at 1:1,
@@ -43,7 +43,7 @@ by the traditional Simple "naive" Scheduler.
 
 For more information, see:
 
-- `Overcommitting <http://docs.openstack.org/trunk/openstack-ops/content/compute_nodes.html#overcommit>`
+- `Overcommitting <http://docs.openstack.org/trunk/openstack-ops/content/compute_nodes.html#overcommit>`_
 - `Scheduler configuration improvements <https://www.mail-archive.com/fuel-dev%40lists.launchpad.net/msg00642.html>`_
   discussion on the fuel-dev mailing list
 
