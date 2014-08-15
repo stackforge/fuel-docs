@@ -24,7 +24,7 @@ Such a configuration generates N^2 rules in *iptables*
 This significantly impacts networking performance in large deployments.
 
 Note that Sahara does does not provide a default security group.
-See this `note <https://review.openstack.org/#/c/71299/>`_
+See this :ref:`sahara-ports`
 for information about defining a default security group for Sahara).
 
 For more information about creating and using Security Groups, see:
@@ -39,4 +39,5 @@ For more information about creating and using Security Groups, see:
 
 - `Configure access and security for instances <http://docs.openstack.org/user-guide/content/Launching_Instances_using_Dashboard.html#security_groups_add_rule>`_
   gives detailed instructions for adding rules to a Security Group.
--
+
+
