@@ -41,7 +41,7 @@ that manages an existing Mirantis OpenStack 5.0 cloud environment:
     ::
 
        cd /var/tmp  # Use the directory where the tarball is located
-       tar -xf xxx.tar
+       lrzuntar xxx.tar.lrz
 
 #. Run the upgrade script from that same directory:
 
