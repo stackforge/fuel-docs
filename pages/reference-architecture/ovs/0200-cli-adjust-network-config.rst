@@ -33,3 +33,39 @@ the following keys:
   internally-used roles in Puppet manifests ('management', 'storage', and so on).
 * **transformations** - An ordered list of OVS network primitives.
 
+Here is an example a "network_scheme" section in a node's configuration, showing how
+to change MTU parameters:
+
+::
+
+  network_scheme:
+   endpoints:
+     br-ex:
+       IP:
+       - 172.16.0.7/24
+       gateway: 172.16.0.1
+     br-fw-admin:
+       IP:
+       - 10.20.0.7/24
+     br-mgmt:
+       IP:
+       - 192.168.0.7/24
+     br-prv:
+       IP: none
+     br-storage:
+       IP:
+       - 192.168.1.6/24
+   interfaces:
+     eth0:
+       mtu: '1234'
+       L2:
+         vlan_splinters: 'off'
+     eth1:
+       mtu: '4321'
+       L2:
+         vlan_splinters: 'off'
+     eth2:
+       L2:
+         vlan_splinters: 'off'
+
+
