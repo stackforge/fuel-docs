@@ -26,6 +26,21 @@ Tagged ports
            switchport trunk allowed vlan [vlan IDs for specific networks]
            switchport trunk native vlan [vlan ID] - if necessary one untagged VLAN
 
+
+
+**Mellanox**
+
+::
+
+ interface ethernet [interface number]
+   description [port description]
+   switchport mode hybrid
+           switchport hybrid allowed-vlan [all|none]
+           switchport hybrid allowed-vlan [add|remove|except] [vlan number]
+           switchport hybrid allowed-vlan [vlan number]
+           switchport access vlan [vlan number]
+
+
 **Juniper**
 
 ::

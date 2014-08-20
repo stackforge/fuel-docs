@@ -21,6 +21,17 @@ Untagged ports
   switchport
          switchport access vlan [vlan ID for specific network]
 
+
+**Mellanox**
+
+::
+
+ interface ethernet [interface number]
+   description [port description]
+   switchport mode access
+         switchport access vlan [vlan number]
+
+
 **Juniper**
 
 ::
