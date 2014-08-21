@@ -98,7 +98,8 @@ experimental features were enabled by default and could not be turned off.
 Starting with Mirantis OpenStack 5.1,
 experimental features are disabled by default
 and require an explicit action to enable the features.
-More details on enabling experimental features can be found in the documentation.
+Instructions about enabling experimental features
+can be found in :ref:`experimental-features-term`.
 
 The Fuel Master Node can now be backed up and restored
 ------------------------------------------------------
