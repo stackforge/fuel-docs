@@ -17,6 +17,7 @@ Terminology Reference
 .. include:: /pages/terminology/d/devstack.rst
 .. include:: /pages/terminology/d/docker.rst
 .. include:: /pages/terminology/e/esxi.rst
+.. include:: /pages/terminology/e/experimental-features.rst
 .. include:: /pages/terminology/f/fencing.rst
 .. include:: /pages/terminology/f/fuel.rst
 .. include:: /pages/terminology/f/fuel-master-node.rst
