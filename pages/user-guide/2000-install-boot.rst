@@ -31,7 +31,7 @@ then use that media to install the software.
 .. note:: You can use the same ISO image
    to install Fuel and Mirantis OpenStack
    in VirtualBox.
-   In that case, copy the ISO file to the approriate directory
+   In that case, copy the ISO file to the appropriate directory
    and boot directly from that disk file.
    See the `Quick Start Guide <http://software.mirantis.com/quick-start/>`_.
    and :ref:`virtualbox`.
