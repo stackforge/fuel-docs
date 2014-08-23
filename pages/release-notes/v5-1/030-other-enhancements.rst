@@ -4,10 +4,10 @@ Other Enhancements
 The minimum number of controllers for a Highly Available architecture has been eliminated
 -----------------------------------------------------------------------------------------
 Previously, the Highly Available architecture (also known as Multi-node HA)
-required a minimum of 3 controllers for deployment.
+required at least 3 controllers for deployment.
 This minimum has been eliminated in Mirantis OpenStack 5.1,
-enabling the HA architecture to be deployed onto any number of controllers,
-including just one.
+enabling the same services that manage the HA architecture
+to manage a single-controller deployment.
 If deployed with only one controller,
 the environment is not considered highly available
 (because no secondary controller is present for failover),
@@ -48,6 +48,22 @@ in the following ways:
   as a storage option for vCenter.
   This resolves `LP1352401 <https://bugs.launchpad.net/fuel/+bug/1352401>`_.
 
+Improvements to logging
+-----------------------
+
+syslog now uses service names for OpenStack logs
+and these logs are now displayed from the Fuel UI.
+The new **use_syslog_rfc_format** configuration option for OpenStack services
+is added in order to achieve this
+and to provide application (service) names in syslog messages.
+
+Controllers can be deployed in parallel
+---------------------------------------
+
+Multiple controllers can now be deployed in parallel rather than sequentially.
+This decreases the deployment time.
+See `LP1310494 <https://bugs.launchpad.net/fuel/+bug/1310494>`_.
+
 Zabbix can be installed as a monitoring solution (experimental)
 ---------------------------------------------------------------
 
@@ -59,8 +75,8 @@ to be deployed onto a discovered node;
 Zabbix agents are automatically deployed
 onto all other OpenStack nodes in the environment.
 
-Support for SR-IOV based networking and ISER block storage over Mellanox ConnectX-3 adapter family
---------------------------------------------------------------------------------------------------
+SR-IOV based networking and ISER block storage over the Mellanox ConnectX-3 adapter family is supported
+-------------------------------------------------------------------------------------------------------
 
 Mirantis OpenStack can now properly detect Mellanox hardware
 that is installed on discovered nodes and enable an operator to:

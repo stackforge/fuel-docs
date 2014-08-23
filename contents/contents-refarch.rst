@@ -13,3 +13,4 @@
 .. include:: /pages/reference-architecture/0100-openvswitch.rst
 .. include:: /pages/reference-architecture/0110-bonding.rst
 .. include:: /pages/reference-architecture/8100-zabbix.rst
+.. include:: /pages/reference-architecture/8000-fuel-upgrade.rst
