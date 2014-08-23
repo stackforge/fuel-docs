@@ -48,6 +48,15 @@ in the following ways:
   as a storage option for vCenter.
   This resolves `LP1352401 <https://bugs.launchpad.net/fuel/+bug/1352401>`_.
 
+Improvements to logging
+-----------------------
+
+syslog now uses service names for OpenStack logs
+and these logs are now displayed from the Fuel UI.
+The new **use_syslog_rfc_format** configuration option for OpenStack services
+is added in order to achieve this
+and to provide application (service) names in syslog messages.
+
 Zabbix can be installed as a monitoring solution (experimental)
 ---------------------------------------------------------------
 
