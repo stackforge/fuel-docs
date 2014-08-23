@@ -1,71 +1,62 @@
 New Features in Mirantis OpenStack 5.1
 ======================================
 
-Support for the initial OpenStack IceHouse release
------------------------------------------------------
+Support for the latest OpenStack IceHouse release
+-------------------------------------------------
 
 The OpenStack core projects in the Mirantis OpenStack hardened packages
 support the
-`OpenStack Icehouse 2014.1 <https://wiki.openstack.org/wiki/ReleaseNotes/Icehouse#OpenStack_2014.1_.28Icehouse.29_Release_Notes>`_ release.
-Fuel 5.0 deploys this version of OpenStack on either CentOS or Ubuntu.
+`OpenStack Icehouse 2014.1.1
+<https://wiki.openstack.org/wiki/ReleaseNotes/2014.1.1>`_ release.
+Fuel 5.1 deploys this version of OpenStack on either CentOS or Ubuntu.
 
-The Fuel Master Node can be upgraded from 5.0 or 5.0.1
-------------------------------------------------------
+The Fuel Master Node can be upgraded from 5.0.x
+-----------------------------------------------
+
 If you are running a Mirantis OpenStack 5.0 or 5.0.1 environment,
-you can upgrade to Fuel 5.1
-but leave your current environments in place
+you can upgrade your Fuel Master Node to Fuel 5.1
+but leave your current Mirantis OpenStack environments in place
 without requiring a redeployment.
-The Fuel Master Node retains the ability to add and delete nodes
-and perform other operational functions
-such as log management and Health Checks on current or previous environments.
-After the upgrade, the Fuel Master Node can also deploy
+After the upgrade, the Fuel Master Node can deploy
 a new Mirantis OpenStack 5.1 environment
-or a version of Mirantis OpenStack from which you upgraded.
-The following table summarizes the available progressions:
+and manage environments that were deployed with an earlier Fuel version,
+performing operational functions
+such as adding and deleting nodes,
+viewing logs, and running Health Checks.
 
-+--------------------------+--------------------------+------------------------------------+
-| First version installed  | Upgraded to version(s)   | Available versions for deployment  |
-+==========================+==========================+====================================+
-| 5.0                      | 5.1                      | 5.0, 5.1                           |
-+--------------------------+--------------------------+------------------------------------+
-| 5.0                      | 5.0.1, then 5.0.1 to 5.1 | 5.0.1, 5.1                         |
-+--------------------------+--------------------------+------------------------------------+
-| 5.0.1                    | 5.1                      | 5.0.1, 5.1                         |
-+--------------------------+--------------------------+------------------------------------+
-| 5.1                      | N/A                      | 5.1                                |
-+--------------------------+--------------------------+------------------------------------+
-
-
-Note that this only upgrades the Fuel Master Node.
 Upgrading the Fuel Master Node
-does not automatically patch or update the OpenStack environment.
-See below for information about patching and updating OpenStack environments.
+does not update the OpenStack environment.
+See below for information about updating OpenStack environments.
 
-Fuel can now patch or update existing Mirantis OpenStack environments
----------------------------------------------------------------------
+See :ref:`upgrade-ug` for instructions.
 
-In Mirantis OpenStack 5.1, the Fuel Master Node can patch or update
-existing Mirantis Openstack environments using Mirantis OpenStack packages
-provided by Mirantis.
-Once these packages are transferred onto the Fuel Master Node,
+
+Fuel 5.1 can update existing 5.0.x Mirantis OpenStack environments to 5.0.2 (Experimental)
+------------------------------------------------------------------------------------------
+
+Starting with version 5.1,
+an :ref:`experimental feature<experimental-features-term>`
+enables the Fuel Master Node to update
+existing 5.0.x environments to 5.0.2.
+Once the Fuel Master Node is upgraded,
 the UI provides an option to update an existing environment
 to the new patch or update packages.
 
-For example, Mirantis OpenStack 5.0 is based on the 2014.1 version of Icehouse.
-Mirantis OpenStack contains the packages required
-to update an Icehouse 2014.1 OpenStack environment (deployed with 5.0)
-to Icehouse 2014.1.1.
-In Mirantis OpenStack 5.1,
-this update package is labeled as “2014.1.1-5.0.2”
-and is available from the Actions tab in the Update panel.
+5.0.2 is a technical release that contains
+some of the bug fixes that are included in 5.1
+and the 2014.1.1 maintenance release of Icehouse.
+Release 5.1 includes some significant architectural modifications
+that make it impossible to update a 5.0.x environment to 5.1,
+so Mirantis is offering the 5.0.2 release
+to provide the fixes that can be applied to the existing architecture.
 
-Note that this capability will patch or update an OpenStack environment
-with the same major release version.
-In other words, the feature can patch or update an Icehouse environment
-from one maintenance release to the next,
-but is not able to upgrade an Icehouse environment to Juno.
-This upgrade capability is being considered
-for a future version of Mirantis OpenStack.
+See :ref:`update-openstack-environ-ug` for instructions.
+
+.. note::
+  If you are running Fuel 4.x or earlier,
+  you cannot upgrade but must install Mirantis OpenStack 5.1
+  and redeploy your environment to use the new release.
+
 
 Fuel is now protected by access control
 ---------------------------------------
@@ -75,7 +66,10 @@ users will be asked to provide authentication credentials (e.g. user name and pa
 These credentials and the authentication process
 are handled by a local instance of Keystone
 that is present on the Fuel Master Node.
-Users can change their passwords within the Fuel UI.
+Users can change their passwords
+using the :ref:`Fuel Setup menus<password-pxe>` during installation,
+from the :ref:`Fuel console<start-create-env-ug>`,
+or from the :ref:`Fuel CLI<cli_usage>`.
 
 Information about setting and updating the user names and passwords
 for the system can be found in :ref:`fuel-passwd-ops`.
@@ -115,7 +109,14 @@ VMware NSX is now supported as a network option
 -----------------------------------------------
 VMWare NSX is a is a software-defined network (SDN)
 that uses controllers and overlay networking.
-Mirantis OpenStack 5.1 enables you to select VMWare NSX as an networking option.
+Mirantis OpenStack 5.1 enables you to select VMWare NSX as an networking option
+when using the KVM hypervisor.
 Note that VMWare NSX is not supplied with Mirantis OpenStack;
 VMWare NSX must be purchased directly from VMWare.
 
+In Release 5.1, Mirantis OpenStack requires an NSX Service node
+in order to operate an NSX cluster.
+OpenStack itself can be used with an NSX cluster
+that lacks a Service node,
+but the Neutron NSX plug-in used for Mirantis OpenStack
+is configured to use the Service node.
