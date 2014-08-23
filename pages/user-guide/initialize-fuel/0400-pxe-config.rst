@@ -310,6 +310,9 @@ synchronize clocks between the nodes.
 Please do not hesitate to use Check button to verify your future network settings
 in advance.
 
+
+.. _password-pxe:
+
 Root password
 -------------
 

@@ -1,4 +1,5 @@
 .. index:: OpenStack-Patch Guide
+
 .. _OS-Patch_Guide:
 
 .. contents:: :local:
