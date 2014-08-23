@@ -1,6 +1,6 @@
 .. index:: Patching, OpenStack
 
-.. _Intro:
+.. _apply-patch-ops:
 
 Applying a Patch
 ================
