@@ -41,6 +41,9 @@ Upgrading the Fuel Master Node
 does not automatically patch or update the OpenStack environment.
 See below for information about patching and updating OpenStack environments.
 
+See :ref:`upgrade-ug` for instructions.
+
+
 Fuel can now patch or update existing Mirantis OpenStack environments
 ---------------------------------------------------------------------
 
@@ -66,6 +69,8 @@ from one maintenance release to the next,
 but is not able to upgrade an Icehouse environment to Juno.
 This upgrade capability is being considered
 for a future version of Mirantis OpenStack.
+
+See :ref:`patch-openstack-ug` for instructions.
 
 Fuel is now protected by access control
 ---------------------------------------
