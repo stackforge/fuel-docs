@@ -23,3 +23,4 @@ Some specific considerations:
   In order to use VLANs on CentOS based nodes,
   you must configure :ref:`vlan-splinters-ug`.
 - CentOS supports .rpm packages; Ubuntu supports .deb packages.
+
