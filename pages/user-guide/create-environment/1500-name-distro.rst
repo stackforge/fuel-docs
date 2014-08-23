@@ -32,6 +32,8 @@ you will have the following options:
     Icehouse on CentOS 6.5 (2014.1)
     Icehouse on Ubuntu 12.04.4 (2014.1.1-5.0.1)
     Icehouse on CentOS 6.5 (2014.1.1-5.0.1)
+    Icehouse on Ubuntu 12.04.4 (2014.1.1-5.1)
+    Icehouse on CentOS 6.5 (2014.1.1-5.1)
 
 The "2014.1.1" string in the third and fourth options
 match the Icehouse release provided for Fuel 5.0.1.
