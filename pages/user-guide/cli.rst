@@ -107,6 +107,15 @@ To delete the environment:
 
   fuel --env 1 env delete
 
+To update the Fuel environment to a newer release:
+
+::
+
+  fuel env update --env 1 --rel 42
+
+To roll back a failed update,
+use this same command but modify the release ID.
+
 
 Node
 ++++
