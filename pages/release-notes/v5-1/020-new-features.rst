@@ -1,13 +1,14 @@
 New Features in Mirantis OpenStack 5.1
 ======================================
 
-Support for the initial OpenStack IceHouse release
------------------------------------------------------
+Support for the latest OpenStack IceHouse release
+-------------------------------------------------
 
 The OpenStack core projects in the Mirantis OpenStack hardened packages
 support the
-`OpenStack Icehouse 2014.1 <https://wiki.openstack.org/wiki/ReleaseNotes/Icehouse#OpenStack_2014.1_.28Icehouse.29_Release_Notes>`_ release.
-Fuel 5.0 deploys this version of OpenStack on either CentOS or Ubuntu.
+`OpenStack Icehouse 2014.1.1
+<https://wiki.openstack.org/wiki/ReleaseNotes/2014.1.1>`_ release.
+Fuel 5.1 deploys this version of OpenStack on either CentOS or Ubuntu.
 
 The Fuel Master Node can be upgraded from 5.0 or 5.0.1
 ------------------------------------------------------
@@ -21,25 +22,34 @@ such as log management and Health Checks on current or previous environments.
 After the upgrade, the Fuel Master Node can also deploy
 a new Mirantis OpenStack 5.1 environment
 or a version of Mirantis OpenStack from which you upgraded.
-The following table summarizes the available progressions:
+
+The following table summarizes the available progressions
+for upgrades to the Fuel Master Node:
 
 +--------------------------+--------------------------+------------------------------------+
 | First version installed  | Upgraded to version(s)   | Available versions for deployment  |
 +==========================+==========================+====================================+
-| 5.0                      | 5.1                      | 5.0, 5.1                           |
+| 5.0                      | 5.1                      | 5.0, 5.0.2, 5.1                    |
 +--------------------------+--------------------------+------------------------------------+
-| 5.0                      | 5.0.1, then 5.0.1 to 5.1 | 5.0.1, 5.1                         |
+| 5.0                      | 5.0.1, then 5.0.1 to 5.1 | 5.0, 5.0.1, 5.0.2, 5.1             |
 +--------------------------+--------------------------+------------------------------------+
-| 5.0.1                    | 5.1                      | 5.0.1, 5.1                         |
+| 5.0.1                    | 5.1                      | 5.0.1, 5.0.2, 5.1                  |
 +--------------------------+--------------------------+------------------------------------+
 | 5.1                      | N/A                      | 5.1                                |
 +--------------------------+--------------------------+------------------------------------+
 
+5.0.2 is a technical release that contains
+the bug fixes that are included in 5.1
+but does not include any additional 5.1 features;
+it is included in the 5.1 ISO/IMG file
+and can be applied to running 5.0 and 5.0.1 environments.
 
-Note that this only upgrades the Fuel Master Node.
 Upgrading the Fuel Master Node
 does not automatically patch or update the OpenStack environment.
 See below for information about patching and updating OpenStack environments.
+
+See :ref:`upgrade-ug` for instructions.
+
 
 Fuel can now patch or update existing Mirantis OpenStack environments
 ---------------------------------------------------------------------
@@ -54,7 +64,7 @@ to the new patch or update packages.
 For example, Mirantis OpenStack 5.0 is based on the 2014.1 version of Icehouse.
 Mirantis OpenStack contains the packages required
 to update an Icehouse 2014.1 OpenStack environment (deployed with 5.0)
-to Icehouse 2014.1.1.
+to Icehouse 2014.1.1 (deployed with 5.0.1 and 5.1).
 In Mirantis OpenStack 5.1,
 this update package is labeled as “2014.1.1-5.0.2”
 and is available from the Actions tab in the Update panel.
@@ -66,6 +76,8 @@ from one maintenance release to the next,
 but is not able to upgrade an Icehouse environment to Juno.
 This upgrade capability is being considered
 for a future version of Mirantis OpenStack.
+
+See :ref:`patch-openstack-ug` for instructions.
 
 Fuel is now protected by access control
 ---------------------------------------
