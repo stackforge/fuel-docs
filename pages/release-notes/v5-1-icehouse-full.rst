@@ -25,6 +25,7 @@ The following table lists the released revisions of this documentation:
 +----------+---------------+--------------+
 
 .. include:: /pages/release-notes/v5-1/010-what-is-mirantis-openstack.rst
+.. include:: /pages/release-notes/v5-1/015-about-5.0.2.rst
 .. include:: /pages/release-notes/v5-1/020-new-features.rst
 .. include:: /pages/release-notes/v5-1/030-other-enhancements.rst
 .. include:: /pages/release-notes/v5-1/040-resolved-issues.rst
