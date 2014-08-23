@@ -101,13 +101,6 @@ brocade NICS to be included in the environment
 these NICS had to be configured using the Fuel CLI.
 See `LP1260492 <https://bugs.launchpad.net/fuel/+bug/1260492>`_.
 
-Controllers can be deployed in parallel
----------------------------------------
-
-Multiple controllers can now be deployed in parallel rather than sequentially.
-This decreases the deployment time.
-See `LP1310494 <https://bugs.launchpad.net/fuel/+bug/1310494>`_.
-
 Glance properly sends notifications to Ceilometer
 -------------------------------------------------
 

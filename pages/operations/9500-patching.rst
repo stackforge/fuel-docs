@@ -1,5 +1,6 @@
 .. index:: OpenStack-Patch Guide
-.. _OS-Patch_Guide:
+
+.. _OS-Patch-Guide:
 
 .. contents:: :local:
   :depth: 2

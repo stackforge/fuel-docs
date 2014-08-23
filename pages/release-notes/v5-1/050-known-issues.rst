@@ -76,7 +76,8 @@ and advanced configuration instructions
 Zabbix Issues
 -------------
 
-Phase I of Zabbix is included in the Experimental package.
+Phase I of Zabbix is included as an `experimental<experimental-features-term>` feature
+in Mirantis OpenStack 5.1.
 This version has the following known issues:
 
 - The Zabbix-server role must be installed on a dedicated node;
@@ -86,6 +87,8 @@ This version has the following known issues:
   to a remote (outside the current environment) Zabbix server
 - Zabbix agents cannot be configured to report
   to multiple Zabbix servers.
+
+See :ref:`zabbix-plan` for more information.
 
 
 Additional MongoDB roles cannot be added to an existing deployment
@@ -167,6 +170,8 @@ without redeploying the environment.
 See `LP1271571 <https://bugs.launchpad.net/fuel/+bug/1271571>`_
 for a detailed description of the issues
 and pointers to blueprints of proposed solutions.
+See :ref:`public-floating-ips-arch`
+for more information.
 
 GRE-enabled Neutron installation runs inter VM traffic through management network
 ---------------------------------------------------------------------------------
@@ -298,6 +303,50 @@ and `LP1258347 <https://bugs.launchpad.net/fuel/+bug/1258347>`_.
 [LP1267569 is scheduled to be fixed in 5.1;
 LP1258347 is scheduled to be fixed in 6.0]
 
+LACP Bonding must be enabled in switch before deploying an environment that uses it
+-----------------------------------------------------------------------------------
+
+Network interfaces must be connected to a switch with LACP enabled
+before attempting to deploy an environment
+with "LACP balance-tcp" enabled
+or the deployment will fail
+with many network error messages.
+See `LP1370593 <https://bugs.launchpad.net/fuel/+bug/1370593>`_.
+
+Horizon and other services may be unavailable if a controller fails
+-------------------------------------------------------------------
+
+If the public NIC on the primary controller becomes unavailable,
+the public VIP does not migrate to another controller.
+This does not break your OpenStack environment
+but services such as Horizon that use the Public VIP
+become unavailable.
+Bringing the affected bridge interface back online
+restores access to these services.
+See `LP1370510 <https://bugs.launchpad.net/fuel/+bug/1370510>`_.
+
+Deploying new controllers causes services downtime
+--------------------------------------------------
+
+When :ref:`adding controllers<add-controller-ops>`
+to an existing environment,
+nova-api is unavailable for a few minutes
+which causes services to be unavailable.
+See `LP1370067 <https://bugs.launchpad.net/fuel/+bug/1370067>`_.
+
+Environment cannot be reset to use Cinder rather than Ceph
+----------------------------------------------------------
+
+If you use Fuel to deploy a Mirantis OpenStack environment 
+that uses Ceph for volume, image, and ephemeral storage
+then reset the environment to use Cinder rather than Ceph,
+the controller node is unable to locate the HDD
+and the environment cannot be redeployed.
+See `LP1370006 <https://bugs.launchpad.net/fuel/+bug/1370006>`_.
+
+
+
+
 Other limitations
 -----------------
 
@@ -325,6 +374,9 @@ Other limitations
   This is a design decision made by the OpenStack community;
   it allows us to focus our efforts on Neutron,
   and we see little demand for Murano support on Nova-network.
+
+* Some OSTF tests do not give descriptive message when they fail.
+  See `LP1371051 <https://bugs.launchpad.net/fuel/+bug/1371051>`_.
 
 * Deployments done through the Fuel UI
   create all of the networks on all servers
