@@ -1,6 +1,52 @@
 Issues Resolved in Mirantis OpenStack 5.1
 ===============================================
 
+OpenStack High Availability Issues
+----------------------------------
+
+Mirantis has fixed a number of issues
+related to the stability and scalability
+of Highly Available clusters:
+
+- **AMQP heartbeat and other HA improvements**
+
+  A heartbeat mechanism is added to the oslo.messaging library
+  (used for AMQP based RPC between OpenStack components)
+  to detect and drop hung RabbitMQ sessions
+  and force a reconnect to a healthy controller.
+
+  The AMQP heartbeat has to be enabled because the interaction between
+  Linux TCP/IP stack, AMQP protocol, its implementation in pyamqp and
+  kombo libraries for Python, OpenStack oslo.messaging library, and the
+  Eventlet networking library for Python can result in hung RabbitMQ
+  sessions when a controller node goes offline.
+
+  When that happened, RPC failed for one or more OpenStack components and
+  major areas of functionality, such as provisioning instances or
+  attaching volumes, were blocked. Without the heartbeat,
+  affected services had to be restarted to recover.
+  See `LP1341656 <https://bugs.launchpad.net/mos/+bug/1341656>`_
+  (partially fixed in 5.0.1).
+
+- MySQL is available after full restart of environment
+
+  Older versions of Galera
+  (which manages MySQL in an OpenStack environment)
+  sometimes failed if the Controllers in an HA environment
+  come back online in a different order than Galera expected.
+  Release 5.1 includes a new RA (resource agent)
+  for Galera and Pacemaker
+  that supports a cluster bootstrap
+  that can reboot the whole cluster or any node in the cluster.
+  It uses Galera GTID (Global Transaction ID)
+  to determine which node has the latest database version
+  and uses this node as the Galera PC (Primary Component).
+  The administrator can manually choose a different node
+  to serve as the PC.
+  This fixes this issue.
+  See `LP1297355 <https://bugs.launchpad.net/fuel/+bug/1297355>`_.
+
+
 Fuel now enforces need for three MongoDB roles
 ----------------------------------------------
 
@@ -101,25 +147,6 @@ brocade NICS to be included in the environment
 these NICS had to be configured using the Fuel CLI.
 See `LP1260492 <https://bugs.launchpad.net/fuel/+bug/1260492>`_.
 
-
-MySQL is available after full restart of environment
-----------------------------------------------------
-
-Older versions of Galera
-(which manages MySQL in an OpenStack environment)
-sometimes failed if the Controllers in an HA environment
-come back online in a different order than Galera expected.
-Release 5.1 includes a new RA (resource agent)
-for Galera and Pacemaker
-that supports a cluster bootstrap
-that can reboot the whole cluster or any node in the cluster.
-It uses Galera GTID (Global Transaction ID)
-to determine which node has the latest database version
-and uses this node as the Galera PC (Primary Component).
-The administrator can manually choose a different node
-to serve as the PC.
-This fixes this issue.
-See `LP1297355 <https://bugs.launchpad.net/fuel/+bug/1297355>`_.
 
 
 Management network now restarts correctly
