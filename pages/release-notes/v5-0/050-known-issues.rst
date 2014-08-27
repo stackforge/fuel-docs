@@ -188,19 +188,6 @@ for a description of structural changes
 for Pacemaker deployment and configuration
 that are needed to address this problem.
 
-RabbitMQ Service may not start after rebooting the primary Controller node
---------------------------------------------------------------------------
-
-The RabbitMQ Service may not start
-after the primary Controller node is rebooted,
-which means that the node status is "offline".
-This is because of flaws in the RabbitMQ clustering mechanism
-which are under investigation.
-In the meantime, you must manually bring down the RabbitMQ server
-and rejoin it to the cluster following the instructions in
-:ref:`restart-rabbitmq-ops`.
-See `LP1318936 <https://bugs.launchpad.net/fuel/+bug/1318936>_`.
-
 Some logs are excluded from the Diagnostic Snapshot
 ---------------------------------------------------
 
