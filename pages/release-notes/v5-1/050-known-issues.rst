@@ -209,24 +209,6 @@ which can provide significant performance advantages.
 See :ref:`ovs-arch`
 for more information about using Open VSwitch.
 
-Keystone performance issues if memcache instance fails [In progress for 5.1]
-----------------------------------------------------------------------------
-
-When several OS controller nodes are used
-with 'memcached' installed on each of them,
-each 'keystone' instance is configured
-to use all of the 'memcached' instances.
-Thus, if one of the controller nodes became inaccessible,
-then whole cluster may cease to be workable
-because of delays in the memcached backend.
-
-This behavior is the way the python memcache clients themselves work.
-There is currently no acceptable workaround
-that would allow the use all available 'memcached' instances
-without such issues.
-See `LP1332058 <https://bugs.launchpad.net/keystone/+bug/1332058>`_
-and `LP1340657 <https://bugs.launchpad.net/bugs/1340657>`_.
-
 Placing Ceph OSD on Controller nodes is not recommended
 -------------------------------------------------------
 

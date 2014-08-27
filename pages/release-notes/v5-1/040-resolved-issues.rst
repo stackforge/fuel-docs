@@ -101,38 +101,6 @@ brocade NICS to be included in the environment
 these NICS had to be configured using the Fuel CLI.
 See `LP1260492 <https://bugs.launchpad.net/fuel/+bug/1260492>`_.
 
-
-MySQL is available after full restart of environment
-----------------------------------------------------
-
-Older versions of Galera
-(which manages MySQL in an OpenStack environment)
-sometimes failed if the Controllers in an HA environment
-come back online in a different order than Galera expected.
-Release 5.1 includes a new RA (resource agent)
-for Galera and Pacemaker
-that supports a cluster bootstrap
-that can reboot the whole cluster or any node in the cluster.
-It uses Galera GTID (Global Transaction ID)
-to determine which node has the latest database version
-and uses this node as the Galera PC (Primary Component).
-The administrator can manually choose a different node
-to serve as the PC.
-This fixes this issue.
-See `LP1297355 <https://bugs.launchpad.net/fuel/+bug/1297355>`_.
-
-
-Management network now restarts correctly
------------------------------------------
-
-The interface state is now checked when restarting
-the Management logical network.
-This solves the problems that sometime occured
-when br-mgmt (the bridge for the Management logical network
-on the Neutron topology) was shut down from the main Controller node,
-making the Controller cluster was unreachable
-See `LP1323277 <https://bugs.launchpad.net/fuel/+bug/1323277>`_.
-
 Controllers can be deployed in parallel
 ---------------------------------------
 
