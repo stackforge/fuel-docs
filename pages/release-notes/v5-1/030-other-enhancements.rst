@@ -23,7 +23,7 @@ vCenter integration has been enhanced
 -------------------------------------
 
 The ability to utilize vCenter ESXi servers as compute resources for OpenStack
-was introduced in Mirnatis OpenStack 5.0.
+was introduced in Mirantis OpenStack 5.0.
 In Mirantis OpenStack 5.1, this integration has been enhanced
 in the following ways:
 

@@ -21,7 +21,7 @@ See `LP1346247 <https://bugs.launchpad.net/fuel/+bug/1346247>`_.
 Update process now updates Murano database tables correctly
 -----------------------------------------------------------
 
-Murano now uses Alembic migration rather tha SQLAlchemy Migration,
+Murano now uses Alembic migration rather than SQLAlchemy Migration,
 which resolves problems
 migrating Murano database tables.
 See `LP1349377 <https://bugs.launchpad.net/fuel/+bug/1349377>`_.
