@@ -95,14 +95,33 @@ Ceph storage platform has been updated to Firefly
 Mirantis OpenStack 5.1 deploys the Ceph version 0.80.4 ("Firefly").
 Previous versions of Mirantis OpenStack deployed the Ceph version 0.67.x ("Dumpling").
 
-All upstream neutron packages are included in the 5.1 ISO file
---------------------------------------------------------------
+Improvements to Pacemaker and Corosync
+--------------------------------------
 
-These packages are made available as a convenience;
-Mirantis does not fully support these packages
-or guarantee that they work.
-A comparable set of packages are provided on the mirrors
-for the 5.0.1 and 4.1.x releases of Mirantis OpenStack.
+Structural changes have been implemented for Pacemaker and Corosync
+to improve the stability, performance, and scalability
+of highly available clusters.
+These are detailed in  `HA Improvements of pacemaker and corosync <https://blueprints.launchpad.net/fuel/+spec/ha-pacemaker-improvements>`_.
+This resolves `LP1283062 <https://bugs.launchpad.net/fuel/+bug/1283062>`_,
+`LP1312627 <https://bugs.launchpad.net/fuel/+bug/1312627>`_,
+and other issues.
+
+All upstream Neutron plugins are included in the 5.1 ISO file for 5.1 and 5.0.2
+-------------------------------------------------------------------------------
+
+Packages for all upstream Neutron plugins
+are now included in the repositories on the Fuel Master node.
+
+* These packages are made available as a convenience,
+  to enable users to customize their deployments.
+  Otherwise, customers would have to locate and use packages
+  that may not have been built from the same sources
+  and could cause problems.
+
+* Mirantis does not fully support these packages
+  or guarantee that they work.
+
+This resolves `LP1330610 <https://bugs.launchpad.net/fuel/+bug/1330610>`_.
 
 Additional information
 ----------------------
