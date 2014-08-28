@@ -1,7 +1,6 @@
 Known Issues in Mirantis OpenStack 5.1
-========================================
+======================================
 
-This section is under development at this time.
 For current information about Issues and Blueprints
 for Mirantis OpenStack 5.1, see the
 `Fuel for OpenStack 5.1 Milestone <https://launchpad.net/fuel/+milestone/5.1>`_
@@ -25,6 +24,10 @@ but it has some known limitations:
   but you must select it on the Fuel :ref:`Settings<settings-storage-ug>` page.
   See `LP1316377 <https://bugs.launchpad.net/fuel/+bug/1316377>`_.
 
+* On CentOS in HA mode on vCenter's machine on primary controller OpenStack
+  deployment crashes because RabbitMQ can not connect to primary controller.
+  See `LP1370558 <https://bugs.launchpad.net/fuel/+bug/1370558>`_.
+
 Known limitations for the VMware NSX integration
 ------------------------------------------------
 
@@ -43,11 +46,18 @@ but it has some known limitations:
   the OpenStack Public network, you must enable Public address assignment for all
   nodes, see :ref:`neutron-nsx-arch`.
 
+* In HA mode on NSX machine, OpenStack deployment crashes due to unavailable Neutron and Keystone services.
+  See `LP1369529 <https://bugs.launchpad.net/bugs/1369529>`_.
+
+* When there are no NSX settings, Fuel UI allows clicking "Deploy changes".
+  Make sure that you have specified NSX settings.
+  See `LP1347682 <https://bugs.launchpad.net/bugs/1347682>`_.
+
 
 Known limitations for the Mellanox SR-IOV plug-in
 -------------------------------------------------
 
-The Mellanox :ref:`sr-iov-term` plug-in is fully integrated
+The Mellanox SR-IOV plug-in is fully integrated
 into Mirantis OpenStack 5.1
 but it has some known limitations:
 
@@ -66,17 +76,24 @@ but it has some known limitations:
   by default. In such a case, please contact the device manufacturer for
   configuration instructions and for the required firmware.
 
-Mellanox provides additional information in their
-`HowTo Install Mirantis Fuel 5.1 OpenStack with Mellanox Adapters Support
-<http://community.mellanox.com/docs/DOC-1474>`_ document,
-including example images to use with the Mellanox SR-IOV plugin
-and advanced configuration instructions
-(for example, instructions to increase the number of virtual functions).
+* Mellanox OEM adapter cards may be burned with SR-IOV disabled.
+  In such cases,
+  you may need to burn a special firmware version
+  to enable SR-IOV.
+
+* Mellanox provides additional information in their `HowTo Install Mirantis Fuel 5.1 OpenStack with
+  Mellanox Adapters Support
+  <http://community.mellanox.com/docs/DOC-1474>`_ document,
+  including example images to use with the Mellanox SR-IOV plugin
+  and advanced configuration instructions
+  (for example, instructions to increase the number of virtual functions).
+  and advanced configuration instructions.
 
 Zabbix Issues
 -------------
 
-Phase I of Zabbix is included in the Experimental package.
+Phase I of Zabbix is included as an
+:ref:`Experimental<experimental-features-term>` feature.
 This version has the following known issues:
 
 - The Zabbix-server role must be installed on a dedicated node;
@@ -86,6 +103,11 @@ This version has the following known issues:
   to a remote (outside the current environment) Zabbix server
 - Zabbix agents cannot be configured to report
   to multiple Zabbix servers.
+- There are false Zabbix issues after deploying with Nova-network.
+  This can be resolved via attaching "Template App OpenStack Nova Network" to compute nodes
+  instead of controller nodes. See `LP1365171 <https://bugs.launchpad.net/fuel/+bug/1365171>`_.
+- List of "Zabbix monitoring items" is different from "Zabbix overview" list.
+  See `LP1352319 <https://bugs.launchpad.net/bugs/1352319>`_.
 
 
 Additional MongoDB roles cannot be added to an existing deployment
@@ -109,6 +131,26 @@ Installing additional python modules on the Fuel Master node
 using pip or easy_install
 may cause the Fuel upgrade script to fail.
 See `LP1341564 <https://bugs.launchpad.net/fuel/+bug/1341564>`_.
+
+Fuel uses ports that may be used by other services
+--------------------------------------------------
+
+Fuel uses some high ports that may be used by other services
+such as RPC, NFS, passfive FTP (ephemeral ports 49000-65535).
+In some cases, this can lead to a port conflict during service restart.
+To avoid this, issue the following command
+so that ports above 49000 are not automatically assigned to other services:
+`sysctl -w 'sys.net.ipv4.ip_local_reserved_ports=49000'`
+See `LP116422/ <https://review.openstack.org/#/c/116422/>`_.
+
+
+
+Docker is not upgraded
+----------------------
+
+The upgrade procedure does not upgrade Docker.
+This results in a number of issues; see
+`LP1360161 <https://bugs.launchpad.net/fuel/+bug/1360161>`_
 
 Network verification fails if a node is offline
 -----------------------------------------------
@@ -140,6 +182,7 @@ Some UEFI chips (such as the Lenovo W520)
 do not emulate legacy BIOS
 in a way that is compatible with the grub settings
 used for the Fuel Master node.
+
 This issue also affects servers used
 as Controller, Compute, and Storage nodes;
 because they are booted from PXE rom
@@ -151,6 +194,8 @@ because the operating system distributions that are provided
 do not include UEFI images.
 See `LP1291128 <https://bugs.launchpad.net/fuel/+bug/1291128>`_
 and the `UEFI support blueprint <https://blueprints.launchpad.net/fuel/+spec/uefi-support>`_.
+
+
 
 Fuel may not allocate enough IP addresses for expansion
 -------------------------------------------------------
@@ -164,6 +209,7 @@ This may mean that the IP pool
 is too small to support additional nodes
 added to the environment
 without redeploying the environment.
+
 See `LP1271571 <https://bugs.launchpad.net/fuel/+bug/1271571>`_
 for a detailed description of the issues
 and pointers to blueprints of proposed solutions.
@@ -218,20 +264,42 @@ soft trunks and hard trunks:
    you should use fewer than 50 VLANs in the Neutron VLAN mode.
 
 Fuel also provides another option here:
-using the experimental ?? kernel.
+using the experimental Fedora long-term support 3.10 kernel.
 This option has had minimal testing
 and may invalidate your agreements with your hardware vendor.
 But using this kernel may allow you to use VLAN tagged packets
 without using VLAN splinters,
 which can provide significant performance advantages.
-
 See :ref:`ovs-arch`
 for more information about using Open VSwitch.
+
+Ceph nodes are not updated
+--------------------------
+
+When updating the environment from 5.0.x to 5.0.2,
+the Ceph nodes are not updated.
+You can update the Ceph nodes manually.
+
+- Update the environment to 5.0.2.
+
+- Restart the monitors.
+
+- Run the `ceph pg dump` command
+  and check the output;
+  if unclean pages are found,
+  resolve these issues before updating the Ceph nodes.
+  
+- After all monitors are restarted,
+  update the code on the OSD nodes one by one,
+  restart the OSD service,
+  and wait until all OSD nodes have rebuilt cleanly.
+
+See `LP1363983 <https://bugs.launchpad.net/fuel/+bug/1363983>`_.
 
 Placing Ceph OSD on Controller nodes is not recommended
 -------------------------------------------------------
 
-Placing Ceph OSD on Controllers is highly discouraged because it can severely
+Placing Ceph OSD on Controllers is highly unadvisable because it can severely
 degrade controller's performance.
 It is better to use separate storage nodes
 if you have enough hardware.
@@ -262,12 +330,12 @@ This example is for a system that has three disks: sda, sdb, and sdc.
 Fuel will provision sda and sdb as RAID-1 for OpenStack
 but sdc will not be used  as part of the RAID-1 array:
 
-1. Use the Fuel CLI to obtain provisioning data:
+#. Use the Fuel CLI to obtain provisioning data:
    ::
 
      fuel provisioning --env-id 1 --default -d
 
-2. Remove the drive which you do not want to be part of RAID:
+#. Remove the drive which you do not want to be part of RAID:
    ::
 
      - size: 300
@@ -279,12 +347,12 @@ but sdc will not be used  as part of the RAID-1 array:
        type: raid
 
 
-3. Run deployment
+#. Run deployment
    ::
 
      fuel provisioning --env-id 1 -u
 
-4. Confirm that your partition is not included in the RAID array:
+#. Confirm that your partition is not included in the RAID array:
    ::
 
      [root@node-2 ~]# cat /proc/mdstat
@@ -326,17 +394,93 @@ Other limitations
   it allows us to focus our efforts on Neutron,
   and we see little demand for Murano support on Nova-network.
 
+* **Murano changes deployment status to "successful" when Heat stack failed.**
+  Murano uses Heat to allocate OpenStack resources;
+  therefore one of the first steps of Environment
+  deployment is creation of stack. Creation of stack may
+  fail due to various reasons but unfortunately this failure
+  will not be detected by Murano and overall Environment
+  deployment will be reported as successful.
+  See `LP1353589 <https://bugs.launchpad.net/bugs/1353589>`_.
+
+* **External gateway works, but is shown as DOWN in Horizon.**
+   On OpenStack installation with Neutron+OVS on the routers
+   Port router_gateway is in status DOWN, but all networking works, i.e. instances
+   can access the outside world and they are also accessible from the outside
+   by their floating IPs. It happens because Horizon and Neutron client
+   take port status from the DB, but it's not updated by the agents.
+   See `LP1323608 <https://bugs.launchpad.net/bugs/1323608>`_.
+
+* **Ceilometer Swift pollsters do not work.**
+  If Ceph and Rados Gateway is used, Ceilometer does not poll Ceph
+  due to the endpoints incompatibility between plain Swift and Ceph
+  installation. See `LP1352861 <https://bugs.launchpad.net/bugs/1352861>`_.
+
+* **Hypervisor summary displays incorrect total storage.**
+  When Ceph is used as a backend for ephemeral storage, an
+  incorrect value is shown in Horizon UI
+  in Admin/Hypervisors Disk Usage: it adds up the Ceph
+  storage seen in each storage node rather than just using the real amount of Ceph storage.
+  See `LP1359989 <https://bugs.launchpad.net/bugs/1359989>`_.
+
+
+* **MongoDB does not support storing objects (dictionaries) with keys, containing '.' and '$'.**
+   These symbols are special characters for this database, that's why when Ceilometer is processing
+   data samples, containing, for instance, resource metadata with dots in the tag names, that leads
+   to the sample writing failure. That usually occurs if metric is collected from the images with special
+   tags (like Sahara is creating images with tags like '_sahara_tag_1.2.1'). All data samples, that do not
+   contain these forbidden symbols, will be processed as usual without any problems.
+   Do not create cloud resources (images, VMs, etc.) containing resource metadata keys with forbidden characters.
+   See `LP1360240 <https://bugs.launchpad.net/bugs/1360240>`_.
+
+* **Horizon asks login/password twice after sign-off caused by session timeout.**
+   If both the Keystone token and the Horizon session are expired, the user is asked
+   to perform a login procedure twice. This is because the token expiration is not
+   checked when the user is logged-out due to session expiration - so he/she logs in
+   just to find that the token had also expired, and needs to log in second time.
+   See `LP1353544 <https://bugs.launchpad.net/bugs/1353544>`_.
+
+* **Horizon filter displays objects incorrectly, when they take more than one page.**
+   If pagination is switched for any table, the amount of the displayed objects per page
+   can be changed (Settings->User Settings->Items Per Page). See
+   `LP1352749 <https://bugs.launchpad.net/bugs/1352749>`_.
+
+* **Currently Fuel provides sub-optimal default disk partition scheme.**
+   All available hardware LUNs under LVM will be used and spanned across,
+   i.e. OS and guest traffic will be coupled.
+   See `LP1306792 <https://bugs.launchpad.net/bugs/1306792>`_.
+
+* Before and while generating shapshots,
+  Shotgun does not ensure if there is enough disk space.
+  See `LP1328879 <https://bugs.launchpad.net/bugs/1328879>`_.
+
+* L3 agent takes more than 30 seconds
+  to failover to a standby controller
+  when a controller node fails.
+  See `LP1328970 <https://bugs.launchpad.net/bugs/1328970>`_.
+
+* When ovs-agent is started, Critical error appears. It does not
+  influence Neutron’s performance. See `LP1347612 <https://bugs.launchpad.net/bugs/1347612>`_.
+
 * Deployments done through the Fuel UI
   create all of the networks on all servers
   even if they are not required by a specific role.
   For example, a Cinder node has VLANs created
   and addresses obtained from the public network.
 
+* New HP BL120/320 RAID controller line is not supported.
+  See `LP1359331 <https://bugs.launchpad.net/bugs/1359331>`_.
+
+* When Swift is used with enabled Ceph Rados GW,
+  no bulk operations are supported.
+  See `LP1361036 <https://bugs.launchpad.net/bugs/1361036>`_.
+
 * Some OpenStack services listen to all of the interfaces,
   a situation that may be detected and reported
   by third-party scanning tools not provided by Mirantis.
   Please discuss this issue with your security administrator
   if it is a concern for your organization.
+
 
 * The provided scripts that enable Fuel
   to be automatically installed on VirtualBox
@@ -353,6 +497,7 @@ Other limitations
   is applied regardless of the user choice
   due to limitations in Ubuntu provisioning.
 
+
 * The Fuel Master node services (such as PostgrSQL and RabbitMQ)
   are not restricted by a firewall.
   The Fuel Master node should live in a restricted L2 network
@@ -363,6 +508,7 @@ Other limitations
   this may cause the map to be corrupted so that RadosGW cannot start.
   If this happens, you can repair the RadosGW region map
   with the following command sequence:
+
   ::
 
      radosgw-admin region-map update
@@ -377,3 +523,201 @@ Other limitations
 
 * Docker loads images very slowly on the Fuel Master Node.
   See `LP1333458 <https://bugs.launchpad.net/bugs/1333458>`_.
+
+* Fuel menu allows IP range, that overlaps in PXE setup.
+  When configuring IP ranges, do not use DHCP addresses
+  that overlap the Static addresses used.
+  See `LP1365067 <https://bugs.launchpad.net/bugs/1365067>`_.
+
+* VMDK driver prevents instances boot process
+  with no matched image adapter type and disk adapter type error.
+  Make sure that operating system that runs inside your instance supports SCSI adapters.
+  See `LP1365468 <https://bugs.launchpad.net/bugs/1365468>`_.
+
+* When using Ubuntu, in rare cases some nodes may stay
+  on the grub prompt. It may occur more frequently if the node is power-cycled
+  during the boot process. You should press Enter to continue booting.
+  See `LP1356278 <https://bugs.launchpad.net/bugs/1356278>`_.
+
+* Fuel CLI can not be run by a non-root user.
+  See `LP1355876 <https://bugs.launchpad.net/bugs/1355876>`_.
+
+* When traceback is in process, an interface with IP address
+  that belongs to administrator's subnet, can not be found.
+  This happens because the configuration was updated in the base
+  and the node still has out-of-date configuration.
+  See `LP1355237 <https://bugs.launchpad.net/bugs/1355237>`_.
+
+* Nailgun network check must be extended to verify that correct numbers
+  of IP addresses in range are used.
+  See `LP1354803 <https://bugs.launchpad.net/bugs/1354803>`_.
+
+* Backup and restore are accessible via CLI during deployment.
+  See `LP1352847 <https://bugs.launchpad.net/bugs/1352847>`_.
+
+* When installing Fuel Master at a node that already has operating system,
+  Fuel asks to approve erasing of all disk data. If you type 'y',
+  Fuel will continue installation; if you type 'Y', it will show you a warning
+  message and ask for reboot.
+  See `LP1351473 <https://bugs.launchpad.net/bugs/1351473>`_.
+
+* Invalid node status for nodes modified since backup after restore.
+  Nodes added to an environment after a backup may be report as
+  offline. Reboot any bootstrapped nodes after restoring your Fuel
+  Master from a backup. See `LP1347718 <https://bugs.launchpad.net/bugs/1347718>`_.
+
+* Diagnostic snapshot does not have /var/log/remote symlink.
+  See `LP1340615 <https://bugs.launchpad.net/bugs/1340615>`_.
+
+* Large number of disks may fail Ubuntu installation.
+  See `LP1340414 <https://bugs.launchpad.net/bugs/1340414>`_.
+
+* During OSTF tests, "Time limit exceeded while waiting
+  for 'ping' command to finish" message appears.
+  See `LP1339691 <https://bugs.launchpad.net/bugs/1339691>`_.
+
+* After resetting the environment, OSTF test results from the last
+  environment are still displayed. See `LP1338669 <https://bugs.launchpad.net/bugs/1338669>`_.
+
+* IP ranges can not be updated for management and storage networks.
+  See `LP1365368 <https://bugs.launchpad.net/bugs/1365368>`_.
+
+* After update Sahara OSTF tests display in HA suite instead of Platform test.
+  See `LP1357330 <https://bugs.launchpad.net/bugs/1357330>`_.
+
+* After cluster reset one of the nodes is offline. You can reboot this node
+  manually in bootscrap mode.
+  See `LP1359237 <https://bugs.launchpad.net/bugs/1359237>`_.
+
+* Upgrade procedure does not update agent/mc agent/network checker.
+  See `LP1343139 <https://bugs.launchpad.net/bugs/1343139>`_.
+
+* Network verification checker does not test OVS VLANs.
+  See `LP1350623 <https://bugs.launchpad.net/bugs/1350623>`_.
+
+* Group of nodes can not be added as controllers. You have to click each node
+  that must be a Controller separately. See `LP1355404 <https://bugs.launchpad.net/bugs/1355404>`_.
+
+* When a new environment is created, after clicking "Load Defaults" button
+  a cluster with incorrect settings will appear. See
+  See `LP1342684 <https://bugs.launchpad.net/bugs/1342684>`_.
+
+* If one of the nodes is in downtime, it leads to memcached delays in Horizon.
+  See `LP1367767 <https://bugs.launchpad.net/bugs/1367767>`_.
+
+  You should perform the following workaround:
+
+  1. Edit /etc/openstack-dashboard/local_settings file
+     and temporarily remove the problem controller IP:PORT from LOCATION line in CACHE structure:
+
+    ::
+
+       CACHES = {
+        'default': {
+          'BACKEND' : 'django.core.cache.backends.memcached.MemcachedCache',
+          'LOCATION' : "192.168.0.3:11211;192.168.0.5:11211;192.168.0.6:11211"
+       },
+       service ceph-radosgw start
+
+  2. Restart the Apache web server.
+
+* "Could not send gratuitous arps" error must be fixed.
+  See `LP1331454 <https://bugs.launchpad.net/bugs/1331454>`_.
+
+* A new node fails when trying to boot into bootstrap. To fix this issue,
+  add "intel_iommu=off" kernel parameter with the following console command on master
+  node:
+
+
+    ::
+
+      `dockerctl shell cobbler cobbler profile edit --name bootstrap --kopts="intel_iommu=off" --in-place`
+
+  See `LP1324483 <https://bugs.launchpad.net/bugs/1324483>`_.
+
+* Defining disk layout via web application fails.
+  See `LP1308581 <https://bugs.launchpad.net/bugs/1308581>`_.
+
+* By default, the controller has unallocated space
+  when using Ceph as an image backend.
+  See `LP1295717 <https://bugs.launchpad.net/bugs/1295717>`_.
+
+* Nodes that were provisioned without Fuel can not be added to the Fuel nodes array.
+  See `LP1294057 <https://bugs.launchpad.net/bugs/1294057>`_.
+
+* Sometimes Docker allocates the same IP addresses for different containers.
+  See `LP1357357 <https://bugs.launchpad.net/bugs/1357357>`_.
+
+* Anaconda fails with LVME error: deployment was aborted by provisioning timeout,
+  because installation of CentOS failed on one of compute nodes.
+  See `LP1321790 <https://bugs.launchpad.net/bugs/1321790>`_.
+
+* When updating the environment from 5.0 to 5.0.2, "timeout exceeded" error occurs.
+  See `LP1367796 <https://bugs.launchpad.net/bugs/1367796>`_.
+
+External network is not configured when changing ML2 mechanism to Mellanox and Open vSwitch
+-------------------------------------------------------------------------------------------
+
+When installing Centos HA with Neutron with VLAN
+and changing the ML2 mechanism to Mellanox and Open vSwitch,
+the external network is not configured after deployment.
+See `LP1369988 <https://bugs.launchpad.net/bugs/1369988>`_.
+
+OSTF (Health Check) test failures
+---------------------------------
+
+* Platform OSTF tests fail with "HTTP unauthorized" error.
+  See `LP1349408 <https://bugs.launchpad.net/bugs/1349408>`_.
+
+* 'Create volume and attach it to instance' OSFT does not work.
+  See `LP1346133 <https://bugs.launchpad.net/bugs/1346133>`_.
+
+
+Known Issues in Mirantis OpenStack 5.1 and 5.0.2
+================================================
+
+* When an instance launches, file injection does not work.
+  See `LP1335697 <https://bugs.launchpad.net/bugs/1335697>`_.
+
+* "Request image list" OSTF test fails for environment with 'error' status.
+  See `LP1330458 <https://bugs.launchpad.net/bugs/1330458>`_.
+
+* Glance API log contains "Container HEAD failed" error.
+  See `LP1325917 <https://bugs.launchpad.net/bugs/1325917>`_.
+
+* OSTF provides wrong failure message for ping probes.
+  See `LP1323433 <https://bugs.launchpad.net/bugs/1323433>`_.
+
+* Some packages are not updated on nodes after Fuel upgrade.
+  See `LP1364586 <https://bugs.launchpad.net/bugs/1364586>`_.
+
+Controller nodes may become inacessible because of memcache issues
+------------------------------------------------------------------
+
+When several OpenStack controller nodes are used
+with 'memcached' installed on each of them,
+each 'keystone' instance is configured
+to use all of the 'memcached' instances.
+Thus, if one of the controller nodes became inaccessible,
+the whole cluster may cease to be workable
+because of delays in the memcached backend.
+This behavior is the way the python memcache clients themselves work.
+Currently, no acceptable workaround exists
+that would allow the use of all available 'memcached' instances
+without such failures.
+See `LP1340657 <https://bugs.launchpad.net/bugs/1340657>`_.
+
+Evacuate fails on Ceph backed volumes
+-------------------------------------
+
+VM instances that use ephermeral drives with Ceph RBD as the backend
+cannot be evacuated using the **nova evacuate** command
+because of an error in the instance rebuild logic.
+To move such instances to another compute node,
+use live migration.
+In order to be able to rebuild VM instances
+from a failed compute node,
+use Cinder volume backed instances.
+
+See `LP1367610 <https://bugs.launchpad.net/mos/+bug/1367610>`
+and the upstream `LP1249319 <https://bugs.launchpad.net/nova/+bug/1249319>`.
