@@ -55,8 +55,8 @@ See `LP1297355 <https://bugs.launchpad.net/fuel/+bug/1297355>`_,
 and `Reliable Galera OCF Script
 <https://blueprints.launchpad.net/fuel/+spec/reliable-galera-ocf-script>`_.
 
-Keystone performance issues if memcache instance fails [rewrite text -- In progress for 5.1]
---------------------------------------------------------------------------------------------
+Keystone performance issues if memcache instance fails
+------------------------------------------------------
 
 When several OS controller nodes are used
 with 'memcached' installed on each of them,
@@ -75,7 +75,6 @@ you can switch the Keystone token backend from `memcached` to MySQL.
 See `LP1332058 <https://bugs.launchpad.net/keystone/+bug/1332058>`_
 and `LP1340657 <https://bugs.launchpad.net/bugs/1340657>`_
 (related to `LP1332058 <https://bugs.launchpad.net/keystone/+bug/1332058>`_).
-
 
 RabbitMQ Service now restarts properly after rebooting the primary Controller node
 ----------------------------------------------------------------------------------
