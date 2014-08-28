@@ -21,6 +21,8 @@ The following table lists the released revisions of this documentation:
 +==========+===============+==============+
 | 5.1 Beta | 26-Aug-2014   | Prelim info  |
 +----------+---------------+--------------+
+| 5.1 Beta | 19-Sep-2014   | Beta refresh |
++----------+---------------+--------------+
 | 5.1      | ??-Sep-2014   | Initial G.A. |
 +----------+---------------+--------------+
 
