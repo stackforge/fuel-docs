@@ -95,7 +95,7 @@ If the container already exists,
 will ensure that this container is in a running state.
 ::
 
-  dockerctl start **appname* [--attach]
+  dockerctl start **appname** [--attach]
 
 Optionally, --attach can be used to monitor the process and view its stdout and
 stderr.

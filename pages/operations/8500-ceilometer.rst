@@ -16,7 +16,7 @@ Overview
 
 Fuel can deploy the OpenStack Telemetry component *Ceilometer*.
 When enabled, Ceilometer collects and shares measurement data
-gathered from all OpenStack components. This data cam be used for monitoring
+gathered from all OpenStack components. This data can be used for monitoring
 and capacity planning purposes as well as for an alarming service.
 Ceilometer's REST API can also provide data to external monitoring software
 for a customer's billing system.

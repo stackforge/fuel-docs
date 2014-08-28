@@ -12,7 +12,7 @@ without any user interaction.
 The OCF script looks for the existence of the `mysqlprimaryinit` variable
 and tries to assemble the cluster in a following way:
 
-  - The script checks for this variabe and
+  - The script checks for this variable and
     for a temporary config file that is created explicitly during deployment.
     If the first is present and the second is missing,
     then the script enters the autorebuild phase; otherwise it is skipped.

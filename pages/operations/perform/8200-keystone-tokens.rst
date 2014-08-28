@@ -36,5 +36,5 @@ script from TripleO is a good example:
 It is better to use pt-archiver instead of deleting the expired tokens
 using standard database manipulation commands
 because it prevents the Keystone database
-rom being blocked for significant time periods
+from being blocked for significant time periods
 while the rows with expired tokens are deleted.
