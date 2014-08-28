@@ -91,6 +91,26 @@ using pip or easy_install
 may cause the Fuel upgrade script to fail.
 See `LP1341564 <https://bugs.launchpad.net/fuel/+bug/1341564>`_.
 
+Fuel uses ports that may be used by other services
+--------------------------------------------------
+
+Fuel uses some high ports that may be used by other services
+such as RPC, NFS, passfive FTP (ephemeral ports 49000-65535).
+In some cases, this can lead to a port conflict during service restart.
+To avoid this, issue the following command
+so that ports above 49000 are not automatically assigned to other services:
+
+  sysctl -w 'sys.net.ipv4.ip_local_reserved_ports=49000'
+
+See `LP116422/ <https://review.openstack.org/#/c/116422/>`_.
+
+Docker is not upgraded
+----------------------
+
+The upgrade procedure does not upgrade Docker.
+This results in a number of issues; see
+`LP1360161 <https://bugs.launchpad.net/fuel/+bug/1360161>`_
+
 Network verification fails if a node is offline
 -----------------------------------------------
 
