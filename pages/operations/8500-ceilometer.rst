@@ -38,7 +38,7 @@ that are currently implemented, see
 For a complete list of Configuration Options, see
 `<http://docs.openstack.org/developer/ceilometer/configuration.html>`_
 
-.. ceilometer-api-ops:
+.. _ceilometer-api-ops:
 
 Performance and database backend
 --------------------------------
