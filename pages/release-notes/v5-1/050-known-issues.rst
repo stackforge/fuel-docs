@@ -24,6 +24,19 @@ but it has some known limitations:
   and for Swift/S3 object storage,
   but you must select it on the Fuel :ref:`Settings<settings-storage-ug>` page.
   See `LP1316377 <https://bugs.launchpad.net/fuel/+bug/1316377>`_.
+  
+Known limitations for the VMware NSX integration
+------------------------------------------------
+
+The VMware NSX integration is supported into Mirantis OpenStack 5.1,
+but it has some known limitations:
+
+* Deployment interruption (stoppage or reset) by end user or errors during
+  deployment leave NSX cluster in half configured state.  User have to manually
+  remove all network logical entities that we create during such unsuccessful
+  deployment, otherwise succeeding deployment will fail due to inability to
+  register OpenvSwitches in NSX and 'br-int' bridges on nodes would not be
+  configured properly, because older ones with same names exist in NSX cluster.
 
 Known limitations for the Mellanox SR-IOV plug-in
 -------------------------------------------------
@@ -67,6 +80,9 @@ This version has the following known issues:
   to a remote (outside the current environment) Zabbix server
 - Zabbix agents cannot be configured to report
   to multiple Zabbix servers.
+- There are false Zabbix issues after deploying with Nova-network.
+  This can be resolved via attaching "Template App OpenStack Nova Network" to compute nodes
+  instead of controller nodes. See `LP1365171 <https://bugs.launchpad.net/fuel/+bug/1365171>`_.
 
 
 Additional MongoDB roles cannot be added to an existing deployment
@@ -90,6 +106,26 @@ Installing additional python modules on the Fuel Master node
 using pip or easy_install
 may cause the Fuel upgrade script to fail.
 See `LP1341564 <https://bugs.launchpad.net/fuel/+bug/1341564>`_.
+
+Fuel uses ports that may be used by other services
+--------------------------------------------------
+
+Fuel uses some high ports that may be used by other services
+such as RPC, NFS, passfive FTP (ephemeral ports 49000-65535).
+In some cases, this can lead to a port conflict during service restart.
+To avoid this, issue the following command
+so that ports above 49000 are not automatically assigned to other services:
+
+  sysctl -w 'sys.net.ipv4.ip_local_reserved_ports=49000'
+
+See `LP116422/ <https://review.openstack.org/#/c/116422/>`_.
+
+Docker is not upgraded
+----------------------
+
+The upgrade procedure does not upgrade Docker.
+This results in a number of issues; see
+`LP1360161 <https://bugs.launchpad.net/fuel/+bug/1360161>`_
 
 Network verification fails if a node is offline
 -----------------------------------------------
@@ -209,10 +245,28 @@ which can provide significant performance advantages.
 See :ref:`ovs-arch`
 for more information about using Open VSwitch.
 
+Keystone performance issues if memcache instance fails [In progress for 5.1]
+----------------------------------------------------------------------------
+
+When several OS controller nodes are used
+with 'memcached' installed on each of them,
+each 'keystone' instance is configured
+to use all of the 'memcached' instances.
+Thus, if one of the controller nodes became inaccessible,
+then whole cluster may cease to be workable
+because of delays in the memcached backend.
+
+This behavior is the way the python memcache clients themselves work.
+There is currently no acceptable workaround
+that would allow the use all available 'memcached' instances
+without such issues.
+See `LP1332058 <https://bugs.launchpad.net/keystone/+bug/1332058>`_
+and `LP1340657 <https://bugs.launchpad.net/bugs/1340657>`_.
+
 Placing Ceph OSD on Controller nodes is not recommended
 -------------------------------------------------------
 
-Placing Ceph OSD on Controllers is highly discouraged because it can severely
+Placing Ceph OSD on Controllers is highly unadvisable because it can severely
 degrade controller's performance.
 It is better to use separate storage nodes
 if you have enough hardware.
@@ -279,6 +333,7 @@ and `LP1258347 <https://bugs.launchpad.net/fuel/+bug/1258347>`_.
 [LP1267569 is scheduled to be fixed in 5.1;
 LP1258347 is scheduled to be fixed in 6.0]
 
+
 Other limitations
 -----------------
 
@@ -306,6 +361,59 @@ Other limitations
   This is a design decision made by the OpenStack community;
   it allows us to focus our efforts on Neutron,
   and we see little demand for Murano support on Nova-network.
+  
+* **Murano changes deployment status to "successful" when Heat stack failed.**
+  Murano uses Heat to allocate OpenStack resources;
+  therefore one of the first steps of Environment
+  deployment is creation of stack. Creation of stack may
+  fail by various reasons but unfortunately this failure
+  will not be detected by Murano and overall Environment
+  deployment will be reported as successful.
+  See `LP1353589 <https://bugs.launchpad.net/bugs/1353589>`_.
+  
+* **External gateway works, but is shown as DOWN in Horizon.**
+   On OpenStack installation with Neutron+OVS on the routers
+   Port router_gateway is in status DOWN, but all works, i.e. instances
+   can access the outside world and they also accessible from the outside 
+   by their floating IPs. It happens because Horizon and Neutron client
+   take port status from the DB, but it's not updated by the agents.
+   See `LP1323608 <https://bugs.launchpad.net/bugs/1323608>`_.
+   
+* **Ceilometer Swift pollsters do not work.**
+  If Ceph and Rados Gateway is used, Ceilometer does not poll Ceph
+  due to the endpoints incompatibility between plain Swift and Ceph
+  installation. See `LP1352861 <https://bugs.launchpad.net/bugs/1352861>`_.
+
+* **Hypervisor summary displays incorrect total storage.**
+  When Ceph is used as a backend for ephemeral storage, an
+  incorrect value is shown in Horizon UI
+  in Admin/Hypervisors Disk Usage: it adds up the Ceph
+  storage seen in each storage node rather than just using the real amount of Ceph storage.
+  See `LP1359989 <https://bugs.launchpad.net/bugs/1359989>`_.
+  
+* **MongoDB does not support storing objects (dictionaries) with keys, containing '.' and '$'.**
+   These symbols are special characters for this database, that's why when Ceilometer is processing
+   data samples, containing, for instance, resource metadata with dots in the tag names, that leads
+   to the sample writing failure. That usually occurs if metric is collected from the images with special
+   tags (like Sahara is creating images with tags like '_sahara_tag_1.2.1'). All data samples, that do not
+   contain these forbidden symbols, will be processed as usual without any problems.
+   Do not create cloud resources (images, VMs, etc.) containing resource metadata keys with forbidden characters.
+   See `LP1360240 <https://bugs.launchpad.net/bugs/1360240>`_.
+
+* **Horizon asks login/password twice after sign-off caused by session timeout.**
+   If both the Keystone token and the Horizon session are expired, the user is asked
+   to perform a login procedure twice. This is because the token expiration is not 
+   checked when the user is logged-out due to session expiration - so he/she logs in
+   just to find that the token had also expired, and needs to log in second time.
+   See `LP1353544 <https://bugs.launchpad.net/bugs/1353544>`_.
+
+* **Horizon filter displays objects incorrectly, when they take more than one page.**
+   If pagination is switched for any table, the amount of the displayed objects per page
+   can be changed (Settings->User Settings->Items Per Page). See
+   `LP1352749 <https://bugs.launchpad.net/bugs/1352749>`_.
+   
+* When ovs-agent is started, Critical error appears. It does not 
+  influence Neutron’s performance. See `LP1347612 <https://bugs.launchpad.net/bugs/1347612>`_.
 
 * Deployments done through the Fuel UI
   create all of the networks on all servers
@@ -358,3 +466,92 @@ Other limitations
 
 * Docker loads images very slowly on the Fuel Master Node.
   See `LP1333458 <https://bugs.launchpad.net/bugs/1333458>`_.
+  
+* Fuel menu allows IP range, that overlaps in PXE setup.
+  When configuring IP ranges, do not use DHCP addresses
+  that overlap the Static addresses used.
+  See `LP1365067 <https://bugs.launchpad.net/bugs/1365067>`_.
+  
+* VMDK driver prevents instances boot process
+  with no matched image adapter type and disk adapter type error.
+  Make sure that operating system that runs inside your instance supports SCSI adapters.
+  See `LP1365468 <https://bugs.launchpad.net/bugs/1365468>`_.
+  
+* When using Ubuntu, in rare cases some nodes may stay
+  on the grub prompt. It may occur more frequently if the node is power-cycled
+  during the boot process. You should press Enter to continue booting.
+  See `LP1356278 <https://bugs.launchpad.net/bugs/1356278>`_.
+  
+* Fuel CLI can not be run by a non-root user.
+  See `LP1355876 <https://bugs.launchpad.net/bugs/1355876>`_.
+  
+* When traceback is in process, an interface with IP address
+  that belongs to administrator's subnet, can not be found.
+  See `LP1355237 <https://bugs.launchpad.net/bugs/1355237>`_.
+  
+* Nailgun network check must be extended to verify that correct numbers
+  of IP addresses in range are used.
+  See `LP1354803 <https://bugs.launchpad.net/bugs/1354803>`_.
+  
+* Backup and restore are accessible via CLI during deployment.
+  See `LP1352847 <https://bugs.launchpad.net/bugs/1352847>`_.
+  
+* List of "Zabbix monitoring items" is different from "Zabbix overview" list.
+  See `LP1352319 <https://bugs.launchpad.net/bugs/1352319>`_.
+  
+* When installing Fuel master at a node that already has operating system,
+  Fuel asks to approve erasing of all disk data.
+  See `LP1351473 <https://bugs.launchpad.net/bugs/1351473>`_.
+  
+* Multicast network verification fails when there are more than 11 nodes.
+  See `LP1350007 <https://bugs.launchpad.net/bugs/1350007>`_.
+  
+* Invalid node status for nodes modified since backup after restore.
+  Nodes added to an environment after a backup was made may report as
+  offline. Reboot any bootstrapped nodes after restoring your Fuel
+  Master from a backup. See `LP1347718 <https://bugs.launchpad.net/bugs/1347718>`_.
+  
+* Diagnostic snapshot does not have /var/log/remote symlink.
+  See `LP1340615 <https://bugs.launchpad.net/bugs/1340615>`_.
+ 
+* Large number of disks may fail Ubuntu installation. 
+  See `LP1340414 <https://bugs.launchpad.net/bugs/1340414>`_.
+  
+* During OSTF tests, "Time limit exceeded while waiting
+  for 'ping' command to finish" message appears.
+  See `LP1339691 <https://bugs.launchpad.net/bugs/1339691>`_.
+  
+* After resetting the environment, OSTF test results from the last
+  environment are still displayed. See `LP1338669 <https://bugs.launchpad.net/bugs/1338669>`_.
+  
+* IP ranges can not be updated for management and storage networks. 
+  See `LP1365368 <https://bugs.launchpad.net/bugs/1365368>`_.
+
+* After update Sahara OSTF tests display in HA suite.
+  See `LP1357330 <https://bugs.launchpad.net/bugs/1357330>`_.
+
+* After cluster reset one of the nodes is offline.
+  See `LP1359237 <https://bugs.launchpad.net/bugs/1359237>`_.
+  
+* Upgrade procedure does not update agent/mc agent/network checker.
+  See `LP1343139 <https://bugs.launchpad.net/bugs/1343139>`_.
+  
+* 
+
+ 
+
+  
+
+
+
+
+  
+ 
+  
+  
+  
+  
+
+  
+  
+
