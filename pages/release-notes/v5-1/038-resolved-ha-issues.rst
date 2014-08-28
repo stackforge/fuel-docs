@@ -55,8 +55,8 @@ See `LP1297355 <https://bugs.launchpad.net/fuel/+bug/1297355>`_,
 and `Reliable Galera OCF Script
 <https://blueprints.launchpad.net/fuel/+spec/reliable-galera-ocf-script>`_.
 
-Keystone performance issues if memcache instance fails [rewrite text -- In progress for 5.1]
---------------------------------------------------------------------------------------------
+Keystone performance issues if memcache instance fails
+------------------------------------------------------
 
 When several OS controller nodes are used
 with 'memcached' installed on each of them,
