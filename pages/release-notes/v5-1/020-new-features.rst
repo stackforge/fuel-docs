@@ -51,6 +51,8 @@ so Mirantis is offering the 5.0.2 release
 to provide the fixes that can be applied to the existing architecture.
 
 See :ref:`update-openstack-environ-ug` for instructions.
+You can also use Fuel CLI to update the environment;
+see :ref:`cli_usage` for details.
 
 .. note::
   If you are running Fuel 4.x or earlier,
