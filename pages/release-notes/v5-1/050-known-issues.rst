@@ -67,6 +67,9 @@ This version has the following known issues:
   to a remote (outside the current environment) Zabbix server
 - Zabbix agents cannot be configured to report
   to multiple Zabbix servers.
+- There are false Zabbix issues after deploying with Nova-network.
+  This can be resolved via attaching "Template App OpenStack Nova Network" to compute nodes
+  instead of controller nodes. See `LP1365171 <https://bugs.launchpad.net/fuel/+bug/1365171>`_.
 
 
 Additional MongoDB roles cannot be added to an existing deployment
@@ -90,6 +93,26 @@ Installing additional python modules on the Fuel Master node
 using pip or easy_install
 may cause the Fuel upgrade script to fail.
 See `LP1341564 <https://bugs.launchpad.net/fuel/+bug/1341564>`_.
+
+Fuel uses ports that may be used by other services
+--------------------------------------------------
+
+Fuel uses some high ports that may be used by other services
+such as RPC, NFS, passfive FTP (ephemeral ports 49000-65535).
+In some cases, this can lead to a port conflict during service restart.
+To avoid tis, issue the following command
+so that ports above 49000 are not automatically assigned to other services:
+
+  sysctl -w 'sys.net.ipv4.ip_local_reserved_ports=49000'
+
+See `LP116422/ <https://review.openstack.org/#/c/116422/>`_.
+
+Docker is not upgraded
+----------------------
+
+The upgrade procedure does not upgrade Docker.
+This results in a number of issues; see
+`LP1360161 <https://bugs.launchpad.net/fuel/+bug/1360161>`_
 
 Network verification fails if a node is offline
 -----------------------------------------------
@@ -209,10 +232,28 @@ which can provide significant performance advantages.
 See :ref:`ovs-arch`
 for more information about using Open VSwitch.
 
+Keystone performance issues if memcache instance fails [In progress for 5.1]
+----------------------------------------------------------------------------
+
+When several OS controller nodes are used
+with 'memcached' installed on each of them,
+each 'keystone' instance is configured
+to use all of the 'memcached' instances.
+Thus, if one of the controller nodes became inaccessible,
+then whole cluster may cease to be workable
+because of delays in the memcached backend.
+
+This behavior is the way the python memcache clients themselves work.
+There is currently no acceptable workaround
+that would allow the use all available 'memcached' instances
+without such issues.
+See `LP1332058 <https://bugs.launchpad.net/keystone/+bug/1332058>`_
+and `LP1340657 <https://bugs.launchpad.net/bugs/1340657>`_.
+
 Placing Ceph OSD on Controller nodes is not recommended
 -------------------------------------------------------
 
-Placing Ceph OSD on Controllers is highly discouraged because it can severely
+Placing Ceph OSD on Controllers is highly unadvisable because it can severely
 degrade controller's performance.
 It is better to use separate storage nodes
 if you have enough hardware.
@@ -358,3 +399,15 @@ Other limitations
 
 * Docker loads images very slowly on the Fuel Master Node.
   See `LP1333458 <https://bugs.launchpad.net/bugs/1333458>`_.
+  
+* Fuel menu allows IP range, that overlaps in PXE setup.
+  When configuring IP ranges, do not use DHCP addresses
+  that overlap the Static addresses used.
+  See `LP1365067 <https://bugs.launchpad.net/bugs/1365067>`_.
+  
+* VMDK driver prevents instances boot process
+  with no matched image adapter type and disk adapter type error.
+  Make sure that operating system that runs inside your instance supports SCSI adapters.
+  See `LP1365468 <https://bugs.launchpad.net/bugs/1365468>`_.
+  
+
