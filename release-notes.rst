@@ -5,7 +5,6 @@
 =============
 Release Notes
 =============
-
 .. contents:: :local:
    :depth: 1
 

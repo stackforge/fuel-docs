@@ -83,6 +83,29 @@ All upstream neutron packages are included in the 5.1 ISO file
 --------------------------------------------------------------
 
 These packages are made available as a convenience;
+
+Improvements to Pacemaker and Corosync
+--------------------------------------
+
+Structural changes have been implemented for Pacemaker and Corosync
+to improve the stability, performance, and scalability
+of highly available clusters.
+These are detailed in  `HA Improvements of pacemaker and corosync <https://blueprints.launchpad.net/fuel/+spec/ha-pacemaker-improvements>`_.
+This resolves `LP1283062 <https://bugs.launchpad.net/fuel/+bug/1283062>`_,
+`LP1312627 <https://bugs.launchpad.net/fuel/+bug/1312627>`_,
+and other issues.
+
+All upstream Neutron packages are included in the 5.1 ISO file for 5.1 and 5.0.2
+--------------------------------------------------------------------------------
+
+Packages for all upstream Neutron  components
+are now included in the repos on the Fuel Master node.
+These packages are made available as a convenience,
+to enable users to customize their deployments accordingly
+rather than having to locate and use packages
+that may not have been built from the same sources
+and consequently may cause problems.
+>>>>>>> Release Notes 5.1 -- additions
 Mirantis does not fully support these packages
 or guarantee that they work.
 A comparable set of packages are provided on the mirrors
