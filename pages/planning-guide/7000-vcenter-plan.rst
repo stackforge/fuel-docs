@@ -16,7 +16,7 @@ multiple ESX host clusters via single vCenter server.
 
 .. note:: In Fuel 5.0 and 5.1 a Nova-compute service runs only on Controller nodes. 
 
-.. note:: In Fuel 6.0 the relation between a Nova-compute service and a ESX host cluster will be changed from one-to-many to one-to-one. I.e. to manage multiple ESX host clusters you will need to run multiple Nova-compute services. 
+.. note:: In next Fuel releases the relation between a Nova-compute service and a ESX host cluster will be changed from one-to-many to one-to-one. I.e. to manage multiple ESX host clusters you will need to run multiple Nova-compute services. 
 
 The vCenter driver makes management convenient
 from both the OpenStack Dashboard (:ref:`horizon-term`)
