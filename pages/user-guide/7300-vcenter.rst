@@ -34,8 +34,6 @@ Choose Deployment Mode for vCenter
 ----------------------------------
 
 You can deploy Mirantis OpenStack with or without :ref:`ha-term`.
-Note that the vCenter Nova plugin runs only on the primary Controller node,
-even if that Controller node is replicated to provide HA.
 
 .. image:: /_images/user_screen_shots/vcenter-deployment-mode.png
    :width: 50%
@@ -74,22 +72,19 @@ Choose Backend for Cinder and Glance with vCenter
 -------------------------------------------------
 
 Ceph cannot be used as a Cinder or Glance backend;
-the only choice here is to leave default options.
-The default options are LVM over iSCSI for Cinder and
-Swift for Glance.
-Starting with Fuel 5.1, you must use the VMDK driver as
-Cinder storage backend.
+the only choice here is to leave the default options,
+which are:
+- VMDK driver for Cinder
+- Swift for Glance.
+
+.. note:: VMware vCenter managed datastore is not supported as a backend for Glance.
 
 .. image:: /_images/user_screen_shots/vcenter-cinder.png
    :width: 50%
 
 After you create the environment, you must enable the VMDK
-driver for Cinder on Settings tab.  First you must uncheck
-LVM over iSCSI option, after that VMware vCenter for volumes
-becomes available.
+driver for Cinder on the Settings tab.
 
-.. image:: /_images/user_screen_shots/cinder-vmdk-backend.png
-   :width: 50%
 
 - If you are using the Multi-node (no HA) mode,
   local storage is used as the backend for Glance.
@@ -103,6 +98,13 @@ with vSphere integration.
 
 .. image:: /_images/user_screen_shots/vcenter-additional.png
    :width: 50%
+
+.. note:: Fuel does not configure Ceilometer
+   to collect metrics from vCenter virtual resources.
+   For more details about the Ceilometer plugin for vCenter,
+   see `Support for VMware vCenter Server
+   <https://wiki.openstack.org/wiki/Ceilometer/blueprints/vmware-vcenter-server#Support_for_VMware_vCenter_Server>`_
+
 
 .. raw: pdf
 
@@ -152,16 +154,31 @@ is supported in the current version of vCenter integration in Fuel.
 .. image:: /_images/user_screen_shots/vcenter-network-manager.png
    :width: 50%
 
-- Specify the credentials used to access the vCenter installation:
+- Check the vCenter credentials
 
 .. image:: /_images/user_screen_shots/settings-vcenter.png
    :width: 50%
 
 - Enable the 'Use VLAN tagging for fixed networks' checkbox
   and enter the VLAN tag you selected
-  for the VLAN ID in the ESXi host network configuration:
+  for the VLAN ID in the ESXi host network configuration
 
 .. image:: /_images/user_screen_shots/vcenter-nova-network.png
+   :width: 50%
+
+Storage
+-------
+
+To enable VMware vCenter for volumes,
+you must first uncheck the LVM over iSCSI option.
+
+.. image:: /_images/user_screen_shots/vcenter-cinder-uncheck.png
+   :width: 50%
+
+After that, the VMware vCenter for volumes
+becomes available.
+
+.. image:: /_images/user_screen_shots/cinder-vmdk-backend.png
    :width: 50%
 
 For more information about how vCenter support is implemented,

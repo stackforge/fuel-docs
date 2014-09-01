@@ -55,12 +55,13 @@ and manipulate them on the fly.
   and increases the CPU utilization on the Compute and Controller nodes.
 
 * The **Neutron with VMware NSX** topology utilizes
-  the VMware NSX network hypervisor as a backend for Neutron.
-  The user must install and configure VMware NSX
+  the VMware NSX network virtualization platform as a backend for Neutron.
+  The user must install and configure VMware NSX appliances
   before deploying the OpenStack environment that will be using it.
   As with GRE segmentation,
   it does not restrict the maximum number of available networks.
-  The user must also obtain NSX specific packages
+  The user must also obtain OpenStack NSX specific packages
+  (because these packages are proprietary)
   and host them on a web server (usually the Fuel master node)
   so that Puppet can download and install them
   on controllers and compute nodes during the deployment stage.
@@ -70,7 +71,7 @@ Some other considerations when choosing a network topology:
 - :ref:`ovs-term`, :ref:`bonding-term`, and :ref:`murano-term`
   can only be implemented on Neutron.
 - VMWare :ref:`vcenter-term` and :ref:`vsphere-term`
-  can only be implemented on Nova-network.
+  can only be implemented on Nova-network with FlatDHCP.
 - Neutron with VMware NSX can only be implemented with the KVM/QEMU hypervisor.
 - :ref:`bonding-term` is not supported for SR-IOV over
   the :ref:`mellanox-adapters` family.

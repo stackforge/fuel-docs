@@ -40,6 +40,10 @@ each of which is one of the following node types:
   `nova-compute` controls the life cycle of these VMs;
   Neutron Agent and Ceilometer Compute Agent may also run on Compute nodes.
 
+  .. note:: In vCenter-integration environments,
+     the Nova-compute service runs on Controller nodes.
+
+
 **Storage:**
   OpenStack requires block and object storage to be provisioned.
   These can be provisioned as Storage nodes
