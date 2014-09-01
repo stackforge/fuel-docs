@@ -7,10 +7,9 @@ VMDK
 The :ref:`vcenter-term` VMDK driver
 provides support for the virtual machine disk format
 used by VMware :ref:`esxi-term`.
-This driver is used to store Cinder volumes
-in data stores that are managed by vCenter.
+This driver is used to enable management of the OpenStack Block Storage volumes on vCenter-managed data stores. Volumes are backed by VMDK files on data stores that use any VMware-compatible storage technology such as NFS, iSCSI, FiberChannel, and vSAN.
 You can use Fuel 5.1 and later
-to deploy a Mirantis OpenStack environment
+to deploy a vCenter-integrated Mirantis OpenStack environment
 that utilizes VMDK support.
 
 For more information, see:
