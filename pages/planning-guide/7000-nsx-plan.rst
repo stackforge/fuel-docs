@@ -20,7 +20,7 @@ For more information:
 - See :ref:`neutron-nsx-arch` for information about how NSX support
   is implemented in Mirantis OpenStack;
 
-- :ref:`vcenter-deploy` gives instructions for creating and deploying
+- :ref:`nsx-deploy` gives instructions for creating and deploying
   a Mirantis OpenStack environment that is integrated
   with an NSX networking backend that utilizes the NSX Neutron plug-in.
 
