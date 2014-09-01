@@ -9,10 +9,15 @@ VMware provides a vCenter driver for OpenStack
 that enables the Nova-compute service to
 communicate with a VMware vCenter server
 that manages one or more ESX host clusters.
-If your vCenter manages multiple ESX host clusters,
-you can specify several or all clusters for a single OpenStack environment,
+If your vCenter manages multiple ESX host clusters, Fuel 5.1 allows
+you to specify several or all clusters for a single OpenStack environment,
 so that the Nova-compute service manages
 multiple ESX host clusters via single vCenter server.
+
+.. note:: In Fuel 5.0 and 5.1 a Nova-compute service runs only on Controller nodes. 
+
+.. note:: In next Fuel releases the relation between a Nova-compute service and a ESX host cluster will be changed from one-to-many to one-to-one. I.e. to manage multiple ESX host clusters you will need to run multiple Nova-compute services. 
+
 The vCenter driver makes management convenient
 from both the OpenStack Dashboard (:ref:`horizon-term`)
 and from vCenter,
@@ -107,8 +112,11 @@ Limitations
   in the current version of the integration.
 - Each OpenStack environment can support one vCenter cluster.
 - :ref:`security-groups-term` are not supported.
-- Each OpenStack environment can support one vCenter cluster.
 - The only supported backend for Cinder is VMDK.
+- Ceph backend for Glance, Cinder and RadosGW object storage are not supported.
+- VMware vCenter-managed datastore is not supported as a backend for Glance.
+- Murano is not supported. It requires Neutron and vCenter utilizes nova-network.
+- Fuel doesn't configure Ceilometer to collect metrics from vCenter virtual resources. For more details about Ceilometer plugin for vCenter, see `Support for VMware vCenter Server <https://wiki.openstack.org/wiki/Ceilometer/blueprints/vmware-vcenter-server#Support_for_VMware_vCenter_Server>`_
 
 For background information about how vCenter support
 is integrated into Mirantis OpenStack, see :ref:`vcenter-arch`.

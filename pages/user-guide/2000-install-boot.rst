@@ -83,6 +83,8 @@ and edit that line.
 This allows you to configure the IP address,
 default gateway, and DNS server for the Fuel Master Node.
 
+..note:: It is possible to install Fuel master node on vSphere. For more details, see :ref:`fuel-on-vsphere-ug`.
+
 .. include:: /pages/user-guide/initialize-fuel/0400-pxe-config.rst
 
 .. include:: /pages/user-guide/initialize-fuel/0500-fuel-boot.rst
