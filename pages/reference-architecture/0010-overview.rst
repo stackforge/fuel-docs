@@ -40,6 +40,12 @@ each of which is one of the following node types:
   `nova-compute` controls the life cycle of these VMs;
   Neutron Agent and Ceilometer Compute Agent may also run on Compute nodes.
 
+  .. note:: In environments that use vCenter as the hypervisor,
+     the  Nova-compute service can run only on Controller nodes.
+     Because of this, Fuel does not allow you
+     to :ref:`assign<assign-roles-vcenter-ug>`
+     the "Compute" role to any node.
+
 **Storage:**
   OpenStack requires block and object storage to be provisioned.
   These can be provisioned as Storage nodes

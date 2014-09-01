@@ -57,6 +57,10 @@ However, it is worth noting that deployments on top of VirtualBox
 do not generally meet the performance and robustness requirements
 of most production environments.
 
+You can instead :ref:`install Fuel master node on vSphere<fuel-on-vsphere-ug>`
+and deploy a Mirantis OpenStack Environment
+on either baremetal or on vSphere.
+
 For community members or partners looking to take Fuel even further,
 see the `developer documentation <http://docs.mirantis.com/fuel-dev/develop.html>`_
 for information about the internal architecture of Fuel,
