@@ -11,7 +11,7 @@ VMWare licenses vCenter as an add-on to the :ref:`vsphere-term` suite.
 
 You use Fuel 5.0 and later
 to deploy a Mirantis OpenStack environment
-that can boot and manage VMs in vCenter.
+that utilizes vCenter as a hypervisor over nova-compute driver and can boot and manage VMs in vCenter.
 
 - For information about planning your OpenStack deployment
   with vCenter integration, see :ref:`vcenter-plan`

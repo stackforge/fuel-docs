@@ -47,7 +47,10 @@ Supported Software
   * QEMU
   * vCenter
 
-* **Open vSwitch** 1.10.2
+* **Networking backend**
+
+  * Open vSwitch 1.10.2 
+  * VMware NSX 
 
 * **HA Proxy** 1.4.24
 
