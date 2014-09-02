@@ -75,11 +75,11 @@ This enables an operator to:
   (included in ML2 plugin) for high performance VM links
 - Test the environment utilizing Mirantis OpenStack Health Checks
 
-Ceph distribution has been updated to Firefly
----------------------------------------------
+Ceph storage platform has been updated to Firefly
+-------------------------------------------------
 
-Mirantis OpenStack 5.1 deploys the 0.80.5 version ("Firefly").
-Previous versions of Mirantis OpenStack deployed the Dumpling version of Ceph.
+Mirantis OpenStack 5.1 deploys the Ceph version 0.80.5 ("Firefly").
+Previous versions of Mirantis OpenStack deployed the Ceph version 0.67.x ("Dumpling").
 
 Improvements to Pacemaker and Corosync
 --------------------------------------
