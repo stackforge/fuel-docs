@@ -28,7 +28,7 @@ but it has some known limitations:
 Known limitations for the Mellanox SR-IOV plug-in
 -------------------------------------------------
 
-The Mellanox SR-IOV plug-in is fully integrated
+The Mellanox :ref:`sr-iov-term` plug-in is fully integrated
 into Mirantis OpenStack 5.1
 but it has some known limitations:
 
@@ -43,16 +43,16 @@ but it has some known limitations:
   you must make additional configuration changes manually
   or through a script.
 
-* Mellanox OEM adapter cards may be burned with SR-IOV disabled.
-  In such cases,
-  you may need to burn a special firmware version
-  to enable SR-IOV.
+* 3rd party adapters based on Mellanox chipset may not have SRIOV enabled
+  by default. In such a case, please contact the device manufacture for
+  configuration instructions and for the required firmware.
 
 Mellanox provides additional information in their
 `HowTo Install Mirantis Fuel 5.1 OpenStack with Mellanox Adapters Support
 <http://community.mellanox.com/docs/DOC-1474>`_ document,
-including example images to use with the Mellanox SR-IOV plugin
-and advanced configuration instructions.
+including example images to use with the Mellanox SR-IOV plugin,
+and advanced configuration instructions
+(for example, instructions to increase the number of virtual functions).
 
 Zabbix Issues
 -------------
