@@ -63,17 +63,15 @@ Support for SR-IOV based networking and ISER block storage over Mellanox Connect
 --------------------------------------------------------------------------------------------------
 
 Mirantis OpenStack can now properly detect Mellanox hardware
-that is installed on discovered nodes
-when the experimental feature group is enabled,
-This enables an operator to:
+that is installed on discovered nodes and enable an operator to:
 
-- Configure storage to work over ISER (High performance RDMA based iscsi)
-- Install OFED drivers, firmware and configure SR-IOV kernel parameters
+- Configure storage to work over :ref:`iser-term`
+  (High performance iSCSI protocol over :ref:`rdma-term`).
+- Install OFED drivers, firmware and configure :ref:`sr-iov-term`
+  kernel parameters.
 - Install and configure Mellanox SR-IOV plugin for OpenStack
-  (included in ML2 plugin)
-  for high performance VM links
-  (included in ML2 plugin) for high performance VM links
-- Test the environment utilizing Mirantis OpenStack Health Checks
+  (included in ML2 plugin) for high performance VM links.
+- Test the environment utilizing Mirantis OpenStack Health Checks.
 
 Ceph storage platform has been updated to Firefly
 -------------------------------------------------
