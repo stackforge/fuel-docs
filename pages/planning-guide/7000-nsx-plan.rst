@@ -41,13 +41,18 @@ Please check that you completed the following steps:
 * Install NSX Controller node
 * Install NSX Gateway node
 * Install NSX Manager node
+* Install NSX Service node
+
+VMware NSX documentation states that an NSX cluster can operate successfully
+without an NSX Service node, but its presence is mandatory for deploying
+Mirantis OpenStack with NSX.
 
 VMware NSX cluster configuration
 --------------------------------
 
 * Configure NSX Controller
 
-        * Assign IP address to NSX controller.  If controller is going
+        * Assign IP address to NSX controller.  If the controller is going
           to be placed in any of the OpenStack :ref:`logical
           networks<logical-networks-arch>` (Public, Management, Storage),
           you must assign an IP address that does not overlap
@@ -61,6 +66,7 @@ VMware NSX cluster configuration
           and the network where the VMware NSX controller resides.
 
 * Configure NSX Gateway node
+* Configure NSX Service node
 * Create NSX cluster in NSX Manager
 
         * Create new cluster
