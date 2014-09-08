@@ -6,9 +6,9 @@ Pacemaker Settings
 Pacemaker is the cluster resource manager used by Fuel to manage Neutron
 resources, HAProxy, virtual IP addresses and MySQL Galera cluster. It is done by
 use of Open Cluster Framework (see http://linux-ha.org/wiki/OCF_Resource_Agents)
-agent scripts which are deployed in order to start/stop/monitor Quantum services,
+agent scripts which are deployed in order to start/stop/monitor Neutron services,
 to manage HAProxy, virtual IP addresses and MySQL replication. These are located
-at ``/usr/lib/ocf/resource.d/mirantis/quantum-agent-[ovs|dhcp|l3]``,
+at ``/usr/lib/ocf/resource.d/mirantis/neutron-agent-[ovs|dhcp|l3]``,
 ``/usr/lib/ocf/resource.d/mirantis/mysql``, ``/usr/lib/ocf/resource.d/ocf/haproxy``.
 Firstly, MySQL agent is started, HAproxy and virtual IP addresses are set up.
 Then Open vSwitch and metadata agents are cloned on all the nodes. Then dhcp and

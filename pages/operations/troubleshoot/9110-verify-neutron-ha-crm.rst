@@ -16,9 +16,9 @@ You should see agents start on the other node:
   Online: [ fuel-controller-02 fuel-controller-03 fuel-controller-04 fuel-controller-05 ]
   OFFLINE: [ fuel-controller-01 ]
 
-  p_quantum-plugin-openvswitch-agent (ocf::pacemaker:quantum-agent-ovs): Started fuel-controller-02
-  p_quantum-dhcp-agent (ocf::pacemaker:quantum-agent-dhcp): Started fuel-controller-02
-  p_quantum-l3-agent (ocf::pacemaker:quantum-agent-l3): Started fuel-controller-02
+  p_neutron-plugin-openvswitch-agent (ocf::pacemaker:neutron-agent-ovs): Started fuel-controller-02
+  p_neutron-dhcp-agent (ocf::pacemaker:neutron-agent-dhcp): Started fuel-controller-02
+  p_neutron-l3-agent (ocf::pacemaker:neutron-agent-l3): Started fuel-controller-02
 
 and see corresponding Neutron interfaces on the new Neutron node::
 

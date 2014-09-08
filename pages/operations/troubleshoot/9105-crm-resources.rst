@@ -30,9 +30,9 @@ For example::
   Online: [ fuel-controller-01 fuel-controller-02 fuel-controller-03
   fuel-controller-04 fuel-controller-05 ]
 
-  p_quantum-plugin-openvswitch-agent (ocf::pacemaker:quantum-agent-ovs): Started fuel-controller-01
-  p_quantum-dhcp-agent (ocf::pacemaker:quantum-agent-dhcp): Started fuel-controller-01
-  p_quantum-l3-agent (ocf::pacemaker:quantum-agent-l3): Started fuel-controller-01
+  p_neutron-plugin-openvswitch-agent (ocf::pacemaker:neutron-agent-ovs): Started fuel-controller-01
+  p_neutron-dhcp-agent (ocf::pacemaker:neutron-agent-dhcp): Started fuel-controller-01
+  p_neutron-l3-agent (ocf::pacemaker:neutron-agent-l3): Started fuel-controller-01
 
 **crm(live)# resource**
 
@@ -40,9 +40,9 @@ Here you can enter resource-specific commands::
 
   crm(live)resource#  status`
 
-  p_quantum-plugin-openvswitch-agent  (ocf::pacemaker:quantum-agent-ovs) Started
-  p_quantum-dhcp-agent   (ocf::pacemaker:quantum-agent-dhcp) Started
-  p_quantum-l3-agent     (ocf::pacemaker:quantum-agent-l3) Started
+  p_neutron-plugin-openvswitch-agent  (ocf::pacemaker:neutron-agent-ovs) Started
+  p_neutron-dhcp-agent   (ocf::pacemaker:neutron-agent-dhcp) Started
+  p_neutron-l3-agent     (ocf::pacemaker:neutron-agent-l3) Started
 
 **crm(live)resource#  start|restart|stop|cleanup <resource_name>**
 
@@ -76,12 +76,12 @@ Example::
     Started: [ controller-01 controller-02 controller-03 ]
    Clone Set: clone_p_mysql [p_mysql]
     Started: [ controller-01 controller-02 controller-03 ]
-   Clone Set: clone_p_quantum-openvswitch-agent [p_quantum-openvswitch-agent]
+   Clone Set: clone_p_neutron-openvswitch-agent [p_neutron-openvswitch-agent]
     Started: [ controller-01 controller-02 controller-03 ]
-   Clone Set: clone_p_quantum-metadata-agent [p_quantum-metadata-agent]
+   Clone Set: clone_p_neutron-metadata-agent [p_neutron-metadata-agent]
     Started: [ controller-01 controller-02 controller-03 ]
-   p_quantum-dhcp-agent   (ocf::mirantis:quantum-agent-dhcp): 	Started controller-01
-   p_quantum-l3-agent 	(ocf::mirantis:quantum-agent-l3):   	Started controller-03
+   p_neutron-dhcp-agent   (ocf::mirantis:neutron-agent-dhcp): 	Started controller-01
+   p_neutron-l3-agent 	(ocf::mirantis:neutron-agent-l3):   	Started controller-03
 
 In this case,
 CRM found residual OpenStack agent processes
