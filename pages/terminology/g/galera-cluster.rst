@@ -8,3 +8,7 @@ Mirantis OpenStack uses MySQL/Galera for HA deployments;
 see :ref:`mysql-galera-arch` in Reference Architecture
 for more information.
 
+Additional information is available:
+
+- :ref:`backport-galera-ocf-op` explains how to backport
+  the Galera Pacemaker OCF script to pre-5.1 environments.
