@@ -25,6 +25,34 @@ but it has some known limitations:
   but you must select it on the Fuel :ref:`Settings<settings-storage-ug>` page.
   See `LP1316377 <https://bugs.launchpad.net/fuel/+bug/1316377>`_.
 
+Known limitations for the VMware NSX integration
+
+------------------------------------------------
+
+
+The VMware NSX integration into Mirantis OpenStack 5.1 is supported,
+
+but it has some known limitations:
+
+
+
+* Deployment interruption (stoppage or reset) by end user or errors during
+
+  deployment leave NSX cluster in half configured state.  User has to manually
+
+  remove all network logical entities that were created during the unsuccessful
+
+  deployment; otherwise, the next deployment will fail due to inability to
+
+  register OpenvSwitches in NSX and 'br-int' bridges on nodes would not be
+
+  configured properly, because older ones with same names exist in NSX cluster.
+
+* If NSX cluster resides in separate network that have L3 connectivity with
+  OpenStack Public network, you must enable Public addresses assignment for all
+  nodes, check :ref:`neutron-nsx-arch`.
+
+
 Known limitations for the Mellanox SR-IOV plug-in
 -------------------------------------------------
 
