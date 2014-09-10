@@ -38,7 +38,7 @@ and tries to assemble the cluster in a following way:
 
   - The MySQL process launches with an empty `gcomm://` string,
     forming a new quorum,
-    and `mysqlmaster` deletes immediately;
+    and the `mysqlmaster` flag is unset immediately;
     other nodes joins in a very short time.
 
 
