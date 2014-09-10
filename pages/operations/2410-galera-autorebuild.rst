@@ -1,4 +1,3 @@
-.. _Enable_Disable_Galera_autorebuild:
 
 .. index:: HowTo: Galera Cluster Autorebuild
 
@@ -7,50 +6,44 @@
 HowTo: Enable/Disable Galera Cluster Autorebuild Mechanism
 ----------------------------------------------------------
 
-By default, Fuel reassembles a Galera cluster automatically
-without any user interaction.
-The OCF script looks for the existence of the `mysqlprimaryinit` variable
-and tries to assemble the cluster in a following way:
+By default, Fuel reassembles a Galera cluster automatically without any user
+interaction.
 
-  - The script checks for this variable and
-    for a temporary config file that is created explicitly during deployment.
-    If the first is present and the second is missing,
-    then the script enters the autorebuild phase; otherwise it is skipped.
+  - OCF Galera script is designed to check every node in Galera Cluster for
+    SEQNO position. That allows to find the node with the most recent data.  
+ 
+  - The script checks for the status of the current node, If it is synchronized
+    with the quorum, the procedure stops; otherwise, SEQNO will be obtained and
+    stored in Corosync CIB as variable.
 
-  - The script checks for the status of the current node,
-    If it is synchronized with the quorum, the procedure stops;
-    otherwise, the latest epoch takes place
-    as a Corosync variable parameter for the selected node.
+  - The script sleeps for 300 seconds, allowing other nodes to join the
+    Corosync quorum and push their UUIDs and SEQNOs too.
 
-  - The script sleeps for five minutes,
-    allowing other nodes to join the Corosync quorum
-    and push their epochs too.
+  - For every node in the quorum, the script compares the UUID and SEQNO, if at
+    least one node has a higher SEQNO, bootstraps the node as Primary Component
+    allowing other nodes to join newly formed cluster later;
 
-  - For every node in the quorum,
-    the script compares the epochs and,
-    if at least one node has a higher epoch,
-    skips the rest and starts a standalone service
-    which will join newly formed cluster later;
-    if no higher epochs are found,
-    the script checks for the temporary `mysqlmaster` flag
-    and neither sets it if the flag does not exist
-    nor falls back to the standalone mode.
-
-  - The MySQL process launches with an empty `gcomm://` string,
-    forming a new quorum,
-    and `mysqlmaster` deletes immediately;
-    other nodes joins in a very short time.
-
+  - Primary Component node is started with `--wsrep-new-cluster` option forming
+    a new quorum.
 
 To prevent the `autorebuild feature` you should do::
 
-  crm_attribute -t crm_config --name mysqlprimaryinit --delete
+  crm_resource unmanage clone_p_mysql 
 
 To re-enable `autorebuild feature` you should do::
 
-  crm_attribute -t crm_config --name mysqlprimaryinit --update done
+  crm_resource manage clone_p_mysql
+
+To check GTID and SEQNO across all nodes saved in Corosync CIB you should do::
+
+  cibadmin --query --xpath "//nodes/*/*/nvpair[@name=\"gtid\"]"
 
 To try an automated reassemble without reboot if cluster is broken just issue::
 
   crm resource restart clone_p_mysql
 
+To remove all GTIDs and SEQNOs from Corosync CIB and allow OCF script to reread
+the data from `grastate.dat` file you should do::
+
+  cibadmin --delete-all --query --xpath "//nodes/*/*/nvpair[@name=\"gtid\"]"
+  --force
