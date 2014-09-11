@@ -153,10 +153,13 @@ Also you can do it without ``--env`` or ``--node`` to remove some nodes without 
   fuel node remove --node 2,3
   fuel node remove --env 1
 
+.. _fuel-cli-config:
+
 Configuring
 +++++++++++
 
-Configuration of environment or some node is universal and done in three stages
+Configuration of the environment or some node
+is universal and done in three stages
 
 1. Download current or default configuration. works for (``network``, ``settings``, ``node --disk``, ``node --network``). Operations with ``deployment`` and ``provisioning`` can be node specific. (e.g. ``fuel --env 1 deployment --node-id=1,2``)
    
@@ -168,8 +171,18 @@ Configuration of environment or some node is universal and done in three stages
    fuel --env 1 provisioning download
    fuel node --node-id 2 --disk --download
 
-2. Add to downloaded files or edit them with your favorite text editor.
+2. Modify the downloaded :ref:`YAML<yaml-config-ops>` files
+   with your favorite text editor.
 3. Upload files to nailgun server
+
+After redeploying your environment with the new configuration,
+you should create a new :ref:`backup <Backup_and_restore_Fuel_Master>`
+of the Fuel Master node.
+You may also want to delete the YAML files
+since you can easily regenerate them at any time.
+Some of the generated YAML files
+contain unencrypted passwords
+whose presence on disk may constitute a security threat.
 
 *Example*::
 

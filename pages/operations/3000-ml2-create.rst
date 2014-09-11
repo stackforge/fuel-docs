@@ -8,8 +8,9 @@ Fuel 5.1 supports :ref:`ml2-term` drivers
 and uses them to provide support for Mellanox devices.
 
 You can now add ML2 data to the quantum_settings section
-of the *node.yaml* file,
-which will update the *astute.yaml* file:
+of the *node.yaml* file
+(see :ref:`yaml-config-ops`;
+this updates the *astute.yaml* file:
 
 ::
 

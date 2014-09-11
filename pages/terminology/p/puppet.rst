@@ -19,4 +19,4 @@ where the Puppet Master Node ran on the Fuel Node Master.
 Passing custom attributes can be helpful
 when you have some Puppet manifests that should be run
 but are not supported by Fuel itself.  See
-:ref:`pass-attributes-from-fuel-to-puppet`.
+:ref:`yaml-config-ops`.
