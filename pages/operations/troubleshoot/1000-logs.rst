@@ -1,0 +1,154 @@
+
+
+.. _logs-top-tshoot:
+
+Logs and messages
+-----------------
+
+A number of logs are available
+to help you understand and troubleshoot
+what is going on in your environment.
+
+.. _screen-messages-tshoot:
+
+Screen messages
++++++++++++++++
+
+Clicking on the icon in the upper right corner
+of the Fuel UI displays a drop-down menu
+of notifications posted as the environment was deployed.
+If notifications have been posted
+that you have not yet viewed,
+this icon is an orange square with a number
+that indicates the number of unread notifications.
+If there are no unread notifications,
+the icon looks as it does here:
+
+.. image:: /_images/user_screen_shots/messages.png
+   :width: 80%
+
+These notifications tell you about the nodes that were deployed
+and when nodes go on and offline.
+Click on any notification
+to get a summary configuration view of the node.
+
+.. _view-logs-fuel:
+
+Viewing Logs through Fuel
++++++++++++++++++++++++++
+
+The Logs tab on the Fuel UI allows you to view
+key logs for any node in the environment.
+Use the drop-down list on the left to select
+whether to view Fuel Master logs
+or the logs of other servers in the environment.
+
+Viewing Fuel Master logs
+++++++++++++++++++++++++
+
+When you choose the "Fuel Master" logs,
+you get this display:
+
+.. image:: /_images/user_screen_shots/master-logs.png
+   :width: 80%
+
+The following logs can be chosen from the "Source" list
+for the "Fuel Master" node:
+
+:puppet:    Logs activity of the :ref:`puppet-term`
+            configuration management system.
+
+:anaconda:
+
+:syslog:  Shows the **syslog** entries
+          that will be sent to the **rsyslog** server
+          (Fuel Master by default).
+
+
+
+**Other install logs**
+
+:storage:
+
+:kickstart-pre:   Shows activities before the Cobbler kickstart mechanism runs.
+
+:kickstart-post:  Shows activities after the Cobbler kickstart mechanism runs.
+
+
+**Bootstrap logs**
+
+:Web backend:  Logs each connection from the Master Node
+               to the Internet.
+
+:REST API:
+
+:RPC consumer:
+
+:Astute:  Records the activity of the :ref:`astute-term` agents
+          that implements the :ref:`nailgun-term` configuration tasks.
+
+:Health Check:  Displays the results of the most recent run
+                of the tests run from the "Health Check" tab.
+
+Viewing logs for target nodes ("Other servers")
++++++++++++++++++++++++++++++++++++++++++++++++
+
+When you choose "Other Servers",
+the display includes an extra field
+that you use to choose the node whose logs you want to view:
+
+.. image:: /_images/user_screen_shots/other-nodes-logs.png
+   :width: 80%
+
+Many of the same logs shown for the Fuel Master node
+are also shown for the target nodes.
+The difference is in the nodes given for "Bootstrap logs",
+plus the controller node includes a set of OpenStack logs
+that shows logs for services that run on the Controller node.
+
+The "Bootstrap logs" for "Other servers" are:
+
+**Bootstrap logs**
+
+:dmesg:  Standard Linux dmesg log that displays log messages
+         from the most recent system startup.
+
+:messages:  Logs all kernel messages for the node.
+
+:mcollective:    Logs activities of Mcollective
+
+:agent:
+
+syslog
+++++++
+
+OpenStack uses the standard Linux **syslog**/**rsyslog** facilities
+to manage logging in the environment.
+Fuel puts the appropriate templates
+into the */etc/rsyslog.d* directory
+on each target node.
+
+By default, Fuel sets up the Fuel Master node
+to be the remote syslog server.
+See :ref:`syslog-ug` for instructions about
+how to configure the environment
+to use a different server as the **rsyslog** server.
+Note that Fuel configures all the files required for **rsyslog**
+when you use the Fuel Master node as the remote server;
+if you specify another server,
+you must configure that server to handle messages
+from the OpenStack environment.
+
+/var/logs
++++++++++
+
+Logs for each node are written to the node's */var/logs* directory
+and can be viewed there.
+Under this directory, you will find subdirectories
+for the major services that run on that node
+such as nova, cinder, glance, and heat.
+
+On the Fuel Master node,
+*/var/log/remote* is a symbolic link to the
+*/var/log/docker-logs/remote* directory.
+
