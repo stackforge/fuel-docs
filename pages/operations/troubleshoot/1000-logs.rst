@@ -1,0 +1,61 @@
+
+
+.. _logs-top-tshoot:
+
+Logs and messages
+-----------------
+
+A number of logs are available
+to help you understand and troubleshoot
+what is going on in your environment.
+
+.. _screen-messages-tshoot:
+
+Screen messages
++++++++++++++++
+
+Clicking on the icon in the upper right corner
+of the Fuel UI displays a drop-down menu
+of notifications posted as the environment was deployed.
+If notifications have been posted
+that you have not yet viewed,
+this icon is an orange square with a number
+that indicates the number of unread notifications.
+If there are no unread notifications,
+the icon looks as it does here:
+
+.. image:: /_images/user_screen_shots/messages.png
+   :width: 80%
+
+These notifications tell you about the nodes that were deployed.
+Click on any notification
+to get a summary configuration view of the node.
+
+.. _view-logs-fuel:
+
+Viewing Logs through Fuel
++++++++++++++++++++++++++
+
+The Logs tab on the Fuel UI allows you to view
+key logs for any node in the environment.
+Use the drop-down list on the left to select
+whether to view Fuel Master logs
+or the logs of other servers in the environment.
+
+When you choose the "Fuel Master" logs,
+you get this display:
+
+.. image:: /_images/user_screen_shots/master-logs.png
+   :width: 80%
+
+When you choose "Other Servers",
+the display includes an extra field
+that you use to choose the node whose logs you want to view:
+
+.. image:: /_images/user_screen_shots/other-nodes-logs.png
+   :width: 80%
+
+
+
+/var/logs
++++++++++
