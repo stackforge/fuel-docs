@@ -45,8 +45,10 @@ you can click on the "Load Defaults" button at the bottom of the screen.
 .. include:: /pages/user-guide/config-environment/settings/1500-modify-services.rst
 .. include:: /pages/user-guide/config-environment/settings/2000-vcenter-config.rst
 .. include:: /pages/user-guide/config-environment/settings/2500-common-settings.rst
+.. include:: /pages/user-guide/config-environment/settings/3250-debug-set.rst
 .. include:: /pages/user-guide/config-environment/settings/3300-scheduler.rst
 .. include:: /pages/user-guide/config-environment/settings/3500-vlan-splinters.rst
+.. include:: /pages/user-guide/config-environment/settings/3550-syslog.rst
 .. include:: /pages/user-guide/config-environment/settings/3600-mellanox-neutron.rst
 .. include:: /pages/user-guide/config-environment/settings/4000-settings-storage.rst
 

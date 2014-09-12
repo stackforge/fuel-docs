@@ -38,6 +38,7 @@ Terminology Reference
 .. include:: /pages/terminology/i/iser.rst
 .. include:: /pages/terminology/k/keystone.rst
 .. include:: /pages/terminology/k/kvm.rst
+.. include:: /pages/terminology/l/logging.rst
 .. include:: /pages/terminology/l/lxc.rst
 .. include:: /pages/terminology/m/mirantis-openstack.rst
 .. include:: /pages/terminology/m/ml2.rst
