@@ -22,7 +22,8 @@ Public and Floating IP ranges must not intersect!
 
 **Public range with Nova-Network requirements:**
 
-  * Every deployed node requires one IP address from the Public IP range.
+  * Each deployed Controller node and each deployed Zabbix node
+    requires one IP address from the Public IP range.
 
   * For HA environments, one extra IP address is required
     for the environment's Virtual IP.
@@ -46,7 +47,8 @@ Fuel cannot configure Neutron with external workarounds at this time.
 
 **Public range with Neutron requirements:**
 
-  * Each deployed node requires one IP address from Public network.
+  * Each deployed Controller node and each deployed Zabbix node
+    requires one IP address from the Public IP range.
   * This IP goes to the node's bridge to the external network ("br-ex")
   * For HA environments, an additional IP address is required
     for the environment's Virtual IP.
@@ -71,18 +73,26 @@ Example
 A little example may clarify this.
 Consider the following:
 
-* Your environment has N nodes.
+* Your environment has 3 Controller nodes and 1 Zabbix node.
 * You want to establish no more than K tenants.
 * You want to provide direct external access
   to no more than M virtual instances.
 
 Calculate the required number of Public and Floating IP addresses as follows:
 
-Nova-Network with HA
-	The Public range must have N+1 IPs; the Floating range must have M IPs.
-Neutron with HA
-	The Public range must have N+1 IPs; the Floating range must have K+M IPs.
-If you are not using HA
-	You may decrease the Public range by one IP address
-	(which would be allocated for the Virtual IP in HA mode).
+:Nova-Network with HA:
+       The Public range must have 5 IPs
+       (one for each Controller and Zabbix node
+       plus one for the environment's Virtual IP);
+       the Floating range must have M IPs.
+
+:Neutron with HA:
+        The Public range must have 4(3+1) IPs
+        (one for each Controller and Zabbix node
+        plus one for the environment's Virtual IP);
+        the Floating range must have K+M IPs.
+
+:If you are not using HA:
+         You may decrease the Public range by one IP 
+         (which would be allocated for the Virtual IP in HA mode).
 
