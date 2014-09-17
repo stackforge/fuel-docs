@@ -20,6 +20,7 @@ either the CentOS or Ubuntu operating system;
 check the appropriate box when configuring your environment.
 
 For more information, see
+
 *  :ref:`ceilometer-deployment-notes`
 * `Ceilometer wiki <https://wiki.openstack.org/wiki/Ceilometer>`_
 * `Ceilometer blob <https://github.com/openstack/ceilometer/blob/stable/icehouse/doc/source/install/dbreco.rst>`_

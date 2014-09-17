@@ -3,7 +3,7 @@
 .. _Backup_and_restore_Fuel_Master:
 
 HowTo: Backup and restore Fuel Master
--------------------------------------
+=====================================
 
 Because the Fuel Master itself is not available with high availability,
 it is strongly recommended to create a backup after each deployment. This
@@ -21,10 +21,12 @@ during the backup process, causing no impact for any deployed or
 bootstrapped nodes.
 
 In order to back up the Fuel Master, you need to meet these requirements:
+
 * No deployment tasks are currently running
 * You have at least 11GB free disk space
 
 The backup contains the following items:
+
 * All docker containers (including Fuel DB)
 * PXE deployment configuration
 * All OpenStack environment configurations
@@ -33,13 +35,16 @@ The backup contains the following items:
 * Puppet manifests
 
 Items not backed up include logs and host network configuration.
-If preserving log data is important, back up the /var/log directory
-separately. This could be done by using *scp* to transfer /var/log to another
+If preserving log data is important, back up the */var/log* directory
+separately. This could be done by using *scp* to transfer */var/log* to another
 host. Network configuration needs to be done manually via Fuel Setup if you
 reinstall your Fuel Master before restoring it.
 
+Running the backup
+------------------
+
 To start a backup, run **dockerctl backup**. Optionally, you can specify a
-path for backup. The default path is **/var/backup/fuel**.
+path for backup. The default path is */var/backup/fuel*.
 This process takes approximately 30 minutes
 and is dependent on the performance of your hardware.
 After the backup is done, you may want to copy the backup to
@@ -54,9 +59,10 @@ Restoring Fuel Master
 The restore is quite similar to the backup process.
 This process can be run any time after installing a Fuel Master
 node. Before starting a restore operation, ensure the following:
+
 * The Fuel version is the same release as the backup
 * There are no deployments running
-* At least 11GB free space in /var
+* At least 11GB free space in */var*
 
 
 If you reinstall your Fuel Master host, you need to configure your network
