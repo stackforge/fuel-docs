@@ -34,6 +34,9 @@ that your hardware is configured correctly:
 +--------------------------------------------------------+--------------+
 | The node servers are set to network boot using PXE.    |              |
 +--------------------------------------------------------+--------------+
+| The node servers have hardware virtualization          |              |
+| enabled in the BIOS.                                   |              |
++--------------------------------------------------------+--------------+
 | You have a method to reboot node servers (remotely or  |              |
 | on-site).                                              |              |
 +--------------------------------------------------------+--------------+
