@@ -14,9 +14,10 @@ follow the instructions in
 
 See:
 
+- :ref:`sahara-plan` discusses considerations
+  for planning for Sahara.
 - :ref:`sahara-install` gives instructions for installing
   Sahara and running Apache Hadoop in your OpenStack environment.
-- :ref:`sahara-plan` discusses
 - `Sahara wiki page <https://wiki.openstack.org/wiki/Sahara>`_
   for more information about Sahara,
   including a link to its documentation.

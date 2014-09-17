@@ -38,6 +38,7 @@ For more information, see
 * :ref:`ceilometer-mongodb-plan`
 * :ref:`ceilometer-ops` discusses how to configure Ceilometer
   and work with its output.
+*  :ref:`ceilometer-deployment-notes`
 * `Ceilometer wiki <https://wiki.openstack.org/wiki/Ceilometer>`_
 * `Ceilometer blob <https://github.com/openstack/ceilometer/blob/stable/icehouse/doc/source/install/dbreco.rst>`_
 
