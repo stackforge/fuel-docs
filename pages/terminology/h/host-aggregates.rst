@@ -1,5 +1,6 @@
 
-.. :host-aggregates-term:
+
+.. _host-aggregates-term:
 
 Host Aggregates
 ---------------

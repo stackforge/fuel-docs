@@ -12,7 +12,7 @@ for more information about the OpenStack implementation.
 When you create an OpenStack environment with Fuel,
 you are asked to choose either an HA or non-HA deployment mode
 on the :ref:`mode-ha-ug` screen.
-Before Mirantis OpenStack 5.0,
+Before Mirantis OpenStack 5.1,
 different internal architectures were used for the two modes;
 if you deployed a non-HA environment,
 you had to redeploy the environment to convert it to HA.
@@ -41,7 +41,7 @@ see :ref:`Multi-node_HA`.
 
 The multi-node mode,
 previously used to deploy an environment with only one controller,
-is retained as a legacy option in Mirantis OpenStack for 5.0
+is retained as a legacy option in Mirantis OpenStack for 5.1
 but it is not recommended for deploying new environments;
 we expect to remove this option in a future release.
 
