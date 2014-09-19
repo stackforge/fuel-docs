@@ -48,6 +48,17 @@ by using the **keystone** command on the Fuel Master Node:
 
 You can find admin_token in the */etc/fuel/astute.yaml* file.
 
+=======
+.. note::
+   The *astute.yaml* file stores passwords unencrypted,
+   so keeping it on disk after deployment finishes
+   constitutes a security vulnerability.
+   You can safely delete this file after deployment because,
+   if you need to run deployment again
+   (for example, if you add nodes to the environment),
+   it will be regenerated and placed on the appropriate node
+   for Puppet to consume.
+
 To run or disable authentication,
 modify */etc/nailgun/settings.yaml* (``AUTHENTICATION_METHOD``)
 in the Nailgun container.
