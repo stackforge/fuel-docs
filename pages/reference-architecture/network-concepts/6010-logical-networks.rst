@@ -93,3 +93,8 @@ Private Network (Fixed network)
   Just like the public network, the private network should be isolated from
   other networks in the cluster for security reasons.
 
+If you want to combine another network
+with the Admin network on the same network interfaces,
+you must leave the Admin network untagged.
+This is the default configuration and cannot be changed in the Fuel UI
+although you could modify it by manually editing configuration files.
