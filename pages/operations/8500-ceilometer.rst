@@ -84,7 +84,7 @@ to the *ceilometer.conf* file:
             for the collection of the underlying metrics.
 
 You must also patch a known
-`Icehouse bug with VMWare inspector https://bugs.launchpad.net/ceilometer/+bug/1330330>`_.
+`Icehouse bug <https://bugs.launchpad.net/ceilometer/+bug/1330330>`_ with the VMware inspector.
 Use this `fix <https://review.openstack.org/#/c/100441/>`_.
 
 When you have completed these steps,

@@ -36,7 +36,7 @@ but it has some known limitations:
   This also means that, when the vCenter installation is used with Heat,
   autoscaling does not work as well
   because the alarms sent to Heat are implemented with meters.
-  See `LP <https://bugs.launchpad.net/fuel/+bug/1370700>`_.
+  See `LP1370700 <https://bugs.launchpad.net/fuel/+bug/1370700>`_.
   You can manually configure Ceilometer to collect vCenter metering;
   see :ref:`ceilometer-ops` for instructions.
 
