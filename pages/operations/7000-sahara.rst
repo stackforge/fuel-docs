@@ -21,10 +21,7 @@ It can also scale the cluster by adding or removing nodes as needed.
 - For Sahara usage guidelines, read the User Guide section of the
   `Sahara documentation <http://sahara.readthedocs.org/en/stable-icehouse/>`_.
 
-- For more information about the pre-built images
-  for Hadoop cluster provisioning,
-  follow the documentation link above
-  and look at the page for the appropriate plugin (vanilla or HDP).
+- Image requirements are in :ref:`sahara-images`.
 
 - Planning considerations for running Sahara are in :ref:`sahara-plan`.
 - Installation instructions for Sahara are in :ref:`sahara-install`
@@ -35,5 +32,6 @@ about running Sahara.
 
 .. include:: /pages/operations/sahara/7600-ports.rst
 .. include:: /pages/operations/sahara/7700-prepare-to-test.rst
+.. include:: /pages/operations/sahara/7740-sahara-images.rst
 .. include:: /pages/operations/sahara/7750-test-details.rst
 
