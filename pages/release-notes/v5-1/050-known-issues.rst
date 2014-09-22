@@ -250,8 +250,23 @@ whereas it should just disable the Controller node where MySQL failed
 and continue to run with the remaining Controller nodes.
 See `LP1326829 <https://bugs.launchpad.net/bugs/1326829>`_.
 
-RAID-1 spans all configured disks on a node [Needs 5.1 clarification]
----------------------------------------------------------------------
+HP BL120/320 RAID controller line is not supported
+--------------------------------------------------
+
+You should contact Mirantis to get a non-standard kernel ISO.
+Note, that it is impossible to update the kernel if there are no drivers for this
+version. This happens because the source code for the hpvsa module is not open and
+HP issues the hpvsa binaries for specific kernel versions only.
+They do not always coincide with the ones used in Fuel with Ubuntu.
+Currently, no equipment for testing is available and the testing itself can not
+be performed due to closed HP VSA source code. ISO may be assembled only for kernel
+versions, provided by HP. See `LP1359331 <https://bugs.launchpad.net/bugs/1359331>`_.
+For information on some kernel modules, compiled for specific kernels' versions,
+see `HP storage <https://launchpad.net/~hp-iss-team/+archive/ubuntu/hp-storage>`_. and
+`hpvsa update <https://launchpad.net/~hp-iss-team/+archive/ubuntu/hpvsa-update>`_.
+
+RAID-1 spans all configured disks on a node
+-------------------------------------------
 
 RAID-1 spans all configured disks on a node,
 putting a boot partition on each disk

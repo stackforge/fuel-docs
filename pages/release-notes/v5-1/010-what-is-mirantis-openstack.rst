@@ -47,6 +47,16 @@ through a simple-to-use graphical user experience. Baked into Fuel are:
   This library also empowers organizations to fold additional drivers
   or integrations into the deployed environment.
 
+Mirantis OpenStack, by default, enables those features in the Fuel Project
+that Mirantis has certified and confirmed as production ready.
+However, it also includes some newer features
+that are marked as "experimental";
+they are less-hardened but are integrated into the product
+for customers who can tolerate some risk.
+These experimental features can be enabled for Mirantis OpenStack
+before you install the Fuel Master Node;
+see :ref:`experimental-features-op`.
+
 Mirantis Support
 ----------------
 
