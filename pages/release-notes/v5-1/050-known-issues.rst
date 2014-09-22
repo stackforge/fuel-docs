@@ -142,6 +142,50 @@ This version has the following known issues:
 
 See :ref:`zabbix-plan` for more information.
 
+RabbitMQ users may be lost
+--------------------------
+
+Murano users may be lost
+when the Primary Controller in an HA cluster is shut down.
+This is because RabbitMQ does not handle Murano users correctly.
+See `LP1372483 <https://bugs.launchpad.net/fuel/+bug/1372483>`_.
+
+As a workaround, you can reset the RabbitMQ credentials
+as follows:
+
+#. Obtain the OS RabbitMQ credentials:
+   ::
+
+     grep -E "(^rabbit_user|^rabbit_pass)" /etc/nova/nova.conf
+     rabbit_userid=USERNAME
+     rabbit_password=SOMEPASS
+
+#. Edit the */etc/murano/murano.conf* file on all Controllers
+   in the deployed environment.
+   Add the values obtained above to the [DEFAULT] section of the file:
+   ::
+
+     ...
+     rabbit_userid=USERNAME
+     rabbit_password=SOMEPASS
+     ...
+
+#. Restart the **murano-api** and **murano-engine** services
+   on all Controllers in the deployed environment.
+
+   - For Ubuntu:
+     ::
+
+       service murano-api restart
+       service murano-engine restart
+
+
+
+   - For CentOS:
+     ::
+
+       service openstack-murano-api restart
+       service openstack-murano-engine restart
 
 Fuel upgrade fails if custom python modules are installed as eggs
 -----------------------------------------------------------------
@@ -585,7 +629,7 @@ on the Compute node.
 It does not affect the behavior of Neutron networking
 and can be ignored.
 This is related to the upstream
-`LP <https://bugs.launchpad.net/nova/+bug/1246848>`_.
+`LP1246848 <https://bugs.launchpad.net/nova/+bug/1246848>`_.
 * When ovs-agent is started, Critical error appears.
 See `LP1347612 <https://bugs.launchpad.net/bugs/1347612>`_.
 
@@ -622,7 +666,6 @@ for the problem controller from the CACHE structure:
       'BACKEND' : 'django.core.cache.backends.memcached.MemcachedCache',
       'LOCATION' : "192.168.0.3:11211;192.168.0.5:11211;192.168.0.6:11211"
   },
-  service ceph-radosgw start
 
 Then restart the Apache web server.
 

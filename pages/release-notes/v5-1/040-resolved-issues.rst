@@ -11,23 +11,12 @@ The underlying algorithm used for the Verify Networks feature has been modified
 to make it more stable and scalable.
 Specifically, these changes resolve intermittent Verify Networks failures
 that occurred on heavily-loaded systems.
+The network checker now generates packets in round-robin fashion
+for each iface:vlan pair;
+the duration is configurable, with a default value of 5 seconds.
 See `LP1306705 <https://bugs.launchpad.net/fuel/+bug/1306705>`_
 and `LP1330610 <https://bugs.launchpad.net/fuel/+bug/1330610>`_
 for more details.
-
-- **tcpdump** is now used to dump traffic during **net_probe**.
-  This is more reliable than the Python libpcap bindings.
-  **tcpdump** also enables capture of both tagged and untagged traffic.
-
-- The sender now generates traffic based on the time provided
-  either using the --duration option or in the configuration file;
-  default value is 20 seconds.
-  In addition, a limited number of packets (default is 2)
-  is sent per iface:vlan pair in each iteration.
-
-- The net_check generator parameters are modified
-  to make the duration of traffic generation 5 seconds
-  and to send only one packet in each iteration.
 
 Upgrade now puts a new fuelclient on Master Node
 ------------------------------------------------
@@ -110,10 +99,6 @@ Fuel UI now displays logs for OpenStack services
 The Fuel UI now displays logs for OpenStack services.
 This is possible because of the syslog refactoring discussed above.
 
-Add modify_horizon_config script
---------------------------------
-
-
 Use murano-db-manage to run updates
 -----------------------------------
 
@@ -172,20 +157,6 @@ RabbitMQ autoheal partitions are now turned on
 RabbitMQ RabbitMQ now uses the built-in autoheal facility
 to correctly manage cluster partitions.
 See `LP1354319 <https://bugs.launchpad.net/bugs/1354319>`_.
-
-MySQL backend check dependency is fixed
----------------------------------------
-
-nova_floating_range is now limited to primary Controller node
--------------------------------------------------------------
-
-
-All unmatched traffic is now dropped from iptables
---------------------------------------------------
-
-iptables now allows GRE traffic
--------------------------------
-
 
 IP forwarding for ns_IPaddr2 resources is now enabled
 -----------------------------------------------------
