@@ -37,11 +37,12 @@ after you :ref:`upgrade<upgrade-patch-top-ug>` your Fuel Master to 5.1.
         - mirantis
         - experimental
 
-- Restart the :ref:`nailgun-term` service by running:
+- Restart the :ref:`nailgun-term` container with dependencies by running:
   ::
 
-    dockerctl shell nailgun
-    supervisorctl restart nailgun
+    dockerctl restart nailgun
+    dockerctl restart nginx
+    cobbler sync
 
 For more details about configuring nailgun settings
 see `Extending OpenStack Settings
