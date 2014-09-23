@@ -127,6 +127,14 @@ Phase I of Zabbix is included as an
 in Mirantis OpenStack 5.1.
 This version has the following known issues:
 
+- An environment cannot be configured to run Zabbix.
+  See `LP1372825 <https://bugs.launchpad.net/bugs/1372825>`_.
+  This problem was discovered very late in the testing cycle
+  so no workaround is currently available.
+  If you are interested in running Zabbix,
+  contact Mirantis Support or fallow the bug report
+  for information about patches or workarounds
+  that may become available.
 - The Zabbix-server role must be installed on a dedicated node;
   it cannot be combined with any other role.
 - Phase I does not support Ceilometer, Savanna, Murano, Heat, or Ceph.

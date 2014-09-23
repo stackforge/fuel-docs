@@ -44,6 +44,11 @@ it tells you that the Controller role
 cannot be combined with the Compute and Cinder LVM roles
 that you have selected.
 
+.. note:: The Zabbix role appears on this screen
+          only after you have enabled
+          :ref:`experimental features<experimental-features-term>`
+          on the Fuel Master node.
+
 If you want to modify the roles assigned to a node:
 
 - If you assigned the wrong role to a node

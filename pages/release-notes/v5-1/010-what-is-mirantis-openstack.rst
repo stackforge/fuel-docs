@@ -54,7 +54,7 @@ that are marked as "experimental";
 they are less-hardened but are integrated into the product
 for customers who can tolerate some risk.
 These experimental features can be enabled for Mirantis OpenStack
-before you install the Fuel Master Node;
+any time after you have a running Fuel Master Node;
 see :ref:`experimental-features-op`.
 
 Mirantis Support
