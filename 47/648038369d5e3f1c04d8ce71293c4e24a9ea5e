@@ -1,0 +1,11 @@
+Verified+2: Jenkins
+Code-Review+2: Dmitry Borodaenko <dborodaenko@mirantis.com>
+Workflow+1: Dmitry Borodaenko <dborodaenko@mirantis.com>
+Verified+1: Fuel CI <fuel-ci-bot@mirantis.com>
+Code-Review+1: Aviram Bar-Haim <aviramb@mellanox.com>
+Code-Review+1: Nurit Vilosny <nuritv@mellanox.com>
+Submitted-by: Jenkins
+Submitted-at: Tue, 23 Sep 2014 15:01:51 +0000
+Reviewed-on: https://review.openstack.org/123355
+Project: stackforge/fuel-docs
+Branch: refs/heads/stable/5.1
