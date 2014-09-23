@@ -82,11 +82,7 @@ The RabbitMQ clustering mechanism had flaws
 that sometimes prevented it from restarting
 after the primary Controller node was rebooted,
 which resulted in the node status being "offline".
-Many of these flaws have been resolved,
-but rebooting the primary Controller node
-still requires that services be restarted
-in a precise order; this is explained in
-:ref:`restart-rabbitmq-ops`.
+These flaws have been resolved.
 See `LP1318936 <https://bugs.launchpad.net/fuel/+bug/1318936>`_.
 
 Management network now restarts correctly
