@@ -15,4 +15,7 @@ Additional information is available:
 - :ref:`enable-galera-autorebuild`
 - `Galera Cluster documentation
   <http://galeracluster.com/documentation-webpages/>`_.
+- `Monitoring the Galera Cluster <http://galeracluster.com/documentation-webpages/monitoringthecluster.html>`_.
+- `Troubleshooting the Galera Cluster <http://galeracluster.com/documentation-webpages/troubleshooting.html>`_.
+
 
