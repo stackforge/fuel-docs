@@ -1,0 +1,8 @@
+Verified+2: Jenkins
+Code-Review+2: Dmitry Borodaenko <dborodaenko@mirantis.com>
+Workflow+1: Dmitry Borodaenko <dborodaenko@mirantis.com>
+Submitted-by: Jenkins
+Submitted-at: Tue, 23 Sep 2014 15:46:46 +0000
+Reviewed-on: https://review.openstack.org/123490
+Project: stackforge/fuel-docs
+Branch: refs/heads/stable/5.1
