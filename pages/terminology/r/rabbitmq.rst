@@ -11,4 +11,3 @@ between OpenStack components.
 See:
 
 - `RabbitMQ documentation <http://www.rabbitmq.com/documentation.html>`_
-- :ref:`restart-rabbitmq-ops`
