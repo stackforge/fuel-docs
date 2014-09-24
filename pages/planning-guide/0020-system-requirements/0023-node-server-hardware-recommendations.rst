@@ -1,5 +1,35 @@
-Node Server Hardware Recommendations
-------------------------------------
+
+
+.. _target-hdwr-reqs-plan:
+
+Target Node Server Hardware Recommendations
+-------------------------------------------
+
+Determining the appropriate hardware
+for the target nodes requires a good understanding
+of the software that will be run on those nodes.
+The OpenStack community documentation
+provides basic guidelines:
+
+- `Compute and Image System Requirements
+  <http://docs.openstack.org/grizzly/openstack-compute/install/yum/content/compute-system-requirements.html>`_
+
+- `System requirements for Object Storage
+  <http://docs.openstack.org/trunk/install-guide/install/yum/content/object-storage-system-requirements.html>`_
+
+Other information is available:
+
+- For information about assigning roles to nodes,
+  see :ref:`nodes-roles-plan`.
+
+- For information about storage requirements
+  and other hardware issues
+  for the :ref:`MongoDB<mongodb-term>` database
+  that is used with :ref:`Ceilometer<ceilometer-term>`,
+  see :ref:`ceilometer-mongodb-plan`.
+
+- For general information about calculating hardware requirements,
+  see :ref:`hardware-plan`.
 
 To help determine the correct sizing for OpenStack Node servers,
 use the `Mirantis Hardware Bill of Materials
