@@ -23,6 +23,6 @@ you must configure a Cinder LVM node.
 
 The "Ceph replication factor" value determines the minimum number of
 Ceph OSD nodes that must be deployed.
-At least two Ceph OSD nodes are recommended for production environments
+At least three Ceph OSD nodes are recommended for production environments
 but it is possible to set this value to 1
 and then run OpenStack with a single Ceph OSD node.

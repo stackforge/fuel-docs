@@ -1,5 +1,5 @@
 Throughput
-++++++++++
+~~~~~~~~~~
 
 As far as throughput, that's going to depend on what kind of storage you choose.
 In general, you calculate IOPS based on the packing density (drive IOPS * drives 
