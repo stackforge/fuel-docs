@@ -29,21 +29,30 @@ and so could provision 24 4-core instances on that physical node.
 Fuel sets the overcommit ratio for CPUs at 8:1, and RAM and disks at 1:1,
 meaning that the scheduler only sees the actual amount
 of physical memory and physical disk space that is allocated.
-Note that OpenStack sets the overcommit ratio for CPUs at 16:1
+Note that vanilla OpenStack sets the overcommit ratio for CPUs at 16:1
 and the overcommitment ratio for RAM at 1.5:1.
+Some people recommend setting the CPU overcommit ration at 1:1
+until you fully understand what your user load will be.
 
 To modify the overcommit ratio(s):
 
 - Log into each Compute node.
 - Edit the */etc/nova/nova.conf* file to change the values.
-- Log into each controller node and restart the nova-scheduler service.
+- Log into each Controller node and restart the nova-scheduler service.
 
 Note that the overcommit ratio is not recognized
 by the traditional Simple "naive" Scheduler.
 
-For more information, see:
+For more information, see
+`Overcommitting <http://docs.openstack.org/trunk/openstack-ops/content/compute_nodes.html#overcommit>`_.
 
-- `Overcommitting <http://docs.openstack.org/trunk/openstack-ops/content/compute_nodes.html#overcommit>`_
+Discussions are ongoing about the proper default values
+for the overcommit ratios
+and the possibility of setting the values
+on the Fuel UI screens:
+
+- `Blueprint to specify overcommit setting
+  <https://blueprints.launchpad.net/fuel/+spec/cpu-overcommit-setting>`_
 - `Scheduler configuration improvements <https://www.mail-archive.com/fuel-dev%40lists.launchpad.net/msg00642.html>`_
   discussion on the fuel-dev mailing list
 
