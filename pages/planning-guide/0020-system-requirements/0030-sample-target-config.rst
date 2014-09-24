@@ -1,0 +1,75 @@
+
+.. _sample-target-node-config-plan:
+
+Sample Hardware Configuration for Target Nodes
+----------------------------------------------
+
+This is a general-purpose medium-sized hardware configuration
+that is adequate for a variety of purposes.
+The characteristics of the environment are:
+
+- 12 servers (one Fuel Master node, 3 Controller nodes,
+  3 Storage nodes, 5 Compute nodes)
+- High-availability configuration
+- Neutron networking, using either the VLAN or GRE topology
+- Ceph as the backend for Cinder and Glance
+- No Ceilometer/MongoDB monitoring configured;
+  three additional servers to be used as MongoDB nodes
+  would be required
+
+Controller nodes (3)
+~~~~~~~~~~~~~~~~~~~~
+
+Controllers require sufficient resources
+to run the :ref:`Ceph <ceph-term>` monitors
+and :ref:`mysql-term` in addition to the
+core OpenStack components
+(:ref:`nova-term`, :ref:`neutron-term`,
+:ref:`cinder-term`, and :ref:`glance-term`).
+
+Each controller should have:
+
+- Single or dual-socket CPU with at least 4 physical cores
+- 32GB RAM recommended; 24GB minimum
+- RAID1 Controller with at least 500GB capacity
+  for the Host operating system disk
+- 2 NICs, either 1 Gbit/s or 10 Gbit/s
+
+Storage nodes (3)
+~~~~~~~~~~~~~~~~~
+
+We recommend separate Ceph nodes for
+scalability and robustness.
+The hardware estimate is based on the requirement
+of .5 cores per Ceph-OSD CPU
+and 1GB of RAM per TB of Ceph-OSD space.
+All Ceph storage and journal hard disks
+should be configured in JBOD mode.
+
+Each Storage node should have:
+
+- Single-socket CPU with at least 4 physical cores
+- 24GB RAM
+- RAID1 Controller with at least 500GB capacity
+  for the Host operating system disk
+- 2 NICs, either 1 Gbit/s or 10 Gbit/s
+- 18 TB of Ceph storage (6 x 3TB)
+- 1-2 SSDs, 64GB or more each, for the Ceph Journal
+
+Compute nodes (5)
+~~~~~~~~~~~~~~~~~
+
+The compute nodes store the user Virtual Machines.
+By default, Fuel configures the Scheduler to use
+an 8:1 :ref:`overcommit ration <overcommit-term>`
+on the Compute nodes.
+We recommend that you turn this off on the Compute nodes
+until you know what your user load will be.
+
+Each Compute node should have:
+
+- Dual-socket CPU with at least 4 physical cores per socket
+- 64GB RAM
+- RAID1 Controller with at least 500GB capacity
+  for the Host operating system disk
+- 2 NICs, either 1 Gbit/s or 10 Gbit/s
