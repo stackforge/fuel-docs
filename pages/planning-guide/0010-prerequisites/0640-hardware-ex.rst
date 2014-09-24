@@ -1,5 +1,5 @@
 Hardware for this example
-+++++++++++++++++++++++++
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this example, you are looking at:
 
