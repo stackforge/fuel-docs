@@ -1,7 +1,8 @@
+
 .. _HardwarePrerequisites:
 
-Master Node Hardware Recommendations
-------------------------------------
+Fuel Master Node Hardware Recommendations
+-----------------------------------------
 
 To install the Fuel Master Node, you should base your hardware on the
 anticipated load of your server. Logically, deploying more node servers in your

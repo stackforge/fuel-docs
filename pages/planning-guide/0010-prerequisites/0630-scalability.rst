@@ -1,5 +1,5 @@
 Scalability and oversubscription
-++++++++++++++++++++++++++++++++
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 It is one of the ironies of networking that 1 Gb Ethernet generally scales 
 better than 10Gb Ethernet -- at least until 100 Gb switches are more commonly 
