@@ -65,6 +65,15 @@ but it has some known limitations:
   Make sure that you have specified NSX settings.
   See `LP1347682 <https://bugs.launchpad.net/bugs/1347682>`_.
 
+* Instances on environments that use NSX
+  cannot be deployed with newer Ubuntu kernels.
+  Instances launched with images using the Ubuntu 3.11.0-18 kernel
+  have no connection between the address in the internal network on the controller
+  and NSX and so cannot get an IP address using DHCP.
+  Instances launched with images using the Ubuntu 3.2.0-65 kernel
+  work correctly.
+  See `LP1371607 <https://bugs.launchpad.net/bugs/1371607>`_.
+
 VMDK requires operating systems that support SCSI adapters
 ----------------------------------------------------------
 
