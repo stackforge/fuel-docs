@@ -18,6 +18,13 @@ This displays a screen with a bar for each disk;
 color-coded sections represent the disk partitions
 that have been assigned.
 
+A partition type could be:
+
+- Base System: where the operating system and basic software will be installed
+- Cinder: dedicated to cinder storage
+- Ceph: dedicated to ceph storage
+- Virtual Storage: dedicated to nova running instances
+
 To modify the disk allocation,
 click on the bar for a disk.
 This example is for a node that runs
