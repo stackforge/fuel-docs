@@ -1,14 +1,22 @@
+
+.. _storage-hardware-plan:
+
 Calculating Storage
 --------------------
 
-When it comes to disk space there are several types that you need to consider:
+When planning disk space,
+you need to consider several types:
 
 * Ephemeral (the local drive space for a VM)
-* Persistent (the remote volumes that can be attached to a VM)
-* Object Storage (such as images or other objects)
+* Persistent object storage
+* Persistent block storage
 
-As far as local drive space that must reside on the compute nodes, in our
-example of 100 VMs we make the following assumptions:
+See :ref:`storage-plan` for more information
+about the options for storage
+and how to choose the appropriate model.
+
+As far as local drive space that must reside on the compute nodes,
+in our example of 100 VMs we make the following assumptions:
 
 * 150 GB local storage per VM
 * 5 TB total of local storage (100 VMs * 50 GB per VM)

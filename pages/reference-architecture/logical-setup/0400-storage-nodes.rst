@@ -1,7 +1,7 @@
 Storage Nodes
 -------------
 
-Depending on the :ref:`storage options <Storage-Architecture-arch>` you
+Depending on the :ref:`storage options <storage-plan>` you
 select for your environment, you may have
 :ref:`ceph-term`, :ref:`cinder-term`,
 and :ref:`Swift<swift-object-storage-term>`

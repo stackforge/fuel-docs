@@ -283,10 +283,13 @@ Details on settings:
 Please do not hesitate to use Check button to verify your future network settings
 in advance.
 
-Time sync
----------
+.. _ntp-ug:
 
-Use this section to set NTP server names in order to get proper time synchronization.
+Time sync with NTP
+------------------
+
+Use this section to set NTP server names
+in order to get proper time synchronization.
 Synchronized time is mandatory for OpenStack services.
 
 .. image:: /_images/fuelmenu_TimeSync.jpg
