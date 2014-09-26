@@ -1,0 +1,27 @@
+
+.. _qcow-format-ug:
+
+Choose image format
++++++++++++++++++++
+
+Choose whether to use the qcow2 format
+for saved images.
+
+.. image:: /_images/user_screen_shots/qcow.png
+   :width: 100%
+
+If you are using :ref:`LVM<lvm-term>`
+as the storage backend for :ref:`Cinder<cinder-term>`,
+choose the qcow (actually qcow2) format.
+If you are using :ref:`Ceph RBD<ceph-term>`
+as the storage backend for Cinder
+and :ref:`ephemeral volumes<ephemeral-storage-term>`,
+disable qcow formatting.
+This causes the system to store images in raw format.
+If you use qcow2 format with Ceph,
+images must be converted to raw format
+in order to be cloned.
+Ceph includes its own mechanisms that provide
+copy-on-write capability and snapshots,
+which the qcow2 format provides for Nova.
+

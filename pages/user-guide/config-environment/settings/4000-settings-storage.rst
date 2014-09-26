@@ -12,7 +12,12 @@ Storage
 .. image:: /_images/user_screen_shots/settings-storage.png
 
 You can use this screen to modify the choices made
+for :ref:`persistent storage<persistent-storage-term>`
 on the :ref:`cinder-glance-backend-ug` screen.
+You can also select Ceph RBD storage
+for :ref:ephemeral volumes<ephemeral-storage-term>
+on this screen.
+
 Be sure that you have assigned the appropriate roles
 on the :ref:`assign-roles-ug` screen
 to support the storage backends you select here.
