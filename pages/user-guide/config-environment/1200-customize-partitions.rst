@@ -18,6 +18,16 @@ This displays a screen with a bar for each disk;
 color-coded sections represent the disk partitions
 that have been assigned.
 
+The following partition types may be configured:
+
+- Base System: comprehensive of swap space, includes operating system and basic software
+- Virtual Storage: used by Nova running instances
+- Image Storage: used by Glance to store images
+- Cinder: used by Cinder
+- Ceph and Ceph Journal: used by Ceph
+- MongoDB: used to store MongoDB information, for Ceilometer nodes
+- Mysql database: used to store MySQL data, for Zabbix nodes
+
 To modify the disk allocation,
 click on the bar for a disk.
 This example is for a node that runs
