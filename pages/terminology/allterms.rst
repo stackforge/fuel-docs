@@ -16,6 +16,7 @@ Terminology Reference
 .. include:: /pages/terminology/c/crm.rst
 .. include:: /pages/terminology/d/devstack.rst
 .. include:: /pages/terminology/d/docker.rst
+.. include:: /pages/terminology/e/ephemeral-storage.rst
 .. include:: /pages/terminology/e/esxi.rst
 .. include:: /pages/terminology/e/experimental-features.rst
 .. include:: /pages/terminology/f/fencing.rst
@@ -26,7 +27,7 @@ Terminology Reference
 .. include:: /pages/terminology/h/ha.rst
 .. include:: /pages/terminology/h/hadoop.rst
 .. include:: /pages/terminology/h/haproxy.rst
-.. include:: /pages/terminology/h/havana-term.rst
+.. include:: /pages/terminology/h/havana.rst
 .. include:: /pages/terminology/h/heat.rst
 .. include:: /pages/terminology/h/horizon.rst
 .. include:: /pages/terminology/h/host-aggregates.rst
@@ -39,6 +40,7 @@ Terminology Reference
 .. include:: /pages/terminology/k/keystone.rst
 .. include:: /pages/terminology/k/kvm.rst
 .. include:: /pages/terminology/l/logging.rst
+.. include:: /pages/terminology/l/lvm.rst
 .. include:: /pages/terminology/l/lxc.rst
 .. include:: /pages/terminology/m/mirantis-openstack.rst
 .. include:: /pages/terminology/m/ml2.rst
@@ -60,6 +62,7 @@ Terminology Reference
 .. include:: /pages/terminology/o/overcommit.rst
 .. include:: /pages/terminology/o/ovs.rst
 .. include:: /pages/terminology/p/pacemaker.rst
+.. include:: /pages/terminology/p/persistent-storage.rst
 .. include:: /pages/terminology/p/puppet.rst
 .. include:: /pages/terminology/p/pxe.rst
 .. include:: /pages/terminology/q/qemu.rst
