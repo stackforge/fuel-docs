@@ -8,5 +8,5 @@ For more information, see the
 `Ceph documentation <http://ceph.com/docs/master/>`_.
 
 For information about deploying Ceph in Mirantis OpenStack,
-see :ref:`Storage-Architecture-arch`.
+see :ref:`storage-plan`.
 
