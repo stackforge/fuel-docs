@@ -1,17 +1,25 @@
 Block Storage for Volumes
 -------------------------
 
-When you configure Mirantis OpenStack to use the default **LVM** backend
-for Cinder block devices, Cinder will store each volume as a logical
-volume in an LVM volume group on one of your Cinder nodes.
+When you configure Mirantis OpenStack
+to use the default **LVM** backend for Cinder block devices,
+Cinder stores each volume as a logical volume
+in an LVM volume group on one of your Cinder nodes.
 
-If you don't need your volumes to be resilient, you can let Fuel create
-a JBOD partition spanning all your storage drives in a node during
-deployment, or you can join all drives into a RAID array before
-deployment, and have the array appear to Fuel as a single block device.
-Even if you use RAID in each Cinder node, that only protects your data
-from a hard drive failure. If the whole Cinder node is lost, so are all
-volumes that were stored on that node.
+If you do not need your volumes to be resilient,
+you have the following configuration options:
+
+
+- Let Fuel create a JBOD partition
+  that spans all the storage drives in a node during deployment
+
+- You can join all drives into a RAID array before deployment
+  and have the array appear to Fuel as a single block device.
+
+Even if you use RAID in each Cinder node,
+your data is only protected against a hard drive failure.
+If the whole Cinder node is lost,
+so are all volumes that were stored on that node.
 
 Setting Cinder backend to **Ceph RBD** allows to take advantage of
 Ceph's object replication capabilities by storing Cinder volumes as
