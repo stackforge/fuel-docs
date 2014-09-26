@@ -1,5 +1,5 @@
-Object Storage for Images
--------------------------
+Storage for Images
+------------------
 
 .. _Object_Storage_for_Images:
 
