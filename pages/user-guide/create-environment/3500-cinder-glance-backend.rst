@@ -37,6 +37,6 @@ You can later change these settings
 on the :ref:`settings-storage-ug` screen,
 where you can also set the Ceph replication factor.
 
-See :ref:`Storage-Architecture-arch` for more information
+See :ref:`storage-plan` for more information
 about Cinder, Glance, and Ceph.
 
