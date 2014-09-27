@@ -18,6 +18,28 @@ any type of contribution like new ideas, testing, and even deployment scripts.
 We also have an IRC channel at ``#fuel`` & ``#fuel-dev``  on ``irc.freenode.net`` 
 where you can ask questions and give feedback. 
 
+
+Quick-start
+===========
+
+There is a script which will prepare your Fuel documentation build environment
+automatically. To get started quickly, simply run:
+
+    ./prep_doc_build_env.sh
+
+This script will first install the necessary packages using apt or yum. Then
+it will prepare a Python Virtual Environment, and install the necessary
+Python eggs in that environment.  When complete, you should be able to
+enable that virtual environment with the following command:
+
+    . fuel-docs-venv/bin/ativate
+
+Then the HTML and PDF documentation can be built with:
+
+    make html
+    make pdf
+
+
 Prerequisites
 =============
 
@@ -31,11 +53,11 @@ To get started, you need to install all necesasary tools.
 
 On Debian/Ubuntu:
     
-    sudo apt-get install git python-pip python-dev make imagemagick libjpeg-dev inkscape
+    sudo apt-get install python-dev python-pip make python-virtualenv imagemagick libjpeg-dev inkscape
 
 On Fedora:
 
-	sudo yum install git python-pip python-devel make ImageMagick libjpeg-turbo-devel inkscape
+    sudo yum install git python-pip python-devel make ImageMagick libjpeg-turbo-devel inkscape
 
 Among other things that installs
 [ImageMagick](http://www.imagemagick.org/ "ImageMagick") and

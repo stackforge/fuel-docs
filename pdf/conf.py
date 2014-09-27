@@ -14,7 +14,7 @@
 # -- Default Settings -----------------------------------------------------
 execfile('../common_conf.py')
 
-exclude_patterns = ['_*', 'pages', 'contents', 'index', '*-guide', '*.rst']
+exclude_patterns = ['_*', 'pages', 'contents', 'index', '*-guide', '*.rst', 'fuel-docs-venv']
 
 pdf_documents = [ 
 #   (master_doc, project, project, copyright),

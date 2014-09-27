@@ -14,4 +14,4 @@
 # -- Default Settings -----------------------------------------------------
 execfile('./common_conf.py')
 
-exclude_patterns = ['_*', 'pages', 'contents', 'pdf']
+exclude_patterns = ['_*', 'pages', 'contents', 'pdf', 'fuel-docs-venv']
