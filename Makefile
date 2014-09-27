@@ -16,6 +16,8 @@ I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 
 IMAGEDIRS     = _images
 
+include repo.mk
+
 .PHONY: help clean html dirhtml singlehtml pickle json htmlhelp qthelp devhelp epub latex latexpdf pdf text man changes linkcheck doctest gettext
 
 help:
@@ -55,19 +57,29 @@ PDFs := $(foreach dir, $(IMAGEDIRS), $(patsubst %.svg,%.pdf,$(wildcard $(dir)/*.
 # Make a rule to build all images
 images: $(PDFs)
 
+# Make a rule to fetch fuel-web repo
+# fuel-web repo URL is specified in repo.mk file. To build the API
+# docs against a spefic commit or repo, modify the repo.mk file
+
+$(BUILDDIR)/repos/fuel-web.done:
+	mkdir -p $(BUILDDIR)/repos
+	rm -rf $(BUILDDIR)/repos/fuel-web
+	cd $(BUILDDIR)/repos && git clone $(NAILGUN_REPO) && cd fuel-web && git checkout $(NAILGUN_COMMIT) && cd ..
+	touch $(BUILDDIR)/repos/fuel-web.done
+
 all: clean html dirhtml singlehtml latexpdf pdf
 
-html: images
+html: images $(BUILDDIR)/repos/fuel-web.done
 	$(SPHINXBUILD) -b html -W $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
 
-dirhtml: images
+dirhtml: images $(BUILDDIR)/repos/fuel-web.done
 	$(SPHINXBUILD) -b dirhtml $(ALLSPHINXOPTS) $(BUILDDIR)/dirhtml
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/dirhtml."
 
-singlehtml: images
+singlehtml: images $(BUILDDIR)/repos/fuel-web.done
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) $(BUILDDIR)/singlehtml
 	@echo
 	@echo "Build finished. The HTML page is in $(BUILDDIR)/singlehtml."
@@ -82,13 +94,13 @@ json:
 	@echo
 	@echo "Build finished; now you can process the JSON files."
 
-htmlhelp: images
+htmlhelp: images $(BUILDDIR)/repos/fuel-web.done
 	$(SPHINXBUILD) -b htmlhelp $(ALLSPHINXOPTS) $(BUILDDIR)/htmlhelp
 	@echo
 	@echo "Build finished; now you can run HTML Help Workshop with the" \
 	      ".hhp project file in $(BUILDDIR)/htmlhelp."
 
-qthelp: images
+qthelp: images $(BUILDDIR)/repos/fuel-web.done
 	$(SPHINXBUILD) -b qthelp $(ALLSPHINXOPTS) $(BUILDDIR)/qthelp
 	@echo
 	@echo "Build finished; now you can run "qcollectiongenerator" with the" \
@@ -97,7 +109,7 @@ qthelp: images
 	@echo "To view the help file:"
 	@echo "# assistant -collectionFile $(BUILDDIR)/qthelp/fuel.qhc"
 
-devhelp: images
+devhelp: images $(BUILDDIR)/repos/fuel-web.done
 	$(SPHINXBUILD) -b devhelp $(ALLSPHINXOPTS) $(BUILDDIR)/devhelp
 	@echo
 	@echo "Build finished."
@@ -106,24 +118,24 @@ devhelp: images
 	@echo "# ln -s $(BUILDDIR)/devhelp $$HOME/.local/share/devhelp/fuel"
 	@echo "# devhelp"
 
-epub: images
+epub: images $(BUILDDIR)/repos/fuel-web.done
 	$(SPHINXBUILD) -b epub $(ALLSPHINXOPTS) $(BUILDDIR)/epub
 	@echo
 	@echo "Build finished. The epub file is in $(BUILDDIR)/epub."
 
-latex: images
+latex: images $(BUILDDIR)/repos/fuel-web.done
 	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
 	@echo
 	@echo "Build finished; the LaTeX files are in $(BUILDDIR)/latex."
 	@echo "Run \`make' in that directory to run these through (pdf)latex" \
 	      "(use \`make latexpdf' here to do that automatically)."
 
-pdf: images
+pdf: images $(BUILDDIR)/repos/fuel-web.done
 	$(SPHINXBUILD) -b pdf -c pdf $(ALLSPHINXOPTS) $(BUILDDIR)/pdf
 	@echo
 	@echo "Build finished; the PDF file is in $(BUILDDIR)/pdf."
 
-latexpdf: images
+latexpdf: images $(BUILDDIR)/repos/fuel-web.done
 	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
 	@echo "Running LaTeX files through pdflatex..."
 	$(MAKE) -C $(BUILDDIR)/latex all-pdf
@@ -172,3 +184,5 @@ doctest:
 	$(SPHINXBUILD) -b doctest $(ALLSPHINXOPTS) $(BUILDDIR)/doctest
 	@echo "Testing of doctests in the sources finished, look at the " \
 	      "results in $(BUILDDIR)/doctest/output.txt."
+
+
