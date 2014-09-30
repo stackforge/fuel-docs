@@ -70,7 +70,7 @@ $(BUILDDIR)/repos/fuel-web.done:
 all: clean html dirhtml singlehtml latexpdf pdf
 
 html: images $(BUILDDIR)/repos/fuel-web.done
-	$(SPHINXBUILD) -b html -W $(ALLSPHINXOPTS) $(BUILDDIR)/html
+	$(SPHINXBUILD) -t html -b html -W $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
 
