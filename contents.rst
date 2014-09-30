@@ -11,6 +11,7 @@ Documentation
   planning-guide
   user-guide
   operations
+  fuel-development-guide
   virtualbox
   reference-architecture
   terminology
