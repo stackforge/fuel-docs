@@ -64,7 +64,7 @@ images: $(PDFs)
 $(BUILDDIR)/repos/fuel-web.done:
 	mkdir -p $(BUILDDIR)/repos
 	rm -rf $(BUILDDIR)/repos/fuel-web
-	cd $(BUILDDIR)/repos && git clone $(FUELWEB_REPO)
+	cd $(BUILDDIR)/repos && git clone $(NAILGUN_REPO) && cd fuel-web && git checkout $(NAILGUN_COMMIT) && cd ..
 	touch $(BUILDDIR)/repos/fuel-web.done
 
 all: clean html dirhtml singlehtml latexpdf pdf
