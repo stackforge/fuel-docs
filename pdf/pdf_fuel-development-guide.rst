@@ -5,7 +5,7 @@
   +-------------------------------------+-----------------------------------+
   | Mirantis OpenStack v6.0             |                .. cssclass:: right|
   |                                     |                                   |
-  | Operations Guide                    |                    ###Section###  |
+  | Fuel Development Guide              |                    ###Section###  |
   +-------------------------------------+-----------------------------------+
 
 .. footer::
@@ -26,6 +26,6 @@
 
 .. include:: /pages/preface/preface.rst
 
-.. _operations-guide:
+.. _fuel-development-guide:
 
-.. include:: /contents/contents-operations.rst
+.. include:: /contents/contents-fuel-development-guide.rst
