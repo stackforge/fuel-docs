@@ -14,6 +14,8 @@
 import sys, os
 import cloud_sptheme as csp
 
+sys.path.insert(0, "_build/repos/fuel-web/nailgun")
+
 on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 
 # If extensions (or modules to document with autodoc) are in another directory,

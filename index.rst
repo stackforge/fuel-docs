@@ -26,6 +26,11 @@ using Fuel.
 :ref:`operations-guide` `(pdf) <pdf/Mirantis-OpenStack-5.1-OperationsGuide.pdf>`__
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+This document contains detailed Fuel development information.
+
+:ref:`fuel-development-guide` `(pdf) <pdf/Mirantis-OpenStack-5.1-FuelDevelopmentGuide.pdf>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 A collection of useful procedures for using and managing
 your Mirantis OpenStack environment.
 
