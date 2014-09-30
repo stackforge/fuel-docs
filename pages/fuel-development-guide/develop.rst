@@ -1,0 +1,13 @@
+.. include:: /pages/fuel-development-guide/develop/architecture.rst
+.. include:: /pages/fuel-development-guide/develop/sequence.rst
+.. include:: /pages/fuel-development-guide/develop/quick_start.rst
+.. include:: /pages/fuel-development-guide/develop/addition_examples.rst
+.. include:: /pages/fuel-development-guide/develop/env.rst
+.. include:: /pages/fuel-development-guide/develop/system_tests/tree.rst
+.. include:: /pages/fuel-development-guide/develop/live_masternode.rst
+.. include:: /pages/fuel-development-guide/develop/nailgun.rst
+.. include:: /pages/fuel-development-guide/develop/module_structure.rst
+.. include:: /pages/fuel-development-guide/develop/fuel_settings.rst
+.. include:: /pages/fuel-development-guide/develop/puppet_tips.rst
+.. include:: /pages/fuel-development-guide/develop/pxe_deployment.rst
+.. include:: /pages/fuel-development-guide/develop/ostf_contributors_guide.rst
