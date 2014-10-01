@@ -1,7 +1,7 @@
-Object Storage for Images
--------------------------
+Storage for Images
+------------------
 
-.. _Object_Storage_for_Images:
+.. _storage-for-images:
 
 Fuel can configure one of these storage backends for the Glance image
 service:
