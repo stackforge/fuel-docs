@@ -4,7 +4,7 @@
 .. _enable-galera-autorebuild:
 
 HowTo: Enable/Disable Galera Cluster Autorebuild Mechanism
-----------------------------------------------------------
+==========================================================
 
 By default, Fuel reassembles a Galera cluster automatically
 without any user interaction.
