@@ -1,4 +1,5 @@
 .. include:: /pages/operations/0000-intro.rst
+.. include:: /pages/operations/0400-shell.rst
 .. include:: /pages/operations/2310-create-xfs.rst
 .. include:: /pages/operations/2410-galera-autorebuild.rst
 .. include:: /pages/operations/2450-galera-backport-ocf.rst
