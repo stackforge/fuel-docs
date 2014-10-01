@@ -18,7 +18,22 @@ is used only for the target nodes in this environment;
 if you create other environments,
 you must configure the public key for each of them.
 
-To upload an SSH key for the Fuel Master node,
-use the **ssh-copy-id** command.
+To upload an SSH key on the Fuel Master node or any deployed node,
+generate it with the following command on your client:
 
+::
 
+   ssh-keygen -t rsa
+
+Then copy it by using the ``ssh-copy-id`` command, if available:
+
+::
+
+   ssh-copy-id -i .ssh/id_rsa.pub root@node-ip
+
+Or add the content of your key ``.ssh/id_rsa.pub`` to the node's
+``/root/.ssh/authorized_keys`` file.
+
+.. note::
+
+   The default root password on the Fuel Master node is ``r00tme``.
