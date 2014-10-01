@@ -3,7 +3,7 @@
 .. _create-the-XFS-partition:
 
 HowTo: Create an XFS disk partition
------------------------------------
+===================================
 
 In most cases, Fuel creates the XFS partition for you.
 If for some reason you need to create it yourself, use this procedure:
