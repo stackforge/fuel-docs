@@ -3,7 +3,7 @@
 .. _backport-galera-ocf-op:
 
 HowTo: Backport Galera Pacemaker OCF script
--------------------------------------------
+===========================================
 
 Fuel 5.1 has a completely redesigned OCF script
 which makes the :ref:`Galera cluster<galera-cluster-term>`
