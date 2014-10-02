@@ -1,7 +1,7 @@
 .. _ceph-mon-arch:
 
 Ceph Monitors
-=============
+-------------
 
 Ceph monitors (MON) manage various maps like MON map, CRUSH map, and others.
 The CRUSH map is used by clients
@@ -11,7 +11,9 @@ Ceph monitor nodes  manage where the data should be stored
 and maintain data consistency with the Ceph OSD nodes
 that store the actual data.
 
-Ceph monitors implement HA using a master-master model:
+Fuel assigns one Ceph monitor to each configured Controller node.
+High availability is implemented for Ceph monitors
+using a master-master model:
 
 - One Ceph monitor node is designated the "leader."
   This is the node that first received
@@ -27,5 +29,6 @@ to determine all updates to the data they manage.
 All monitors that are in quorum
 have consistent up-to-date data because of this.
 
-You can read more in `Ceph documentation <http://ceph.com/docs/master/architecture>`_.
+You can read more in `Ceph Architecture
+<http://ceph.com/docs/master/architecture>`_.
 
