@@ -1,0 +1,33 @@
+
+.. _ceph-arch:
+
+How Fuel deploys Ceph
+=====================
+
+Fuel uses Puppet manifests
+and [what else?]
+to configure, provision, and deploy a Ceph cluster
+in the OpenStack environment.
+Fuel also ensures that other OpenStack components
+are aware that Ceph storage is configured.
+
+Mirantis OpenStack 4.0 and later
+includes enhancements to the Ceph copy-on-write capability
+that are not included in the vanilla OpenStack Havana and Icehouse releases:
+
+ * It is not necessary to create an RBD backed bootable volume
+   from a raw image for copy-on-write and live migrations to work
+   on Mirantis OpenStack.
+
+ * Launching an image on Mirantis OpenStack
+   results in a copy-on-write clone in Ceph,
+   whereas it results in a full copy on the Compute node
+   for vanilla OpenStack deployments.
+
+ * Ceph on Mirantis OpenStack stores :ref:`ephemeral drives <ephemeral-term>`
+   so that Live Migration is supported for instances
+   that use ephemeral drives.
+   Vanilla OpenStack deployments can only store ephemeral drives
+   in local files on a Compute node.
+
+
