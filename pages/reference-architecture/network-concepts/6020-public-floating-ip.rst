@@ -12,7 +12,7 @@ has distinct requirements.
 .. note:: Public and Floating IP ranges must not intersect!
 
 Nova-Network requirements
-~~~~~~~~~~~~~~~~~~~~~~~~~
++++++++++++++++++++++++++
 
 Both Public and Floating IP ranges
 should be defined within the same network segment (CIDR).
