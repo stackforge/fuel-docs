@@ -2,7 +2,7 @@
 .. _neutron-config-vlan:
 
 Neutron VLAN Segmentation Planning
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+++++++++++++++++++++++++++++++++++
 
 Depending on the number of NICs you have in your node servers,
 you can use the following examples to plan your NIC assignment
@@ -45,7 +45,7 @@ Routing recommendations
 .. _neutron-config-gre:
 
 Neutron GRE Segmentation Planning
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++++++++++++++++++++++++++++++++++
 
 Depending on the number of NICs you have in your node servers, you can use the
 following examples to plan your NIC assignment:
@@ -73,7 +73,7 @@ following examples to plan your NIC assignment:
 -  eth0 - untagged port for Administrative network
 -  eth1 (br-eth1) - port for Management network
 -  eth2 (br-eth2) - port for Public/Floating network
--  eth3 (br-eth3) - port for Storage network
+-  eth3 (br-eth3) - port for Storage network 
 
 .. image:: /_images/preinstall_d_gre_4nics.png
    :width: 50%
