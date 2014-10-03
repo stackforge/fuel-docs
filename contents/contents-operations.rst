@@ -12,6 +12,7 @@
 .. include:: /pages/operations/7400-murano.rst
 .. include:: /pages/operations/7800-vcenter.rst
 .. include:: /pages/operations/8000-performance.rst
+.. include:: /pages/operations/8400-all-in-one.rst
 .. include:: /pages/operations/8100-backup.rst
 .. include:: /pages/operations/8500-ceilometer.rst
 .. include:: /pages/operations/8600-heat.rst
