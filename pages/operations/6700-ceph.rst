@@ -1,0 +1,11 @@
+
+.. _ceph-manage-ops:
+
+Managing your Ceph cluster
+==========================
+
+.. include:: /pages/operations/ceph/0100-manifest.rst
+.. include:: /pages/operations/ceph/0200-verify.rst
+.. include:: /pages/operations/ceph/0300-test-openstack.rst
+.. include:: /pages/operations/ceph/0500-reset.rst
+
