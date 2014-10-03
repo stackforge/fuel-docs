@@ -8,7 +8,7 @@ Fuel can deploy :ref:`ceilometer-term`,
 the OpenStack Telemetry component.
 When enabled, Ceilometer collects and shares measurement data
 gathered from all OpenStack components.
-This data cam be used for monitoring and capacity planning purposes
+This data can be used for monitoring and capacity planning purposes
 as well as for an alarming service.
 Ceilometer's REST API can also provide data
 to external monitoring software
@@ -72,13 +72,13 @@ To install Ceilometer:
 
 - Check the appropriate box on the :ref:`platform-services-ug` screen
   when configuring your environment.
-- Assign the :ref:`mongodb-term` role
+- Assign the Telemetry - :ref:`mongodb-term` role
   to an appropriate number of servers
   on the :ref:`assign-roles-ug` screen.
 
 See :ref:`ceilometer-ops` for information
 about configuring and running Ceilometer.
 
-Ideally, MongoDB should run on dedicated servers,
-with at least as many MongoDB nodes
+Ideally, Telemetry - MongoDB should run on dedicated servers,
+with at least as many Telemetry - MongoDB nodes
 as Controller nodes in the environment.
