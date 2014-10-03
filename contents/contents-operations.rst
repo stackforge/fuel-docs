@@ -18,3 +18,4 @@
 .. include:: /pages/operations/8900-testing-details.rst
 .. include:: /pages/operations/9000-troubleshoot.rst
 .. include:: /pages/operations/9500-patching.rst
+.. include:: /pages/operations/buildsystem.rst
