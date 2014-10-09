@@ -14,11 +14,8 @@ planning information.
 
 Kernel parameters configuration:
 
-*    If you are enabling :ref:`sr-iov-term` or :ref:`iser-term` block storage,
-     you must add "intel_iommu=on" to the kernel paramters:
-
-.. image:: /_images/user_screen_shots/intel_iommu.png
-   :width: 70%
+*    When enabling :ref:`sr-iov-term` or :ref:`iser-term` block storage,
+     the *intel_iommu=on* kernel parameter will be automatically added on all nodes.
 
 Mellanox Neutron plugin configuration:
 

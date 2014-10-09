@@ -16,7 +16,9 @@ I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 
 IMAGEDIRS     = _images
 
-.PHONY: help clean html dirhtml singlehtml pickle json htmlhelp qthelp devhelp epub latex latexpdf pdf text man changes linkcheck doctest gettext
+.PHONY: help clean html dirhtml singlehtml pickle json htmlhelp qthelp devhelp \
+	epub latex latexpdf pdf text man changes linkcheck doctest gettext spell \
+	spell_all
 
 help:
 	@echo "Please use \`make <target>' where <target> is one of"
@@ -40,10 +42,12 @@ help:
 	@echo "  changes    to make an overview of all changed/added/deprecated items"
 	@echo "  linkcheck  to check all external links for integrity"
 	@echo "  doctest    to run all doctests embedded in the documentation (if enabled)"
+	@echo "  spell      to run aspell against .rst files changed in current commit"
+	@echo "  spell_all  to run aspell against all .rst files in pages/ directory"
 
 clean:
 	-rm -rf $(BUILDDIR)/*
-	-@rm -f $(PDFs) 
+	-@rm -f $(PDFs)
 
 # Pattern rule for converting SVG to PDF
 %.pdf : %.svg
@@ -172,3 +176,20 @@ doctest:
 	$(SPHINXBUILD) -b doctest $(ALLSPHINXOPTS) $(BUILDDIR)/doctest
 	@echo "Testing of doctests in the sources finished, look at the " \
 	      "results in $(BUILDDIR)/doctest/output.txt."
+
+SPELL = aspell
+ASPELLOPTS = --dont-backup -d en --personal=.aspell_en.wordlist
+RSTS := $(shell find pages/ -type f -name '*.rst')
+
+COMMIT_RSTS := $(shell git diff-tree --no-commit-id --name-only -r HEAD)
+spell:
+	@for rst in $(COMMIT_RSTS); do \
+		$(SPELL) $(ASPELLOPTS) check $$rst; \
+	done
+
+spell_all:
+	@for rst in $(RSTS); do \
+		$(SPELL) $(ASPELLOPTS) check $$rst; \
+	done
+	@echo "Spell check complete"
+

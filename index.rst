@@ -8,8 +8,31 @@
 Welcome to Mirantis OpenStack Documentation
 ===========================================
 
+Mirantis OpenStack is made up of three components:
+
+* :ref:`hardened-packages-term`.
+  Hardened packages in Mirantis OpenStack
+  include the core OpenStack projects,
+  updated with each stable release of OpenStack,
+  and supporting a broad range of operating systems,
+  hypervisors, and deployment topologies.
+
+* :ref:`fuel-term`.
+  Fuel is an open source, software life cycle management application
+  that deploys multiple `OpenStack <https://www.openstack.org/>`_
+  environments from a single interface
+  and then enables you to manage those environments post deployment.
+
+* `Support <https://software.mirantis.com/support-options/>`_.
+  A complementary `30-day basic trial support subscription
+  <https://software.mirantis.com/trial-support-subscription/>`_
+  is available.
+
 This page contains the most recent Mirantis OpenStack documentation.
-Select a document from the left menu and navigate through the topics.
+Select a title from the list below
+or from the left menu and navigate through the topics.
+Click on "pdf" in the list below
+to get a PDF file of that document.
 
 :ref:`planning-guide` `(pdf) <pdf/Mirantis-OpenStack-6.0-PlanningGuide.pdf>`__
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -46,6 +69,11 @@ network considerations, and deployment options.
 
 Short articles about OpenStack terminology and technology
 with references to other documentation and other useful information.
+
+:ref:`file-ref` `(pdf) <pdf/Mirantis-OpenStack-6.0-Fuel File-Format-Reference.pdf>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Reference pages for select configuration files that Fuel uses.
 
 :ref:`release-notes` `(pdf) <pdf/Mirantis-OpenStack-6.0-RelNotes.pdf>`__
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

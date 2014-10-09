@@ -12,8 +12,16 @@ remains within the VLAN.
 This allows you to use the switch management software
 to group nodes with related functions
 into their own separate, logical LAN segments.
-Fuel supports the Neutron with VLAN segmentation
-and Nova-network VLAN Manager topologies:
+Fuel deploys Nova-network VLAN Manager topologies,
+Neutron with VLAN segmentation,
+and Neutron GRE has VLAN tags
+on the management, storage, and public networks.
+
+The version of CentOS that Fuel deploys
+has poor support for VLAN tagged packets
+so work-aronds are provided to improve the VLAN support
+when using CentOS;
+see :ref:`vlan-splinters-ug`.
 
 For more information:
 

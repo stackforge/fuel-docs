@@ -1,9 +1,13 @@
 .. include:: /pages/operations/0000-intro.rst
+.. include:: /pages/operations/0400-shell.rst
+.. include:: /pages/operations/2290-exclude-from-raid.rst
+.. include:: /pages/operations/0500-kernel-parameters.rst
 .. include:: /pages/operations/2310-create-xfs.rst
 .. include:: /pages/operations/2410-galera-autorebuild.rst
 .. include:: /pages/operations/2450-galera-backport-ocf.rst
 .. include:: /pages/operations/2320-redeploy-node.rst
 .. include:: /pages/operations/3000-ml2-create.rst
+.. include:: /pages/operations/3500-mcn.rst
 .. include:: /pages/operations/5400-puppet-custom-attributes.rst
 .. include:: /pages/operations/docker-on-master.rst
 .. include:: /pages/operations/2800-experimental.rst
@@ -18,3 +22,4 @@
 .. include:: /pages/operations/8900-testing-details.rst
 .. include:: /pages/operations/9000-troubleshoot.rst
 .. include:: /pages/operations/9500-patching.rst
+.. include:: /pages/operations/ha-testing-scenarios-ops.rst

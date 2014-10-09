@@ -73,6 +73,38 @@ for specific release
 
   fuel rel --rel 1
 
+Networks configuration
+++++++++++++++++++++++
+
+Download network configuration. This command reads networks from API
+and saves them in .yaml format on the file system:
+
+::
+
+  fuel rel --rel 1 --network --download
+
+To see interaction with Nailgun API, run the following command with **--debug** option:
+
+::
+
+  fuel rel --rel 1 --network --download --debug
+  GET http://10.108.80.2:8000/api/v1/releases/1/networks
+
+Modify network configuration.
+You may want to modify the networks and upload the configuration back:
+
+::
+
+  fuel rel --rel 1 --network --upload
+
+
+To see interaction with Nailgun API, run the following command with **--debug** option:
+
+::
+
+  fuel rel --rel 1 --network --upload --debug
+  PUT http://10.108.80.2:8000/api/v1/releases/1/networks data={...}
+
 
 Environment
 +++++++++++
@@ -222,21 +254,32 @@ Also, you can deploy and provision only some nodes like this
 
 .. _cli-fuel-password:
 
-Change Fuel password
-++++++++++++++++++++
+Change and Set Fuel password
+++++++++++++++++++++++++++++
 
-You can change the Fuel Master Node password with:
+You can change the Fuel Master Node password
+with either of the following:
 
 ::
 
    fuel user --change-password --new-pass=*new*
+
+
+Note that **change-password** option
+can also be used without preceding hyphens.
 
 You can use flags to provide username and password
 to other fuel CLI commands:
 
 ::
 
-  --os-username=admin --os-password=test
+  --user=admin --password=test
+
+
+.. note: In Release 5.1 and earlier, the **--os-username**
+         and **os-password** options are used
+         rather than **user** and **--change-password**.
+         These options are not supported in Releases 5.1.1 and later.
 
 See :ref:`fuel-passwd-ops` for more information
 about Fuel authentication.

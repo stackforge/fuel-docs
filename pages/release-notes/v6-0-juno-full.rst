@@ -21,15 +21,16 @@ The following table lists the released revisions of this documentation:
 +=======================+===============+==============+
 | 6.0 Technical Preview | 30-Oct-2014   | Prelim info  |
 +-----------------------+---------------+--------------+
+| 6.0 G.A.              | 25-Dec-2014   | Initial G.A. |
++-----------------------+---------------+--------------+
 
-.. include:: /pages/release-notes/v6-0/0010-what-is-mirantis-openstack.rst
 .. include:: /pages/release-notes/v6-0/0020-new-features.rst
 .. include:: /pages/release-notes/v6-0/0025-supported-software-list.rst
 .. include:: /pages/release-notes/v6-0/1030-fuel-install.rst
 .. include:: /pages/release-notes/v6-0/1040-hardware.rst
 .. include:: /pages/release-notes/v6-0/1050-network.rst
 .. include:: /pages/release-notes/v6-0/1060-openstack.rst
-.. include /pages/release-notes/v6-0/1080-update-upgrade.rst
+.. include:: /pages/release-notes/v6-0/1080-update-upgrade.rst
 .. include:: /pages/release-notes/v6-0/1090-test.rst
 .. include:: /pages/release-notes/v6-0/3000-storage.rst
 .. include:: /pages/release-notes/v6-0/9010-vmware-tech.rst

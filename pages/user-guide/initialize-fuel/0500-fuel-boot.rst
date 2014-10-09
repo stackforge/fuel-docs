@@ -21,7 +21,6 @@ you can log in:
 
 - Use the administrator login and password
   that are displayed on the boot screen
-  (default root/r00tme)
   to log into a shell on the Fuel Master node.
   After you log in, use the **passwd** command
   to change this password.

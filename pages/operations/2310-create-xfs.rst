@@ -3,7 +3,7 @@
 .. _create-the-XFS-partition:
 
 HowTo: Create an XFS disk partition
------------------------------------
+===================================
 
 In most cases, Fuel creates the XFS partition for you.
 If for some reason you need to create it yourself, use this procedure:
@@ -37,7 +37,7 @@ If for some reason you need to create it yourself, use this procedure:
    mount all current partitions
    ::
 
-     echo "/dev/sdb1 /srv/node/sdb1 xfs
+     echo "/dev/sdb1 /srv/node/sdb1 xfs \
      noatime,nodiratime,nobarrier,logbufs=8 0 0" >> /etc/fstab
      mount -a
 

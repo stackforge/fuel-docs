@@ -21,6 +21,10 @@ Select the storage backend for :ref:`cinder-term`:
 - If you select "Ceph",
   you must assign at least two nodes as Ceph-OSD nodes
   on the :ref:`assign-roles-ug` screen.
+- If you are using :ref:`vCenter<vcenter-term>` as the hypervisor,
+  "VMWare vCenter/ESXi" is pre-selected,
+  meaning that you will use :ref:`VMDK<vmdk-term>`
+  to store your volumes in the vCenter datastore.
 
 Select the storage backend for :ref:`glance-term`:
 
@@ -32,6 +36,10 @@ Select the storage backend for :ref:`glance-term`:
 - If you select Ceph,
   you must assign the Ceph-OSD role on at least two nodes
   on the :ref:`assign-roles-ug` screen.
+- If you are using :ref:`vCenter<vcenter-term>` as the hypervisor,
+  "VMWare vCenter/ESXi" is pre-selected,
+  meaning that you will use :ref:`VMDK<vmdk-term>`
+  to store your images in the vCenter datastore.
 
 You can later change these settings
 on the :ref:`settings-storage-ug` screen,

@@ -1,0 +1,48 @@
+
+.. raw:: pdf
+
+   PageBreak
+
+
+.. _xxx-ref:
+
+xxx.yaml
+--------
+
+Fuel Master Node:
+**/usr/lib/python2.6/site-packages/nailgun/fixtures*
+
+The *xxx.yaml* file defines
+the basic configuration of the target nodes
+that Fuel deploys for the OpenStack environment.
+Initially, it contains Fuel defaults;
+these are adjusted in response to configuration choices
+the user makes through the Fuel UI
+and then fed to :ref:`Nailgun<nailgun-term>`.
+
+Usage
+~~~~~
+
+#. Log into the nailgun :ref:`docker-term` container:
+   ::
+
+     dockerctl shell nailgun
+
+#. Edit file.
+
+#. Run the following commands to Nailgun
+   to reread its settings and restart:
+   ::
+
+     manage.py dropdb && manage.py syncdb && manage.py loaddefault
+     killall nailgund
+
+
+#. Exit the Nailgun docker container:
+   ::
+
+     exit
+
+File Format
+~~~~~~~~~~~
+

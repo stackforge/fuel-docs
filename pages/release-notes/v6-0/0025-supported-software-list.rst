@@ -17,7 +17,7 @@ Major Component Versions
 
 * **Cobbler (bare-metal provisioning tool)** 2.2.3
 
-* **OpenStack Core Projects**
+* **OpenStack Integrated Projects**
 
   * Juno release 2014.2
 
@@ -28,24 +28,13 @@ Major Component Versions
     * `Horizon <https://wiki.openstack.org/wiki/ReleaseNotes/Juno#OpenStack_Dashboard_.28Horizon.29>`_ (OpenStack Dashboard)
     * `Neutron <https://wiki.openstack.org/wiki/ReleaseNotes/Juno#OpenStack_Network_Service_.28Neutron.29>`_ (OpenStack Networking)
     * `Cinder <https://wiki.openstack.org/wiki/ReleaseNotes/Juno#OpenStack_Block_Storage_.28Cinder.29>`_ (OpenStack Block Storage service)
-
-* **OpenStack Core Integrated Projects**
-
-  * Juno release 2014.2
-
     * `Ceilometer <https://wiki.openstack.org/wiki/ReleaseNotes/Juno#OpenStack_Telemetry_.28Ceilometer.29>`_ (OpenStack Telemetry)
     * `Heat <https://wiki.openstack.org/wiki/ReleaseNotes/Juno#OpenStack_Orchestration_.28Heat.29>`_ (OpenStack Orchestration)
-
-* **OpenStack Incubated Projects**
-
-  * Juno release 2014.2
-
-    * `Sahara <https://wiki.openstack.org/wiki/ReleaseNotes/Juno#OpenStack_Data_Processing_.28Sahara.29>`_
-      (OpenStack Data Processing)
+    * `Sahara <https://wiki.openstack.org/wiki/ReleaseNotes/Juno#OpenStack_Data_Processing_.28Sahara.29>`_ (OpenStack Data Processing)
 
 * **OpenStack Related Projects**
 
-  * Murano `v0.5.2 <https://wiki.openstack.org/wiki/Murano/ReleaseNotes_v0.5>`_
+  * Murano `2014.2 <https://wiki.openstack.org/wiki/Murano/ReleaseNotes/Juno>`_
 
 * **Hypervisor**
 
@@ -70,17 +59,15 @@ Major Component Versions
 * **Corosync** `1.4.6
   <https://github.com/corosync/corosync/wiki/Corosync-1.4.6-release-notes>`_
 
-* **Keepalived** `1.2.4 <http://www.keepalived.org/changelog.html>`_
-
 * **MongoDB** `2.4.6
   <http://docs.mongodb.org/manual/release-notes/2.4/>`_
 
-* **Ceph** `0.80.4  <http://ceph.com/docs/master/release-notes/#v0-80-4-firefly>`_ "Firefly"
+* **Ceph** `0.80.7  <http://ceph.com/docs/master/release-notes/#v0-80-7-firefly>`_ "Firefly"
 
 * **MySQL**
   `5.5.28 <http://dev.mysql.com/doc/relnotes/mysql/5.5/en/>`_
   (CentOS),
-  `5.5.37 <http://dev.mysql.com/doc/relnotes/mysql/5.5/en/>`_
+  `5.5.40 <http://dev.mysql.com/doc/relnotes/mysql/5.5/en/>`_
   (Ubuntu)
 
 * **Zabbix** `2.2.2 <http://www.zabbix.com/rn2.2.0.php>`_

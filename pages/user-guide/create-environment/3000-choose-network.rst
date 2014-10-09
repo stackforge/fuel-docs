@@ -15,7 +15,7 @@ Five network topologies are supported;
 see :ref:`net-topology-plan`.
 
 You can choose any of the Neutron topologies on this screen.
-If you choose Nova-network here,
+If you choose Legacy Networking (nova-network) here,
 you can choose between the FlatDHCP and VLAN topologies
 on the Network Settings page.
 If you choose the Neutron with VMware NSX plugin option,

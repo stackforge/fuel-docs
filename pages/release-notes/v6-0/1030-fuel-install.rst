@@ -4,26 +4,26 @@
 Fuel Installation and Deployment Issues
 =======================================
 
-Known Issues in 6.0
--------------------
+New Features and Resolved Issues in Mirantis OpenStack 6.0
+----------------------------------------------------------
 
-Fuel may not allocate enough IP addresses for expansion
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+* Fuel now has a larger pool of IP addresses to use
+  when additional nodes are added to the environment.
+  See `LP1271571 <https://bugs.launchpad.net/fuel/+bug/1271571>`_.
 
-The pool of IP addresses to be used by all nodes
-in the OpenStack environment
-is allocated when the Fuel Master Node is initially deployed.
-The IP settings cannot be changed
-after the initial boot of the Fuel Master Node.
-This may mean that the IP pool
-is too small to support additional nodes
-added to the environment
-without redeploying the environment.
-See :ref:`public-floating-ips-arch`
-for more information.
-See `LP1271571 <https://bugs.launchpad.net/fuel/+bug/1271571>`_
-for a detailed description of the issues
-and pointers to blueprints of proposed solutions.
+* Fuel UI now prevents static and DHCP IP address ranges
+  from overlapping during initial Fuel Master node configuration.
+  See `LP1365067 <https://bugs.launchpad.net/bugs/1365067>`_.
+
+* Nodes no longer stay indefinitely in the GRUB prompt
+  when deploying an Ubuntu based environment.
+  See `LP1356278 <https://bugs.launchpad.net/bugs/1356278>`_.
+
+* :ref:`Fuel CLI<cli_usage>` now can be run by a non-root user.
+  See `LP1355876 <https://bugs.launchpad.net/bugs/1355876>`_.
+
+Known Issues in Mirantis OpenStack 6.0
+--------------------------------------
 
 GRE-enabled Neutron installation runs inter VM traffic through management network
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -41,7 +41,9 @@ Fuel default disk partition scheme is sub-optimal
 
 * All available hardware LUNs under LVM are used and spanned across;
   for example, OpenStack and guest traffic are coupled.
-  See `LP1306792 <https://bugs.launchpad.net/bugs/1306792>`_.
+  See the
+  `Improve Fuel Default Disk Partition Scheme
+  <https://blueprints.launchpad.net/fuel/+spec/improve-fuel-default-disk-partition-scheme>`_ blueprint.
 
 * On target nodes that use Ubuntu as the operating system,
   Ubuntu provisioning applies the default Base System partition
@@ -52,12 +54,9 @@ New node may not boot because of IOMMU issues
 
 A new node fails when trying to boot into bootstrap.
 To fix this issue,
-add the "intel_iommu=off" kernel parameter on the Fuel Master node
-with the following console command on master node:
-::
-
-    `dockerctl shell cobbler cobbler profile edit --name bootstrap --kopts="intel_iommu=off" --in-place`
-
+add the "intel_iommu=off" or "amd_iommu=off" kernel parameter
+on the Fuel Master node;
+follow instructions in :ref:`kernel-parameters-ops`.
 See `LP1324483 <https://bugs.launchpad.net/bugs/1324483>`_.
 
 Anaconda fails with LVME error on CentOS
@@ -68,21 +67,16 @@ because installation of CentOS failed on one of compute nodes.
 See `LP1321790 <https://bugs.launchpad.net/bugs/1321790>`_.
 This is related to known issues with Anaconda.
 
-Fuel UI does not prevent overlapping IP ranges
-++++++++++++++++++++++++++++++++++++++++++++++
-
-Fuelmenu allows IP ranges that overlap in PXE setup.
-When configuring IP ranges, be very careful not to use DHCP addresses
-that overlap the Static addresses used.
-See :ref:`public-floating-ips-arch` for more information.
-See `LP1365067 <https://bugs.launchpad.net/bugs/1365067>`_.
-
 Invalid node status after restoring Fuel Master node from backup
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Invalid node status for nodes modified since backup after restore.
-Nodes added to an environment after a backup may be reported as offline.
-Reboot any bootstrapped nodes after restoring your Fuel Master from a backup.
+If you add nodes to the environment after you create a
+:ref:`backup<Backup_and_restore_Fuel_Master>`
+and subsequently restore the Fuel Master,
+those nodes may be reported as offline.
+Rebooting those nodes brings them back online.
+To avoid this problem, always run a new backup
+of the Fuel Master node after adding nodes.
 See `LP1347718 <https://bugs.launchpad.net/bugs/1347718>`_.
 
 Shotgun does not check available disk space before taking a diagnostic snapshot
@@ -92,8 +86,8 @@ Shotgun does not ensure that adequate disk space is available
 for the diagnostic snapshot.
 Users should manually verify the disk space
 before taking a diagnostic snapshot.
-See `LP1328879 <https://bugs.launchpad.net/bugs/1328879>`_.
-
+See `LP1328879 <https://bugs.launchpad.net/bugs/1328879>`_
+and the `blueprint <https://blueprints.launchpad.net/fuel/+spec/manage-logs-with-free-space-consideration>`_.
 
 
 Other Issues
@@ -129,14 +123,5 @@ Other Issues
   (using the 3.10 kernel or later).
   See `LP1322641 <https://bugs.launchpad.net/bugs/1322641>`_.
 
-* Docker loads images very slowly on the Fuel Master Node.
+* Docker loads images very slowly on the Fuel Master node.
   See `LP1333458 <https://bugs.launchpad.net/bugs/1333458>`_.
-
-* When using Ubuntu, in rare cases some nodes may stay on the grub prompt.
-  This usually occurs if the node is power-cycled during the boot process.
-  You should press Enter to continue booting.
-  See `LP1356278 <https://bugs.launchpad.net/bugs/1356278>`_.
-
-* :ref:`Fuel CLI<cli_usage>` can not be run by a non-root user.
-  See `LP1355876 <https://bugs.launchpad.net/bugs/1355876>`_.
-

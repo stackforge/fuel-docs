@@ -1,7 +1,7 @@
 
 .. _quotas:
 
-quotas
+Quotas
 ------
 OpenStack uses quotas to limit the resources one tenant consumes
 and thus prevent system capacities from being exhausted without notification.

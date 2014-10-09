@@ -31,7 +31,7 @@ The following partition types may be configured:
 To modify the disk allocation,
 click on the bar for a disk.
 This example is for a node that runs
-both a Compute node and a Storage - Cinder LVM role;
+both a Compute node and a Storage - Cinder role;
 clicking on the center bar gives a display
 similar to the following:
 

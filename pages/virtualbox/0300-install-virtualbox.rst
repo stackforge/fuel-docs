@@ -29,10 +29,14 @@ Both can be downloaded from `<http://www.virtualbox.org/>`_.
   see the `Cygwin installation page <http://www.cygwin.com/install.html>`_.
   You can also manually create the VMs to use for Fuel and the Slave nodes.
 
-  You need to install **expect** and **openssh**,
+  You need to install the **expect**, **openssh**, and **procps** packages
   which do not install by default.
-  Use the "-P expect,openssh" option to install these; for example:
-  setup-x86_64.exe -a x86_64  -P expect,openssh --quiet-mode  --site http://box-soft.com/
+  Use the "-P expect,openssh,procps" option to install these; for example:
+
+  .. code-block:: sh
+
+     setup-x86_64.exe -a x86_64  -P expect,openssh,procps --quiet-mode \
+     --site http://box-soft.com/
 
 
 8 GB+ of RAM

@@ -322,7 +322,7 @@ Root password
 Here you may set new root password for your master node.
 This password serves as the default root password for all future OpenStack nodes.
 Already existing OpenStack nodes will keep the existing password.
-Leave these fields blank in order to keep default root/r00tme credentials.
+Leave these fields blank in order to keep the default root credentials.
 
 Button Check verifies if both password fields match and has correct data.
 

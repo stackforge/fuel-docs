@@ -9,10 +9,8 @@ The platform tests are run in the tenant you've specified in
 'admin' tenant. Perform the following actions under that tenant to prepare Heat
 for testing of its autoscaling feature:
 
-1. Download the following image of Linux Fedora with pre-installed
-   cloud-init and heat-cfntools packages:
-
-   http://fedorapeople.org/groups/heat/prebuilt-jeos-images/F17-x86_64-cfntools.qcow2
+1. Download the `image of Linux Fedora with pre-installed cloud-init and heat-cfntools
+   packages <http://murano-files.mirantis.com/F17-x86_64-cfntools.qcow2>`_.
 
 2. Then upload the image into OpenStack Image Service (Glance)
    into 'admin' tenant and name it 'F17-x86_64-cfntools'.

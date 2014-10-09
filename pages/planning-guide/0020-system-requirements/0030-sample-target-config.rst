@@ -36,15 +36,15 @@ core OpenStack components
 
 Each controller should have:
 
-- Single or dual-socket CPU with at least 4 physical cores
-- 32GB RAM recommended; 24GB minimum
+- 2 CPUs with at least 6 physical cores each
+- 64GB RAM recommended (1000+ VMs); 24GB minimum
   (Note that, for testing, a Controller node can run
   with as little as 2GB of memory,
   but production systems need the larger memory size.)
-- Hardware RAID1 Controller with at least 500GB capacity
+- Hardware RAID1 Controller with at least 1TB formatted capacity
   for the Host operating system disk.
   Larger disks may be warranted
-  if you determine that you need large database capacity.
+  depending on expected database ang log storage requirements.
   Note that it is non-trivial to expand the disk storage
   on running Controller nodes.
 - 2 NICs, either 1 Gbit/s or 10 Gbit/s

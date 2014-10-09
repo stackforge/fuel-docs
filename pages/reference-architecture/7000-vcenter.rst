@@ -60,7 +60,7 @@ instead, Fuel puts the Nova-compute service on a Controller node.
 Multi-node HA Deployment with vSphere integration
 -------------------------------------------------
 
-.. image:: /_images/vcenter-reference-architecture.png
+.. image:: /_images/vcenter-ha-architecture.png
    :width: 50%
 
 On a highly-available Controller cluster

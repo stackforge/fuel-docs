@@ -4,12 +4,14 @@
 Storage technologies Issues
 ===========================
 
+
 New Features and Resolved Issues in Mirantis OpenStack 6.0
 ----------------------------------------------------------
 
-* Glance now can use vSphere Datastore as a backend. This provides
+* Glance can use vSphere Datastore as a backend.
+  This provides
   a faster image copying process.
-  See `vSphere as a Glance backend <https://blueprints.launchpad.net/fuel/+spec/vsphere-glance-backend>`_.
+  See `vSphere as a Glance backend <https://blueprints.launchpad.net/fuel/+spec/vsphere-glance-backend>`_ blueprint.
 
 * When updating the environment,
   the Ceph nodes are now successfully updated.
@@ -24,29 +26,44 @@ New Features and Resolved Issues in Mirantis OpenStack 6.0
   enabled zero-copy creation of a Cinder volume from a Glance image.
   See `LP1373096 <https://bugs.launchpad.net/bugs/1373096>`_.
 
+*  Ceph monitor will be installed on controllers,
+   if *ceph-osd* was added to cluster after controllers were deployed.
+   Nevertheless, if you want to reconfigure Glance, Cinder or
+   nova to use Ceph as backend, you can do it only manually.
+   See `LP1388798 <https://bugs.launchpad.net/bugs/1388798>`_.
+
+* **Ceph-deploy OSD prepare** command completes successfully on HP Smart Array CCISS drives.
+  See `LP1381218 <https://bugs.launchpad.net/bugs/1381218>`_.
+
+* Swift replicator service no longer has an upstart error
+  on Ubuntu.
+  See `LP1381018 <https://bugs.launchpad.net/bugs/1381018>`_.
+
+* When Ceph RadosGW is used to provide Swift API,
+  Ceilometer now successfully polls Ceph.
+  See `LP1352861 <https://bugs.launchpad.net/bugs/1352861>`_.
+
+* Nova can evacuate instances with Ceph backed ephemeral drives.
+  See `LP1367610 <https://bugs.launchpad.net/mos/+bug/1367610>`_
+  and the upstream `LP1249319 <https://bugs.launchpad.net/nova/+bug/1249319>`_.
+
+* Ceph RadosGW no longer crashes when copying an empty object.
+  See `LP1386369 <https://bugs.launchpad.net/fuel/+bug/1386369>`_.
+
+* Creating volume from image no longer performs full data copy when when Ceph
+  RBD is used as the storage backend for Cinder and Glance. In Mirantis
+  OpenStack 5.1, a regression was introduced into RBD backend configuration for
+  Cinder that broke previously supported zero-copy creation of Cinder volumes
+  from Glance images.
+  See `LP1373096 <https://bugs.launchpad.net/bugs/1373096>`_.
+
 Known Issues in Mirantis OpenStack 6.0
 --------------------------------------
-
-Ceilometer does not correctly poll Ceph as a back-end for Swift
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-When Ceph and the Rados Gateway is used for Swift,
-Ceilometer does not poll Ceph
-because the endpoints between Swift and Ceph are incompatible.
-See `LP1352861 <https://bugs.launchpad.net/bugs/1352861>`_.
-
-Bulk operations are not supported for Swift using Ceph as a backend
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-When Swift is used with Ceph Rados GW enabled as the backend,
-bulk operations are not supported.
-See `LP1361036 <https://bugs.launchpad.net/bugs/1361036>`_.
-
 
 Placing Ceph OSD on Controller nodes is not recommended
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Placing Ceph OSD on Controllers is highly unadvisable because it can severely
+Placing Ceph OSD on Controllers is not recommended because it can severely
 degrade controller's performance.
 It is better to use separate storage nodes
 if you have enough hardware.
@@ -55,24 +72,11 @@ Environment cannot be reset to use Cinder rather than Ceph
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 If you use Fuel to deploy a Mirantis OpenStack environment
-that uses Ceph for volume, image, and ephemeral storage
+that uses Ceph for volume, image, and ephemeral storage and
 then reset the environment to use Cinder rather than Ceph,
 the controller node is unable to locate the HDD
 and the environment cannot be redeployed.
 See `LP1370006 <https://bugs.launchpad.net/fuel/+bug/1370006>`_.
-
-Evacuate fails on Ceph backed volumes
-+++++++++++++++++++++++++++++++++++++
-
-VM instances that use ephermeral drives with Ceph RBD as the backend
-cannot be evacuated using the **nova evacuate** command
-because of an error in the instance rebuild logic.
-To move such instances to another compute node,
-use live migration.
-To rebuild VM instances from a failed compute node,
-use Cinder volume backed instances.
-See `LP1367610 <https://bugs.launchpad.net/mos/+bug/1367610>`_
-and the upstream `LP1249319 <https://bugs.launchpad.net/nova/+bug/1249319>`_.
 
 Controller has unallocated space when Ceph is used as image backend
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -84,30 +88,23 @@ This is being addressed as part of the
 `volume manager refactoring <https://blueprints.launchpad.net/fuel/+spec/volume-manager-refactoring>`_
 that is under development.
 
-Hypervisor summary displays incorrect total storage for Ceph ephemeral storage
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Disk configuration spontaneously changes to default
+++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-The Horizon Admin/Hypervisors Disk Usage field
-shows an incorrect value when Ceph is used as the back end for ephemeral storage.
-The value show in a sum of all Ceph storage seen on each storage node
-instead of the actual amount of Ceph storage.
-See `LP1359989 <https://bugs.launchpad.net/bugs/1359989>`_.
-
+If you change disk configuration at the already deployed Cinder node,
+this specific configuration will become a default one in the database.
+This happens, because Nailgun discovers the attached
+Cinder volume as a new sdX device.
+The problem can also occur at Ceph nodes.
+This issue does not affect performance.
+See `LP1400387 <https://bugs.launchpad.net/bugs/1400387>`_.
 
 Other Ceph issues
 +++++++++++++++++
 
-* Do not recreate the RadosGW region map after initial deployment
-  of the OpenStack environment;
-  this may cause the map to be corrupted so that RadosGW cannot start.
-  If this happens, you can repair the RadosGW region map
-  with the following command sequence:
-  ::
-
-     radosgw-admin region-map update
-     service ceph-radosgw start
-
-  See `LP1287166 <https://bugs.launchpad.net/fuel/+bug/1287166>`_.
-
-
-
+* A Ceph OSD node can not be stopped with the
+  **stop ceph-osd id=xx** command on Ubuntu immediately after deployment.
+  After the node is rebooted, **stop ceph-osd** command works as expected.
+  Applying `Patch 135338 <https://review.openstack.org/135338>`_ prevents this
+  problem.
+  See `LP1374160 <https://bugs.launchpad.net/bugs/1374160>`_.

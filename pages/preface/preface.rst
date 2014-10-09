@@ -27,3 +27,5 @@ The following table lists the released revisions of this documentation:
 +====================+============================+
 |October, 2014       |6.0 Technical Preview       |
 +--------------------+----------------------------+
+|December, 2014      |6.0 GA                      |
++--------------------+----------------------------+

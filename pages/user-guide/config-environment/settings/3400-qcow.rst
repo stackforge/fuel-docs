@@ -9,19 +9,14 @@ Choose whether to use the qcow2 image format for saved images.
 .. image:: /_images/user_screen_shots/qcow.png
    :width: 110%
 
-This selects the image format used for :ref:`Cinder<cinder-term>`
+This selects the image format used for :ref:`Glance<glance-term>`
 and :ref:`ephemeral volumes<ephemeral-storage-term>`.
-The default setting is to use the qcow (actually qcow2) format.
+The default setting is to use
+the qcow (actually :ref:`qcow2<qcow2-term>`) format,
+which is recommended when using :ref:`Swift<swift-object-storage-term>`
+as the storage backend for Glance.
 If you use :ref:`Ceph RBD<ceph-term>`
-for Cinder volume storage or for ephemeral volumes,
+for Glance image storage or for ephemeral volumes,
 you should disable the qcow image format
 so that the raw format is used.
 
-The qcow2 format provides copy-on-write and snapshots
-for Nova when :ref:`LVM<lvm-term>` is used
-as the storage backend for Cinder.
-Ceph includes its own mechanisms that provide
-copy-on-write capability and snapshots;
-if you use the qcow2 image format with Ceph,
-images must be converted to raw format
-in order to be cloned.

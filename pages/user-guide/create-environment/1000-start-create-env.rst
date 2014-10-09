@@ -15,8 +15,7 @@ The Fuel Login screen appears:
    :width: 40%
 
 Use the **admin** username
-and the Fuel password you created above;
-the password is **admin** if you did not reset it during installation.
+and the Fuel password you created above.
 
 The Fuel UI screen appears:
 

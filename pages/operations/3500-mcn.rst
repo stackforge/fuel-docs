@@ -1,0 +1,66 @@
+.. _mcn-ops:
+
+Configuring Multiple Cluster Networks
+=====================================
+
+You can configure multiple network domains per single OpenStack environment
+using :ref:`Fuel CLI<cli_usage>`.
+You should run the commands described here
+after Fuel is installed but before booting the target nodes.
+For background information about how this feature is implemented,
+see :ref:`mcn-arch`.
+
+Requirements for an environment that runs multiple cluster networks are:
+
+- Must use an encapsulation protocol
+  such as :ref:`Neutron GRE<neutron-gre-ovs-arch>`.
+
+- A gateway must be defined for each
+  :ref:`logical network<logical-networks-arch>`
+  when the cluster has multiple :ref:`Node Groups<node-group-term>`.
+
+- All controllers must be members of the same Node Group;
+  if they are not, the :ref:`HAProxy<haproxy-term>` VIP does not work.
+
+  .. note:: It is possible to use ECMP to work around this restriction;
+     documenting how to do this is beyond the scope of this document.
+
+To configure an environment that uses multiple cluster networks,
+do the following.
+
+#.  Add each DHCP network into the
+    :ref:`dnsmasq.template<dnsmasq-template-ref>` file.
+
+#. Start a **dhcp-helper** process:
+
+   .. code-block:: sh
+
+      dhcp-helper -s <IP-of-fuel-master> -i <IP-of-DHCP-NIC>
+
+   **-s** specifies the system to which packets are relayed,
+   so is set to the IP address of the Fuel Master node.
+   **-i** specifies the local interface where DHCP packets arrive,
+   so is set to the IP address of the NIC that is connected to your DHCP network.
+
+#. Create each new Node Group with a command like this:
+
+   .. code-block:: sh
+
+      fuel --env 1 nodegroup --create --name "alpha"
+
+   Assign a meaningful name to each `group` you create.
+
+#. Configure the new Network Group(s) by uploading a new
+   :ref:`network-1.yaml<network-1-yaml-ref>` file
+   and modifying it as discussed in the reference page,
+   then upload the modified file.
+
+#. Boot the nodes for all environments.
+
+#. When you assign roles to your target nodes,
+   Fuel tries to automatically determine the node's group based on the DHCP address.
+   If that fails, the group can be manually assigned with the following command:
+
+   ::
+
+     fuel nodegroup --env 1 --assign --node <list-of-node-ids> --group <nodegroup-id>

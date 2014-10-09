@@ -171,6 +171,101 @@ On the Fuel Master node,
 */var/log/remote* is a symbolic link to the
 */var/log/docker-logs/remote* directory.
 
+.. _atop-ops:
+
+atop logs
++++++++++
+
+Fuel installs and runs
+`atop <http://www.atoptool.nl/>`_
+on all deployed nodes in the environment.
+The **atop** service uses
+`screen <https://www.gnu.org/software/screen/manual/screen.html>`_
+to display
+detailed information
+about resource usage on each node.
+The data shows usage of the hardware resources
+that are most important from a performance standpoint:
+CPU, memory, disk, and network interfaces
+and can be used to troubleshoot performance and scalability issues.
+
+The implementation is:
+
+* By default, **atop** takes a snapshot of system status
+  every 20 seconds and stores this information in binary form.
+
+* The binary data is stored locally on each node
+  in the */var/log/atop* directory.
+
+* Data is kept for seven days;
+  a logrotate job deletes logs older than seven days.
+
+* Data is stored locally on each target node;
+  it is not aggregated for the whole environment.
+
+* The data consumes no more than 2GB of disk space on each node
+  with the default configuration settings.
+
+* The **atop** service can be disabled from the Linux shell.
+  A Puppet run
+  (either done manually or when patching OpenStack)
+  re-enables **atop**.
+
+* The Diagnostic Logs snapshot includes
+  the *atop* data for the current day only.
+
+To view the **atop** data,
+run the `atop(1) <http://manpages.ubuntu.com/manpages/utopic/man1/atop.1.html>`_
+command on the shell of the node you are analyzing.
+
+::
+
+   atop -r /var/log/atop/<filename>
+
+
+Use **t** and **T** to navigate through the state snapshots.
+
+You can also search the **atop** data.
+For example, the following command reports on
+all **sh** processes in the **atop** binary file
+that ran between 10:00 and 12:00 (searching the *atop_current* binary file).
+For each process, the **PPRG** flag causes it to report when it started,
+when it ended, and the exit code provided:
+
+.. code-block :: sh
+
+    atop -PPRG -r /var/log/atop/atop_current -b "10:00" -e "12:00" | grep 'sh'
+
+See the atop(1) man page for a description of
+the **atop** options and commands.
+
+Each target node has a configuration file
+that controls the behavior of **atop** on that node.
+On Ubuntu nodes, this is the */etc/default/atop* file;
+on CentOS nodes, this is the */etc/sysconfig/atop* file.
+The contents of the file are:
+
+.. code-block :: sh
+
+
+   INTERVAL=20
+   LOGPATH="/var/log/atop"
+   OUTFILE="$LOGPATH/daily.log"`
+
+Modifying the value of the `INTERVAL` parameter
+or the **logrotate** settings affects the size of the logs maintained.
+For the most efficient log size,
+use a larger interval setting and a smaller rotate setting.
+To modify the rotate setting,
+edit the */etc/logrotate.d/atop* file
+and make both of the following modifications;
+the value of `X` should be the same in both cases:
+
+- Modify the value of the **rotate X** setting.
+- Modify the value of the **mtime +X** argument
+  to the **lastaction** setting.
+
+
 Enabling debug logging for OpenStack services
 +++++++++++++++++++++++++++++++++++++++++++++
 
