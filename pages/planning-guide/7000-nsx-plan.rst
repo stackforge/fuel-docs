@@ -41,12 +41,7 @@ Please check that you completed the following steps:
 * Install NSX Controller node
 * Install NSX Gateway node
 * Install NSX Manager node
-* Install NSX Service node
-
-.. note:: According to VMware documentation, an NSX cluster can operate
-          successfully without an NSX Service node, but its presence is
-          mandatory for deploying Mirantis OpenStack. Support of NSX clusters
-          without a Service node might appear in future versions of Fuel.
+* Install NSX Service node (mandatory step for production NSX clusters)
 
 VMware NSX cluster configuration
 --------------------------------
