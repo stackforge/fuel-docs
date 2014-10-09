@@ -34,26 +34,23 @@ VMware NSX Installation
 Before installing Fuel and using it
 to create a Mirantis OpenStack environment
 that is integrated with VMware NSX,
-the VMware NSX installation must be up and running.
+the VMware NSX installation must be installed and running.
 Please check that you completed the following steps:
 
 
 * Install NSX Controller node
 * Install NSX Gateway node
 * Install NSX Manager node
-* Install NSX Service node
-
-.. note:: According to VMware documentation, an NSX cluster can operate
-          successfully without an NSX Service node, but its presence is
-          mandatory for deploying Mirantis OpenStack. Support of NSX clusters
-          without a Service node might appear in future versions of Fuel.
+* Install NSX Service node (you may skip this step if you are going to test
+  NSX cluster, Service nodes are mandatory for high volume traffic
+  environments)
 
 VMware NSX cluster configuration
 --------------------------------
 
 * Configure NSX Controller
 
-        * Assign IP address to NSX controller.  If the controller is going
+        * Assign an IP address to the NSX controller.  If the controller is going
           to be placed in any of the OpenStack :ref:`logical
           networks<logical-networks-arch>` (Public, Management, Storage),
           you must assign an IP address that does not overlap
