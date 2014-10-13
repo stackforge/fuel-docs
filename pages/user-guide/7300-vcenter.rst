@@ -91,6 +91,9 @@ After you create the environment, you must enable the VMDK
 driver for Cinder on the Settings tab.
 
 
+.. image:: /_images/user_screen_shots/vcenter-glance-backend.png
+   :width: 50%
+
 - If you are using the deprecated Multi-node (no HA) mode,
   local storage is used as the backend for Glance.
 
@@ -100,6 +103,7 @@ Related projects for vCenter
 Nova-network does not support Murano,
 so you cannot run Murano in the OpenStack environment
 with vSphere integration.
+
 
 .. image:: /_images/user_screen_shots/vcenter-additional.png
    :width: 50%

@@ -108,6 +108,7 @@ Follow the steps below:
 .. image:: /_images/esx-connection-settings.png
   :width: 70%
 
+
 Limitations
 ------------------------------
 - Only vCenter versions 5.1 and later are supported
@@ -124,7 +125,6 @@ Limitations
   supports only IDE disks, so even if the volume is attached to it, CirrOS is
   not able to use it.
 - The Ceph backend for Glance, Cinder and RadosGW object storage is not supported.
-- The VMware vCenter-managed datastore is not supported as a backend for Glance.
 - Murano is not supported. It requires Neutron and vCenter utilizes nova-network.
 - Fuel does not configure Ceilometer to collect metrics from vCenter virtual resources.
   For more details about the Ceilometer plugin for vCenter,
