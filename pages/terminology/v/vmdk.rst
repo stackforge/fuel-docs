@@ -12,6 +12,7 @@ Volumes are backed by VMDK files on data stores that use any VMware compatible
 storage technology such as NFS, iSCSI, FiberChannel, and vSAN.
 You can use Fuel 5.1 and later to deploy a vCenter integrated Mirantis
 OpenStack environment that utilizes VMDK support.
+To enable VMDK driver option, see :ref:`vSphere deployment notes<vcenter-deploy>`.
 
 For more information, see:
 
