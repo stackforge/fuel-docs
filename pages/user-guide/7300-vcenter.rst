@@ -77,10 +77,8 @@ which are:
 - VMDK driver for Cinder.
 - Swift for Glance.
 
-.. note:: VMware vCenter managed datastore is not supported as a backend for Glance.
-
-.. image:: /_images/user_screen_shots/vcenter-cinder.png
-   :width: 50%
+.. image:: /_images/user_screen_shots/vcenter_glance_backend.png
+   :width: 80%
 
 After you create the environment, you must enable the VMDK
 driver for Cinder on the Settings tab.
@@ -171,15 +169,15 @@ Storage
 -------
 
 To enable VMware vCenter for volumes,
-you must first uncheck the LVM over iSCSI option.
+you must first uncheck the Cinder LVM over iSCSI option.
 
 .. image:: /_images/user_screen_shots/vcenter-cinder-uncheck.png
    :width: 80%
 
-After that, the VMware vCenter for volumes
-becomes available.
+After that, check VMWare vCenter/ESXi datastore for images (Glance) option
+and specify the required settings.
 
-.. image:: /_images/user_screen_shots/cinder-vmdk-backend.png
+.. image:: /_images/user_screen_shots/vcenter_cinder_settings.png
    :width: 80%
 
 For more information about how vCenter support is implemented,
