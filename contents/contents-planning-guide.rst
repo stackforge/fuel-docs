@@ -1,6 +1,5 @@
 .. include:: /pages/planning-guide/0010-intro.rst
 .. include:: /pages/planning-guide/0020-system-requirements.rst
-.. include:: /pages/planning-guide/0025-supported-software-list.rst
 .. include:: /pages/planning-guide/4000-planning-summary.rst
 .. include:: /pages/planning-guide/4200-net-topology.rst
 .. include:: /pages/planning-guide/4300-linux-distro.rst
