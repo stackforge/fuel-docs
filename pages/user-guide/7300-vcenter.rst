@@ -77,8 +77,6 @@ which are:
 - VMDK driver for Cinder.
 - Swift for Glance.
 
-.. note:: VMware vCenter managed datastore is not supported as a backend for Glance.
-
 .. image:: /_images/user_screen_shots/vcenter-cinder.png
    :width: 50%
 
