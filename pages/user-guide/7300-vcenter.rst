@@ -74,19 +74,24 @@ Choose Backend for Cinder and Glance with vCenter
 Ceph cannot be used as a Cinder or Glance backend;
 the only choice here is to leave the default options,
 which are:
-- VMDK driver for Cinder.
+- :ref:`VMDK<vmdk-term>` driver for Cinder.
 - Swift for Glance.
-
-.. note:: VMware vCenter managed datastore is not supported as a backend for Glance.
+- VMWare vCenter/:ref:`ESXi<esxi-term>` for Glance.
 
 .. image:: /_images/user_screen_shots/vcenter-cinder.png
+   :width: 50%
+
+VMware vCenter managed datastore is now supported as a backend for Glance;
+select VMWare vCenter/ESXi option to enable it.
+
+.. image:: /_images/user_screen_shots/vcenter-glance-backend.png
    :width: 50%
 
 After you create the environment, you must enable the VMDK
 driver for Cinder on the Settings tab.
 
 
-- If you are using the Multi-node (no HA) mode,
+- If you are using the deprecated Multi-node (no HA) mode,
   local storage is used as the backend for Glance.
 
 Related projects for vCenter
@@ -171,15 +176,16 @@ Storage
 -------
 
 To enable VMware vCenter for volumes,
-you must first uncheck the LVM over iSCSI option.
+you must first uncheck the Cinder LVM over iSCSI option.
 
 .. image:: /_images/user_screen_shots/vcenter-cinder-uncheck.png
    :width: 80%
 
-After that, the VMware vCenter for volumes
-becomes available.
+To enable VMware vCenter managed datastore as a backend for Glance,
+check VMWare vCenter/ESXi datastore for images (Glance) option
+and specify the required settings.
 
-.. image:: /_images/user_screen_shots/cinder-vmdk-backend.png
+.. image:: /_images/user_screen_shots/vcenter_glance_settings.png
    :width: 80%
 
 For more information about how vCenter support is implemented,
