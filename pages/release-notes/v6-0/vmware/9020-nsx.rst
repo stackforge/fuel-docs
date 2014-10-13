@@ -1,0 +1,31 @@
+
+.. _nsx-rn:
+
+VMware NSX integration
+----------------------
+
+Known limitations in 5.1
+++++++++++++++++++++++++
+
+The VMware NSX integration into Mirantis OpenStack 5.1 is supported,
+but it has some known limitations:
+
+
+* Deployment interruption (stoppage or reset) by end user or errors during
+  deployment leave NSX cluster in half configured state.  User has to manually
+  remove all network logical entities that were created during the unsuccessful
+  deployment; otherwise, the next deployment will fail due to inability to
+  register OpenvSwitches in NSX and 'br-int' bridges on nodes would not be
+  configured properly, because older ones with same names exist in NSX cluster.
+
+* If the NSX cluster resides in a separate network that has L3 connectivity with
+  the OpenStack Public network, you must enable Public address assignment for all
+  nodes, see :ref:`neutron-nsx-arch`.
+
+* In HA mode on NSX machine, OpenStack deployment crashes due to unavailable Neutron and Keystone services.
+  See `LP1369529 <https://bugs.launchpad.net/bugs/1369529>`_.
+
+* When there are no NSX settings, Fuel UI allows clicking "Deploy changes".
+  Make sure that you have specified NSX settings.
+  See `LP1347682 <https://bugs.launchpad.net/bugs/1347682>`_.
+

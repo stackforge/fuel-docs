@@ -36,6 +36,7 @@ Terminology Reference
 .. include:: /pages/terminology/i/image-service.rst
 .. include:: /pages/terminology/i/ironic.rst
 .. include:: /pages/terminology/i/iser.rst
+.. include:: /pages/terminology/j/juno.rst
 .. include:: /pages/terminology/k/keystone.rst
 .. include:: /pages/terminology/k/kvm.rst
 .. include:: /pages/terminology/l/logging.rst
