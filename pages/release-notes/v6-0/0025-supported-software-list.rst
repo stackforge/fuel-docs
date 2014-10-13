@@ -1,5 +1,10 @@
-Supported Software
+
+.. _component-versions:
+
+Component Versions
 ==================
+
+[Not yet revised for 6.0]
 
 * **Operating Systems**
 
