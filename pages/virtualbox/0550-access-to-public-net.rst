@@ -3,9 +3,19 @@
 Deployment configuration to access OpenStack API and VMs from host machine
 ==========================================================================
 
-Helper scripts for VirtualBox create network adapters `eth0`, `eth1`, `eth2`
-which are represented on the host machine as `vboxnet0`, `vboxnet1`, `vboxnet2`
-correspondingly, and assigned IP addresses for adapters:
+Follow the instructions
+in :ref:`create-env-ug` and :ref`configure-env-ug`
+to create and configure your OpenStack environment.
+Most of the steps are the same for a VirtualBox deployment
+and the bare-metal deployment.
+The one exception is networking,
+where the VirtualBox deployment requires some different settings.
+
+Helper scripts for VirtualBox
+create the network adapters `eth0`, `eth1`, `eth2`
+which are represented on the host machine
+as `vboxnet0`, `vboxnet1`, `vboxnet2` correspondingly,
+and assigned IP addresses for adapters::
 
   vboxnet0 - 10.20.0.1/24
   vboxnet1 - 172.16.1.1/24
@@ -16,36 +26,40 @@ the first network adapter is used to run Fuel network traffic,
 including PXE discovery.
 
 To access the Horizon and OpenStack RESTful API
-via the Public network from the host machine,
+via the Public :ref:`logical network<logical-networks-arch>`
+from the host machine,
 you must have a route from your host
 to the Public IP address on the OpenStack Controller.
-Also, if access to Floating IP of VM is required,
-you must also have a route to the Floating IP on Compute host,
+Also, if you need to access a VM's Floating IP,
+you must also have a route to the Floating IP on the Compute node,
 which is bind'ed to the Public interface there.
-To make this configuration possible on VirtualBox demo environment,
-the user must run the Public network untagged.
+To make this configuration possible
+on the VirtualBox demo environment,
+you must run the Public network untagged.
 On the image below, you can see the configuration of
 Public and Floating networks which allows this:
 
 .. image:: /_images/vbox_public_settings.jpg
   :align: center
-  :width: 100%
+  :width: 80%
 
 By default, Public and Floating networks
 run on the first network interface.
-This must be changed, as you can see on this image below.
-Make sure you change it on every node.
+This must be changed on each node,
+to run these networks on eth1
+by setting the configuration as shown here:
 
 .. image:: /_images/vbox_node_settings.jpg
   :align: center
-  :width: 100%
+  :width: 80%
 
 If you use the default configuration in VirtualBox scripts,
 and use the settings shown on the images above,
 you should be able to access OpenStack Horizon via
 the Public network after the installation.
 
-If you want to enable Internet on provisioned VMs by OpenStack,
+If you want to enable Internet access
+on VMs that are provisioned by OpenStack,
 you must configure NAT on the host machine.
 When packets reach the `vboxnet1` interface,
 according to the OpenStack settings tab,
@@ -63,7 +77,7 @@ from the pool with this VM,
 whether in Horizon or via Nova CLI.
 By default, OpenStack blocks all the traffic to the VM.
 To allow the connectivity to the VM,
-you need to configure security groups.
+you need to configure :ref:`security groups<security-groups-term>`.
 This can be done in Horizon,
 or from the OpenStack Controller using the following commands::
 
