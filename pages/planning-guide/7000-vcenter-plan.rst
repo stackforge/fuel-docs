@@ -113,8 +113,7 @@ Limitations
 - Only vCenter versions 5.1 and later are supported
 - It is not possible to specify the vCenter cluster
   where virtual instances will be launched.
-- Only :ref:`nova-network-term` with FlatDHCP mode is supported
-  in the current version of the integration.
+- Only :ref:`nova-network-term` with FlatDHCP mode is supported in the current version of the integration.
 - Each OpenStack environment can support one vCenter cluster.
 - :ref:`security-groups-term` are not supported.
 - The only supported backend for Cinder is VMDK.
