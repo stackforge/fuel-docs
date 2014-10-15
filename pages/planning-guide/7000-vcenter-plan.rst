@@ -113,7 +113,7 @@ Limitations
 - Only vCenter versions 5.1 and later are supported
 - It is not possible to specify the vCenter cluster
   where virtual instances will be launched.
-- Only :ref:`nova-network-term` with FlatDHCP mode is supported
+- :ref:`nova-network-term` with FlatDHCP mode or VLAN manager is supported
   in the current version of the integration.
 - Each OpenStack environment can support one vCenter cluster.
 - :ref:`security-groups-term` are not supported.
@@ -124,7 +124,7 @@ Limitations
   supports only IDE disks, so even if the volume is attached to it, CirrOS is
   not able to use it.
 - The Ceph backend for Glance, Cinder and RadosGW object storage is not supported.
-- The VMware vCenter-managed datastore is not supported as a backend for Glance.
+- The VMware vCenter-managed datastore is now supported as a backend for Glance.
 - Murano is not supported. It requires Neutron and vCenter utilizes nova-network.
 - Fuel does not configure Ceilometer to collect metrics from vCenter virtual resources.
   For more details about the Ceilometer plugin for vCenter,
