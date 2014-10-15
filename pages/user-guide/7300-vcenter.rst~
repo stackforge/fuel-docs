@@ -57,9 +57,14 @@ create the environment.
 Select Network Service for vCenter
 ++++++++++++++++++++++++++++++++++
 
+<<<<<<< HEAD
 Choose either the Nova-network FlatDHCP or the VLAN manager.
 The VLAN manager provides better security and scalability than the
 FlatDHCP manager.
+=======
+Currently, Nova-Network and Neutron with VMware NSX plugin are
+supported as Network Services for vCenter.
+>>>>>>> 6d617e3... Describes how to set up Nova-network
 
 .. image:: /_images/user_screen_shots/vcenter-networking.png
    :width: 50%
