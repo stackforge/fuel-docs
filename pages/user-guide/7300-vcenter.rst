@@ -57,9 +57,12 @@ create the environment.
 Select Network Service for vCenter
 ----------------------------------
 
-Choose the Nova-network FlatDHCP manager on the Network settings page.
-This the only network topology you can use
-to deploy vCenter with Fuel 5.0.
+Nova-network now supports not only FlatDHCP manager, but also VLAN manager.
+
+VLAN manager provides better security and scalability.
+
+Choose FlatDHCP manager or VLAN manager on the Network settings page.
+
 
 .. image:: /_images/user_screen_shots/vcenter-networking.png
    :width: 50%
