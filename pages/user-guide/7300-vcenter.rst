@@ -57,9 +57,7 @@ create the environment.
 Select Network Service for vCenter
 ----------------------------------
 
-Choose the Nova-network FlatDHCP manager on the Network settings page.
-This the only network topology you can use
-to deploy vCenter with Fuel 5.0.
+Choose the required Network Service for vCenter.
 
 .. image:: /_images/user_screen_shots/vcenter-networking.png
    :width: 50%
@@ -147,25 +145,41 @@ The Compute and Controller roles are combined on one node.
 Network settings
 ----------------
 
-Only the :ref:`nova-network-term` with FlatDHCP topology
-is supported in the current version of vCenter integration in Fuel.
+Choose either the Nova-network FlatDHCP or the VLAN manager.
 
-- Select the FlatDHCP manager in the Nova-network settings
+VLAN manager provides better virtual machine isolation, i.e. enables segregating
+virtual machine tenants into separate broadcast domains.
+
+- For *FlatDHCP manager*, select the checkbox in the Nova-network settings
 
 .. image:: /_images/user_screen_shots/vcenter-network-manager.png
-   :width: 80%
+   :width: 50%
 
 - Check the vCenter credentials
 
 .. image:: /_images/user_screen_shots/settings-vcenter.png
-   :width: 80%
+   :width: 50%
 
 - Enable the 'Use VLAN tagging for fixed networks' checkbox
   and enter the VLAN tag you selected
   for the VLAN ID in the ESXi host network configuration
 
 .. image:: /_images/user_screen_shots/vcenter-nova-network.png
-   :width: 80%
+   :width: 50%
+
+- For *VLAN manager*, select the checkbox in the Nova-network settings
+
+- Check the vCenter credentials
+
+.. image:: /_images/user_screen_shots/settings-vcenter.png
+   :width: 50%
+
+- Specify Nova-network configuration
+
+.. image:: /_images/user_screen_shots/nova-net-vlan.png
+   :width: 50%
+
+
 
 Storage
 -------
