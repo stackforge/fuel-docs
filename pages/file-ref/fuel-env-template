@@ -1,0 +1,50 @@
+
+.. raw:: pdf
+
+   PageBreak
+
+
+.. _xxx-ref:
+
+xxx.yaml
+--------
+
+The *xxx.yaml* file defines
+the basic configuration of the target nodes
+that Fuel deploys for the OpenStack environment.
+Initially, it contains Fuel defaults;
+these are adjusted in response to configuration choices
+the user makes through the Fuel UI
+and then fed to :ref:`Nailgun<nailgun-term>`.
+
+Path
+----
+
+Fuel Master Node:
+**yyy**
+
+Usage
+-----
+
+#. Dump provisioning information using this
+   :ref:`fuel CLI<fuel-cli-config>` command::
+
+       fuel --env 1 provisioning default
+
+   where ``--env 1`` that to the specific environment
+   (id=1 in this example).
+
+
+#. Edit file.
+
+
+#. Upload the modified file:
+   ::
+
+     fuel --env-1 provisioning upload
+
+
+Description
+-----------
+
+The *xxx.yaml* file <describe>
