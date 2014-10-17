@@ -2,7 +2,7 @@
 .. _install-boot-fuel-vsphere:
 
 Install and Boot the Fuel Master Node on vSphere
-------------------------------------------------
+++++++++++++++++++++++++++++++++++++++++++++++++
 
 At the Virtual Machines screen,
 select the Fuel VM and run it by clicking the ‘Power on’ icon:
