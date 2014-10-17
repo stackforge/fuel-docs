@@ -47,6 +47,11 @@ network considerations, and deployment options.
 Short articles about OpenStack terminology and technology
 with references to other documentation and other useful information.
 
+:ref:`file-ref` `(pdf) <pdf/Mirantis-OpenStack-5.1-Fuel File-Reference.pdf>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Reference pages for select configuration files that Fuel uses.
+
 :ref:`release-notes` `(pdf) <pdf/Mirantis-OpenStack-5.1-RelNotes.pdf>`__
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
