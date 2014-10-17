@@ -2,7 +2,7 @@
 .. _verify-fuel-boot-vsphere:
 
 Verify that Fuel booted on ESXi
--------------------------------
++++++++++++++++++++++++++++++++
 
 To test the operability of the Fuel Master Node,
 you can create another VM on the same ESXi Host

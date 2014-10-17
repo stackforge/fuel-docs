@@ -2,7 +2,7 @@
 .. _mount-iso-vsphere:
 
 Mount the Mirantis OpenStack ISO
---------------------------------
+++++++++++++++++++++++++++++++++
 
 For the CD/DVD drive,
 choose the "Datastore ISO File" item from the dropdown menu on the right:

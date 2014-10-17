@@ -4,8 +4,8 @@
 
 .. _vcenter-deploy:
 
-Deploying vCenter
--------------------
+vSphere deployment notes
+========================
 
 .. contents :local:
 
@@ -21,7 +21,7 @@ to launch the wizard that creates a new OpenStack environment.
 .. _vcenter-start-create-env-ug:
 
 Create Environment and Choose Distribution for vCenter
-++++++++++++++++++++++++++++++++++++++++++++++++++++++
+------------------------------------------------------
 
 Either the CentOS or Ubuntu distro
 can be used as the host operating system on the Slave nodes
@@ -31,7 +31,7 @@ for environments that support integration with vSphere:
    :width: 50%
 
 Choose Deployment Mode for vCenter
-++++++++++++++++++++++++++++++++++
+----------------------------------
 
 You can deploy Mirantis OpenStack with or without :ref:`ha-term`.
 
@@ -43,7 +43,7 @@ You can deploy Mirantis OpenStack with or without :ref:`ha-term`.
    PageBreak
 
 Select vCenter Hypervisor for vCenter
-+++++++++++++++++++++++++++++++++++++
+-------------------------------------
 
 Select the vCenter :ref:`hypervisor<hypervisor-ug>`
 when you create your OpenStack Environment.
@@ -55,11 +55,11 @@ create the environment.
    :width: 50%
 
 Select Network Service for vCenter
-++++++++++++++++++++++++++++++++++
+----------------------------------
 
-Choose either the Nova-network FlatDHCP or the VLAN manager.
-The VLAN manager provides better security and scalability than the
-FlatDHCP manager.
+Choose the Nova-network FlatDHCP manager on the Network settings page.
+This the only network topology you can use
+to deploy vCenter with Fuel 5.0.
 
 .. image:: /_images/user_screen_shots/vcenter-networking.png
    :width: 50%
@@ -69,7 +69,7 @@ FlatDHCP manager.
    PageBreak
 
 Choose Backend for Cinder and Glance with vCenter
-+++++++++++++++++++++++++++++++++++++++++++++++++
+-------------------------------------------------
 
 Ceph cannot be used as a Cinder or Glance backend;
 the only choice here is to leave the default options,
@@ -95,7 +95,7 @@ driver for Cinder on the Settings tab.
   local storage is used as the backend for Glance.
 
 Related projects for vCenter
-++++++++++++++++++++++++++++
+----------------------------
 
 Nova-network does not support Murano,
 so you cannot run Murano in the OpenStack environment
@@ -116,7 +116,7 @@ with vSphere integration.
    PageBreak
 
 Complete the creation of your vCenter environment
-+++++++++++++++++++++++++++++++++++++++++++++++++
+-------------------------------------------------
 
 
 .. image:: /_images/user_screen_shots/deploy_env.png
@@ -125,8 +125,8 @@ Complete the creation of your vCenter environment
 
 Select "Create" and click on the icon for your named environment.
 
-Configuring your environment for vCenter
-----------------------------------------
+Configure your environment for vCenter
+======================================
 
 After you exit from the "Create a New OpenStack Environment" wizard,
 Fuel displays a set of configuration tabs
@@ -138,7 +138,7 @@ integrated with vSphere.
 .. _assign-roles-vcenter-ug:
 
 Assign a role or roles to each node server
-++++++++++++++++++++++++++++++++++++++++++
+------------------------------------------
 
 For VMware vCenter integration,
 the Nova plugin runs on the Controller node.
@@ -150,7 +150,7 @@ The Compute and Controller roles are combined on one node.
 .. _network-settings-vcenter-ug:
 
 Network settings
-++++++++++++++++
+----------------
 
 Only the :ref:`nova-network-term` with FlatDHCP topology
 is supported in the current version of vCenter integration in Fuel.
@@ -173,7 +173,7 @@ is supported in the current version of vCenter integration in Fuel.
    :width: 80%
 
 Storage
-+++++++
+-------
 
 To enable VMware vCenter for volumes,
 you must first uncheck the Cinder LVM over iSCSI option.
