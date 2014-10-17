@@ -14,5 +14,6 @@ Documentation
   virtualbox
   reference-architecture
   terminology
+  file-ref
   release-notes
   eula
