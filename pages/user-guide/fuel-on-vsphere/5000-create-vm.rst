@@ -2,7 +2,7 @@
 .. _vm-create-vm-vsphere:
 
 Create Virtual Machine and Mount ISO
-------------------------------------
+++++++++++++++++++++++++++++++++++++
 
 Go back to the vCenter screen
 and choose the ‘Virtual Machines’ item in the left menu:

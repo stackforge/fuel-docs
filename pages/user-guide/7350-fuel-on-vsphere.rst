@@ -3,7 +3,7 @@
 
 
 Installing Fuel Master Node on vSphere
-======================================
+--------------------------------------
 
 Before you follow this procedure to install
 the Fuel Master Node on vSphere,
