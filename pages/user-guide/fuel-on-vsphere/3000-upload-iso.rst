@@ -2,7 +2,7 @@
 .. _upload-iso-vsphere:
 
 Upload the ISO to the vCenter Datastore
----------------------------------------
++++++++++++++++++++++++++++++++++++++++
 
 Log into the vSphere web client
 and click on the vCenter item in the left menu:

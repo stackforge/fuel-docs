@@ -2,7 +2,7 @@
 .. _port-group-vsphere:
 
 Create a vCenter Port Group network
------------------------------------
++++++++++++++++++++++++++++++++++++
 
 Choose a Port Group connection type:
 
