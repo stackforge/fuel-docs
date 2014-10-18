@@ -744,7 +744,7 @@ this happens, the thread won't send any heartbeats and RabbitMQ will
 close AMQP connections after timeout.
 
 This problem is addressed in **oslo.messaging** packages from
-MOS 5.1.1 package repositories
+Mirantis OpenStack 5.1.1 package repositories
 (`CentOS <http://mirror.fuel-infra.org/fwm/5.1.1/centos/os/x86_64/Packages/python-oslo-messaging-1.3.0-fuel5.1.mira4.noarch.rpm>`_,
 `Ubuntu <http://mirror.fuel-infra.org/fwm/5.1.1/ubuntu/pool/main/python-oslo.messaging_1.3.0-fuel5.1~mira5_all.deb>`_).
 After installing these packages, restart the affected services.
@@ -820,6 +820,35 @@ OSTF (Health Check) issues
   environment are still displayed.
   See `LP1338669 <https://bugs.launchpad.net/bugs/1338669>`_.
 
+Issue in RabbitMQ Oslo messaging in HA deployments
+--------------------------------------------------
+
+The Oslo messaging service has a bug
+that affects Mirantis OpenStack HA environments.
+The bug can make OpenStack unstable and the problem
+gets worse as the load increases
+and a large number of broken AMQP connections
+cause Oslo-related errors appear in different logs.
+See `LP1340711 <https://bugs.launchpad.net/mos/+bug/1340711>`_.
+
+To fix, reinstall all packages related to python-oslo
+from the appropriate repository
+and restart all the OpenStack services
+on all the target nodes:
+
+- `Ubuntu repository <http://fuel-repository.mirantis.com/fwm/5.1.1/ubuntu/pool/main/>`_
+
+  * `Ubuntu Oslo config <http://fuel-repository.mirantis.com/fwm/5.1.1/ubuntu/pool/main/python-oslo.config_1.2.1-0ubuntu1~cloud0_all.deb>`_
+  * `Ubuntu Oslo messaging <http://fuel-repository.mirantis.com/fwm/5.1.1/ubuntu/pool/main/python-oslo.messaging_1.3.0-fuel5.1~mira5_all.deb>`_
+  * `Ubuntu Oslo rootwrap <http://fuel-repository.mirantis.com/fwm/5.1.1/ubuntu/pool/main/python-oslo.rootwrap_1.0.0-0ubuntu2_all.deb>`_
+  * If VMware is used: `Ubuntu Oslo vmware <http://fuel-repository.mirantis.com/fwm/5.1.1/ubuntu/pool/main/python-oslo.vmware_0.2-0ubuntu1_all.deb>`_
+
+- `CentOS repository <http://fuel-repository.mirantis.com/fwm/5.1.1/centos/os/x86_64/Packages/>`_:
+
+  * `Centos Oslo config <http://fuel-repository.mirantis.com/fwm/5.1.1/centos/os/x86_64/Packages/python-oslo-config-1.2.1-1.el6.noarch.rpm>`_
+  * `Centos Oslo messaging <http://fuel-repository.mirantis.com/fwm/5.1.1/centos/os/x86_64/Packages/python-oslo-messaging-1.3.0-fuel5.1.mira4.noarch.rpm>`_
+  * `Centos Oslo rootwrap <http://fuel-repository.mirantis.com/fwm/5.1.1/centos/os/x86_64/Packages/python-oslo-rootwrap-1.0.0-1.el6.noarch.rpm>`_
+  * If VMware is used: `Centos Oslo vmware <http://fuel-repository.mirantis.com/fwm/5.1.1/centos/os/x86_64/Packages/python-oslo.vmware-0.3-0.noarch.rpm>`_
 
 Other limitations
 -----------------
