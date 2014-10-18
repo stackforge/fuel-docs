@@ -263,8 +263,6 @@ do not include UEFI images.
 See `LP1291128 <https://bugs.launchpad.net/fuel/+bug/1291128>`_
 and the `UEFI support blueprint <https://blueprints.launchpad.net/fuel/+spec/uefi-support>`_.
 
-
-
 Fuel may not allocate enough IP addresses for expansion
 -------------------------------------------------------
 
@@ -805,6 +803,35 @@ OSTF (Health Check) issues
 * After resetting the environment, OSTF test results from the last
   environment are still displayed.
   See `LP1338669 <https://bugs.launchpad.net/bugs/1338669>`_.
+
+Issue in RabbitMQ Oslo messaging in HA deployments
+--------------------------------------------------
+
+The Oslo messaging service has a bug
+that affects MOS HA environments.
+The bug can make OpenStack unstable and the problem
+gets worse as the load increases
+and a large number of broken AMQP connections
+cause Oslo-related errors appear in different logs.
+See `LP1340711 <https://bugs.launchpad.net/mos/+bug/1340711>`_.
+
+To fix, upgrade the Oslo packages and restart all the Openstack services
+on all the environment nodes.
+Packages are available here:
+
+CentOS:
+
+* `Centos Oslo config <http://fuel-repository.mirantis.com/fwm/5.1.1/centos/os/x86_64/Packages/python-oslo-config-1.2.1-1.el6.noarch.rpm>`_
+* `Centos Oslo messaging <http://fuel-repository.mirantis.com/fwm/5.1.1/centos/os/x86_64/Packages/python-oslo-messaging-1.3.0-fuel5.1.mira4.noarch.rpm>`_
+* `Centos Oslo rootwrap <http://fuel-repository.mirantis.com/fwm/5.1.1/centos/os/x86_64/Packages/python-oslo-rootwrap-1.0.0-1.el6.noarch.rpm>`_
+* If VMware is used: `Centos Oslo vmware <http://fuel-repository.mirantis.com/fwm/5.1.1/centos/os/x86_64/Packages/python-oslo.vmware-0.3-0.noarch.rpm>`_
+
+Ubuntu:
+
+* `Ubuntu Oslo config <http://fuel-repository.mirantis.com/fwm/5.1.1/ubuntu/pool/main/python-oslo.config_1.2.1-0ubuntu1~cloud0_all.deb>`_
+* `Ubuntu Oslo messaging <http://fuel-repository.mirantis.com/fwm/5.1.1/ubuntu/pool/main/python-oslo.messaging_1.3.0-fuel5.1~mira5_all.deb>`_
+* `Ubuntu Oslo rootwrap <http://fuel-repository.mirantis.com/fwm/5.1.1/ubuntu/pool/main/python-oslo.rootwrap_1.0.0-0ubuntu2_all.deb>`_
+* If VMware is used: `Ubuntu Oslo vmware <http://fuel-repository.mirantis.com/fwm/5.1.1/ubuntu/pool/main/python-oslo.vmware_0.2-0ubuntu1_all.deb>`_
 
 
 Other limitations
