@@ -24,8 +24,7 @@ that is already installed,
 but it is not possible to install an operating system on them
 because the operating system distributions that are provided
 do not include UEFI images.
-See `LP1291128 <https://bugs.launchpad.net/fuel/+bug/1291128>`_
-and the `UEFI support blueprint
+See `UEFI support blueprint
 <https://blueprints.launchpad.net/fuel/+spec/uefi-support>`_.
 
 Ubuntu does not support NetFPGA cards
@@ -34,6 +33,7 @@ Ubuntu does not support NetFPGA cards
 CentOS includes drivers for netFPGA devices
 but Ubuntu does not.
 See `LP1270889 <https://bugs.launchpad.net/fuel/+bug/1270889>`_.
+[in progress]
 
 CentOS issues using Neutron-enabled installations with VLANS
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -138,10 +138,17 @@ but sdc will not be used  as part of the RAID-1 array:
            super 1.0 [2/2] [UU]
 
 
-See `LP1267569 <https://bugs.launchpad.net/fuel/+bug/1267569>`_
-and `LP1258347 <https://bugs.launchpad.net/fuel/+bug/1258347>`_.
-[LP1267569 is scheduled to be fixed in 5.1;
-LP1258347 is scheduled to be fixed in 6.0]
+See `LP1258347 <https://bugs.launchpad.net/fuel/+bug/1258347>`_.
+[in progress?]
+
+Intel PCI-express SSD drivers are not supported
++++++++++++++++++++++++++++++++++++++++++++++++
+
+Currently, Fuel supports the block devices with names like sd*, hd*, vd* with type "disk". Nevertheless, Intel PCI-ex SSD drives have nvmeXnY names where X and Y are integer values.
+Such disks appear in Fuel UI, but Fuel skips these during the deployment process. What is more, these disks needs the drivers, available at `Intel Solid-State Drive Data Center Tool
+<https://downloadcenter.intel.com/Detail_Desc.aspx?agr=Y&ProdId=3810&DwnldID=23931&ProductFamily=Solid-State+Drives+and+Caching&ProductLine=Intel%C2%AE+High+Performance+Solid-State+Drives&ProductProduct=Intel%C2%AE+SSD+DC+P3600+Series&lang=eng>`_.
+
+See `LP1372547 <https://bugs.launchpad.net/fuel/+bug/1372547>`_.
 
 Other issues
 ++++++++++++
@@ -149,4 +156,8 @@ Other issues
 * Large number of disks may fail Ubuntu installation.
   See `LP1340414 <https://bugs.launchpad.net/bugs/1340414>`_.
 
+* When all the space on SSD is configured ad a base system,
+  Ubuntu stops installation and asks where to install the system.
+  After posting an answer manually, installation continues.
+  See `LP1382292 <https://bugs.launchpad.net/bugs/1382292>`_.
 

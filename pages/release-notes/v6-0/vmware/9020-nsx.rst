@@ -3,13 +3,23 @@
 
 VMware NSX integration
 ----------------------
+New Features and Resolved Issues in Mirantis OpenStack 6.0
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Known limitations in 5.1
+* In HA mode on NSX machine, OpenStack deployment no longer crashes due to
+  unavailable Neutron and Keystone services.
+  See `LP1369529 <https://bugs.launchpad.net/bugs/1369529>`_.
+
+* vCenter as a Hypervisor and NSX as a networking option are now enabled in Fuel.
+  Fuel 5.0 had a limited support of vCenter as a hypervisor and no NSX support at all,
+  but OpenStack can be integrated with both these components.
+  See `vCenter NSX support <https://blueprints.launchpad.net/fuel/+spec/vcenter-nsx-support>`_.
+
+Known limitations in 6.0
 ++++++++++++++++++++++++
 
 The VMware NSX integration into Mirantis OpenStack 5.1 is supported,
 but it has some known limitations:
-
 
 * Deployment interruption (stoppage or reset) by end user or errors during
   deployment leave NSX cluster in half configured state.  User has to manually
@@ -22,10 +32,11 @@ but it has some known limitations:
   the OpenStack Public network, you must enable Public address assignment for all
   nodes, see :ref:`neutron-nsx-arch`.
 
-* In HA mode on NSX machine, OpenStack deployment crashes due to unavailable Neutron and Keystone services.
-  See `LP1369529 <https://bugs.launchpad.net/bugs/1369529>`_.
-
 * When there are no NSX settings, Fuel UI allows clicking "Deploy changes".
   Make sure that you have specified NSX settings.
   See `LP1347682 <https://bugs.launchpad.net/bugs/1347682>`_.
 
+* Old transport nodes in NSX are not automatically removed prior to     installation. See `LP1370775 <https://bugs.launchpad.net/bugs/1370775>`_.
+
+* RabbitMQ hosts must be updated on non-controller nodes after controllers are deployed.
+  See `LP1368445 <https://bugs.launchpad.net/bugs/1368445>`_.
