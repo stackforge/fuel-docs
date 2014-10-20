@@ -4,7 +4,7 @@
 OpenStack Deployment Issues
 ===========================
 
-Known Issues in 5.1
+Known Issues in 6.0
 -------------------
 
 Controller cluster may fail if one MySQL instance fails

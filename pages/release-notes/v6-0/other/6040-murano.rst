@@ -7,7 +7,7 @@ Application Catalog System (Murano)
 New Features and Resolved Issues in Mirantis OpenStack 6.0
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Known Issues in Mirantis OpenStack 5.1
+Known Issues in Mirantis OpenStack 6.0
 ++++++++++++++++++++++++++++++++++++++
 
 * **Murano requires the Neutron network type.**
@@ -72,7 +72,4 @@ as follows:
        service openstack-murano-api restart
        service openstack-murano-engine restart
 
-
-Known Issues in Mirantis OpenStack 6.0
-++++++++++++++++++++++++++++++++++++++
 
