@@ -4,7 +4,7 @@
 Hardware support issues
 =======================
 
-Known Issues in 5.1
+Known Issues in 6.0
 -------------------
 
 Some UEFI hardware cannot be used
@@ -140,7 +140,6 @@ but sdc will not be used  as part of the RAID-1 array:
 
 See `LP1267569 <https://bugs.launchpad.net/fuel/+bug/1267569>`_
 and `LP1258347 <https://bugs.launchpad.net/fuel/+bug/1258347>`_.
-[LP1267569 is scheduled to be fixed in 5.1;
 LP1258347 is scheduled to be fixed in 6.0]
 
 Other issues
