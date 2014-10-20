@@ -37,7 +37,3 @@ but it has some known limitations:
   See `LP1347682 <https://bugs.launchpad.net/bugs/1347682>`_.
 
 * Old transport nodes in NSX are not automatically removed prior to     installation. See `LP1370775 <https://bugs.launchpad.net/bugs/1370775>`_.
-
-* RabbitMQ hosts must be updated on non-controller nodes after controllers are deployed.
-  See `LP1368445 <https://bugs.launchpad.net/bugs/1368445>`_.
-* 

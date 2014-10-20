@@ -54,6 +54,4 @@ OSTF (Health Check) issues
   tests are started.
   See `LP1383317 <https://bugs.launchpad.net/fuel/+bug/1383317>`_.
 
-* After successful deployment, OSTF tests on creating instance do not succeed 
-  due to error state of the instance. See `LP1380626 <https://bugs.launchpad.net/fuel/+bug/1380626>`_.
 

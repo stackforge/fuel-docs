@@ -144,7 +144,7 @@ and `LP1258347 <https://bugs.launchpad.net/fuel/+bug/1258347>`_.
 LP1258347 is scheduled to be fixed in 6.0]
 
 Intel PCI-express SSD drivers are not supported
-+++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++
 
 Currently, Fuel supports the block devices with names like sd*, hd*, vd* with type "disk". Nevertheless, Intel PCI-ex SSD drives have nvmeXnY names where X and Y are integer values.
 Such disks appear in Fuel UI, but Fuel skips these during the deployment process. What is more, these disks needs the drivers, available at `Intel Solid-State Drive Data Center Tool

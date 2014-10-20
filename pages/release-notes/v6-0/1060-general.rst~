@@ -1,8 +1,8 @@
 
 .. _fuel-general.rst:
 
-OpenStack Deployment Issues
-===========================
+General issues
+==============
 
 Known Issues in 5.1
 -------------------
@@ -38,6 +38,15 @@ nova-api is unavailable for a few minutes
 which causes services to be unavailable.
 See `LP1370067 <https://bugs.launchpad.net/fuel/+bug/1370067>`_.
 
+Shotgun does not check available disk space before taking a diagnostic snapshot
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Shotgun does not ensure that adequate disk space is available
+for the diagnostic snapshot.
+Users should manually verify the disk space
+before taking a diagnostic snapshot.
+See `LP1328879 <https://bugs.launchpad.net/bugs/1328879>`_.
+
 During traceback, an interface with an IP address on admin subnet is not found
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -67,23 +76,6 @@ Other issues
 * When primary controller loses rootfs (i.e. readonly state),  services  like Horizon, DHCP server, and primary_public_ip do not   migrate to another controller and continue running.
   See `LP1371689 <https://bugs.launchpad.net/bugs/1371689>`_.
 
-* VMs are losing connectivity and their IPs after HA failover.
-  See `LP1371104 <https://bugs.launchpad.net/bugs/1371104>`_.
-
-* Deployment of HA environment fails because 'rabbitmqctl list-users' is running before the service has initialized.
-  See `LP1377491 <https://bugs.launchpad.net/fuel/+bug/1377491>`_.
-
-* Ubuntu installer does not get LVM volumes created.
-  See `LP1375481 <https://bugs.launchpad.net/fuel/+bug/1375481>`_.
-
-* Fuel does not check nodes via MCollective.
-  See `LP1373988 <https://bugs.launchpad.net/fuel/+bug/1373988>`_.
-
-* Ceilometer can not connect to AMQP after controller gets down.
-  See `LP1373569 <https://bugs.launchpad.net/fuel/+bug/1373988>`_.
-
-* RabbitMQ hosts must be updated on non-controller nodes after controllers are deployed.
-  See `LP1368445 <https://bugs.launchpad.net/bugs/1368445>`_.
 
 
 

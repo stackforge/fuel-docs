@@ -25,7 +25,7 @@ New Features and Resolved Issues in Mirantis OpenStack 6.0
   when all networking is functional.
   See `LP1323608 <https://bugs.launchpad.net/bugs/1323608>`_.
 
-Known Issues in Mirantis OpenStack 6.0
+Known Issues in Mirantis OpenStack 5.1
 ++++++++++++++++++++++++++++++++++++++
 
 Multiple TestVM images may be created
@@ -68,5 +68,7 @@ for the problem controller from the CACHE structure:
 
 Then restart the Apache web server.
 
-* After successful deployment, it is impossible to login to Horizon
-  as it is unavailable. See `LP1377990 <https://bugs.launchpad.net/bugs/1377990>`_.
+
+Known Issues in Mirantis OpenStack 6.0
+++++++++++++++++++++++++++++++++++++++
+
