@@ -3,6 +3,12 @@
 
 VMware NSX integration
 ----------------------
+New Features and Resolved Issues in Mirantis OpenStack 6.0
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+* In HA mode on NSX machine, OpenStack deployment no longer crashes due to
+  unavailable Neutron and Keystone services.
+  See `LP1369529 <https://bugs.launchpad.net/bugs/1369529>`_.
 
 Known limitations in 5.1
 ++++++++++++++++++++++++

@@ -6,6 +6,29 @@ Issues in VMware technologies
 
 .. _vcenter-rn:
 
+New Features and Resolved Issues in Mirantis OpenStack 6.0
+----------------------------------------------------------
+* vCenter as a Hypervisor and NSX as a networking option are now enabled in Fuel.
+  Fuel 5.0 had a limited support of vCenter as a hypervisor and no NSX support at all,
+  but OpenStack can be integrated with both these components.
+  See `vCenter NSX support <https://blueprints.launchpad.net/fuel/+spec/vcenter-nsx-support>`_.
+
+* Previously, 1-N mapping was used between nova-compute service and vSphere cluster
+  (cluster that is formed from ESXi hosts by vCenter server); single nova-compute
+  service instance used many vSphere clusters managed by a single vCenter. Currently,
+  this behaviour is changed to 1-1 mapping, so that single nova-compute service
+  instance interacts with a single vSphere cluster. What's more, now it is 
+  possible to add vSphere clusters to   deployed Mirantis OpenStack environment
+  with vCenter as a hypervisor option. See `1-1 nova-compute vSphere cluster mapping
+  <https://blueprints.launchpad.net/fuel/+spec/1-1-nova-compute-vsphere-cluster-mapping>`_.
+
+* NoVNCproxy now successfully works with vCenter.
+  See `LP1368745 <https://bugs.launchpad.net/fuel/+bug/1368745>`_.
+
+* Metadata services are available when vCenter is used as a hypervisor.
+  It no longer affects cloud-init based images and all services using
+  metadata information. See `LP1370165 <https://bugs.launchpad.net/fuel/+bug/1370165>`_.
+
 Known limitations for the vCenter integration in 5.1
 ----------------------------------------------------
 
@@ -28,8 +51,6 @@ but it has some known limitations:
   deployment crashes because RabbitMQ can not connect to primary controller.
   See `LP1370558 <https://bugs.launchpad.net/fuel/+bug/1370558>`_.
 
-* NoVNCproxy does not work with vCenter.
-  See `LP1368745 <https://bugs.launchpad.net/fuel/+bug/1368745>`_.
 
 * The default Ceilometer configuration
   does not collect metering information for vCenter.
