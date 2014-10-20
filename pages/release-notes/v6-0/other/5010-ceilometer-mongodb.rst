@@ -7,7 +7,7 @@ OpenStack Telemetry (Ceilometer) and MongoDB Database
 New Features and Resolved Issues in Mirantis OpenStack 6.0
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Known Issues in Mirantis OpenStack 5.1
+Known Issues in Mirantis OpenStack 6.0
 ++++++++++++++++++++++++++++++++++++++
 
 MongoDB cannot store dictionary objects with keys that use $ and . special characters
@@ -27,6 +27,7 @@ are processed as usual without any problems.
 Do not create images, VMs, and other cloud resources
 that contain resource metadata keys that use the $ and . special characters.
 See `LP1360240 <https://bugs.launchpad.net/bugs/1360240>`_.
+[in progress]
 
 Additional MongoDB roles cannot be added to an existing deployment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -42,8 +43,14 @@ Be sure to deploy an adequate number of MongoDB roles
 during the initial deployment.
 See `LP1308990 <https://bugs.launchpad.net/fuel/+bug/1308990>`_.
 
+* Deployment fails at MongoDB with timeout error.
+  See `LP1382694 <https://bugs.launchpad.net/fuel/+bug/1382694>`_.
 
+Ceilometer fails at controllers
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Known Issues in Mirantis OpenStack 6.0
-++++++++++++++++++++++++++++++++++++++
+* Ceilometer randomply fails in HA mode if MongoDB was blocked on the primary controller.
+  See `LP1371799 <https://bugs.launchpad.net/bugs/1371799>`_.
 
+* Ceilometer can not connect to AMQP after controller gets down.
+  See `LP1373569 <https://bugs.launchpad.net/fuel/+bug/1373988>`_.

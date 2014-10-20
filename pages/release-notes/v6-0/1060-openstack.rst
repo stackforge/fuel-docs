@@ -4,30 +4,18 @@
 OpenStack Deployment Issues
 ===========================
 
-Known Issues in 5.1
--------------------
+New Features and Resolved Issues in 6.0
+---------------------------------------
 
-Controller cluster may fail if one MySQL instance fails
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-If the MySQL instance on one Controller node fails,
-the entire Controller cluster may be inaccessible
-whereas it should just disable the Controller node where MySQL failed
-and continue to run with the remaining Controller nodes.
-See `LP1326829 <https://bugs.launchpad.net/bugs/1326829>`_.
-
-
-Horizon and other services may be unavailable if a controller fails
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Horizon and other services are no longer unavailable if a controller fails
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 If the public NIC on the primary controller becomes unavailable,
-the public VIP does not migrate to another controller.
-This does not break your OpenStack environment
-but services such as Horizon that use the Public VIP
-become unavailable.
-Bringing the affected bridge interface back online
-restores access to these services.
+the public VIP migrates to another controller.
 See `LP1370510 <https://bugs.launchpad.net/fuel/+bug/1370510>`_.
+
+Known Issues in 6.0
+-------------------
 
 Deploying new controllers causes services downtime
 ++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -58,4 +46,24 @@ As a workaround, execute the **update-guestfs-appliance** command
 on each Compute node.
 See `LP1335697 <https://bugs.launchpad.net/bugs/1335697>`_.
 
+Other issues
+++++++++++++
 
+* When primary controller loses rootfs (i.e. readonly state),  services 
+  like Horizon, DHCP server, and primary_public_ip do not  migrate to another controller and continue running.
+  See `LP1371689 <https://bugs.launchpad.net/bugs/1371689>`_.
+
+* VMs are losing connectivity and their IPs after HA failover.
+  See `LP1371104 <https://bugs.launchpad.net/bugs/1371104>`_.
+
+* Deployment of HA environment fails because 'rabbitmqctl list-users' is running before the service has initialized.
+  See `LP1377491 <https://bugs.launchpad.net/fuel/+bug/1377491>`_.
+
+* Ubuntu installer does not get LVM volumes created.
+  See `LP1375481 <https://bugs.launchpad.net/fuel/+bug/1375481>`_.
+
+* Fuel does not check nodes via MCollective.
+  See `LP1373988 <https://bugs.launchpad.net/fuel/+bug/1373988>`_.
+
+* RabbitMQ hosts must be updated on non-controller nodes after controllers are deployed.
+  See `LP1368445 <https://bugs.launchpad.net/bugs/1368445>`_.
