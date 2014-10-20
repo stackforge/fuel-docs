@@ -4,7 +4,7 @@
 Test and Verification Issues
 ============================
 
-Known Issues in 5.1
+Known Issues in 6.0
 -------------------
 
 Network verification issues
@@ -44,7 +44,16 @@ OSTF (Health Check) issues
   environment are still displayed.
   See `LP1338669 <https://bugs.launchpad.net/bugs/1338669>`_.
 
-
 * Some OSTF tests do not give descriptive message when they fail.
   See `LP1371051 <https://bugs.launchpad.net/fuel/+bug/1371051>`_.
+
+* OSTF failed on 100 nodes cluster.
+  See `LP1384051 <https://bugs.launchpad.net/fuel/+bug/1384051>`_.
+
+* Credentials values are hardcoded on Health Check tab after OSTF
+  tests are started.
+  See `LP1383317 <https://bugs.launchpad.net/fuel/+bug/1383317>`_.
+
+* After successful deployment, OSTF tests on creating instance do not succeed 
+  due to error state of the instance. See `LP1380626 <https://bugs.launchpad.net/fuel/+bug/1380626>`_.
 
