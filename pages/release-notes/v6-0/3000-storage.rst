@@ -6,6 +6,19 @@ Storage technologies Issues
 
 New Features and Resolved Issues in Mirantis OpenStack 6.0
 ----------------------------------------------------------
+* Glance now can use vSphere Datastore as a backend. This provides
+  a faster image copying process.
+  See `vSphere as a Glance backend <https://blueprints.launchpad.net/fuel/+spec/vsphere-glance-backend>`_.
+
+* When updating the environment from 5.0.x to 5.0.2,
+  the Ceph nodes are now successfully updated.
+  See `LP1363983 <https://bugs.launchpad.net/fuel/+bug/1363983>`_.
+
+* Creating volume from image no longer performs full data copy even with Ceph backend.
+  A regression was introduced into configuration of RBD backend for Cinder. In
+  previous versions of Mirantis OpenStack, enabling RBD backend for both Cinder
+  and Glance enabled zero-copy creation of a Cinder volume from a Glance image.
+  See `LP1373096 <https://bugs.launchpad.net/bugs/1373096>`_.
 
 Known Issues in Mirantis OpenStack 5.1
 --------------------------------------
@@ -25,28 +38,6 @@ When Swift is used with Ceph Rados GW enabled as the backend,
 bulk operations are not supported.
 See `LP1361036 <https://bugs.launchpad.net/bugs/1361036>`_.
 
-Ceph nodes are not updated
-++++++++++++++++++++++++++
-
-When updating the environment from 5.0.x to 5.0.2,
-the Ceph nodes are not updated.
-You can update the Ceph nodes manually.
-
-- Update the environment to 5.0.2.
-
-- Restart the monitors.
-
-- Run the **ceph pg dump** command
-  and check the output;
-  if unclean pages are found,
-  resolve these issues before updating the Ceph nodes.
-
-- After all monitors are restarted,
-  update the code on the OSD nodes one by one,
-  restart the OSD service,
-  and wait until all OSD nodes have rebuilt cleanly.
-
-See `LP1363983 <https://bugs.launchpad.net/fuel/+bug/1363983>`_.
 
 Placing Ceph OSD on Controller nodes is not recommended
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -100,21 +91,6 @@ The value show in a sum of all Ceph storage seen on each storage node
 instead of the actual amount of Ceph storage.
 See `LP1359989 <https://bugs.launchpad.net/bugs/1359989>`_.
 
-Creating volume from image performs full data copy even with Ceph backend
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-A regression was introduced into configuration of RBD backend for Cinder. In
-previous versions of Mirantis OpenStack, enabling RBD backend for both Cinder
-and Glance enabled zero-copy creation of a Cinder volume from a Glance image.
-
-To re-enable this functionality in Mirantis OpenStack 5.1, add the following
-line to */etc/cinder/cinder.conf*::
-
-    glance_api_version=2
-
-Then restart the *cinder-volume* service on all controller nodes.
-
-See `LP1373096 <https://bugs.launchpad.net/bugs/1373096>`_.
 
 Other Ceph issues
 +++++++++++++++++
