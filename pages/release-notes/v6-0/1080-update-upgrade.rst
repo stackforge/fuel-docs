@@ -4,7 +4,7 @@
 Update and Upgrade Issues
 =========================
 
-Known Issues in 5.1
+Known Issues in 6.0
 -------------------
 
 Fuel upgrade fails if custom python modules are installed as eggs

@@ -8,7 +8,7 @@ Monitoring System Server (Zabbix)
 New Features and Resolved Issues in Mirantis OpenStack 6.0
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Known Issues in Mirantis OpenStack 5.1
+Known Issues in Mirantis OpenStack 6.0
 ++++++++++++++++++++++++++++++++++++++
 
 Phase I of Zabbix is included as an
@@ -34,8 +34,4 @@ This version has the following known issues:
   See `LP1352319 <https://bugs.launchpad.net/bugs/1352319>`_.
 
 See :ref:`zabbix-plan` for more information.
-
-
-Known Issues in Mirantis OpenStack 6.0
-++++++++++++++++++++++++++++++++++++++
 

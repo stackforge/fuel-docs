@@ -49,11 +49,15 @@ New Features and Resolved Issues in Mirantis OpenStack 6.0
 * When vCenter is used on Ubuntu, deployment does not fail.
   See `LP1357129 <https://bugs.launchpad.net/fuel/+bug/1357129>`_.
 
-Known limitations for the vCenter integration in 6.0
+Known limitations for the vCenter integration in 5.1
 ----------------------------------------------------
 
-The vCenter integration with Mirantis OpenStack 6.0 is fully supported,
+The vCenter integration with Mirantis OpenStack 5.x is fully supported,
 but it has some known limitations:
+
+* vCenter integration can be enabled
+  only if Nova-network is the network type.
+  vCenter integration is not yet supported with the Neutron network type.
 
 * When vCenter is selected as the hypervisor,
   all Ceph, Cinder, and Nova options are disabled
@@ -76,6 +80,8 @@ but it has some known limitations:
   contains more information.
   See `LP1365468 <https://bugs.launchpad.net/bugs/1365468>`_.
 
+Known limitations for the vCenter integration in 6.0
+----------------------------------------------------
 * If you use Glance in vCenter, Fuel UI displays no warning if Glance settings
   were not entered. In this case, environment will be deployed with an error.
   See `LP1382021 <https://bugs.launchpad.net/fuel/+bug/1382021>`_.

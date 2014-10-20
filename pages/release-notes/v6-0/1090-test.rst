@@ -4,7 +4,7 @@
 Test and Verification Issues
 ============================
 
-Known Issues in 5.1
+Known Issues in 6.0
 -------------------
 
 Network verification issues
