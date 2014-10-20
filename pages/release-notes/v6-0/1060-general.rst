@@ -67,4 +67,33 @@ As a workaround, execute the **update-guestfs-appliance** command
 on each Compute node.
 See `LP1335697 <https://bugs.launchpad.net/bugs/1335697>`_.
 
+Other issues
+++++++++++++
+
+* Ceilometer randomply fails in HA mode if MongoDB was blocked on the   primary controller.
+  See `LP1371799 <https://bugs.launchpad.net/bugs/1371799>`_.
+
+* When primary controller loses rootfs (i.e. readonly state),  services  like Horizon, DHCP server, and primary_public_ip do not   migrate to another controller and continue running.
+  See `LP1371689 <https://bugs.launchpad.net/bugs/1371689>`_.
+
+* VMs are losing connectivity and their IPs after HA failover.
+  See `LP1371104 <https://bugs.launchpad.net/bugs/1371104>`_.
+
+* Deployment of HA environment fails because 'rabbitmqctl list-users' is running before the service has initialized.
+  See `LP1377491 <https://bugs.launchpad.net/fuel/+bug/1377491>`_.
+
+* Ubuntu installer does not get LVM volumes created.
+  See `LP1375481 <https://bugs.launchpad.net/fuel/+bug/1375481>`_.
+
+* Fuel does not check nodes via MCollective.
+  See `LP1373988 <https://bugs.launchpad.net/fuel/+bug/1373988>`_.
+
+* Ceilometer can not connect to AMQP after controller gets down.
+  See `LP1373569 <https://bugs.launchpad.net/fuel/+bug/1373988>`_.
+
+* RabbitMQ hosts must be updated on non-controller nodes after controllers are deployed.
+  See `LP1368445 <https://bugs.launchpad.net/bugs/1368445>`_.
+
+
+
 

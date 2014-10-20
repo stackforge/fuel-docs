@@ -4,7 +4,7 @@
 Update and Upgrade Issues
 =========================
 
-Known Issues in 5.1
+Known Issues in 6.0
 -------------------
 
 Fuel upgrade fails if custom python modules are installed as eggs
@@ -36,6 +36,9 @@ Some components are omitted when upgrading to Release 5.0.2
   This results in a number of issues; see
   LP1360161 <https://bugs.launchpad.net/fuel/+bug/1360161>`_
 
+* After Fuel upgrade, Rsync Docker container uses
+  old Puppet manifests while generating xinetd configuration.
+  See `LP1382531 <https://bugs.launchpad.net/fuel/+bug/1382531>`_.
 
 Timeout errors may occur when updating your environment from 5.0 to 5.0.2
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
