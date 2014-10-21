@@ -10,6 +10,75 @@ support the
 <https://wiki.openstack.org/wiki/ReleaseNotes/Juno>`_ release.
 Fuel 6.0 deploys this version of OpenStack on either CentOS or Ubuntu.
 
+Pluggable Architecture MVP
+--------------------------
+
+Support for 100-node environments
+---------------------------------
+
+Fuel 6.0 can successfully deploy
+large environments with 100 nodes.
+While earlier releases did not limit the size of the deployed environment,
+the time required to deploy an environment
+as well as the stability of the deployment
+were degraded as the number of nodes increased
+and performance was degraded on large environments.
+See the `100 nodes support
+<https://blueprints.launchpad.net/fuel/+spec/100-nodes-support>`_
+blueprint for details about the implementation.
+
+Multiple L3 agents are now supported for an environment
+-------------------------------------------------------
+
+Fuel 6.0 can deploy an environment
+that uses :ref:`vCenter<vcenter-term>` as a hypervisor
+and `NSX<nsx-term>` as a networking option.
+See the `Integration of NSX with vCenter
+<https://blueprints.launchpad.net/fuel/+spec/vcenter-nsx-support>`_
+blueprint for implementation details.
+
+Glance can use VMDK as a storage backend
+----------------------------------------
+
+Glance can now use the vSphere Datastore (:ref:`VMDK<vmdk-term>`)
+as its storage backend
+when vCenter is used as the hypervisor.
+This greatly reducesthe time required to copy images from Glance.
+See the `Use vSphere Datastore backend for Glance with vCenter
+<https://blueprints.launchpad.net/fuel/+spec/vsphere-glance-backend>`_
+blueprint for implementation details.
+
+Mutiple L2 networks can be supported in one environment
+-------------------------------------------------------
+
+Multiple L2 networks can be supported in one environment.
+This allows the cloud operator to deploy a more complex network topologies
+that use the leaf and spine network architecture.
+The previous architecture that uses a single L2 domain
+is still fully supported.
+See the `Support multiple networks per cluster
+<https://blueprints.launchpad.net/fuel/+spec/vsphere-glance-backend>`_
+blueprint for implementation details.
+
+Monit for Compute nodes
+-----------------------
+
+You can enable Monit to do automatic maintenance and repair
+on compute nodes in your Mirantis OpenStack environment.
+Monit performs execution monitoring for OpenStack services
+that run on the Compute nodes
+(nova-compute, nova-network, ovs-vswitched, cinder-volume)
+and restart them if they stop.
+
+Fuel now supports VXLAN (Experimental) [Deferred?]
+--------------------------------------------------
+
+Fuel 6.0 can deploy an environment that supports VXLAN
+with the Neutron network topology and ML2.
+See the `Fuel extension with VXLAN support
+<https://blueprints.launchpad.net/fuel/+spec/neutron-vxlan-support>`_
+blueprint for implementation details.
+
 The Fuel Master Node can be upgraded from ???
 -----------------------------------------------
 
