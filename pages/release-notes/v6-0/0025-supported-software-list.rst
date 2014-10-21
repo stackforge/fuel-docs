@@ -5,22 +5,21 @@
 Major Component Versions
 ========================
 
-[Not yet revised for 6.0]
-
 * **Operating Systems**
 
   * CentOS 6.5 (x86_64 architecture only)
   * Ubuntu 12.04.4 (x86_64 architecture only)
 
-* **Puppet (IT automation tool)** 3.4.2
+* **Puppet** (IT automation tool)** `3.4.2
+  <https://docs.puppetlabs.com/puppet/3/reference/release_notes.html>`_
 
-* **MCollective** 2.3.3
+* **MCollective** `2.3.3 <https://docs.puppetlabs.com/mcollective/releasenotes.html>`_
 
 * **Cobbler (bare-metal provisioning tool)** 2.2.3
 
 * **OpenStack Core Projects**
 
-  * Icehouse release 2014.1.1
+  * Juno release 2014.2
 
     * `Nova <https://wiki.openstack.org/wiki/ReleaseNotes/Juno#OpenStack_Compute_.28Nova.29>`_ (OpenStack Compute)
     * `Swift <https://wiki.openstack.org/wiki/ReleaseNotes/Juno#OpenStack_Object_Storage_.28Swift.29>`_ (OpenStack Object Storage)
@@ -32,20 +31,21 @@ Major Component Versions
 
 * **OpenStack Core Integrated Projects**
 
-  * Icehouse release 2014.1.1
+  * Juno release 2014.2
 
     * `Ceilometer <https://wiki.openstack.org/wiki/ReleaseNotes/Juno#OpenStack_Telemetry_.28Ceilometer.29>`_ (OpenStack Telemetry)
     * `Heat <https://wiki.openstack.org/wiki/ReleaseNotes/Juno#OpenStack_Orchestration_.28Heat.29>`_ (OpenStack Orchestration)
 
 * **OpenStack Incubated Projects**
 
-  * Icehouse release 2014.1.1
+  * Juno release 2014.2
 
-    * Sahara (OpenStack Data Processing)
+    * `Sahara <https://wiki.openstack.org/wiki/ReleaseNotes/Juno#OpenStack_Data_Processing_.28Sahara.29>`_
+      (OpenStack Data Processing)
 
 * **OpenStack Related Projects**
 
-  * Murano v0.5
+  * Murano `v0.5.2 <https://wiki.openstack.org/wiki/Murano/ReleaseNotes_v0.5>`_
 
 * **Hypervisor**
 
@@ -58,23 +58,30 @@ Major Component Versions
   * Open vSwitch 1.10.2
   * VMware NSX
 
-* **HA Proxy** 1.4.24
+* **HA Proxy** 1.5.3
 
-* **Galera** 23.2.2
+* **Galera** 25.3.5
 
-* **RabbitMQ** 3.2.3
+* **RabbitMQ** `3.3.5 <http://www.rabbitmq.com/release-notes/README-3.3.5.txt>`_
 
-* **Pacemaker** 1.1.10
+* **Pacemaker** `1.1.10
+  <http://www.rabbitmq.com/release-notes/README-3.3.5.txt>`_
 
-* **Corosync** 1.4.6
+* **Corosync** `1.4.6
+  <https://github.com/corosync/corosync/wiki/Corosync-1.4.6-release-notes>`_
 
-* **Keepalived** 1.2.4
+* **Keepalived** `1.2.4 <http://www.keepalived.org/changelog.html>`_
 
-* **MongoDB** 2.4.6
+* **MongoDB** `2.4.6
+  <http://docs.mongodb.org/manual/release-notes/2.4/>`_
 
-* `Ceph <http://ceph.com/docs/master/release-notes/#v0-80-6-firefly>`_ 0.80.4 "Firefly"
+* **Ceph** `0.80.4  <http://ceph.com/docs/master/release-notes/#v0-80-4-firefly>`_ "Firefly"
 
-* **MySQL** 5.5.28 (CentOS), 5.5.37 (Ubuntu)
+* **MySQL**
+  `5.5.28 <http://dev.mysql.com/doc/relnotes/mysql/5.5/en/>`_
+  (CentOS),
+  `5.5.37 <http://dev.mysql.com/doc/relnotes/mysql/5.5/en/>`_
+  (Ubuntu)
 
-* **Zabbix** 2.2
+* **Zabbix** `2.2.2 <http://www.zabbix.com/rn2.2.0.php>`_
 
