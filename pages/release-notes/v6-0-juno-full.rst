@@ -19,7 +19,7 @@ The following table lists the released revisions of this documentation:
 +-----------------------+---------------+--------------+
 | Revision              | Date          | Description  |
 +=======================+===============+==============+
-| 6.0 Technical Preview | ??-Oct-2014   | Prelim info  |
+| 6.0 Technical Preview | 13-Oct-2014   | Prelim info  |
 +-----------------------+---------------+--------------+
 
 .. include:: /pages/release-notes/v6-0/0010-what-is-mirantis-openstack.rst
