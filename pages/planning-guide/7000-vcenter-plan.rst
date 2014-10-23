@@ -6,12 +6,12 @@ Preparing for vSphere Integration
 Fuel 5.0 and later can deploy a Mirantis OpenStack environment
 that boots and manages virtual machines in VMware vSphere.
 VMware provides a vCenter driver for OpenStack
-that enables the Nova-compute service to
+that enables the nova-compute service to
 communicate with a VMware vCenter server
 that manages one or more ESX host clusters.
 If your vCenter manages multiple ESX host clusters, Fuel 5.1 allows
 you to specify several or all clusters for a single OpenStack environment,
-so that one Nova-compute service manages
+so that one nova-compute service manages
 multiple ESX host clusters via single vCenter server.
 
 .. note:: Beginning with Fuel 6.1, vCenter cannot be
@@ -20,6 +20,14 @@ multiple ESX host clusters via single vCenter server.
    be turned into a plugin in the future Fuel
    releases.
 
+
+.. note:: In 5.x environments that use vCenter as the hypervisor,
+   the nova-compute service runs only on Controller nodes.
+
+   In 6.0 Fuel release, the relation between a nova-compute service and an ESXi host cluster
+   is changed from one-to-many to one-to-one (so-called 1-1 mapping).
+   In other words, to manage multiple ESXi host clusters,
+   you now need to run multiple nova-compute services.
 
 The vCenter driver makes management convenient
 from both the OpenStack Dashboard (:ref:`horizon-term`)
@@ -131,6 +139,31 @@ Limitations
   For more details about the Ceilometer plugin for vCenter,
   see `Support for VMware vCenter Server
   <https://wiki.openstack.org/wiki/Ceilometer/blueprints/vmware-vcenter-server#Support_for_VMware_vCenter_Server>`_
+
+
+
+.. note::    Mirantis has the following lab setup for VMware enrivonment,
+             that was checked for compatibility of the NSX and vCenter:
+
+             * NSX version 4.0.1 (4.0.1-build30244) for Gateway, Manager, Controller
+               and Service nodes.
+
+             * NSX OpenVSwitch version 2.0.0 (2.0.0-build30176)
+
+             * vCenter 5.5. Note that vCenter 5.5.u2 is also used, but
+               was not tested properly for comptibility with NSX and
+               does not work with NSX 4.0.1.
+
+             To learn more about NSX and vCenter
+             compatibility, see
+             `the VMware Product Interoperability Matrixes <http://www.vmware.com/resources/compatibility/sim/interop_matrix.php>`_.
+
+
+.. warning::  Mirantis lab setup was tested for the Mirantis OpenStack release 6.0.
+              This particular setup works properly at CentOS 6.5.
+              Nevertheless, at Ubuntu 12.04 it **does not** work properly
+              due to incompatibility of the Linux 3.13 kernel and NSX OVS 2.0.0-build30176.
+
 
 
 For background information about how vCenter support
