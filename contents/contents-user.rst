@@ -1,6 +1,7 @@
 .. include:: /pages/user-guide/0070-introduction.rst
 .. include:: /pages/user-guide/1500-confirm-hardware.rst
 .. include:: /pages/user-guide/2000-install-boot.rst
+.. include:: /pages/user-guide/fuel-plugins/010-install-plugin.rst
 .. include:: /pages/user-guide/3000-create-environment.rst
 .. include:: /pages/user-guide/4000-configure-environment.rst
 .. include:: /pages/user-guide/5000-deploy-environment.rst
