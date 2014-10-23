@@ -9,7 +9,7 @@ using :ref:`ovs-term` and VLANs:
 
 
 .. image:: /_images/Neutron_32_vlan_v2.png
-  :width: 90%
+  :width: 40%
 
 .. note:: You must have at least three network interfaces for this
           configuration

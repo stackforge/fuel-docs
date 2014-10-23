@@ -21,6 +21,6 @@ They are utilized as follows:
 The figure below illustrates the relevant nodes and networks in Neutron VLAN mode.
 
 .. image:: /_images/080-networking-diagram.*
-  :width: 75%
+  :width: 50%
   :align: center
 
