@@ -57,11 +57,18 @@ create the environment.
 Select Network Service for vCenter
 ----------------------------------
 
-Choose the Nova-network FlatDHCP manager on the Network settings page.
-This the only network topology you can use
-to deploy vCenter with Fuel 5.0.
+Currently, vCenter has two different options for Network Service:
+*Nova-network* and *Neutron with VMware NSX plugin*.
 
-.. image:: /_images/user_screen_shots/vcenter-networking.png
+*Nova-network* [what is the difference]
+
+*Neutron with VMware NSX plugin* allows deploying OpenStack with VMWare
+vCenter used as a hypervisor and VMWare NSX as a network virtualization backend.
+This option provides creation of virtual networks within OpenStack
+that consist of L2 segments and can be interconnected via L3 to each other or the outside world.
+
+
+.. image:: /_images/user_screen_shots/vcenter+nsx.png
    :width: 50%
 
 .. raw: pdf
@@ -147,8 +154,10 @@ The Compute and Controller roles are combined on one node.
 Network settings
 ----------------
 
-Only the :ref:`nova-network-term` with FlatDHCP topology
-is supported in the current version of vCenter integration in Fuel.
+Currently, :ref:`nova-network-term` with FlatDHCP 
+and Neutron with VMware NSX plugin topologies are available.
+
+To configure Nova-network with FlatDHCP, follow these steps:
 
 - Select the FlatDHCP manager in the Nova-network settings
 
@@ -165,6 +174,20 @@ is supported in the current version of vCenter integration in Fuel.
   for the VLAN ID in the ESXi host network configuration
 
 .. image:: /_images/user_screen_shots/vcenter-nova-network.png
+   :width: 80%
+
+To configure Neutron with VMware NSX plugin, follow these steps:
+
+- In Network Settings tab, specify VMware NSX credentials
+
+.. image:: /_images/user_screen_shots/vcenter+nsx-settings.png
+   :width: 80%
+
+If required, select the NSX cluster has Service nodes checkbox.
+
+- Check the vCenter credentials
+
+.. image:: /_images/user_screen_shots/vcenter+nsx-settings.png
    :width: 80%
 
 Storage
