@@ -4,7 +4,7 @@
 Hardware support issues
 =======================
 
-Known Issues in 5.1
+Known Issues in 6.0
 -------------------
 
 Some UEFI hardware cannot be used
