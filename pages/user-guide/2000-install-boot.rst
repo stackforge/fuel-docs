@@ -91,3 +91,4 @@ For more details, see :ref:`fuel-on-vsphere-ug`.
 .. include:: /pages/user-guide/initialize-fuel/0500-fuel-boot.rst
 .. include:: /pages/user-guide/initialize-fuel/0600-boot-nodes.rst
 
+.. include:: /pages/user-guide/install-plugin.rst
