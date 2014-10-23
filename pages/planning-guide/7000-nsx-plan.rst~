@@ -230,7 +230,7 @@ be used with the command nsxcli uplink/set-ip <interface> <ip address> <netmask>
 ::
 
 
-    ~ # nsxcli network/add br-int br-int nsx.network manual
+    ~ # nsxcli network/add NSX-Bridge NSX-Bridge nsx.network manual
     success
     ~ # 
 

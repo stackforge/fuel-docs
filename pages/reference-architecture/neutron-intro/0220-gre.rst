@@ -8,7 +8,7 @@ A typical network configuration for Neutron with GRE segmentation might look
 like this:
 
 .. image:: /_images/Neutron_32_gre_v2.png
-  :width: 90%
+  :width: 30%
 
 Open vSwitch (OVS) GRE tunnels are provided through Management Network.
 
