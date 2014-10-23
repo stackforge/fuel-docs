@@ -6,22 +6,21 @@ Preparing for vSphere Integration
 Fuel 5.0 and later can deploy a Mirantis OpenStack environment
 that boots and manages virtual machines in VMware vSphere.
 VMware provides a vCenter driver for OpenStack
-that enables the Nova-compute service to
+that enables the nova-compute service to
 communicate with a VMware vCenter server
 that manages one or more ESX host clusters.
 If your vCenter manages multiple ESX host clusters, Fuel 5.1 allows
 you to specify several or all clusters for a single OpenStack environment,
-so that one Nova-compute service manages
+so that one nova-compute service manages
 multiple ESX host clusters via single vCenter server.
 
 .. note:: In 5.x environments that use vCenter as the hypervisor,
-   the Nova-compute service runs only on Controller nodes.
+   the nova-compute service runs only on Controller nodes.
 
-   In future Fuel releases, the plan is to change
-   the relation between a Nova-compute service and an ESX host cluster
-   from one-to-many to one-to-one.
-   In other words, to manage multiple ESX host clusters,
-   you will need to run multiple Nova-compute services.
+   In 6.0 Fuel release, the relation between a nova-compute service and an ESXi host cluster
+   is changed from one-to-many to one-to-one (so-called 1-1 mapping).
+   In other words, to manage multiple ESXi host clusters,
+   you now need to run multiple nova-compute services.
 
 The vCenter driver makes management convenient
 from both the OpenStack Dashboard (:ref:`horizon-term`)
@@ -152,7 +151,7 @@ Limitations
              `the VMware Product Interoperability Matrixes <http://www.vmware.com/resources/compatibility/sim/interop_matrix.php>`_.
 
 
-.. warning:: Mirantis lab setup was tested for the Mirantis OpenStack release 6.0.
+.. warning::  Mirantis lab setup was tested for the Mirantis OpenStack release 6.0.
               This particular setup works properly at CentOS 6.5.
               Nevertheless, at Ubuntu 12.04 it **does not** work properly
               due to incompatibility of the Linux 3.13 kernel and NSX OVS 2.0.0-build30176.
