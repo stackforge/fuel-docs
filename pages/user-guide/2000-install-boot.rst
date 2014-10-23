@@ -87,7 +87,5 @@ default gateway, and DNS server for the Fuel Master Node.
 For more details, see :ref:`fuel-on-vsphere-ug`.
 
 .. include:: /pages/user-guide/initialize-fuel/0400-pxe-config.rst
-
 .. include:: /pages/user-guide/initialize-fuel/0500-fuel-boot.rst
 .. include:: /pages/user-guide/initialize-fuel/0600-boot-nodes.rst
-
