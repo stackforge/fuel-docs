@@ -131,6 +131,7 @@ Limitations
   see `Support for VMware vCenter Server
   <https://wiki.openstack.org/wiki/Ceilometer/blueprints/vmware-vcenter-server#Support_for_VMware_vCenter_Server>`_
 
+
 For background information about how vCenter support
 is integrated into Mirantis OpenStack, see :ref:`vcenter-arch`.
 

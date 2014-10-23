@@ -108,8 +108,11 @@ Fuel running under vSphere
 --------------------------
 
 .. image:: /_images/vCenter/Fuel_in_vCenter_networking.png
-   :width: 80%
+   :width: 50%
 
 For information about configuring your vSphere environment
 so that you can install Fuel in it,
 see :ref:`fuel-on-vsphere-plan`.
+
+
+
