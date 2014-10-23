@@ -22,4 +22,23 @@ and/or the Nova CLI:
 - Use the Nova CLI to see the VMware cluster resources
   or to boot a new VM in vCenter.
 
+Nova-compute and vSphere clusters mapping
+------------------------------------------
+
+In earlier Fuel releases, 1-N mapping between nova-compute service
+and vSphere cluster (cluster that is formed from ESXi hosts by vCenter server) was used.
+In most cases, single nova-compute service instance uses many vSphere clusters, managed by a single vCenter. 
+
+This behaviour was changed to 1-1 mapping, so that a single nova-compute service
+instances now interacts with a single vSphere cluster. 
+
+Currently, the same credentials are used for all nova-computes, but in future it will be possible
+to specify different credentials for numerous vSphere clusters on Fuel UI.
+
+.. image:: /_images/1-1-mapping.png
+   :width: 50%
+
+
+
+
 
