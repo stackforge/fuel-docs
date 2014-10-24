@@ -1,8 +1,8 @@
-Issues Resolved in Mirantis OpenStack 5.1 and 5.0.2
-===================================================
+Issues First Resolved in Mirantis OpenStack 5.1
+===============================================
 
 This section lists the issues that are resolved
-in both the 5.1 and 5.0.2 releases of Mirantis OpenStack.
+in 5.1 release of Mirantis OpenStack.
 
 Improvements to Verify Network
 ------------------------------
@@ -31,13 +31,6 @@ Murano now uses Alembic migration rather than SQLAlchemy Migration,
 which resolves problems
 migrating Murano database tables.
 See `LP1349377 <https://bugs.launchpad.net/fuel/+bug/1349377>`_.
-
-RabbitMQ management plug-in idempotency issues are resolved
-------------------------------------------------------------
-
-An idempotency issue that caused Puppet to try to enable
-a management plug-in every time it ran has been resolved.
-See `LP1355708 <https://bugs.launchpad.net/fuel/+bug/1355708>`_.
 
 GUID is now set correctly for Ceph journals on Ubuntu
 -----------------------------------------------------
@@ -76,12 +69,6 @@ are fixed:
 - Logs are now rotated on bootstraped nodes.
   See `LP1364083 <https://bugs.launchpad.net/fuel/+bug/1364083>`_.
 
-- Bootstrap node does not die after a week of inactivity.
-  See `LP1321768 <https://bugs.launchpad.net/fuel/+bug/1321768>`_.
-
-* The `rsyslogd` restart no longer causes different services to hang.
-  See `LP1363102 <https://bugs.launchpad.net/fuel/+bug/1363102>`_.
-
 syslog logging manifests are refactored
 ---------------------------------------
 
@@ -92,20 +79,47 @@ and rsyslog::imfile templates.
 See `Refactor logging for puppet modules for openstack services
 <https://blueprints.launchpad.net/fuel/+spec/refactor-logging-puppet-openstack-services>`_.
 
+Issue in RabbitMQ Oslo messaging in HA deployments was fixed
+------------------------------------------------------------
+The Oslo messaging service had a bug
+that affected MOS HA environments.
+The bug could make OpenStack unstable; the problem
+got worse as the load increased.
+A large number of broken AMQP connections
+caused Oslo-related errors appear in different logs.
+See `LP1340711 <https://bugs.launchpad.net/mos/+bug/1340711>`_.
+To fix this problem, upgrade the Oslo packages and restart all the Openstack services
+on all the environment nodes.
+Packages are available here:
+
+*CentOS*:
+
+* `Centos Oslo config <http://fuel-repository.mirantis.com/fwm/5.1.1/centos/os/x86_64/Packages/python-oslo-config-1.2.1-1.el6.noarch.rpm>`_.
+
+* `Centos Oslo messaging <http://fuel-repository.mirantis.com/fwm/5.1.1/centos/os/x86_64/Packages/python-oslo-messaging-1.3.0-fuel5.1.mira4.noarch.rpm>`_.
+
+* `Centos Oslo rootwrap <http://fuel-repository.mirantis.com/fwm/5.1.1/centos/os/x86_64/Packages/python-oslo-rootwrap-1.0.0-1.el6.noarch.rpm>`_.
+
+* If VMware is used: `Centos Oslo vmware <http://fuel-repository.mirantis.com/fwm/5.1.1/centos/os/x86_64/Packages/python-oslo.vmware-0.3-0.noarch.rpm>`_.
+
+
+*Ubuntu*:
+
+* `Ubuntu Oslo config <http://fuel-repository.mirantis.com/fwm/5.1.1/ubuntu/pool/main/python-oslo.config_1.2.1-0ubuntu1~cloud0_all.deb>`_.
+
+* `Ubuntu Oslo messaging <http://fuel-repository.mirantis.com/fwm/5.1.1/ubuntu/pool/main/python-oslo.messaging_1.3.0-fuel5.1~mira5_all.deb>`_.
+
+* `Ubuntu Oslo rootwrap <http://fuel-repository.mirantis.com/fwm/5.1.1/ubuntu/pool/main/python-oslo.rootwrap_1.0.0-0ubuntu2_all.deb>`_.
+
+* If VMware is used: 
+  `Ubuntu Oslo vmware <http://fuel-repository.mirantis.com/fwm/5.1.1/ubuntu/pool/main/python-oslo.vmware_0.2-0ubuntu1_all.deb>`_.
+
+
 Fuel UI now displays logs for OpenStack services
 ------------------------------------------------
 
 The Fuel UI now displays logs for OpenStack services.
 This is possible because of the syslog refactoring discussed above.
-
-Use murano-db-manage to run updates
------------------------------------
-
-The **murano-db-manage** script is now used
-to manage upgrades to the Murano database.
-The **murano-manage** script is retained in the software
-for backward compatibility.
-See `LP1358738 <https://bugs.launchpad.net/bugs/1358738>`_.
 
 Floating IPs are created only after Keystone is ready
 -----------------------------------------------------
@@ -141,15 +155,6 @@ In earlier releases, an error sometimes occurred
 when Puppet tried to rsync the Swift ring files
 before all Swift packages were installed.
 See `LP1360118 <https://bugs.launchpad.net/bugs/1360118>`_.
-
-HAProxy now configures CFN and Cloudwatch API
----------------------------------------------
-
-In earlier releases,
-HAProxy did not configure the Heat services:
-CFN and Cloudwatch API (on ports 8000 and 8003),
-making them unavailable on the public endpoint.
-See `LP1353358 <https://bugs.launchpad.net/bugs/1353358>`_.
 
 RabbitMQ autoheal partitions are now turned on
 ----------------------------------------------
@@ -198,26 +203,6 @@ so Puppet did not generate the necessary event
 to trigger the syncdb process.
 The migration scripts are now installed properly without a Puppet workaround.
 
-Fuel upgrade process includes non-explicit packages
----------------------------------------------------
-
-In earlier releases, the Fuel upgrade process
-only included packages that were explicitly referenced by Puppet manifests.
-Other packages were left at the older version
-unless an explicit package's requirements
-pulled it in as a dependency.
-Fuel now uses an explicit list of packages to be upgraded.
-See `LP1359705 <https://bugs.launchpad.net/mos/+bug/1359705>`_.
-
-
-All packages notify service to restart after upgrade
-----------------------------------------------------
-
-All packages installed by Fuel now notify their appropriate service
-to restart after they are upgraded.
-See `LP1362675 <https://bugs.launchpad.net/mos/+bug/1362675>`_.
-
-
 Swift is now started as a service
 ---------------------------------
 
@@ -253,38 +238,17 @@ Improvements for the vCenter integration
   to deploy OpenStack with vCenter.
   See `LP1314613 <https://bugs.launchpad.net/fuel/+bug/1314613>`_.
 
-
-Other resolved issues
----------------------
-
-* Database settings have been moved
-  from DEFAULT to the database section of the heat.conf file.
-  The *_sql_connection* option is deprecated.
-  See `LP1364026 <https://bugs.launchpad.net/mos/+bug/1364026>`_.
-
-* Deleting a snapshot no longer causes its parent volume to be removed.
-  See `LP1360173 <https://bugs.launchpad.net/fuel/+bug/1360173>`_.
-
-* Nova services are up after deployment.
-  See `LP1355749 <https://bugs.launchpad.net/fuel/+bug/1355749>`_.
-
-* Secondary controllers are deployed using sequential logic for 5.0.x clusters.
-  See `LP1364519 <https://bugs.launchpad.net/fuel/+bug/1364519>`_.
-
-* Rollback now works on MongoDB nodes.
-  See `LP1360289 <https://bugs.launchpad.net/fuel/+bug/1360289>`_.
+* Metadata services are now available when using vCenter.
+  See `LP1370165 <https://bugs.launchpad.net/fuel/+bug/1370165>`_.
 
 * 'Fixed network CIDR' parameter now correctly calculates network size.
   See `LP1357350 <https://bugs.launchpad.net/fuel/+bug/1357350>`_.
 
-* Murano dashboard updates successfully.
-  See `LP1356921 <https://bugs.launchpad.net/fuel/+bug/1356921>`_.
+* Deleting a snapshot no longer causes its parent volume to be removed.
+  See `LP1360173 <https://bugs.launchpad.net/fuel/+bug/1360173>`_.
 
 * Waiting for HAProxy mysqld backend now relies on HAProxy service for mysqld.
   See `LP1356748 <https://bugs.launchpad.net/fuel/+bug/1356748>`_.
-
-* Idempotancy issue was fixed for RabbitMQ management plugin.
-  See `LP1355708 <https://bugs.launchpad.net/fuel/+bug/1355708>`_.
 
 * Ubuntu no longer fails to obtain preseed when deploying many nodes.
   See `LP1355347 <https://bugs.launchpad.net/fuel/+bug/1355347>`_.
@@ -298,8 +262,6 @@ Other resolved issues
 * When deploying, RabbitMQ no longer dies due to heartbeat issues.
   See `LP1346163 <https://bugs.launchpad.net/fuel/+bug/1346163>`_.
 
-* Nova API does not hang when OpenStack is updated.
-  See `LP1333292 <https://bugs.launchpad.net/fuel/+bug/1333292>`_.
 
 * Runtime error no longer occurs in Puppet log.
   See `LP1328881 <https://bugs.launchpad.net/fuel/+bug/1328881>`_.
@@ -307,21 +269,13 @@ Other resolved issues
 * CVE-2014-0150 and CVE-2014-2894 patches provided by Ubuntu were applied.
   See `LP1324927 <https://bugs.launchpad.net/fuel/+bug/1324927>`_.
 
-* Dockerctl bugs were fixed.
-  See `LP1324227 <https://bugs.launchpad.net/fuel/+bug/1324227>`_.
-
 * Connection is no longer closed by remote host
   after stopping deployment at the end of provisioning.
   See `LP1319883 <https://bugs.launchpad.net/fuel/+bug/1319883>`_.
 
-* Network verification successfully works on Neutron VLAN with VLAN tagging.
-  See `LP1306705 <https://bugs.launchpad.net/fuel/+bug/1306705>`_.
 
 * Live migration does not fail due to XML error.
   See `LP1361228 <https://bugs.launchpad.net/fuel/+bug/1361228>`_.
-
-Issues Resolved in Mirantis OpenStack 5.1 but not 5.0.2
-=======================================================
 
 Fuel now enforces need for three MongoDB roles
 ----------------------------------------------
@@ -417,13 +371,6 @@ This means that  notifications such as "image.update" and "image.upload"
 are now reported in the "ceilometer meter-list" output.
 See `LP1314196 <https://bugs.launchpad.net/fuel/+bug/1314196>`_.
 
-Neutron metadata agent now uses RPC to connect to the server
-------------------------------------------------------------
-
-In earlier releases, the Neutron metadata agent used the REST API
-with the python-neutronclient to connect to the Neutron server.
-See `LP1364348 <https://bugs.launchpad.net/fuel/+bug/1364348>`_.
-
 Galera bugs were fixed
 ----------------------
 
@@ -513,15 +460,8 @@ Improvements to Nova-network OCF script
 * Nova-network OCF script now properly detects 'use_ipv6' setting.
   See `LP1349432 <https://bugs.launchpad.net/fuel/+bug/1349432>`_.
 
-Other resolved issues
----------------------
-
-* An extra RabbitMQ instance, used for message exchange between Murano and VMs,
-  now starts and OS deployment finishes successfully.
-  See `LP1360264 <https://bugs.launchpad.net/fuel/+bug/1360264>`_.
-
-* After primary controller is rebooted, volumes are created without getting stuck
-  in creating state. See `LP1355792 <https://bugs.launchpad.net/fuel/+bug/1355792>`_.
+OpenStack resolved issues
+-------------------------
 
 * Failed Murano deployment no longer reports as success.
   See `LP1355658 <https://bugs.launchpad.net/fuel/+bug/1355658>`_.
@@ -529,12 +469,200 @@ Other resolved issues
 * Horizon dashboard displays environment's name correctly after deployment.
   See `LP1355270 <https://bugs.launchpad.net/fuel/+bug/1355270>`_.
 
-* Active Directory now deploys successfully.
-  See `LP1355202 <https://bugs.launchpad.net/fuel/+bug/1355202>`_.
-
 * OpenStack Heat configuration points to controller's IP address
   instead of pointing to a local host.
   See `LP1352444 <https://bugs.launchpad.net/fuel/+bug/1352444>`_.
+
+* Murano database migrates on CentOS without failures.
+  See `LP1350819 <https://bugs.launchpad.net/fuel/+bug/1350819>`_.
+
+* Logic of Murano status page was fixed.
+  See `LP1349922 <https://bugs.launchpad.net/fuel/+bug/1349922>`_.
+
+* OpenStack Nova Compute starts successfully when using QEMU 2.0 on CentOS.
+  See `LP1338913 <https://bugs.launchpad.net/fuel/+bug/1338913>`_.
+
+* Horizon backport was fixed for updating disabled security group quotas.
+  See `LP1338663 <https://bugs.launchpad.net/fuel/+bug/1338663>`_.
+
+* OpenStack engine now corretly checks releases for uniqueness.
+  See `LP1327198 <https://bugs.launchpad.net/fuel/+bug/1327198>`_.
+
+* After an environment with Cinder is deployed,
+  both cluster and volumes are removed after cluster is deleted.
+  See `LP1341650 <https://bugs.launchpad.net/fuel/+bug/1341650>`_.
+
+* Nova compute starts successfully without Ceph and Nova problems.
+  See `LP1335628 <https://bugs.launchpad.net/fuel/+bug/1335628>`_.
+
+* Ceilometer API is now working much faster.
+  See `LP1330951 <https://bugs.launchpad.net/fuel/+bug/1330951>`_.
+
+* OpenStack cluster does not stop working after failover of primary controller.
+  See `LP1322259 <https://bugs.launchpad.net/fuel/+bug/1322259>`_.
+
+* Nova services are up after deployment.
+  See `LP1355749 <https://bugs.launchpad.net/fuel/+bug/1355749>`_.
+
+* Nova API does not hang when OpenStack is updated.
+  See `LP1333292 <https://bugs.launchpad.net/fuel/+bug/1333292>`_.
+
+* Murano dashboard updates successfully.
+  See `LP1356921 <https://bugs.launchpad.net/fuel/+bug/1356921>`_.
+
+* Cinder uses public network, but now volumes work.
+  See `LP1357292 <https://bugs.launchpad.net/fuel/+bug/1357292>`_.
+
+* Murano-dashboard logging was moved to syslog.
+  See `LP1285024 <https://bugs.launchpad.net/fuel/+bug/1285024>`_.
+
+* Heat template updates without failures.
+  See `LP1348195 <https://bugs.launchpad.net/fuel/+bug/1348195>`_.
+
+* After the deployment, Murano Engine creates VMs with an assigned keypair;
+  the user now can perform a login procedure to these VMs.
+  See `LP1343378 <https://bugs.launchpad.net/fuel/+bug/1343378>`_.
+
+* Murano, Sahara and Heat are now deployed with usernames,
+  including @example.com email address.
+  See `LP1362173 <https://bugs.launchpad.net/fuel/+bug/1362173>`_.
+
+* Keystone now sends notifications via RabbitMQ.
+  See `LP1346856 <https://bugs.launchpad.net/fuel/+bug/1346856>`_.
+
+* Nova rate limits were increased.
+  See `LP1272839 <https://bugs.launchpad.net/fuel/+bug/1272839>`_.
+
+* Production-oriented configuration parameters were set for Nova and Neutron.
+  See `LP1324914 <https://bugs.launchpad.net/fuel/+bug/1324914>`_.
+
+Monitoring
+----------
+
+* An extra RabbitMQ instance, used for message exchange between Murano and VMs,
+  now starts and OS deployment finishes successfully.
+  See `LP1360264 <https://bugs.launchpad.net/fuel/+bug/1360264>`_.
+
+Neutron and networking fixed bugs
+---------------------------------
+
+* Neutron server starts without finding several metadata agents error.
+  See `LP1350045 <https://bugs.launchpad.net/fuel/+bug/1350045>`_.
+
+* Neutron HA deployment no longer shows errors in Puppet log.
+  See `LP1346862 <https://bugs.launchpad.net/fuel/+bug/1346862>`_
+
+* During HA cluster deployment, Neutron DB migrates successfully.
+  See `LP1361541 <https://bugs.launchpad.net/fuel/+bug/1361541>`_.
+
+* Error in neutron-resheduling log no longer occurs.
+  See `LP1322221 <https://bugs.launchpad.net/fuel/+bug/1322221>`_.
+
+* Open vSwitch packages are now correctly installed on compute nodes.
+  See `LP1363140 <https://bugs.launchpad.net/fuel/+bug/1363140>`_.
+
+* Fuel client no longer fails to specify Neutron segmentation type.
+  See `LP1317702 <https://bugs.launchpad.net/fuel/+bug/1317702>`_.
+
+* After deployment, error in Neutron server log does not occur.
+  See `LP1261330 <https://bugs.launchpad.net/fuel/+bug/1261330>`_.
+
+* When Neutron is deployed with Open vSwitch plugin,
+  OVS agent now starts with full ML2 configuration file.
+  See `LP1335869 <https://bugs.launchpad.net/fuel/+bug/1335869>`_.
+
+* Neutron parameters can now be tuned before deployment.
+  See `LP1348149 <https://bugs.launchpad.net/fuel/+bug/1348149>`_.
+
+* Neutron metadata agent now performs filtration
+  and does not depend on the number of networks.
+  See `LP1342313 <https://bugs.launchpad.net/fuel/+bug/1342313>`_.
+
+* *URI too long* error was fixed in Neutron security group rule list.
+  See `LP1340743 <https://bugs.launchpad.net/fuel/+bug/1340743>`_.
+
+* Open vSwitch agent no longer fails with bridges longer than 11 characters.
+  See `LP1328288 <https://bugs.launchpad.net/fuel/+bug/1328288>`_.
+
+* Iptables rules now have the tcp rule for logging.
+  See `LP1360298 <https://bugs.launchpad.net/fuel/+bug/1360298>`_.
+
+* A 5.1 Fuel Master node can now run network verification on a 5.0 environment.
+  See `LP1342814 <https://bugs.launchpad.net/fuel/+bug/1342814>`_.
+
+* 10gig interface now can get an IP address from DHCP.
+  See `LP1324093 <https://bugs.launchpad.net/fuel/+bug/1324093>`_.
+
+* Network verification successfully works on Neutron VLAN with VLAN tagging.
+  See `LP1306705 <https://bugs.launchpad.net/fuel/+bug/1306705>`_.
+
+* Floating network is detached from physical one.
+  See `LP1260051 <https://bugs.launchpad.net/fuel/+bug/1260051>`_.
+
+* Public IP addresses are no longer assigned to nodes that do not require them.
+  See `LP1272349 <https://bugs.launchpad.net/fuel/+bug/1272349>`_.
+
+* Network verifier reports its logs to syslog without failures.
+  See `LP1291663 <https://bugs.launchpad.net/fuel/+bug/1291663>`_.
+
+* Verification network validation bug was fixed.
+  See `LP1297232 <https://bugs.launchpad.net/fuel/+bug/1297232>`_.
+
+* Dhcpchecker now always receives messages from DHCP relay.
+  See `LP1317525 <https://bugs.launchpad.net/fuel/+bug/1317525>`_
+
+* The br-ex bridge is not used in br-mappings configuration.
+  See `LP1357298 <https://bugs.launchpad.net/fuel/+bug/1357298>`_.
+
+RabbitMQ
+--------
+
+* RabbitMQ queues are now synchronized.
+  See `LP1350344 <https://bugs.launchpad.net/fuel/+bug/1350344>`_.
+
+* RabbitMQ manifests now have no two-minute sleep.
+  See `LP1350031 <https://bugs.launchpad.net/fuel/+bug/1350031>`_.
+* After primary controller is rebooted, volumes are created without getting stuck
+  in creating state. See `LP1355792 <https://bugs.launchpad.net/fuel/+bug/1355792>`_.
+
+* RabbitMQ plugins work in HA mode without failures.
+  See `LP1354026 <https://bugs.launchpad.net/fuel/+bug/1354026>`_.
+
+HA resolved issues
+------------------
+
+* In HA mode, Nova-compute is up after destroying primary controller.
+  See `LP1289200 <https://bugs.launchpad.net/fuel/+bug/1289200>`_.
+
+* In HA mode, Murano tests no longer fail with timeout error.
+  See `LP1288828 <https://bugs.launchpad.net/fuel/+bug/1288828>`_.
+
+* HA deployment no longer fails with invalid address error.
+  See `LP1361707 <https://bugs.launchpad.net/fuel/+bug/1361707>`_.
+
+* Nodes do not fail to reboot for HA environment.
+  See `LP1316761 <https://bugs.launchpad.net/fuel/+bug/1316761>`_.
+
+Fuel UI bugs were fixed
+-----------------------
+
+* In Fuel UI, update and rollback button is automatically disabled after
+  performing the required action. See `LP1350721 <https://bugs.launchpad.net/fuel/+bug/1350721>`_.
+
+* After being disabled on UI, vlan_splinters data no longer has a stale state.
+  See `LP1308492 <https://bugs.launchpad.net/fuel/+bug/1308492>`_.
+
+* UI is not cached between Fuel versions.
+  See `LP1325012 <https://bugs.launchpad.net/fuel/+bug/1325012>`_.
+
+* Error pop-up problems no longer occur.
+  See `LP1297158 <https://bugs.launchpad.net/fuel/+bug/1297158>`_.
+
+* 'Deploy Changes' dialog window now has information about changes in 'Configure Interfaces'.
+  See `LP1288229 <https://bugs.launchpad.net/fuel/+bug/1288229>`_.
+
+* Active Directory now deploys successfully.
+  See `LP1355202 <https://bugs.launchpad.net/fuel/+bug/1355202>`_.
 
 * Multiple EDP jobs were fixed.
   See `LP1352311 <https://bugs.launchpad.net/fuel/+bug/1352311>`_.
@@ -544,15 +672,6 @@ Other resolved issues
 
 * Instances successfully reach network.
   See `LP1352203 <https://bugs.launchpad.net/fuel/+bug/1352203>`_.
-
-* Murano database migrates on CentOS without failures.
-  See `LP1350819 <https://bugs.launchpad.net/fuel/+bug/1350819>`_.
-
-* Neutron server starts without finding several metadata agents error.
-  See `LP1350045 <https://bugs.launchpad.net/fuel/+bug/1350045>`_.
-
-* Logic of Murano status page was fixed.
-  See `LP1349922 <https://bugs.launchpad.net/fuel/+bug/1349922>`_.
 
 * Live migration works with NFS shared storage.
   See `LP1346621 <https://bugs.launchpad.net/fuel/+bug/1346621>`_.
@@ -569,23 +688,14 @@ Other resolved issues
 * Post-deployment no-quorum-policy is steadily updated.
   See `LP1363908 <https://bugs.launchpad.net/fuel/+bug/1363908>`_.
 
-* Open vSwitch packages are now correctly installed on compute nodes.
-  See `LP1363140 <https://bugs.launchpad.net/fuel/+bug/1363140>`_.
-
 * Fuel Master 5.1 upgrade succeeds without Docker issues.
   See `LP1362685 <https://bugs.launchpad.net/fuel/+bug/1362685>`_.
 
 * During upgrade, Keystone container has no 'db schema' error.
   See `LP1362139 <https://bugs.launchpad.net/fuel/+bug/1362139>`_.
 
-* During HA cluster deployment, Neutron DB migrates successfully.
-  See `LP1361541 <https://bugs.launchpad.net/fuel/+bug/1361541>`_.
-
 * Upgrade can be run for the second time if an error occurred.
   See `LP1361284 <https://bugs.launchpad.net/fuel/+bug/1361284>`_.
-
-* Iptables rules now have the tcp rule for logging.
-  See `LP1360298 <https://bugs.launchpad.net/fuel/+bug/1360298>`_.
 
 * After environment is deployed, no wrong disk space error appears.
   See `LP1360248 <https://bugs.launchpad.net/fuel/+bug/1360248>`_.
@@ -609,12 +719,6 @@ Other resolved issues
 
 * Dnsmasq logs now appear in Cobbler logs directory.
   See `LP1357408 <https://bugs.launchpad.net/fuel/+bug/1357408>`_.
-
-* The br-ex bridge is not used in br-mappings configuration.
-  See `LP1357298 <https://bugs.launchpad.net/fuel/+bug/1357298>`_.
-
-* Cinder uses public network, but now volumes work.
-  See `LP1357292 <https://bugs.launchpad.net/fuel/+bug/1357292>`_.
 
 * Successful deployment is not marked as failed by Astute.
   See `LP1356954 <https://bugs.launchpad.net/fuel/+bug/1356954>`_.
@@ -640,9 +744,6 @@ Other resolved issues
 * Volumes have information on nodes, created via CLI.
   See `LP1354047 <https://bugs.launchpad.net/fuel/+bug/1354047>`_.
 
-* RabbitMQ plugins work in HA mode without failures.
-  See `LP1354026 <https://bugs.launchpad.net/fuel/+bug/1354026>`_.
-
 * Murano system tests now pass successfully on CentOS.
   See `LP1353454 <https://bugs.launchpad.net/fuel/+bug/1353454>`_.
 
@@ -665,17 +766,9 @@ Other resolved issues
 * Missing log failure in HAProxy configuration was fixed.
   See `LP1350835 <https://bugs.launchpad.net/fuel/+bug/1350835>`_.
 
-* In Fuel UI, update and rollback button is automatically disabled after
-  performing the required action. See `LP1350721 <https://bugs.launchpad.net/fuel/+bug/1350721>`_.
 
 * Fuel Master search domain includes not only the first entry.
   See `LP1350395 <https://bugs.launchpad.net/fuel/+bug/1350395>`_.
-
-* RabbitMQ queues are now synchronized.
-  See `LP1350344 <https://bugs.launchpad.net/fuel/+bug/1350344>`_.
-
-* RabbitMQ manifests now have no two-minute sleep.
-  See `LP1350031 <https://bugs.launchpad.net/fuel/+bug/1350031>`_.
 
 * While upgrading for the second time, the script does not restore old DB dump.
   See `LP1349833 <https://bugs.launchpad.net/fuel/+bug/1349833>`_.
@@ -731,11 +824,6 @@ Other resolved issues
 * When primary controller node is offline, Sahara platform test works in HA mode.
   See `LP1346864 <https://bugs.launchpad.net/fuel/+bug/1346864>`_.
 
-* Neutron HA deployment no longer shows errors in Puppet log.
-  See `LP1346862 <https://bugs.launchpad.net/fuel/+bug/1346862>`_.
-
-* Keystone now sends notifications via RabbitMQ.
-  See `LP1346856 <https://bugs.launchpad.net/fuel/+bug/1346856>`_.
 
 * Upgrade goes without 'failed to run services' error.
   See `LP1346839 <https://bugs.launchpad.net/fuel/+bug/1346839>`_.
@@ -759,8 +847,6 @@ Other resolved issues
 * Ubuntu installs packages without "some index files failed to download" error.
   See `LP1342951 <https://bugs.launchpad.net/fuel/+bug/1342951>`_.
 
-* Networks Verification on 5.0 cluster with 5.1 master node can be run.
-  See `LP1342814 <https://bugs.launchpad.net/fuel/+bug/1342814>`_.
 
 * Upgrade script now does not fail with upgrade verification error.
   See `LP1342723 <https://bugs.launchpad.net/fuel/+bug/1342723>`_.
@@ -839,9 +925,6 @@ Other resolved issues
 * Fuel Key is not loaded on cluster list page, if message about registration was closed.
   See `LP1328487 <https://bugs.launchpad.net/fuel/+bug/1328487>`_.
 
-* Open vSwitch agent no more fails with bridges longer than 11 chars.
-  See `LP1328288 <https://bugs.launchpad.net/fuel/+bug/1328288>`_.
-
 * Nailgun now does not hang Fuel.
   See `LP1328200 <https://bugs.launchpad.net/fuel/+bug/1328200>`_.
 
@@ -853,9 +936,6 @@ Other resolved issues
 
 * Puppet no longer generates wrong dnsmasq.upstream in Cobbler container.
   See `LP1327799 <https://bugs.launchpad.net/fuel/+bug/1327799>`_.
-
-* OpenStack engine now corretly checks releases for uniqueness.
-  See `LP1327198 <https://bugs.launchpad.net/fuel/+bug/1327198>`_.
 
 * Docker0 interface bug was fixed for PXE.
   See `LP1327009 <https://bugs.launchpad.net/fuel/+bug/1327009>`_.
@@ -869,12 +949,6 @@ Other resolved issues
 * "Stevedore.extension" error no longer occurs.
   See `LP1325519 <https://bugs.launchpad.net/fuel/+bug/1325519>`_.
 
-* UI is not cached between FUel versions.
-  See `LP1325012 <https://bugs.launchpad.net/fuel/+bug/1325012>`_.
-
-* Production-oriented configuration parameters were set for Nova and Neutron.
-  See `LP1324914 <https://bugs.launchpad.net/fuel/+bug/1324914>`_.
-
 * Cluster is successfully deployed without " could not start service" error.
   See `LP1324859 <https://bugs.launchpad.net/fuel/+bug/1324859>`_.
 
@@ -883,9 +957,6 @@ Other resolved issues
 
 * Dhcrelay can start after master node reboot.
   See `LP1324152 <https://bugs.launchpad.net/fuel/+bug/1324152>`_.
-
-* 10gig interface now can get an IP address from DHCP.
-  See `LP1324093 <https://bugs.launchpad.net/fuel/+bug/1324093>`_.
 
 * Settings dependency tracking was moved from settings_tab.js to Settings model.
   See `LP1323749 <https://bugs.launchpad.net/fuel/+bug/1323749>`_.
@@ -920,14 +991,8 @@ Other resolved issues
 * Unsupported hardware message no longer blocks Fuel installation.
   See `LP1322502 <https://bugs.launchpad.net/fuel/+bug/1322502>`_.
 
-* OpenStack cluster does not stop working after failover of primary controller.
-  See `LP1322259 <https://bugs.launchpad.net/fuel/+bug/1322259>`_.
-
 * "MultipleAgentFoundByTypeHost" error was fixed.
   See `LP1322228 <https://bugs.launchpad.net/fuel/+bug/1322228>`_.
-
-* Error in neutron-resheduling log no nolger occurs.
-  See `LP1322221 <https://bugs.launchpad.net/fuel/+bug/1322221>`_.
 
 * After HA FlatDHCP deployment, redundant interfaces do not appear in controller node.
   See `LP1322208 <https://bugs.launchpad.net/fuel/+bug/1322208>`_.
@@ -956,15 +1021,6 @@ Other resolved issues
 * "Maximum mount count reached, running e2fsck is recommended' error was fixed.
   See `LP1318646 <https://bugs.launchpad.net/fuel/+bug/1318646>`_.
 
-* Fuel client no longer fails to specify Neutron segmentation type.
-  See `LP1317702 <https://bugs.launchpad.net/fuel/+bug/1317702>`_.
-
-* Dhcpchecker now always receives messages from DHCP relay.
-  See `LP1317525 <https://bugs.launchpad.net/fuel/+bug/1317525>`_.
-
-* Nodes do not fail to reboot for HA environment.
-  See `LP1316761 <https://bugs.launchpad.net/fuel/+bug/1316761>`_.
-
 * Filesystem of provisioned node is not destroyed, if stop provision is called when node was reboot with installed OS.
   See `LP1316583 <https://bugs.launchpad.net/fuel/+bug/1316583>`_.
 
@@ -990,9 +1046,6 @@ Other resolved issues
 * Validation was added to Nailgun to ensure single disk usage for root partition.
   See `LP1308592 <https://bugs.launchpad.net/fuel/+bug/1308592>`_.
 
-* After being disabled on UI, vlan_splinters data no longer has a staled state.
-  See `LP1308492 <https://bugs.launchpad.net/fuel/+bug/1308492>`_.
-
 * CirrOS provided with Fuel now supports disk resize.
   See `LP1306717 <https://bugs.launchpad.net/fuel/+bug/1306717>`_.
 
@@ -1011,32 +1064,12 @@ Other resolved issues
 * During deployment, time on nodes with master node is now synchronized.
   See `LP1297293 <https://bugs.launchpad.net/fuel/+bug/1297293>`_.
 
-* Verification network validation bug was fixed.
-  See `LP1297232 <https://bugs.launchpad.net/fuel/+bug/1297232>`_.
-
-* Error pop-ups problem no longer occurs.
-  See `LP1297158 <https://bugs.launchpad.net/fuel/+bug/1297158>`_.
-
 * Cluster changes attribute now contain information about interfaces changes.
   See `LP1291854 <https://bugs.launchpad.net/fuel/+bug/1291854>`_.
-
-* Network verifier reports its logs to syslog without failures.
-  See `LP1291663 <https://bugs.launchpad.net/fuel/+bug/1291663>`_.
 
 * By default, stack traces are now captured by syslog.
   See `LP1289659 <https://bugs.launchpad.net/fuel/+bug/1289659>`_.
 
-* In HA mode, Nova-compute is up after destroying primary controller.
-  See `LP1289200 <https://bugs.launchpad.net/fuel/+bug/1289200>`_.
-
-* In HA mode, Murano tests no longer fail with timeout error.
-  See `LP1288828 <https://bugs.launchpad.net/fuel/+bug/1288828>`_.
-
-* 'Deploy Changes' dialog window now has information about changes in 'Configure Interfaces'.
-  See `LP1288229 <https://bugs.launchpad.net/fuel/+bug/1288229>`_.
-
-* Murano-dashboard logging was moved to syslog.
-  See `LP1285024 <https://bugs.launchpad.net/fuel/+bug/1285024>`_.
 
 * All logs from OpenStack services are now collected by syslog.
   See `LP1284867 <https://bugs.launchpad.net/fuel/+bug/1284867>`_.
@@ -1050,11 +1083,6 @@ Other resolved issues
 * Now the administrator's token data /etc/keystone/keystone.conf is used in q-agent-cleanup.py.
   See `LP1275652 <https://bugs.launchpad.net/fuel/+bug/1275652>`_.
 
-* Nova rate limits were increased.
-  See `LP1272839 <https://bugs.launchpad.net/fuel/+bug/1272839>`_.
-
-* Public IP addresses are no longer assigned to nodes which do not require them.
-  See `LP1272349 <https://bugs.launchpad.net/fuel/+bug/1272349>`_.
 
 * When node configuration is changed, log levels are displayed correctly.
   See `LP1264122 <https://bugs.launchpad.net/fuel/+bug/1264122>`_.
@@ -1062,14 +1090,9 @@ Other resolved issues
 * Nova logging was fixed.
   See `LP1262294 <https://bugs.launchpad.net/fuel/+bug/1262294>`_.
 
-* After deployment, error in Neutron server log does not occur.
-  See `LP1261330 <https://bugs.launchpad.net/fuel/+bug/1261330>`_.
-
 * Bootstrap now sees Brocade NICs.
   See `LP1260492 <https://bugs.launchpad.net/fuel/+bug/1260492>`_.
 
-* Floating network is detached from physical one.
-  See `LP1260051 <https://bugs.launchpad.net/fuel/+bug/1260051>`_.
 
 * Defined replication factor value was changed.
   See `LP1251651 <https://bugs.launchpad.net/fuel/+bug/1251651>`_.
@@ -1079,13 +1102,6 @@ Other resolved issues
 
 * After clicking 'Download report' in the Capacity tab, "authentication required" error
   no longer occurs. See `LP1362615 <https://bugs.launchpad.net/fuel/+bug/1362615>`_.
-
-* Murano, Sahara and Heat are now deployed with usernames,
-  including @example.com email address.
-  See `LP1362173 <https://bugs.launchpad.net/fuel/+bug/1362173>`_.
-
-* HA deployment no longer fails with invalid address error.
-  See `LP1361707 <https://bugs.launchpad.net/fuel/+bug/1361707>`_.
 
 * *Test_autoscaling* Heat test has no failures.
   See `LP1361629 <https://bugs.launchpad.net/fuel/+bug/1361629>`_.
@@ -1107,14 +1123,6 @@ Other resolved issues
 * When calling Fuel client, *--help* is successfully printed.
   See `LP1348395 <https://bugs.launchpad.net/fuel/+bug/1348395>`_.
 
-* Ability to tune important Neutron parameters before deployment was enabled.
-  See `LP1348149 <https://bugs.launchpad.net/fuel/+bug/1348149>`_.
-
-* Network verification on 5.0 cluster with 5.1 master node can be run.
-  See `LP1342814 <https://bugs.launchpad.net/fuel/+bug/1342814>`_.
-
-* Heat template updates without failures.
-  See `LP1348195 <https://bugs.launchpad.net/fuel/+bug/1348195>`_.
 
 * The previously used algorithm was fixed for methods that could be found on several
   inheritance paths. See `LP1343394 <https://bugs.launchpad.net/fuel/+bug/1343394>`_.
@@ -1122,47 +1130,13 @@ Other resolved issues
 * When deleting environment, Heat stack also gets removed.
   See `LP1343383 <https://bugs.launchpad.net/fuel/+bug/1343383>`_.
 
-* After the deployment, Murano Engine creates VMs with an assigned keypair;
-  the user now can perform a login procedure to these VMs.
-  See `LP1343378 <https://bugs.launchpad.net/fuel/+bug/1343378>`_.
-
-* Neutron metadata agent now performs filtration
-  and does not depend on the amount of networks.
-  See `LP1342313 <https://bugs.launchpad.net/fuel/+bug/1342313>`_.
-
-* The `heat-manage db_sync` no longer crashes dut MySQL error.
+* The `heat-manage db_sync` no longer crashes due to MySQL error.
   See `LP1342072 <https://bugs.launchpad.net/fuel/+bug/1342072>`_.
 
 * The syslog logging is not affected by /dev/log race conditions.
   See `LP1342068 <https://bugs.launchpad.net/fuel/+bug/1342068>`_.
 
-* Both cluster and volumes are removed in enrivonment, deployed with Cinder.
-  See `LP1341650 <https://bugs.launchpad.net/fuel/+bug/1341650>`_.
-
-* *URI too long* error was fixed in Neutron security group rule list.
-  See `LP1340743 <https://bugs.launchpad.net/fuel/+bug/1340743>`_.
-
-* OpenStack Nova Compute starts successfully when using QEMU 2.0 on CentOS.
-  See `LP1338913 <https://bugs.launchpad.net/fuel/+bug/1338913>`_.
-
-* Horizon backport was fixed for updating disabled security group quotas.
-  See `LP1338663 <https://bugs.launchpad.net/fuel/+bug/1338663>`_.
-
-* When Neutron is deployed with Open vSwitch plugin,
-  OVS agent now starts with full ML2 configuration file.
-  See `LP1335869 <https://bugs.launchpad.net/fuel/+bug/1335869>`_.
-
-* Nova compute starts successfully without Ceph and Nova problems.
-  See `LP1335628 <https://bugs.launchpad.net/fuel/+bug/1335628>`_.
-
-* Ceilometer API is now working much faster.
-  See `LP1330951 <https://bugs.launchpad.net/fuel/+bug/1330951>`_.
-
 * Optional parameters are added to create backing methods so that a backing VM can
   be created without a
   disk or with a specific adapter type.
   See `LP1284284 <https://bugs.launchpad.net/fuel/+bug/1284284>`_.
-
-* Metadata services are now available when using vCenter.
-  See `LP1370165 <https://bugs.launchpad.net/fuel/+bug/1370165>`_.
-
