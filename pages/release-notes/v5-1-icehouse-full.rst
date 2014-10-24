@@ -28,6 +28,7 @@ The following table lists the released revisions of this documentation:
 .. include:: /pages/release-notes/v5-1/020-new-features.rst
 .. include:: /pages/release-notes/v5-1/030-other-enhancements.rst
 .. include:: /pages/release-notes/v5-1/038-resolved-ha-issues.rst
+.. include:: /pages/release-notes/v5-1/039-resolved-issues-511.rst
 .. include:: /pages/release-notes/v5-1/040-resolved-issues.rst
 .. include:: /pages/release-notes/v5-1/050-known-issues.rst
 .. include:: /pages/release-notes/v5-1/060-obtain-the-product.rst
