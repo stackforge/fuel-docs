@@ -81,6 +81,7 @@ This version has the following known issues:
 
 See :ref:`zabbix-plan` for more information.
 
+<<<<<<< HEAD
 RabbitMQ users may be lost
 --------------------------
 
@@ -235,6 +236,8 @@ CentOS includes drivers for netFPGA devices
 but Ubuntu does not.
 See `LP1270889 <https://bugs.launchpad.net/fuel/+bug/1270889>`_.
 
+=======
+>>>>>>> 70464ce... Release Notes - 5.1.1
 CentOS issues using Neutron-enabled installations with VLANS
 ------------------------------------------------------------
 
