@@ -7,7 +7,7 @@ OpenStack Telemetry (Ceilometer) and MongoDB Database
 New Features and Resolved Issues in Mirantis OpenStack 6.0
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Known Issues in Mirantis OpenStack 5.1
+Known Issues in Mirantis OpenStack 6.0
 ++++++++++++++++++++++++++++++++++++++
 
 MongoDB cannot store dictionary objects with keys that use $ and . special characters
@@ -42,8 +42,6 @@ Be sure to deploy an adequate number of MongoDB roles
 during the initial deployment.
 See `LP1308990 <https://bugs.launchpad.net/fuel/+bug/1308990>`_.
 
-
-
-Known Issues in Mirantis OpenStack 6.0
-++++++++++++++++++++++++++++++++++++++
-
+* Deployment of HA cluster with Ceilometer
+  fails with Puppet errors.
+  See `LP1338608 <https://bugs.launchpad.net/bugs/1338608>`_.
