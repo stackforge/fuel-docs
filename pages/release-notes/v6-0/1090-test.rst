@@ -4,7 +4,7 @@
 Test and Verification Issues
 ============================
 
-Known Issues in 5.1
+Known Issues in 6.0
 -------------------
 
 Network verification issues
@@ -12,7 +12,7 @@ Network verification issues
 
 * Network verification can fail if a node is offline
   because Astute runs network verification
-  but Astute does not know which nodes are online..
+  but Astute does not know which nodes are online.
   See `LP1318659 <https://bugs.launchpad.net/fuel/+bug/1318659>`_.
 
 * The network verification checker does not test OVS VLANs.

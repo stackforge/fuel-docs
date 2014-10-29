@@ -4,22 +4,19 @@
 Networking issues
 =================
 
-Known Issues in 5.1
+Known Issues in 6.0
 -------------------
+* In Neutron GRE HA mode, network list
+  can not be retrieved.
+  See `LP1383265 <https://bugs.launchpad.net/bugs/1383265>`_.
 
 * The floating VLAN and public networks
   must use the same L2 network and L3 Subnet.
   These two networks are locked together
   and can only run via the same physical interface on the server.
   See the `Separate public and floating networks blueprint
-  <https://blueprints.launchpad.net/fuel/+spec/separate-public-floating>`_.
+  <https://blueprints.launchpad.net/fuel/+spec/separate-public-floating>`_
   for information about ongoing work to remove this restriction.
-
-* The Admin(PXE) network cannot be assigned to a bonded interface.
-  When implementing bonding, at least three NICs are required:
-  two for the bonding plus one for the Admin(PXE) network,
-  which cannot reside on the bond and cannot be moved.
-  See `LP1290513 <https://bugs.launchpad.net/fuel/+bug/1290513>`_.
 
 * The Fuel Master node services (such as PostgrSQL and RabbitMQ)
   are not restricted by a firewall.
@@ -40,9 +37,8 @@ Known Issues in 5.1
   Please discuss this issue with your security administrator
   if it is a concern for your organization.
 
-
 * LACP Bonding must be enabled in the switch
-  before deploying an environment that uses it
+  before deploying an environment that uses it.
   Network interfaces must be connected to a switch with LACP enabled
   before attempting to deploy an environment
   with "LACP balance-tcp" enabled
@@ -57,8 +53,9 @@ Known Issues in 5.1
   This is related to the upstream
   `LP1246848 <https://bugs.launchpad.net/nova/+bug/1246848>`_.
 
-* When ovs-agent is started, Critical error appears.
+* When ovs-agent is started, "Critical error" appears.
   See `LP1347612 <https://bugs.launchpad.net/bugs/1347612>`_.
+
 
 .. include:: /pages/release-notes/v6-0/9100-mellanox.rst
 
