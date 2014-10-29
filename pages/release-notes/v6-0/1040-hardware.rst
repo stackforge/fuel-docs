@@ -4,7 +4,7 @@
 Hardware support issues
 =======================
 
-Known Issues in 5.1
+Known Issues in 6.0
 -------------------
 
 Some UEFI hardware cannot be used
@@ -140,8 +140,6 @@ but sdc will not be used  as part of the RAID-1 array:
 
 See `LP1267569 <https://bugs.launchpad.net/fuel/+bug/1267569>`_
 and `LP1258347 <https://bugs.launchpad.net/fuel/+bug/1258347>`_.
-[LP1267569 is scheduled to be fixed in 5.1;
-LP1258347 is scheduled to be fixed in 6.0]
 
 Other issues
 ++++++++++++
@@ -149,4 +147,6 @@ Other issues
 * Large number of disks may fail Ubuntu installation.
   See `LP1340414 <https://bugs.launchpad.net/bugs/1340414>`_.
 
-
+* Currently, all vboxnets are created as host-only networks;
+  this disables checking an Internet connectivity from the deployed cluster.
+  We should set a vboxnet used for a Public network as a NAT-network. And don't forget to check against Ubuntu, MacOS X and any modern Windows.

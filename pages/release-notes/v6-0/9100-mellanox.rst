@@ -1,6 +1,14 @@
 
 .. _mellanox-rn:
 
+New Features and Resolved Issues in Mirantis OpenStack 6.0
+----------------------------------------------------------
+
+* When installing Centos HA with Neutron with VLAN
+  and changing the ML2 mechanism to Mellanox and Open vSwitch,
+  the external network is successfully configured after deployment.
+  See `LP1369988 <https://bugs.launchpad.net/bugs/1369988>`_.
+
 Known limitations for the Mellanox SR-IOV plug-in
 -------------------------------------------------
 
@@ -27,13 +35,6 @@ but it has some known limitations:
   In such cases,
   you may need to burn a special firmware version
   to enable SR-IOV.
-
-* External network is not configured when changing the ML2 mechanism
-  to Mellanox and Open vSwitch.
-  When installing Centos HA with Neutron with VLAN
-  and changing the ML2 mechanism to Mellanox and Open vSwitch,
-  the external network is not configured after deployment.
-  See `LP1369988 <https://bugs.launchpad.net/bugs/1369988>`_.
 
 * Mellanox provides additional information in their
   `HowTo Install Mirantis Fuel 5.1 OpenStack with Mellanox Adapters Support

@@ -4,7 +4,7 @@
 OpenStack Deployment Issues
 ===========================
 
-Known Issues in 5.1
+Known Issues in 6.0
 -------------------
 
 Controller cluster may fail if one MySQL instance fails
@@ -58,4 +58,11 @@ As a workaround, execute the **update-guestfs-appliance** command
 on each Compute node.
 See `LP1335697 <https://bugs.launchpad.net/bugs/1335697>`_.
 
-
+OpenStack deployment timeout issue
+++++++++++++++++++++++++++++++++++
+In a simple mode on Ubuntu vCenter machine, when OpenStack deployment
+has already been stopped on one of nodes,
+this node is bootstrapped, but provisioning does not start.
+In this case, you should wait for at least 5 minutes
+before hitting 'Redeploy' button.
+See `LP1371225 <https://bugs.launchpad.net/fuel/+bug/1371225>`_.
