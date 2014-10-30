@@ -17,8 +17,6 @@ Some key characteristics of Swift object storage are:
 * Libraries are provided for many programming languages;
   developers can use these libraries to access the data in Swift object stores
   or they can write directly to the RESTful API
-* New nodes can be added to the cluster
-  and failed nodes can be replaced without downtime.
 
 Fuel can deploy Swift on either a dedicated server storage node
 or as a role on a compute node.
