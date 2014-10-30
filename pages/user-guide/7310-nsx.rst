@@ -108,17 +108,13 @@ integrated with NSX.
 Network settings
 ----------------
 
-This example screenshot illustrate the completed Network Settings page
-when using the Neutron VMware NSX plugin.
+In Network Settings tab,
+specify the NSX and check vCenter
+credentials that you specified when performed
+steps described in :ref:`nsx-plan`
 
-.. image:: /_images/nsx-settings.png
-   :width: 80%
-
-Input the values you specified when did :ref:`nsx-plan`.
-Here is an example how filled NSX settings block might look:
-
-.. image:: /_images/nsx-settings-filled.png
-   :width: 80%
+.. image:: /_images/vcenter-nsx-settings.png
+   :width: 50%
 
 For more information about how NSX support is implemented,
 see :ref:`neutron-nsx-arch`.
