@@ -126,9 +126,233 @@ VMware NSX cluster configuration
    `NSX appliances installation  <https://www.edge-cloud.net/2013/12/openstack-with-vsphere-and-nsx-part1>`_ and `NSX cluster configuration <https://www.edge-cloud.net/2013/12/openstack-with-vsphere-and-nsx-part2>`_
    for details about the NSX cluster deployment process.
 
+Preparing for Neutron with VMware NSX plugin installation
+---------------------------------------------------------
+
+To enable Neutron with VMware NSX plugin, you should have
+the NSX cluster configured.
+Once it is enabled, an NSX vSwitch should be
+configured inside the ESXi hosts.
+
+Installing NSX vSwitch
+~~~~~~~~~~~~~~~~~~~~~~
+
+The NSX vSwitch is an SDN solution
+for the VMware vSphere platform,
+similar to the Standard
+vSwitch and the Virtual Distributed Switch.
+The NSX vSwitch needs a dedicated
+physical uplink (vmnic) to connect to the upstream network.
+Before proceeding to the actual installation,
+ensure that you have a vmnic interface available on all your ESXi hosts
+The NSX vSwitch is provided as
+a vSphere Installation Bundle (VIB)
+that needs to be installed on each ESXi
+hosts that you plan on using.
+
+To install NSX vSwitch, follow these steps:
+
+1. Make sure VIB file is available to the ESXi hosts via e.g. a shared storage.
+
+.. image:: /_images/nsx-vswitch1.png
+  :width: 50%
+
+
+2. Temporarily enable SSH access  to the ESXi hosts.
+   The installation of VIB file is over; you can turn off the SSH daemon again.
+
+.. image:: /_images/nsx-vswitch2.png
+  :width: 50%
+
+3. After you have enabled SSH access the ESXi hosts, connect to your first ESXi host via SSH.
+   Start the installation of the NSX vSwitch VIB file via
+   the *esxcli software vib install --no-sig-check -v <path and filename>* command.
+
+::
+
+
+    ~ # esxcli software vib install --no-sig-check -v /vmfs/volumes/SiteA-IPv6-NFS/vmware-nsxvswitch-2.0.1-30494-release.vib
+   Installation Result
+   Message: Operation finished successfully.
+   Reboot Required: false
+   VIBs Installed: VMware_bootbank_vmware-nsxvswitch_2.0.1-30494
+   VIBs Removed:
+   VIBs Skipped:
+   ~ #
+
+
+Configuring the NSX vSwitch
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Note that in comparison to the Standard vSwitch and the virtual Distributed Switch installation,
+that is done via vCenter, the NSX vSwitch is configured via the CLI.
+
+1. To configure the NSX vSwitch, connect an uplink to the switch;
+   this will create an NVS bridge.
+
+::
+
+    nsxcli uplink/connect vmnic<number>
+
+2. Configure the IP address for the transport endpoint. This transport
+   endpoint creates overlay tunnels with other transport endpoints,
+   such as Hypervisors, Gateway nodes and Service Nodes. The NSX
+   vSwitch uses a separate IP stack for this, which means that
+   the VMWare NSX transport endpoint has its own default gateway.
+   Set the IP address of the transport endpoint with the *nsxcli uplink/set-ip <interface> <ip address> <netmask>*
+   command.
+   VLAN tag can also be set by putting *vlan<vlan_id>* as an additional parameter to the command.
+
+::
+
+
+     nsxcli uplink/set-ip vmnic4 192.168.110.123 255.255.255.0
+
+
+Note that if the physical switchport that this vmnic connects to is not configured as
+an access port but as a trunk, you will need to also specify the correct VLAN to
+be used with the command nsxcli uplink/set-ip <interface> <ip address> <netmask> vlan=<id>
+
+
+3. Set the default gateway with the *nsxcli gw/set tunneling <ip address of default gateway>* command.
+
+::
+
+
+    ~ # nsxcli gw/set tunneling 192.168.110.2
+    ~ #
+
+4. Create a Transport-Net Bridge to which Virtual Machines will later
+   connect to. The name of this brigde must be NSX-Bridge.
+   Create the NSX bridge with the *nsxcli network/add <UUID> <Name>* command.
+
+::
+
+
+    ~ # nsxcli network/add br-int br-int nsx.network manual
+    success
+    ~ #
+
+5. Register the NSX vSwitch with the NSX controller.
+   First, use the *nsxcli manager/set ssl:<IP address of a NSX controller node>* command
+   to point the NSX vSwitch to the NSX controller. In
+   the case of an NSX controller cluster, you can specify any IP address of a cluster member.
+
+::
+
+
+    ~ # nsxcli manager/set ssl:192.168.110.101
+    ~ #
+
+
+5. Extract the SSL certificate from the NSX vSwitch via the *cat /etc/nsxvswitch/nsxvswitch-cert.pem.* command.
+   Copy the text including the * —–BEGIN CERTIFICATE—– and —–END CERTIFICATE—–* line.
+   You will need this text in the next step.
+
+.. image:: /_images/nsx-vswitch3.png
+  :width: 50%
+
+6. Do not close the SSH session yet.
+   Return to the NSX Manager Dashboard.
+   Within the Summary of Transport Components section, click on
+   *Add within the Hypervisor* row.
+
+.. image:: /_images/nsx-vswitch4.png
+  :width: 50%
+
+7. Confirm that the pre-selected transport type is Hypervisor.
+
+.. image:: /_images/nsx-vswitch5.png
+  :width: 50%
+
+
+7. Give the gateway node a name; the hostname can be used here.
+
+.. image:: /_images/nsx-vswitch6.png
+  :width: 50%
+
+8. As the *Integration Bridge Id*, specify *br-int*.
+   Leave the other values default.
+   The *Tunnel Keep-alive Spray* would randomize TCP source ports for STT tunnel keep-alives
+   for packet spray across active network path.
+
+.. image:: /_images/nsx-vswitch7.png
+  :width: 50%
+
+9. Select the Credential Type of Security Certificate and paste the previously copied certificate
+   into the Security Certificate field.
+
+.. image:: /_images/nsx-vswitch8.png
+  :width: 50%
+
+10. Create a transport connector for
+    the NSX vSwitch using STT as the transport type and the IP address that you configured a few steps earlier.
+
+.. image:: /_images/nsx-vswitch9.png
+  :width: 50%
+
+11. Return to the NSX Manager Dashboard, where you will see the new Hypervisor within
+    the Summary of Transport Components section, within the Hypervisors row.
+    Click on the number for active hypervisors to see more details.
+
+.. image:: /_images/nsx-vswitch10.png
+  :width: 50%
+
+You should see the ESXi host with the NSX vSwitch successfully added as a hypervisor with the Connection status as Up. 
+
+.. image:: /_images/nsx-vswitch11.png
+  :width: 50%
+
+12. Instruct VMware NSX to export the OpenStack virtual machine virtual interface
+    (vif) UUID as extra information besides the VMware vSphere one.
+    This is necessary as OpenStack uses a different UUID than VMware vSphere does.
+    Without this setting OpenStack will not recognize a VM that it created for further operations via the Neutron API.
+    Instruct NSX to allow custom vifs with the *nsxd --allow-custom-vifs* command.
+    When asked for a username and password, enter the username and password for the ESXi host. 
+
+::
+
+
+    ~ # nsxd --allow-custom-vifs
+    2013-12-18T19:50:15Z|00001|ovs_esxd|INFO|Normal operation
+    username : root
+    Password:
+    WARNING: can't open config file: /etc/pki/tls/openssl.cnf
+    nsxd: NSXD will be restarted now.
+    Killing nsxd (227588).
+    2013-12-18T19:50:21Z|00001|ovs_esxd|INFO|Normal operation
+    WARNING: can't open config file: /etc/pki/tls/openssl.cnf
+    Starting nsxd.
+    ~ #
+
+13. You can safely ignore the warning message about the */etc/pki/tls/openssl.cnf* configuration file.
+    Verify that the configuration change has been applied with the *nsxcli custom-vifs/show* command.
+    Repeat the above steps for any additional ESX host that you want to use with this setup.
+
+::
+
+   
+   ~ # nsxcli custom-vifs/show
+   Custom-VIFs: Enabled
+   ~ #
+
+
+14. Return to the vSphere Web Client where you can see vmnic1 connected to the NSX vSwitch.
+
+.. image:: /_images/nsx-vswitch12.png
+  :width: 50%
+
+15. After you have installed and configured the NSX vSwitch on all Hypervisors,
+    you can see the results in the NSX Manager Dashboard.
+
+.. image:: /_images/nsx-vswitch13.png
+  :width: 50%
+
+For further instructions on configuring Neutron with VMware NSX plugin in Fuel Web UI, see :ref:`vcenter-deploy`.
+
 
 Limitations
-------------------------------
+-----------
 - Only KVM or QEMU are supported as hypervisor options
   when using VMware NSX.
 - Only VMware NSX 4.0 is supported
