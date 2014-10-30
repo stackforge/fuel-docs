@@ -108,17 +108,22 @@ integrated with NSX.
 Network settings
 ++++++++++++++++
 
-This example screenshot illustrate the completed Network Settings page
-when using the Neutron VMware NSX plugin.
+In Network Settings tab,
+specify the NSX and check vCenter
+credentials that you specified when performed
+steps described in :ref:`nsx-plan`
 
-.. image:: /_images/nsx-settings.png
-   :width: 80%
+.. image:: /_images/vcenter-nsx-settings.png
+   :width: 50%
 
-Input the values you specified when did :ref:`nsx-plan`.
-Here is an example how filled NSX settings block might look:
+Note that when you have deployed your Neutron with NSX plugin
+environment and logged into the Horizon dashboard,
+external and internal networks are created with
+*net04_ext* and *net_04* names accordingly.
 
-.. image:: /_images/nsx-settings-filled.png
-   :width: 80%
+For more information on configuring networks,
+see the blog post
+`Create virtual networks and launch a VM instance in OpenStack <https://www.edge-cloud.net/2014/01/openstack-vsphere-nsx-part5/>`_.
 
 For more information about how NSX support is implemented,
 see :ref:`neutron-nsx-arch`.
