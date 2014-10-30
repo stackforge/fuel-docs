@@ -8,8 +8,8 @@ A typical network configuration for Neutron with VMware NSX
 might look like this, it is assumed that the NSX nodes have L2 connectivity
 with OpenStack nodes:
 
-.. image:: /_images/Neutron_nsx_l2.png
-  :width: 80%
+.. image:: /_images/nsx-vcenter-arch.png
+  :width: 50%
 
 If your NSX cluster resides in its own network and you do not want to relocate
 you NSX nodes, it is possible to use L3 connectivity between the NSX network
@@ -26,4 +26,6 @@ Here is an example of how it will look:
 
 .. note:: You do not need a physically separate Private network for this
           setup.
+
+
 
