@@ -71,7 +71,6 @@ To move such instances to another compute node,
 use live migration.
 To rebuild VM instances from a failed compute node,
 use Cinder volume backed instances.
-
 See `LP1367610 <https://bugs.launchpad.net/mos/+bug/1367610>`_
 and the upstream `LP1249319 <https://bugs.launchpad.net/nova/+bug/1249319>`_.
 

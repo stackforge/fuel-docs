@@ -19,12 +19,11 @@ This may mean that the IP pool
 is too small to support additional nodes
 added to the environment
 without redeploying the environment.
-
+See :ref:`public-floating-ips-arch`
+for more information.
 See `LP1271571 <https://bugs.launchpad.net/fuel/+bug/1271571>`_
 for a detailed description of the issues
 and pointers to blueprints of proposed solutions.
-See :ref:`public-floating-ips-arch`
-for more information.
 
 GRE-enabled Neutron installation runs inter VM traffic through management network
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -46,7 +45,7 @@ Fuel default disk partition scheme is sub-optimal
 
 * On target nodes that use Ubuntu as the operating system,
   Ubuntu provisioning applies the default Base System partition
-  even if the user chose a different scheme.
+  even if the user choses a different scheme.
 
 New node may not boot because of IOMMU issues
 +++++++++++++++++++++++++++++++++++++++++++++
@@ -69,10 +68,10 @@ because installation of CentOS failed on one of compute nodes.
 See `LP1321790 <https://bugs.launchpad.net/bugs/1321790>`_.
 This is related to known issues with Anaconda.
 
-Fuel GUI does not prevent overlapping IP ranges
-+++++++++++++++++++++++++++++++++++++++++++++++
+Fuel UI does not prevent overlapping IP ranges
+++++++++++++++++++++++++++++++++++++++++++++++
 
-Fuel menu allows IP ranges that overlap in PXE setup.
+The Fuel UI allows IP ranges that overlap in PXE setup.
 When configuring IP ranges, be very careful not to use DHCP addresses
 that overlap the Static addresses used.
 See :ref:`public-floating-ips-arch` for more information.

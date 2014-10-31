@@ -17,7 +17,7 @@ used for the Fuel Master node.
 
 This issue also affects servers used
 as Controller, Compute, and Storage nodes;
-because they are booted from PXE rom
+because they are booted from PXE ROM
 and then the chain32 loader boots from the hard drive,
 it is possible to boot them with an operating system
 that is already installed,
@@ -80,7 +80,7 @@ HP BL120/320 RAID controller line is not supported
 ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 You should contact Mirantis to get a non-standard kernel ISO.
-Note, that it is impossible to update the kernel if there are no drivers for this
+Note that it is impossible to update the kernel if there are no drivers for this
 version. This happens because the source code for the hpvsa module is not open and
 HP publishes the hpvsa binaries only for specific kernel versions.
 They do not always coincide with the ones used in Fuel with Ubuntu.
@@ -148,5 +148,6 @@ Other issues
   See `LP1340414 <https://bugs.launchpad.net/bugs/1340414>`_.
 
 * Currently, all vboxnets are created as host-only networks;
-  this disables checking an Internet connectivity from the deployed cluster.
-  We should set a vboxnet used for a Public network as a NAT-network. And don't forget to check against Ubuntu, MacOS X and any modern Windows.
+  this disables checking Internet connectivity from the deployed cluster.
+  We should set a vboxnet used for a Public network as a NAT-network.
+  And don't forget to check against Ubuntu, MacOS X and any modern Windows.
