@@ -10,7 +10,7 @@ You can download the Technical Preview from the `Juno Technical Preview
 Your feedback is important to us and we want to hear from you - please file bug
 reports, find us on IRC, submit blueprints, ask questions and let us know how
 to improve. See the `How to contribute
-<https://wiki.openstack.org/wiki/Fuel/How_to_contribute#How_and_where_to_get_help>`
+<https://wiki.openstack.org/wiki/Fuel/How_to_contribute#How_and_where_to_get_help>_`
 Wiki page for details on how to get in touch with us.
 
 A number of features that are planned for the 6.0 release are still under
@@ -71,6 +71,9 @@ VLAN Manager is supported for vCenter environments
 
 VLAN Manager is now available for the :ref:`Nova-network<nova-network-term>`
 networking topologies in :ref:`vCenter<vcenter-term>` environments.
+See the `VLAN manager support for vCenter
+<https://blueprints.launchpad.net/fuel/+spec/vcenter-vlan-manager>`_
+blueprint for implementation details.
 
 1:1 mapping between Nova Compute service instance and vSphere cluster
 ---------------------------------------------------------------------
@@ -81,7 +84,6 @@ service and the :ref:`vSphere<vsphere-term>` clusters that are formed by
 meaning that all vSphere clusters were managed by a single vCenter server. This
 created a single point of failure; if the service failed for some reason, the
 entire cloud lost access to Compute resources.
-
 Fuel 6.0 launches multiple instances of the Nova Compute service and configures
 each service to use a single vSphere cluster. The Nova Compute service runs on
 OpenStack Controller nodes as it always did. See the `1-1 mapping between
@@ -155,7 +157,7 @@ Pluggable Architecture
 ----------------------
 
 Fuel 6.0 supports a pluggable architecture that allows new functionality to be
-added to Fuel by a self-contained archive. Tools are provided that allow
+added to Fuel from a self-contained archive. Tools are provided that allow
 contributors to package and test Fuel plugins.
 
 This first release of the Pluggable Architecture feature has the following
@@ -194,7 +196,7 @@ anaconda/preseed installers. See the `Image based OS provisioning
 <https://blueprints.launchpad.net/fuel/+spec/image-based-provisioning>`_
 blueprint for implementation details.
 
-Scalibility Certification for 100-node environments
+Scalability Certification for 100-node environments
 ---------------------------------------------------
 
 Environments deployed with Fuel 6.0 are being certified as stable and scalable
@@ -222,8 +224,8 @@ The Fuel UI allows users to set external DNS and NTP servers
 
 Fuel 6.0 allows operators to specify DNS and NTP servers that are outside the
 Fuel environment. The */etc/resolve.conf* files on the target nodes are pointed
-to the controller DNS and NTP services, which forward local queries to Fuel
-master node, and forward external queries to the specified external DNS and NTP
+to the controller DNS and NTP services, which forward local queries to the Fuel
+master node and forward external queries to the specified external DNS and NTP
 servers. See the `Support External DNS and NTP
 <https://blueprints.launchpad.net/fuel/+spec/external-dns-ntp-support>`_
 blueprint for implementation details.
@@ -244,7 +246,7 @@ Ceilometer can collect statistics in vCenter environment
 Fuel can now install a Ceilometer agent on the Controller node where the
 Compute role is installed when deploying a vCenter environment. Operators can
 then configure Ceilometer to collect metrics for the vCenter environment; see
-:ref:`ceilometer-vcenter`. See
+:ref:`ceilometer-vcenter`. See the
 `Implement possibility to setup ceilometer compute agent on controller
 <https://blueprints.launchpad.net/fuel/+spec/ceilometer-support-for-vcenter>`_
 blueprint for implementation details.
