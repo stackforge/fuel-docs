@@ -42,3 +42,13 @@ You can select either the soft trunks or hard trunks mode:
    You should use fewer than 50 VLANs
    if you run the Neutron VLAN mode and use the hard trunks mode.
 
+Fuel also provides the option
+of using the experimental Fedora long-term support 3.10 kernel.
+Using this kernel may allow you to use VLAN tagged packets
+without using VLAN splinters,
+which can provide significant performance advantages.
+However, this option has had minimal testing
+and may invalidate your agreements with your hardware vendor.
+See :ref:`ovs-arch`
+for more information about using Open VSwitch.
+

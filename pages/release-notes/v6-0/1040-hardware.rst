@@ -47,34 +47,9 @@ This is because the CentOS kernel is based on a pre-3.3 kernel
 and so has poor support for VLAN tagged packets
 moving through :ref:`ovs-term`  Bridges.
 Ubuntu is not affected by this issue.
-
-A workaround is to enable VLAN Splinters in OVS.
-For CentOS, the Fuel UI Settings page can now deploy
-with a VLAN splinters workaround enabled in two separate modes --
-soft trunks and hard trunks:
-
-*  The **soft trunks mode** configures OVS to enable splinters
-   and attempts to automatically detect in-use VLANs.
-   This provides the least amount of performance overhead
-   but the traffic may not be passed onto the OVS bridge in some edge cases.
-
-*  The **hard trunks mode** also configureS OVS to enable splinters
-   but uses an explicitly defined list of all VLANs across all interfaces.
-   This should prevent the occasional failures associated with the soft mode
-   but requires that corresponding tags be created on all of the interfaces.
-   This introduces additional performance overhead.
-   In the hard trunks mode,
-   you should use fewer than 50 VLANs in the Neutron VLAN mode.
-
-Fuel also provides another option here:
-using the experimental Fedora long-term support 3.10 kernel.
-This option has had minimal testing
-and may invalidate your agreements with your hardware vendor.
-But using this kernel may allow you to use VLAN tagged packets
-without using VLAN splinters,
-which can provide significant performance advantages.
-See :ref:`ovs-arch`
-for more information about using Open VSwitch.
+Fuel provides configuration options
+to alleviate problems using VLANs on CentOS;
+see :ref:`vlan-splinters-ug`.
 
 HP BL120/320 RAID controller line is not supported
 ++++++++++++++++++++++++++++++++++++++++++++++++++
