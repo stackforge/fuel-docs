@@ -52,12 +52,9 @@ New node may not boot because of IOMMU issues
 
 A new node fails when trying to boot into bootstrap.
 To fix this issue,
-add the "intel_iommu=off" kernel parameter on the Fuel Master node
-with the following console command on master node:
-::
-
-    `dockerctl shell cobbler cobbler profile edit --name bootstrap --kopts="intel_iommu=off" --in-place`
-
+add the "intel_iommu=off" or "amd_iommu=off" kernel parameter
+on the Fuel Master node;
+see :ref:`kernel-parameters-ops`.
 See `LP1324483 <https://bugs.launchpad.net/bugs/1324483>`_.
 
 Anaconda fails with LVME error on CentOS
