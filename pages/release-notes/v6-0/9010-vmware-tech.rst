@@ -8,6 +8,7 @@ Issues in VMware technologies
 
 New Features and Resolved Issues in Mirantis OpenStack 6.0
 ----------------------------------------------------------
+
 * Nova-network now supports VLAN manager for vCenter.
   See `VLAN manager support for vCenter <https://blueprints.launchpad.net/fuel/+spec/vcenter-vlan-manager>`_.
 
@@ -18,8 +19,8 @@ New Features and Resolved Issues in Mirantis OpenStack 6.0
 * Sahara is now supported in vCenter.
   See `LP1370708 <https://bugs.launchpad.net/fuel/+bug/1370708>`_.
 
-* Currently, if vCenter installation is chosen, compute and controller
-  are on one node and Ceilometer compute agent is now installed on that node, so metrics about
+* Currently, if vCenter installation is chosen, compute and controller roles
+  are assigned to one node; Ceilometer compute agent is now installed on that node, so metrics about
   instances is successfully collected.
   See `Ceilometer support for vCenter <https://blueprints.launchpad.net/fuel/+spec/ceilometer-support-for-vcenter>`_.
 
@@ -124,5 +125,10 @@ but it has some known limitations:
   You should not delete controller; otherwise, your environment will crash.
   See `LP1371638 <https://bugs.launchpad.net/fuel/+bug/11371638>`_.
 
+* When  node with controller role is added to the environment,
+  Cinder LVM stays unavailable. To work this problem around
+  and unblock UI element, follow instructions described in :ref:`assign-roles-vcenter-ug`.
+  See `LP1387636 <https://bugs.launchpad.net/fuel/+bug/1387636>`_.
 
-.. include:: /pages/release-notes/v6-0/vmware/9020-nsx.rst
+.. include:: pages/release-notes/v6-0/vmware/9020-nsx.rst
+
