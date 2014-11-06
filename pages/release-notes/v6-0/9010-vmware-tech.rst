@@ -6,6 +6,9 @@ Issues in VMware technologies
 
 .. _vcenter-rn:
 
+
+[TBD]
+
 New Features and Resolved Issues in Mirantis OpenStack 6.0
 ----------------------------------------------------------
 * Nova-network now supports VLAN manager for vCenter.
@@ -123,6 +126,11 @@ but it has some known limitations:
   successfully, but nova-network service is not deployed at primary controller.
   You should not delete controller; otherwise, your environment will crash.
   See `LP1371638 <https://bugs.launchpad.net/fuel/+bug/11371638>`_.
+
+* When  node with controller role is added to the environment,
+  Cinder LVM stays unavailable. To work this problem around
+  and unblock UI element, follow [TBD: post a link to external resource]
+  See `LP1387636 <https://bugs.launchpad.net/fuel/+bug/1387636>`_.
 
 For more information see:
 .. include:: pages/release-notes/v6-0/vmware/9020-nsx.rst
