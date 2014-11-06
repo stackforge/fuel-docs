@@ -4,6 +4,15 @@
 Update and Upgrade Issues
 =========================
 
+New Features and Resolved Issues in Mirantis OpenStack 6.0
+----------------------------------------------------------
+
+* Upgrade to 6.0 version no longer fails at checkers verification stage.
+  See `LP1391525 <https://bugs.launchpad.net/fuel/+bug/1391525>`_.
+
+* After 5.1 to 6.0 upgrade, Ubuntu installer is now loaded.
+  See `LP1390521 <https://bugs.launchpad.net/fuel/+bug/1390521>`_.
+
 Known Issues in 6.0
 -------------------
 
