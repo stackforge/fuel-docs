@@ -44,10 +44,14 @@ When updating the environment from 5.0 to 5.0.2,
 a "timeout exceeded" error may occur.
 See `LP1367796 <https://bugs.launchpad.net/bugs/1367796>`_.
 
-Other issues
-++++++++++++
+Rollback issues
++++++++++++++++
 
 * Rollback is impossible due to package conflicts.
   See `LP1364068 <https://bugs.launchpad.net/bugs/1364068>`_.
+
+* After rollback, Neutron server is down;
+  *Unable to load quantum from configuration file* error occurs.
+  See `LP1364465 <https://bugs.launchpad.net/bugs/1364465>`_.
 
 
