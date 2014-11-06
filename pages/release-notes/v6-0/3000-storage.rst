@@ -4,12 +4,15 @@
 Storage technologies Issues
 ===========================
 
+
 New Features and Resolved Issues in Mirantis OpenStack 6.0
 ----------------------------------------------------------
 
-* Glance now can use vSphere Datastore as a backend. This provides
+* [not merged yet]
+  Glance can use vSphere Datastore as a backend. This provides
   a faster image copying process.
-  See `vSphere as a Glance backend <https://blueprints.launchpad.net/fuel/+spec/vsphere-glance-backend>`_.
+  See
+  `vSphere as a Glance backend <https://blueprints.launchpad.net/fuel/+spec/vsphere-glance-backend>`_ blueprint.
 
 * When updating the environment,
   the Ceph nodes are now successfully updated.
@@ -23,6 +26,23 @@ New Features and Resolved Issues in Mirantis OpenStack 6.0
   enabling RBD backend for both Cinder and Glance
   enabled zero-copy creation of a Cinder volume from a Glance image.
   See `LP1373096 <https://bugs.launchpad.net/bugs/1373096>`_.
+
+* Ceph Monitor is now not installed on controllers if Ceph OSD was
+  added to the cluster afterwards.
+  See `LP1388798 <https://bugs.launchpad.net/bugs/1388798>`_.
+
+* **Ceph-deploy OSD prepare** command goes successfully on HP Smart Array CCISS drives.
+  See `LP1381218 <https://bugs.launchpad.net/bugs/1381218>`_.
+
+* After successful deployment, but glance-api now is now broken.
+  See `LP1374366 <https://bugs.launchpad.net/bugs/1374366>`_.
+
+* When chosen, 'Ceph for volumes' option on Fuel UI wizard is saved without failures
+  See `LP1384082 <https://bugs.launchpad.net/bugs/1384082>`_.
+
+* Swift replicator service no longer has an upstart error
+  on Ubuntu.
+  See `LP1376515 <https://bugs.launchpad.net/bugs/1376515>`_.
 
 Known Issues in Mirantis OpenStack 6.0
 --------------------------------------
@@ -93,7 +113,6 @@ The value show in a sum of all Ceph storage seen on each storage node
 instead of the actual amount of Ceph storage.
 See `LP1359989 <https://bugs.launchpad.net/bugs/1359989>`_.
 
-
 Other Ceph issues
 +++++++++++++++++
 
@@ -109,5 +128,20 @@ Other Ceph issues
 
   See `LP1287166 <https://bugs.launchpad.net/fuel/+bug/1287166>`_.
 
+* RADOS Gateway has segmantation faults due to emply copy.
+  See `LP1386369 <https://bugs.launchpad.net/fuel/+bug/1386369>`_.
 
+* "No such device" error occurs when instance with Ceph volumes or images
+  is launched. See `LP1385834 <https://bugs.launchpad.net/fuel/+bug/1385834>`_.
 
+* Ceph OSD can not be stopped after installation procedure.
+  See `LP1374160 <https://bugs.launchpad.net/fuel/+bug/1374160>`_.
+
+* During deployment, **ceph-deploy --overwrite-config** fails
+  with errors in Puppet log.
+  See `LP1388749 <https://bugs.launchpad.net/fuel/+bug/1388749>`_.
+
+* When Ceph is chosen for both Cinder and Glance, it
+  copies the image to Controller (Glance) node and does not
+  upload the image back to Cinder as a volume.
+  See `LP1373096 <https://bugs.launchpad.net/bugs/1373096>`_.
