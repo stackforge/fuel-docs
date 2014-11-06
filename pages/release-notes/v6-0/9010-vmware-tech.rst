@@ -6,6 +6,9 @@ Issues in VMware technologies
 
 .. _vcenter-rn:
 
+
+[TBD]
+
 New Features and Resolved Issues in Mirantis OpenStack 6.0
 ----------------------------------------------------------
 * Nova-network now supports VLAN manager for vCenter.
