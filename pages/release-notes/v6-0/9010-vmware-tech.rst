@@ -8,6 +8,7 @@ Issues in VMware technologies
 
 New Features and Resolved Issues in Mirantis OpenStack 6.0
 ----------------------------------------------------------
+
 * Nova-network now supports VLAN manager for vCenter.
   See `VLAN manager support for vCenter <https://blueprints.launchpad.net/fuel/+spec/vcenter-vlan-manager>`_.
 
@@ -18,8 +19,8 @@ New Features and Resolved Issues in Mirantis OpenStack 6.0
 * Sahara is now supported in vCenter.
   See `LP1370708 <https://bugs.launchpad.net/fuel/+bug/1370708>`_.
 
-* Currently, if vCenter installation is chosen, compute and controller
-  are on one node and Ceilometer compute agent is now installed on that node, so metrics about
+* Currently, if vCenter installation is chosen, *Compute* and *Controller* roles
+  are assigned to one node; Ceilometer compute agent is now installed on that node, so metrics about
   instances is successfully collected.
   See `Ceilometer support for vCenter <https://blueprints.launchpad.net/fuel/+spec/ceilometer-support-for-vcenter>`_.
 
@@ -30,15 +31,12 @@ New Features and Resolved Issues in Mirantis OpenStack 6.0
   It no longer affects cloud-init based images and all services using
   metadata information. See `LP1370165 <https://bugs.launchpad.net/fuel/+bug/1370165>`_.
 
-* VMware DataStore option was added to the'Storage Backends' tab
-  for Cinder in wizard.
+* VMware DataStore option was added to the **Storage Backends**
+  tab for Cinder in wizard.
   See `LP1359696 <https://bugs.launchpad.net/fuel/+bug/1359696>`_.
 
 * Glance-API service successfully starts in HA mode with vCenter as the Glance backend.
   See `LP1376683 <https://bugs.launchpad.net/fuel/+bug/1376683>`_.
-
-* Cirros images now work properly with vCenter.
-  See `LP1362169 <https://bugs.launchpad.net/fuel/+bug/1362169>`_.
 
 * When vCenter is used on Ubuntu, deployment does not fail.
   See `LP1357129 <https://bugs.launchpad.net/fuel/+bug/1357129>`_.
@@ -57,9 +55,17 @@ but it has some known limitations:
   but you must select it on the Fuel :ref:`Settings<settings-storage-ug>` page.
   See `LP1316377 <https://bugs.launchpad.net/fuel/+bug/1316377>`_.
 
+* vCenter does not support Ceilometer.
+  See
+  `Enable Ceilometer for vCenter <https://blueprints.launchpad.net/fuel/+spec/ceilometer-support-for-vcenter>`_ blueprint.
+
 * On CentOS in HA mode on vCenter's machine on primary controller OpenStack
   deployment crashes because RabbitMQ can not connect to primary controller.
   See `LP1370558 <https://bugs.launchpad.net/fuel/+bug/1370558>`_.
+
+* Murano is not enabled for vCenter.
+  See
+  `Enable Murano support for vCenter <https://blueprints.launchpad.net/fuel/+spec/enable-murano-support-for-vcenter>`_ blueprint.
 
 * When using the VMDK driver,
   instances must be deployed to use operating systems
@@ -79,7 +85,7 @@ but it has some known limitations:
   Both of them are fully functional.
   See `LP1381992 <https://bugs.launchpad.net/fuel/+bug/1381992>`_.
 
-* When we create a new OpenStack environment, the FuelUI does not prompt user to configure
+* When we create a new OpenStack environment, the Fuel web UI does not prompt user to configure
   VMware vCenter/ESXi Glance as it does when selecting a hypervisor.
   The user's credentials are not checked, so make sure you have
   entered valid credentials; otherwise, the deployment
@@ -92,8 +98,7 @@ but it has some known limitations:
   See `LP1381613 <https://bugs.launchpad.net/fuel/+bug/1381613>`_.
 
 * When using vCenter as a hypervisor, vCenter can be used as a storage backend for Cinder.
-  However, 'Storage - Cinder LVM' role is available when adding nodes.
-  To work around this problem, you should add one node with ' Storage - Cinder LVM' role.
+  However, **Storage - Cinder LVM** role is available when adding nodes.
   See `LP1383224 <https://bugs.launchpad.net/fuel/+bug/1383224>`_.
 
 * According to
@@ -112,8 +117,10 @@ but it has some known limitations:
   See `LP1370723 <https://bugs.launchpad.net/fuel/+bug/1370723>`_.
 
 * Speed of copying images between vCenter and non-VMDK Glance backends can be dramatically low.
-  VMDK backend for Glance would fix this problem, but this approach is useless if multihypervisor environment is enabled.
-  See `VMware vCenter templates available as Glance images blueprint <https://blueprints.launchpad.net/glance/+spec/hypervisor-templates-as-glance-images>`_.
+  VMDK backend for Glance would fix this problem, but
+  this approach is useless if multihypervisor environment is enabled.
+  See
+  `VMware vCenter templates available as Glance images blueprint <https://blueprints.launchpad.net/glance/+spec/hypervisor-templates-as-glance-images>`_.
 
 * Currently, vCenter IP field does not take a hostname;
   only connection via IP address is supported.
@@ -121,8 +128,30 @@ but it has some known limitations:
 
 * On CentOS in HA mode on vCenter machine, cluster deployment finishes
   successfully, but nova-network service is not deployed at primary controller.
-  You should not delete controller; otherwise, your environment will crash.
-  See `LP1371638 <https://bugs.launchpad.net/fuel/+bug/11371638>`_.
+  To work around this problem, do not delete controller; otherwise, your environment will crash.
+  See `LP1371638 <https://bugs.launchpad.net/fuel/+bug/1371638>`_.
 
+* When a node with Controller role is added to the environment,
+  Cinder LVM stays unavailable. To work this problem around
+  and unblock UI element, follow instructions described
+  in :ref:`assign-roles-vcenter-ug`.
+  See `LP1387636 <https://bugs.launchpad.net/fuel/+bug/1387636>`_.
 
-.. include:: /pages/release-notes/v6-0/vmware/9020-nsx.rst
+* Deployment fails when VMware vCenter is used as hypervisor.
+  At the end of deployment process
+  TestVM glance image is being created using CirrOS.
+  When vCenter is used, **glance image-create** command expects
+  */opt/vm/cirros-i386-disk.vmdk* vmdk image
+  on Controller node, but this image file is missing.
+  See `LP1388113 <https://bugs.launchpad.net/fuel/+bug/1388113>`_.
+
+* Fuel 6.0 supports VLAN manager, but the following problem occurs:
+  when vCenter is deployed with VLAN manager in HA mode,
+  no clean-up is provided.
+  See `LP1392719 <https://bugs.launchpad.net/fuel/+bug/1392719>`_.
+
+* Instance snapshot fails vCenter is used as the backend for Glance.
+  See `LP1383241 <https://bugs.launchpad.net/fuel/+bug/1383241>`_.
+
+.. include:: pages/release-notes/v6-0/vmware/9020-nsx.rst
+
