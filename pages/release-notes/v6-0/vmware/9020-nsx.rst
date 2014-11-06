@@ -3,6 +3,7 @@
 
 VMware NSX integration
 ----------------------
+
 New Features and Resolved Issues in Mirantis OpenStack 6.0
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -10,16 +11,21 @@ New Features and Resolved Issues in Mirantis OpenStack 6.0
   unavailable Neutron and Keystone services.
   See `LP1369529 <https://bugs.launchpad.net/bugs/1369529>`_.
 
-* vCenter as a Hypervisor and NSX as a networking option are now enabled in Fuel.
-  Fuel 5.0 had a limited support of vCenter as a hypervisor and no NSX support at all,
-  but OpenStack can be integrated with both these components.
-  See `vCenter NSX support <https://blueprints.launchpad.net/fuel/+spec/vcenter-nsx-support>`_.
+* vCenter as a Hypervisor and NSX as a networking option are now fully supported
+  in Fuel 6.0.
+  See
+  `vCenter NSX support <https://blueprints.launchpad.net/fuel/+spec/vcenter-nsx-support>`_.
 
 * OpenStack deployment process on the second controller of NSX machine no longer
   fails. See `LP1368728 <https://bugs.launchpad.net/bugs/1368728>`_.
 
-* Support of 'non-Service node’ mode is now enabled for NSX.
-  See `LP1365043 <https://bugs.launchpad.net/bugs/1365043>`_.
+* Support of **non-Service node** mode is now enabled for NSX.
+  See `LP1365043 <https://bugs.launchpad.net/bugs/1365043>`_ and
+  :ref:`nsx-plan`.
+
+* NSX deployment now does not crash
+  due to *invalid argument gateway* error.
+  See `LP1389317 <https://bugs.launchpad.net/bugs/1389317>`_
 
 Known limitations in 6.0
 ++++++++++++++++++++++++
@@ -44,13 +50,30 @@ but it has some known limitations:
 
 * When deploying environment with enabled NSX plugin, several problems may occur:
   for instance, if Neutron configuration did not succeed, Fuel marks this deployment
-  as a successful one. Error messages in Puppet logs may indicate this problem.
+  as a successful one.
+  Error messages in Puppet logs may indicate this problem.
   One more failure may take place when you try to redeploy your environment with NSX.
   In this case, before redeploying you should delete all OpenStack-related nodes,
   that have already been registered. See `LP1373403 <https://bugs.launchpad.net/bugs/1373403>`_
   and `LP1373445 <https://bugs.launchpad.net/bugs/1373445>`_.
 
-* Instances failed to get IP Address on Ubuntu+NSx deployment.
+* Instances failed to get IP Address on Ubuntu+NSX deployment.
   This happens, because NSX bits are incompatible with Ubuntu packages and kernel
   versions.
-  See LP1371607 <https://bugs.launchpad.net/bugs/1371607>`_.
+  See `LP1371607 <https://bugs.launchpad.net/bugs/1371607>`_.
+
+* Fuel with enabled NSX can not complete CentOS-based cloud deployment
+  due to problems with Neutron. In this case,
+  you will see *Can't prefetch subnet-list Neutron or Keystone API is not avalaible*
+  error message.
+  See `LP1392244 <https://bugs.launchpad.net/bugs/1392244>`_.
+
+* When NSX is used,
+  old transport nodes created during the previous deployment
+  are not removed automatically.
+  See `LP1370775 <https://bugs.launchpad.net/bugs/1370775>`_.
+  automatically
+
+* When node has NSX and Compute or multiple roles enabled,
+  an error in puppet logs may occur.
+  See `LP1393497 <https://bugs.launchpad.net/bugs/1393497>`_.
