@@ -4,6 +4,7 @@
 Monitoring System Server (Zabbix)
 ---------------------------------
 
+[TBD]
 
 New Features and Resolved Issues in Mirantis OpenStack 6.0
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

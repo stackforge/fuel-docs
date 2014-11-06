@@ -4,6 +4,8 @@
 OpenStack Telemetry (Ceilometer) and MongoDB Database
 -----------------------------------------------------
 
+[TBD]
+
 Known Issues in Mirantis OpenStack 6.0
 ++++++++++++++++++++++++++++++++++++++
 
