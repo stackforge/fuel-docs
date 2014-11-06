@@ -4,11 +4,18 @@
 Monitoring System Server (Zabbix)
 ---------------------------------
 
-
 New Features and Resolved Issues in Mirantis OpenStack 6.0
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 - A CentOS environment can now successfully run Zabbix.
   See `LP1368151 <https://bugs.launchpad.net/bugs/1368151>`_.
+
+* After deployment is finished, Zabbix server runs without failures.
+  See `LP1373387 <https://bugs.launchpad.net/bugs/1373387>`_.
+
+* After environment is deployed, warning messages no longer
+  appear in zabbix.log.
+  See `LP1387644 <https://bugs.launchpad.net/bugs/1387644>`_.
 
 Known Issues in Mirantis OpenStack 6.0
 ++++++++++++++++++++++++++++++++++++++
@@ -32,4 +39,3 @@ This version has the following known issues:
   See `LP1352319 <https://bugs.launchpad.net/bugs/1352319>`_.
 
 See :ref:`zabbix-plan` for more information.
-
