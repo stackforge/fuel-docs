@@ -7,10 +7,6 @@ OpenStack Dashboard (Horizon)
 New Features and Resolved Issues in Mirantis OpenStack 6.0
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-* Users no longer have to log into Horizon twice after a session times out.
-  This used to happen when both the Keystone token and the Horizon session expired at the same time.
-  See `LP1353544 <https://bugs.launchpad.net/bugs/1353544>`_.
-
 * Horizon filter displays long objects correctly: objects that are bigger
   than one page
   are now displayed properly in Horizon.
@@ -66,6 +62,14 @@ Then restart the Apache web server.
 
 * If node is added to the cluster after removing a compute node from this cluster,
   an error occurs: the deleted node still is displayed in Horizon in down state.
-  See `LP1374361 <https://bugs.launchpad.net/bugs/1374361>`_.
+  See `LP1374361 <https://bugs.launchpad.net/bugs/1374361>`_ and
+  `Full life-cycle of Compute node <https://blueprints.launchpad.net/fuel/+spec/compute-node-lifecycle>_` blueprint.
 
+* Administrator's panel does not work in Horizon for custom role;
+  Horizon can not recognize *customadmin* as an administrator.
+  See `LP1371161 <https://bugs.launchpad.net/bugs/1371161>`_.
 
+* Horizon page dies if more than 1000 users are created.
+  If you try to open page with users in Horizon and to enter anything
+  in **Filter** field , this tab will die.
+  See `LP1386953 <https://bugs.launchpad.net/bugs/1386953>`_

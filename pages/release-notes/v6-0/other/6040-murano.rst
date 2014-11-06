@@ -4,6 +4,16 @@
 Application Catalog System (Murano)
 -----------------------------------
 
+New Features and Resolved Issues in Mirantis OpenStack 6.0
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+* Murano no longer changes deployment status to "successful" when Heat stack failed.
+  See `LP1353589 <https://bugs.launchpad.net/bugs/1353589>`_.
+
+* Deployment now does not hangs up in the **Agent task**
+  execution stage.
+  See `LP1383360 <https://bugs.launchpad.net/bugs/1383360>`_.
+
 Known Issues in Mirantis OpenStack 6.0
 ++++++++++++++++++++++++++++++++++++++
 
@@ -13,15 +23,6 @@ Known Issues in Mirantis OpenStack 6.0
   This is a design decision made by the OpenStack community;
   it allows us to focus our efforts on Neutron,
   and we see little demand for Murano support on Nova-network.
-
-* **Murano changes deployment status to "successful" when Heat stack failed.**
-  Murano uses Heat to allocate OpenStack resources;
-  therefore one of the first steps of Environment
-  deployment is creation of stack. Creation of stack may
-  fail due to various reasons but unfortunately this failure
-  will not be detected by Murano and overall Environment
-  deployment will be reported as successful.
-  See `LP1353589 <https://bugs.launchpad.net/bugs/1353589>`_.
 
 
 RabbitMQ may lose Murano users
