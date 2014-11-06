@@ -4,6 +4,8 @@
 Storage technologies Issues
 ===========================
 
+[TBD]
+
 New Features and Resolved Issues in Mirantis OpenStack 6.0
 ----------------------------------------------------------
 
