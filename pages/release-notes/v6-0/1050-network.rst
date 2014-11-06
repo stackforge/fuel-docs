@@ -4,11 +4,52 @@
 Networking issues
 =================
 
+New Features and Resolved Issues in Mirantis OpenStack 6.0
+----------------------------------------------------------
+
+* Neutron metadata agent no longer
+  fails after primary controller is shut down.
+  See `LP1371561 <https://bugs.launchpad.net/bugs/1371561>`_.
+
+* Neutron GRE is deployed successfully in CentOS;
+  no timeout error occurs.
+  See `LP1382529 <https://bugs.launchpad.net/bugs/1382529>`_.
+
+* Neutron metadata agent start in OCF is fixed;
+  Neutron OVS process is run separately.
+  See `LP1389299 <https://bugs.launchpad.net/bugs/1389299>`_.
+
+* In HAProxy, Neutron API interface now has no nodes in backup mode.
+  See `LP1276762 <https://bugs.launchpad.net/bugs/1276762>`_.
+
+* A router or a network is no longer
+  created before administrator's tenant is.
+  See `LP1385491 <https://bugs.launchpad.net/bugs/1385491>`_.
+
+* When Neutron is deployed with GRE, traffic on instances is no
+  longer slow. To workaround this issues manually,
+  you need to apply to all Ethernet interfaces the following command:
+
+::
+
+    ethtool --offload eth0 gro off
+
+
+  See `LP1256289 <https://bugs.launchpad.net/bugs/1256289>`_.
+
+* Neutron qrouter now migrates after network on the primary controller is
+  deleted. See `LP1371550 <https://bugs.launchpad.net/bugs/1371550>`_.
+
+* Neutron L3 agent no longer has a misconfiguration error.
+  See `LP1372787 <https://bugs.launchpad.net/bugs/1372787>`_.
+
 Known Issues in 6.0
 -------------------
+
 * In Neutron GRE HA mode, network list
   can not be retrieved.
   See `LP1383265 <https://bugs.launchpad.net/bugs/1383265>`_.
+  or https://bugs.launchpad.net/fuel/+bug/1370231
 
 * The floating VLAN and public networks
   must use the same L2 network and L3 Subnet.
@@ -23,9 +64,6 @@ Known Issues in 6.0
   The Fuel Master node should live in a restricted L2 network
   so this should not create a security vulnerability.
 
-* IP ranges can not be updated for management and storage networks.
-  See `LP1365368 <https://bugs.launchpad.net/bugs/1365368>`_.
-
 * L3 agent takes more than 30 seconds
   to failover to a standby controller
   when a controller node fails.
@@ -37,15 +75,6 @@ Known Issues in 6.0
   Please discuss this issue with your security administrator
   if it is a concern for your organization.
 
-* LACP Bonding must be enabled in the switch
-  before deploying an environment that uses it.
-  Network interfaces must be connected to a switch with LACP enabled
-  before attempting to deploy an environment
-  with "LACP balance-tcp" enabled
-  or the deployment will fail
-  with many network error messages.
-  See `LP1370593 <https://bugs.launchpad.net/fuel/+bug/1370593>`_.
-
 * A spurious "Critical error" is logged
   in the *neutron-openvswitch-agent.log* on the Compute node.
   It does not affect the behavior of Neutron networking
@@ -53,9 +82,12 @@ Known Issues in 6.0
   This is related to the upstream
   `LP1246848 <https://bugs.launchpad.net/nova/+bug/1246848>`_.
 
-* When ovs-agent is started, "Critical error" appears.
-  See `LP1347612 <https://bugs.launchpad.net/bugs/1347612>`_.
+* Virtualbox scripts do not use NAT-network for a Public vboxnet.
+  See `LP1275774 <https://bugs.launchpad.net/bugs/1275774>`_.
 
+* After rollback, Neutron server goes down on all controllers with failed
+  OSTF tests.
+  See `LP1364465 <https://bugs.launchpad.net/bugs/1364465>`_.
 
 .. include:: /pages/release-notes/v6-0/9100-mellanox.rst
 
