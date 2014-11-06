@@ -4,12 +4,31 @@
 Test and Verification Issues
 ============================
 
-Known Issues in 6.0
--------------------
+New Features and Resolved Issues in Mirantis OpenStack 6.0
+----------------------------------------------------------
 
-Network verification issues
-+++++++++++++++++++++++++++
+* OSTF deployment tests now work without failures
+  for Murano environment.
+  See `LP1392257 <https://bugs.launchpad.net/fuel/+bug/1392257>`_.
 
+* OSTF tests complete successfully; no Keystone database error occurs.
+  See `LP1380530 <https://bugs.launchpad.net/fuel/+bug/1380530>`_.
+
+* During Fuel Master node deployment, OSTF
+  container check completes without failures.
+  See `LP1361730 <https://bugs.launchpad.net/fuel/+bug/1361730>`_.
+
+* During OSTF tests, "Time limit exceeded while waiting
+  for 'ping' command to finish" message no longer appears.
+  See `LP1339691 <https://bugs.launchpad.net/bugs/1339691>`_.
+
+
+Known Issues in Mirantis OpenStack 6.0
+--------------------------------------
+
+Network verification issues   
++++++++++++++++++++++++++++   
+  
 * Network verification can fail if a node is offline
   because Astute runs network verification
   but Astute does not know which nodes are online.
@@ -24,27 +43,17 @@ OSTF (Health Check) issues
 * Platform OSTF tests fail with "HTTP unauthorized" error.
   See `LP1349408 <https://bugs.launchpad.net/bugs/1349408>`_.
 
-* 'Create volume and attach it to instance' OSFT does not work.
-  See `LP1346133 <https://bugs.launchpad.net/bugs/1346133>`_.
-
 * OSTF provides wrong failure message for ping probes.
-  See `LP1323433 <https://bugs.launchpad.net/bugs/1323433>`_.
+  See `LP1323433 <https://bugs.launchpad.net/bugs/1323433>`_
 
 * "Request image list" OSTF test fails for environment with 'error' status.
   See `LP1330458 <https://bugs.launchpad.net/bugs/1330458>`_.
-
-* During OSTF tests, "Time limit exceeded while waiting
-  for 'ping' command to finish" message appears.
-  See `LP1339691 <https://bugs.launchpad.net/bugs/1339691>`_.
-
-* After update, Sahara OSTF tests are displayed in HA suite instead of Platform test.
-  See `LP1357330 <https://bugs.launchpad.net/bugs/1357330>`_.
 
 * After resetting the environment, OSTF test results from the last
   environment are still displayed.
   See `LP1338669 <https://bugs.launchpad.net/bugs/1338669>`_.
 
-
-* Some OSTF tests do not give descriptive message when they fail.
-  See `LP1371051 <https://bugs.launchpad.net/fuel/+bug/1371051>`_.
-
+* RabbitMQ OSTF test is limited.
+  The OSTF test for RabbitMQ only checks rabbitmqctl cluster_status. See the related
+  `RabbitMQ OSTF replication tests <https://blueprints.launchpad.net/fuel/+spec/ostf-rabbit-replication-tests>_`
+  blueprint.
