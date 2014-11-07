@@ -5,9 +5,13 @@ Keystone
 --------
 Keystone is 
 the OpenStack :ref:`identity-service-term`.
+It is installed on the target nodes
+and used by OpenStack.
 
 Beginning with Mirantis OpenStack 5.1,
-Keystone manages access to the Fuel UI.
+Fuel creates a separate Keystone instance
+that is installed in a container on the Fuel Master node
+and manages access to the Fuel UI.
 See :ref:`fuel-passwd-ops` for more information.
 
 - `Keystone web page <http://docs.openstack.org/developer/keystone/>`_
