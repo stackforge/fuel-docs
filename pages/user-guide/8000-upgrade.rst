@@ -113,11 +113,16 @@ To upgrade the Fuel Master Node:
       you can do it on another system,
       then copy the `upgrade` tarball to the Master node.
 
-#. Run the upgrade script from that same directory:
+#. Run the upgrade script from that same directory and supply
+   the Fuel administrator (*admin* user) password:
 
     ::
 
-       ./upgrade.sh
+       ./upgrade.sh --password <password>
+
+   If you do not specify the password here,
+   you will be prompted for the password.
+   See :ref:`fuel-passwd-ops` for background information.
 
    The upgrade process can take 30-60 minutes.
    Some operations (such as uploading images) take several minutes;
