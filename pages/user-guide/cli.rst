@@ -222,8 +222,8 @@ Also, you can deploy and provision only some nodes like this
 
 .. _cli-fuel-password:
 
-Change Fuel password
-++++++++++++++++++++
+Change and Set Fuel password
+++++++++++++++++++++++++++++
 
 You can change the Fuel Master Node password with:
 
@@ -237,6 +237,17 @@ to other fuel CLI commands:
 ::
 
   --os-username=admin --os-password=test
+
+You can set the Fuel Master Node password
+when upgrading from a earlier release
+with the following command:
+
+::
+
+  fuel --password <password>
+
+If you do not do this before running the **upgrade.sh** script,
+you will be prompted to supply the password.
 
 See :ref:`fuel-passwd-ops` for more information
 about Fuel authentication.
