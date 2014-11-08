@@ -66,6 +66,7 @@ Terminology Reference
 .. include:: /pages/terminology/p/persistent-storage.rst
 .. include:: /pages/terminology/p/puppet.rst
 .. include:: /pages/terminology/p/pxe.rst
+.. include:: /pages/terminology/q/qcow2.rst
 .. include:: /pages/terminology/q/qemu.rst
 .. include:: /pages/terminology/q/quotas.rst
 .. include:: /pages/terminology/r/rabbitmq.rst
