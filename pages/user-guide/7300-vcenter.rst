@@ -104,12 +104,13 @@ with vSphere integration.
 .. image:: /_images/user_screen_shots/vcenter-additional.png
    :width: 50%
 
-.. note:: Fuel does not configure Ceilometer
-   to collect metrics from vCenter virtual resources.
-   For more details about the Ceilometer plugin for vCenter,
-   see `Support for VMware vCenter Server
-   <https://wiki.openstack.org/wiki/Ceilometer/blueprints/vmware-vcenter-server#Support_for_VMware_vCenter_Server>`_
-
+Fuel can now install a Ceilometer agent on the Controller node where the
+Compute role is installed when deploying a vCenter environment. Operators can
+then configure Ceilometer to collect metrics for the vCenter environment; see
+:ref:`ceilometer-vcenter`. See the
+`Implement possibility to setup ceilometer compute agent on controller
+<https://blueprints.launchpad.net/fuel/+spec/ceilometer-support-for-vcenter>`_
+blueprint for implementation details.
 
 .. raw: pdf
 
