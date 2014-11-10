@@ -147,6 +147,88 @@ The Compute and Controller roles are combined on one node.
 .. image:: /_images/user_screen_shots/vcenter-add-nodes.png
    :width: 80%
 
+Note the following:
+when node with controller role is added to the environment,
+Cinder LVM role stays unavailable. To work this problem around
+and unblock UI element, follow these steps:
+
+* Establish an SSH connection to the Fuel Master node. Then go to a Docker
+  container with Nailgun and run a Python shell to manage Nailgun DB.
+
+::
+
+
+    ssh root@<fuel-master-node-ip>
+    dockerctl shell nailgun
+    manage.py shell
+
+* Then run this code in a Python console:
+
+::
+
+
+   from nailgun.db.sqlalchemy.models import *
+   releases = db().query(Release).all()
+   from copy import deepcopy
+   for r in releases:
+      r.roles_metadata = deepcopy(r.roles_metadata)
+      res = r.roles_metadata['cinder']['restrictions'][0]
+      res['condition'] = (
+      'settings:storage.volumes_lvm.value == false'
+      ' and settings:storage.volumes_vmdk.value == false'
+         )
+   res['message'] = 'Cinder LVM or VMDK should be enabled in settings'
+   
+   db().commit()
+   exit()
+
+* After that the change should be applied to all existing and new environments.
+
+Here is an example of console output when the patch is applied:
+
+::
+
+
+   http://paste.openstack.org/show/131354/
+   user@laptop:~$ ssh root@10.20.0.2
+   root@10.20.0.2's password:
+   Last login: Fri Nov  7 08:14:03 2014 from 10.20.0.1
+   [root@fuel ~]# dockerctl shell nailgun
+   [root@24a34382eeff ~]# manage.py shell
+   2014-11-10 06:36:47.625 DEBUG [7fe511c8a700]
+   (settings) Looking for settings.yaml package config using old style __file__
+   2014-11-10 06:36:47.625 DEBUG [7fe511c8a700]
+   (settings) Trying to read config file /usr/lib/ python2.6/site-packages/nailgun/settings.yaml
+   2014-11-10 06:36:47.807 DEBUG [7fe511c8a700]
+   (settings) Trying to read config file /etc/nailgun/settings.yaml
+   2014-11-10 06:36:47.822 DEBUG [7fe511c8a700]
+   (settings) Trying to read config file /etc/fuel/version.yaml
+   Python 2.6.6 (r266:84292, Jan 22 2014, 09:42:36)
+   [GCC 4.4.7 20120313 (Red Hat 4.4.7-4)] on linux2
+   Type "help", "copyright", "credits" or "license" for more information.
+   (InteractiveConsole)
+   >>> from nailgun.db.sqlalchemy.models import *
+   >>> releases = db().query(Release).all()
+   >>> for r in releases:
+   ...   r.roles_metadata = deepcopy(r.roles_metadata)
+   ...   res = r.roles_metadata['cinder']['restrictions'][0]
+   ...   res['condition'] = (
+   ...     'settings:storage.volumes_lvm.value == false'
+   ...     ' and settings:storage.volumes_vmdk.value == false'
+   ...   )
+   ...   res['message'] = 'Cinder LVM or VMDK should be enabled in settings'
+   ...
+   >>> db().commit()
+   >>> exit()
+   [root@24a34382eeff ~]# exit
+   exit
+   [root@fuel ~]#exit
+   [root@fuel ~]# exit
+   logout
+   Connection to 10.20.0.2 closed.
+   user@laptop:~$
+
+
 .. _network-settings-vcenter-ug:
 
 Network settings
