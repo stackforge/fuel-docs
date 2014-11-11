@@ -1,8 +1,8 @@
-Glance: Storage for Images
---------------------------
 
 .. _glance-storage-plan:
 
+Glance: Storage for Images
+--------------------------
 Fuel configures a storage backend for the Glance image service.
 This provides data resilience for VM images;
 multiple Glance instances running on controller nodes
@@ -13,11 +13,11 @@ When you create your OpenStack environment,
 you :ref:`choose<cinder-glance-backend-ug>`
 one of the following storage backends for Glance:
 
- * `Swift object store <http://swift.openstack.org/>`_, the standard
+ * :ref:`Swift<swift-object-storage-term>`, the standard
    OpenStack object storage component
 
- * `Ceph RBD <http://ceph.com/docs/master/rbd/rbd-openstack/>`_,
-   the distributed block device provided by the Ceph storage platform.
+ * :ref:`Ceph RBD<ceph-term>`,
+   the distributed block device provided by the Ceph storage platform
 
 .. note:: Older versions of Fuel provided the Multi-Node deployment mode
           that was used to deploy OpenStack environments
@@ -42,6 +42,11 @@ for the Glance image server include:
 * Ceph provides a single shared pool of storage nodes
   that can handle all classes of persistent and ephemeral data
   that is required for OpenStack instances.
+
+* Fuel deploys Ceph-OSD (the data storage component of Ceph)
+  as its own role that runs on dedicated nodes
+  so you can add capacity by adding adding additional Ceph-OSD nodes.
+  Fuel deploys Swift on Controller nodes.
 
 * When using Ceph, a single set of hard drives
   can serve as a backend for Glance, Cinder, and Nova.
