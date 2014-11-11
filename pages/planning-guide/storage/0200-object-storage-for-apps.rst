@@ -1,3 +1,6 @@
+
+.. _object-storage-apps-plan:
+
 Object Storage for Applications
 -------------------------------
 
