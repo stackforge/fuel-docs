@@ -14,6 +14,7 @@ You have two choices for the storage back-end:
 .. note::  If you are using :ref:`vcenter-term` as the hypervisor,
            you must use the **VMDK** driver
            to store your volumes in the vCenter datastore.
+           To enable VMDK as a backend for Ceph or Cinder, see :ref:`vcenter-deploy`.
 
 Factors to consider
 when choosing between Cinder LVM and Ceph
