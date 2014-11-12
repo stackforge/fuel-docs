@@ -2,14 +2,24 @@
 Mirantis OpenStack Documentation
 =================================
 
-This repository contains the Mirantis OpenStack user and administrator 
-guides. For more details, see the [Mirantis OpenStack 
-portal](http://software.mirantis.com "Mirantis OpenStack portal").
+This repository contains the following Mirantis OpenStack documentation:
+
+* Planning Guide
+* User Guide
+* Operations Guide
+* Running Mirantis OpenStack on Virtualbox
+* Reference Architectures
+* Terminology Reference
+* Release Notes
+
+For more details, see the [Mirantis OpenStack 
+portal](https://www.mirantis.com/openstack-documentation "Mirantis OpenStack portal").
 
 Contributing
 ============
 
-We welcome all people who are interested in helping our Documentation team 
+We welcome all people who are interested in helping our
+[Documentation Team](https://launchpad.net/~fuel-docs "Documentation team").
 to improve our documentation. There are no formal membership requirements, 
 so feel free to hop in. The best way to contibute is to fork our repository, 
 do your changes and send us a Pull Request. You are invited to contribute 
