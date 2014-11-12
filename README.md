@@ -2,14 +2,24 @@
 Mirantis OpenStack Documentation
 =================================
 
-This repository contains the Mirantis OpenStack user and administrator 
-guides. For more details, see the [Mirantis OpenStack 
-portal](http://software.mirantis.com "Mirantis OpenStack portal").
+This repository contains the following Mirantis OpenStack documentation:
+
+* Planning Guide
+* User Guide
+* Operations Guide
+* Running Mirantis OpenStack on Virtualbox
+* Reference Architectures
+* Terminology Reference
+* Release Notes
+
+For more details, see the [Mirantis OpenStack
+portal](https://www.mirantis.com/openstack-documentation "Mirantis OpenStack portal").
 
 Contributing
 ============
 
-We welcome all people who are interested in helping our Documentation team 
+We welcome all people who are interested in helping our
+[Documentation Team](https://launchpad.net/~fuel-docs "Documentation team").
 to improve our documentation. There are no formal membership requirements, 
 so feel free to hop in. The best way to contibute is to fork our repository, 
 do your changes and send us a Pull Request. You are invited to contribute 
@@ -94,6 +104,9 @@ Checks for commit message:
    "blueprint name-of-the-blueprint" for a commit related to a
    blueprint. Most non-trivial commits should have such references.
 
+For more information on nice examples of commit messages, see
+[GIT Commit Good Practice](https://wiki.openstack.org/wiki/GitCommitMessages "GIT Commit Good Practice").
+
 Checks for content changes:
 
 1. For every block of content that is removed, there should be either a
@@ -133,10 +146,11 @@ Testing the change locally:
 
 4. Build HTML and PDF versions as described above. If rebase was
    necessary, build from the rebased version: you want to see what the
-   result of the merge into master will look like
+   result of the merge into master will look like.
 
-5. Check that the count of warnings reported by 'make pdf' hasn't
-   increased relative to master.
+5. Check that the count of warnings reported by 'make html' hasn't
+   increased relative to master. Warning messages usually contain
+   a line number where error was found.
 
 6. Check that all sections touched by the change show up in the table of
    contents in the right place and at the right nesting level.
