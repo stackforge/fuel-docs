@@ -26,13 +26,14 @@ and a list of unallocated nodes at the bottom.
 
 To assign roles to the nodes:
 
-- Select the role or roles you want to assign
-- Click on the appropriate node(s) in the "Unallocated Nodes" list
+- Select the role or roles you want to assign;
+  roles that cannot be assigned are indicated.
+- Click on the appropriate node(s) in the "Unallocated Nodes" list.
 - Click on the "Apply Changes" button.
 - Proceed to do this until all roles have been assigned to all nodes.
 
 In this example,
-both the "Compute" and "Storage - Cinder LVM" roles
+both the "Compute" and "Storage - Ceph OSD" roles
 are being assigned to this node.
 
 As you make your selections,
@@ -40,12 +41,16 @@ Fuel displays information about combinations
 that are not allowed
 and other configurations that are required.
 For example, in this sample screen,
-it tells you that the Controller role
-cannot be combined with the Compute and Cinder LVM roles
-that you have selected.
+it tells you that the "Controller", "Storage - Cinder LVM",
+and "Telemetry - MongoDB" roles
+are not valid choices,
+either because they cannot be combined with the selected roles
+or, in the case of Cinder LVM,
+because this environment was configured to use Ceph
+rather than Cinder LVM.
 
-.. note:: The Zabbix role appears on this screen
-          only after you have enabled
+.. note:: The Zabbix role also appears on this screen
+          when you have enabled
           :ref:`experimental features<experimental-features-term>`
           on the Fuel Master node.
 
