@@ -17,6 +17,7 @@ The following features are currently defined as experimental:
 - Zabbix integration; see :ref:`zabbix-plan`.
 - Ability to update 5.0 and 5.0.1 environments to 5.0.2;
   see :ref:`upgrade-patch-top-ug`.
+- Support for the VMware NSX network option.
 
 Instructions for enabling experimental features
 on a running Fuel Master node are provided in
