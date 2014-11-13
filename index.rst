@@ -8,8 +8,17 @@
 Welcome to Mirantis OpenStack Documentation
 ===========================================
 
+Mirantis OpenStack is made up of three components:
+
+* :ref:`hardened-packages-term`
+* :ref:`fuel-term`
+* :ref:`support-term`
+
 This page contains the most recent Mirantis OpenStack documentation.
-Select a document from the left menu and navigate through the topics.
+Select a title from the list below
+or from the left menu and navigate through the topics.
+Click on "pdf" in the list below
+to get a PDF file of that document.
 
 :ref:`planning-guide` `(pdf) <pdf/Mirantis-OpenStack-6.0-PlanningGuide.pdf>`__
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
