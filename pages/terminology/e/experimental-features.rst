@@ -15,8 +15,10 @@ that need high levels of stability.
 The following features are currently defined as experimental:
 
 - Zabbix integration; see :ref:`zabbix-plan`.
-- Ability to update 5.0 and 5.0.1 environments to 5.0.2;
-  see :ref:`upgrade-patch-top-ug`.
+- Ability to update deployed environments
+  to the latest version of Mirantis OpenStack;
+  see :ref:`update-openstack-environ-ug`.
+- Support for the VMware NSX network option.
 
 Instructions for enabling experimental features
 on a running Fuel Master node are provided in
