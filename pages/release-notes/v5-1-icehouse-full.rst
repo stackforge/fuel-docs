@@ -2,11 +2,11 @@
 .. _RelNotes-5-1:
 
 
-Release Notes for Mirantis OpenStack 5.1
+Release Notes for Mirantis OpenStack 5.1.1
 ==========================================
 
 
-Mirantis, Inc. is releasing Mirantis OpenStack version 5.1.
+Mirantis, Inc. is releasing Mirantis OpenStack version 5.1.1.
 
 This generally available version of Mirantis OpenStack
 is based on the latest stable Icehouse release of OpenStack.
@@ -22,6 +22,8 @@ The following table lists the released revisions of this documentation:
 | 5.1 Beta | 26-Aug-2014   | Prelim info  |
 +----------+---------------+--------------+
 | 5.1      | 23-Sep-2014   | Initial G.A. |
++----------+---------------+--------------+
+| 5.1.1    | 27-Nov-2014   | Initial G.A. |
 +----------+---------------+--------------+
 
 .. include:: /pages/release-notes/v5-1/010-what-is-mirantis-openstack.rst
