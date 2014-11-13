@@ -24,9 +24,10 @@ Terminology Reference
 .. include:: /pages/terminology/f/fuel-master-node.rst
 .. include:: /pages/terminology/g/galera-cluster.rst
 .. include:: /pages/terminology/g/glance.rst
-.. include:: /pages/terminology/h/ha.rst
 .. include:: /pages/terminology/h/hadoop.rst
 .. include:: /pages/terminology/h/haproxy.rst
+.. include:: /pages/terminology/h/hardened-packages.rst
+.. include:: /pages/terminology/h/ha.rst
 .. include:: /pages/terminology/h/havana.rst
 .. include:: /pages/terminology/h/heat.rst
 .. include:: /pages/terminology/h/horizon.rst
@@ -80,6 +81,7 @@ Terminology Reference
 .. include:: /pages/terminology/s/stateless-and-stateful-services.rst
 .. include:: /pages/terminology/s/storage-nodes-and-roles.rst
 .. include:: /pages/terminology/s/stp.rst
+.. include:: /pages/terminology/s/support.rst
 .. include:: /pages/terminology/s/swift-object-storage.rst
 .. include:: /pages/terminology/t/tagged-port.rst
 .. include:: /pages/terminology/t/telemetry-services.rst
