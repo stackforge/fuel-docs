@@ -126,10 +126,6 @@ Limitations
 - The Ceph backend for Glance, Cinder and RadosGW object storage is not supported.
 - The VMware vCenter-managed datastore is not supported as a backend for Glance.
 - Murano is not supported. It requires Neutron and vCenter utilizes nova-network.
-- Fuel does not configure Ceilometer to collect metrics from vCenter virtual resources.
-  For more details about the Ceilometer plugin for vCenter,
-  see `Support for VMware vCenter Server
-  <https://wiki.openstack.org/wiki/Ceilometer/blueprints/vmware-vcenter-server#Support_for_VMware_vCenter_Server>`_
 
 For background information about how vCenter support
 is integrated into Mirantis OpenStack, see :ref:`vcenter-arch`.
