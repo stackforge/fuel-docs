@@ -80,8 +80,21 @@ from being installed on a Controller node:
   controller:
     name: "Controller"
     description: "The controller initiates orchestration activities..."
+    has_primary: true
     conflicts:
       - compute
+
+The "has_primary" line is added in Release 6.0
+to identify the Primary controller.
+In earlier releases,
+Galera searched for the Controller node with the lowest node-id value
+(see :ref:`nodes-arch`)
+and made that the Primary Controller.
+This created problems when a new controller that had a lower node-id value
+was added to an existing Controller cluster
+and became the Primary Controller,
+which conflicted with the existing Primary Controller in the cluster.
+Persisting the Primary role in the database solves this problem.
 
 If you delete the "conflicts:" and "compute" line
 and redeploy nailgun,
