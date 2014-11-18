@@ -9,9 +9,12 @@ Terminology Reference
 .. include:: /pages/terminology/b/bonding.rst
 .. include:: /pages/terminology/c/ceilometer.rst
 .. include:: /pages/terminology/c/ceph.rst
+.. include:: /pages/terminology/c/ceph-osd-role.rst
 .. include:: /pages/terminology/c/cinder.rst
+.. include:: /pages/terminology/c/cinder-lvm-role.rst
 .. include:: /pages/terminology/c/cobbler.rst
 .. include:: /pages/terminology/c/compute-nodes.rst
+.. include:: /pages/terminology/c/controller-nodes.rst
 .. include:: /pages/terminology/c/corosync.rst
 .. include:: /pages/terminology/c/crm.rst
 .. include:: /pages/terminology/d/devstack.rst
@@ -72,6 +75,7 @@ Terminology Reference
 .. include:: /pages/terminology/r/rally.rst
 .. include:: /pages/terminology/r/rdma.rst
 .. include:: /pages/terminology/r/resource-agents.rst
+.. include:: /pages/terminology/r/role.rst
 .. include:: /pages/terminology/s/sahara.rst
 .. include:: /pages/terminology/s/scheduler.rst
 .. include:: /pages/terminology/s/security-groups.rst
@@ -88,3 +92,5 @@ Terminology Reference
 .. include:: /pages/terminology/v/vmdk.rst
 .. include:: /pages/terminology/v/vsphere.rst
 .. include:: /pages/terminology/z/zabbix.rst
+.. include:: /pages/terminology/z/zabbix-role.rst
+
