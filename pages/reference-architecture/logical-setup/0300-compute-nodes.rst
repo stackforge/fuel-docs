@@ -1,3 +1,6 @@
+
+.. _compute-arch:
+
 Compute Nodes
 -------------
 
