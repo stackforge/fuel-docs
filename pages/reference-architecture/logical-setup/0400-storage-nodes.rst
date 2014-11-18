@@ -1,3 +1,6 @@
+
+.. _storage-arch:
+
 Storage Nodes
 -------------
 

@@ -2,7 +2,7 @@
 
    PageBreak
 
-.. index Reference Architectures
+
 
 .. _nodes-roles-arch:
 
