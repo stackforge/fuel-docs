@@ -1,10 +1,14 @@
+
+
+.. _controller-arch:
+
 Controller Nodes
 ----------------
 
 The first order of business in achieving high availability (HA) is
 redundancy, so the first step is to provide multiple controller nodes.
 
-As you may recall, the database uses Galera to achieve HA, and Galera is
+The MySQL database uses Galera to achieve HA, and Galera is
 a quorum-based system. That means that you should have at least 3
 controller nodes.
 
