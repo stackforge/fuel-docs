@@ -41,6 +41,12 @@ for demonstration and evaluation purposes.
 A deep dive into the structure of the Mirantis OpenStack environment,
 network considerations, and deployment options.
 
+
+:ref:`plugin-dev` `(pdf) <pdf/Mirantis-OpenStack-6.0-Plugin-Developer-Guide.pdf>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Instructions and examples for creating a Fuel plugin.
+
 :ref:`terminology-ref` `(pdf) <pdf/Mirantis-OpenStack-6.0-Terminology-Reference.pdf>`__
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
