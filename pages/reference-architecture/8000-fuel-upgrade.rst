@@ -4,10 +4,10 @@
 How Fuel upgrade works
 ======================
 
-Users running Fuel 5.0 and later releases
-can upgrade the Fuel Master Node to the latest release
-and use the upgraded Fuel Master to manage environments
-that were created with earlier releases;
+Users running Fuel 5.1
+can upgrade the Fuel Master Node to Fuel 5.1.1
+and use the upgraded Fuel Master to manage
+existing 5.1 environments;
 see :ref:`upgrade-patch-top-ug` for instructions.
 This section discusses the processing flow for the Fuel upgrade.
 
