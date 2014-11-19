@@ -6,10 +6,11 @@ Fuel Access Control
 
 Access to the Fuel Dashboard is controlled
 in Mirantis OpenStack 5.1 and later.
+This implementation is enhanced to be more robust
+in release 5.1.1.
 Authentication is under control of :ref:`keystone-term`.
 
-The default username/password is admin/admin.
-This can be changed:
+The default username/password can be changed:
 
 - During Fuel installation; see :ref:`fuel-passwd-ug`.
 
@@ -17,24 +18,8 @@ This can be changed:
 
 - Using the Fuel CLI; see :ref:`cli-fuel-password`
 
-Most endpoints (including
-The :ref:`astute-term`, :ref:`cobbler-term`,
-Postgres, MCollective, and :ref:`keystone-term` endpoints
-that used to be protected with the default password
-are now protected by passwords
-that are unique for each Fuel installation.
-Nailgun and OSTF were not protected in earlier releases
-but are now protected by the authentication token.
-Some Nailgun URLs are not protected;
-they are defined in *nailgun/middleware/keystone.py* in the public_url section.
-
-The password is stored in the Keystone database.
-Keystone is installed in a new container
-during the Fuel Master installation.
-Almost all endpoints in Fuel are protected
-and they require an authentication token.
-
-If the password is changed using the Fuel UI or the Fuel CLI,
+If the password for the Fuel Dashboard
+is changed using the Fuel UI or the Fuel CLI,
 the new password is stored only in Keystone;
 it is not written to any file.
 If you forget the password,
@@ -45,20 +30,51 @@ by using the **keystone** command on the Fuel Master Node:
 
   keystone --os-endpoint=http://10.20.0.2:35357/v2.0 --os-token=admin_token password-update
 
-
-You can find admin_token in the */etc/fuel/astute.yaml* file.
-
-.. note::
-   The *astute.yaml* file stores passwords unencrypted,
-   so keeping it on disk after deployment finishes
-   constitutes a security vulnerability.
-   You can safely delete this file after deployment because,
-   if you need to run deployment again
-   (for example, if you add nodes to the environment),
-   it will be regenerated and placed on the appropriate node
-   for Puppet to consume.
+**admin_token** is stored in the */etc/fuel/astute.yaml* file
+on the Fuel Master node.
 
 To run or disable authentication,
 modify */etc/nailgun/settings.yaml* (``AUTHENTICATION_METHOD``)
 in the Nailgun container.
 
+All endpoints except the agent updates
+are now protected by passwords
+that are unique for each Fuel installation
+and they require an authentication token.
+This includes
+:ref:`astute-term`, :ref:`cobbler-term`,
+Postgres, MCollective, and :ref:`keystone-term`,
+which used to be protected with the default password.
+Almost all endpoints in Fuel are protected
+
+Fuel Authentication is implemented
+by a special Keystone instance
+that is installed in a new container
+on the Fuel Master during installation:
+
+- Fuel Menu generates passwords for fresh installations;
+  the upgrade script generates passwords when upgrading.
+  The password is stored in the Keystone database.
+
+- Some Nailgun URLs are not protected;
+  they are defined in *nailgun/middleware/keystone.py*
+  in the public_url section.
+
+- A cron script runs daily in the Keystone container
+  to delete outdated tokens
+  using the **keystone-manage token_flush** command.
+  It can be seen using the **crontab -l** command
+  in the Keystone container.
+
+- Support for storing authentication token in cookies
+  is added in releases 5.1.1 and 6.0;
+  this allows the API to be tested from the browser.
+
+Beginning with releases 5.1.1,
+the user must supply a password
+when upgrading Fuel from an earlier release.
+This password can be supplied on the command line
+when running the installation script
+or in response to the prompt (this is the same password
+that is used to access Fuel UI).
+See :ref:`upgrade-ug` for instructions.
