@@ -56,6 +56,11 @@ for the Postgres database, Cobbler, Puppet,
 and other components.
 See :ref:`fuel-docker-changes` for more information.
 
-See :ref:`docker-ops` for a list of commands
-that are useful for managing LXC containers
-on the Fuel Master.
+See
+
+- :ref:`docker-ops` for a list of commands
+  that are useful for managing LXC containers
+  on the Fuel Master node.
+
+- :ref:`docker-disk-full-top-tshoot` for details
+  about resolving Docker disk space problems on the Fuel Master node.
