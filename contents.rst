@@ -15,4 +15,5 @@ Documentation
   reference-architecture
   terminology
   release-notes
+  plugin-dev
   eula
