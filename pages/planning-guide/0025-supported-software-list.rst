@@ -14,7 +14,7 @@ Supported Software
 
 * **OpenStack Core Projects**
 
-  * Icehouse release 2014.1.1
+  * Icehouse release 2014.1.3
 
     * Nova (OpenStack Compute)
     * Swift (OpenStack Object Storage)
@@ -26,14 +26,14 @@ Supported Software
 
 * **OpenStack Core Integrated Projects**
 
-  * Icehouse release 2014.1.1
+  * Icehouse release 2014.1.3
 
     * Ceilometer (OpenStack Telemetry)
     * Heat (OpenStack Orchestration)
 
 * **OpenStack Incubated Projects**
 
-  * Icehouse release 2014.1.1
+  * Icehouse release 2014.1.3
 
     * Sahara (OpenStack Data Processing)
 
@@ -54,9 +54,9 @@ Supported Software
 
 * **HA Proxy** 1.4.24
 
-* **Galera** 23.2.2
+* **Galera** 23.3.5
 
-* **RabbitMQ** 3.2.3
+* **RabbitMQ** 3.3.5
 
 * **Pacemaker** 1.1.10
 
@@ -66,8 +66,8 @@ Supported Software
 
 * **MongoDB** 2.4.6
 
-* **Ceph** 0.80.4 "Firefly"
+* **Ceph** 0.80.7 "Firefly"
 
-* **MySQL** 5.5.28 (CentOS), 5.5.37 (Ubuntu)
+* **MySQL** 5.1.73 (CentOS), 5.5.40 (Ubuntu)
 
-* **Zabbix** 2.2
+* **Zabbix** 2.2.2
