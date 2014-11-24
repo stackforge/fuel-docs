@@ -4,6 +4,8 @@
 New Features and Resolved Issues in Mirantis OpenStack 6.0
 ----------------------------------------------------------
 
+* TBD
+
 * When installing Centos HA with Neutron with VLAN
   and changing the ML2 mechanism to Mellanox and Open vSwitch,
   the external network is successfully configured after deployment.
