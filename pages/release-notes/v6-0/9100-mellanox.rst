@@ -4,6 +4,8 @@
 New Features and Resolved Issues in Mirantis OpenStack 6.0
 ----------------------------------------------------------
 
+* TBD
+
 * When installing Centos HA with Neutron with VLAN
   and changing the ML2 mechanism to Mellanox and Open vSwitch,
   the external network is successfully configured after deployment.
@@ -15,6 +17,14 @@ Known limitations for the Mellanox SR-IOV plug-in
 The Mellanox SR-IOV plug-in is fully integrated
 into Mirantis OpenStack 6.0
 but it has some known limitations:
+
+
+* Instances that use SR-IOV for
+  networking are created successfully,
+  but taking a snapshot fails.
+  To work this issue around, shut down the instance
+  before taking a snapshot.
+  See `LP1398986 <https://bugs.launchpad.net/bugs/1398986>`_.
 
 * The Mellanox SR-IOV plugin has been tested
   against guest images of the following Linux distributions:
