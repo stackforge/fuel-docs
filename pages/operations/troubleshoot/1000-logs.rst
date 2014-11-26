@@ -171,6 +171,60 @@ On the Fuel Master node,
 */var/log/remote* is a symbolic link to the
 */var/log/docker-logs/remote* directory.
 
+.. _atop-ops:
+
+atop logs
++++++++++
+
+Fuel installs and runs
+`atop <http://www.atoptool.nl/>`_
+on all deployed nodes in the environment.
+The **atop** service uses
+`screen <https://www.gnu.org/software/screen/manual/screen.html>`_
+to display
+provides detailed information
+about resource usage on each node.
+The data shows usage of the hardware resources
+that are most important from a performance standpoint:
+CPU, memory, disk, and network interfaces
+and can be used to troubleshoot performance and scalability issues.
+
+The implementation is:
+
+* By default, **atop** takes a snapshot of system status
+  every 20 seconds and stores this information in binary form.
+
+* The binary data is stored locally on each node
+  in the */var/log/atop* directory.
+
+* Data is kept for seven days;
+  a logrotate job deletes logs older than seven days.
+
+* Data is stored locally on each node;
+  it is not aggregated for the whole environment.
+
+* The data consumes no more than 2GB of disk space on each node.
+
+* The **atop** service can be disabled from the Linux shell.
+  A Puppet run
+  (either done manually or when patching OpenStack)
+  re-enables **atop**.
+
+* The Diagnostic Logs snapshot includes
+  the *atop* data for the current day only.
+
+To view the **atop** data,
+run the `atop(1) <http://manpages.ubuntu.com/manpages/utopic/man1/atop.1.html>`_
+command on the shell of the node you are analyzing.
+
+::
+
+   atop -r /var/log/atop/<filename>
+
+
+Use **t** and **T** to navigate through the state snapshots.
+See the man page for additional information about running **atop**.
+
 Enabling debug logging for OpenStack services
 +++++++++++++++++++++++++++++++++++++++++++++
 
