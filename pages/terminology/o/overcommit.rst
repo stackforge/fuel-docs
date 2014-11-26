@@ -36,7 +36,8 @@ for the Mirantis CI tools
 but may not be the best default rate for customer environments.
 If you do not know what your VM workload is going to be,
 reset this ratio to 1:1 to avoid CPU congestion.
-You can then monitor activity in your environment
+You can then use the :ref:`atop<atop-ops>` service and other tools
+to monitor activity in your environment
 to determine whether a different overcommit ratio
 is appropriate for your environment.
 
