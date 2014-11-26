@@ -171,6 +171,37 @@ On the Fuel Master node,
 */var/log/remote* is a symbolic link to the
 */var/log/docker-logs/remote* directory.
 
+.. _atop-ops:
+
+atop logs
++++++++++
+
+Fuel installs and runs
+`atop <http://www.atoptool.nl/>`_
+and `screen <https://www.gnu.org/software/screen/manual/screen.html>`_
+on all deployed nodes in the environment.
+This provides detailed information about resource usage on each node
+that can be used to troubleshoot performance and scalability issues.
+The data shows usage of the hardware resources
+that are most important from a performance standpoint:
+CPU, memory, disk, and network cards.
+
+The implementation is:
+
+* By default, these tools take a snapshot of system status
+  every 20 seconds and stores this information in binary form.
+
+* The binary data is stored locally on each node
+  in the */var/log/atop* directory.
+
+* Data is kept for seven days;
+  a logrotate job deletes logs older than seven days.
+
+* The data consumes no more than 2GB of disk space on each node.
+
+* The Diagnostic Logs snapshot includes
+  the *atop* data for the current day only.
+
 Enabling debug logging for OpenStack services
 +++++++++++++++++++++++++++++++++++++++++++++
 
