@@ -229,14 +229,14 @@ You can change the Fuel Master Node password with:
 
 ::
 
-   fuel user --change-password --new-pass=*new*
+   fuel user -change-password --new-pass=*new*
 
 You can use flags to provide username and password
 to other fuel CLI commands:
 
 ::
 
-  --os-username=admin --os-password=test
+  --user=admin --password=test
 
 See :ref:`fuel-passwd-ops` for more information
 about Fuel authentication.
