@@ -73,6 +73,23 @@ for specific release
 
   fuel rel --rel 1
 
+Release networks
+++++++++++++++++
+
+Download release networks list. This command reads networks from API
+and saves them in .yaml format on the file system:
+
+::
+
+  fuel rel --rel 1 --networks --download
+
+Modify release networks list.
+You may want to modify the networks you have and upload the list back:
+
+::
+
+  fuel rel --rel 1 --networks --upload
+
 
 Environment
 +++++++++++
