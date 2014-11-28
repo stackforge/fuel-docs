@@ -166,6 +166,10 @@ is supported in the current version of vCenter integration in Fuel.
 .. image:: /_images/user_screen_shots/settings-vcenter.png
    :width: 80%
 
+.. note: The Fuel web UI now has a new option for vCenter:
+         Datastore regexp setting is enabled to specify the data stores to use with Compute.
+
+
 - Enable the 'Use VLAN tagging for fixed networks' checkbox
   and enter the VLAN tag you selected
   for the VLAN ID in the ESXi host network configuration
