@@ -25,5 +25,6 @@ pdf_documents = [
     ('pdf/pdf_reference', u'Mirantis-OpenStack-6.0-ReferenceArchitecture', u'Reference Architecture', u'2014, Mirantis Inc.'),
     ('pdf/pdf_terminology', u'Mirantis-OpenStack-6.0-Terminology-Reference', u'Terminology Reference', u'2014, Mirantis Inc.'),
     ('pdf/pdf_file-ref', u'Mirantis-OpenStack-6.0-File-Reference', u'File Reference', u'2014, Mirantis Inc.'),
+    ('pdf/pdf_plugin-dev', u'Mirantis-OpenStack-6.0-FuelPluginGuide', u'Fuel Plugin Guide', u'2014, Mirantis Inc.'),
     ('pdf/pdf_relnotes', u'Mirantis-OpenStack-6.0-RelNotes', u'Release Notes', u'2014, Mirantis Inc.', {'pdf_use_toc': False}),
 ]
