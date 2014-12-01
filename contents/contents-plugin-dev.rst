@@ -1,0 +1,1 @@
+.. include:: /pages/plugin-dev/fuel-plugin-intro.rst
