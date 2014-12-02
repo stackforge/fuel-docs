@@ -34,6 +34,12 @@ Both can be downloaded from `<http://www.virtualbox.org/>`_.
   Use the "-P expect,openssh" option to install these; for example:
   setup-x86_64.exe -a x86_64  -P expect,openssh --quiet-mode  --site http://box-soft.com/
 
+  You must also install the **procps** package,
+  which includes the **top** and **free** commands;
+  without this package,
+  the *launch.sh* script fails with a message
+  indicating that you are allocating negative memory.
+
 
 8 GB+ of RAM
   Supports 4 VMs for Multi-node OpenStack installation
