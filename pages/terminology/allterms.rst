@@ -20,6 +20,7 @@ Terminology Reference
 .. include:: /pages/terminology/e/esxi.rst
 .. include:: /pages/terminology/e/experimental-features.rst
 .. include:: /pages/terminology/f/fencing.rst
+.. include:: /pages/terminology/f/floating-ip.rst
 .. include:: /pages/terminology/f/fuel.rst
 .. include:: /pages/terminology/f/fuel-master-node.rst
 .. include:: /pages/terminology/g/galera-cluster.rst
