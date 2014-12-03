@@ -14,7 +14,7 @@ and a list of unallocated nodes at the bottom.
   that Fuel installs as a whole on a node,
   usually in its own disk partition.
 
-
+<TBD>: change sceenshot
 
 .. image:: /_images/user_screen_shots/assign-roles1.png
    :width: 80%

@@ -145,6 +145,8 @@ For VMware vCenter integration,
 the Nova plugin runs on the Controller node.
 The Compute and Controller roles are combined on one node.
 
+<TBD>: update Cinder-LVM screenshot
+
 .. image:: /_images/user_screen_shots/vcenter-add-nodes.png
    :width: 80%
 
