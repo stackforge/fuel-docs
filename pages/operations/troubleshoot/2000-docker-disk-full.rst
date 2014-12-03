@@ -17,7 +17,7 @@ The following sections describe failures that may occur
 if the disk fills up
 and gives solutions for resolving them.
 
-If the solution to your issue requires rebuilding Docker containers, take note 
+If the solution to your issue requires rebuilding Docker containers, take note
 that data recovery is not necessary for the following containers: mcollective,
 nginx, ostf, nailgun, rsyslog, keystone, rabbitmq. This is because the data on
 these containers is stateless. For astute, cobbler, and postgres containers it
@@ -133,9 +133,11 @@ Now activate the volume and mount it:
 
 Next, it is necessary to purge the container record from the Docker sqlite
 database. You may see an issue when running **dockerctl start CONTAINER**::
-Abort due to constraint violation: constraint failed
-This command should be run before trying to restore the container data or if
-you are simply destroying and recreating it:
+
+   Abort due to constraint violation: constraint failed
+
+Run this command before trying to restore the container data
+or if you are simply destroying and recreating it:
 
 .. code-block:: bash
 
