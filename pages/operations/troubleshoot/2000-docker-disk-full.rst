@@ -14,8 +14,7 @@ to budget enough disk space. Failure to do so may lead to logs overwhelming the
 /var partition. For example, enabling Ceilometer and debug logging will quickly
 fill up disk space.
 The following sections describe failures that may occur
-if the disk fills up
-and gives solutions for resolving them.
+if the disk fills up and gives solutions for resolving them.
 
 If the solution to your issue requires rebuilding Docker containers, take note
 that data recovery is not necessary for the following containers: mcollective,
