@@ -4,11 +4,14 @@
 Preparing for VMware NSX integration
 ====================================
 
-Fuel 5.1 and later can deploy a Mirantis OpenStack environment that can
-manage virtual networks in VMware NSX.
 VMware provides an NSX plug-in for OpenStack that enables the Neutron
 service to communicate and provision virtual networks in NSX that can
 manage Open vSwitches on controller and compute nodes.
+It is included as an :ref:`Experimental package<experimental-features-term>`
+in Fuel 5.1 and later can install the NSX plug-in
+and deploy a Mirantis OpenStack environment
+that manages virtual networks in VMware NSX
+when the Experimental package is enabled.
 
 This section summarizes the planning you should do
 and other steps that are required
