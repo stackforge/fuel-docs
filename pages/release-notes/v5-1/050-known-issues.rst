@@ -38,7 +38,8 @@ but it has some known limitations:
   be successfully attached to instance. To work around this problem,
   download `deb <http://mirror.fuel-infra.org/fwm/6.0/ubuntu/pool/main/cirros-testvmware_0.3.3-ubuntu5_amd64.deb>`_
   and `rpm <http://mirror.fuel-infra.org/fwm/6.0/centos/os/x86_64/Packages/cirros-testvm-0.3.2-3.mira1.x86_64.rpm>`_ packages
-  and replace the old packages with downloaded ones on the Fuel master node. After deployment, run the following command on the controller:
+  and replace the old packages with downloaded ones on the Fuel master node.
+  After deployment, run the following command on the controller:
 
   ::
 
@@ -68,10 +69,14 @@ with the following known limitations:
   you must enable Public address assignment for all
   nodes, see :ref:`neutron-nsx-arch`.
 
-* In HA environment with enabled NSX, instances do not receive the network configuration,
-  As the result, the OSTF **Check network connectivity from instance via floating IP** test fails
-  and Neutron L3 and DHCP agents do not start. To work around this problem,
-  remove Corosync resource bindings (collocations and orders) tied up with *clone_p_neutron-openvswitch-agent*:
+* In HA environment with NSX enabled,
+  instances do not receive the network configuration.
+  As a result, the OSTF
+  **Check network connectivity from instance via floating IP** test fails
+  and the Neutron L3 and DHCP agents do not start.
+  To work around this problem,
+  remove Corosync resource bindings (collocations and orders)
+  tied up with *clone_p_neutron-openvswitch-agent*:
 
   ::
 
@@ -80,10 +85,11 @@ with the following known limitations:
      crm configure delete l3-after-ovs
      crm configure delete l3-with-ovs
 
-  Then run **crm configure** command and add Neutron L3-agent location for
-  all controllers. To find the names of the controllers, apply
+  Then run the **crm configure** command
+  and add Neutron L3-agent location for all controllers.
+  To find the names of the controllers, apply the
   **crm configure show|grep 'location p_neutron-dhcp-agent'** command.
-  For example output, see `LP1396163 <https://bugs.launchpad.net/fuel/+bug/1396163>`_.
+  For sample output, see `LP1396163 <https://bugs.launchpad.net/fuel/+bug/1396163>`_.
 
 Known limitations for the Mellanox SR-IOV plug-in
 -------------------------------------------------

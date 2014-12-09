@@ -32,7 +32,7 @@ See below for information about updating OpenStack environments.
 
 See :ref:`upgrade-ug` for instructions.
 
-Fuel 5.1.1 can update 5.1 Mirantis OpenStack environments (Experimental)
+Fuel 5.1.1 can update 5.1 Mirantis OpenStack environments (experimental)
 ------------------------------------------------------------------------
 
 After you upgrade the Fuel Master Node to 5.1.1,
@@ -113,12 +113,12 @@ can now be backed up and, if necessary, restored.
 This must be done from the command line.
 See :ref:`Backup_and_restore_Fuel_Master` for instructions.
 
-VMware NSX is now supported as a network option (Experimental)
+VMware NSX is now supported as a network option (experimental)
 --------------------------------------------------------------
 
 VMWare NSX is a is a software-defined network (SDN)
 that uses controllers and overlay networking.
-When :ref:`Experimental features<experimental-features-term>` are enabled,
+When :ref:`experimental features<experimental-features-term>` are enabled,
 Mirantis OpenStack 5.1 enables you to select VMWare NSX
 as a networking option when using the KVM hypervisor.
 Note that VMWare NSX is not supplied with Mirantis OpenStack;
