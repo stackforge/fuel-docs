@@ -68,6 +68,7 @@ Terminology Reference
 .. include:: /pages/terminology/o/ovs.rst
 .. include:: /pages/terminology/p/pacemaker.rst
 .. include:: /pages/terminology/p/persistent-storage.rst
+.. include:: /pages/terminology/p/plug-in-term.rst
 .. include:: /pages/terminology/p/puppet.rst
 .. include:: /pages/terminology/p/pxe.rst
 .. include:: /pages/terminology/q/qcow2.rst
