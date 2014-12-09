@@ -25,6 +25,7 @@ Terminology Reference
 .. include:: /pages/terminology/f/fuel-master-node.rst
 .. include:: /pages/terminology/g/galera-cluster.rst
 .. include:: /pages/terminology/g/glance.rst
+.. include:: /pages/terminology/g/glusterfs.rst
 .. include:: /pages/terminology/h/ha.rst
 .. include:: /pages/terminology/h/hadoop.rst
 .. include:: /pages/terminology/h/haproxy.rst
@@ -43,6 +44,7 @@ Terminology Reference
 .. include:: /pages/terminology/k/keystone.rst
 .. include:: /pages/terminology/k/kvm.rst
 .. include:: /pages/terminology/l/l3-agent.rst
+.. include:: /pages/terminology/l/lbaas.rst
 .. include:: /pages/terminology/l/logging.rst
 .. include:: /pages/terminology/l/lvm.rst
 .. include:: /pages/terminology/l/lxc.rst
@@ -53,6 +55,7 @@ Terminology Reference
 .. include:: /pages/terminology/m/mysql.rst
 .. include:: /pages/terminology/n/nailgun.rst
 .. include:: /pages/terminology/n/native-vlan.rst
+.. include:: /pages/terminology/n/netapp.rst
 .. include:: /pages/terminology/n/networking.rst
 .. include:: /pages/terminology/n/neutron.rst
 .. include:: /pages/terminology/n/nic-rst
@@ -68,6 +71,7 @@ Terminology Reference
 .. include:: /pages/terminology/o/ovs.rst
 .. include:: /pages/terminology/p/pacemaker.rst
 .. include:: /pages/terminology/p/persistent-storage.rst
+.. include:: /pages/terminology/p/plug-in-term.rst
 .. include:: /pages/terminology/p/puppet.rst
 .. include:: /pages/terminology/p/pxe.rst
 .. include:: /pages/terminology/q/qcow2.rst
@@ -91,5 +95,6 @@ Terminology Reference
 .. include:: /pages/terminology/v/vcenter.rst
 .. include:: /pages/terminology/v/vlan.rst
 .. include:: /pages/terminology/v/vmdk.rst
+.. include:: /pages/terminology/v/vpnaas.rst
 .. include:: /pages/terminology/v/vsphere.rst
 .. include:: /pages/terminology/z/zabbix.rst
