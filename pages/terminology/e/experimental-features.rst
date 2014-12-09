@@ -18,7 +18,8 @@ The following features are currently defined as experimental:
 - Ability to update deployed environments
   to the latest version of Mirantis OpenStack;
   see :ref:`update-openstack-environ-ug`.
-- Support for the VMware NSX network option.
+- Support for the VMware NSX network option;
+  see :ref:`nsx-plan`.
 
 Instructions for enabling experimental features
 on a running Fuel Master node are provided in
