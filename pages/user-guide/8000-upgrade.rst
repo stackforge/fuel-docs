@@ -110,8 +110,10 @@ To upgrade the Fuel Master Node:
 
       If your Fuel Master node does not have enough RAM
       to decompress the archive,
-      you can do it on another system,
-      then copy the `upgrade` tarball to the Master node.
+      you can decompress it with **lrzuntar**
+      or its equivalent on another system,
+      then copy the `upgrade` file to the Master node
+      using **scp** or an SSH client.
 
 #. Run the upgrade script from that same directory:
 
