@@ -14,18 +14,18 @@ The entire Hadoop cluster runs in VMs
 that run on Compute Nodes.
 A typical set-up is:
 
+- One VM that runs management and monitoring processes (Apache Ambari,
+  Cloudera Manager, Ganglia, Nagios)
 - One VM that serves as the Hadoop master node
   to run JobTracker (ResourceManager for Hadoop Release 2.x) and NameNode.
 - Many VMs that serve as Hadoop worker nodes,
   each of which runs TaskTracker (NodeManager for Hadoop Release 2.x)
   and DataNodes.
 
-You must have exactly one NameNode and one JobTracker
-running in the environment
-and you cannot run Hadoop HA under Sahara.
-Other than that,
+You must have exactly one instace of each management and master processes
+running in the environment. Other than that,
 you are free to use other configurations.
-For example, you can run the TaskTracker/NodeManager and Datanodes
+For example, you can run the TaskTracker/NodeManager and DataNodes
 in the same VM that runs JobTracker/ResourceManager and NameNode;
 such a configuration may not produce performance levels
 that are acceptable for a production environment
@@ -37,7 +37,7 @@ for object storage.
 Special steps are required to implement data locality for Swift;
 see `Data-locality <http://docs.openstack.org/developer/sahara/userdoc/features.html#data-locality>`_
 for details.
-Data locality is not available for Ceph.
+Data locality is not available for Ceph storage backend.
 
 Plan the size and number of nodes for your environment
 based on the information in :ref:`nodes-roles-plan`.
@@ -66,17 +66,15 @@ so be sure to allocate enough floating IPs.
 
 **Security Groups**
 
-Sahara does not configure
-OpenStack :ref:`Security Groups<security-groups-term>`
-so you must manually configure the default security group
-in each tenant where Sahara will be used.
-See :ref:`sahara-ports` for a list of ports that need to be opened.
+Sahara can create and configure security groups separately for each cluster
+depending on a provisioning plugin and Hadoop version.
+:ref:`Security Groups<security-groups-term>`
 
 **VM Flavor Requirements**
 
-Hadoop requires at least 1G of memory to run.
+Hadoop requires at least 1Gb of RAM to run.
 That means you must use flavors that have
-at least 1G of memory for Hadoop cluster nodes.
+at least 1Gb of memory for Hadoop cluster nodes.
 
 **Communication between virtual machines**
 
