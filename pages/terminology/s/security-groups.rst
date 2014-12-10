@@ -23,10 +23,6 @@ Such a configuration generates N^2 rules in *iptables*
 (where N is the number of FMs).
 This significantly impacts networking performance in large deployments.
 
-Note that Sahara does does not provide a default security group.
-See :ref:`sahara-ports`
-for information about defining a default security group for Sahara).
-
 For more information about creating and using Security Groups, see:
 
 - `Security groups web page <http://docs.openstack.org/trunk/openstack-ops/content/security_groups.html>`_
