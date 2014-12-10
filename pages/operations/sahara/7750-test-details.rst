@@ -28,5 +28,5 @@ Sahara Test Details
   11. Delete the created flavor.
 
   For more information, see:
-  `Sahara documentation <http://sahara.readthedocs.org/en/stable-icehouse/>`_.
+  `Sahara documentation <http://sahara.readthedocs.org/en/stable-juno/>`_.
 
