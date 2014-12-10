@@ -1,28 +1,19 @@
 
 
-.. _sahara-ports:
+.. _sahara-security-groups:
 
-Ports Used by Sahara
---------------------
+Sahara Security Groups
+----------------------
 
-The table below lists:
+Sahara requires a list of TCP ports to be open for communication on private
+network. Sahara can perform the necessary configurations using security-groups
+mechanism. Make sure that the "Auto security group" checkbox is enabled for
+all node groups in the cluster.
+:ref:`Security Groups<security-groups-term>`
 
-- Ports that must be open for inbound traffic
-  (marked with 'yes' in the 'Required for Sahara' column)
 
-- Ports that are used for running Sahara post-deployment health checks.
-  They must be opened for inbound traffic for post-deployment health
-  checks to succeed.
-
-- Other ports, which are neither required by Sahara itself nor by
-  post-deployment health checks, are required to be open for
-  inter-cluster communication. I.e. the ports could be closed for
-  public network, but must be open for private network used for
-  cluster deployment.
-
-The ports must be opened in the 'default' security group in each
-tenant where Sahara is to be used.
-
+If you still wish to configure security groups manually, here are the ports
+required for Sahara operations.
 
 +-----------------+-------------------+------------------------+--------------------------------------+
 | Port / protocol | Required for      | Required for Sahara    | Port                                 |
@@ -101,6 +92,8 @@ tenant where Sahara is to be used.
 | 50090 / TCP     | no                | yes                    | Secondary NameNode Web UI            |
 |                 |                   |                        |                                      |
 +-----------------+-------------------+------------------------+--------------------------------------+
+
+
 
 
 .. note:: The ports listed above are defaults.
