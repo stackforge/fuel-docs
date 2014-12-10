@@ -15,19 +15,21 @@ during OpenStack installation,
 so that is where you need to perform these actions.
 By default, the `admin` tenant is used for the tests.
 
-#. Configure security groups in the 'admin' tenant for post-deployment checks.
-   See :ref:`sahara-ports` for the details.
+You must have at least 4096 MB of available RAM
+in the tenant you are using for the Sahara Platform Tests
+or some tests may fail.
 
 #. Get an image with Hadoop for Sahara and register it with Sahara.
 
    * Download the following image:
 
-     http://sahara-files.mirantis.com/sahara-icehouse-vanilla-1.2.1-ubuntu-13.10.qcow2
+     http://sahara-files.mirantis.com/mos60/sahara-juno-vanilla-1.2.1-ubuntu-14.04.qcow2
 
    * Then upload the image into OpenStack Image Service (Glance) into
      the 'admin' tenant and name it 'sahara'.
 
-   * In OpenStack Dashboard (Horizon) access 'Sahara' tab.
+   * In OpenStack Dashboard (Horizon) access 'Data Processing' panel under the
+     Project menu.
 
    * Switch to 'admin' tenant if you are not in it already.
 
@@ -39,7 +41,7 @@ By default, the `admin` tenant is used for the tests.
    * Set username to ‘ubuntu’
 
    * For tags, pick ‘vanilla’ plugin and ‘1.2.1’ version and press
-     the ‘Add all’ button.
+     the ‘Add plugin tags’ button.
 
    * Finally push the ‘Done’ button
 
