@@ -50,6 +50,7 @@ when you create your OpenStack Environment.
 After that you need to fill corresponding fields.
 You can modify the vCenter specific values on the Settings tab after you
 create the environment.
+Note that you can specify either IP address or Hostname for vCenter.
 
 .. image:: /_images/user_screen_shots/vcenter-hv.png
    :width: 50%
