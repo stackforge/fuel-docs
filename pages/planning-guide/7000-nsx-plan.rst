@@ -28,6 +28,11 @@ For more information:
   `NSX Installation and Upgrade Guide
   <http://pubs.vmware.com/NSX-6/topic/com.vmware.ICbase/PDF/nsx_6_install.pdf>`_.
 
+.. note:: Note that only NSX version 4.0.1-build30244
+          and NSX bits (NSX-specific version of OpenVSwitch)
+          version 2.0.0-build30176 were properly tested with Fuel.
+
+
 VMware NSX Installation
 -----------------------
 
