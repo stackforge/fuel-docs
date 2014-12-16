@@ -265,19 +265,31 @@ the value of `X` should be the same in both cases:
 - Modify the value of the **mtime +X** argument
   to the **lastaction** setting.
 
-
-Enabling debug logging for OpenStack services
-+++++++++++++++++++++++++++++++++++++++++++++
+Logging for OpenStack services
+++++++++++++++++++++++++++++++
 
 Most OpenStack services use the same configuration options to control log level
 and logging method. If you need to troubleshoot a specific service, locate its
-config file under */etc* (e.g. */etc/nova/nova.conf*) and revert the values of
-**debug** and **use_syslog** flags like this::
+config file under */etc* (for example, */etc/nova/nova.conf*) and modify the values of
+**debug** and **use_syslog** flags as follows::
 
   debug=True
   use_syslog=False
 
-Disabling syslog will protect the Fuel master node from being overloaded from a
+Disabling syslog protects the Fuel master node from being overloaded by a
 flood of debug messages sent from that node to the rsyslog server. Do not
-forget to revert both flags back to original values when done with
+forget to revert both flags to the original values when you are done with
 troubleshooting.
+
+Note that some OpenStack logs from the target nodes (such as *nova-api.log*)
+can not be displayed from the Fuel UI
+because they use a new Oslo format that was first introduced in Juno
+and that Nailgun cannot parse.
+
+The following OpenStack logs use a format that Nailgun can parse:
+heat-manage.log, heat-api-cfn.log, heat-api.log, heat-api-cloudwatch.log,
+glance-manage.log, glance-registry.log, glance-api.log,
+neutron-server.log, neutron-openvswitch-agent.log, neutron-l3-agent.log,
+neutron-netns-cleanup.log, neutron-metadata-agent.log.
+
+
