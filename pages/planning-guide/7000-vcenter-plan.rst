@@ -50,6 +50,26 @@ For more information:
   <http://pubs.vmware.com/vsphere-55/index.jsp#com.vmware.vsphere.install.doc/GUID-7C9A1E23-7FCD-4295-9CB1-C932F2423C63.html>`_.
 
 
+.. warning:: Mirantis has the following lab setup for VMware enrivonment,
+             that was checked for compatibility:
+
+             * NSX version 4.0.1 (4.0.1-build30244) for Gateway, Manager, Controller
+               and Service nodes.
+
+             * NSX bits (NSX-specific version of OpenVSwitch, not Vanilla one)
+               version 2.0.0 (2.0.0-build30176)
+
+             * vCenter 5.5
+          
+             This lab setup was tested for the
+             Mirantis OpenStack release 6.0:
+
+             * CentOS 6.5 - works properly
+
+             * Ubuntu 12.04 - does not work properly due to
+               incompatibility of Linux version (3.13) and NSX OVS version (2.0)
+
+
 vSphere Installation
 --------------------
 Before installing Fuel and using it
