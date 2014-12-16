@@ -18,6 +18,7 @@ with the vSphere environment,
 click on the "New OpenStack environment" icon
 to launch the wizard that creates a new OpenStack environment.
 
+
 .. _vcenter-start-create-env-ug:
 
 Create Environment and Choose Distribution for vCenter

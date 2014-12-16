@@ -49,6 +49,9 @@ For more information:
   `vSphere Installation and Setup
   <http://pubs.vmware.com/vsphere-55/index.jsp#com.vmware.vsphere.install.doc/GUID-7C9A1E23-7FCD-4295-9CB1-C932F2423C63.html>`_.
 
+- See :ref:`Limitations<vcenter-limitations>` section for more details
+  on compatility with other VMware components and Mirantis lab setup.
+
 
 vSphere Installation
 --------------------
@@ -108,9 +111,11 @@ Follow the steps below:
 .. image:: /_images/esx-connection-settings.png
   :width: 70%
 
+.. _vcenter-limitations:
 
 Limitations
-------------------------------
+-----------
+
 - Only vCenter versions 5.1 and later are supported
 - It is not possible to specify the vCenter cluster
   where virtual instances will be launched.
@@ -128,6 +133,31 @@ Limitations
   For more details about the Ceilometer plugin for vCenter,
   see `Support for VMware vCenter Server
   <https://wiki.openstack.org/wiki/Ceilometer/blueprints/vmware-vcenter-server#Support_for_VMware_vCenter_Server>`_
+
+
+.. note::    Mirantis has the following lab setup for VMware enrivonment,
+             that was checked for compatibility of the NSX and vCenter:
+
+             * NSX version 4.0.1 (4.0.1-build30244) for Gateway, Manager, Controller
+               and Service nodes.
+
+             * NSX OpenVSwitchs
+               version 2.0.0 (2.0.0-build30176)
+
+             * vCenter 5.5. Note that vCenter 5.5.u2 is also used, but
+               was not tested properly for comptibility with NSX and
+               does not work with NSX 4.0.1.
+
+             To learn more about NSX and vCenter
+             compatibility, see
+             `the VMware Product Interoperability Matrixes <http://www.vmware.com/resources/compatibility/sim/interop_matrix.php>`_.
+
+
+.. warning:: Mirantis lab setup was tested for the Mirantis OpenStack release 6.0.
+              This particular setup works properly at CentOS 6.5.
+              Nevertheless, at Ubuntu 12.04 it **does not** work properly
+              due to incompatibility of the Linux 3.13 kernel and NSX OVS 2.0.
+
 
 For background information about how vCenter support
 is integrated into Mirantis OpenStack, see :ref:`vcenter-arch`.
