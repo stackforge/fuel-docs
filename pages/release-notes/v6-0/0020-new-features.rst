@@ -46,6 +46,7 @@ the `OpenStack Juno 2014.2
 this version of OpenStack on either CentOS or Ubuntu.
 
 .. include:: /pages/release-notes/v6-0/new-features/ml2.rst
+.. include:: /pages/release-notes/v6-0/new-features/mcn.rst
 .. include:: /pages/release-notes/v6-0/new-features/glance-vmdk.rst
 .. include:: /pages/release-notes/v6-0/new-features/vlan-for-vcenter.rst
 .. include:: /pages/release-notes/v6-0/new-features/1-1-instance-vsphere-map.rst
@@ -62,7 +63,6 @@ not completed for the Technical Preview.
 .. include:: /pages/release-notes/v6-0/new-features/plugin-arch.rst
 .. include:: /pages/release-notes/v6-0/new-features/image-provision.rst
 .. include:: /pages/release-notes/v6-0/new-features/100-node.rst
-.. include:: /pages/release-notes/v6-0/new-features/l2-multiple.rst
 .. include:: /pages/release-notes/v6-0/new-features/DNS-NTP-external.rst
 .. include:: /pages/release-notes/v6-0/new-features/mongodb-external.rst
 .. include:: /pages/release-notes/v6-0/new-features/ceilometer-vcenter.rst

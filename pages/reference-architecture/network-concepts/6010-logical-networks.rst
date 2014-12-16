@@ -56,17 +56,6 @@ Public Network
   NIC. This is not a requirement, but it simplifies external access to
   OpenStack Dashboard and public OpenStack API endpoints.
 
-Internal Network
-
-  The internal network connects all OpenStack nodes in the environment.
-  All components of an OpenStack environment
-  communicate with each other using this network.
-  This network must be isolated from both the private and public networks
-  for security reasons.
-
-  The internal network can also be used for serving iSCSI protocol exchanges
-  between Compute and Storage nodes.
-
 Storage Network
 
   Part of a cluster's internal network.
@@ -92,6 +81,17 @@ Private Network (Fixed network)
 
   Just like the public network, the private network should be isolated from
   other networks in the cluster for security reasons.
+
+Internal Network
+
+  The internal network connects all OpenStack nodes in the environment.
+  All components of an OpenStack environment
+  communicate with each other using this network.
+  This network must be isolated from both the private and public networks
+  for security reasons.
+
+  The internal network can also be used for serving iSCSI protocol exchanges
+  between Compute and Storage nodes.
 
 If you want to combine another network
 with the Admin network on the same NIC,
