@@ -1,0 +1,88 @@
+
+.. _mcn-arch:
+
+Implementing Multiple Cluster Networks (MCN)
+--------------------------------------------
+
+The Multiple Cluster Networks (MCN) feature is used for environments
+that deploy a large number of target :ref:`nodes<node-term>`,
+to avoid the broadcast storms that can occur
+when all nodes share a single L2 domain.
+Multiple Cluster Networks can be configured
+for OpenStack environments that use an encapsulation protocol
+such as :ref:`Neutron GRE<neutron-gre-ovs-arch>`
+and are deployed using Fuel 6.0 and later.
+
+This section discusses how support for
+multiple cluster networks is implemented.
+:ref:`mcn-ops` tells how to configure this feature
+for your Fuel environments.
+
+The Multiple Cluster Network feature is based on
+:ref:`Node Groups<node-group-term>`,
+which are groupings of nodes
+in the current cluster:
+
+- Each of the major :ref:`logical network<logical-networks-arch>`
+  (public, management, storage, and fuelweb_admin)
+  is associated with a Node Group rather than a cluster.
+- Each Node Group belongs to a cluster.
+- A default Node Group is created for each cluster.
+  The default values are derived from Fuel Menu
+  (for the Fuel Admin (PXE) network)
+  and release metadata.
+- Each cluster can support multiple Node Groups.
+
+:ref:`Nailgun<nailgun-term>` manages multiple cluster networks:
+
+- A :ref:`node<node-term>` serializes its network information
+  based on its relationship to networks in its Node Group.
+
+- Each node must have a Node Group;
+  if it is not explicitly assigned to one,
+  it is assumed to be a member of the default network group.
+  If it is not configured properly,
+  it will result in the cluster failing to deploy.
+
+- A set of default networks is generated when a Node Group is created.
+  These networks are deleted when the Node Group is deleted.
+
+- Each :ref:`logical network<logical-networks-arch>`
+  is associated with a Node Group rather than with a cluster.
+
+- Each fuelweb_admin network must have a DHCP network
+  configured in the :ref:`dnsmasq.template<dnsmasq-template-ref>` file.
+
+- DHCP requests can be forwarded to the Fuel Master node
+  using either of the following methods:
+
+  * configure switches to relay DHCP
+  * using a relay client such as **dhcp-helper**
+
+The `nodegroups` table stores information about all configured Node Groups.
+To view the contents of this table,
+issue the **fuel nodegroup** command
+
+::
+
+  [root@nailgun ~]# fuel nodegroup
+
+  id | cluster | name
+  ---|---------|---------------
+  1  | 1       | default
+  2  | 1       | alpha
+
+
+The fields displayed are:
+
+:id:    Sequential ID number assigned
+        when the Node Group is created
+        and used as the Public Key for the Node Group.
+
+:cluster:    Cluster with which the Node Group is associated.
+
+:name:    Display name for the Node Group, assigned by the operator.
+
+The `network_groups` table can be viewed
+in the :ref:`network_1.yaml<network-1-yaml-ref>` file.
+

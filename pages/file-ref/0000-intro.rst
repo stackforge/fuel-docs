@@ -34,9 +34,15 @@ but may not be complete.
 | :ref:`astute-yaml-target-ref` | Target      | Configuration attributes      |
 |                               |             | passed to Puppet              |
 +-------------------------------+-------------+-------------------------------+
+| :ref:`dnsmasq-template-ref`   | Fuel Master | Configures DHCP networks for  |
+|                               |             | additional Fuel Admin (PXE)   |
+|                               |             | networks                      |
++-------------------------------+-------------+-------------------------------+
 | :ref:`engine-yaml-ref`        | Fuel Master | Provisioning engine (Cobbler) |
 |                               |             | and basic configuration of    |
 |                               |             | target nodes                  |
++-------------------------------+-------------+-------------------------------+
+| :ref:`network-1-yaml-ref`     | Fuel Master | Network Groups                |
 +-------------------------------+-------------+-------------------------------+
 | :ref:`openstack-yaml-ref`     | Fuel Master | Basic configuration of target |
 |                               |             | nodes                         |
@@ -50,6 +56,8 @@ but may not be complete.
 .. include:: /pages/file-ref/astute-yaml-master.rst
 .. include:: /pages/file-ref/astute-yaml-target.rst
 .. include:: /pages/file-ref/engine-yaml.rst
+.. include:: /pages/file-ref/dnsmasq-template.rst
+.. include:: /pages/file-ref/network-1-yaml.rst
 .. include:: /pages/file-ref/openstack-yaml.rst
 .. include:: /pages/file-ref/settings-yaml.rst
 
