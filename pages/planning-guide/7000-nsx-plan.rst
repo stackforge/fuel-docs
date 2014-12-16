@@ -28,6 +28,9 @@ For more information:
   `NSX Installation and Upgrade Guide
   <http://pubs.vmware.com/NSX-6/topic/com.vmware.ICbase/PDF/nsx_6_install.pdf>`_.
 
+- See :ref:`Limitations<nsx-limitations>` section for more details
+  on compatility with other VMware components and Mirantis lab setup.
+
 VMware NSX Installation
 -----------------------
 
@@ -123,12 +126,13 @@ VMware NSX cluster configuration
    `NSX appliances installation  <https://www.edge-cloud.net/2013/12/openstack-with-vsphere-and-nsx-part1>`_ and `NSX cluster configuration <https://www.edge-cloud.net/2013/12/openstack-with-vsphere-and-nsx-part2>`_
    for details about the NSX cluster deployment process.
 
+.. _nsx-limitations:
 
 Limitations
-------------------------------
+-----------
+
 - Only KVM or QEMU are supported as hypervisor options
   when using VMware NSX.
-- Only VMware NSX 4.0 is supported
 - Resetting or deleting the environment via "Reset" and "Delete" buttons
   on the Actions tab does not flush the entities (logical switches, routers,
   load balancers, etc) that were created in the NSX cluster.
@@ -137,7 +141,29 @@ Limitations
   the deployment fails or is interrupted; after solving the problem, restart
   the deployment process.
 
-  To cleanup the NSX cluster, log into the NSX Manager, open the dashboard and
+.. note::    Mirantis has the following lab setup for VMware enrivonment,
+             that was checked for compatibility of the NSX and vCenter:
+
+             * NSX version 4.0.1 (4.0.1-build30244) for Gateway, Manager, Controller
+               and Service nodes.
+
+             * NSX OpenVSwitch version 2.0.0 (2.0.0-build30176)
+
+             * vCenter 5.5. Note that vCenter 5.5.u2 is also used, but
+               was not tested properly for compatibility with NSX and
+               does not work with NSX 4.0.1.
+
+             To learn more about NSX
+             and vCenter compatibility,
+             see `the VMware Product Interoperability Matrixes <http://www.vmware.com/resources/compatibility/sim/interop_matrix.php>`_.
+
+.. warning::  Mirantis lab setup was tested for the Mirantis OpenStack release 6.0.
+               This particular setup works properly at CentOS 6.5.
+               Nevertheless, at Ubuntu 12.04 it **does not** work properly
+               due to incompatibility of the Linux 3.13 kernel and NSX OVS 2.0.
+
+
+To cleanup the NSX cluster, log into the NSX Manager, open the dashboard and
   click on numbered link in "Hypervisor Software Version Summary":
 
   .. image:: /_images/nsx-cleanup-1.png
