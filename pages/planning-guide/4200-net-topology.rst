@@ -54,6 +54,12 @@ and manipulate them on the fly.
   but GRE encapsulation decreases the speed of communication between the VMs
   and increases the CPU utilization on the Compute and Controller nodes.
 
+  Mirantis OpenStack 6.0 and later supports configuring
+  multiple network domains per single OpenStack environment
+  when using Neutron GRE.
+  See :ref:`mcn-ops` for instructions;
+  :ref:`mcn-arch` explains the internals.
+
 * The **Neutron with VMware NSX** topology utilizes
   the VMware NSX network hypervisor as a backend for Neutron.
   As with GRE segmentation,
