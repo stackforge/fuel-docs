@@ -8,6 +8,7 @@
 .. include:: /pages/reference-architecture/1700-ceph.rst
 .. include:: /pages/reference-architecture/6000-network-architecture.rst
 .. include:: /pages/reference-architecture/6050-neutron-topologies.rst
+.. include:: /pages/reference-architecture/6055-mcn.rst
 .. include:: /pages/reference-architecture/6070-nova-topologies.rst
 .. include:: /pages/reference-architecture/0100-openvswitch.rst
 .. include:: /pages/reference-architecture/0110-bonding.rst
