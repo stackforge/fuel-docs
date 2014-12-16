@@ -28,6 +28,27 @@ For more information:
   `NSX Installation and Upgrade Guide
   <http://pubs.vmware.com/NSX-6/topic/com.vmware.ICbase/PDF/nsx_6_install.pdf>`_.
 
+.. warning:: Mirantis has the following lab setup for VMware enrivonment,
+             that was checked for compatibility:
+
+             * NSX version 4.0.1 (4.0.1-build30244) for Gateway, Manager, Controller
+               and Service nodes.
+
+             * NSX bits (NSX-specific version of OpenVSwitch, not Vanilla one)
+               version 2.0.0 (2.0.0-build30176)
+
+             * vCenter 5.5. Note that vCenter 5.5.u2 is also used, but
+               was not tested properly for compatibility with NSX.
+
+             This lab setup was tested for the
+             Mirantis OpenStack release 6.0:
+
+             * CentOS 6.5 - works properly
+
+             * Ubuntu 12.04 - does not work properly due to
+               incompatibility of Linux version (3.13) and NSX OVS version (2.0)
+
+
 VMware NSX Installation
 -----------------------
 
