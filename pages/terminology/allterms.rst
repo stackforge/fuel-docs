@@ -54,6 +54,7 @@ Terminology Reference
 .. include:: /pages/terminology/n/neutron.rst
 .. include:: /pages/terminology/n/nic-rst
 .. include:: /pages/terminology/n/node.rst
+.. include:: /pages/terminology/n/node-group.rst
 .. include:: /pages/terminology/n/nova.rst
 .. include:: /pages/terminology/n/nova-network.rst
 .. include:: /pages/terminology/n/nsx.rst
