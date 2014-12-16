@@ -1,0 +1,68 @@
+
+.. _mcn-ops:
+
+Configuring a Multiple Cluster Network (MCN)
+============================================
+
+Multiple Cluster Networks (MCNs) are configured
+using :ref:`fuel CLI<cli_usage>` commands
+that are run after Fuel is installed
+but before booting the target node servers.
+For background information about how the MCN feature is implemented,
+see :ref:`mcn-arch`.
+
+Requirements for an environment that runs multiple cluster networks are:
+
+- Must use an encapsulation protocol
+  such as :ref:`Neutron GRE<neutron-gre-ovs-arch>`.
+
+- All Compute nodes should be in the same L2 domain
+  of the underlying VLAN based network
+  in order to guarantee connectivity between VMs.
+
+- A gateway must be defined for each
+  :ref:`logical network<logical-networks-arch>`
+  when the cluster has multiple Node Groups.
+
+- All controllers must be members of the same Node Group;
+  if they are not, the :ref:`HAProxy<haproxy-term>` VIP does not work.
+
+  .. note:: It is possible to use ECMP to work around this restriction;
+     documenting how to do this is beyond the scope of this document.
+
+To configure multiple cluster networks,
+do the following.
+
+#.  Add each DHCP network into the
+    :ref:`dnsmasq.template<dnsmasq-template-ref>` file.
+
+#. Start a **dhcp-helper** or **dhcprelay(8)** process:
+
+   .. code-block:: sh
+
+      dhcp-helper -s <IP-addr-of-alpha_admin network> -i <virtual-IP-of-beta_admin-network>
+
+#. Create each new Node Group with a command like this:
+
+   .. code-block:: sh
+
+      fuel --env 1 nodegroup --create --name "group 1"
+
+   Assign a different integer to each `group` you create;
+   this will be the Public Key for the entry in the Node Group record.
+
+#. Configure the new Node Group(s) by uploading a new
+   :ref:`network-1.yaml<network-1-yaml-ref>` file
+   and populating it as discussed in the reference page,
+   then upload the modified file.
+
+#. Boot the nodes for all environments.
+
+#. Issue the **fuel nodegroup** command
+   to view the `nodegroup` table
+   and verify that all nodes are assigned
+   to the proper nodegroup.
+   See :ref:`mcn-arch` for a detailed explanation
+   of the content of this file.
+
+
