@@ -40,6 +40,7 @@ Terminology Reference
 .. include:: /pages/terminology/j/juno.rst
 .. include:: /pages/terminology/k/keystone.rst
 .. include:: /pages/terminology/k/kvm.rst
+.. include:: /pages/terminology/l/l3-agent.rst
 .. include:: /pages/terminology/l/logging.rst
 .. include:: /pages/terminology/l/lvm.rst
 .. include:: /pages/terminology/l/lxc.rst

@@ -10,15 +10,32 @@ simply shut down the node hosting the Neutron agents
 (either gracefully or with a hard shutdown).
 You should see agents start on the other node:
 
+.. code-block: sh
 
-  # crm status
+   # crm status
 
-  Online: [ fuel-controller-02 fuel-controller-03 fuel-controller-04 fuel-controller-05 ]
-  OFFLINE: [ fuel-controller-01 ]
+   Online: [ node-2.test.domain.local node-3.test.domain.local ] OFFLINE: [ node-1.test.domain.local ]
 
-  p_neutron-plugin-openvswitch-agent (ocf::pacemaker:neutron-agent-ovs): Started fuel-controller-02
-  p_neutron-dhcp-agent (ocf::pacemaker:neutron-agent-dhcp): Started fuel-controller-02
-  p_neutron-l3-agent (ocf::pacemaker:neutron-agent-l3): Started fuel-controller-02
+    vip__public    (ocf::mirantis:ns_IPaddr2):     Started node-2.test.domain.local
+    Clone Set: clone_ping_vip__public [ping_vip__public]
+        Started: [ node-2.test.domain.local node-3.test.domain.local ]
+    vip__management        (ocf::mirantis:ns_IPaddr2):     Started node-3.test.domain.local
+    Clone Set: clone_p_heat-engine [p_heat-engine]
+        Started: [ node-2.test.domain.local node-3.test.domain.local ]
+    Master/Slave Set: master_p_rabbitmq-server [p_rabbitmq-server]
+        Masters: [ node-2.test.domain.local ]
+        Slaves: [ node-3.test.domain.local ]
+    Clone Set: clone_p_neutron-plugin-openvswitch-agent [p_neutron-plugin-openvswitch-agent]
+        Started: [ node-2.test.domain.local node-3.test.domain.local ]
+    p_neutron-dhcp-agent   (ocf::mirantis:neutron-agent-dhcp):     Started node-2.test.domain.local
+    Clone Set: clone_p_neutron-metadata-agent [p_neutron-metadata-agent]
+        Started: [ node-2.test.domain.local node-3.test.domain.local ]
+    Clone Set: clone_p_neutron-l3-agent [p_neutron-l3-agent]
+        Started: [ node-2.test.domain.local node-3.test.domain.local ]
+    Clone Set: clone_p_mysql [p_mysql]
+        Started: [ node-2.test.domain.local node-3.test.domain.local ]
+    Clone Set: clone_p_haproxy [p_haproxy]
+        Started: [ node-2.test.domain.local node-3.test.domain.local ]
 
 and see corresponding Neutron interfaces on the new Neutron node::
 
