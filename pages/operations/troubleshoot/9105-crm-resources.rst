@@ -18,21 +18,38 @@ For example::
 
   crm(live)# status
   ============
-  Last updated: Tue May 14 15:13:47 2013
-  Last change: Mon May 13 18:36:56 2013 via cibadmin on fuel-controller-01
-  Stack: openais
-  Current DC: fuel-controller-01 - partition with quorum
-  Version: 1.1.6-9971ebba4494012a93c03b40a2c58ec0eb60f50c
-  5 Nodes configured, 5 expected votes
-  3 Resources configured.
+  root@node-2:/usr/lib/ocf/resource.d/mirantis# crm status
+  Last updated: Thu Dec 18 16:06:27 2014
+  Last change: Thu Dec 18 15:09:07 2014 via cibadmin on node-1.test.domain.local
+  Stack: classic openais (with plugin)
+  Current DC: node-1.test.domain.local - partition with quorum
+  Version: 1.1.10-42f2063
+  3 Nodes configured, 3 expected votes
+  27 Resources configured
   ============
 
-  Online: [ fuel-controller-01 fuel-controller-02 fuel-controller-03
-  fuel-controller-04 fuel-controller-05 ]
+  Online: [ node-1.test.domain.local node-2.test.domain.local node-3.test.domain.local ]
 
-  p_neutron-plugin-openvswitch-agent (ocf::pacemaker:neutron-agent-ovs): Started fuel-controller-01
-  p_neutron-dhcp-agent (ocf::pacemaker:neutron-agent-dhcp): Started fuel-controller-01
-  p_neutron-l3-agent (ocf::pacemaker:neutron-agent-l3): Started fuel-controller-01
+  vip__public    (ocf::mirantis:ns_IPaddr2):     Started node-1.test.domain.local
+   Clone Set: clone_ping_vip__public [ping_vip__public]
+       Started: [ node-1.test.domain.local node-2.test.domain.local node-3.test.domain.local ]
+   vip__management        (ocf::mirantis:ns_IPaddr2):     Started node-1.test.domain.local
+   Clone Set: clone_p_heat-engine [p_heat-engine]
+       Started: [ node-1.test.domain.local node-2.test.domain.local node-3.test.domain.local ]
+   Master/Slave Set: master_p_rabbitmq-server [p_rabbitmq-server]
+       Masters: [ node-1.test.domain.local ]
+       Slaves: [ node-2.test.domain.local node-3.test.domain.local ]
+   Clone Set: clone_p_neutron-plugin-openvswitch-agent [p_neutron-plugin-openvswitch-agent]
+       Started: [ node-1.test.domain.local node-2.test.domain.local node-3.test.domain.local ]
+   p_neutron-dhcp-agent   (ocf::mirantis:neutron-agent-dhcp):     Started node-1.test.domain.local
+   Clone Set: clone_p_neutron-metadata-agent [p_neutron-metadata-agent]
+       Started: [ node-1.test.domain.local node-2.test.domain.local node-3.test.domain.local ]
+   Clone Set: clone_p_neutron-l3-agent [p_neutron-l3-agent]
+       Started: [ node-1.test.domain.local node-2.test.domain.local node-3.test.domain.local ]
+   Clone Set: clone_p_mysql [p_mysql]
+       Started: [ node-1.test.domain.local node-2.test.domain.local node-3.test.domain.local ]
+   Clone Set: clone_p_haproxy [p_haproxy]
+       Started: [ node-1.test.domain.local node-2.test.domain.local node-3.test.domain.local ]
 
 **crm(live)# resource**
 
@@ -40,9 +57,9 @@ Here you can enter resource-specific commands::
 
   crm(live)resource#  status`
 
-  p_neutron-plugin-openvswitch-agent  (ocf::pacemaker:neutron-agent-ovs) Started
-  p_neutron-dhcp-agent   (ocf::pacemaker:neutron-agent-dhcp) Started
-  p_neutron-l3-agent     (ocf::pacemaker:neutron-agent-l3) Started
+  clone_p_neutron-plugin-openvswitch-agent  (ocf::pacemaker:neutron-agent-ovs) Started
+  clone_p_neutron-dhcp-agent   (ocf::pacemaker:neutron-agent-dhcp) Started
+  clone_p_neutron-l3-agent     (ocf::pacemaker:neutron-agent-l3) Started
 
 **crm(live)resource#  start|restart|stop|cleanup <resource_name>**
 
@@ -70,8 +87,8 @@ Example::
 
   Online: [ controller-01 controller-02 controller-03 ]
 
-   vip__management	(ocf::heartbeat:IPaddr2):   	Started controller-01
-   vip__public    	(ocf::heartbeat:IPaddr2):   	Started controller-02
+   vip__management      (ocf::heartbeat:IPaddr2):         Started controller-01
+   vip__public          (ocf::heartbeat:IPaddr2):         Started controller-02
    Clone Set: clone_p_haproxy [p_haproxy]
     Started: [ controller-01 controller-02 controller-03 ]
    Clone Set: clone_p_mysql [p_mysql]
@@ -80,8 +97,8 @@ Example::
     Started: [ controller-01 controller-02 controller-03 ]
    Clone Set: clone_p_neutron-metadata-agent [p_neutron-metadata-agent]
     Started: [ controller-01 controller-02 controller-03 ]
-   p_neutron-dhcp-agent   (ocf::mirantis:neutron-agent-dhcp): 	Started controller-01
-   p_neutron-l3-agent 	(ocf::mirantis:neutron-agent-l3):   	Started controller-03
+   clone_p_neutron-dhcp-agent   (ocf::mirantis:neutron-agent-dhcp):       Started controller-01
+   clone_p_neutron-l3-agent       (ocf::mirantis:neutron-agent-l3):         Started controller-03
 
 In this case,
 CRM found residual OpenStack agent processes
