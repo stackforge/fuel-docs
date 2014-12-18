@@ -18,25 +18,25 @@ MySQL and Neutron agent resources::
     op monitor interval="60" timeout="30" \
     op start interval="0" timeout="450" \
     op stop interval="0" timeout="150"
-  primitive p_neutron-dhcp-agent ocf:mirantis:neutron-agent-dhcp \
+  primitive clone_p_neutron-dhcp-agent ocf:mirantis:neutron-agent-dhcp \
     op monitor interval="20" timeout="30" \
     op start interval="0" timeout="360" \
     op stop interval="0" timeout="360" \
     params tenant="services" password="neutron" username="neutron" \
     os_auth_url="http://10.107.2.254:35357/v2.0" \
     meta is-managed="true"
-  primitive p_neutron-l3-agent ocf:mirantis:neutron-agent-l3 \
+  primitive clone_p_neutron-l3-agent ocf:mirantis:neutron-agent-l3 \
     op monitor interval="20" timeout="30" \
     op start interval="0" timeout="360" \
     op stop interval="0" timeout="360" \
     params tenant="services" password="neutron" syslog="true" username="neutron" \
     debug="true" os_auth_url="http://10.107.2.254:35357/v2.0" \
     meta is-managed="true" target-role="Started"
-  primitive p_neutron-metadata-agent ocf:mirantis:neutron-agent-metadata \
+  primitive clone_p_neutron-metadata-agent ocf:mirantis:neutron-agent-metadata \
     op monitor interval="60" timeout="30" \
     op start interval="0" timeout="30" \
     op stop interval="0" timeout="30"
-  primitive p_neutron-openvswitch-agent ocf:pacemaker:neutron-agent-ovs \
+  primitive clone_p_neutron-openvswitch-agent ocf:pacemaker:neutron-agent-ovs \
     op monitor interval="20" timeout="30" \
     op start interval="0" timeout="480" \
     op stop interval="0" timeout="480"
@@ -54,22 +54,22 @@ MySQL and Neutron agent resources::
     meta interleave="true"
   clone clone_p_mysql p_mysql \
     meta interleave="true" is-managed="true"
-  clone clone_p_neutron-metadata-agent p_neutron-metadata-agent \
+  clone clone_clone_p_neutron-metadata-agent clone_p_neutron-metadata-agent \
     meta interleave="true" is-managed="true"
-  clone clone_p_neutron-openvswitch-agent p_neutron-openvswitch-agent \
+  clone clone_p_neutron-openvswitch-agent clone_p_neutron-openvswitch-agent \
     meta interleave="true"
 
 And ties them with Pacemaker colocation resource::
 
-  colocation dhcp-with-metadata inf: p_neutron-dhcp-agent \
+  colocation dhcp-with-metadata inf: clone_p_neutron-dhcp-agent \
     clone_p_neutron-metadata-agent
-  colocation dhcp-with-ovs inf: p_neutron-dhcp-agent \
+  colocation dhcp-with-ovs inf: clone_p_neutron-dhcp-agent \
     clone_p_neutron-openvswitch-agent
-  colocation dhcp-without-l3 -100: p_neutron-dhcp-agent p_neutron-l3-agent
-  colocation l3-with-metadata inf: p_neutron-l3-agent clone_p_neutron-metadata-agent
-  colocation l3-with-ovs inf: p_neutron-l3-agent clone_p_neutron-openvswitch-agent
+  colocation dhcp-without-l3 -100: clone_p_neutron-dhcp-agent clone_p_neutron-l3-agent
+  colocation l3-with-metadata inf: clone_p_neutron-l3-agent clone_p_neutron-metadata-agent
+  colocation l3-with-ovs inf: clone_p_neutron-l3-agent clone_p_neutron-openvswitch-agent
   order dhcp-after-metadata inf: clone_p_neutron-metadata-agent p_neutron-dhcp-agent
-  order dhcp-after-ovs inf: clone_p_neutron-openvswitch-agent p_neutron-dhcp-agent
-  order l3-after-metadata inf: clone_p_neutron-metadata-agent p_neutron-l3-agent
-  order l3-after-ovs inf: clone_p_neutron-openvswitch-agent p_neutron-l3-agent
+  order dhcp-after-ovs inf: clone_p_neutron-openvswitch-agent clone_p_neutron-dhcp-agent
+  order l3-after-metadata inf: clone_p_neutron-metadata-agent clone_p_neutron-l3-agent
+  order l3-after-ovs inf: clone_p_neutron-openvswitch-agent clone_p_neutron-l3-agent
 
