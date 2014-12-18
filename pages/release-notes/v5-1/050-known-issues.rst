@@ -368,6 +368,30 @@ Ceph OSD known issues
   problem.
   See `LP1374160 <https://bugs.launchpad.net/bugs/1374160>`_.
 
+Enabled Murano prevents the controller from redeployment
+--------------------------------------------------------
+
+When Murano is deployed at CentOS, redeployment of the controller
+might fail.
+To work this problem around, follow these steps:
+
+#. Deploy the Fuel Master node.
+
+#. Log into the Fuel Master node as root.
+
+#. Install patch package:
+
+   ::
+ 
+      yum install patch -y
+
+#. Download the patch from `LP1401503 <https://bugs.launchpad.net/bugs/1401503>`_.
+   and apply it:
+
+   ::
+      patch --verbos -p0 < apps-upload-check.patch
+
+
 Other limitations
 -----------------
 
