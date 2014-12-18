@@ -30,9 +30,9 @@ For example::
   Online: [ fuel-controller-01 fuel-controller-02 fuel-controller-03
   fuel-controller-04 fuel-controller-05 ]
 
-  p_neutron-plugin-openvswitch-agent (ocf::pacemaker:neutron-agent-ovs): Started fuel-controller-01
-  p_neutron-dhcp-agent (ocf::pacemaker:neutron-agent-dhcp): Started fuel-controller-01
-  p_neutron-l3-agent (ocf::pacemaker:neutron-agent-l3): Started fuel-controller-01
+  clone_p_neutron-plugin-openvswitch-agent (ocf::pacemaker:neutron-agent-ovs): Started fuel-controller-01
+  clone_p_neutron-dhcp-agent (ocf::pacemaker:neutron-agent-dhcp): Started fuel-controller-01
+  clone_p_neutron-l3-agent (ocf::pacemaker:neutron-agent-l3): Started fuel-controller-01
 
 **crm(live)# resource**
 
@@ -40,9 +40,9 @@ Here you can enter resource-specific commands::
 
   crm(live)resource#  status`
 
-  p_neutron-plugin-openvswitch-agent  (ocf::pacemaker:neutron-agent-ovs) Started
-  p_neutron-dhcp-agent   (ocf::pacemaker:neutron-agent-dhcp) Started
-  p_neutron-l3-agent     (ocf::pacemaker:neutron-agent-l3) Started
+  clone_p_neutron-plugin-openvswitch-agent  (ocf::pacemaker:neutron-agent-ovs) Started
+  clone_p_neutron-dhcp-agent   (ocf::pacemaker:neutron-agent-dhcp) Started
+  clone_p_neutron-l3-agent     (ocf::pacemaker:neutron-agent-l3) Started
 
 **crm(live)resource#  start|restart|stop|cleanup <resource_name>**
 
@@ -80,8 +80,8 @@ Example::
     Started: [ controller-01 controller-02 controller-03 ]
    Clone Set: clone_p_neutron-metadata-agent [p_neutron-metadata-agent]
     Started: [ controller-01 controller-02 controller-03 ]
-   p_neutron-dhcp-agent   (ocf::mirantis:neutron-agent-dhcp): 	Started controller-01
-   p_neutron-l3-agent 	(ocf::mirantis:neutron-agent-l3):   	Started controller-03
+   clone_p_neutron-dhcp-agent   (ocf::mirantis:neutron-agent-dhcp): 	Started controller-01
+   clone_p_neutron-l3-agent 	(ocf::mirantis:neutron-agent-l3):   	Started controller-03
 
 In this case,
 CRM found residual OpenStack agent processes

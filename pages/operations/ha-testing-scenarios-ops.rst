@@ -413,7 +413,7 @@ Failover testing scenarios
     to another one.
 
   * Stop L3-agent on a new node with
-    **- pcs resource ban p_neutron-l3-agent NODE** command.
+    **- pcs resource ban clone_p_neutron-l3-agent NODE** command.
 
   * Check whether L3-agent has been rescheduled.
 
