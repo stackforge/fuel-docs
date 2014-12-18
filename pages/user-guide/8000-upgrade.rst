@@ -8,13 +8,6 @@ If you have a functional Mirantis OpenStack 5.x environment,
 you can upgrade the Fuel Master node to version 5.1
 but leave your current environments in place.
 
-After you upgrade the Fuel Master node version,
-you can also apply a minor update to your existing environments
-to apply some of the bug fixes from Mirantis OpenStack 5.1
-and to use the latest version of the Icehouse OpenStack release.
-This is an :ref:`experimental feature<experimental-features-term>`
-for Fuel 5.1.
-
 The terminology used is:
 
 * You can **upgrade** the Fuel Master Node
@@ -23,11 +16,12 @@ The terminology used is:
   environments that were deployed
   with any Mirantis OpenStack 5.0 or later release.
 
-* You can apply a **minor update** to an existing environment to use
-  a later version of the OpenStack release (Icehouse, in this case)
+* A **minor update** is applied to an existing environment,
+  enabling it to use a later version of the OpenStack release
   that is installed.
-  For example, if your environment is running Icehouse 2014.1,
-  you can update it to run 2014.1.1.
+  For example, minor updates were provided for
+  Mirantis OpenStack 5.x releases (Icehouse).
+  No update functionality is provided in Mirantis OpenStack 6.0.
 
 * A **patch** is a hot fix to one feature that is applied manually.
   See :ref:`apply-patch-ops` for more information.
@@ -38,25 +32,56 @@ Upgrade Fuel from Earlier Versions
 ----------------------------------
 
 You can upgrade a Fuel Master node
-to 5.1 from an earlier version of Mirantis OpenStack Release 5.
-After you do this, your new Fuel 5.1 console
-can manage your existing 5.0 and 5.0.1 OpenStack environment(s)
-and create and manage new 5.1 OpenStack environments.
+to 6.0 from an earlier version of Mirantis OpenStack Release 5.x.
+After you do this, your new Fuel 6.0 console
+can manage your existing 5.x.x OpenStack environment(s)
+and create and manage new 6.0 OpenStack environments.
 
 The following table summarizes the available progressions
 for upgrades of the Fuel Master Node:
 
-+----------------------+-------------------------+-----------------------------+
-| Initial Fuel version | Fuel is  upgraded to    | Upgraded Fuel can manage    |
-+======================+=========================+=============================+
-| 5.0                  | 5.1                     | 5.0, 5.1                    |
-+----------------------+-------------------------+-----------------------------+
-| 5.0                  | 5.0.1, then to 5.1      | 5.0, 5.0.1, 5.1             |
-+----------------------+-------------------------+-----------------------------+
-| 5.0.1                | 5.1                     | 5.0.1,  5.1                 |
-+----------------------+-------------------------+-----------------------------+
-| 5.1                  | N/A                     | 5.1                         |
-+----------------------+-------------------------+-----------------------------+
++----------------------+------------------------+--------------------------+
+| Initial Fuel version | Fuel is upgraded to    | Upgraded Fuel can manage |
++======================+========================+==========================+
+| 5.0                  | 5.1, then to 5.1.1,    | 2014.1-5.0               |
+|                      | then to 6.0            |                          |
+|                      |                        | 2014.1.1-5.0.2           |
+|                      |                        |                          |
+|                      |                        | 2014.1.1-5.1             |
+|                      |                        |                          |
+|                      |                        | 2014.1.3-5.1.1           |
+|                      |                        |                          |
+|                      |                        | 2014.2-6.0               |
++----------------------+------------------------+--------------------------+
+| 5.0                  | 5.0.1, then to 5.1,    | 2014.1-5.0               |
+|                      |                        |                          |
+|                      | then to 5.1.1          | 2014.1.1-5.0.1           |
+|                      |                        |                          |
+|                      | then to 6.0            | 2014.1.1-5.0.2           |
+|                      |                        |                          |
+|                      |                        | 2014.1.1-5.1             |
+|                      |                        |                          |
+|                      |                        | 2014.1.3-5.1.1           |
+|                      |                        |                          |
+|                      |                        | 2014.2-6.0               |
++----------------------+------------------------+--------------------------+
+| 5.0.1                | 5.1, then to 5.1.1     | 2014.1.1-5.0.1           |
+|                      |                        |                          |
+|                      | then to 6.0            | 2014.1.1-5.0.2           |
+|                      |                        |                          |
+|                      |                        | 2014.1.1-5.1             |
+|                      |                        |                          |
+|                      |                        | 2014.1.3-5.1.1           |
+|                      |                        |                          |
+|                      |                        | 2014.2-6.0               |
++----------------------+------------------------+--------------------------+
+| 5.1                  | 5.1.1, then to 6.0     | 2014.1.1-5.1             |
+|                      |                        |                          |
+|                      |                        | 2014.1.3-5.1.1           |
+|                      |                        |                          |
+|                      |                        | 2014.2-6.0               |
++----------------------+------------------------+--------------------------+
+
 
 Note the following:
 
@@ -87,7 +112,7 @@ To upgrade the Fuel Master Node:
 #. Be sure that no installations are in progress in the environment!
 
 #. Download the upgrade tarball from
-   `<http://software.mirantis.com>`
+   `http://software.mirantis.com`
    to a location on the Fuel Master Node
    that has at least 2GB of free space
    such as */var/tmp*.
@@ -136,10 +161,8 @@ under the "Releases" tab on the Fuel UI:
 
    ::
 
-      New release available: Icehouse on Ubuntu 12.04.4 (2014.1.1-5.0.2)
-      New release available: Icehouse on CentOS 6.5 (2014.1.1-5.0.2)
-      New release available: Icehouse on Ubuntu 12.04.4 (2014.1.1-5.1)
-      New release available: Icehouse on CentOS 6.5 (2014.1.1-5.1)
+      New release available: Juno on Ubuntu 12.04.4 (2014.2-6.0)
+      New release available: Juno on CentOS 6.5 (2014.2-6.0)
 
 
 .. _update-openstack-environ-ug:
@@ -147,42 +170,9 @@ under the "Releases" tab on the Fuel UI:
 Update your OpenStack environment
 ---------------------------------
 
-When you upgrade your Master Node to Fuel 5.1,
-you get :ref:`experimental<experimental-features-term>` access
-to the ability to update existing environments
-to Mirantis OpenStack 5.0.2.
-5.0.2 is a technical release that contains
-many of the bug fixes that are included in 5.1
-but does not include the new 5.1 architecture and features.
-Because of internal architectural modifications
-for Fuel 5.1,
-it is not possible to update from Mirantis OpenStack 5.0.x to 5.1.
-When applied to a 5.0 environment,
-5.0.2 also updates the environment to the 2014.1.1 maintenance release
-of the OpenStack Icehouse release.
-
-To update your existing environments to 5.0.2:
-
-- Upgrade the Fuel Master node to Fuel 5.1 as described above.
-- Enable "Experimental Features" if you have not already done so;
-  see :ref:`experimental-features-op` for instructions.
-- Open an environment that was deployed with Fuel 5.0 or 5.0.1.
-- Click on the "Action" tab.
-- Select the update package you want.
-- Fuel prompts you to update the environment
-  to the new level.
-
-The update package names are formed
-by concatenating the OpenStack version number
-with the Fuel release number.
-For example,
-the update package labeled as “2014.1.1-5.0.2”
-updates your environment to Icehouse 2014.1.1
-with Mirantis OpenStack 5.0.2.
-
-Note that you can update an Icehouse environment
-to a later maintenance release,
-but you cannot update a Havana or earlier environment
-to be an Icehouse environment.
-
-
+Mirantis OpenStack 6.0 is our first release
+that is based on the OpenStack Juno release
+so no update functionality is provided.
+Update functionality was provided as
+an :ref:`experimental<experimental-features-term>` feature
+in 5.x.x releases.
