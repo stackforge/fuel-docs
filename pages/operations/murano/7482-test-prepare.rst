@@ -10,10 +10,21 @@ The 'admin' tenant is selected by default.
 
 To prepare Murano for linux-based services deployment testing add Linux based image to Murano:
 
-   * Create a Linux image with Murano agent.
-     See `Murano documentation (Linux Image Builder) <http://murano-api.readthedocs.org/en/latest/image_builders/index.html>`_
+   * Download the following image:
 
-     (Please note, the Murano Image Builder documentation referenced here cannot guarantee success with image creation and could be outdated)
+     http://murano-files.mirantis.com/ubuntu_14_04-murano-agent_stable_juno.qcow2
+
+     This VM image is usable whether the base operating system
+     is Ubuntu or CentOS.
+
+     Alternatively, if you would like to beuid your own Linux image,
+     you can use the Murano agent,
+     following the instructions in `Murano documentation (Linux Image Builder)
+     <http://murano-api.readthedocs.org/en/latest/image_builders/index.html>`_.
+
+     .. note::  the Murano Image Builder documentation referenced here
+                cannot guarantee success with image creation and could be outdated.
+
 
    * Upload the image to the OpenStack Image Service (Glance) into the 'admin' tenant.
 
