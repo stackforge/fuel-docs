@@ -5,35 +5,52 @@ Preparing Murano for Testing
 ----------------------------
 
 The platform tests are run in the tenant you've specified in
-'OpenStack Settings' tab during OpenStack installation.
+the 'OpenStack Settings' tab during OpenStack installation.
 The 'admin' tenant is selected by default.
 
-To prepare Murano for linux-based services deployment testing add Linux based image to Murano:
+To prepare Murano for linux-based services deployment testing,
+add a Linux based image to Murano:
 
-   * Create a Linux image with Murano agent.
-     See `Murano documentation (Linux Image Builder) <http://murano-api.readthedocs.org/en/latest/image_builders/index.html>`_
+   1. Download the following image:
 
-     (Please note, the Murano Image Builder documentation referenced here cannot guarantee success with image creation and could be outdated)
+      http://murano-files.mirantis.com/ubuntu_14_04-murano-agent_stable_juno.qcow2
 
-   * Upload the image to the OpenStack Image Service (Glance) into the 'admin' tenant.
+      .. note:: This VM image is usable whether the base operating system
+               is Ubuntu or CentOS.
+               The base operating system of a Murano image
+               is not related to the base operating system of the OpenStack environment;
+               Ubuntu images can be run in a CentOS-based OpenStack environment
+               and vice versa.
 
-   * In the OpenStack Dashboard, switch to admin tenant if needed.
+      If you would like to build your own Linux image,
+      you can use the Murano agent.
+      For instructions, see the `Murano documentation (Linux Image Builder)
+      <http://murano-api.readthedocs.org/en/latest/image_builders/index.html>`_.
 
-   * Open 'Murano' tab.
+      .. note::  The instructions in the official Murano documentation
+                may be outdated;
+                following these instructions cannot guarantee success
+                with image creation.
 
-   * Navigate to 'Manage' submenu
 
-   * Click the 'Images' menu.
+   2. Upload the image to the `admin` tenant
+      in the OpenStack Image Service (Glance).
 
-   * Click 'Mark Image'. The Image registration window displays.
+   3. Open the 'Murano' tab.
 
-   * Select the Linux image with Murano Agent.
+   4. Navigate to the 'Manage' submenu
 
-   * In the 'Title' field, set title for this image.
+   5. Click the 'Images' menu.
 
-   * Select the 'Generic Linux' type.
+   6. Click 'Mark Image'. The Image registration window displays.
 
-   * Click 'Mark'.
+   7. Select the Linux image with the Murano Agent.
+
+   8. In the 'Title' field, set the title for this image.
+
+   9. Select the 'Generic Linux' type.
+
+   10. Click 'Mark'.
 
 Murano is ready for testing.
 
