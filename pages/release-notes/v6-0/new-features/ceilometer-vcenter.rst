@@ -1,6 +1,6 @@
 
-Ceilometer can collect statistics in vCenter environment
---------------------------------------------------------
+Ceilometer can collect statistics in vCenter environment (experimental)
+-----------------------------------------------------------------------
 
 Fuel can now install a Ceilometer agent on the Controller node where the
 Compute role is installed when deploying a vCenter environment. Operators can

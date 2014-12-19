@@ -1,6 +1,6 @@
 
-Ceilometer can use an external MongoDB installation
----------------------------------------------------
+Ceilometer can use an external MongoDB installation (experimental)
+------------------------------------------------------------------
 
 As an :ref:`experimental feature<experimental-features-term>`, Fuel 6.0 can
 configure :ref:`Ceilometer<ceilometer-term>` to use an external MongoDB cluster
