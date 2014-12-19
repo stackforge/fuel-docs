@@ -13,6 +13,10 @@ To prepare Murano for linux-based services deployment testing add Linux based im
    * Create a Linux image with Murano agent.
      See `Murano documentation (Linux Image Builder) <http://murano-api.readthedocs.org/en/latest/image_builders/index.html>`_
 
+     Or you can download the following image:
+
+     http://murano-files.mirantis.com/ubuntu_14_04-murano-agent_stable_juno.qcow2
+
      (Please note, the Murano Image Builder documentation referenced here cannot guarantee success with image creation and could be outdated)
 
    * Upload the image to the OpenStack Image Service (Glance) into the 'admin' tenant.
