@@ -54,6 +54,8 @@ create the environment.
 .. image:: /_images/user_screen_shots/vcenter-hv.png
    :width: 50%
 
+.. _vcenter-netv-service:
+
 Select Network Service for vCenter
 ++++++++++++++++++++++++++++++++++
 
@@ -66,7 +68,9 @@ FlatDHCP manager.
 
 .. raw: pdf
 
-   PageBreak
+   PageBrea:
+
+.. _vcenter-backend:
 
 Choose Backend for Cinder and Glance with vCenter
 +++++++++++++++++++++++++++++++++++++++++++++++++
