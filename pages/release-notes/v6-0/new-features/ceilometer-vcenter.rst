@@ -1,12 +1,8 @@
 
-Ceilometer can collect statistics in vCenter environment
---------------------------------------------------------
+Ceilometer can collect some statistics in vCenter environment
+-------------------------------------------------------------
 
-Fuel can now install a Ceilometer agent on the Controller node where the
-Compute role is installed when deploying a vCenter environment. Operators can
-then configure Ceilometer to collect metrics for the vCenter environment; see
-:ref:`ceilometer-vcenter`. See the
-`Implement possibility to setup ceilometer compute agent on controller
-<https://blueprints.launchpad.net/fuel/+spec/ceilometer-support-for-vcenter>`_
-blueprint for implementation details.
+:ref:`Ceilometer<ceilometer-term>` collects a number of metrics for vCenter.
+For more details about the Ceilometer plug-in for vCenter,
+see `Support for VMware vCenter Server <https://wiki.openstack.org/wiki/Ceilometer/blueprints/vmware-vcenter-server#Support_for_VMware_vCenter_Server>`_.
 
