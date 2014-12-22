@@ -1,15 +1,17 @@
 
 .. _ml2-create-ops:
 
-Creating and Configuring ML2 Drivers
-====================================
+Creating and Configuring ML2 Drivers for Neutron
+================================================
 
-Fuel 5.1 supports :ref:`ml2-term` drivers
-and uses them to provide support for Mellanox devices.
+Fuel 5.1 and later supports :ref:`ml2-term` drivers for Neutron.
+Some network configurations,
+such as advanced features provided by :ref:`mellanox-adapters`,
+require ML2 mechanism driver configuration.
 
-You can now add ML2 data to the quantum_settings section
+You can add ML2 data to the quantum_settings section
 of the *node.yaml* file
-(see :ref:`yaml-config-ops`;
+(see :ref:`yaml-config-ops`);
 this updates the *astute.yaml* file:
 
 ::
