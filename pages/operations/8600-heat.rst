@@ -54,5 +54,4 @@ For more information:
 * Mirantis `blog record <http://www.mirantis.com/blog/heat-things-up-with-openstack-before-your-competitors-do/>`_ about Heat.
 
 
-.. include:: /pages/operations/health-checks/0630-heat-prepare-test.rst
 .. include:: /pages/operations/health-checks/0650-heat-test-details.rst
