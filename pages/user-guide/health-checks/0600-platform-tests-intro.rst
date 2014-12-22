@@ -14,5 +14,4 @@ See the following:
 - :ref:`sahara-test-details`
 - :ref:`murano-test-prepare`
 - :ref:`murano-test-details`
-- :ref:`heat-test-prepare`
 - :ref:`heat-test-details`
