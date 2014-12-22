@@ -15,9 +15,22 @@ that need high levels of stability.
 The following features are currently defined as experimental:
 
 - Zabbix integration; see :ref:`zabbix-plan`.
-- Ability to update 5.0 and 5.0.1 environments to 5.0.2;
+
+- Ability to apply minor updates to OpenStack environments
+  within the same OpenStack major release;
   see :ref:`upgrade-patch-top-ug`.
-- NSX. See :ref:`nsx-plan` and :ref:`nsx-deploy`.
+  Mirantis OpenStack 6.0 is the first release based on Juno
+  and so no upgrade is possible.
+  We expect to offer the ability to update a 6.0 environment	16
+  to future releases in the Juno line.
+
+- vCenter with NSX. See :ref:`nsx-plan` and :ref:`nsx-deploy`.
+
+- OVS :ref:`bonding<bonding-term>`.
+
+- Image-based provisioning.
+
+- Ceilometer can use an external MongoDB installation.
 
 Instructions for enabling experimental features
 on a running Fuel Master node are provided in

@@ -74,7 +74,7 @@ Known networking issues
   due to several issues discovered. To enable Experimental mode,
   see :ref:`experimental-features-op`.
   If you want to run Linux bonding instead, follow
-  instructions in :ref:`Types of Bonding<types-bonding>`.
+  instructions in :ref:`Types of Bonding<types-bonding-arch>`.
   See `LP1401260 <https://bugs.launchpad.net/bugs/1401260>`_.
 
 * The floating and public networks

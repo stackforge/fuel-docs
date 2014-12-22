@@ -4,13 +4,20 @@
 Setting NIC bonding (NIC aggregation)
 -------------------------------------
 
-NIC bonding is an optional step that allows you
+NIC :ref:`bonding<bonding-term>` is an optional step that allows you
 to aggregate multiple physical links into a single link;
-this increases the speed and provide fault tolerance for the network connection.
+this increases the speed and provides fault tolerance
+for the network connection.
 NIC bonding should be done before or in the scope of
 mapping logical networks to NICS.
 
-Use "Configure Interfaces" tab to configure interfaces bonding.
+.. note:: NIC bonding is an
+   :ref:`experimental feature<experimental-features-term>`
+   in Fuel 6.0.
+   You can instead run Linux bonding;
+   follow the instructions in :ref:`Types of Bonding<types-bonding-arch>`.
+
+Use "Configure Interfaces" tab to configure interface bonding.
 
 1. Select node(s) and click "Configure Interfaces".
    Select interfaces to be aggregated. All interfaces except Admin-PXE can be aggregated.
