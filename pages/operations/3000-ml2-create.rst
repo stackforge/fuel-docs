@@ -4,7 +4,7 @@
 Creating and Configuring ML2 Drivers
 ====================================
 
-Fuel 5.1 supports :ref:`ml2-term` drivers
+Fuel supports :ref:`ml2-term` drivers
 and uses them to provide support for Mellanox devices.
 
 You can now add ML2 data to the quantum_settings section
