@@ -8,24 +8,21 @@ the stability and scalability of the deployed environment:
 * The :ref:`Pacemaker<pacemaker-term>` deployment configuration has been
   improved to support a larger number of OpenStack Controller nodes.
 
-* :ref:`Corosync<corosync-term>` cluster communication framework was updated to
-  version 2.0.
-
-* Installation of Pacemaker and Corosync is now a discrete stage of deployment.
-
 * Debug handling of OCF scripts is now unified, OCF resources have been renamed
   and no longer include the "__old" string. Previously, debugging OCF scripts
   required significant manual intervention by the cloud operator.
 
-* The OCF service provider has been refactored to disable creating the same
-  service under systemd/upstart/sysvinit.
+* Pacemaker service provider has been refactored to disable creating the
+  same service under systemd/upstart/sysvinit.
 
-* Diff operations against Corosync CIB can now save data to memory rather than
-  a file, speeding up the shutting down of Corosync services.
+* Idempotency was fixed in Pacemaker provider. Puppet doesn't create
+  multiple object in Corosync CIB anymore
 
-* Monit is now used in conjunction with Pacemaker to monitor and automatically
-  repair critical services on OpenStack Compute nodes.
+* Pacemaker provider doesn't use 'crm' or 'pcs' tools anymore. All operations
+  are performed using native corosync tools. This allows to use provider with
+  CentOS 7, Ubuntu 14.04 as well as currently supported OSes.
+
+* OCF scripts were improved to cover more complex HA scenarios.
 
 * If the public NIC on the primary controller becomes unavailable,
   the public VIP now migrates to another controller.
-
