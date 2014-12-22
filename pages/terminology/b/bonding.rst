@@ -18,3 +18,10 @@ Active-backup, Balance SLB (Source Level Bonding),
 and Balance TCP with LACP (Link Aggregation Control Protocol).
 The Fuel UI requires LACP to implement the Balance TCP mode.
 
+OVS bonding is an :ref:`experimental feature<experimental-features-term>`
+in Fuel 6.0.
+You can instead run Linux bonding;
+follow the instructions in :ref:`Types of Bonding<types-bonding-arch>`.
+See `LP1401260 <https://bugs.launchpad.net/bugs/1401260>`_.
+
+

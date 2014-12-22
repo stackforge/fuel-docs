@@ -18,6 +18,8 @@ to increase speed and provide fault tolerance.
 * Switches configuration tips for Fuel can be found
   `here <https://etherpad.openstack.org/p/LACP_FUEL_bonding>`_
 
+.. _types-bonding-arch:
+
 Types of Bonding
 ----------------
 
