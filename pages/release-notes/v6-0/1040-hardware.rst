@@ -4,29 +4,15 @@
 Hardware support issues
 =======================
 
+New Features and Resolved Issues in 6.0
+---------------------------------------
+
+* Now both CentOS and Ubuntu include drivers for
+  NetFPGA devices
+  See `LP1270889 <https://bugs.launchpad.net/fuel/+bug/1270889>`_.
+
 Known Issues in 6.0
 -------------------
-
-Some UEFI hardware cannot be used
-+++++++++++++++++++++++++++++++++
-
-Some UEFI chips (such as the Lenovo W520)
-do not emulate legacy BIOS
-in a way that is compatible with the grub settings
-used for the Fuel Master node.
-
-This issue also affects servers used
-as Controller, Compute, and Storage nodes;
-because they are booted from PXE ROM
-and then the chain32 loader boots from the hard drive,
-it is possible to boot them with an operating system
-that is already installed,
-but it is not possible to install an operating system on them
-because the operating system distributions that are provided
-do not include UEFI images.
-See `LP1291128 <https://bugs.launchpad.net/fuel/+bug/1291128>`_
-and the `UEFI support blueprint
-<https://blueprints.launchpad.net/fuel/+spec/uefi-support>`_.
 
 Ubuntu does not support NetFPGA cards
 +++++++++++++++++++++++++++++++++++++
