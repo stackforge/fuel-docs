@@ -10,3 +10,4 @@
 .. include:: /pages/planning-guide/0010-prerequisites/0640-hardware-ex.rst
 .. include:: /pages/planning-guide/0010-prerequisites/0650-mellanox-adapters.rst
 .. include:: /pages/planning-guide/0010-prerequisites/0700-hardware-summary.rst
+
