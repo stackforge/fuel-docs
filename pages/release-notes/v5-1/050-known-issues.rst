@@ -127,6 +127,19 @@ but it has some known limitations:
   and advanced configuration instructions,
   including instructions for increasing the number of virtual functions.
 
+* Deleting multiple instances on a compute node simultaneously
+  might cause the host losing network connectivity. Rebooting
+  the compute node will work around this. For a persistent solution please contact
+  Mellanox support for upgrading the ConnectX-3 firmware version.
+  See `LP1404659 <https://bugs.launchpad.net/bugs1404659>`_.
+
+* Trying to terminate an instance during its creation
+  might prevent the virtual function used by that instance
+  from being reused afterwards, causing the total amount
+  of available virtual functions to decline. To work around this restart the eswitchd
+  service on the compute node by executing: service eswitchd restart.
+  https://bugs.launchpad.net/fuel/+bug/1404661
+
 Zabbix Issues
 -------------
 
