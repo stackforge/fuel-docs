@@ -55,14 +55,16 @@ database, make a quick backup of it:
 .. code-block:: bash
 
    date=$(date --rfc-3339=date)
-   dockerctl shell postgres su postgres -c 'pg_dumpall --clean' > /root/postgres_backup_${date}.sql
+   dockerctl shell postgres su postgres -c 'pg_dumpall --clean' \
+   > /root/postgres_backup_${date}.sql
 
 
 Now try to repair whatever corruption you saw in Nailgun or PostgreSQL logs:
 
 .. code-block:: bash
 
-   dockerctl shell postgres su postgres -c "psql nailgun -c 'reindex table notifications;'"
+   dockerctl shell postgres su postgres \
+   -c "psql nailgun -c 'reindex table notifications;'"
 
 Lastly, check proper function:
 
@@ -130,7 +132,8 @@ Now activate the volume and mount it:
    pool=/dev/mapper/docker*pool
    dmsetup create "${container}_recovery" --table "0 20971520 thin $pool $device_id"
    mkdir -p "/mnt/${container}_recovery"
-   mount -t ext4 -o rw,relatime,barrier=1,stripe=16,data=ordered,discard "/dev/mapper/${container}_recovery" "/mnt/${container}_recovery"
+   mount -t ext4 -o rw,relatime,barrier=1,stripe=16,data=ordered,discard \
+   "/dev/mapper/${container}_recovery" "/mnt/${container}_recovery"
 
 Next, it is necessary to purge the container record from the Docker sqlite
 database. You may see an issue when running **dockerctl start CONTAINER**::
@@ -164,7 +167,6 @@ For Cobbler:
    dockerctl copy "/root/cobbler_recovery/*" cobbler:/var/lib/cobbler/
    dockerctl restart cobbler
 
-
 For PostgreSQL:
 
 .. code-block:: bash
@@ -179,7 +181,22 @@ You may want to make a PostgreSQL backup at this point:
 
 .. code-block:: bash
 
-   dockerctl shell postgres su postgres -c "pg_dumpall --clean' > /root/postgres_backup_$(date).sql"
+   dockerctl shell postgres su postgres -c "pg_dumpall --clean' \
+   > /root/postgres_backup_$(date).sql"
+
+To recover a corrupted PostgreSQL database,
+you can import the dump to another PostgreSQL installation,
+where you can get a clean dump
+that you then import to your PostgreSQL container.
+
+.. code-block:: bash
+
+   yum install postgresql-server
+   cp -rf data/ /var/lib/pgsql/
+   service postgresql start
+   su - postgres -c 'pg_dumpall --clean' > dump.sql
+
+Now import the *dump.sql* file to the postgres container, as described above.
 
 For Astute:
 
