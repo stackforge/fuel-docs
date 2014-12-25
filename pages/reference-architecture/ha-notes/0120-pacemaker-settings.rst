@@ -11,9 +11,8 @@ to manage HAProxy, virtual IP addresses and MySQL replication. These are located
 at ``/usr/lib/ocf/resource.d/mirantis/neutron-agent-[ovs|dhcp|l3]``,
 ``/usr/lib/ocf/resource.d/mirantis/mysql``, ``/usr/lib/ocf/resource.d/ocf/haproxy``.
 Firstly, MySQL agent is started, HAproxy and virtual IP addresses are set up.
-Then Open vSwitch and metadata agents are cloned on all the nodes. Then dhcp and
-L3 agents are started and tied together by use of Pacemaker constraints called
-"colocation".
+Then Open vSwitch, metadata and L3 agents are cloned on all the nodes. Then dhcp
+agents is started.
 
 .. seealso:: `Using Rules to Determine Resource
    Location <http://clusterlabs.org/doc/en-US/Pacemaker/1.1/html/Pacemaker_Explained/_using_rules_to_determine_resource_location.html>`_
