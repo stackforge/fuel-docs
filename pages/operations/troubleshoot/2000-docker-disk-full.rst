@@ -164,7 +164,6 @@ For Cobbler:
    dockerctl copy "/root/cobbler_recovery/*" cobbler:/var/lib/cobbler/
    dockerctl restart cobbler
 
-
 For PostgreSQL:
 
 .. code-block:: bash
@@ -180,6 +179,20 @@ You may want to make a PostgreSQL backup at this point:
 .. code-block:: bash
 
    dockerctl shell postgres su postgres -c "pg_dumpall --clean' > /root/postgres_backup_$(date).sql"
+
+To recover a corrupted PostgreSQL database,
+you can import the dump to another PostgreSQL installation,
+where you can get a clean dump
+that you then import to your PostgreSQL container.
+
+.. code-block:: bash
+
+   yum install postgresql-server
+   cp -rf data/ /var/lib/pgsql/
+   service postgresql start
+   su - postgres -c 'pg_dumpall --clean' > dump.sql
+
+Now import the *dump.sql* file to the postgres container, as described above.
 
 For Astute:
 
