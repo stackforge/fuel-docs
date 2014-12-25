@@ -70,7 +70,7 @@ network considerations, and deployment options.
 Short articles about OpenStack terminology and technology
 with references to other documentation and other useful information.
 
-:ref:`file-ref` `(pdf) <pdf/Mirantis-OpenStack-6.0-Fuel File-Format-Reference.pdf>`__
+:ref:`file-ref` `(pdf) <pdf/Mirantis-OpenStack-6.0-Fuel-File-Format-Reference.pdf>`__
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Reference pages for select configuration files that Fuel uses.
