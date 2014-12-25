@@ -499,7 +499,8 @@ The following testing scenarios (from 5 to 11) may be mixed with Nova or Neutron
     ::
 
 
-     SELECT VARIABLE_VALUE FROM information_schema.GLOBAL_STATUS WHERE VARIABLE_NAME = 'wsrep_ready'
+     SELECT VARIABLE_VALUE FROM information_schema.GLOBAL_STATUS WHERE VARIABLE_NAME \
+       = 'wsrep_ready'
 
   * Run OSTF.
 
@@ -518,7 +519,8 @@ The following testing scenarios (from 5 to 11) may be mixed with Nova or Neutron
     ::
 
 
-       "SELECT VARIABLE_VALUE FROM information_schema.GLOBAL_STATUS WHERE VARIABLE_NAME = 'wsrep_ready'
+       "SELECT VARIABLE_VALUE FROM information_schema.GLOBAL_STATUS WHERE VARIABLE_NAME \
+          = 'wsrep_ready'
 
   * Run OSTF.
 
