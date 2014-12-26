@@ -44,3 +44,20 @@ but it has some known limitations:
   (for example, instructions to increase the number of virtual functions).
   and advanced configuration instructions.
 
+* A problem with losing private and floating IPs occurs
+  at both CentOS and Ubuntu in HA mode.
+  When HA cluster with Mellanox SR-IOV
+  is deployed with the default Neutron mechanism driver
+  (Open vSwitch), CirrOS-based virtual machines
+  are launched successfully; assigning floating IP addresses
+  also works without failures. Several minutes later, after
+  you power off the primary controller, the console and
+  OpenStack API do not fail but existing virtual machines
+  lose their private and floating IP addresses.
+  At CentOS, dchp port is not discovered and there is
+  no connectivity to the outside world.
+  At Ubuntu, dchp is up some time later and ports get IP
+  addresses but there is still no connectivity to the outside.
+  For more information on investigation and workaround,
+  see `LP1371104 <https://bugs.launchpad.net/bugs/1371104>`_.
+
