@@ -54,6 +54,7 @@ OSTF (Health Check) issues
   See `LP1338669 <https://bugs.launchpad.net/bugs/1338669>`_.
 
 * RabbitMQ OSTF test is limited.
-  The OSTF test for RabbitMQ only checks rabbitmqctl cluster_status. See the related
-  `RabbitMQ OSTF replication tests <https://blueprints.launchpad.net/fuel/+spec/ostf-rabbit-replication-tests>_`
-  blueprint.
+  The OSTF test for RabbitMQ only checks rabbitmqctl
+  cluster_status. See the related
+  `RabbitMQ OSTF replication tests <https://blueprints.launchpad.net/fuel/+spec/ostf-rabbit-replication-tests>`_ blueprint.
+
