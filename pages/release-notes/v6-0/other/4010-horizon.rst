@@ -37,12 +37,22 @@ and will appear on the Horizon dashboard.
 Any of the images can be used.
 See `LP1342039 <https://bugs.launchpad.net/fuel/+bug/1342039>`_.
 
-"Deassociate floating IP" button may disappear from Horizon menu
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+"Disassociate" button does not appear in Project -> Instances Table (Neutron only)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The "Deassociate floating IP" button may disappear
-from the Horizon menu when using Neutron network topologies.
-See `LP1325575 <https://bugs.launchpad.net/bugs/1325575>`_.
+When an environment is deployed with
+one of the Neutron topologies,
+the "Disassociate" option does not appear
+in the **Project -> Instances** table
+for an Instance that has an associated Floating IP address.
+This option does appear when one of the Nova Network topologies
+is used for the environment.
+For both Neutron and Nova topologies,
+this action is available in the
+**Project -> Access & Security -> Floating IPs** table.
+This is related to the upstream
+`bug 1226003 <https://bugs.launchpad.net/horizon/+bug/1226003>`_.
+See `LP1325575 <https://bugs.launchpad.net/mos/+bug/1325575>`_.
 
 Horizon performance is degraded when a node is down
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -77,4 +87,68 @@ an error occurs
 and the deleted node still is displayed in Horizon in down state.
 See `LP1374361 <https://bugs.launchpad.net/bugs/1374361>`_ and
 `Full life-cycle of Compute node <https://blueprints.launchpad.net/fuel/+spec/compute-node-lifecycle>`_ blueprint.
+
+Glance may not be able to upload image using Horizon dashboard
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Glance may not be able to download an image
+from a remote http source;
+in other words, when the image is created
+using the Glance **image-create** command
+with the **copy-from** parameter specifying an HTTP location
+or using the equivalent set of API calls.
+This also happens when the user chooses
+to download an image from a URL with the
+**Project -> Image -> Create Image** button in the Horizon UI.
+
+Problems occur when the download speed is slow enough
+that a 16MB chunk of data
+might not be downloaded within a minute;
+the download operation is in "Saving" state for several minutes
+and then is moved to "Killed" state
+and the image disappears from the list of active images.
+It happens often when downloading from image storage
+on the public hosting providers
+such as `murano-files.mirantis.com`
+and `sahara-files.mirantis.com`;
+these storages may throttle connection speeds
+when the load is heavy,
+which may reduce the speed enough to cause these problems.
+
+You can avoid the problem
+by using **wget** or a similar facility
+to manually download the image from the external storage
+to the local filesystem on the Controller node.
+You can then execute the Glance **image-create** command,
+using the **--file** parameter to point to the downloaded file
+or use the equivalent API calls.
+See `LP1401118 <https://bugs.launchpad.net/mos/+bug/1401118>`_.
+
+Horizon - hypervisors page report is misleading for Ceph
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The statistics on the `Horizon - hypervisors` page
+are misleading when Ceph is used as the storage backend;
+the actual amount of space available/used
+is multiplied by the number of Compute nodes.
+The Nova **hypervisor-stats** command has the same issue.
+Note that this does not affect the booting of instances in any way;
+it merely presents confusing information
+on the resource usage report.
+See `LP1359989 <https://bugs.launchpad.net/mos/+bug/1359989>`_.
+
+On CentOS, some UI elements and actions erroneously show as available
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+CentOS searches the wrong location for policy files
+so some UI elements and actions seem to be available
+but the actions will be rejected
+by the underlying OpenStack services
+such as Nova, Keystone, and Cinder.
+This happens because, by default, all policy checks succeed
+if no rule is defined.
+To correct the problem,
+edit the */etc/openstack_dashboard/local_settings* file
+and set the value of POLICY_FILES_PATH to `/etc/openstack-dashboard`.
+See `LP1397069 <https://bugs.launchpad.net/mos/+bug/1397069>`_.
 
