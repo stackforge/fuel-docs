@@ -1,4 +1,4 @@
-.. _plugin-gluster:
+.. _plugin-gluster-ug:
 
 GlusterFS
 +++++++++
