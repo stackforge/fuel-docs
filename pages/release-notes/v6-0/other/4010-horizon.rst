@@ -37,12 +37,20 @@ and will appear on the Horizon dashboard.
 Any of the images can be used.
 See `LP1342039 <https://bugs.launchpad.net/fuel/+bug/1342039>`_.
 
-"Deassociate floating IP" button may disappear from Horizon menu
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+"Disassociate Floating IP" button disappears from Horizon menu
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The "Deassociate floating IP" button may disappear
-from the Horizon menu when using Neutron network topologies.
-See `LP1325575 <https://bugs.launchpad.net/bugs/1325575>`_.
+When the environment is deployed using
+one of the Neutron topologies,
+the "Disassociate" option in the
+Project->Access & Security -> Floating IPs table
+does not appear for an instance
+that has an associated floating IP address.
+This option does appear when one of the Nova Network topologies
+is used for the environment.
+This is related to the upstream
+`bug 1226003 <https://bugs.launchpad.net/horizon/+bug/1226003>`_.
+See `LP1325575 <https://bugs.launchpad.net/mos/+bug/1325575>`_.
 
 Horizon performance is degraded when a node is down
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -77,4 +85,32 @@ an error occurs
 and the deleted node still is displayed in Horizon in down state.
 See `LP1374361 <https://bugs.launchpad.net/bugs/1374361>`_ and
 `Full life-cycle of Compute node <https://blueprints.launchpad.net/fuel/+spec/compute-node-lifecycle>`_ blueprint.
+
+Horizon - hypervisors page report is misleading for Ceph
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The statistics on the `Horizon - hypervisors` page
+are misleading when Ceph is used as the storage backend;
+the actual amount of space available/used
+is multiplied by the number of Compute nodes.
+The Nova **hypervisor-stats** command has the same issue.
+Note that this does not affect the booting of instances in any way;
+it merely presents confusing information
+on the resource usage report.
+See `LP1359989 <https://bugs.launchpad.net/mos/+bug/1359989>`_.
+
+On CentOS, some UI elements and actions erroneously show as available
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+CentOS searches the wrong location for policy files
+so some Ui elements and actions seem to be available
+but the actions will be rejected
+by the underlying OpenStack services
+such as Nova, Keystone, and Cinder.
+This happens because, by default, all policy checks succeed
+if no rule is defined.
+To correct the problem,
+edit the */etc/openstack_dashboard/local_settings* file
+and set the value of POLICY_FILES_PATH to `/etc/openstack-dashboard`.
+See `LP1397069 <https://bugs.launchpad.net/mos/+bug/1397069>`_.
 
