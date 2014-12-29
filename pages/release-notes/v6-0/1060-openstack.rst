@@ -41,4 +41,14 @@ nova-api is unavailable for a few minutes,
 which causes services to be unavailable.
 See `LP1370067 <https://bugs.launchpad.net/fuel/+bug/1370067>`_.
 
+An instance may hang after live migration
++++++++++++++++++++++++++++++++++++++++++
+
+An instance may hang with a kernel panic
+after a live migration operation completes successfully.
+The root cause is not yet known,
+but it probably is a qemu-kvm/libvirt issues.
+Using offline migration of instances is recommended
+until this issue is resolved.
+See `LP1371130 <https://bugs.launchpad.net/mos/+bug/1371130>`_
 
