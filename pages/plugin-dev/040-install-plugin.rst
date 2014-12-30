@@ -16,10 +16,11 @@ it is impossible to uninstall the plug-in.
 You can use the following workaround to reinstall it:
 
 ::
+
           rm /var/www/nailgun/plugins/<plugin_name>
           fuel plugins --force --install <plugin_name>
 
-#. Copy the plug-in on already installed Fuel Master node; ssh can be used for that.
+#. Use **ssh** to copy the plugin to the Fuel Master node on your test system
    If you do not have the Fuel Master node yet, see :ref:`virtualbox`.
 
    ::
