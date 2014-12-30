@@ -16,6 +16,7 @@ it is impossible to uninstall the plug-in.
 You can use the following workaround to reinstall it:
 
 ::
+          
           rm /var/www/nailgun/plugins/<plugin_name>
           fuel plugins --force --install <plugin_name>
 
