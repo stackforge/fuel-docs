@@ -27,7 +27,7 @@ It also supports Ubuntu 14.04 LTS and CentOS 6.5.
 
 #. Enable the plug-in on the *Settings* tab of the Fuel web UI.
 
-   .. image:: _images/plugins/fuel_plugin_vpnaas_configuration.png
+   .. image:: /_images/plugins/fuel_plugin_vpnaas_configuration.png
 
 #. For further steps, see`
    Configure VPN-as-a-Service (VPNaaS) <https://www.mirantis.com/blog/mirantis-openstack-express-vpn-service-vpnaas-step-step/>`__ in the Mirantis blogpost.

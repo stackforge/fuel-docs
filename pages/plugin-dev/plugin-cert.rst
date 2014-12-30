@@ -98,8 +98,8 @@ it is moved to the appropriate directory
 of the :ref:`Plug-ins storage<plugins-storage>` and signed by
 Mirantis `GPG <https://www.gnupg.org/index.html>`_ key.
 
-.. include:: pages/plugin-dev/plugin-doc-template.rst
-.. include:: pages/plugin-dev/test-plan-report.rst
+.. include:: /pages/plugin-dev/plugin-doc-template.rst
+.. include:: /pages/plugin-dev/test-plan-report.rst
 
 .. _how-to-push:
 
@@ -177,4 +177,4 @@ The workflow for plug-ins certification consists of the following steps:
    can be moved to Verified, responsible person from Partner Integration team pushes
    the plug-in with its documentation into the Certified directory of the :ref:`Plug-ins storage<plugins-storage>`.
 
-.. include:: pages/plugin-dev/050-support.rst
+.. include:: /pages/plugin-dev/050-support.rst
