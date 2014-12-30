@@ -625,19 +625,19 @@ deployment script.
         the first deployment try failed. Also, your deployment scripts can be
         executed during OpenStack patching.
 
- #. To make sure that plug-in works without errors, revert snapshots
-    which you made in step 6, and run deployment again:
+#. To make sure that plug-in works without errors, revert snapshots
+   which you made in step 6, and run deployment again:
 
-    .. code-block:: bash
+   .. code-block:: bash
 
         fuel --env 1 node --deploy --node 1,2
 
-   In the same way with no plug-in reinstallation,
-   you can edit */var/www/nailgun/plugins/<fuel_plugin_name>-1.0.0/tasks.yaml* file.
-   Note that in this case to make sure that your tasks have a valid format, you should at least
-   run the following command:
+In the same way with no plug-in reinstallation,
+you can edit */var/www/nailgun/plugins/<fuel_plugin_name>-1.0.0/tasks.yaml* file.
+Note that in this case to make sure that your tasks have a valid format, you should at least
+run the following command:
 
-   ::
+::
 
      fpb --check /var/www/nailgun/plugins/fuel_plugin_name-1.0.0/
 
