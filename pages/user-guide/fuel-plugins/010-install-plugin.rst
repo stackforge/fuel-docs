@@ -5,18 +5,18 @@ Install Fuel plug-ins
 =====================
 
 Beginning with Mirantis OpenStack 6.0,
-Fuel features the ability to install plug-ins when you deploy your environment.
-Plug-ins are downloadable software components that extend the functionality of your environments in a flexible, repeatable and reliable manner.
+Fuel features the ability to install plug-ins before you deploy your environment.
+FUel plug-ins are downloadable software components that extend the functionality of your environments in a flexible, repeatable and reliable manner.
 
-For example, :ref:`Neutron LBaaS<plugin-lbaas>` provides Load-Balancing-as-a-Service for Neutron, OpenStack Network Service.
+For example, :ref:`Neutron LBaaS<plugin-lbaas>` plug-in for Fuel provides Load-Balancing-as-a-Service for Neutron.
 
-Plug-ins fall into two categories:
+Fuel plug-ins fall into two categories:
 
 * *Certified*: certified plug-ins are thoroughly reviewed, tested and supported by Mirantis.
 
 * *Non-Certified*: non-certified plug-ins are reviewed by Mirantis, but not supported or guaranteed.
 
-All plug-ins, both certified and non-certified are digitally signed and hosted by Mirantis.
+All Fuel plug-ins, both certified and non-certified are digitally signed and hosted by Mirantis.
 
 
 Installing Fuel plug-ins
