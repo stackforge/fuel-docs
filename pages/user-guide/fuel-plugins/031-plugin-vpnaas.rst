@@ -3,16 +3,18 @@
 Neutron VPNaaS
 ++++++++++++++
 
-VPNaaS plug-in provides `Neutron VPNaaS <https://wiki.openstack.org/wiki/Neutron/VPNaaS>`__ functionality.
+VPNaaS plug-in provides `Neutron VPNaaS <https://wiki.openstack.org/wiki/Neutron/VPNaaS>`__ functionality:  VPN-as-a-Service with IPsec and OpenSWAN.
 
-**Requirements**
+Requirements
+^^^^^^^^^^^^
 
-VPNaaS plug-in is compatible with OpenStack Juno Release 2014.2.
-It also supports Ubuntu 14.04 LTS and CentOS 6.5.
+VPNaaS plug-in is compatible with OpenStack Juno Release 2014.2
+and supports Ubuntu 14.04 LTS and CentOS 6.5-based operating systems.
 
-**Installation**
+Installation
+^^^^^^^^^^^^
 
-#. Download the plug-in from `<https://software.mirantis.com/fuel-plugins>`_.
+#. Download the plug-in from `<https://software.mirantis.com/fuel-plug-ins>`_.
 
 #. Move this file to the Fuel
    Master node and install it using the following command:
@@ -23,7 +25,8 @@ It also supports Ubuntu 14.04 LTS and CentOS 6.5.
 
 #. After plug-in is installed, create an environment with Neutron.
 
-**Configuration**
+Configuration
+^^^^^^^^^^^^^
 
 #. Enable the plug-in on the *Settings* tab of the Fuel web UI.
 

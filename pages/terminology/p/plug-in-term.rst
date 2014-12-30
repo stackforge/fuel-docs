@@ -31,4 +31,4 @@ All Fuel plug-ins provided by Mirantis are digitally signed for authenticity and
 
 You can download the required plug-in, install it and configure.
 
-For more information about Fuel plug-ins, visit `<https://software.mirantis.com/fuel-plugins>`_.
+For more information about Fuel plug-ins, visit `<https://software.mirantis.com/fuel-plug-ins>`_.
