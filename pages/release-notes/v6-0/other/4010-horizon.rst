@@ -68,6 +68,36 @@ for the problem controller from the LOCATION line:
 
 Then restart the Apache web server.
 
+Horizon performance is degraded when a Controller node is down
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If one of the Controller nodes in an HA environment
+is destroyed or deleted, Horizon and other OpenStack services
+run slowly because of delays from Keystone.
+See `LP1405549 <https://bugs.launchpad.net/mos/+bug/1405549>`_.
+
+To fix the problem:
+
+#.  View the */etc/hosts* file on one of the Controller nodes
+    that is alive and determine the IP address
+    that is assigned to the Management interface
+    of the unavailable Controller.
+
+#.  Edit the *keystone.conf* file on each Controller node
+    to remove this IP address from the list of memcached servers:
+
+    .. code-block :: sh
+
+       DOWN_IP="192.168.0.5"; sed -r 's/'$DOWN_IP':11211,?//g' \
+          -i.bak /etc/keystone/keystone.conf
+
+#.  Restart the Keystone daemon on all Controllers:
+
+    .. code-block :: sh
+
+       service openstack-keystone restart || restart keystone
+
+
 Deleted nodes may not be displayed incorrectly
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

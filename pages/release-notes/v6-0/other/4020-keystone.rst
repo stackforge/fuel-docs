@@ -16,3 +16,4 @@ New Features and Resolved Issues in Mirantis OpenStack 6.0
 
 * Keystone service list no longer lacks Murano.
   See `LP1362037 <https://bugs.launchpad.net/bugs/1362037>`_.
+
