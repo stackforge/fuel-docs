@@ -3,7 +3,7 @@
 Neutron VPNaaS
 ++++++++++++++
 
-VPNaaS plug-in provides `Neutron VPNaaS <https://wiki.openstack.org/wiki/Neutron/VPNaaS>`__ functionality.
+VPNaaS plug-in provides `Neutron VPNaaS <https://wiki.openstack.org/wiki/Neutron/VPNaaS>`__ functionality:  VPN-as-a-Service with IPsec and Openswan.
 
 **Requirements**
 
