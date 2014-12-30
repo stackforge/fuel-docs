@@ -44,30 +44,6 @@ The "Deassociate floating IP" button may disappear
 from the Horizon menu when using Neutron network topologies.
 See `LP1325575 <https://bugs.launchpad.net/bugs/1325575>`_.
 
-Horizon performance is degraded when a node is down
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Horizon uses memcached servers for caching
-and it connects to each one directly.
-If one of the nodes is down so that its memcached server does not respond,
-Horizon operations may be delayed.
-See `LP1367767 <https://bugs.launchpad.net/bugs/1367767>`_.
-
-To work around this, edit
-the */etc/openstack-dashboard/local_settings* file.
-In the CACHES structure,
-temporarily remove the IP:PORT string
-for the problem controller from the LOCATION line:
-::
-
-  CACHES = {
-    'default': {
-      'BACKEND' : 'django.core.cache.backends.memcached.MemcachedCache',
-      'LOCATION' : "192.168.0.3:11211;192.168.0.5:11211;192.168.0.6:11211"
-  },
-
-Then restart the Apache web server.
-
 Deleted nodes may not be displayed incorrectly
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
