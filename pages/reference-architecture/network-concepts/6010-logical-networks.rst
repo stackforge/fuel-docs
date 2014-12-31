@@ -77,11 +77,12 @@ Private Network (Fixed network)
   Private network address spaces
   are not a part of the enterprise network address space;
   fixed IPs of virtual instances cannot be accessed directly
-  from the rest of Enterprise network.
+  from the rest of the Enterprise network.
 
   Just like the public network, the private network should be isolated from
   other networks in the cluster for security reasons.
 
+<<<<<<< HEAD
 Internal Network
 
   The internal network connects all OpenStack nodes in the environment.
@@ -98,3 +99,10 @@ with the Admin network on the same NIC,
 you must leave the Admin network untagged.
 This is the default configuration and cannot be changed in the Fuel UI
 although you could modify it by manually editing configuration files.
+=======
+.. note:: If you want to combine another network
+          with the Admin network on the same network interface,
+          you must leave the Admin network untagged.
+          This is the default configuration and cannot be changed in the Fuel UI
+          although you could modify it by manually editing configuration files.
+>>>>>>> Clarify information about single NIC

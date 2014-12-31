@@ -12,8 +12,8 @@ Private networks can be segmented using one of two different topologies:
 
 * **VLAN segmentation** Ideally, "Private network" traffic is located
   on a dedicated network adapter that is attached to an untagged network port.
-  However, this network may share a network adapter with other networks.
-  In this case, you should use non-intersected VLAN-ID ranges
+  It is, however, possible for this network to share a network adapter with other networks.
+  In this case, you should use non-intersecting VLAN-ID ranges
   for "Private network" and other networks.
 
 * **GRE segmentation** In this mode of operation, Neutron does not
