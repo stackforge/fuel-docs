@@ -25,6 +25,43 @@ New Features and Resolved Issues in Mirantis OpenStack 6.0
 Known Issues in Mirantis OpenStack 6.0
 --------------------------------------
 
+Fuel requires a pingable default gateway in order to deploy
+-----------------------------------------------------------
+
+Fuel now uses the public VIP to configure some OpenStack entities
+such as floating IP pools.
+Because of this, Fuel must be able to ping the default gateway
+in order to deploy the environment.
+If your configuration does not include a pingable default gateway,
+you can work around it
+by specifying the Fuel Master node
+(or any other pingable host)
+as the default gateway.
+
+Alternatively, you can apply `Patch 138448
+<https://review.openstack.org/#/c/138448>`_
+to disable the requirement to ping the default gateway. After applying this
+patch, you need to enable it with following sequence of steps.
+
+Download environment deployment settings via Fuel CLI (replace "1" with the id
+of your environment)::
+
+    fuel --env 1 deployment default
+
+Add "run_ping_checker: 'false'" to the end of the settings YAML file for every
+controller::
+
+    for f in deployment_1/*controller*.yaml; do
+        echo "run_ping_checker: 'false'" >> $f
+    done
+
+Upload updated settings (also using the right environment id)::
+
+    fuel --env 1 deployment upload
+
+See `LP1396126 <https://bugs.launchpad.net/fuel/+bug/1396126>`_.
+
+
 GRE-enabled Neutron installation runs inter VM traffic through management network
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
