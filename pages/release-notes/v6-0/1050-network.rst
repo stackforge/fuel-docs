@@ -116,6 +116,19 @@ Known Issues in Mirantis OpenStack 6.0
   For more information on investigation and workaround,
   see `LP1371104 <https://bugs.launchpad.net/bugs/1371104>`_.
 
+* Networking is very unstable with a significant count of connection failures
+  when Controllers are hosted
+  on virtual machines with the Network Device-model `virtio`.
+  This is true for both KVM and QEMU hypervisors.
+  As a work around, you can specify a different Device-model
+  for the Virtual Machine on which the Controller node is running:
+
+  .. image:: /_images/Virt-Manager-Network-Settings.png
+    :width: 75%
+
+  We have confirmed that the network works correctly
+  when using Device-model 'rtl8139'.
+
 
 .. include:: /pages/release-notes/v6-0/9100-mellanox.rst
 
