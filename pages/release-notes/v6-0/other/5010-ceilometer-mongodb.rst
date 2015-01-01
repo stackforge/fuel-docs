@@ -5,7 +5,7 @@ OpenStack Telemetry (Ceilometer) and MongoDB Database
 -----------------------------------------------------
 
 New Features and Resolved Issues in Mirantis OpenStack 6.0
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * Ceilometer now successfully connects
   to AMQP after the primary controller is shut down.
@@ -28,10 +28,10 @@ New Features and Resolved Issues in Mirantis OpenStack 6.0
   See `LP1403135 <https://bugs.launchpad.net/bugs/1403135>`_.
 
 Known Issues in Mirantis OpenStack 6.0
-++++++++++++++++++++++++++++++++++++++
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 MongoDB issues
-~~~~~~~~~~~~~~
+++++++++++++++
 
 - Additional MongoDB roles cannot be added to an existing deployment
   Fuel installs :ref:`mongodb-term`
@@ -49,41 +49,14 @@ MongoDB issues
   Ceilometer randomly fails in HA mode.
   See `LP1371799 <https://bugs.launchpad.net/fuel/+bug/1371799>`_.
 
-Ceilometer issues
-~~~~~~~~~~~~~~~~~
+Ceilometer does not collect some notifications for Swift
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-* When you deploy an HA-mode environment,
-  create a container and object and download the object,
-  Ceilometer does not collect some
-  `metrics <http://docs.openstack.org/developer/ceilometer/measurements.html>`_
-  (such as *storage.objects.incoming.bytes*,
-  *storage.objects.outgoing.bytes*, and *storage.api.request*)
-  for :ref:`Swift<swift-object-storage-term>`.
-  See `LP1400240 <https://bugs.launchpad.net/bugs/1400240>`_.
-
-* The `ceilometer-agent-notification` service
-  may fail to connect to the queue after RabbitMQ is restarted.
-  This seems to happen only in HA mode
-  and we have only been able to reproduce one instance
-  of `ceilometer-agent-notification` failing.
-  As a work around, restart `ceilometer-agent-notification`
-  after restarting RabbitMQ.
-  See `LP1393505 <https://bugs.launchpad.net/mos/+bug/1393505>`_.
-
-* Ceilometer does not obtain Nova \*.rate pollsters.
-  This is related to an upstream bug:
-  `1394228 <https://bugs.launchpad.net/ceilometer/+bug/1394228>`_.
-  See `LP1400324 <https://bugs.launchpad.net/mos/+bug/1400324>`_.
-
-  As a work-around:
-
-  #. Add `Patch 139037 <https://review.openstack.org/#/c/139037/>`_
-     to the Ceilometer code on all nodes in the environment.
-
-  #. Add `Patch 147180 <http://paste.openstack.org/show/147180/>`_
-     to `sinks` in the */etc/ceilometer/pipeline.yaml* file
-     on all nodes in the environment.
-
-  #. Restart Ceilometer on all nodes in the environment.
-
-
+When you deploy HA-mode environment,
+create a container and object and download the object,
+Ceilometer does not obtain some
+`metrics <http://docs.openstack.org/developer/ceilometer/measurements.html>`_
+(such as *storage.objects.incoming.bytes*,
+*storage.objects.outgoing.bytes*, and *storage.api.request*)
+for :ref:`Swift<swift-object-storage-term>`.
+See `LP1400240 <https://bugs.launchpad.net/bugs/1400240>`_.

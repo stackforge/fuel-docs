@@ -33,7 +33,7 @@ Known Issues in 6.0
 -------------------
 
 Deploying new controllers causes services downtime
-++++++++++++++++++++++++++++++++++++++++++++++++++
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When :ref:`adding controllers<add-controller-ops>`
 to an existing environment,
@@ -42,7 +42,7 @@ which causes services to be unavailable.
 See `LP1370067 <https://bugs.launchpad.net/fuel/+bug/1370067>`_.
 
 An instance may hang after live migration
-+++++++++++++++++++++++++++++++++++++++++
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 An instance may hang with a kernel panic
 after a live migration operation completes successfully.

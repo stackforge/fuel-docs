@@ -5,7 +5,7 @@ OpenStack Dashboard (Horizon)
 -----------------------------
 
 New Features and Resolved Issues in Mirantis OpenStack 6.0
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * Users no longer have to log into Horizon twice after a session times out.
   This used to happen when both the Keystone token and the Horizon
@@ -27,10 +27,10 @@ New Features and Resolved Issues in Mirantis OpenStack 6.0
   See `LP1371161 <https://bugs.launchpad.net/bugs/1371161>`_.
 
 Known Issues in Mirantis OpenStack 6.0
-++++++++++++++++++++++++++++++++++++++
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Multiple TestVM images may be created
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++++++++++++++++++++++++++++++++++++++
 
 Multiple TestVM images may be created
 and will appear on the Horizon dashboard.
@@ -38,14 +38,14 @@ Any of the images can be used.
 See `LP1342039 <https://bugs.launchpad.net/fuel/+bug/1342039>`_.
 
 "Deassociate floating IP" button may disappear from Horizon menu
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 The "Deassociate floating IP" button may disappear
 from the Horizon menu when using Neutron network topologies.
 See `LP1325575 <https://bugs.launchpad.net/bugs/1325575>`_.
 
 Horizon performance is degraded when a node is down
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Horizon uses memcached servers for caching
 and it connects to each one directly.
@@ -68,8 +68,8 @@ for the problem controller from the LOCATION line:
 
 Then restart the Apache web server.
 
-Deleted nodes may not be displayed incorrectly
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Deleted nodes may be displayed incorrectly
+++++++++++++++++++++++++++++++++++++++++++
 
 If node is added to the cluster
 after a compute node is removed from the cluster,

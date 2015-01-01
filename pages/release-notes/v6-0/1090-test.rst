@@ -27,7 +27,7 @@ Known Issues in Mirantis OpenStack 6.0
 --------------------------------------
 
 Network verification issues
-+++++++++++++++++++++++++++
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * Network verification can fail if a node is offline
   because Astute runs network verification
@@ -38,7 +38,7 @@ Network verification issues
   See `LP1350623 <https://bugs.launchpad.net/bugs/1350623>`_.
 
 OSTF (Health Check) issues
-++++++++++++++++++++++++++
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * Platform OSTF tests fail with "HTTP unauthorized" error.
   See `LP1349408 <https://bugs.launchpad.net/bugs/1349408>`_.

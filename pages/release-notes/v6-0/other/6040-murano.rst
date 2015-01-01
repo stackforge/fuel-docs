@@ -5,7 +5,7 @@ Application Catalog System (Murano)
 -----------------------------------
 
 New Features and Resolved Issues in Mirantis OpenStack 6.0
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * Murano no longer changes deployment status to "successful" when Heat stack failed.
   See `LP1353589 <https://bugs.launchpad.net/bugs/1353589>`_.
@@ -23,7 +23,7 @@ New Features and Resolved Issues in Mirantis OpenStack 6.0
   See `LP1372483 <https://bugs.launchpad.net/fuel/+bug/1372483>`_.
 
 Known Issues in Mirantis OpenStack 6.0
-++++++++++++++++++++++++++++++++++++++
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * Murano requires the Neutron network type.
   If you choose nova-network as the network type during deployment,

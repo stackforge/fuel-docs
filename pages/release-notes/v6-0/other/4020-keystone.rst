@@ -5,7 +5,7 @@ OpenStack Identity (Keystone)
 -----------------------------
 
 New Features and Resolved Issues in Mirantis OpenStack 6.0
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * Keystone no longer hangs when trying to set a lock in Memcache.
   See `LP1370324 <https://bugs.launchpad.net/bugs/1370324>`_.

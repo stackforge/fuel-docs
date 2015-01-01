@@ -5,7 +5,7 @@ Monitoring System Server (Zabbix)
 ---------------------------------
 
 New Features and Resolved Issues in Mirantis OpenStack 6.0
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - A CentOS environment can now successfully run Zabbix.
   See `LP1368151 <https://bugs.launchpad.net/bugs/1368151>`_.
@@ -18,7 +18,7 @@ New Features and Resolved Issues in Mirantis OpenStack 6.0
   See `LP1387644 <https://bugs.launchpad.net/bugs/1387644>`_.
 
 Known Issues in Mirantis OpenStack 6.0
-++++++++++++++++++++++++++++++++++++++
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Phase I of Zabbix is included as an
 :ref:`Experimental<experimental-features-term>` feature
@@ -33,7 +33,9 @@ This version has the following known issues:
 - Zabbix agents cannot be configured to report
   to multiple Zabbix servers.
 - There are false Zabbix issues after deploying with Nova-network.
-  This can be resolved via attaching "Template App OpenStack Nova Network" to compute nodes
-  instead of controller nodes. See `LP1365171 <https://bugs.launchpad.net/fuel/+bug/1365171>`_.
+  This can be resolved via attaching
+  "Template App OpenStack Nova Network" to compute nodes
+  instead of controller nodes.
+  See `LP1365171 <https://bugs.launchpad.net/fuel/+bug/1365171>`_.
 
 See :ref:`zabbix-plan` for more information.

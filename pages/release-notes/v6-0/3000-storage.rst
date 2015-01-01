@@ -61,7 +61,7 @@ Known Issues in Mirantis OpenStack 6.0
 --------------------------------------
 
 Placing Ceph OSD on Controller nodes is not recommended
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Placing Ceph OSD on Controllers is not recommended because it can severely
 degrade controller's performance.
@@ -69,7 +69,7 @@ It is better to use separate storage nodes
 if you have enough hardware.
 
 Environment cannot be reset to use Cinder rather than Ceph
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you use Fuel to deploy a Mirantis OpenStack environment
 that uses Ceph for volume, image, and ephemeral storage and
@@ -79,7 +79,7 @@ and the environment cannot be redeployed.
 See `LP1370006 <https://bugs.launchpad.net/fuel/+bug/1370006>`_.
 
 Controller has unallocated space when Ceph is used as image backend
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When using Ceph as the backend for Glance image storage,
 unallocated space is left on the Controller.
@@ -89,7 +89,7 @@ This is being addressed as part of the
 that is under development.
 
 Disk configuration spontaneously changes to default
-++++++++++++++++++++++++++++++++++++++++++++++++++++
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you change disk configuration at the already deployed Cinder node,
 this specific configuration will become a default one in the database.
@@ -99,12 +99,13 @@ The problem can also occur at Ceph nodes.
 This issue does not affect performance.
 See `LP1400387 <https://bugs.launchpad.net/bugs/1400387>`_.
 
-Other Ceph issues
-+++++++++++++++++
+Ceph OSD node can not be stopped immediately after deployment
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* A Ceph OSD node can not be stopped with the
-  **stop ceph-osd id=xx** command on Ubuntu immediately after deployment.
-  After the node is rebooted, **stop ceph-osd** command works as expected.
-  Applying `Patch 135338 <https://review.openstack.org/135338>`_ prevents this
-  problem.
-  See `LP1374160 <https://bugs.launchpad.net/bugs/1374160>`_.
+A Ceph OSD node can not be stopped with the
+**stop ceph-osd id=xx** command on Ubuntu immediately after deployment.
+After the node is rebooted, **stop ceph-osd** command works as expected.
+Applying `Patch 135338 <https://review.openstack.org/135338>`_ prevents this
+problem.
+See `LP1374160 <https://bugs.launchpad.net/bugs/1374160>`_.
+

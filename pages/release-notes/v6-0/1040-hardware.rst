@@ -16,7 +16,7 @@ Known Issues in Mirantis Openstack 6.0
 --------------------------------------
 
 CentOS issues using Neutron-enabled installations with VLANS
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Deployments using CentOS may run into problems
 using Neutron VLANs or GRE

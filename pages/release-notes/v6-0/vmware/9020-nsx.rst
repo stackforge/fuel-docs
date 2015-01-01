@@ -8,7 +8,7 @@ VMware NSX integration
    To enable it, see :ref:`experimental-features-op` .
 
 New Features and Resolved Issues in Mirantis OpenStack 6.0
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * In HA mode with NSX enabled, OpenStack deployment no longer crashes due to
   unavailable Neutron and Keystone services.
@@ -23,7 +23,7 @@ New Features and Resolved Issues in Mirantis OpenStack 6.0
   :ref:`nsx-plan`.
 
 Known limitations in 6.0
-++++++++++++++++++++++++
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 The VMware NSX integration into Mirantis OpenStack 6.0 is supported,
 but it has some known limitations:
@@ -55,6 +55,7 @@ but it has some known limitations:
   Error messages in Puppet logs may indicate this problem.
   One more failure may take place when you try to redeploy your environment with NSX.
   In this case, before redeploying you should delete all OpenStack-related nodes
-  that have already been registered. See `LP1373403 <https://bugs.launchpad.net/bugs/1373403>`_,
+  that have already been registered.
+  See `LP1373403 <https://bugs.launchpad.net/bugs/1373403>`_,
   `LP1370775 <https://bugs.launchpad.net/bugs/1370775>`_,
   and `LP1373445 <https://bugs.launchpad.net/bugs/1373445>`_.
