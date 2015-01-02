@@ -25,7 +25,7 @@ New Features and Resolved Issues in Mirantis OpenStack 6.0
 Known Issues in Mirantis OpenStack 6.0
 --------------------------------------
 
-GRE-enabled Neutron installation runs inter VM traffic through management network
+GRE-enabled Neutron installation runs inter VM traffic through Management network
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 In Neutron GRE installations configured with the Fuel UI,
