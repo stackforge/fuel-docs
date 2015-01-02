@@ -26,16 +26,17 @@ New Features and Resolved Issues in Mirantis OpenStack 6.0
   enabled zero-copy creation of a Cinder volume from a Glance image.
   See `LP1373096 <https://bugs.launchpad.net/bugs/1373096>`_.
 
-*  Ceph monitor will be installed on controllers,
-   if *ceph-osd* was added to cluster after controllers were deployed.
+*  Ceph monitor is installed on Controllers
+   when *ceph-osd* is added to the cluster after the Controllers were deployed.
    Nevertheless, if you want to reconfigure Glance, Cinder or
    nova to use Ceph as backend, you can do it only manually.
    See `LP1388798 <https://bugs.launchpad.net/bugs/1388798>`_.
 
-* **Ceph-deploy OSD prepare** command completes successfully on HP Smart Array CCISS drives.
+* The **Ceph-deploy OSD prepare** command completes successfully
+  on HP Smart Array CCISS drives.
   See `LP1381218 <https://bugs.launchpad.net/bugs/1381218>`_.
 
-* Swift replicator service no longer has an upstart error
+* The Swift replicator service no longer has a start-up error
   on Ubuntu.
   See `LP1381018 <https://bugs.launchpad.net/bugs/1381018>`_.
 
@@ -60,51 +61,38 @@ New Features and Resolved Issues in Mirantis OpenStack 6.0
 Known Issues in Mirantis OpenStack 6.0
 --------------------------------------
 
-Placing Ceph OSD on Controller nodes is not recommended
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+* Placing Ceph OSD on Controllers is not recommended because it can severely
+  degrade controller's performance.
+  It is better to use separate storage nodes
+  if you have enough hardware.
 
-Placing Ceph OSD on Controllers is not recommended because it can severely
-degrade controller's performance.
-It is better to use separate storage nodes
-if you have enough hardware.
+* If you use Fuel to deploy a Mirantis OpenStack environment
+  that uses Ceph for volume, image, and ephemeral storage,
+  and then reset the environment to use Cinder rather than Ceph,
+  the Controller node is unable to locate the HDD
+  and the environment cannot be redeployed.
+  See `LP1370006 <https://bugs.launchpad.net/fuel/+bug/1370006>`_.
 
-Environment cannot be reset to use Cinder rather than Ceph
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+* When using Ceph as the backend for Glance image storage,
+  unallocated space is left on the Controller.
+  See `LP1295717 <https://bugs.launchpad.net/bugs/1295717>`_.
+  This is being addressed as part of the
+  `volume manager refactoring <https://blueprints.launchpad.net/fuel/+spec/volume-manager-refactoring>`_
+  that is under development.
 
-If you use Fuel to deploy a Mirantis OpenStack environment
-that uses Ceph for volume, image, and ephemeral storage and
-then reset the environment to use Cinder rather than Ceph,
-the controller node is unable to locate the HDD
-and the environment cannot be redeployed.
-See `LP1370006 <https://bugs.launchpad.net/fuel/+bug/1370006>`_.
 
-Controller has unallocated space when Ceph is used as image backend
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-When using Ceph as the backend for Glance image storage,
-unallocated space is left on the Controller.
-See `LP1295717 <https://bugs.launchpad.net/bugs/1295717>`_.
-This is being addressed as part of the
-`volume manager refactoring <https://blueprints.launchpad.net/fuel/+spec/volume-manager-refactoring>`_
-that is under development.
-
-Disk configuration spontaneously changes to default
-++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-If you change disk configuration at the already deployed Cinder node,
-this specific configuration will become a default one in the database.
-This happens, because Nailgun discovers the attached
-Cinder volume as a new sdX device.
-The problem can also occur at Ceph nodes.
-This issue does not affect performance.
-See `LP1400387 <https://bugs.launchpad.net/bugs/1400387>`_.
-
-Other Ceph issues
-+++++++++++++++++
+* If you change the disk configuration on an already-deployed Cinder node,
+  this specific configuration spontaneously becomes
+  the default configuration in the database.
+  This happens because Nailgun discovers the attached
+  Cinder volume as a new sd*X* device.
+  The problem can also occur on Ceph nodes.
+  This issue does not affect performance.
+  See `LP1400387 <https://bugs.launchpad.net/bugs/1400387>`_.
 
 * A Ceph OSD node can not be stopped with the
   **stop ceph-osd id=xx** command on Ubuntu immediately after deployment.
-  After the node is rebooted, **stop ceph-osd** command works as expected.
+  After the node is rebooted, the **stop ceph-osd** command works as expected.
   Applying `Patch 135338 <https://review.openstack.org/135338>`_ prevents this
   problem.
   See `LP1374160 <https://bugs.launchpad.net/bugs/1374160>`_.
