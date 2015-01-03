@@ -27,4 +27,5 @@ pdf_documents = [
     ('pdf/pdf_file-ref', u'Mirantis-OpenStack-6.0-File-Reference', u'File Reference', u'2014, Mirantis Inc.'),
     ('pdf/pdf_plugin-dev', u'Mirantis-OpenStack-6.0-FuelPlug-inGuide', u'Fuel Plug-in Guide', u'2014, Mirantis Inc.'),
     ('pdf/pdf_relnotes', u'Mirantis-OpenStack-6.0-RelNotes', u'Release Notes', u'2014, Mirantis Inc.', {'pdf_use_toc': False}),
+    ('pdf/pdf_style-guide', u'Mirantis-Style-Guide', u'Style Guide', u'2014, Mirantis Inc.', {'pdf_use_toc': False}),
 ]
