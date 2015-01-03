@@ -17,4 +17,5 @@ Documentation
   terminology
   file-ref
   release-notes
+  style-guide
   eula

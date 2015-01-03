@@ -86,6 +86,11 @@ Reference pages for select configuration files that Fuel uses.
 The Release Notes provide general information about new features,
 fixed issues, and known limitations in Mirantis OpenStack |version|.
 
+:ref:`style-guide` `(pdf) <pdf/Mirantis-Style-Guide.pdf>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Contains style guidelines for the Mirantis OpenStack documentation.
+
 `Download Mirantis OpenStack <http://software.mirantis.com>`__
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -98,3 +103,4 @@ You can download the Mirantis OpenStack ISO, IMG, and VirtualBox scripts at http
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Watch the Mirantis OpenStack demos at https://www.youtube.com/watch?v=ET4hkzb_QRM
+
