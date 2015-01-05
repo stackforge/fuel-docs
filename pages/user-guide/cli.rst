@@ -159,7 +159,7 @@ To list all available nodes run:
 
   fuel node list
 
-and filter them by environment
+and filter them by environment:
 
 ::
 
@@ -184,6 +184,48 @@ Also you can do it without ``--env`` or ``--node`` to remove some nodes without 
 
   fuel node remove --node 2,3
   fuel node remove --env 1
+
+.. _fuel-cli-node-group:
+
+Node group
+++++++++++
+
+:ref:`Node groups<node-group-term>` are part of the
+:ref:`Multiple Cluster Networks<mcn-arch>` feature
+that is available for Fuel 6.0 and later.
+
+To list all available nodes:
+
+::
+
+  fuel nodegroup
+
+and filter them by environment:
+
+::
+
+  fuel --env-id 1 nodegroup
+
+Create a new node group
+
+::
+
+  fuel --env 1 nodegroup --create --name "group 1"
+
+Delete the specified node groups
+
+::
+
+  fuel --env 1 nodegroup --delete --group 1
+  fuel --env 1 nodegroup --delete --group 2,3,4
+
+Assign nodes to the specified node group:
+
+::
+
+  fuel --env 1 nodegroup --assign --node 1 --group 1
+  fuel --env 1 nodegroup --assign --node 2,3,4 --group 1
+
 
 .. _fuel-cli-config:
 
@@ -223,17 +265,22 @@ whose presence on disk may constitute a security threat.
 
 .. note::
 
-   To protect yourself from sudden errors, please follow these simple rules:
+   To protect yourself when using the Fuel CLI to modify configurations,
+   note the following:
 
-   * Back up all of your configuration before you begin any modifications.
-   * If you remove something from a configuration file, be sure you don't need
-     it. Fuel CLI doesn't merge new data with the existing - it will overwrite
-     the old data with the new.
-   * Keep in mind that if you upload any changes in provisioning or deployment
-     operations, you will freeze the entire environment configuration - any changes
-     with networks, cluster settings, or disk configurations won't take effect.
-     In order to modify such parameters, you will need to change the appropriate
-     section of each node configuration.
+   * :ref:`Back up<Backup_and_restore_Fuel_Master>`
+     all of your configurations before you begin any modifications.
+   * If you remove something from a configuration file,
+     be sure you do not need it;
+     Fuel CLI overwrites the old data with the new
+     rather than merging new data with existing data.
+   * If you upload any changes for provisioning or deployment operations,
+     you freeze the configuration for the entire environment;
+     any changes you later make to the networks, cluster settings,
+     or disk configurations using the Fuel Web UI are not implemented.
+     To modify such parameters,
+     you must edit the appropriate section of each node's configuration
+     and apply the changes with Fuel CLI.
 
 
 Deployment
