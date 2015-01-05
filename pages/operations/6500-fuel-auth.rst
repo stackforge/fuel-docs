@@ -26,12 +26,12 @@ by using the **keystone** command on the Fuel Master Node:
 
 ::
 
-  keystone --os-endpoint=http://<your_master_ip>:35357/v2.0 --os-token=admin_token password-update
+  keystone --os-endpoint=http://<your_master_ip>:35357/v2.0 --os-token=<admin_token> password-update
 
 The default value of <your_master_ip> is 10.20.0.2.
 The port number of 35357 never changes.
 
-**admin_token** is stored in the */etc/fuel/astute.yaml* file
+The <admin_token> is stored in the */etc/fuel/astute.yaml* file
 on the Fuel Master node.
 
 To run or disable authentication,
@@ -56,7 +56,7 @@ catalog to obtain URLs of those services instead
 of hardcoding them.
 
 Fuel Authentication is implemented by a dedicated Keystone instance
-that Fuel installs in a new container on the Fuel Master.
+that Fuel installs in a new :ref:`docker<docker-term>` container on the Fuel Master.
 
 - Fuel Menu generates passwords for fresh installations;
   the upgrade script generates passwords when upgrading.
