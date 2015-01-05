@@ -17,3 +17,7 @@ See:
 - :ref:`mcn-ops`
 
 - :ref:`mcn-arch`
+
+- :ref:`fuel-cli-node-group` lists the Fuel CLI commands
+  for managing node groups.
+
