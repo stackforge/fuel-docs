@@ -11,7 +11,7 @@ more reliable and predictable.
 This can be backported to earlier Fuel releases
 following the instructions below.
 
-.. note:: Before performing any operations with Galera,
+.. warning:: Before performing any operations with Galera,
    you should schedule the maintenance window,
    perform backups of all databases,
    and stop all MySQL related services.
@@ -34,7 +34,9 @@ following the instructions below.
        wget --no-check-certificate -O /etc/puppet/modules/galera/files/ocf/mysql-wss https://raw.githubusercontent.com/stackforge/fuel-library/master/deployment/puppet/galera/files/ocf/mysql-wss
 
 #. The OCF script requires some modification
-   as it was designed for MySQL 5.6 originally
+   as it was designed for MySQL 5.6 originally;
+   see :ref:`component-versions` for information
+   about the current version.
    ::
 
        perl -pi -e 's/--wsrep-new-cluster/--wsrep-cluster-address=gcomm:\/\//g' /etc/puppet/modules/galera/files/ocf/mysql-wss

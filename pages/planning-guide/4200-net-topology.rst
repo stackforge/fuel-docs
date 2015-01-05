@@ -8,11 +8,11 @@ Mirantis OpenStack supports two network modes,
 which in turn support five topologies.
 For architectural descriptions of the five topologies, see:
 
-* :ref:`neutron-vlan-ovs-arch`
+* :ref:`neutron-vlan-ovs-arch` (default)
 * :ref:`neutron-gre-ovs-arch`
 * :ref:`neutron-nsx-arch`
 * :ref:`nova-flatdhcp-arch`
-* :ref:`nova-vlan-arch`
+* :ref:`nova-vlan-arch` (legacy networking)
 
 **Nova-network** is a simple legacy network manager.
 It can operate with predefined Private IP spaces only.
