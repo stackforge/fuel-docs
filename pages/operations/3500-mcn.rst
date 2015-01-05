@@ -64,3 +64,6 @@ do the following.
    ::
 
      fuel nodegroup --env 1 --assign --node <list-of-node-ids> --group <nodegroup-id>
+
+   See :ref:`fuel-cli-node-group` for complete information about
+   using the Fuel CLI to manage node groups.
