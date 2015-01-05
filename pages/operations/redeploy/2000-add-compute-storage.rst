@@ -7,7 +7,7 @@ Add a Compute or Storage node
 Compute and Storage nodes can be added
 to your OpenStack environment.
 
-To add a Compute, Storage, or MongoDB node to your environment,
+To add a Compute or Storage node to your environment,
 follow these steps:
 
 #. Physically configure the node into your hardware environment.

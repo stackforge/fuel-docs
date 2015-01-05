@@ -4,7 +4,7 @@
 Add a Controller node
 ---------------------
 
-Mirantis OpenStack 5.0.1 and later
+Mirantis OpenStack 5.1 and later
 allows you to add Controller nodes to your environment
 without redeploying the entire environment.
 

@@ -6,7 +6,8 @@
 HowTo: Enable/Disable Galera Cluster Autorebuild Mechanism
 ==========================================================
 
-By default, Fuel reassembles a Galera cluster automatically
+By default, the autorebuild mechanism is enabled,
+so Fuel reassembles a Galera cluster automatically
 without any user interaction.
 
   - The OCF Galera script checks every node in the Galera Cluster
