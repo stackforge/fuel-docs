@@ -94,7 +94,7 @@ You can download the Mirantis OpenStack ISO, IMG, and VirtualBox scripts at http
 .. note:: You must sign in to download Mirantis OpenStack. 
           If you do not have an account, sign up for a free account now.
 
-`Demos and tutorials <https://vimeo.com/96222550>`__
+`Demos and tutorials <https://www.youtube.com/watch?v=ET4hkzb_QRM>`__
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Watch the Mirantis OpenStack demos at https://vimeo.com/96222550
+Watch the Mirantis OpenStack demos at https://www.youtube.com/watch?v=ET4hkzb_QRM
