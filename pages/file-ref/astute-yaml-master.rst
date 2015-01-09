@@ -16,7 +16,7 @@ Fuel uses the *astute.yaml* file to pass configuration attributes
 to :ref:`puppet<puppet-term>`.
 
 Usage
------
+~~~~~
 
 The */etc/fuel/astute.yaml* file is installed
 on the Fuel Master node
