@@ -12,5 +12,6 @@ before Mirantis OpenStack 5.1.
 
 .. include:: /pages/operations/redeploy/1000-redeploy.rst
 .. include:: /pages/operations/redeploy/2000-add-compute-storage.rst
+.. include:: /pages/operations/redeploy/2500-add-mongodb.rst
 .. include:: /pages/operations/redeploy/3000-add-controller.rst
 .. include:: /pages/operations/redeploy/4000-remove-controller.rst
