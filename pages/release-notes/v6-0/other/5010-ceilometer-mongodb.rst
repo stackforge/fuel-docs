@@ -34,16 +34,17 @@ MongoDB issues
 ~~~~~~~~~~~~~~
 
 - Additional MongoDB roles cannot be added to an existing deployment
+  from the Fuel Web UI.
   Fuel installs :ref:`mongodb-term`
   as a backend for :ref:`ceilometer-term`.
   Any number of MongoDB roles (or standalone nodes)
-  can initially be deployed into an OpenStack environment
-  but, after the environment is deployed,
-  additional MongoDB roles cannot be added.
-  Be sure to deploy an adequate number of MongoDB roles
-  (one for each Controller node is ideal)
-  during the initial deployment.
-  See `LP1308990 <https://bugs.launchpad.net/fuel/+bug/1308990>`_.
+  can be deployed into an OpenStack environment
+  during the initial deployment
+  (one for each Controller node is ideal);
+  but after the environment is deployed,
+  additional MongoDB roles can only be added
+  by using shell commands;
+  see :ref:`add-mongodb-ops` for details.
 
 - If traffic is dropped to MongoDB port on the primary controller,
   Ceilometer randomly fails in HA mode.
