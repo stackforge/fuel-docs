@@ -234,10 +234,12 @@ Networking issues
   Restarting the Neutron L3 agent restores the connectivity.
   See `LP1393771 <https://bugs.launchpad.net/bugs/1393771>`_.
 
-* Neutron on CentOS may create some files without read permissions, this makes
-  it unable to manage metadata proxy. The solution is to set umask to 0022 in
-  the OCF init scripts for Neutron as implemented in the `Patch 139938
-  <https://review.openstack.org/139938>`_.
+* Rescheduling a Neutron agent to a different controller may disrupt network
+  connectivity to instances due to mismatching file permissions assumptions
+  between Neutron and Pacemaker.
+  The solution is to set umask to 0022 in the OCF init scripts for Neutron as
+  implemented in the `Patch 139938 <https://review.openstack.org/139938>`_.
+  See `LP1392330 <https://bugs.launchpad.net/bugs/1392330>`_.
 
 * Custom :ref:`Security Group<security-groups-term>` rules
   may not work in a CentOS environment
