@@ -1,10 +1,10 @@
 .. _test-plan-report:
 
 
-Template for Test Plan
-++++++++++++++++++++++
+Plug-in Test Plan
++++++++++++++++++
 
-.. note:: Fuel plug-ins are certified for the whole Mirantis OpenStack
+.. note:: Fuel plug-ins are certified for the specific Mirantis OpenStack
    release series.
 
 Test Plan for the Fuel plug-in must contain the following information:
