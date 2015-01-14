@@ -4,16 +4,14 @@
 crm - Cluster Resource Manager
 ++++++++++++++++++++++++++++++
 
-The **crm** utility shows you
-the state of the :ref:`Pacemaker<pacemaker-term>` cluster
-and can be used for maintenance
-and to analyze whether the cluster is consistent.
-This section discusses some frequently-used commands.
+The **crm** utility shows you the state of the :ref:`Pacemaker<pacemaker-term>`
+cluster and can be used for maintenance and to analyze whether the cluster is
+consistent. This section discusses some frequently-used commands.
 
 **crm status**
 
-This command shows you the main information
-about the Pacemaker cluster and the state of the resources being managed.
+This command shows you the main information about the Pacemaker cluster and
+the state of the resources being managed.
 For example::
 
   crm(live)# status
@@ -69,15 +67,12 @@ Here you can enter resource-specific commands::
 
 These commands, in order, allow you to start, stop, and restart resources.
 
-**cleanup**
+**crm(live)resource#cleanup**
 
-The cleanup command resets a resource's state on the node
-if it is currently in a failed state
-because of some unexpected operation,
-such as some side effects of a System V **init** operation on the resource.
-If this happens,
-Pacemaker can do the clean-up,
-deciding which node will run the resource.
+The cleanup command resets a resource's state on the node if it is currently
+in a failed state because of some unexpected operation, such as some side
+effects of a System V **init** operation on the resource. If this happens,
+Pacemaker can do the clean-up, deciding which node will run the resource.
 
 Example::
 
@@ -105,20 +100,17 @@ Example::
    Clone Set: clone_p_neutron-l3-agent [p_neutron-l3-agent]
     Started: [ controller-01 controller-02 controller-03 ]
 
-In this case,
-CRM found residual OpenStack agent processes
-that had been started by Pacemaker
-because of network failure and cluster partitioning.
-After the restoration of connectivity,
-Pacemaker saw these duplicate resources running on different nodes.
-You can let it clean up this situation automatically or, if you
-do not want to wait, cleanup them manually.
+In this case, **crm** found residual OpenStack agent processes that had been
+started by Pacemaker because of network failure and cluster partitioning.
+After the restoration of connectivity, Pacemaker saw these duplicate resources
+running on different nodes. You can let it clean up this situation
+automatically or, if you do not want to wait, cleanup them manually.
 
 For more information, see `crm interactive help and documentation
 <http://doc.opensuse.org/products/draft/SLE-HA/SLE-ha-guide_sd_draft/cha.ha.manual_config.html>`_.
 
-Sometimes a cluster gets split into several parts.
-In this case, ``crm status`` shows something like this::
+Sometimes a cluster gets split into several parts. In this case, ``crm status``
+shows something like this::
 
   On ctrl1
   ============
@@ -135,40 +127,36 @@ In this case, ``crm status`` shows something like this::
   ….
   Online: [ ctrl3 ]
 
+
 You can troubleshoot this by checking connectivity between nodes.
 Look for the following:
 
-#. Multicast should be enabled in the network
-   and the IP address configured as multicast should not be filtered.
-   The mcast port, a single UDP port,
-   should be accepted on the management network between all controllers.
+#. By default Fuel configures corosync over UDP. Security Appliances shouldn't
+   block UDP traffic for 5404, 5405 ports. Deep traffic inspection should be
+   turned off for these ports. These ports should be accepted on the management
+   network between all controllers.
 
 #. Corosync should start after the network interfaces are activated.
 
 #. `bindnetaddr` should be located in the management network
-   or at least in the same multicast reachable segment.
+   or at least in the same reachable segment.
 
-You can check this in the output of ``ip maddr show``:
+**corosync-cfgtool -s**
 
-.. code-block:: none
-   :emphasize-lines: 1,8
+This command displays the cluster connectivity status.::
 
-   5:  br-mgmt
-      link  33:33:00:00:00:01
-      link  01:00:5e:00:00:01
-      link  33:33:ff:a3:e2:57
-      link  01:00:5e:01:01:02
-      link  01:00:5e:00:00:12
-      inet  224.0.0.18
-      inet  239.1.1.2
-      inet  224.0.0.1
-      inet6 ff02::1:ffa3:e257
-      inet6 ff02::1
+  Printing ring status.
+  Local node ID 50490378
+  RING ID 0
+        id      = 10.107.0.8
+        status  = ring 0 active with no faults
+
+FAULTY status indicates connectivity problems.
 
 **corosync-objctl**
 
-This command can get/set runtime Corosync configuration values
-including the status of Corosync redundant ring members::
+This command can get/set runtime Corosync configuration values including the
+status of Corosync redundant ring members::
 
   runtime.totem.pg.mrp.srp.members.134245130.ip=r(0) ip(10.107.0.8)
   runtime.totem.pg.mrp.srp.members.134245130.join_count=1
@@ -177,12 +165,44 @@ including the status of Corosync redundant ring members::
   runtime.totem.pg.mrp.srp.members.201353994.join_count=1
   runtime.totem.pg.mrp.srp.members.201353994.status=joined
 
+If the IP of the node is 127.0.0.1, it means that Corosync started when only
+the loopback interface was available and bound to it.
 
-If the IP of the node is 127.0.0.1,
-it means that Corosync started
-when only the loopback interface was available and bound to it.
+If the members list contains only one IP address or is incomplete, it indicates
+that there is a Corosync connectivity issue because this node does not see the
+other ones.
 
-If the members list contains only one IP address or is incomplete,
-it indicates that there is a Corosync connectivity issue
-because this node does not see the other ones.
+As **no-quorum-policy** is set to **stop** on fully functioning cluster,
+Pacemaker will stop all resources on quorumless partition if that partition had
+resources running before partitioning. If quorum is present the cluster will
+function normally, allowing to drop minor set of controllers. This eliminates
+split-brain scenarios where nodes doesn't have quorum or can't see each other.
 
+In some scenarios, **no-quorum-policy** can be set to **ignore**. This setting
+allows operator to start operation on single controller rather than waiting for
+for quorum. Also, Fuel temporarily sets **no-quorum-policy** to **ignore** when
+Cloud Operator adds/remove controller node to cluster. Once addition/removal of
+new controller node is done Fuel sets **no-quorum-policy** to the state it was
+before addition/removal. This eliminates the scenario when Cloud Operator adds
+more controller nodes than in current quorum.
+
+It's also recommended to use Fencing plugin[1]_. In this case
+**no-quorum-policy** can be set to **suicide**. The controller node will shoot
+itself and nodes in its current partition rather than stopping resources. This
+will give a chance to get back online when **stonith-action** is set to
+**reboot**. In case where **no-quorum-policy** set to **ignore**, fencing
+action will be done from partition which has a quorum (major set of nodes).
+
+Corosync will automatically restore the cluster back into single partition and
+start all of the resources, if any were stopped, unless some controller nodes
+are damaged (cannot run the Corosync service for example). Such nodes cannot
+join back the cluster and must be fenced by the STONITH daemon. That is why
+production cluster should always have a fencing enabled.
+
+.. code-block :: bash
+
+  crm configure property no-quorum-policy=ignore
+
+Once quorum is restored **no-quorum-policy** should be set back to **stop**
+
+.. [1] `Fencing plugin <https://github.com/stackforge/fuel-plugins/tree/master/ha_fencing>`_
