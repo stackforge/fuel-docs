@@ -202,3 +202,39 @@ Other Issues
 
 * Docker loads images very slowly on the Fuel Master node.
   See `LP1333458 <https://bugs.launchpad.net/bugs/1333458>`_.
+
+* When using Ubuntu, in rare cases some nodes may stay on the grub prompt.
+  This usually occurs if the node is power-cycled during the boot process.
+  You should press Enter to continue booting.
+  See `LP1356278 <https://bugs.launchpad.net/bugs/1356278>`_.
+
+* :ref:`Fuel CLI<cli_usage>` can not be run by a non-root user.
+  See `LP1355876 <https://bugs.launchpad.net/bugs/1355876>`_.
+
+Fuel Agent and Image-based provisioning issues
+++++++++++++++++++++++++++++++++++++++++++++++
+
+The :ref:`Fuel Agent<fuel-agent-term>` is included
+as an :ref:`experimental feature<experimental-features-term>`.
+It has the following known issues:
+
+- DNS name resolution may be incorrect. See `LP1416399 <https://bugs.launchpad.net/fuel/+bug/1416399>`_.
+
+- The Fuel Agent logs cannot be accessed from the Logs tab
+  on the Fuel dashboard. See `LP1410328 <https://bugs.launchpad.net/fuel/+bug/1410328>`_.
+  You can view the log for each provisioned node in the
+  *bootstrap/fuel-agent.log* file under the
+  */var/log/remote/node-<N>.domain.tld* directory,
+  where <N> is the :ref:`node<node-term>` ID.
+
+- Occasionally, the Fuel Master node erroneously thinks
+  that a target node reboot was not successful;
+  it then tries to reboot this node
+  using **sysrq**, which is quite unsafe
+  and may result in empty configuration files on that node.
+  See `LP1407634 <https://bugs.launchpad.net/fuel/+bug/1407634>`_.
+
+- Fuel Agent may fail with a "device is busy" error
+  when cleaning disks before provisioning;
+  this is because of issues in the implementation of disk cleaning.
+  See `LP1410471 <https://bugs.launchpad.net/fuel/+bug/1410471>`_.
