@@ -121,11 +121,11 @@ To create an environment, run:
 
   fuel env create --name MyEnv --rel 1 
 
-by default it creates environment in ``multinode`` mode, and ``nova`` network mode, to specify other modes you can add optional arguments
+By default it creates environment in ``multinode`` mode, and ``nova`` network mode, to specify other modes you can add optional arguments:
 
 ::
 
-  fuel env create --name MyEnv --rel 1 --mode ha --network-mode neutron
+  fuel env create --name MyEnv --rel 1 --mode ha --network-mode neutron --net-segment-type vlan
 
 For changing environments name, mode or network mode exists ``set`` action
 
