@@ -125,3 +125,37 @@ Other Issues
 
 * Docker loads images very slowly on the Fuel Master node.
   See `LP1333458 <https://bugs.launchpad.net/bugs/1333458>`_.
+
+Fuel Agent and Image-based provisioning issues
+++++++++++++++++++++++++++++++++++++++++++++++
+
+The :ref:`Fuel Agent<fuel-agent-term>` is included
+as an :ref:`experimental feature<experimental-features-term>`.
+It has the following known issues:
+
+- DNS names for nodes expire over time.
+
+- The Fuel Agent logs cannot be accessed from the Logs tab
+  on the Fuel dashboard.
+  You can view the log for each provisioned node in the
+  *bootstrap/fuel-agent.log* file under the
+  */var/log/remote/node-<N>.domain.tld* directory,
+  where <N> is the :ref:`node<node-term>` ID.
+
+- Networking cannot be set up after initial boot.
+
+- Network settings are difficult to read
+  if you are not very familiar with **cloud-init**.
+
+- Occasionally, the Fuel Master node erroneously thinks
+  that a target node reboot was not successful;
+  it then tries to reboot this node
+  using **sysrq**, which is quite unsafe
+  and may result in empty configuration files on that node.
+  See `LP1407634 <https://bugs.launchpad.net/fuel/+bug/1407634>`_.
+
+- Fuel Agent may fail with a "device is busy" error
+  when cleaning disks before provisioning;
+  this is because of issues in the implementation of disk cleaning.
+  See `LP1410471 <https://bugs.launchpad.net/fuel/+bug/1410471>`_.
+
