@@ -15,14 +15,14 @@ and running command-line tools on the nodes.
 
 The "Settings" tab provides configuration access to:
 
-* Security:  reset login credentials for Horizon,
+* Security: reset login credentials for Horizon,
   set/reset login credentials for vCenter,
   set the SSH Public Key that will be authorized to access target nodes.
 
 * Logging: set configuration parameters for Syslog,
   turn debug logging on/off
 
-* Modify characteristics defined when you first created
+* Modify the characteristics defined when you first created
   the Fuel environment, including which additional components
   (Sahara, Murano, and Ceilometer) are included,
   the hypervisor type, and the storage backend that are configured.
@@ -42,6 +42,7 @@ If you want to go back to the Fuel default values,
 you can click on the "Load Defaults" button at the bottom of the screen.
 
 .. include:: /pages/user-guide/config-environment/settings/1000-access-horizon.rst
+.. include:: /pages/user-guide/config-environment/settings/1200-provision-method.rst
 .. include:: /pages/user-guide/config-environment/settings/1500-modify-services.rst
 .. include:: /pages/user-guide/config-environment/settings/2500-common-settings.rst
 .. include:: /pages/user-guide/config-environment/settings/3250-debug-set.rst
