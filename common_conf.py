@@ -279,6 +279,11 @@ seqdiag_antialias = True
 nwdiag_antialias = True
 
 extensions += ['rst2pdf.pdfbuilder']
+extensions += ['sphinx.ext.inheritance_diagram', 'sphinxcontrib.blockdiag',
+
+               'sphinxcontrib.actdiag', 'sphinxcontrib.seqdiag',
+
+               'sphinxcontrib.nwdiag']
 # pdf_documents = [ 
 #    (master_doc, project, project, copyright),
 # ]
