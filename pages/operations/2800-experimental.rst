@@ -47,8 +47,7 @@ after you :ref:`upgrade<upgrade-patch-top-ug>` your Fuel Master to 5.1.
     exit
 
 For more details about configuring nailgun settings
-see `Extending OpenStack Settings
-<http://docs.mirantis.com/fuel-dev/develop/nailgun/customization/settings.html>`_.
+see :ref:`nailgun-settings`.
 
 Alternatively, you can build a custom ISO
 with the experimental features enabled:
