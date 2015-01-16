@@ -35,7 +35,7 @@ on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 extensions = ['sphinx.ext.autodoc','rst2pdf.pdfbuilder','sphinxcontrib.plantuml']
 #,'sphinxcontrib.fancybox']
 
-plantuml = ['java','-jar','/sbin/plantuml.jar']
+plantuml = ['java','-jar','/usr/share/plantuml/plantuml.jar']
   
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -329,7 +329,7 @@ pdf_cover_template = 'mirantiscover.tmpl'
 
 # Enable rst2pdf extension modules (default is only vectorpdf)
 # you need vectorpdf if you want to use sphinx's graphviz support
-#pdf_extensions = ['vectorpdf']
+pdf_extensions = ['vectorpdf','plantuml']
 
 # Page template name for "regular" pages
 # pdf_page_template = 'cutePage'

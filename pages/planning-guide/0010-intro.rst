@@ -74,7 +74,7 @@ other than the bare-metal installation:
 
 
 For community members or partners looking to take Fuel even further,
-see the `developer documentation <http://docs.mirantis.com/fuel-dev/develop.html>`_
+see the :ref:`Developer Guide<developer-guide>`
 for information about the internal architecture of Fuel,
 instructions for building the project,
 information about interacting with the REST API
