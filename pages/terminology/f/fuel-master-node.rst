@@ -16,7 +16,7 @@ For more information, see
   and installing the Fuel Master Node.
 - :ref:`create-env-ug` gives instructions for creating
   a new OpenStack environment from the Fuel Master Node.
-- `Fuel Architecture <http://docs.mirantis.com/fuel-dev/develop/architecture.html>`_
-  for details about how Fuel is implemented.
+- :ref:`fuel-arch-dev`
+  gives details about how Fuel is implemented.
 
 
