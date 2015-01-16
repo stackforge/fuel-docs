@@ -69,6 +69,12 @@ network considerations, and deployment options.
 
 Instructions on creating, installing and certifying plug-ins for Fuel.
 
+:ref:`developer-guide` `(pdf) <pdf/Mirantis-OpenStack-6.0-DevelopGuide.pdf>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A collection of useful procedures for using and managing
+your Mirantis OpenStack environment.
+
 :ref:`terminology-ref` `(pdf) <pdf/Mirantis-OpenStack-6.0-Terminology-Reference.pdf>`__
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
