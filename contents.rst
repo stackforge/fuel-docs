@@ -12,6 +12,7 @@ Documentation
   user-guide
   operations
   virtualbox
+  developer
   reference-architecture
   plugin-dev
   terminology

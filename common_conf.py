@@ -35,7 +35,7 @@ on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 extensions = ['sphinx.ext.autodoc','rst2pdf.pdfbuilder','sphinxcontrib.plantuml']
 #,'sphinxcontrib.fancybox']
 
-plantuml = ['java','-jar','/sbin/plantuml.jar']
+plantuml = ['java','-jar','/usr/share/plantuml/plantuml.jar']
   
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -279,6 +279,11 @@ seqdiag_antialias = True
 nwdiag_antialias = True
 
 extensions += ['rst2pdf.pdfbuilder']
+extensions += ['sphinx.ext.inheritance_diagram', 'sphinxcontrib.blockdiag',
+
+               'sphinxcontrib.actdiag', 'sphinxcontrib.seqdiag',
+
+               'sphinxcontrib.nwdiag']
 # pdf_documents = [ 
 #    (master_doc, project, project, copyright),
 # ]

@@ -31,11 +31,13 @@ To get started, you need to install all necesasary tools.
 
 On Debian/Ubuntu:
     
-    sudo apt-get install git python-pip python-dev make imagemagick libjpeg-dev inkscape aspell
+    sudo apt-get install git python-pip python-dev make imagemagick \
+    libjpeg-dev inkscape aspell graphviz texlive-font-utils
 
 On Fedora:
 
-	sudo yum install git python-pip python-devel make ImageMagick libjpeg-turbo-devel inkscape aspell
+    sudo yum install git python-pip python-devel make ImageMagick \
+    libjpeg-turbo-devel inkscape aspell graphviz texlive-font-utils
 
 Among other things that installs
 [ImageMagick](http://www.imagemagick.org/ "ImageMagick") and
@@ -53,6 +55,8 @@ To install PlantUML run this wget process:
     sudo wget \
     http://sourceforge.net/projects/plantuml/files/plantuml.jar/download \
     -O /sbin/plantuml.jar
+    mkdir /usr/share/plantuml
+    ln -s /sbin/plantuml.jar /usr/share/plantuml/plantuml.jar
 
 PlantumUML requires java:
     sudo apt-get install openjdk-7-jre
