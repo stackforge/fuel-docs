@@ -58,10 +58,11 @@ plug-ins do this for you.
 
 See
 
-- `Fuel Architecture <http://docs.mirantis.com/fuel-dev/develop/architecture.html>`_.
-
-- `Sequence diagrams <http://docs.mirantis.com/fuel-dev/develop/sequence.html#os-provisioning>`_
-  provides details about how Fuel provisions the operating system,
+- :ref:`fuel-arch-dev` give details about
+  how Fuel provisions the operating system,
   verifies the networking, then provisions and deploys
   the OpenStack environment.
+
+- :ref`sequence-fuel-dev` shows sequence diagrams
+  for the Fuel deployment.
 
