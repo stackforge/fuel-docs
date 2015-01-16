@@ -21,8 +21,8 @@ a JVM in which Java programs can be run without incurring
 the standard JVM startup overhead.
 
 - For a detailed explanation of Nailgun's role in the Fuel architecture,
-  see the `Fuel Architecture Overview <http://docs.mirantis.com/fuel-dev/develop/architecture.html>`_.
+  see :ref:`fuel-arch-dev`.
 - For details about developing and customizing Nailgun, see
-  `Nailgun Development and Customization Instructions <http://docs.mirantis.com/fuel-dev/develop/nailgun.html>`_.
+  :ref:`nailgun-dev`.
 
 
