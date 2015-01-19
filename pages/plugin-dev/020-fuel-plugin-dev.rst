@@ -169,6 +169,51 @@ in *deployment_scripts/puppet/modules* directory.
         puppet_modules: puppet/modules
         timeout: 360
 
+The *cwd* parameter can be used to change current working directory
+for shell and puppet tasks. By default, plugin directory is used.
+If you need to change the directory, use the absolute path.
+
+The *timeout* is an obligatory parameter. By default, it is set to 300 seconds.
+
+Task with *reboot* type allows you to reboot the node.
+This can be useful to apply numerous changes.
+The *reboot* type requires *timeout* parameter.
+
+Two more task types are present, but not available for Fuel plugin
+developers:
+
+* **upload_file** - downloads files from the Fuel Master node to
+  other nodes. Keys, certificates and additional settings can be
+  downloaded as *data*:
+
+  .. code-block:: yaml
+
+        stage: pre_deployment
+        type: upload_file
+        parameters:
+            path: /tmp/plugin.all
+            data: secret data
+
+  Note that you specify only the file to download (*data*) and the *path* to download
+  it, but not the source path. That means, you should already know
+  what kind of data to use for download. This happens, because the Fuel Master node
+  has isolated containers and it is impossible to read the data from them.
+
+* **sync** - takes manifests and plug-ins from the Fuel Master node to the other
+  nodes. Rsync uses two default paths as source,
+  */etc/puppet* and */var/www/nailgun/plugins*:
+
+  .. code-block:: yaml
+
+       - role: '*'
+       stage: pre_deployment
+       type: sync
+       parameters:
+          dst: /tmp/plugin/
+          src: /etc/puppet/plugin/
+       timeout: 300
+
+
 environment_config.yaml
 +++++++++++++++++++++++
 
