@@ -7,8 +7,8 @@
 Preface
 =======
 
-This documentation provides information on how to use Mirantis Fuel 
-to deploy OpenStack environment. The information is for reference purposes 
+This documentation provides information on how to use Fuel 
+to deploy OpenStack environments. The information is for reference purposes 
 and is subject to change.
 
 Intended Audience
@@ -25,7 +25,5 @@ The following table lists the released revisions of this documentation:
 +--------------------+----------------------------+
 |Revision Date       |Description                 |
 +====================+============================+
-|October, 2014       |6.0 Technical Preview       |
-+--------------------+----------------------------+
-|December, 2014      |6.0 GA                      |
+|May, 2015           |6.1 GA                      |
 +--------------------+----------------------------+
