@@ -1,4 +1,5 @@
 sphinx
+PIL
 cloud_sptheme
 sphinxcontrib-blockdiag
 rst2pdf
