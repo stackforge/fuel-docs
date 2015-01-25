@@ -1,0 +1,27 @@
+[main]
+host = https://www.transifex.com
+
+[fuel-docs-i18n.planning-guide]
+file_filter = locale/<lang>/LC_MESSAGES/planning-guide.po
+source_file = _build/locale/planning-guide.pot
+source_lang = en
+type = PO
+
+[fuel-docs-i18n.reference-architecture]
+file_filter = locale/<lang>/LC_MESSAGES/reference-architecture.po
+source_file = _build/locale/reference-architecture.pot
+source_lang = en
+type = PO
+
+[fuel-docs-i18n.user-guide]
+file_filter = locale/<lang>/LC_MESSAGES/user-guide.po
+source_file = _build/locale/user-guide.pot
+source_lang = en
+type = PO
+
+[fuel-docs-i18n.operations]
+file_filter = locale/<lang>/LC_MESSAGES/operations.po
+source_file = _build/locale/operations.pot
+source_lang = en
+type = PO
+
