@@ -146,4 +146,17 @@ the purpose of this change? Is that related to the description of the
 review given in the commit message? Could it be accidental or result of
 a merge error during rebase?
 
+Internationalization
+====================
 
+1. install sphinx-intl and transifex-client package
+   sudo pip install sphinx or easy-install sphinx
+   sudo pip install transifex-client 
+2. configure your transifexrc
+
+3. pull your language po files
+
+4. shpinx-intl build 
+   po to mo 
+
+5. make -e SPHINXOPTS="-D language='zh_CN'" html  

@@ -348,3 +348,7 @@ pdf_toc_depth = 3
 pdf_fit_background_mode = 'scale'
 
 pdf_font_path = ['C:\\Windows\\Fonts\\', '/usr/share/fonts', '_fonts']
+
+#add locale configuration
+locale_dirs = ['locale/']   # path is example but recommended.
+gettext_compact = False     # optional.
