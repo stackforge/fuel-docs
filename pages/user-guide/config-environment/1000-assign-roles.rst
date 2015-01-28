@@ -78,6 +78,7 @@ For more information, see:
 - :ref:`nodes-roles-plan` includes guidelines about setting up nodes.
 - :ref:`mongodb-term` for information about MongoDB.
 - :ref:`zabbix-plan` for information about Zabbix.
-
+- :ref:`operating-system-role-term` defines the Operating System role
+  and points to other documents with additional information.
 
 
