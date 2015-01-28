@@ -3,6 +3,37 @@
 FAQ
 ===
 
+How can I add a custom role?
+----------------------------
+
+Current Plugin Architecture does not provide a way to define role.
+Starting with Fuel 6.1 you can use Operating System role as a workaround.
+
+In **tasks.yaml** file use 'base-os' define deployment of the role.
+
+.. code-block:: yaml
+
+    - role: ['base-os']
+      stage: post_deployment
+      type: shell
+      parameters:
+        cmd: ./deploy.sh
+        timeout: 42
+
+In plugin documentation ask the user to assign Operating System role
+on required node and the name for the node with specific prefix,
+for example zabbix-01.
+
+In deployment script you can get the name from variable in astute.yaml file
+and decide if the script should deploy Zabbix related packages on the node.
+
+.. code-block:: yaml
+
+    ...
+    user_node_name: zabbix-01
+    ...
+
+
 Where can I find Fuel Plug-in Builder source code?
 --------------------------------------------------
 
