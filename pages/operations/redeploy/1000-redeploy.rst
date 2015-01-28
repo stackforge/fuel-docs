@@ -1,8 +1,8 @@
 
 .. _redeploy-compute-storage-ops:
 
-Redeploy a Compute or Storage node
-----------------------------------
+Redeploy a Compute, Storage, or Operating System node
+-----------------------------------------------------
 
 Redeploying a :ref:`node<node-term>` refers to the process
 of changing the roles that are assigned to it.
@@ -16,11 +16,15 @@ to be MongoDB nodes.
 .. note: The Zabbix node must be deployed before any other nodes,
          so you cannot add a Zabbix node to an existing environment.
 
-To redeploy a Compute or Storage node, follow these steps:
+To redeploy a Compute, Storage, or Operating System node,
+follow these steps:
 
 #. Use `live migration <http://docs.openstack.org/admin-guide-cloud/content/section_configuring-compute-migrations.html>`_
    to move instances from the Compute nodes
    you are going to redeploy.
+
+#. If appropriate, back up or copy information
+   from the Operating System nodes being redeployed.
 
 #. Use the Fuel screens discussed in :ref:`assign-roles-ug`
    to remove the node from your environment.
@@ -28,7 +32,7 @@ To redeploy a Compute or Storage node, follow these steps:
 
 #. Click on the "Deploy Changes" button on that screen.
 
-#. Wait for the host to become available as an unallocated node.
+#. Wait for the node to become available as an unallocated node.
 
 #. Use the same Fuel screen
    to assign an appropriate role to each node being redeployed.
@@ -36,5 +40,12 @@ To redeploy a Compute or Storage node, follow these steps:
 #. Click on the "Deploy Changes" button.
 
 #. Wait for the environment to be deployed.
+
+
+After redeploying an Operating System node,
+you will have to manually apply any configuration changes you made
+and reinstall software that was running on the node
+or restore the system from the back up you made
+before redeploying the node.
 
 
