@@ -1,13 +1,12 @@
 
 .. _add-compute-storage-ops:
 
-Add a Compute or Storage node
------------------------------
+Add a Non-Controller Node
+-------------------------
 
-Compute and Storage nodes can be added
-to your OpenStack environment.
+Non-controller nodes can be added to your OpenStack environment.
 
-To add a Compute, Storage, or MongoDB node to your environment,
+To add a non-controller node to your environment,
 follow these steps:
 
 #. Physically configure the node into your hardware environment.

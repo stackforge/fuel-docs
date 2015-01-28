@@ -6,6 +6,7 @@
 .. include:: /pages/operations/2410-galera-autorebuild.rst
 .. include:: /pages/operations/2450-galera-backport-ocf.rst
 .. include:: /pages/operations/2320-redeploy-node.rst
+.. include:: /pages/operations/2360-config-operating-system-node.rst
 .. include:: /pages/operations/3000-ml2-create.rst
 .. include:: /pages/operations/3500-mcn.rst
 .. include:: /pages/operations/5400-puppet-custom-attributes.rst

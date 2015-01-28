@@ -44,6 +44,9 @@ Some general guiding principles:
   by combining multiple roles on the nodes
   and mapping multiple :ref:`logical-networks-arch`
   to a single physical NIC.
+- Many :ref:`plugins<plug-in-term>` require specific roles;
+  be sure to check the requirements of any plugins you plan to use
+  when allocating nodes and roles.
 - When looking to maximize performance,
   carefully choose your hardware components
   and make sure that the performance features of the selected hardware
@@ -58,9 +61,10 @@ how many nodes you need and which roles to assign to each.
 The absolute minimum requirement for a highly-available OpenStack
 deployment is to allocate 4 nodes:
 
-- 3 Controller nodes, combined with Storage
+- 3 :ref:`Controller nodes<controller-node-term>`,
+  combined with :ref:`Storage<storage-nodes-and-roles-term>`
 
-- 1 Compute node
+- 1 :ref:`Compute node<compute-nodes-term>`
 
 In production environments, it is highly recommended to separate storage nodes
 from controllers. This helps avoid resource contention, isolates failure
