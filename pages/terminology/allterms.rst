@@ -64,6 +64,7 @@ Terminology Reference
 .. include:: /pages/terminology/n/nsx.rst
 .. include:: /pages/terminology/o/object-storage.rst
 .. include:: /pages/terminology/o/openstack.rst
+.. include:: /pages/terminology/o/operating-system-role.rst
 .. include:: /pages/terminology/o/orchestration-service.rst
 .. include:: /pages/terminology/o/overcommit.rst
 .. include:: /pages/terminology/o/ovs.rst
