@@ -195,12 +195,12 @@ Once you have finished with the network Setup you may proceed to PXE Setup tab.
 PXE Setup
 ---------
 
-.. image:: /_images/fuelmenu_PXE_Setup.jpg
+.. image:: /_images/fuelmenu_PXE_Setup.png
   :width: 50%
 
 .. Warning::
 
-  This section must be configured only in scope of Fuel Master node first boot!
+  This section must be configured only in scope of the Fuel Master node first boot!
   Setting new network settings for the already installed master node requires
   that all Docker containers be rebuilt and possibly further manual reconfiguration!
 
@@ -208,7 +208,7 @@ PXE Setup
 Here you may select the network interface you are going to use for PXE/Admin
 network and set Static and DHCP pools ranges.
 
-PXE Setup has 2 parts - editable PXE settings  and non-editable
+PXE Setup has 2 parts - editable PXE settings and non-editable
 selected Network Interface current status.
 NIC current status area shows the current network interface status,
 including name, Link Status, current IP address, MAC address,
@@ -225,9 +225,6 @@ PXE setup includes the following options:
 .. warning::
   Do not use docker0 bridge as PXE interface!
 
-* Static Pool Range - Here you may define Static Pool Start and End IP addresses
-  These addresses should be located inside the CIDR, configured for the
-  currently selected NIC.
 * DHCP Pool for node discovering - Here you may define DHCP Pool Start and End
   IP addresses. These addresses should be located inside the CIDR, configured
   for the currently selected NIC. DHCP Pool range should not overlap with
@@ -241,18 +238,17 @@ Let us continue the example we started in the Network Settings section:
    configured for PXE on the Network Setup tab. The default PXE interface is eth0.
    If you follow the example from Network Setup part of this guide, you have
    to select eth1.
-2. Set the proper Static Pool range and DHCP Pool range values. These ranges
-   must not intersect and both should fit the Admin network CIDR.
+2. Set the proper DHCP Pool range values.
 
 As usual - use Check button to verify the current unsaved settings.
 
 .. warning::
-  Setting the PXE NIC with Fuel Setup when the master node is already deployed
+  Setting the PXE NIC with Fuel Setup when the Fuel Master node is already deployed
   may lead to non-working PXE boot functionality. In order to get PXE working,
   one must rebuild all Docker containers and set the remaining related settings
   manually.
 
-.. image:: /_images/fuelmenu_PXE_CustomizedSetup.jpg
+.. image:: /_images/fuelmenu_PXE_Setup.png
   :width: 50%
 
 
