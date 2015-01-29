@@ -195,7 +195,7 @@ Once you have finished with the network Setup you may proceed to PXE Setup tab.
 PXE Setup
 ---------
 
-.. image:: /_images/fuelmenu_PXE_Setup.jpg
+.. image:: /_images/fuelmenu_PXE_Setup.png
   :width: 50%
 
 .. Warning::
