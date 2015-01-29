@@ -6,3 +6,5 @@ PXE (Preboot eXecution Environment)
 An environment to boot a computer using a network interface
 independent of storage devices.
 Fuel uses PXE to boot all nodes in the OpenStack environment.
+For instructions on managing PXE network parameters, see
+:ref:`Changing PXE Network Parameters During Installation<Network_Install>`.

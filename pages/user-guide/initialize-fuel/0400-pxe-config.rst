@@ -190,26 +190,27 @@ in advance.
 .. image:: /_images/fuelmenu_Network_Customized_Setup.jpg
   :width: 50%
 
-Once you have finished with the network Setup you may proceed to PXE Setup tab.
+Once you have finished with the network Setup you may proceed to :ref:`PXE<pxe-term>`
+Setup tab.
 
 PXE Setup
 ---------
 
-.. image:: /_images/fuelmenu_PXE_Setup.jpg
+.. image:: /_images/fuelmenu_PXE_Setup.png
   :width: 50%
 
 .. Warning::
 
-  This section must be configured only in scope of Fuel Master node first boot!
+  This section must be configured only in the scope of the Fuel Master node's first boot!
   Setting new network settings for the already installed master node requires
   that all Docker containers be rebuilt and possibly further manual reconfiguration!
 
 
 Here you may select the network interface you are going to use for PXE/Admin
-network and set Static and DHCP pools ranges.
+network and set DHCP pool ranges.
 
-PXE Setup has 2 parts - editable PXE settings  and non-editable
-selected Network Interface current status.
+PXE Setup has 2 parts - editable PXE settings and current
+status information about the selected Network Interface that cannot be edited.
 NIC current status area shows the current network interface status,
 including name, Link Status, current IP address, MAC address,
 Netmask and Gateway. It also shows warnings, related to the currently selected
@@ -220,39 +221,38 @@ PXE setup includes the following options:
 * Network Interface Selector - Shows all available network interfaces, physical
   and virtual.
   Select the interface you want to configure with arrow keys and click Space or
-  Enter to show it's configuration.
+  Enter to show its configuration.
 
-.. warning::
-  Do not use docker0 bridge as PXE interface!
-
-* Static Pool Range - Here you may define Static Pool Start and End IP addresses
-  These addresses should be located inside the CIDR, configured for the
-  currently selected NIC.
 * DHCP Pool for node discovering - Here you may define DHCP Pool Start and End
-  IP addresses. These addresses should be located inside the CIDR, configured
-  for the currently selected NIC. DHCP Pool range should not overlap with
-  Static Pool range!
+  IP addresses. These addresses should be located inside the CIDR that is configured
+  for the currently selected NIC.
+
+  .. note:: In Fuel versions 5.1 and earlier, there was
+     a separate Static Pool, and docker0 would incorrectly show
+     up in the list of available PXE interfaces, this is no longer
+     relevant in current version.
+
 * Check button - verifies the current unsaved settings against the currently
   selected NIC without applying.
 
 Let us continue the example we started in the Network Settings section:
 
-1. Use the Space or Enter key to mark and select the network interface you have
+#. Use the Space or Enter key to mark and select the network interface you have
    configured for PXE on the Network Setup tab. The default PXE interface is eth0.
    If you follow the example from Network Setup part of this guide, you have
    to select eth1.
-2. Set the proper Static Pool range and DHCP Pool range values. These ranges
-   must not intersect and both should fit the Admin network CIDR.
 
-As usual - use Check button to verify the current unsaved settings.
+#. Set the proper DHCP Pool range values.
 
-.. warning::
-  Setting the PXE NIC with Fuel Setup when the master node is already deployed
-  may lead to non-working PXE boot functionality. In order to get PXE working,
-  one must rebuild all Docker containers and set the remaining related settings
-  manually.
+#. As usual, use Check button to verify the current unsaved settings.
 
-.. image:: /_images/fuelmenu_PXE_CustomizedSetup.jpg
+  .. warning::
+     Setting the PXE NIC with Fuel Setup when the Fuel Master node is already deployed
+     may lead to non-working PXE boot functionality. In order to get PXE working,
+     one must rebuild all Docker containers and set the remaining related settings
+     manually.
+
+.. image:: /_images/fuelmenu_PXE_Setup.png
   :width: 50%
 
 
