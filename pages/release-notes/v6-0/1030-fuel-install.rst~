@@ -65,6 +65,7 @@ for a detailed description of the issues
 and pointers to blueprints of proposed solutions.
 
 GRE-enabled Neutron installation runs inter VM traffic through management network
+>>>>>>> 1ef7e45... Adds a known issue on Master node installation
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 In Neutron GRE installations configured with the Fuel UI,
