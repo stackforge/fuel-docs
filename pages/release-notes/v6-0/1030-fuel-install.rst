@@ -4,28 +4,67 @@
 Fuel Installation and Deployment Issues
 =======================================
 
-New Features and Resolved Issues in Mirantis OpenStack 6.0
-----------------------------------------------------------
+Known Issues in 6.0
+-------------------
 
-* Fuel now has a larger pool of IP addresses to use
-  when additional nodes are added to the environment.
-  See `LP1271571 <https://bugs.launchpad.net/fuel/+bug/1271571>`_.
+Master node installation fails if installed from USB flash drive
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-* Fuel UI now prevents static and DHCP IP address ranges
-  from overlapping during initial Fuel Master node configuration.
-  See `LP1365067 <https://bugs.launchpad.net/bugs/1365067>`_.
+**Symptoms**
 
-* Nodes no longer stay indefinitely in the GRUB prompt
-  when deploying an Ubuntu based environment.
-  See `LP1356278 <https://bugs.launchpad.net/bugs/1356278>`_.
+1. You download the Mirantis OpenStack 6.0 IMG file;
+2. You put the file on a USB flash drive and run the installation;
+3. The installation completes without any errors;
+4. The installed Fuel Master Node does not have properly placed Puppet manifests and is unusable.
 
-* :ref:`Fuel CLI<cli_usage>` now can be run by a non-root user.
-  See `LP1355876 <https://bugs.launchpad.net/bugs/1355876>`_.
+**Cause**
 
-Known Issues in Mirantis OpenStack 6.0
---------------------------------------
+The USB image has the full ISO image inside and an additional copy of kickstart file external to the embedded ISO image.
+This additional kickstart searches for the openstack_version file and fails, since there is no copy of this file nearby outside the ISO image.
+As a result, malformed paths are used for the remaining kickstart commands.
 
-GRE-enabled Neutron installation runs inter VM traffic through Management network
+**Solution**
+
+This has been fixed.
+
+Check the MD5 checksum of your copy of Mirantis OpenStack 6.0 IMG file.
+If the checksum is 3e0ad93d6c6b874478e1ea7b4f7d871a, then you have a corrupt IMG file and can either redownload the correct IMG file or apply a patch.
+
+* `Redownload the correct Mirantis OpenStack 6.0 IMG file <http://drive.google.com/a/mirantis.com/file/d/0BybDDjx4oqkYMzVtTzZUSlF3MDQ/view?usp=sharing>`_. The MD5 checksum for the correct file is b4b1ec2f2a12beb20eaaf6f14511d512.
+
+OR
+
+* `Download and apply a patch script <https://launchpadlibrarian.net/196168950/MirantisOpenStack-6.0.img.patch.sh>`_:
+
+  1. Put the downloaded script in the same directory with the corrupt IMG file.
+  2. Run the script with the three following options one by one:
+
+     <sudo ./MirantisOpenStack-6.0.img.patch.sh mount>
+     <sudo ./MirantisOpenStack-6.0.img.patch.sh patch>
+     <sudo ./MirantisOpenStack-6.0.img.patch.sh umount>
+
+See also `LP1410333 <http://bugs.launchpad.net/fuel/6.0.x/+bug/1410333>`_
+
+
+Fuel may not allocate enough IP addresses for expansion
++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+The pool of IP addresses to be used by all nodes
+in the OpenStack environment
+is allocated when the Fuel Master Node is initially deployed.
+The IP settings cannot be changed
+after the initial boot of the Fuel Master Node.
+This may mean that the IP pool
+is too small to support additional nodes
+added to the environment
+without redeploying the environment.
+See :ref:`public-floating-ips-arch`
+for more information.
+See `LP1271571 <https://bugs.launchpad.net/fuel/+bug/1271571>`_
+for a detailed description of the issues
+and pointers to blueprints of proposed solutions.
+
+GRE-enabled Neutron installation runs inter VM traffic through management network
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 In Neutron GRE installations configured with the Fuel UI,
