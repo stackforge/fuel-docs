@@ -18,3 +18,4 @@ Documentation
   file-ref
   release-notes
   eula
+  monitoring-guide
