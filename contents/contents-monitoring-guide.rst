@@ -1,0 +1,10 @@
+.. include:: /pages/monitoring-guide/intro.rst
+.. include:: /pages/monitoring-guide/hardware-system.rst
+.. include:: /pages/monitoring-guide/network.rst
+.. include:: /pages/monitoring-guide/ost-core-component.rst
+.. include:: /pages/monitoring-guide/ost-services.rst
+.. include:: /pages/monitoring-guide/user-activity.rst
+.. include:: /pages/monitoring-guide/kpi.rst
+.. include:: /pages/monitoring-guide/logs.rst
+.. include:: /pages/monitoring-guide/alerting.rst
+.. include:: /pages/monitoring-guide/config-management.rst
