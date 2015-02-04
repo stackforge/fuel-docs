@@ -34,8 +34,6 @@ In terms of Certification, Fuel plugins fall into two categories:
 * *Non-Certified* - reviewed, tested in terms of code and installation procedure,
   but not supported by Mirantis.
 
-All plugins, both certified and non-certified, are digitally signed and hosted by Mirantis.
-
 
 Installation steps
 ------------------
