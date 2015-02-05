@@ -15,9 +15,9 @@ along with :ref:`RabbitMQ<rabbitmq-term>`; :ref:`HAProxy<haproxy-term>`;
 the :ref:`Pacemaker Cluster<pacemaker-term>`
 (which includes :ref:`Corosync<corosync-term>`);
 :ref:`Keystone<keystone-term>`; :ref:`Glance<glance-term>`;
-and :ref:`Cinder<cinder-term>`.
+:ref:`Cinder<cinder-term>` and :ref:`Heat<heat-term>`.
 Other services that may optionally run on the Controller include
-:ref:`Heat<heat-term>`, :ref:`Neutron<neutron-term>`,
+:ref:`Neutron<neutron-term>`,
 :ref:`Swift<swift-object-storage-term>`, :ref:`Ceph<ceph-term>` Monitor,
 :ref:`Ceilometer<ceilometer-term>`,
 :ref:`Sahara<sahara-term>`, and :ref:`Murano<murano-term>`.
