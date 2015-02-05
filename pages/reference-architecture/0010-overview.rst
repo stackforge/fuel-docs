@@ -25,14 +25,40 @@ The OpenStack environment consists of multiple physical server nodes
 each of which is one of the following node types:
 
 **Controller:**
-  The Controller manages all activities in the environment.
-  `nova-controller` maintains the life cycle of the Controller.
-  along with RabbitMQ, HAProxy, MySQL/Galera,
-  the Pacemaker Cluster (Corosync and Pacemaker),
-  Keystone, Glance, and Cinder.
-  Other services that may optionally run on the Controller include
-  Heat, Neutron, Swift, Ceph Monitor, Ceilometer,
-  Sahara, and Murano.
+  The :ref:`Controller<controller-node-term>` manages all activities in the environment.
+  `nova-controller` maintains the life cycle of the :ref:`Openstack<openstack-term>` controller.
+
+  .. note:: :ref:`HA<ha-term>` environment must consist of at least 3 controllers in order
+    to achieve HA for :ref:`MySQL/Galera<galera-cluster-term>` cluster.
+    And while two controllers could be enough for the most of cases,
+    such as HA for highly available Openstack API services or reliable
+    :ref:`RabbitMQ AMQP<rabbitmq-term>` messaging or resilient virtual
+    IP addresses and load balancing, third controller is required for
+    quorum-based clusters, such as MySQL/Galera or :ref:`Corosync/Pacemaker<pacemaker-term>`.
+    The configuration for stateless and statefull services in HA differs
+    a lot. HA environment also contains active/active and active/passive
+    components. Please, see `HA-guide<http://docs.openstack.org/high-availability-guide/content/ch-intro.html>`_
+    for more details.
+
+    Fuel configures all stateless Openstack API services and RabbitMQ
+    HA cluster as active/active. The MySQL/Galera cluster is configured
+    as active/passive. For database clusters, active/active is sometimes refered
+    as multi-master environments. Such environments should be able to successfully
+    handle multi-node writing conflicts. But Openstack support for
+    multi-node writing to MySQL/Galera nodes is `not production ready yet<http://lists.openstack.org/pipermail/openstack-operators/2014-September/005166.html>`.
+    "The simplest way to overcome this issue from the operator’s point of view is
+    to use only one writer node for these types of transactions". That is why Fuel
+    configures :ref:`HAproxy<haproxy-term>` frontend for MySQL/Galera to use only
+    one active node, while the other nodes in the cluster retained standby (passive).
+
+    :ref:`Mongo<mongodb-term>` DB backend for :ref:`Ceilometer<ceilometer-term>`
+    is also configured as active/passive with no sharding enabled.
+    Please, also note that it is possible to configure MySQL/Galera HA with
+    two controller nodes and a lightweight arbitrator service running at
+    some other node, but this deployment layout is not supported in Fuel 6.0 release.
+
+  For more information about how Fuel deploys HA controllers,
+  see :ref:`Multi-node_HA`.
 
 **Compute:**
   Compute servers are the workhorses of your installation;

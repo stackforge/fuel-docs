@@ -22,18 +22,21 @@ Now you can deploy the Highly Available architecture
 onto any number of controllers, including just one.
 The environment is not considered highly available
 if installed on a single controller
-because no secondary controller is present for failover,
+because no secondary controller is present for failover
+and no quorum can be retained for the
+:ref:`Pacemaker<pacemaker-term>` and :ref:`Galera<galera-cluster-term>`,
 but the same internal mechanisms are used
 so you can later add replica servers
 and transform your OpenStack environment
 into an HA environment without having to redeploy it.
-but controllers can be added to the environment at a later time
+But controllers can be added to the environment at a later time
 and will be properly configured for High Availability
 in conjunction with the initially deployed controller.
 
 At least three controllers must be configured
 to have a reliable HA environment;
-this allows for failover and the :ref:`pacemaker-term` quorum.
+this is the minimal requirement for quorum-based clusters, such as
+Pacemaker and Galera.
 The controller cluster can include more than three servers
 to increase the level of reliability.
 For more information about how Fuel deploys HA,
