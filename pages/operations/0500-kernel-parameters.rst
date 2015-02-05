@@ -17,7 +17,8 @@ Kernel parameters can be set in any of the following ways:
   This only affects target nodes that will be deployed in the future,
   not those that have already been deployed.
 
-- Use the Cobbler web UI to change kernel parameters
+- Use the Cobbler web UI (*http://<the_Fuel-Master-node-ip>/cobbler_web*)
+  to change kernel parameters
   for all nodes using or for specific nodes.
   The nodes appear in Cobbler only after they are deployed;
   to change parameters before deployment,
