@@ -27,12 +27,29 @@ each of which is one of the following node types:
 **Controller:**
   The Controller manages all activities in the environment.
   `nova-controller` maintains the life cycle of the Controller.
-  along with RabbitMQ, HAProxy, MySQL/Galera,
+  Along with RabbitMQ, HAProxy, MySQL/Galera,
   the Pacemaker Cluster (Corosync and Pacemaker),
-  Keystone, Glance, and Cinder.
+  Keystone, Glance, Cinder, and Heat.
   Other services that may optionally run on the Controller include
-  Heat, Neutron, Swift, Ceph Monitor, Ceilometer,
-  Sahara, and Murano.
+  Neutron, Swift, Ceph Monitor, Ceilometer, Sahara, and Murano.
+
+  .. note:: HA environment must comprise at least 3 controllers in order
+  to achieve HA for MySQL/Galera cluster. And while two controllers could
+  be enough for the most of cases, such as HA for highly available
+  Openstack API services or reliable AMQP messaging or resilient virtual
+  IP addresses and load balancing, third controller is required for
+  quorum based clusters, such as MySQL/Galera or Corosync/Pacemaker.
+  The configuration for stateless and statefull services in HA differs
+  a lot. HA environment also contains active/active and active/passive
+  components. Please see `HA-guide <http://docs.openstack.org/high-availability-guide/content/ch-intro.html>`_ for more details.
+  Fuel configures all stateless Openstack API services and RabbitMQ
+  HA cluster as active/active. The MySQL/Galera cluster is configured as
+  active/passive as multi-master write operations in Openstack components
+  are not production ready yet. Mongo DB backend for Ceilometer is also
+  configured as active/passive with no sharding enabled. Please also
+  note that it is possible to make MySQL/Galera HA with two nodes and a
+  lightweight arbitrator service but this deployment layout is not
+  supported for now.
 
 **Compute:**
   Compute servers are the workhorses of your installation;
