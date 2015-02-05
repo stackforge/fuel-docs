@@ -17,6 +17,7 @@
 .. include:: /pages/operations/7800-vcenter.rst
 .. include:: /pages/operations/8000-performance.rst
 .. include:: /pages/operations/8100-backup.rst
+.. include:: /pages/operations/8200-slave-nodes-pxe.rst
 .. include:: /pages/operations/8500-ceilometer.rst
 .. include:: /pages/operations/8600-heat.rst
 .. include:: /pages/operations/8900-testing-details.rst
