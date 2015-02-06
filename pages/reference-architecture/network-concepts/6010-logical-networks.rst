@@ -12,7 +12,7 @@ the network traffic in an OpenStack environment.
 
 .. index:: Admin (PXE) Network
 
-Admin (PXE) Network ("Fuel network")
+Admin (PXE) network ("Fuel network")
 
   The Fuel Master Node uses this network
   to provision and orchestrate the OpenStack environment.
@@ -26,7 +26,7 @@ Admin (PXE) Network ("Fuel network")
 
 .. index:: Public Network
 
-Public Network
+Public network
 
   The word "Public" means that these addresses can be used to communicate with
   the cluster and its VMs from outside of the cluster (the Internet, corporate
@@ -56,22 +56,26 @@ Public Network
   NIC. This is not a requirement, but it simplifies external access to
   OpenStack Dashboard and public OpenStack API endpoints.
 
-Storage Network
+Storage network (Storage Replication)
 
   Part of a cluster's internal network.
-  It is used to separate storage traffic
-  (Swift, Ceph, iSCSI, etc.)
-  from other types of internal communications in the cluster.
-  The Storage network is usually on a separate VLAN or interface,
-  isolated from all other communication.
+  It carries replication traffic from Ceph or Swift.
+  In its turn, Ceph public traffic is dispatched through
+  br-mgmt bridge (Management network).
 
 Management network
 
-  Also part of a cluster's internal network.
-  It serves all other internal communications,
+  As any other internal network, it is used to
+  put tagged VLAN traffic from private tenant networks on
+  physical eth interface.
+  The internal network can also be used for
+  serving iSCSI protocol exchanges
+  between Compute and Storage nodes.
+  As to the Management,
+  it serves for all other internal communications,
   including database queries, AMQP messaging, high availability services).
 
-Private Network (Fixed network)
+Private network (Fixed network)
 
   The private network facilitates communication between each tenant's VMs.
   Private network address spaces
@@ -82,20 +86,15 @@ Private Network (Fixed network)
   Just like the public network, the private network should be isolated from
   other networks in the cluster for security reasons.
 
-Internal Network
-
-  The internal network connects all OpenStack nodes in the environment.
-  All components of an OpenStack environment
-  communicate with each other using this network.
-  This network must be isolated from both the private and public networks
-  for security reasons.
-
-  The internal network can also be used for serving iSCSI protocol exchanges
-  between Compute and Storage nodes.
-
 .. note:: If you want to combine another network
           with the Admin network on the same network interface,
           you must leave the Admin network untagged.
           This is the default configuration and cannot be changed in the Fuel UI
           although you could modify it by manually editing configuration files.
+
+Internal network
+
+    All networks, mentioned above (except for Public)
+    are regarded as Internal unless the user provided the
+    access to them from the outside world.
 
