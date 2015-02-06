@@ -116,8 +116,11 @@ To upgrade the Fuel Master Node:
 #. Download the upgrade tarball from
    `http://software.mirantis.com`
    to a location on the Fuel Master Node
-   that has at least 2GB of free space
-   such as */var/tmp*.
+   that has at least 2GB of free space for
+   the archive, such as */var/tmp*.
+   Please notice that disk space requirements are higher to
+   extract the archive: 6GB (comprehensive of the archive itself)
+   for the upgrade package to 5.1.1.
    If your Fuel Master Node does not have an Internet connection,
    you may need to download this file to a local system
    and then transfer the file to the Fuel Master
