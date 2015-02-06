@@ -462,6 +462,8 @@ deployment script.
 
        fpb --create fuel_plugin_name
 
+#. Fill "releases" and "fuel_version" sections in metadata.yaml (*fuel_plugin_name/metadata.yaml*) with correct values.
+       
 #. Add an error in the default deployment script
    (*fuel_plugin_name/deployment_scripts/deploy.sh*):
 
