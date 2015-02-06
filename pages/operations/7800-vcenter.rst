@@ -35,4 +35,4 @@ Beginning with 6.1 Fuel release, this behaviour was changed to 1-1 mapping, so t
 instance now interacts with a single vSphere cluster.
 
 .. image:: /_images/1-1-mapping.png
-   :width: 50%
+
