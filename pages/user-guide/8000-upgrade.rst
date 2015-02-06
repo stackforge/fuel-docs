@@ -111,26 +111,31 @@ about how the upgrade process is implemented.
 
 To upgrade the Fuel Master Node:
 
-#. Be sure that no installations are in progress in the environment!
+#. **(!)** Be sure that no installations are in progress in the environment.
 
 #. Download the upgrade tarball from
    `http://software.mirantis.com`
    to a location on the Fuel Master Node
-   that has at least 2GB of free space
-   such as */var/tmp*.
+   that has at least 2 GB of free space for
+   the archive, such as */var/tmp*.
+   
+   .. note:: Disk space requirements are higher to
+      extract the archive: 6 GB (fully extracted archive)
+      for the upgrade package to 6.0.
+
    If your Fuel Master Node does not have an Internet connection,
    you may need to download this file to a local system
    and then transfer the file to the Fuel Master
    using **scp** or an SSH client.
 
-#. Extract tarball contents:
+#. Extract the tarball contents:
 
     ::
 
        cd /var/tmp  # Use the directory where the tarball is located
        lrzuntar filename.tar.lrz
 
-    .. warning:: The Fuel Master node must have at least 2GB of RAM
+    .. warning:: The Fuel Master node must have at least 2 GB of RAM
       in order for **lrzip** to decompress the upgrade archive.
       See :ref:`HardwarePrerequisites` for a full list of
       hardware requirements for the Master node.
