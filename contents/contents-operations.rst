@@ -5,6 +5,7 @@
 .. include:: /pages/operations/2310-create-xfs.rst
 .. include:: /pages/operations/2410-galera-autorebuild.rst
 .. include:: /pages/operations/2450-galera-backport-ocf.rst
+.. include:: /pages/operations/2460-changing-upstream-dns.rst
 .. include:: /pages/operations/2320-redeploy-node.rst
 .. include:: /pages/operations/2360-config-operating-system-node.rst
 .. include:: /pages/operations/3000-ml2-create.rst
