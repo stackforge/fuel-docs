@@ -14,6 +14,7 @@ communicate with each other over using one of the network topologies:
 
 The following documents provide information:
 
+* For networking HA reference architecture, see :ref:`Close_look_networking_HA`.
 * For general information to help you select the best network topology
   for your environment, see :ref:`net-topology-plan`.
 * For a list of the logical networks used in OpenStack
