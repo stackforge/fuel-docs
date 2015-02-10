@@ -33,7 +33,7 @@ It can operate with predefined Private IP spaces only.
   You must also set up appropriate VLANs and gateways
   on your underlying network equipment.
 
-**Neutron** is a modern and more complicated network manager.
+**Neutron** is the OpenStack networking reference project.
 It separates tenants,
 decreases the requirements for the underlying network
 (physical switches and topology),
