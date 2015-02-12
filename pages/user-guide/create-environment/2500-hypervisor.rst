@@ -24,3 +24,4 @@ Choose one of the following:
   You must also :ref:`configure communication<vcenter-config-ug>`
   with vCenter.
 
+.. note:: TBD
