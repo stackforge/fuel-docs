@@ -48,12 +48,13 @@ Select vCenter Hypervisor for vCenter
 
 Select the vCenter :ref:`hypervisor<hypervisor-ug>`
 when you create your OpenStack Environment.
-After that you need to fill corresponding fields.
-You can modify the vCenter specific values on the Settings tab after you
-create the environment.
-Note that you can specify either IP address or Hostname for vCenter.
 
-.. image:: /_images/user_screen_shots/vcenter-hv.png
+
+.. note:: Beginning with Fuel 6.1 release, you can
+          create an environment with dual hypervisor
+          support (KVM or QEMU with vCenter).
+
+.. image:: /_images/user_screen_shots/select-two-hypervisors.png
    :width: 50%
 
 .. _vcenter-netv-service:
@@ -86,13 +87,13 @@ vCenter managed datastore as a backend for Glance,
 select *VMWare vCenter/ESXi* option to enable it.
 Swift option is also available for Glance.
 
-.. image:: /_images/user_screen_shots/vcenter-glance-backend.png
+.. image:: /_images/user_screen_shots/cinder-storage-backend.png
    :width: 50%
 
 After you create the environment, you must enable the VMDK
-driver for Cinder on the Settings tab.
+driver for Cinder on the *Settings* tab.
 
-.. image:: /_images/user_screen_shots/vcenter-glance-backend.png
+.. image:: /_images/user_screen_shots/cinder-storage-backend.png
    :width: 50%
 
 - If you are using the deprecated Multi-node (no HA) mode,
@@ -138,19 +139,23 @@ that you use to finish configuring your environment.
 Let's focus on the steps specific for OpenStack environments
 integrated with vSphere.
 
+.. note:: Beginning with Fuel 6.1, VMware has its own
+          dedicated tab on the Fuel web UI.
+
 .. _assign-roles-vcenter-ug:
 
 Assign a role or roles to each node server
 ++++++++++++++++++++++++++++++++++++++++++
 
 For VMware vCenter integration,
-the Nova plugin runs on the Controller node.
-The Compute and Controller roles are combined on one node.
+the nova-compute service that uses vCenter as hypervisor
+runs on the Controller nodes.
 
 .. image:: /_images/user_screen_shots/vcenter-add-nodes.png
    :width: 80%
 
 .. _network-settings-vcenter-ug:
+
 
 Network settings
 ++++++++++++++++
@@ -165,24 +170,6 @@ virtual machine tenants into separate broadcast domains.
 .. image:: /_images/user_screen_shots/vcenter-network-manager.png
    :width: 50%
 
-- Check the vCenter credentials
-
-.. image:: /_images/user_screen_shots/settings-vcenter.png
-   :width: 50%
-
-.. note: The Fuel web UI now has a new option for vCenter:
-         you can fill in **Datastore regexp** field to indicate data stores to use with Compute. To learn more about
-         this setting, see `VMware vSphere <http://docs.openstack.org/juno/config-reference/content/vmware.html>`_ guide.
-
-For example, if you add *nas.*, all data stores that have a name starting
-with "nas" will be chosen.
-
-If you plan to use all available datastores, leave the field blank.
-In this case, Compute node will pick the first data store returned by the vSphere API.
-
-.. image:: /_images/vcenter-regexp.png
-   :width: 50%
-
 - Enable the 'Use VLAN tagging for fixed networks' checkbox
   and enter the VLAN tag you selected
   for the VLAN ID in the ESXi host network configuration
@@ -195,17 +182,15 @@ In this case, Compute node will pick the first data store returned by the vSpher
 .. image:: /_images/user_screen_shots/nova-vlan-check.png
    :width: 50%
 
-- Check the vCenter credentials
-
 - Specify Nova-network configuration
 
 .. image:: /_images/user_screen_shots/nova-net-vlan.png
    :width: 50%
 
+.. _settings-tab:
 
-
-Storage
-+++++++
+Settings
+++++++++
 
 To enable VMware vCenter for volumes,
 you must first uncheck the Cinder LVM over iSCSI option.
@@ -214,11 +199,109 @@ you must first uncheck the Cinder LVM over iSCSI option.
    :width: 80%
 
 To enable VMware vCenter managed datastore as a backend for Glance,
-check VMWare vCenter/ESXi datastore for images (Glance) option
-and specify the required settings.
+select *VMWare vCenter/ESXi datastore for images (Glance)* checkbox.
 
 .. image:: /_images/user_screen_shots/vcenter_glance_settings.png
    :width: 80%
+
+.. _vmware-tab:
+
+VMware tab
+----------
+
+Beginning with Fuel 6.1 release, VMware has its dedicated tab
+on the Fuel web UI. You can see more details about the tab
+below.
+
+
+vCenter
++++++++
+
+In this section, you should enter not only vCenter credentials
+(previously found on the Fuel UI wizard and *Settings* of the Fuel web UI
+tab), but
+also specify Availability zone.
+
+.. image:: /_images/user_screen_shots/vmware-tab-vcenter.png
+  :width: 50%
+
+
+Nova-Computes
++++++++++++++
+
+Beginning with Fuel 6.1,
+each nova-compute service controls
+a single vSphere cluster.
+For each vSphere cluster,
+you need to configure separate nova-compute service that will be running on the Controller node.
+
+The following options are available:
+
+#. for vCenter only environment, do not add any compute nodes.
+
+#. for dual hypervisors support (KVM or QEMU with vCenter),
+   you should do the following:
+   after selecting vCenter checkbox in the Fuel UI wizard, specify vCenter settings (host or IP),
+   username, password and which clusters you want to use.
+   
+   * The cluster name is used to specify the cluster you would like
+     to use for OpenStack.
+
+   * Service name is the name that will be used to reference to your cluster in OpenStack.
+     Usually, you can copy cluster name from the field above,
+     but if the cluster name contains non-ASCII characters,
+     you must provide valid service name for it
+     (string that contains numbers, ASCII characters from A to
+     Z and underscore).
+
+   * Datastore regexp is used
+     to indicate data stores to use with Compute.
+     For example, if you add *nas.*, all data stores that have a name starting
+     with "nas" will be chosen.
+     If you plan to use all available datastores, leave the field blank.
+     In this case, nova-compute service will pick the first data store returned by the vSphere API.
+     To learn more about
+     this setting, see
+     `VMware vSphere <http://docs.openstack.org/juno/config-reference/content/vmware.html>`_ guide.
+
+.. image:: /_images/user_screen_shots/vmware-tab-nova.png
+   :width: 40%
+
+Press +, add nova-compute nodes and fill in
+the information for one more Instance.
+
+.. image:: /_images/user_screen_shots/vmware-tab-nova-two.png
+   :width: 40%
+
+Cinder
+++++++
+
+Select *Enable Cinder* checkbox to provide Cinder support for vCenter.
+
+.. image:: /_images/user_screen_shots/vmware-tab-cinder.png
+   :width: 20%
+
+
+Network
++++++++
+
+If you decided to use VLAN Manager,
+enter the interface on which VLANs will be provisioned.
+
+.. image:: /_images/user_screen_shots/vmware-tab-vlan.png
+   :width: 40%
+
+
+Glance
+++++++
+
+To enable Glance, you should first select the checkbox on the *Settings* tab
+(see :ref:`VMware vCenter/ESXi datastore for images (Glance) <settings-tab>`).
+Then, you should enter the information for Glance.
+
+.. image:: /_images/user_screen_shots/vmware-tab-glance.png
+   :width: 50%
+
 
 For more information about how vCenter support is implemented,
 see :ref:`vcenter-arch`.
