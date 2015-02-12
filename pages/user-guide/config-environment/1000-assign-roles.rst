@@ -14,9 +14,9 @@ and a list of unallocated nodes at the bottom.
   that Fuel installs as a whole on a node,
   usually in its own disk partition.
 
+
 .. image:: /_images/user_screen_shots/assign-roles1.png
    :width: 80%
-
 
 .. image:: /_images/user_screen_shots/assign-roles2.png
    :width: 80%
@@ -68,6 +68,13 @@ To rename the nodes, click on the "Untitled" string
 for each node and then type in the name you want to use.
 The suffix is the last digits of the MAC address for this node;
 you can keep these digits or delete them.
+
+
+.. note:: Beginning with Fuel 6.1, a new role called *Storage - Cinder Proxy to VMware Datastore*
+          is introduced. It will deploy Cinder with VMDK backend.
+          The already known *Storage - Cinder* role can be enabled for Cinder with LVM or Ceph.
+          For instructions, see :ref:`Assign a role or roles to each node server<assign-roles-vcenter-ug>`.
+
 
 For more information, see:
 
