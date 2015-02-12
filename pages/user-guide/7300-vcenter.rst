@@ -52,6 +52,16 @@ After that you need to fill corresponding fields.
 You can modify the vCenter specific values on the Settings tab after you
 create the environment.
 
+.. note:: Beginning with Fuel 6.1 release, you can
+          create an environment with dualhypervisor
+          support (KVM or QEMU with vCenter).
+
+If you would like to have only vCenter as a hypervisor,
+leave the radiobutton with KVM/QEMU as is, select vCenter
+checkbox and enter
+the specific credentials.
+
+
 .. image:: /_images/user_screen_shots/vcenter-hv.png
    :width: 50%
 
@@ -136,6 +146,9 @@ that you use to finish configuring your environment.
 
 Let's focus on the steps specific for OpenStack environments
 integrated with vSphere.
+
+.. note:: Beginning with Fuel 6.1, VMware has its own
+          dedicated tab on the Fuel web UI.
 
 .. _assign-roles-vcenter-ug:
 
