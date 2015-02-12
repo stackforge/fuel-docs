@@ -52,6 +52,16 @@ After that you need to fill corresponding fields.
 You can modify the vCenter specific values on the Settings tab after you
 create the environment.
 
+.. note:: Beginning with Fuel 6.1 release, you can
+          create an environment with dualhypervisor
+          support (KVM or QEMU with vCenter).
+
+If you would like to have only vCenter as a hypervisor,
+leave the radiobutton with KVM/QEMU as is, select vCenter
+checkbox and enter
+the specific credentials.
+
+
 .. image:: /_images/user_screen_shots/vcenter-hv.png
    :width: 50%
 
@@ -137,6 +147,9 @@ that you use to finish configuring your environment.
 Let's focus on the steps specific for OpenStack environments
 integrated with vSphere.
 
+.. note:: Beginning with Fuel 6.1, VMware has its own
+          dedicated tab on the Fuel web UI.
+
 .. _assign-roles-vcenter-ug:
 
 Assign a role or roles to each node server
@@ -150,6 +163,7 @@ The Compute and Controller roles are combined on one node.
    :width: 80%
 
 .. _network-settings-vcenter-ug:
+
 
 Network settings
 ++++++++++++++++
@@ -200,6 +214,66 @@ In this case, Compute node will pick the first data store returned by the vSpher
 
 .. image:: /_images/user_screen_shots/nova-net-vlan.png
    :width: 50%
+
+
+
+VMware tab
+----------
+
+Beginning with Fuel 6.1 release, VMware has its dedicated tab
+on the Fuel web UI. You can see more details about the tab
+below.
+
+
+vCenter
++++++++
+
+In this section, you should enter not only vCenter credentials 
+(previously found on the Fuel UI wizard and *Settings* of the Fuel web UI
+tab), but
+also specify Availability zone.
+
+.. image:: /_images/user_screen_shots/vmware-tab-vcenter.png
+  :width: 100%
+
+
+Nova-Computes
++++++++++++++
+
+If you would like to have only vCenter as a hypervisor, leave the fields blank.
+
+If you would like to enable two hypervisors in one cloud (KVM or QEMU with vCenter),
+enter the required data into Nova Compute Instance section.
+
+.. image:: /_images/user_screen_shots/vmware-tab-nova.png
+   :width: 100%
+
+When you need to have several Nova Compute Instances, then press + and fill in
+the information for one more Instance.
+
+.. image:: /_images/user_screen_shots/vmware-tab-nova-two.png
+   :width: 100%
+
+Cinder
+++++++
+
+Select *Enable Cinder* checkbox to provide Cinder support for vCenter.
+
+.. image:: /_images/user_screen_shots/vmware-tab-cinder.png
+   :width: 100%
+
+
+Network
++++++++
+
+Enter the required VLAN interface.
+
+.. image:: /_images/user_screen_shots/vmware-tab-vlan.png
+   :width: 100%
+
+
+Glance
+++++++
 
 
 
