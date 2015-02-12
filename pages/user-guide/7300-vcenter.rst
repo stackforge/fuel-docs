@@ -145,6 +145,11 @@ Assign a role or roles to each node server
 For VMware vCenter integration,
 the Nova plugin runs on the Controller node.
 The Compute and Controller roles are combined on one node.
+Beginning with Fuel 6.1, the *Storage - Cinder Proxy to VMware Datastore* role
+is introduced. It will deploy Cinder with VMDK backend.
+The already known *Storage - Cinder* role can be enabled for Cinder with LVM or Ceph.
+The new role is especially useful when you enable two hypervisors
+(vCenter with KVM or QEMU) in one environment.
 
 .. image:: /_images/user_screen_shots/vcenter-add-nodes.png
    :width: 80%
