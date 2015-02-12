@@ -14,9 +14,9 @@ and a list of unallocated nodes at the bottom.
   that Fuel installs as a whole on a node,
   usually in its own disk partition.
 
+
 .. image:: /_images/user_screen_shots/assign-roles1.png
    :width: 80%
-
 
 .. image:: /_images/user_screen_shots/assign-roles2.png
    :width: 80%
@@ -68,6 +68,7 @@ To rename the nodes, click on the "Untitled" string
 for each node and then type in the name you want to use.
 The suffix is the last digits of the MAC address for this node;
 you can keep these digits or delete them.
+
 
 For more information, see:
 
