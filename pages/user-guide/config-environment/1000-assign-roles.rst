@@ -12,11 +12,11 @@ and a list of unallocated nodes at the bottom.
 
 * A **role** is a functional set of services
   that Fuel installs as a whole on a node,
-  usually in its own disk partition.
+  usually in its own disk partition. UPDATE
+
 
 .. image:: /_images/user_screen_shots/assign-roles1.png
    :width: 80%
-
 
 .. image:: /_images/user_screen_shots/assign-roles2.png
    :width: 80%
@@ -68,6 +68,16 @@ To rename the nodes, click on the "Untitled" string
 for each node and then type in the name you want to use.
 The suffix is the last digits of the MAC address for this node;
 you can keep these digits or delete them.
+
+
+.. note:: Beginning with Fuel 6.1, a new role called *Cinder - VMDK*
+          is introduced. It will deploy Cinder with VMDK backend.
+          The *Cinder* role can be enabled for Cinder with LVM or Ceph.
+          For more information on planning VMware integration into Fuel,
+          see :ref:`Preparing for vSphere Integration<vcenter-plan>`.
+          For instructions on creating an environment with vCenter as a hypervisor,
+          see :ref:`Deploying vCenter<vcenter-deploy>`.
+
 
 For more information, see:
 

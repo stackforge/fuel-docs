@@ -13,3 +13,5 @@ to your environment:
 .. image:: /_images/user_screen_shots/add-nodes1.png
    :width: 80%
 
+TBD: replace screenshot
+
