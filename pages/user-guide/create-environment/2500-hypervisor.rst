@@ -24,3 +24,15 @@ Choose one of the following:
   You must also :ref:`configure communication<vcenter-config-ug>`
   with vCenter.
 
+Beginning with Fuel 6.1 release, you can select two
+hypervisors (vCenter+QEMU or vCenter+KVM) to enable
+dualhypervisor support in one environment.
+
+Do do that, you should choose between KVM and QEMU and click
+the corresponding radio button. After that, you only have to
+select the vCenter checkbox.
+
+.. image:: /_images/user_screen_shots/select-two-hypervisors.png
+   :width: 50%
+
+
