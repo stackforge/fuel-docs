@@ -4,12 +4,20 @@ Summary
 
 In general, your best bet is to choose a 2 socket server with a balance in I/O,
 CPU, Memory, and Disk that meets your project requirements.
-Some good options from Supermicro, HP and Lenovo for compute nodes include:
+Some good options from Supermicro, HP, Dell, Huawei and Lenovo for compute nodes include:
 
 * Supermicro Superserver 5037mr-h8rtf
+* Supermicro SuperServer 5017R-MTF
+* HP ProLiant DL360e Gen8 E5-2450
 * HP ProLiant DL380p Gen8 E5-2609v2 1P 8GB-R P420i/ZM 460W PS Server/S-Buy
 * HP Smart Array P222 Controller
+* Dell PowerEdge R720xd
+* Huawei RH2288
+* Lenovo ThinkServer RD330 Rack Server
+* Lenovo ThinkServer RD340 Rack Server
+* Lenovo ThinkServer RD530 Rack Server
 * Lenovo ThinkServer RD540 Rack Server
+* Lenovo ThinkServer RD630 Rack Server
 
 .. note:: Servers that use some UEFI chips (such as the Lenovo W520)
           can not be used for Fuel target nodes
