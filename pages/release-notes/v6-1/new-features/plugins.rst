@@ -1,0 +1,39 @@
+
+Fuel plugins and new task type
+------------------------------
+
+Reboot task type
+++++++++++++++++
+
+A new task type is now introduced for plugin developers.
+During plugin installation, a node can require reboot to
+apply multiple changes. With this task type,
+it will reboot and come back to the online state
+before starting another tasks. Reboot task type
+requires several parameters: timeout (by default, it is set to 300
+seconds), UID (for nodes) and priority (the order in which nodes will
+be rebooted).
+
+Using the
+`Fuel Plugins Catalog <https://software.mirantis.com/download-mirantis-openstack-fuel-plug-ins/>`_,
+you can download and install the following
+plugins for Fuel:
+
+* HA fencing
+
+* LMA Collector
+
+* VPNaaS
+
+* FWaaS
+
+* Elastic Search&Kibana
+
+* Contrail
+
+* EMC VNX
+
+* Mellanox Infiniband
+
+* Zabbix
+
