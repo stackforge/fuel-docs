@@ -54,3 +54,49 @@ Both can be downloaded from `<http://www.virtualbox.org/>`_.
   This is less that the recommended amount of RAM amount per node
   for HA configurations (2048+ MB per controller)
   and may lead to unwanted issues.
+
+
+Issue with some Linux distributions
+-----------------------------------
+
+In some of Linux distributions (at least in Fedora 20), you may encounter
+an issue with the NetworkManager service interfering with VirtualBox host-only
+network functionality.
+
+NetworkManager service may interfere with VirtualBox IP addresses assigned
+for host-only adapters and remove the IP addresses after DHCP timeout. This
+may lead to different problems: for example, it will be impossible
+to deploy an HA environment.
+
+To avoid the problem, follow these steps:
+
+#. After the initial installation of Fuel is completed but before using Fuel
+   for deployment, add the **NM_CONTROLLED=no** line at the beginning of all
+   vboxnet interface configuration files. These files may be called differently, depending on
+   your Linux distribution or configuration. Example:
+
+   ::
+
+      [user@system]$ ls -x /etc/sysconfig/network-scripts/ifcfg-* | tr " " "\n"
+      -rw-r--r--. 1 root root 254 Jan 14  2014 /etc/sysconfig/network-scripts/ifcfg-lo
+      -rw-r--r--. 1 root root 178 Feb 13 12:01 /etc/sysconfig/network-scripts/ifcfg-p2p1
+      -rw-r--r--. 1 root root 242 Feb 16 12:14 /etc/sysconfig/network-scripts/ifcfg-Wired_connection_1
+      -rw-r--r--. 1 root root 242 Feb 16 12:14 /etc/sysconfig/network-scripts/ifcfg-Wired_connection_2
+      -rw-r--r--. 1 root root 242 Feb 16 12:14 /etc/sysconfig/network-scripts/ifcfg-Wired_connection_3
+
+   Here, files **Wired_connection_1** through **Wired_connection_3** are
+   configuring vboxnet interfaces and should be edited.
+
+#. Stop all VMs in VirtualBox.
+
+#. Reboot the host. Alternatively you can also restart the NetworkManager service:
+
+   ::
+
+      service NetworkManager restart
+
+#. Start the VMs.
+
+#. Proceed with environment creation.
+
+For more information, see `LP1421723 <https://bugs.launchpad.net/fuel/+bug/1421723>`_.
