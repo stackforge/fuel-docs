@@ -54,3 +54,31 @@ Both can be downloaded from `<http://www.virtualbox.org/>`_.
   This is less that the recommended amount of RAM amount per node
   for HA configurations (2048+ MB per controller)
   and may lead to unwanted issues.
+
+.. note::
+
+  If you use Fedora or RHEL to run VirtualBox, you may encounter an issue
+  with NetworkManager.
+
+  NetworkManager service may interfere with VirtualBox IP addresses assigned
+  for host-only adapters and remove the IP addresses after DHCP timeout.
+
+  To avoid this, after the initial installation of Fuel is complete, please
+  add **NM_CONTROLLED=no** line at the beginning of all vboxnet interface
+  configuration files in **/etc/sysconfig/network-scripts/**. They may be
+  called differently, depending our your Linux distribution/configuration,
+  for example, like this:
+
+  ::
+
+    -rw-r--r--. 1 root root   242 Feb 16 12:14 ifcfg-Wired_connection_1
+    -rw-r--r--. 1 root root   242 Feb 16 12:14 ifcfg-Wired_connection_2
+    -rw-r--r--. 1 root root   242 Feb 16 12:14 ifcfg-Wired_connection_3
+
+  Then restart the NetworkManager service:
+
+  ::
+
+    service NetworkManager restart
+
+  Then proceed with environment creation.
