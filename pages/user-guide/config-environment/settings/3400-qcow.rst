@@ -4,19 +4,14 @@
 Choose image format
 +++++++++++++++++++
 
-Choose whether to use the qcow2 image format for saved images.
+Select image format for ephemeral storage
 
 .. image:: /_images/user_screen_shots/qcow.png
    :width: 110%
 
-This selects the image format used for :ref:`Glance<glance-term>`
-and :ref:`ephemeral volumes<ephemeral-storage-term>`.
-The default setting is to use
-the qcow (actually :ref:`qcow2<qcow2-term>`) format,
-which is recommended when using :ref:`Swift<swift-object-storage-term>`
-as the storage backend for Glance.
-If you use :ref:`Ceph RBD<ceph-term>`
-for Glance image storage or for ephemeral volumes,
-you should disable the qcow image format
-so that the raw format is used.
-
+When this option is selected, :ref:`ephemeral volumes<ephemeral-storage-term>`
+will be created as a copy-on-write layer of the base image.
+Without this option selected, ephemeral volumes will be full
+copies of the base image. The default setting is to use
+copy-on-write for ephemeral volumes. This option has no effect
+when using :ref:`Ceph<ceph-term>` for ephemeral storage.
