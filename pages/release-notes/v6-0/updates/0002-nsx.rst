@@ -1,0 +1,37 @@
+
+.. _nsx-rn-upd:
+
+VMware NSX integration
+----------------------
+
+.. warning:: VMware NSX support in Fuel 6.0.1 is available only in Experimental mode.
+   To enable it, see :ref:`experimental-features-op` .
+
+Issues First Resolved in Mirantis OpenStack 6.0
++++++++++++++++++++++++++++++++++++++++++++++++
+
+* In HA mode with NSX enabled, OpenStack deployment no longer crashes due to
+  unavailable Neutron and Keystone services.
+  See `LP1369529 <https://bugs.launchpad.net/bugs/1369529>`_.
+
+* Support of **non-Service node** mode is now enabled for NSX.
+  See `LP1365043 <https://bugs.launchpad.net/bugs/1365043>`_ and
+  :ref:`nsx-plan`.
+
+Known limitations in 6.0.1
+++++++++++++++++++++++++++
+
+The VMware NSX integration into Mirantis OpenStack 6.0.1 is supported,
+but it has some known limitations:
+
+* Deployment interruption (stoppage or reset) by end user or errors during
+  deployment leave NSX cluster in half configured state.  User has to manually
+  remove all network logical entities that were created during the unsuccessful
+  deployment; otherwise, the next deployment will fail due to inability to
+  register OpenvSwitches in NSX and 'br-int' bridges on nodes would not be
+  configured properly, because older ones with same names exist in NSX cluster.
+
+* If the NSX cluster resides in a separate network that has L3 connectivity with
+  the OpenStack Public network, you must enable Public address assignment for all
+  nodes, see :ref:`neutron-nsx-arch`.
+
