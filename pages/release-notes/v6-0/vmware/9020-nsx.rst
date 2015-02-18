@@ -4,35 +4,25 @@
 VMware NSX integration
 ----------------------
 
-.. warning:: VMware NSX support in Fuel 6.0 is available only in Experimental mode.
+.. warning:: VMware NSX support in Fuel 6.0.1 is available only in Experimental mode.
    To enable it, see :ref:`experimental-features-op` .
 
-New Features and Resolved Issues in Mirantis OpenStack 6.0
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Issues First Resolved in Mirantis OpenStack 6.0
++++++++++++++++++++++++++++++++++++++++++++++++
 
 * In HA mode with NSX enabled, OpenStack deployment no longer crashes due to
   unavailable Neutron and Keystone services.
   See `LP1369529 <https://bugs.launchpad.net/bugs/1369529>`_.
 
-* vCenter supports NSX as an experimental feature.
-  See
-  `vCenter NSX support <https://blueprints.launchpad.net/fuel/+spec/vcenter-nsx-support>`_.
-
 * Support of **non-Service node** mode is now enabled for NSX.
   See `LP1365043 <https://bugs.launchpad.net/bugs/1365043>`_ and
   :ref:`nsx-plan`.
 
-Known limitations in 6.0
-++++++++++++++++++++++++
+Known limitations in 6.0.1
+++++++++++++++++++++++++++
 
-The VMware NSX integration into Mirantis OpenStack 6.0 is supported,
+The VMware NSX integration into Mirantis OpenStack 6.0.1 is supported,
 but it has some known limitations:
-
-* Instances failed to get an IP Address on Ubuntu + NSX deployment.
-  This happens, because NSX bits may be incompatible with Ubuntu packages and kernel
-  versions. To work around this problem, you should install a newer
-  version of NSX bits package.
-  See `LP1371607 <https://bugs.launchpad.net/bugs/1371607>`_.
 
 * Deployment interruption (stoppage or reset) by end user or errors during
   deployment leave NSX cluster in half configured state.  User has to manually
@@ -45,16 +35,3 @@ but it has some known limitations:
   the OpenStack Public network, you must enable Public address assignment for all
   nodes, see :ref:`neutron-nsx-arch`.
 
-* When there are no NSX settings, Fuel UI allows clicking "Deploy changes".
-  Make sure that you have specified correct NSX settings.
-  See `LP1347682 <https://bugs.launchpad.net/bugs/1347682>`_.
-
-* When deploying environment with enabled NSX plugin, several problems may occur:
-  for instance, if Neutron configuration did not succeed, Fuel marks this deployment
-  as a successful one.
-  Error messages in Puppet logs may indicate this problem.
-  One more failure may take place when you try to redeploy your environment with NSX.
-  In this case, before redeploying you should delete all OpenStack-related nodes
-  that have already been registered. See `LP1373403 <https://bugs.launchpad.net/bugs/1373403>`_,
-  `LP1370775 <https://bugs.launchpad.net/bugs/1370775>`_,
-  and `LP1373445 <https://bugs.launchpad.net/bugs/1373445>`_.
