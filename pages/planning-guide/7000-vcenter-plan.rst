@@ -79,37 +79,37 @@ The ESXi host(s) network must be configured appropriately
 in order to enable integration of Mirantis OpenStack with vCenter.
 Follow the steps below:
 
-1. Open the ESXi host page,
+#. Open the ESXi host page,
    select the "Manage" tab and click on "Networking".
    vSwitch0 and all its networks are shown.
    Click the Add Network button:
 
-.. image:: /_images/esx-manage-networks.png
-  :width: 70%
+   .. image:: /_images/esx-manage-networks.png
+     :width: 70%
 
-2. In the "Add Networking" wizard, select the Virtual Machine Port group:
+#. In the "Add Networking" wizard, select the Virtual Machine Port group:
 
-.. image:: /_images/esx-target-device.png
-  :width: 70%
+   .. image:: /_images/esx-connection-type.png
+     :width: 70%
 
 .. raw: pdf
 
    PageBreak
 
-3. On the next page, select the "Virtual Machine Port Group" option
+#. On the next page, select the "Virtual Machine Port Group" option
    to ensure that the network will be created in vSwitch0:
 
-.. image:: /_images/esx-connection-type.png
-  :width: 70%
+   .. image:: /_images/esx-target-device.png
+     :width: 70%
 
-4. Always name the network **br100**;
+#. Always name the network **br100**;
    this is the only value that works with Fuel;
    type a VLAN Tag in the VLAN ID field;
    (the value must be equal to the VLAN Tag at *VM Fixed*
    on Fuel’s :ref:`network-settings-vcenter-ug` tab):
 
-.. image:: /_images/esx-connection-settings.png
-  :width: 70%
+   .. image:: /_images/esx-connection-settings.png
+     :width: 70%
 
 .. _vcenter-limitations:
 
