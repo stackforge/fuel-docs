@@ -265,6 +265,21 @@ the value of `X` should be the same in both cases:
 - Modify the value of the **mtime +X** argument
   to the **lastaction** setting.
 
+Fuel Master node log rotation template
+++++++++++++++++++++++++++++++++++++++
+
+The Fuel Master node configures two log rotation templates:
+
+* The /etc/logrotate.d/10-fuel-docker.conf file is
+  called by the /etc/cron.daily/logrotate script. It provides daily
+  rotation of logs.
+
+* The /etc/logrotate.d/20-fuel-docker.conf file is
+  called by the /etc/cron.hourly/logrotate script. It provides
+  an additional layer of rotation based on the maximum log
+  file size criteria. This ensures that the free space
+  of /var/log is never exhausted with an appropriate consideration
+  for free space planning matching the given log rotation settings.
 
 Enabling debug logging for OpenStack services
 +++++++++++++++++++++++++++++++++++++++++++++
