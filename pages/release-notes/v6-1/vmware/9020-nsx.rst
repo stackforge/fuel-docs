@@ -10,5 +10,3 @@ It might be turned into a :ref:`plugin <plug-in-term>`
 for Fuel in future releases.
 
 
-
-
