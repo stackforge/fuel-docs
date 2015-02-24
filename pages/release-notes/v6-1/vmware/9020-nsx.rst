@@ -4,15 +4,10 @@
 VMware NSX integration
 ----------------------
 
-VMware NSX is supported as an
-:ref:`experimental feature<experimental-features-term>`  in Fuel 6.1.
+Beginning with Fuel 6.1, NSX is
+a deprecated feature. It is possible
+that NSX will be turned into a plugin
+for Fuel in future releases.
 
-Resolved NSX issues
-+++++++++++++++++++
 
-Known NSX issues
-++++++++++++++++
-
-The VMware NSX integration into Mirantis OpenStack 6.0 is supported,
-but it has some known limitations:
 
