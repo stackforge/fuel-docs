@@ -4,7 +4,11 @@ Deploying the Master Node Manually
 First, create the Master node VM.
 
 1. Configure the host-only interface vboxnet0 in VirtualBox by going to
-   `File -> Preferences -> Network` and clicking the screwdriver icon.
+   *File -> Preferences -> Network*, then on the *Host-only Networks*
+   tab click the screwdriver icon.
+
+   .. image:: /_images/host-only-networks-preferences.png
+   .. image:: /_images/host-only-networks-details.png
 
 * IP address: 10.20.0.1
 * Network mask: 255.255.255.0
