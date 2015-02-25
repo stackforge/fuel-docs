@@ -1,6 +1,25 @@
 Adding Slave Nodes Manually
 ---------------------------
 
+Configure the host-only interfaces:
+
+ * In the VirtualBox main window, go to *File -> Preferences -> Network*.
+   On the *Host-only Networks* tab click the screwdriver icon.
+
+  * Create network vboxnet1
+    IP address: 172.16.0.1
+    Network mask: 255.255.255.0
+    DHCP Server: disabled
+
+    .. image:: /_images/host-only-networks-vboxnet1.png
+
+  * Сreate network *vboxnet2*
+    IP address: 172.16.1.1
+    Network mask: 255.255.255.0
+    DHCP Server: disabled
+
+    .. image:: /_images/host-only-networks-vboxnet2.png
+
 Next, create Slave nodes where OpenStack needs to be installed.
 
 1. Create 3 or 4 additional VMs
