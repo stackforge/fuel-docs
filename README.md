@@ -31,7 +31,7 @@ To get started, you need to install all necesasary tools.
 
 On Debian/Ubuntu:
     
-    sudo apt-get install git python-pip python-dev make imagemagick libjpeg-dev inkscape aspell
+    sudo apt-get install git python-pip python-dev make imagemagick libjpeg-dev inkscape aspell python-pillow
 
 On Fedora:
 
