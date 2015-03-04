@@ -1,12 +1,12 @@
 .. _000-plugins-faq:
 
 FAQ
-===
+-----
 
 How can I add a custom role?
 ----------------------------
 
-Current Plugin Architecture does not provide a way to define role.
+There is no way to define a role in Fuel 6.0 or older.
 Starting with Fuel 6.1 you can use the Operating System role as a workaround.
 
 In the **tasks.yaml** file use the `base-os` string to specify which task should be
@@ -21,9 +21,10 @@ used for the role deployment.
         cmd: ./deploy.sh
         timeout: 42
 
-In plugin documentation ask the user to assign the Operating System role
-on the required node and specify the name to give this node, such as
-zabbix-01.
+In your Fuel Plug-in documentation make sure you instruct the user to:
+
+* Assign the Operating System role to the required node;
+* Specify a name to give to this node, such as *zabbix-01*.
 
 In the deployment script you can query the `user_node_name` variable
 and decide if the script should deploy Zabbix related packages on the node.
@@ -38,11 +39,11 @@ and decide if the script should deploy Zabbix related packages on the node.
 Where can I find Fuel Plug-in Builder source code?
 --------------------------------------------------
 
-**fuel-plugin-builder** is located in `fuel-plugins <https://github.com/stackforge/fuel-plugins/tree/master/fuel_plugin_builder>`_ repository.
+**fuel-plugin-builder** is located in the `fuel-plugins <https://github.com/stackforge/fuel-plugins/tree/master/fuel_plugin_builder>`_ repository.
 
 
-Are there any plug-ins examples?
---------------------------------
+Are there any Fuel Plug-in examples?
+------------------------------------
 
 The `Fuel plug-ins <https://github.com/stackforge/fuel-plugins>`_ repository has
 several useful examples.
@@ -50,12 +51,12 @@ several useful examples.
 How can I reuse Puppet modules from Fuel?
 -----------------------------------------
 
-According to the design, every plug-in should have all necessary components to be then deployed.
+The current design is that every plug-in should have all the necessary components
+to be then deployed.
 This means that every plug-in should have its own copy of Fuel Puppet modules.
 If you do not want to keep a copy of Fuel library manifests in your repository,
 you can use **pre_build_hook** to download the required modules during the
-plug-in build. To do that, add the following code into your hook:
-
+plug-in build process. To do this, add the following code into your hook:
 
 .. code-block:: bash
 
@@ -73,7 +74,7 @@ plug-in build. To do that, add the following code into your hook:
         tar -C "${MODULES}" --strip-components=3 -zxvf - \
         stackforge-fuel-library-f43d885/deployment/puppet/{inifile,stdlib}
 
-The code then copies *inifile* and *stdlib* modules from **fuel-library** repository.
+The code copies the *inifile* and *stdlib* modules from the **fuel-library** repository.
 
 .. warning::
 
@@ -82,13 +83,13 @@ The code then copies *inifile* and *stdlib* modules from **fuel-library** reposi
     *puppet_modules: "puppet/modules:/etc/puppet/modules"*.
     Note that we do not
     recommend using this approach, because Fuel puppet modules can be changed
-    during OpenStack update procedure; this can lead to compatibility failures.
+    during an OpenStack update procedure; this can lead to compatibility failures.
 
-How can I download the packages which are required for a plug-in?
------------------------------------------------------------------
+How can I download the packages required for a plug-in?
+-------------------------------------------------------
 
-Use **wget** in your **pre_build_hook** script to download packages
-in the required directories:
+Use **wget** in your **pre_build_hook** script to download the packages
+to the required directories:
 
 .. code-block:: bash
 
@@ -102,18 +103,18 @@ in the required directories:
     wget -P "${RPM_REPO}" http://mirror.fuel-infra.org/fuel-plugins/6.0/centos/glusterfs-3.5.2-1.mira2.x86_64.rpm
     wget -P "${DEB_REPO}" http://mirror.fuel-infra.org/fuel-plugins/6.0/ubuntu/glusterfs-client_3.5.2-4_amd64.deb
 
-It downloads two packages in your plug-in's directories before Fuel Plugin Builder starts
+This example downloads two packages to your plug-in directories before Fuel Plugin Builder starts
 building repositories.
 
 Why is there no /etc/astute.yaml file when I run pre_deployment task?
 ----------------------------------------------------------------------
 
-If you have a task with "stage: pre_deployment" parameter set, you will not find
-**/etc/astute.yaml** file on the target node during the task execution.
+If you have a task with the "stage: pre_deployment" parameter set, you will not find
+the **/etc/astute.yaml** file on the target node during the task execution.
 The file **/etc/astute.yaml** is a symlink that is created before Fuel
 deploys a role.
 
-Target node can have several roles and each role contains its own file with
+The target node can have several roles. Each role contains its own file with
 deployment data.
 
 Here is an example of a node with
@@ -125,6 +126,4 @@ ID 2 and two roles, Controller and Cinder:
     -rw------- 1 root     root      8712 Nov 19 12:48 controller.yaml
     -rw------- 1 root     root      8700 Nov 19 12:48 cinder.yaml
 
-Let's assume that we need deployment data file for Controller role.
-
-We can use the '/etc/controller.yaml' file directly in the deployment script.
+Let's assume that we need the deployment data file for Controller role. We can use the '/etc/controller.yaml' file directly in the deployment script.
