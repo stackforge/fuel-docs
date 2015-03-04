@@ -1,0 +1,44 @@
+.. _0030-faq:
+
+FAQ
+---
+
+What i can use for deployment during groups?
+---------------------------------------------
+
+In 6.1 it is possible to use only puppet for main deployment.
+
+All agents except puppet are working in blocking way, and our deployment
+model can not execute some tasks that are blocking and non blocking.
+This is part of technical debt that can be easily resolved with mistral.
+
+In pre/post deployment stages any of the supported task drivers can be used.
+
+Is it possible to specify cross-dependencies between groups?
+-------------------------------------------------------------
+
+We can not provide a model right now that will allow to run some tasks
+on primary-controller, than run on controller, and then get back to
+primary-controller.
+
+In 6.1 cross-dependencies will be solved by post deployment stage.
+
+Cross dependency will be available when we will have orchestrator with
+convenient graph based api, like mistral.
+
+How i can end at provision state?
+-------------------------------------
+
+Provision is not a part of task based deployment in 6.1.
+We will consider to merge it in the same graph in next releases.
+
+
+How to stop deployment at network configuration?
+-------------------------------------------------
+
+CLI call can be used that will execute deployment up to network configuration
+state.
+
+::
+
+  fuel node --node 1,2,3 --end netconfig

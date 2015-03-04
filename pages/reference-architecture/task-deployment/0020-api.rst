@@ -1,0 +1,78 @@
+.. _0020-api:
+
+API
+------
+
+If you want to change/add some tasks right on
+master node, just add tasks.yaml
+and appropriate manifests in folder for release that you are interested in.
+Then apply this command:
+
+::
+    fuel rel --sync-deployment-tasks --dir /etc/puppet
+
+Also you may want to overwrite deployment tasks for any specific
+release/cluster by next commands:
+
+::
+    fuel rel --rel <id> --deployment-tasks --download
+    fuel rel --rel <id> --deployment-tasks --upload
+
+    fuel env --env <id> --deployment-tasks --download
+    fuel env --env <id> --deployment-tasks --upload
+
+After this is done - you will be able to run customized graph of tasks:
+
+The most basic command:
+
+::
+    fuel node --node 1,2,3 --tasks upload_repos netconfig
+
+Developer will need to specify nodes that should be used in deployment and
+tasks ids. Order in which they are provided doesn't matter,
+it will be computed from dependencies specified in database. Also very
+important to understand that if task is mapped to role controller,
+but node where you want to apply that task doesn't have this role - it wont
+be executed.
+
+Skipping of tasks
+
+
+::
+    fuel node --node 1,2,3 --skip netconfig hiera
+
+List of task that are provided with this parameter will be skipped during
+graph traversal in nailgun.
+The main question is - should we skip other task that have provided tasks
+as dependencies?
+In my opinion we can leave this flag as simple as it is, and use following
+commands for "smarter" traversal.
+
+Specify start and end nodes in graph:
+
+::
+    fuel node --node 1,2,3 --end netconfig
+
+Will deploy everything up to netconfig task, including netconfig. This is:
+all tasks that we are considering as pre_deployment (keys generation, rsync
+manifests, sync time, upload repos),
+and such tasks as hiera setup, globals computation and maybe some other
+basic preparatory tasks.
+
+::
+    fuel node --node 1,2,3 --start netconfig
+
+Start from netconfig, including netconfig, deploy all other tasks, tasks
+that we are considering as post_deployment.
+For example if one want to execute only netconfig successors:
+
+::
+    fuel node --node 1,2,3 --start netconfig --skip netconfig
+
+And user will be able to use start and end at the same time:
+
+::
+    fuel node --node 1,2,3 --start netconfig --end upload_cirros
+
+Nailgun will build path that includes only necessary tasks to join this two
+points.

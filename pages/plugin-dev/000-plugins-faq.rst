@@ -1,7 +1,7 @@
 .. _000-plugins-faq:
 
 FAQ
-===
+-----
 
 How can I add a custom role?
 ----------------------------
