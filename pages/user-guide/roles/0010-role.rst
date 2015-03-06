@@ -1,0 +1,54 @@
+
+Role object
+------------
+
+Controller role example:
+
+::
+
+    id: 9
+    meta:
+      conflicts:
+      - compute
+      description: The controller initiates orchestration activities and provides an external
+        API.  Other components like Glance (image storage), Keystone (identity management),
+        Horizon (OpenStack dashboard) and Nova-Scheduler are installed on the controller
+        as well.
+      has_primary: true
+      limits:
+        min: 1
+        overrides:
+        - condition: cluster:mode == 'multinode'
+          max: 1
+          message: Multi-node environment can not have more than one controller node.
+        - condition: cluster:mode == 'ha_compact'
+          message: At least 3 controller nodes are recommended for HA deployment.
+          recommended: 3
+      name: Controller
+      update_required:
+      - compute
+      - cinder
+    name: controller
+    volumes_roles_mapping:
+        - allocate_size: min
+          id: os
+        - allocate_size: all
+          id: image
+
+Mandatory fields are
+
+::
+
+  name: controller
+  meta:
+    name: Controller
+    description: Description goes here
+
+  # at least one volume is required
+  volumes_roles_mapping:
+    - allocate_size: min
+      id: os
+
+Primary behaviour for node can be enabled with *has_primary: true*,
+if this option is set - during orchestration you will be able to assign separate
+tasks for primary-controller and controller.
