@@ -10,4 +10,5 @@
 .. include:: /pages/user-guide/7000-sahara-install.rst
 .. include:: /pages/user-guide/8000-upgrade.rst
 .. include:: /pages/user-guide/cli.rst
+.. include:: /pages/user-guide/9100-use-shotgun.rst
 .. include:: /pages/user-guide/vmware-integration-notes.rst
