@@ -13,4 +13,5 @@
 .. include:: /pages/user-guide/cli.rst
 .. include:: /pages/user-guide/patching-ug.rst
 .. include:: /pages/user-guide/rollback-ug.rst
+.. include:: /pages/user-guide/9100-use-shotgun.rst
 .. include:: /pages/user-guide/vmware-integration-notes.rst
