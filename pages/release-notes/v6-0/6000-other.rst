@@ -9,4 +9,5 @@ Issues in other components
 .. include:: /pages/release-notes/v6-0/other/4020-keystone.rst
 .. include:: /pages/release-notes/v6-0/other/5010-ceilometer-mongodb.rst
 .. include:: /pages/release-notes/v6-0/other/5030-zabbix.rst
+.. include:: /pages/release-notes/v6-0/other/7010-nova.rst
 
