@@ -100,19 +100,6 @@ using the **--file** parameter to point to the downloaded file
 or use the equivalent API calls.
 See `LP1401118 <https://bugs.launchpad.net/mos/+bug/1401118>`_.
 
-Hypervisor summary displays incorrect total storage for Ceph ephemeral storage
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The Horizon Admin/Hypervisors Disk Usage field
-shows an incorrect value when Ceph is used as the back end for ephemeral storage.
-The value shown is a sum of all Ceph storage seen on each storage node
-instead of the actual amount of Ceph storage.
-The Nova **hypervisor-stats** command has the same issue.
-Note that this does not affect the booting of instances in any way;
-it merely presents confusing information
-on the resource usage report.
-See `LP1359989 <https://bugs.launchpad.net/bugs/1359989>`_.
-
 On CentOS, some UI elements and actions erroneously show as available
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

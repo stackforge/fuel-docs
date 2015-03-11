@@ -1,0 +1,16 @@
+
+.. _nova-rn:
+
+OpenStack Compute (Nova)
+------------------------
+
+Resolved Issues in Mirantis OpenStack 6.0.1
++++++++++++++++++++++++++++++++++++++++++++
+
+* Users have a correct Nova hypervisor stats report retrieved via
+  both CLI and Horizon now. It was misleading when a shared storage
+  backend (Ceph) was used. The actual amount of space available or
+  used was multiplied by the number of compute nodes. This did not
+  affect booting of instances in any way but confused an operator
+  seeing the resources usage report.
+  See `LP1359989 <https://bugs.launchpad.net/bugs/1359989>`_.
