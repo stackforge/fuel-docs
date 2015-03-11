@@ -1,5 +1,5 @@
-What's New in Mirantis OpenStack 6.0
-====================================
+What's New in Mirantis OpenStack 6.0.1
+======================================
 
 Mirantis is pleased to make Mirantis OpenStack 6.0
 available to our customers, partners and the community.
