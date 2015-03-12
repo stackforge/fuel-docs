@@ -36,4 +36,5 @@ The following table lists the released revisions of this documentation:
 .. include:: /pages/release-notes/v6-0/9010-vmware-tech.rst
 .. include:: /pages/release-notes/v6-0/6000-other.rst
 .. include:: /pages/release-notes/v6-0/0060-obtain-the-product.rst
+.. include:: /pages/release-notes/v6-0/0063-update-the-product.rst
 .. include:: /pages/release-notes/v6-0/0070-support.rst
