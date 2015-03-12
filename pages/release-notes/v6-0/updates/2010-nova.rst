@@ -1,0 +1,10 @@
+
+.. _updates-nova-rn:
+
+OpenStack Compute (Nova)
+-----------------------------
+
+Resolved Issues
++++++++++++++++
+
+
