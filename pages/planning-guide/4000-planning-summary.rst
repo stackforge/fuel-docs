@@ -40,9 +40,6 @@ complete to plan the Mirantis OpenStack deployment.
 | :ref:`vcenter-term`        |                                           |
 | or :ref:`vsphere-term`     |                                           |
 +----------------------------+-------------------------------------------+
-| If you want to use         | See :ref:`nsx-plan`                       |
-| :ref:`nsx-term`            |                                           |
-+----------------------------+-------------------------------------------+
 | Calculate the server and   | See :ref:`hardware-plan`                  |
 | network hardware needed    |                                           |
 +----------------------------+-------------------------------------------+

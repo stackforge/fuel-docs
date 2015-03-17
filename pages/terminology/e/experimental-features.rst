@@ -22,8 +22,6 @@ The following features are currently defined as experimental:
   Mirantis OpenStack 6.0 is the first release based on Juno
   and so no upgrade is possible.
 
-- vCenter with NSX. See :ref:`nsx-plan` and :ref:`nsx-deploy`.
-
 - OVS :ref:`bonding<bonding-term>`.
 
 - Image-based provisioning.

@@ -61,12 +61,10 @@ Note that you can specify either IP address or Hostname for vCenter.
 Select Network Service for vCenter
 ++++++++++++++++++++++++++++++++++
 
-Choose either Nova-Network or Neutron with VMware NSX plugin.
+Choose either Nova-Network.
 
 .. note:: Neutron is available only when Experimental features are enabled.
           For more information, see :ref:`experimental-features-op`.
-
-For instructions on NSX, see :ref:`nsx-plan` and :ref:`nsx-deploy`.
 
 .. image:: /_images/user_screen_shots/vcenter-networking.png
    :width: 50%
