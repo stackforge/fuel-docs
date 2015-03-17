@@ -10,7 +10,6 @@ For architectural descriptions of the five topologies, see:
 
 * :ref:`neutron-vlan-ovs-arch` (default)
 * :ref:`neutron-gre-ovs-arch`
-* :ref:`neutron-nsx-arch`
 * :ref:`nova-flatdhcp-arch` (legacy networking)
 * :ref:`nova-vlan-arch` (legacy networking)
 
@@ -60,27 +59,14 @@ and manipulate them on the fly.
   See :ref:`mcn-ops` for instructions;
   :ref:`mcn-arch` explains the internals.
 
-* The **Neutron with VMware NSX** topology utilizes
-  the VMware NSX network hypervisor as a backend for Neutron.
-  As with GRE segmentation,
-  it does not restrict the maximum number of available networks.
-
-  Before deploying the OpenStack environment that will be using NSX,
-  the user must obtain the
-  `NSX OVS packages <https://my.vmware.com/web/vmware/info/slug/networking_security/vmware_nsx/4_x>`_
-  for Ubuntu or CentOS and manually upload them to a web server
-  (usually the Fuel master node).
-  Puppet can then download and install these packages
-  on controllers and compute nodes during the deployment stage.
 
 Some other considerations when choosing a network topology:
 
 - :ref:`ovs-term`, :ref:`bonding-term`, and :ref:`murano-term`
   can only be implemented on Neutron.
-- VMWare :ref:`vcenter-term` and :ref:`vsphere-term`
+- VMware :ref:`vcenter-term` and :ref:`vsphere-term`
   can only be implemented on :ref:`Nova-network<nova-network-term>`
   with the FlatDHCP topology.
-- Neutron with VMware NSX can be implemented with the KVM/QEMU and vCenter hypervisors.
 - :ref:`bonding-term` is not supported for SR-IOV over
   the :ref:`mellanox-adapters` family.
 - Mellanox :ref:`sr-iov-term` and :ref:`iser-term` are supported only when
