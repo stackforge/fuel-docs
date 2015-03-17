@@ -4,8 +4,8 @@
 Fuel Installation and Deployment Issues
 =======================================
 
-New Features and Resolved Issues in Mirantis OpenStack 6.0
-----------------------------------------------------------
+New Features and Resolved Issues in Mirantis OpenStack 6.0.1
+------------------------------------------------------------
 
 * Fuel now has a larger pool of IP addresses to use
   when additional nodes are added to the environment.
@@ -22,8 +22,8 @@ New Features and Resolved Issues in Mirantis OpenStack 6.0
 * :ref:`Fuel CLI<cli_usage>` now can be run by a non-root user.
   See `LP1355876 <https://bugs.launchpad.net/bugs/1355876>`_.
 
-Known Issues in Mirantis OpenStack 6.0
---------------------------------------
+Known Issues in Mirantis OpenStack 6.0.1
+----------------------------------------
 
 GRE-enabled Neutron installation runs inter VM traffic through management network
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -123,7 +123,7 @@ those nodes may be reported as offline.
 Rebooting those nodes brings them back online.
 To avoid this problem, always run a new backup
 of the Fuel Master node after adding nodes.
-See `LP1347718 <https://bugs.launchpad.net/bugs/1347718>`_.
+See the `blueprint <https://blueprints.launchpad.net/fuel/+spec/master-incremental-backup>`_.
 
 Shotgun does not check available disk space before taking a diagnostic snapshot
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -134,7 +134,6 @@ Users should manually verify the disk space
 before taking a diagnostic snapshot.
 See `LP1328879 <https://bugs.launchpad.net/bugs/1328879>`_
 and the `blueprint <https://blueprints.launchpad.net/fuel/+spec/manage-logs-with-free-space-consideration>`_.
-
 
 Other Issues
 ++++++++++++
