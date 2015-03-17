@@ -61,7 +61,6 @@ Terminology Reference
 .. include:: /pages/terminology/n/node-group.rst
 .. include:: /pages/terminology/n/nova.rst
 .. include:: /pages/terminology/n/nova-network.rst
-.. include:: /pages/terminology/n/nsx.rst
 .. include:: /pages/terminology/o/object-storage.rst
 .. include:: /pages/terminology/o/openstack.rst
 .. include:: /pages/terminology/o/operating-system-role.rst
