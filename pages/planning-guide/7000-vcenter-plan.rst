@@ -14,14 +14,12 @@ you to specify several or all clusters for a single OpenStack environment,
 so that one Nova-compute service manages
 multiple ESX host clusters via single vCenter server.
 
-.. note:: In 5.x environments that use vCenter as the hypervisor,
-   the Nova-compute service runs only on Controller nodes.
+.. note:: Beginning with Fuel 6.1, vCenter cannot be
+   integrated with NSX: NSX support is now deprecated.
+   Due to Pluggable Architecture, it might
+   be turned into a plugin in the future Fuel
+   releases.
 
-   In future Fuel releases, the plan is to change
-   the relation between a Nova-compute service and an ESX host cluster
-   from one-to-many to one-to-one.
-   In other words, to manage multiple ESX host clusters,
-   you will need to run multiple Nova-compute services.
 
 The vCenter driver makes management convenient
 from both the OpenStack Dashboard (:ref:`horizon-term`)
@@ -133,29 +131,6 @@ Limitations
   For more details about the Ceilometer plugin for vCenter,
   see `Support for VMware vCenter Server
   <https://wiki.openstack.org/wiki/Ceilometer/blueprints/vmware-vcenter-server#Support_for_VMware_vCenter_Server>`_
-
-
-.. note::    Mirantis has the following lab setup for VMware enrivonment,
-             that was checked for compatibility of the NSX and vCenter:
-
-             * NSX version 4.0.1 (4.0.1-build30244) for Gateway, Manager, Controller
-               and Service nodes.
-
-             * NSX OpenVSwitch version 2.0.0 (2.0.0-build30176)
-
-             * vCenter 5.5. Note that vCenter 5.5.u2 is also used, but
-               was not tested properly for comptibility with NSX and
-               does not work with NSX 4.0.1.
-
-             To learn more about NSX and vCenter
-             compatibility, see
-             `the VMware Product Interoperability Matrixes <http://www.vmware.com/resources/compatibility/sim/interop_matrix.php>`_.
-
-
-.. warning:: Mirantis lab setup was tested for the Mirantis OpenStack release 6.0.
-              This particular setup works properly at CentOS 6.5.
-              Nevertheless, at Ubuntu 12.04 it **does not** work properly
-              due to incompatibility of the Linux 3.13 kernel and NSX OVS 2.0.0-build30176.
 
 
 For background information about how vCenter support
