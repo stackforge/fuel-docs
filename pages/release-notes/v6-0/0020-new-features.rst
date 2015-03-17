@@ -1,11 +1,11 @@
-What's New in Mirantis OpenStack 6.0
-====================================
+What's New in Mirantis OpenStack 6.0.1
+======================================
 
-Mirantis is pleased to make Mirantis OpenStack 6.0
+Mirantis is pleased to make Mirantis OpenStack 6.0.1
 available to our customers, partners and the community.
 
-New Features included in Mirantis OpenStack 6.0
-===============================================
+New Features included in Mirantis OpenStack 6.0.1
+=================================================
 
 Support for the latest OpenStack Juno release
 ---------------------------------------------
@@ -41,5 +41,4 @@ Additional Information
 
 For information about Issues and Blueprints for Mirantis OpenStack 6.0,
 see the `Fuel for OpenStack 6.0 Milestone
-<https://launchpad.net/fuel/+milestone/6.0>`_ page.
-
+<https://launchpad.net/fuel/+milestone/6.0.1>`_ page.
