@@ -76,3 +76,83 @@ And user will be able to use start and end at the same time:
 
 Nailgun will build path that includes only necessary tasks to join this two
 points.
+
+Graph representation
+--------------------
+
+In addition to commands above, there also exists a helper that allows
+to download deployment graph in DOT `DOT <http://www.graphviz.org/doc/info/lang.html>`_
+format and later render it.
+
+Command for downloading graph prints its output to standard output.
+To download a full graph for environment with id 1 and print it on the screen,
+use the following command:
+
+::
+
+   fuel graph --env 1 --download
+
+To download graph and save it to the *graph.gv* file:
+
+::
+
+   fuel graph --env 1 --download > graph.gv
+
+It is also possible to specify the same options as for deployment command.
+Point out start and end nodes in graph:
+
+::
+
+   fuel graph --env 1 --download --start netconfig > graph.gv
+
+   fuel graph --env 1 --download --end netconfig > graph.gv
+
+Or specify both:
+
+::
+
+  fuel graph --env 1 --download --start netconfig --end upload_cirros > graph.gv
+
+
+Skipping tasks is also supported (skipped tasks will be grayed out in the graph
+visualization):
+
+::
+
+   fuel graph --env 1 --download --skip netconfig hiera  > graph.gv
+
+If user wants to see only parents of a particular tasks:
+
+::
+
+   fuel graph --env 1 --download --parents-for hiera  > graph.gv
+
+
+Downloaded graph in DOT format can be rendered. It requires additional packages
+to be installed:
+
+* `Graphviz <http://www.graphviz.org/>`_ using **apt-get install graphviz** or **yum install graphviz** commands
+* `pydot-ng <https://pypi.python.org/pypi/pydot-ng/>`_ using **pip install pydot-ng** command
+  or `pygraphivz <https://pypi.python.org/pypi/pygraphviz>`_ using **pip install pygraphivz** command
+
+After installing the packages, you can render the graph:
+
+::
+
+    fuel graph --render graph.gv
+
+The command above will take the contents of **graph.gv** file, render it as a PNG image
+and save as "graph.gv.png".
+
+Render command supports reading graph representation from the standard input:
+
+::
+
+  fuel graph --render -
+
+It is possible to combine commands for downloading and rendering graph
+together to avoid creating intermediate file:
+
+::
+
+   fuel graph --env 1 --download | fuel graph --render -
