@@ -76,3 +76,80 @@ And user will be able to use start and end at the same time:
 
 Nailgun will build path that includes only necessary tasks to join this two
 points.
+
+Graph representation
+""""""""""""""""""""
+
+In addition to commands above, there also exists a helper that allows
+to download deployment graph in DOT format and later render it.
+
+Command for downloading graph prints its output to standard output.
+To download a full graph for environment with id 1 and print it on the screen:
+
+::
+
+   fuel graph --env 1 --download
+
+To download graph and save it to the file "graph.gv":
+
+::
+
+   fuel graph --env 1 --download > graph.gv
+
+It is also possible to specify the same options as for deployment command.
+Specify start and end nodes in graph:
+
+::
+
+   fuel graph --env 1 --download --start netconfig > graph.gv
+
+   fuel graph --env 1 --download --end netconfig > graph.gv
+
+Or specify both:
+
+::
+
+  fuel graph --env 1 --download --start netconfig --end upload_cirros > graph.gv
+
+
+Skipping of tasks is also supported (skipped tasks will be grayed out in the graph
+visualization):
+
+::
+
+   fuel graph --env 1 --download --skip netconfig hiera  > graph.gv
+
+If user want to see only parents of a particular tasks:
+
+::
+
+   fuel graph --env 1 --download --parents-for hiera  > graph.gv
+
+
+Downloaded graph in DOT format can be rendered. It requires additional packages
+to be installed:
+
+* `Graphviz <http://www.graphviz.org/>`_
+* `pydot-ng <https://pypi.python.org/pypi/pydot-ng/>`_ or `pygraphivz <https://pypi.python.org/pypi/pygraphviz>`_
+
+If those packages are installed, there is possible to:
+
+::
+
+    fuel graph --render graph.gv
+
+Command above will take the contents of "graph.gv" and render it as a PNG image
+and save as "graph.gv.png".
+
+Render command supports reading graph representation from standard input:
+
+::
+
+  fuel graph --render -
+
+It is possible to combine commands for downloading and rendering graph
+together to avoid creating intermediate file:
+
+::
+
+   fuel graph --env 1 --download | fuel graph --render -
