@@ -45,3 +45,5 @@ we’re patching nova.::
   patching file /usr/share/pyshared/nova/baserpc.py
 
 .. note:: Ignore the message “can’t find file to patch at input line XX”. The reason it occurs is that the patch is not aware of the filesystem layout.
+
+.. note:: After applying the patch, but before restarting the service, it is highly recommended to remove the ``*.pyc`` files from the corresponding directory.
