@@ -7,4 +7,9 @@ OpenStack Compute (Nova)
 Resolved Issues
 +++++++++++++++
 
+* CVE-2015-0259 vulnerability has been fixed in a Nova console websocket.
+  By tricking an authenticated user into clicking a malicious URL a remote
+  attacker was able to trigger a cross-site-websocket-hijacking vulnerability
+  resulting in a potential hijack of consoles where a user is still logged in.
+  See `LP1420273 <https://bugs.launchpad.net/mos/+bug/1420273>`_.
 
