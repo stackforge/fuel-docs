@@ -48,7 +48,7 @@ iSER configuration:
        checked in the Mellanox Components section.
 
 .. image:: /_images/user_screen_shots/storage-iser.png
-   :width: 75%
+   :width: 80%
 
 **Note:**
 `HowTo Install Mirantis Fuel 5.1 OpenStack with Mellanox Adapters Support <http://community.mellanox.com/docs/DOC-1474/>`_ includes

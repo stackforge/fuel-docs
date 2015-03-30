@@ -9,7 +9,7 @@ to set kernel parameters for all target nodes
 that Fuel will deploy:
 
 .. image:: /_images/user_screen_shots/kernel-parameters.png
-   :width: 70%
+   :width: 60%
 
 Note that this does not set kernel parameters
 for the Fuel Master node

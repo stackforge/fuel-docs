@@ -21,8 +21,11 @@ If there are errors, it is either in your configuration of interfaces
 or possibly the VLAN tagging feature is disabled on your switch port.
 
 .. image:: /_images/net_verify_failure.jpg
-   :width: 90%
+   :width: 80%
 
 Resolve any errors before attempting to deploy your environment.
+
+.. image:: /_images/user_screen_shots/net_verify_success.png
+   :width: 80%
 
 

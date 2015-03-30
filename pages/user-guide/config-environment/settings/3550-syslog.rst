@@ -15,7 +15,7 @@ If you prefer to use an external server for rsyslog,
 specify the IP address and port number in this field:
 
 .. image:: /_images/user_screen_shots/syslog.png
-   :width: 80%
+   :width: 50%
 
 See :ref:`logs-top-tshoot` for more details.
 
