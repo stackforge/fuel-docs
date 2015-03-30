@@ -25,7 +25,7 @@ and so are not affected by these issues.
 
 
 .. image:: /_images/user_screen_shots/settings-vlan-splinters.png
-   :width: 50%
+   :width: 90%
 
 You can select either the soft trunks or hard trunks mode:
 
