@@ -13,7 +13,7 @@ to this environment after the initial deployment.
 
 
 .. image:: /_images/user_screen_shots/public-key.png
-   :width: 80%
+   :width: 60%
 
 Note that the Public Key defined here
 is used only for the target nodes in this environment;
