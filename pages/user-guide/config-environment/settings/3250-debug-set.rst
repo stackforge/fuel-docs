@@ -8,7 +8,7 @@ Use this field to set DEBUG level logging
 for all services in the environment:
 
 .. image:: /_images/user_screen_shots/debug-logging.png
-   :width: 80%
+   :width: 50%
 
 Debug logging consumes massive amounts of disk space
 as well as memory and CPU resources
