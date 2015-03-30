@@ -7,7 +7,7 @@ Choose image format
 Select image format for ephemeral storage.
 
 .. image:: /_images/user_screen_shots/qcow.png
-   :width: 110%
+   :width: 90%
 
 When this option is selected, :ref:`ephemeral volumes<ephemeral-storage-term>`
 will be created as a copy-on-write layer of the base image.
