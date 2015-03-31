@@ -4,11 +4,116 @@ How to Update the Product
 You can easily update your Mirantis OpenStack using the introduced update mechanism
 without a need to redeploy it completely.
 
-Please follow the instruction on how you can install updates:
-...
+Please follow the instruction below on how you can install updates.
+
+Software updating procedure for Linux CentOS- and Ubuntu-based nodes with an access to the Internet
+---------------------------------------------------------------------------------------------------
+
+Note that you must have an access to the Internet on each cluster node to perform the update.
+
+Ubuntu-based deployments
+------------------------
+
+#. Add the updates repository into the system using the following command on each node::
+
+       $ echo -e "\ndeb http://fuel-repository.mirantis.com/fwm/6.0/updates/ubuntu \
+             precise main" >> /etc/apt/sources.list
+
+#. Run the following command to update indexes::
+
+       $ apt-get update
+
+#. Run the following command to update packages::
+
+       $ apt-get upgrade
+
+CentOS-based deployments
+------------------------
+
+#. Add the repository into the system using the following command::
+
+       $ yum-config-manager --add-repo=\
+         http://fuel-repository.mirantis.com/fwm/6.0/updates/centos/os/x86_64/6.0-updates.repo
+
+#. Run the following command to update packages::
+
+       $ yum update --skip-broken
+
+.. note::
+       ``--skip-broken`` flag is needed because of the installation method of ruby21, its dependencies are not presented in the repository.
+
+Software updating procedure for Linux CentOS- and Ubuntu-based nodes in a closed environment
+--------------------------------------------------------------------------------------------
+
+If compute/controller nodes have no Internet access, you should download repository to the Fuel Master node and use it as an update mirror.
+Run the following command on Fuel-node to obtain a local mirror of updates repository::
+
+       $ rsync -vap --chmod=Dugo+x \
+          rsync://fuel-repository.mirantis.com/mirror/fwm/6.0/updates/ /var/www/nailgun/updates/
+
+
+Ubuntu-based deployments
+------------------------
+
+#. Add the updates repository into the system using the following command on each node::
+
+       $ echo -e "\ndeb http://10.20.0.2:8080/updates/ubuntu precise main" \
+              	>> /etc/apt/sources.list
+
+#. To update indexes run::
+
+       $ apt-get update
+
+#. To update packages run::
+
+       $ apt-get upgrade
+
+CentOS-based deployments
+------------------------
+
+#. Add repository into the system using the following command::
+
+       $ yum-config-manager --add-repo=http://10.20.0.2:8080/updates/centos/os/x86_64/
+
+#. To update packages run::
+
+       $ yum update --skip-broken
+
+.. note::
+       `--skip-broken` flag is needed because due to ruby21 installation method, its dependencies are not presented in the repository.
+
+Automated way to install updates to all nodes
+---------------------------------------------
+
+After rsync’ing the updates repository from the Mirantis mirror to a Fuel Master node’s internal repository, a special script can be used for the automated update of the nodes in all or particular environments:
+
+       `mos_apply_mu.py <https://review.fuel-infra.org/gitweb?p=tools/sustaining.git;a=blob_plain;f=scripts/mos_apply_mu.py;hb=refs/heads/master>`_
+
+This script updates all nodes one by one and should be run on a Fuel Master node in the following manner in order to update nodes in the environment `X`::
+
+       # python mos_apply_mu.py --env-id=X --update
+
+To update all environments use `--all-envs`::
+
+       # python mos_apply_mu.py --env-id=X --update --all-envs
+
+The script will update all online nodes in all environment with respect to the version of an operating system in a particular environment
+
+To get the list of availbale options run the script without parameters::
+
+        # python mos_apply_mu.py
+
+.. note::
+      The script uses keystone’s authentication in order to obtain nodes list from fuel’s API, thus access credentials must be provided.
+      Default credentials are: `username` = `admin`, `password` = `admin`, `tenant` = `admin`.
+      In case of different credentials, `--user`, `--pass`, `--tenant` options must be set properly.
+
+.. note::
+      All output from nodes can be found in `/var/log/nodes-update.log`.
+
 
 Maintenance updates
-===================
+-------------------
 
 .. include:: /pages/release-notes/v6-0/updates/1010-horizon.rst
 .. include:: /pages/release-notes/v6-0/updates/2010-nova.rst
