@@ -27,7 +27,8 @@ You should see agents start on the other node:
         Slaves: [ node-3.test.domain.local ]
     Clone Set: clone_p_neutron-plugin-openvswitch-agent [p_neutron-plugin-openvswitch-agent]
         Started: [ node-2.test.domain.local node-3.test.domain.local ]
-    p_neutron-dhcp-agent   (ocf::mirantis:neutron-agent-dhcp):     Started node-2.test.domain.local
+    Clone Set: clone_p_neutron-dhcp-agent [p_neutron-dhcp-agent]
+        Started: [ node-2.test.domain.local node-3.test.domain.local ]
     Clone Set: clone_p_neutron-metadata-agent [p_neutron-metadata-agent]
         Started: [ node-2.test.domain.local node-3.test.domain.local ]
     Clone Set: clone_p_neutron-l3-agent [p_neutron-l3-agent]

@@ -16,6 +16,7 @@ Terminology Reference
 .. include:: /pages/terminology/c/corosync.rst
 .. include:: /pages/terminology/c/crm.rst
 .. include:: /pages/terminology/d/devstack.rst
+.. include:: /pages/terminology/d/dhcp-agent.rst
 .. include:: /pages/terminology/d/docker.rst
 .. include:: /pages/terminology/e/ephemeral-storage.rst
 .. include:: /pages/terminology/e/esxi.rst
