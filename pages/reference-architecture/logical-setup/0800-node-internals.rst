@@ -17,14 +17,26 @@ Use the **fuel node list** command on the Fuel Master node
 to list out the current information about the nodes
 for the environment:
 
-.. code-block :: sh
+::
 
-    id | status | name         | cluster | ip         | mac      | roles      |
-    ---|--------|--------------|---------|------------|----------|------------|
-    5  | ready  | ctr1 (4d:4d) | 2       | 10.110.0.3 | b2:[...] | controller |
-    8  | ready  | cmp1 (3a:7f) | 2       | 10.110.0.6 | 92:[...] | compute    |
-    6  | ready  | cin1 (34:84) | 2       | 10.110.0.4 | f2:[...] | cinder     |
-    7  | ready  | cmp2 (f0:9b) | 2       | 10.110.0.5 | 56:[...] | compute    |
+    [root@fuel ~]# fuel nodes
+
+    id | status   | name             | cluster | ip        | mac               | ...
+    ---|----------|------------------|---------|-----------|-------------------| ...
+    4  | ready    | Untitled (b0:77) | 1       | 10.20.0.6 | 56:40:fa:cc:cf:45 | ...
+    1  | ready    | Untitled (ca:9a) | 1       | 10.20.0.4 | ca:03:e6:b1:13:46 | ...
+    3  | ready    | Untitled (0e:64) | 2       | 10.20.0.7 | 26:1f:eb:91:d8:49 | ...
+    2  | ready    | Untitled (c1:ef) | 2       | 10.20.0.3 | 22:2a:45:36:5d:42 | ...
+    5  | discover | Untitled (e1:c4) | None    | 10.20.0.5 | 08:00:27:1a:e1:c4 | ...
+
+
+   id | status   | name             |...| roles      | pending_roles | online | group_id
+   ---|----------|------------------|...|------------|---------------|--------|---------
+   4  | ready    | Untitled (b0:77) |...| compute    |               | True   | 1
+   1  | ready    | Untitled (ca:9a) |...| controller |               | True   | 1
+   3  | ready    | Untitled (0e:64) |...| compute    |               | True   | 2
+   2  | ready    | Untitled (c1:ef) |...| controller |               | True   | 2
+   5  | discover | Untitled (e1:c4) |...|            |               | True   | None
 
 
 The meaning of these fields is:
@@ -88,5 +100,9 @@ they are not shown here:
             :False:    Node is offline.
 
             :True:     Node is available via the Fuel admin network.
+
+:group_id: The group node identifier.
+           When you assign roles to your target nodes,
+           Fuel tries to automatically determine the node's group based on the DHCP address.
 
 
