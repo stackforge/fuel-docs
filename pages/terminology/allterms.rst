@@ -47,6 +47,7 @@ Terminology Reference
 .. include:: /pages/terminology/l/logging.rst
 .. include:: /pages/terminology/l/lvm.rst
 .. include:: /pages/terminology/l/lxc.rst
+.. include:: /pages/terminology/m/memcached.rst
 .. include:: /pages/terminology/m/mirantis-openstack.rst
 .. include:: /pages/terminology/m/ml2.rst
 .. include:: /pages/terminology/m/mongodb.rst
