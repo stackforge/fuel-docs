@@ -22,7 +22,8 @@ the fixes are not applicable for them.
    perform backups of Keystone configuration files,
    and stop all Keystone related services.
 
-#. Download the related fixes for puppet modules from the fuel-library repository
+#. Download the related fixes for puppet modules
+   from the `fuel-library <https://github.com/stackforge/fuel-library>`_ repository
    to the Fuel Master node:
    ::
 
