@@ -13,7 +13,7 @@
   {# BS2 needs "bootstrap-responsive.css". BS3 doesn't. #}
   {% if theme_bootstrap_version == "3" %}
     {% set theme_css_files = theme_css_files + [
-        '//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css',
+        'http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css',
         '_static/bootstrap-sphinx.css'
       ]
     %}
@@ -27,7 +27,7 @@
   {% endif %}
 {% else %}
   {% set theme_css_files = theme_css_files + [
-      '//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css',
+      'http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css',
       '_static/bootstrap-' + bootstrap_version + '/css/bootstrap-' + bootstrap_additional_css + '.min.css',
       '_static/bootstrap-sphinx.css',
       '_static/styles.css'
