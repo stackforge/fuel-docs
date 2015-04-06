@@ -37,6 +37,7 @@
 .. include:: /pages/operations/ha-testing-scenarios-ops.rst
 .. include:: /pages/operations/db-backup-ops.rst
 .. include:: /pages/operations/isoUSB-ops.rst
+.. include:: /pages/operations/how-to-enable-nova-quota.rst
 .. include:: /pages/operations/empty-role.rst
 .. include:: /pages/operations/configuring-repos-ops.rst
 .. include:: /pages/operations/external-ubuntu-ops.rst
