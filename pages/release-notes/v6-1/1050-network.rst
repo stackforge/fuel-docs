@@ -1,4 +1,3 @@
-
 .. _fuel-network.rst:
 
 Networking issues
@@ -28,4 +27,3 @@ Known networking issues
   See `LP1457478 <https://bugs.launchpad.net/fuel/+bug/1457478>`_.
 
 .. include:: /pages/release-notes/v6-1/9100-mellanox.rst
-
