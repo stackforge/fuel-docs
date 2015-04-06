@@ -332,6 +332,8 @@ to other fuel CLI commands:
 See :ref:`fuel-passwd-ops` for more information
 about Fuel authentication.
 
+.. _fuel-plugins-cli:
+
 Fuel Plugins
 ++++++++++++
 
