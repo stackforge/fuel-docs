@@ -63,8 +63,7 @@ and `Upgrade and OpenStack environment to a new major release
 .. include:: /pages/release-notes/v6-1/new-features/virtual-router.rst
 .. include:: /pages/release-notes/v6-1/new-features/neutron-agents.rst
 .. include:: /pages/release-notes/v6-1/new-features/isoUSB.rst
-
-
+.. include:: /pages/release-notes/v6-1/new-features/cinder.rst
 
 Additional Information
 ----------------------
