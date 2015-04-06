@@ -1,12 +1,12 @@
 
 .. _install-plugin:
 
-Install Fuel plug-ins
-=====================
+Install Fuel plugins
+====================
 
 Beginning with Mirantis OpenStack 6.0,
 Fuel features the ability to install plug-ins when you deploy your environment.
-Plug-ins are downloadable software components that extend the functionality of your environments in a flexible, repeatable and reliable manner.
+Plugins are downloadable software components that extend the functionality of your environments in a flexible, repeatable and reliable manner.
 
 For example,
 `Neutron LBaaS <https://software.mirantis.com/download-mirantis-openstack-fuel-plug-ins/#lbaas>`_
