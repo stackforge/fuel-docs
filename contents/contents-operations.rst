@@ -27,3 +27,4 @@
 .. include:: /pages/operations/9500-patching.rst
 .. include:: /pages/operations/ha-testing-scenarios-ops.rst
 .. include:: /pages/operations/db-backup-ops.rst
+.. include:: /pages/operations/how-to-enable-nova-quota.rst
