@@ -52,6 +52,7 @@ and `Upgrade and OpenStack environment to a new major release
 .. include:: /pages/release-notes/v6-1/new-features/ubuntu-downloadable.rst
 .. include:: /pages/release-notes/v6-1/new-features/ha-improve.rst
 .. include:: /pages/release-notes/v6-1/new-features/200-nodes.rst
+.. include:: /pages/release-notes/v6-1/new-features/nova.rst
 .. include:: /pages/release-notes/v6-1/new-features/heat-docker-resource.rst
 .. include:: /pages/release-notes/v6-1/new-features/granular-deploy.rst
 .. include:: /pages/release-notes/v6-1/new-features/base-os-role.rst
@@ -63,7 +64,6 @@ and `Upgrade and OpenStack environment to a new major release
 .. include:: /pages/release-notes/v6-1/new-features/virtual-router.rst
 .. include:: /pages/release-notes/v6-1/new-features/neutron-agents.rst
 .. include:: /pages/release-notes/v6-1/new-features/isoUSB.rst
-
 
 
 Additional Information
