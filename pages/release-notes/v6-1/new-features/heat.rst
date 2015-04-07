@@ -12,3 +12,14 @@ command to view the list of available resources.
 For more details, see the `Enable Heat Docker resource by default
 <https://blueprints.launchpad.net/mos/+spec/heat-docker-resource-by-default>`_
 blueprint.
+
+
+Heat configured to use Keystone v3 domains by default
+-----------------------------------------------------
+
+Full power of OpenStack Orchestration (Heat) is now available for
+non-admin users. Now both admin and non-admin users can use autoscaling,
+wait conditions, and software deployment features in their Heat templates.
+
+For more details, see the `Enable Heat to use Keystone v3 domains
+<https://blueprints.launchpad.net/mos/+spec/heat-domains>`_ blueprint.
