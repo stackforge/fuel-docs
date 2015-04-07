@@ -8,6 +8,9 @@ Storage technologies Issues
 Resolved storage technologies issues
 ------------------------------------
 
+* Cinder-backup service is now enabled for environments with Ceph running as Cinder back end.
+  See `LP1411635 <https://bugs.launchpad.net/fuel/+bug/1411635>`_.
+
 
 Known storage technologies issues
 ---------------------------------
