@@ -61,6 +61,7 @@ and `Upgrade and OpenStack environment to a new major release
 .. include:: /pages/release-notes/v6-1/new-features/linux-bonds.rst
 .. include:: /pages/release-notes/v6-1/new-features/fencing.rst
 .. include:: /pages/release-notes/v6-1/new-features/virtual-router.rst
+.. include:: /pages/release-notes/v6-1/new-features/sahara.rst
 .. include:: /pages/release-notes/v6-1/new-features/neutron-agents.rst
 
 
