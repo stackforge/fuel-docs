@@ -10,22 +10,51 @@ issues with Corosync and MySQL.
 
 **Workaround:**
 
-1. Verify that Corosync is really broken: ``service corosync status``.
+#. Verify that Corosync is really broken:
 
-* You should see this error:
-  ::
+   .. code-block:: shell
 
-    corosync dead but pid file exists
+       service corosync status
 
-2. Start Corosync manually: ``service corosync start``.
+   * You should see this error:
 
-3. Run ``ps -ef | grep mysql`` and kill ALL(!) **mysqld** and
-   **mysqld_safe** processes.
+     .. code-block:: shell
 
-4. Wait for Pacemaker to completely start MySQL processes.
+          corosync dead but pid file exists
 
-* You can check it with the ``ps -ef | grep mysql`` command.
-* If it doesn't start, run ``crm resource p_mysql`` start.
+#. Start Corosync manually:
 
-5. Run the ``crm status`` command to verify that this host is a member
-   of the cluster and that p_mysql does not contain any "Failed actions".
+   .. code-block:: shell
+
+        service corosync start
+
+#. Run the following command:
+
+   .. code-block:: shell
+
+         ps -ef | grep mysql
+
+
+   and kill ALL(!) **mysqld** and **mysqld_safe** processes.
+
+#. Wait for Pacemaker to completely start MySQL processes.
+
+    * Check it with the following command:
+
+      .. code-block:: shell
+
+         ps -ef | grep mysql`` command.
+
+    * If it doesn't start, run:
+
+      .. code-block:: shell
+
+         crm resource p_mysql
+
+#. To verify that this host is a member
+   of the cluster and that **p_mysql**
+   does not contain any "Failed actions", enter:
+
+   .. code-block:: shell
+
+        crm status
