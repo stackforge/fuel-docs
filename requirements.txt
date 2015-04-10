@@ -1,4 +1,4 @@
-sphinx
+sphinx==1.2.2
 cloud_sptheme
 sphinxcontrib-blockdiag
 rst2pdf
