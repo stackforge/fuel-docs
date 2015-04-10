@@ -87,13 +87,26 @@ The following symptoms will be present:
 * One or more Docker containers is missing from docker ps -a
 * /var/log/docker contains the following message::
 
-    Cannot start container fuel-core-5.1-postgres: Error getting container
+    Cannot start container fuel-core-6.0-postgres: Error getting container
     273c9b19ea61414d8838772aa3aeb0f6f1b982a74555fb6631adb6232459fe80 from driver
     devicemapper: Error writing metadata to
     /var/lib/docker/devicemapper/devicemapper/.json325916422: write
     /var/lib/docker/devicemapper/devicemapper/.json325916422: no space left on device
 
 **Solution**
+
+First, check metadata and repair, if needed:
+
+.. code-block:: bash
+
+    -- check and restore metadata
+    $ service docker stop
+    $ thin_check /var/lib/docker/devicemapper/devicemapper/metadata --- if no errors
+    $ thin_check --clear-needs-check-flag /var/lib/docker/devicemapper/devicemapper/metadata --- if errors found try:
+    $ thin_dump -r /var/lib/docker/devicemapper/devicemapper/metadata -o /tmp/metadata.xml
+    $ thin_restore -i /tmp/metadata.xml -o /var/lib/docker/devicemapper/devicemapper/metadata
+    $ service docker start
+
 
 This solution requires data recovery, described in the Summary above.
 It is necessary to recover data manually
@@ -106,7 +119,7 @@ missing such a message, it can be found this way:
 
 .. code-block:: bash
 
-   fuel_release=5.1
+   fuel_release=6.0
    container=postgres
    #Raise -m1 if you deleted and recreated before disk space incident
    grep -m1 -A5 "create?name=fuel-core-${fuel_release}-${container}" /var/log/docker
@@ -248,7 +261,7 @@ Corrupt ext4 filesystem on Docker container
 
 Error::
 
-  Cannot start container fuel-core-5.1-rsync: Error getting container
+  Cannot start container fuel-core-6.0-rsync: Error getting container
   df5f1adfe6858a13b0a9fe81217bf7db33d41a3d4ab8088d12d4301023d4cca3 from driver
   devicemapper: Error mounting
   '/dev/mapper/docker-253:2-341202-df5f1adfe6858a...d41a3d4ab8088d12d4301023d4cca3'
