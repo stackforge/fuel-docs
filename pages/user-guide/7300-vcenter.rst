@@ -29,15 +29,8 @@ can be used as the host operating system on the Slave nodes
 for environments that support integration with vSphere:
 
 .. image:: /_images/user_screen_shots/vcenter-create-env.png
-   :width: 50%
+   :width: 100%
 
-Choose Deployment Mode for vCenter
-++++++++++++++++++++++++++++++++++
-
-You can deploy Mirantis OpenStack with or without :ref:`ha-term`.
-
-.. image:: /_images/user_screen_shots/vcenter-deployment-mode.png
-   :width: 50%
 
 .. raw: pdf
 
@@ -56,7 +49,7 @@ enabled.
 
 
 .. image:: /_images/user_screen_shots/select-two-hypervisors.png
-   :width: 50%
+   :width: 100%
 
 .. _vcenter-netv-service:
 
@@ -66,7 +59,7 @@ Select Network Service for vCenter
 Currently, the only support network option for vCenter is nova-network.
 
 .. image:: /_images/user_screen_shots/vcenter-networking-no-nsx.png
-   :width: 50%
+   :width: 100%
 
 .. raw: pdf
 
@@ -86,14 +79,12 @@ If you would like to use Glance with VMware datastore,
 enable it on the *Settings* tab of the Fuel web UI
 and configure backend on the VMware tab.
 
-.. image:: /_images/user_screen_shots/cinder-storage-backend.png
-   :width: 50%
+.. image:: /_images/user_screen_shots/cinder-storage-backend-vmware.png
+   :width: 100%
 
 After you create the environment, you must enable the VMDK
 driver for Cinder on the *Settings* tab.
 
-- If you are using the deprecated Multi-node (non-HA) mode,
-  local storage is used as the backend for Glance.
 
 Related projects for vCenter
 ++++++++++++++++++++++++++++
