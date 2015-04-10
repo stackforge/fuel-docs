@@ -29,15 +29,8 @@ can be used as the host operating system on the Slave nodes
 for environments that support integration with vSphere:
 
 .. image:: /_images/user_screen_shots/vcenter-create-env.png
-   :width: 50%
+   :width: 100%
 
-Choose Deployment Mode for vCenter
-++++++++++++++++++++++++++++++++++
-
-You can deploy Mirantis OpenStack with or without :ref:`ha-term`.
-
-.. image:: /_images/user_screen_shots/vcenter-deployment-mode.png
-   :width: 50%
 
 .. raw: pdf
 
@@ -56,7 +49,7 @@ enabled.
 
 
 .. image:: /_images/user_screen_shots/select-two-hypervisors.png
-   :width: 50%
+   :width: 100%
 
 .. _vcenter-netv-service:
 
@@ -66,7 +59,7 @@ Select Network Service for vCenter
 Currently, the only support network option for vCenter is nova-network.
 
 .. image:: /_images/user_screen_shots/vcenter-networking-no-nsx.png
-   :width: 50%
+   :width: 100%
 
 .. raw: pdf
 
@@ -86,14 +79,12 @@ If you would like to use Glance with VMware datastore,
 enable it on the *Settings* tab of the Fuel web UI
 and configure backend on the VMware tab.
 
-.. image:: /_images/user_screen_shots/cinder-storage-backend.png
-   :width: 50%
+.. image:: /_images/user_screen_shots/cinder-storage-backend-vmware.png
+   :width: 100%
 
 After you create the environment, you must enable the VMDK
 driver for Cinder on the *Settings* tab.
 
-- If you are using the deprecated Multi-node (non-HA) mode,
-  local storage is used as the backend for Glance.
 
 Related projects for vCenter
 ++++++++++++++++++++++++++++
@@ -103,12 +94,12 @@ so you cannot run Murano in the OpenStack environment
 with vSphere integration.
 
 
-.. image:: /_images/user_screen_shots/vcenter-additional.png
-   :width: 50%
+.. image:: /_images/user_screen_shots/platform_services-vmware.png
+   :width: 100%
 
 Note that not all :ref:`Ceilometer<ceilometer-term>`
 metrics are collected for the vCenter environment.
-For more details about the Ceilometer plug-in for vCenter,
+For more details about the Ceilometer plugin for vCenter,
 see `Support for VMware vCenter Server <https://wiki.openstack.org/wiki/Ceilometer/blueprints/vmware-vcenter-server#Support_for_VMware_vCenter_Server>`_.
 
 .. raw: pdf
@@ -120,7 +111,7 @@ Complete the creation of your vCenter environment
 
 
 .. image:: /_images/user_screen_shots/deploy_env.png
-   :width: 50%
+   :width: 100%
 
 
 Select "Create" and click on the icon for your named environment.
@@ -173,17 +164,19 @@ virtual machine tenants into separate broadcast domains.
   for the VLAN ID in the ESXi host network configuration
 
 .. image:: /_images/user_screen_shots/vcenter-nova-network.png
-   :width: 50%
+   :width: 100%
 
 - For *VLAN manager*, select the checkbox in the Nova-network settings
 
 .. image:: /_images/user_screen_shots/nova-vlan-check.png
-   :width: 50%
+   :width: 100%
 
 - Specify Nova-network configuration
 
 .. image:: /_images/user_screen_shots/nova-net-vlan.png
-   :width: 50%
+   :width: 100%
+
+You can also press **Verify Networks** button to check if networks are configured correctly.
 
 .. _settings-tab:
 
