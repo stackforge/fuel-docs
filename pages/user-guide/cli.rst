@@ -332,3 +332,48 @@ to other fuel CLI commands:
 See :ref:`fuel-passwd-ops` for more information
 about Fuel authentication.
 
+Fuel Plugins
+++++++++++++
+
+* Once an .fp plugin is downloaded and copied to the Fuel Master node,
+  you can install it with:
+
+  ::
+
+    fuel plugins -- install <fuel-plugin-file>
+
+* For rpm plugin format, run the following command:
+
+  ::
+
+     yum install <fuel-plugin-file>
+
+* You can see the list of all installed plugins using:
+
+  ::
+
+     fuel-plugins --list
+
+
+  You should get the following output:
+
+  ::
+
+            fuel plugins --list
+
+         id |    name                  | version  | package_version
+        ----|--------------------------|----------|--------
+        1   | zabbix_monitoring        | 1.0.0    | 2.0.0
+
+
+* To remove a plugin, run:
+
+  ::
+
+     fuel plugins --remove <fuel-plugin-file>
+
+   Optionally, *==<plugin-version>* can be specified:
+
+   ::
+
+     fuel plugins --remove <fuel-plugin-file>==<fuel-plugin-version>
