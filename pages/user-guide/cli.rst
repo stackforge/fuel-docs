@@ -332,3 +332,64 @@ to other fuel CLI commands:
 See :ref:`fuel-passwd-ops` for more information
 about Fuel authentication.
 
+Fuel Plugins
+++++++++++++
+
+For summary information on Fuel plugins, see :ref:`
+Install Fuel plugins<install-plugin>` section.
+
+* Once a plugin is downloaded and copied to the Fuel Master node,
+  you can install it with:
+
+  ::
+
+    fuel plugins --install <fuel-plugin-file>
+
+  It is recommended that you install rpm plugins
+  using the command above. Nevertheless, if you would
+  like to do that manually, run the following command:
+
+  ::
+
+     yum install <fuel-plugin-file>
+
+   Register the plugin in :ref:`Nailgun<nailgun-term:>` with
+   ``fuel plugins --register <fuel-plugin-name>==<fuel-plugin-version>``
+   You can run ``fuel plugins --sync`` instead, but
+   in this case Fuel Client will update all
+   plugins on the file system in Nailgun.
+
+* You can see the list of all installed plugins using:
+
+  ::
+
+     fuel plugins --list
+
+
+  You should get the following output:
+
+  ::
+
+            fuel plugins --list
+
+         id |    name                  | version  | package_version
+        ----|--------------------------|----------|--------
+        1   | <fuel-plugin-name>       | 1.0.0    | 2.0.0
+
+
+* To remove a plugin, run:
+
+  ::
+
+     fuel plugins --remove <fuel-plugin-name>==<fuel-plugin-version>
+
+
+* To update an rpm plugin, run:
+
+  ::
+
+    fuel plugins --update <fuel-plugin-name>
+
+  Updates are *not* supported for fp plugins.
+
+To see the list of all available options, use ``fuel plugins --help`` command.
