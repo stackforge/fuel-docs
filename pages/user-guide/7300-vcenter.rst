@@ -166,6 +166,13 @@ You should choose either the Nova-network FlatDHCP or the VLAN manager:
 * FlatDHCP manager uses a single IP subnet.
   Select it if you do not want to configure VLANs on your network equipment.
 
+Pay attention that nova-network will be working in single host mode (process
+runs on one of controllers) if you are using vCenter. When nova-network crashes
+it will be restarted by :ref:`pacemaker<pacemaker-term>` on same controller or
+on another live controller, during this time all virtual machines will lose
+connectivity with external networks. Without vCenter each compute node holds
+its own nova-network process (multi host mode).
+
 For information on FlatDHCP and VLAN manager architecture,
 see :ref:`Nova Network Topologies<nova-topologies-arch>`.
 
