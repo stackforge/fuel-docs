@@ -35,20 +35,30 @@ those used by the specific version of MySQL.
    to the Fuel Master node:
    ::
 
-       wget --no-check-certificate -O /etc/puppet/modules/galera/files/ocf/mysql-wss https://raw.githubusercontent.com/stackforge/fuel-library/master/deployment/puppet/galera/files/ocf/mysql-wss
+       wget --no-check-certificate -O \
+       /etc/puppet/modules/galera/files/ocf/mysql-wss \
+       https://raw.githubusercontent.com/stackforge/fuel-library/master/deployment/puppet/ \
+       galera/files/ocf/mysql-wss
 
 #. The OCF script requires some modification
    as it was originally designed for MySQL 5.6:
 
    ::
 
-       perl -pi -e 's/--wsrep-new-cluster/--wsrep-cluster-address=gcomm:\/\//g' /etc/puppet/modules/galera/files/ocf/mysql-wss
+        perl -pi -e 's/--wsrep-new-cluster/--wsrep-cluster-address=gcomm:\/\//g' \
+        /etc/puppet/modules/galera/files/ocf/mysql-wss
 
 #. Copy the script to all controllers
    ::
 
-       for i in $(fuel nodes | awk '/ready.*controller.*True/{print $1}'); do scp /etc/puppet/modules/galera/files/ocf/mysql-wss node-$i:/etc/puppet/modules/galera/files/ocf/mysql-wss; done
-       for i in $(fuel nodes | awk '/ready.*controller.*True/{print $1}'); do scp /etc/puppet/modules/galera/files/ocf/mysql-wss node-$i:/usr/lib/ocf/resource.d/mirantis/mysql-wss; done
+       for i in $(fuel nodes | awk '/ready.*controller.*True/{print $1}'); \
+       do scp /etc/puppet/modules/galera/files/ocf/mysql-wss \
+       node-$i:/etc/puppet/modules/galera/files/ocf/mysql-wss; done
+
+       for i in $(fuel nodes | awk '/ready.*controller.*True/{print $1}'); \
+       do scp /etc/puppet/modules/galera/files/ocf/mysql-wss \
+       node-$i:/usr/lib/ocf/resource.d/mirantis/mysql-wss; done
+
 
 #. Configure the p_mysql resource for the new Galera OCF script
    ::
