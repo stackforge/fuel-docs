@@ -6,6 +6,7 @@ without a need to redeploy it completely.
 
 .. warning:: Updating Mirantis OpenStack deployment could override customizations,
    manually applied patches and cause restart of OpenStack services.
+   It is highly recommended that you backup of your deployment before applying updates.
    Please, consult Mirantis Support, if you have any questions or concerns.
 
 Please, follow the instruction below to install updates.
