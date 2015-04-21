@@ -68,8 +68,8 @@ Ceilometer issues
   and we have only been able to reproduce one instance
   of `ceilometer-agent-notification` failing.
   As a work around, restart `ceilometer-agent-notification`
-  after restarting RabbitMQ.
-  See `LP1393505 <https://bugs.launchpad.net/mos/+bug/1393505>`_.
+  after restarting RabbitMQ. The issue can be fixed by updating
+  the product. See :ref:`Maintenance updates for Ceilometer <updates-ceilometer-rn>`. 
 
 * Ceilometer does not obtain Nova \*.rate pollsters.
   This is related to an upstream bug:
