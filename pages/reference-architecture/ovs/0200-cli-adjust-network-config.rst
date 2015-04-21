@@ -19,7 +19,6 @@ modify and upload if needed) the environment's 'deployment default' configuratio
 
    Please, make sure you read :ref:`the Fuel CLI documentation <cli_usage>` carefully.
 
-
 The part of this data structure that describes how to apply the network configuration
 is the 'network_scheme' key in the top-level hash of the YAML file. Let's take a
 closer look at this substructure. The value of the 'network_scheme' key is a hash with

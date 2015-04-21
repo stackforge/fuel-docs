@@ -20,12 +20,6 @@ Fuel CLI tool is a powerful tool that allows you to:
 
 Fuel CLI may break your environment if not used carefully.
 
-It is necessary to understand that any modifications done using Fuel CLI
-take precedence over the settings made from the browser.
-Fuel shows a special message to inform you:
-
-.. image:: /_images/fuel-cli-warning.png
-
 .. contents :local:
 
 Basic usage
@@ -338,73 +332,3 @@ to other fuel CLI commands:
 See :ref:`fuel-passwd-ops` for more information
 about Fuel authentication.
 
-.. _fuel-plugins-cli:
-
-Fuel Plugins
-++++++++++++
-
-For summary information on Fuel plugins, see :ref:`Install Fuel plugins <install-plugin>`
-section.
-
-* Once a plugin is downloaded and copied
-  to the Fuel Master node,
-  you can install it with:
-
-  ::
-
-    fuel plugins --install <fuel-plugin-file>
-
-  It is recommended that you install rpm plugins
-  using the command above.
-
-  Nevertheless, if you would
-  like to do that manually, follow these steps:
-
-  * Run the following command:
-
-    ::
-
-        yum install <fuel-plugin-file>
-
-  * Register the plugin in :ref:`Nailgun<nailgun-term>` with
-    *fuel plugins --register <fuel-plugin-name>==<fuel-plugin-version>*
-    command.
-    You can run *fuel plugins --sync* instead, but
-    in this case Fuel Client will update all
-    plugins on the file system in Nailgun.
-
-* You can see the list of all installed plugins using:
-
-  ::
-
-     fuel plugins --list
-
-
-  You should get the following output:
-
-  ::
-
-            fuel plugins --list
-
-         id |    name                  | version  | package_version
-        ----|--------------------------|----------|--------
-        1   | <fuel-plugin-name>       | 1.0.0    | 2.0.0
-
-
-* To remove a plugin, run:
-
-  ::
-
-     fuel plugins --remove <fuel-plugin-name>==<fuel-plugin-version>
-
-
-* To update an rpm plugin, run:
-
-  ::
-
-    fuel plugins --update <fuel-plugin-file>
-
-
-  .. note::  Updates are *not* supported for fp plugins.
-
-To see the list of all available options, use ``fuel plugins --help`` command.

@@ -17,14 +17,15 @@ Passing custom attributes are useful
 when you have some Puppet manifests that should be run
 but are not supported by Fuel itself.
 
-.. warning:: Be very careful when modifying the configuration files.
+.. warning::  Be very careful when modifying the configuration files.
    A simple typo when editing these files
-   may severely damage your environment. When you modify the YAML files,
+   may severely damage your environment.
+
+   When you modify the YAML files,
    you will receive a warning
    that some attributes were modified from the outside.
    Some features may become inaccessible
-   from the UI after you do this.
-   Please, read :ref:`Using Fuel CLI <cli_usage>` section carefully.
+   from the  UI after you do this.
 
 To do this:
 
