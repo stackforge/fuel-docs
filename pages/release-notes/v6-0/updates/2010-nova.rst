@@ -13,3 +13,13 @@ Resolved Issues
   resulting in a potential hijack of consoles where a user was still logged in.
   See `LP1420273 <https://bugs.launchpad.net/mos/+bug/1420273>`_.
 
+* When RabbitMQ fails, the consumer used to have been disconnected
+  before the publisher sent a message. Currently, if the consumer has not
+  declared the queue, the publisher does not send a message to an exchange
+  that is not bound to a queue, to prevent the message loss. Setting
+  ``passive = True`` does not cause the publisher failure anymore,
+  and it retries if the consumer has not declared the receiving queue yet.
+  See `LP1427892 <https://bugs.launchpad.net/mos/+bug/1427892>`_.
+
+* The issue of noVNC access to VMs when reverse DNS lookups fail has been fixed.
+  See `LP1409661 <https://bugs.launchpad.net/mos/+bug/1409661>`_.
