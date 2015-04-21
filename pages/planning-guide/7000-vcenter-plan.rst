@@ -6,12 +6,12 @@ Preparing for vSphere Integration
 Fuel 5.0 and later can deploy a Mirantis OpenStack environment
 that boots and manages virtual machines in VMware vSphere.
 VMware provides a vCenter driver for OpenStack
-that enables the nova-compute service to
+that enables the Nova-compute service to
 communicate with a VMware vCenter server
 that manages one or more ESX host clusters.
 If your vCenter manages multiple ESX host clusters, Fuel 5.1 allows
 you to specify several or all clusters for a single OpenStack environment,
-so that one nova-compute service manages
+so that one Nova-compute service manages
 multiple ESX host clusters via single vCenter server.
 
 .. note:: Beginning with Fuel 6.1, vCenter cannot be
@@ -20,14 +20,6 @@ multiple ESX host clusters via single vCenter server.
    be turned into a plugin in the future Fuel
    releases.
 
-
-.. note:: In 5.x environments that use vCenter as the hypervisor,
-   the nova-compute service runs only on Controller nodes.
-
-   In 6.0 Fuel release, the relation between a nova-compute service and an ESXi host cluster
-   is changed from one-to-many to one-to-one (so-called 1-1 mapping).
-   In other words, to manage multiple ESXi host clusters,
-   you now need to run multiple nova-compute services.
 
 The vCenter driver makes management convenient
 from both the OpenStack Dashboard (:ref:`horizon-term`)
@@ -139,15 +131,6 @@ Limitations
   For more details about the Ceilometer plugin for vCenter,
   see `Support for VMware vCenter Server
   <https://wiki.openstack.org/wiki/Ceilometer/blueprints/vmware-vcenter-server#Support_for_VMware_vCenter_Server>`_
-
-
-.. note::    Mirantis has the following lab setup tested for Mirantis OpenStack release 6.0
-             for VMware environment:
-
-             * vCenter 5.5.
-
-             * vCenter 5.5.u2
-
 
 
 For background information about how vCenter support

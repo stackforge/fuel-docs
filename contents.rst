@@ -13,9 +13,9 @@ Documentation
   operations
   virtualbox
   reference-architecture
+  plugin-dev
   terminology
   file-ref
   release-notes
   style-guide
   eula
-  third-party-licenses

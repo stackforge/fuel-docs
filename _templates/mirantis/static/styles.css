@@ -78,7 +78,7 @@ body a:hover {
 }
 
 .navbar-default {
-	height: 80px;
+	min-height: 80px;
 	background: #000;
 	padding-top: 20px;
 }
@@ -233,7 +233,7 @@ p.admonition-title {
 }
 
 div.admonition {
-	font-size: 13px;
+	font-size: 14px;
 }
 
 .cc {
@@ -246,6 +246,17 @@ div.admonition {
 
 .cc img {
   margin-bottom: 10px;
+}
+
+.form-control:focus {
+  border-color: #D3301A;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),0 0 8px #D3301A;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),0 0 8px #D3301A;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+  border-color: #222;
 }
 
 @media (max-width: 767px) and (min-width: 0px) {
