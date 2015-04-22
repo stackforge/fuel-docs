@@ -13,10 +13,10 @@ Documentation
   operations
   virtualbox
   reference-architecture
+  plugin-dev
   terminology
   plugin-dev
   file-ref
   release-notes
   style-guide
   eula
-  third-party-licenses

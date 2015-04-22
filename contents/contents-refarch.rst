@@ -14,5 +14,3 @@
 .. include:: /pages/reference-architecture/8100-zabbix.rst
 .. include:: /pages/reference-architecture/8000-fuel-upgrade.rst
 .. include:: /pages/reference-architecture/8800-base-os.rst
-.. include:: /pages/reference-architecture/containers-master-node.rst
-

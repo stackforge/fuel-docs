@@ -14,7 +14,6 @@ and/or the Nova CLI:
 
   - Open the "Manage Compute" tab
     and go to the Instances page.
-
   - Press the "Launch instance" button
     and specify the VM parameters in the pop-up window.
     This launches a new VM
@@ -23,14 +22,4 @@ and/or the Nova CLI:
 - Use the Nova CLI to see the VMware cluster resources
   or to boot a new VM in vCenter.
 
-Nova-compute and vSphere clusters mapping
------------------------------------------
 
-In earlier Fuel releases, 1-N mapping between nova-compute service
-and vSphere cluster (cluster that is formed from ESXi hosts by vCenter server) was used.
-In most cases, a single nova-compute service instance uses many vSphere clusters, managed by a single vCenter.
-Beginning with 6.1 Fuel release, this behaviour was changed to 1-1 mapping, so that a single nova-compute service
-instance now interacts with a single vSphere cluster.
-
-.. image:: /_images/1-1-mapping.png
-   :width: 50%
