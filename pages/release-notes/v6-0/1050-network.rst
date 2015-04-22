@@ -102,8 +102,9 @@ Known networking issues
 
 * Sometimes Open vSwitch flows enabling network access
   to VM instances are dropped.
-  To work around this problem, restart Neutron L3 agent.
-  See `LP1393771 <https://bugs.launchpad.net/bugs/1393771>`_.
+  This `issue <https://bugs.launchpad.net/bugs/1393771>`_ can be fixed
+  by updating the product.
+  See :ref:`Maintenance updates for Neutron<updates-neutron-rn>`.
 
 * If you enable *Assign public network to all nodes* option on the
   *Settings* tab of the Fuel web UI,
