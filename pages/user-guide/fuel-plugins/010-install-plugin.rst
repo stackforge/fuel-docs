@@ -1,69 +1,59 @@
 
 .. _install-plugin:
 
-
-Install Fuel plugins
-====================
-
-Overview
---------
+Install Fuel plug-ins
+=====================
 
 Beginning with Mirantis OpenStack 6.0,
-Fuel features the ability to install plugins before you deploy your environment.
-Plugins are downloadable software components that extend the functionality of your
-environments in a flexible, repeatable and reliable manner.
+Fuel features the ability to install plug-ins when you deploy your environment.
+Plug-ins are downloadable software components that extend the functionality of your environments in a flexible, repeatable and reliable manner.
 
 For example,
 `Neutron LBaaS <https://software.mirantis.com/download-mirantis-openstack-fuel-plug-ins/#lbaas>`_
 provides Load-Balancing-as-a-Service for Neutron, OpenStack Network Service.
 
-Certification
--------------
+Plug-ins fall into two categories:
 
-The Fuel Plugins Certification is
-a set of technical and business
-processes that Mirantis uses
-to verify Fuel plugins built by vendors,
-allowing customer choice of plugins to lead to a predictable outcome.
-That means, Mirantis Certification ensures the quality of developed solution.
+* *Certified*: certified plug-ins are thoroughly reviewed, tested and supported by Mirantis.
 
-In terms of Certification, Fuel plugins fall into two categories:
+* *Non-Certified*: non-certified plug-ins are reviewed by Mirantis, but not supported or guaranteed.
 
-* *Certified* -  thoroughly reviewed, tested and supported by Mirantis.
+All plug-ins, both certified and non-certified, are digitally signed and hosted by Mirantis.
 
-* *Non-Certified* - reviewed, tested in terms of code and installation procedure,
-  but not supported by Mirantis.
+.. SeeAlso::
 
+      If you are interested in developing your own plug-in for Fuel,
+      see the :ref:`Fuel Plug-in Guide<plugin-dev>`.
 
-Installation steps
-------------------
+How to install Fuel plug-ins
+----------------------------
 
-Installation procedure is common for all plugins, but their requirements differ.
+Installation procedure is common for all plug-ins, but their requirements differ.
 
-#. Download a plugin from
-   `Fuel Plugins Catalog <https://software.mirantis.com/download-mirantis-openstack-fuel-plug-ins/>`_.
+In current plug-ins implementation,
+it is impossible to uninstall the plug-in.
+You can use the following workaround to reinstall it:
 
-#. Get acquainted with the plugin documentation to learn about
+::
+
+          rm /var/www/nailgun/plugins/<plugin_name>
+          fuel plugins --force --install <plugin_name>
+
+#. Download a plug-in from
+   `Plugin Catalog <https://software.mirantis.com/download-mirantis-openstack-fuel-plug-ins/>`_.
+
+#. Download the plug-in documentation to get acquainted with
    prerequisites and limitations.
 
-#. Copy the plugin on already installed Fuel Master node.
-   If you do not have the Fuel Master node yet, see `Mirantis Quick Start Guide <https://software.mirantis.com/quick-start/>`_.
+#. Copy the plug-in on already installed Fuel Master node; ssh can be used for that.
+   If you do not have the Fuel Master node yet, see :ref:`virtualbox`.
 
    ::
 
-         scp <fuel_plugin-file> root@:<the_Fuel_Master_node_IP>:/tmp
-
-#. Log into the Fuel Master node and install the plugin:
-
-   ::
-
+         scp fuel_plugin_name-1.0.0.fp root@:<the_Fuel_Master_node_ip>:/tmp
          cd /tmp
-         fuel plugins --install <fuel-plugin-file>
+         fuel plugins --install <fuel_plugin_name>.fp
 
 #. After your environment is created, open *Settings* tab on the
-   Fuel web UI, scroll down the page and select the plugin checkbox.
-   Finish environment configuration and click *Deploy* button.
-
-For Fuel plugins CLI reference, see :ref:`the corresponding section <fuel-plugins-cli>`.
-
-
+   Fuel web UI and select the plug-in checkbox. After that you
+   can deploy the environment.
