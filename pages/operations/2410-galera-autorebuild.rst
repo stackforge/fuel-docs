@@ -51,6 +51,7 @@ To remove all GTIDs and SEQNOs from Corosync CIB
 and allow the OCF script to reread the data
 from the `grastate.dat` file, you should do::
 
-  cibadmin --delete-all --query --xpath "//nodes/*/*/nvpair[@name=\"gtid\"]" --force
+  cibadmin --delete-all --query --xpath "//nodes/*/*/nvpair[@name=\"gtid\"]"
+  --force
 
 

@@ -1,3 +1,4 @@
+
 .. index:: Fuel Plugin Guide
 
 .. _plugin-dev:
@@ -5,6 +6,7 @@
 =================
 Fuel Plugin Guide
 =================
+
 
 .. contents:: :local:
 

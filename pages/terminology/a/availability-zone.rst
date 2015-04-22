@@ -14,7 +14,4 @@ Users can specify an Availability Zone
 when launching an instance in Horizon;
 the :ref:`Nova scheduler <scheduler-term>` then uses the Availability Zone
 as a criteria when allocating an instance to a node.
-Since Fuel 6.1 supports KVM/QEMU with vCenter in
-one environment, different availability zones are used.
-For more information and instructions, see :ref:`Hypervisors<dualhypervisor>`.
 
