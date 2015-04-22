@@ -96,6 +96,9 @@ pygments_style = 'sphinx'
 # A list of ignored prefixes for module index sorting.
 #modindex_common_prefix = []
 
+# Enable custom 404 document
+#html_extra_path = ['_templates/mirantis/static/.htaccess', '_templates/mirantis/static/404.html']
+
 
 # -- Options for HTML output ---------------------------------------------------
 

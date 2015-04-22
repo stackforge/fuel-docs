@@ -26,6 +26,8 @@
 
 .. include:: /pages/preface/preface.rst
 
-.. _operations-guide:
+
+.. _plugin-dev:
+
 
 .. include:: /contents/contents-plugin-dev.rst
