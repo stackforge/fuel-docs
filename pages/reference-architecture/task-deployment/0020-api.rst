@@ -78,3 +78,106 @@ And the user will be able to use start and end at the same time:
 
 Nailgun will build a path that includes only thw necessary tasks to join these two
 points.
+
+Graph representation
+--------------------
+
+Beginning with Fuel 6.1, in addition to commands above,
+there also exists a helper that allows
+to download deployment graph in DOT `DOT <http://www.graphviz.org/doc/info/lang.html>`_
+format and later render it.
+
+Commands for downloading graphs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Use the following commands to download graphs:
+
+* To download a full graph for environment with id 1
+  and print it on the screen, use the command below.
+  Note, that it will print its output to the standard one.
+
+  ::
+
+      fuel graph --env <1> --download
+
+* To download graph and save it to the ``graph.gv`` file:
+
+  ::
+
+      fuel graph --env <1> --download > graph.gv
+
+
+* It is also possible to specify the same
+  options as for the deployment command.
+  Point out start and end nodes in graph:
+
+  ::
+
+     fuel graph --env <1> --download --start netconfig > graph.gv
+
+     fuel graph --env <1> --download --end netconfig > graph.gv
+
+* You can also specify both:
+
+  ::
+
+     fuel graph --env <1> --download --start netconfig --end upload_cirros > graph.gv
+
+
+* To skip the tasks (they will be grayed out in the graph
+  visualization), use:
+
+  ::
+
+      fuel graph --env <1> --download --skip netconfig hiera  > graph.gv
+
+* To completely remove skipped tasks from
+  graph visualization, use ``--remove`` parameter:
+
+  ::
+
+     fuel graph --env <1> --download --start netconfig --end upload_cirros --remove skipped > graph.gv
+
+
+* To see only parents of a particular tasks:
+
+  ::
+
+      fuel graph --env 1 --download --parents-for hiera  > graph.gv
+
+Commands for rendering graphs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* Downloaded graph in DOT format can be rendered.
+  It requires additional packages to be installed:
+
+  * `Graphviz <http://www.graphviz.org/>`_
+    using ``apt-get install graphviz`` or ``yum install graphviz`` commands.
+
+  * `pydot-ng <https://pypi.python.org/pypi/pydot-ng/>`_
+    using ``pip install pydot-ng`` command  or
+    `pygraphivz <https://pypi.python.org/pypi/pygraphviz>`_
+    using ``pip install pygraphivz`` command.
+
+* After installing the packages, you can render the graph using the
+  command below. It will take the contents of ``graph.gv`` file,
+  render it as a PNG image and save as ``graph.gv.png``.
+
+  ::
+
+      fuel graph --render graph.gv
+
+
+* To read graph representation from the standard input,
+  use:
+
+  ::
+
+     fuel graph --render -
+
+* To avoid creating an intermediate file when downloading
+  and rendering graph, you can combine both commands:
+
+  ::
+
+      fuel graph --env <1> --download | fuel graph --render -
