@@ -128,6 +128,7 @@ Maintenance updates
 .. include:: /pages/release-notes/v6-0/updates/2010-nova.rst
 .. include:: /pages/release-notes/v6-0/updates/3010-neutron.rst
 .. include:: /pages/release-notes/v6-0/updates/4010-glance.rst
+.. include:: /pages/release-notes/v6-0/updates/6010-swift.rst
 .. include:: /pages/release-notes/v6-0/updates/9010-others.rst
 
 
