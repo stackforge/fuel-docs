@@ -22,4 +22,19 @@ Resolved Issues
 * The memory leak in python-libvirt that affected Compute service
   has been fixed. See `LP1419362 <https://bugs.launchpad.net/mos/6.0-updates/+bug/1419362>`_.
 
+Other Resolved Issues
+---------------------
+
+* Sometimes the rpc subsystem could lose its temporary queues
+  and caused actions failure. The issue is fixed.
+  See `LP1415932 <https://bugs.launchpad.net/mos/+bug/1415932>`_.
+
+* Previously, the download of a large file via Horizon was
+  performed incorrectly: the downloaded file was smaller
+  than the actual one. The attempts to pull the whole file
+  in memory caused memory overrun. The issue is fixed, and
+  Horizon now does not put the whole large file object into
+  memory before returning a response object. So large
+  objects can now be successfully downloaded via Horizon.
+  See `LP1423311 <https://bugs.launchpad.net/mos/+bug/1423311>`_
 
