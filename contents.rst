@@ -14,6 +14,7 @@ Documentation
   virtualbox
   reference-architecture
   terminology
+  plugin-dev
   file-ref
   release-notes
   style-guide
