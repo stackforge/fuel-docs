@@ -17,3 +17,9 @@ New Features and Resolved Issues in Mirantis OpenStack 6.0
 * Keystone service list no longer lacks Murano.
   See `LP1362037 <https://bugs.launchpad.net/bugs/1362037>`_.
 
+* The eventlet monkepatching now precedes the logging system
+  initialization. Previously, it occurred after the logging system
+  initialization thus leaving all the locks used in the
+  logging handlers non-patched and breaking ``threading.RLock``.
+  The initialization order is fixed, so eventlet locks work correctly.
+  See `LP1413341 <https://bugs.launchpad.net/mos/+bug/1413341>`_.
