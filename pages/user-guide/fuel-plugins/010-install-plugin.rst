@@ -34,8 +34,14 @@ In terms of Certification, Fuel plugins fall into two categories:
 * *Non-Certified* - reviewed, tested in terms of code and installation procedure,
   but not supported by Mirantis.
 
+
 See the certification requirements at
 `Mirantis website <https://www.mirantis.com/partners/become-mirantis-technology-partner/fuel-plugin-development/fuel-plugin-certification/>`_.
+
+For information on development requirements
+and FAQ, see
+`Fuel Plugins <https://wiki.openstack.org/wiki/Fuel/Plugins>`_ wiki page.
+
 
 Installation steps
 ------------------
