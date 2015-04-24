@@ -55,16 +55,17 @@ database, make a quick backup of it:
 .. code-block:: bash
 
    date=$(date --rfc-3339=date)
-   dockerctl shell postgres su postgres -c 'pg_dumpall --clean' \
-      > /root/postgres_backup_${date}.sql
+   dockerctl shell postgres su - postgres -c 'pg_dumpall --clean' \
+      > /root/postgres_backup_$(date +"%F-%T").sql
 
 
-Now try to repair whatever corruption you saw in Nailgun or PostgreSQL logs:
+Now try to reindex nailgun database:
 
 .. code-block:: bash
 
-   dockerctl shell postgres su postgres \
-      -c "psql nailgun -c 'reindex table notifications;'"
+   dockerctl shell postgres su - postgres -c "psql nailgun -S -c \"select pg_terminate_backend(pid) from pg_stat_activity where datname='nailgun';\""
+
+   dockerctl shell postgres su - postgres -c "psql nailgun -c 'reindex database nailgun;'"
 
 Lastly, check proper function:
 
@@ -72,7 +73,7 @@ Lastly, check proper function:
 
    dockerctl check all
 
-.. note:: You may need to restart the nailgun, keystone,
+.. note:: You may need to restart the postgres, nailgun, keystone,
    or ostf Docker container
    using the **dockerctl restart CONTAINERNAME** command.
 
@@ -106,18 +107,18 @@ missing such a message, it can be found this way:
 
 .. code-block:: bash
 
-   fuel_release=5.1
    container=postgres
-   #Raise -m1 if you deleted and recreated before disk space incident
-   grep -m1 -A5 "create?name=fuel-core-${fuel_release}-${container}" /var/log/docker
+   container_id=$(sqlite3 /var/lib/docker/linkgraph.db \
+   "select entity_id from edge where name like '%$container%'")
+   echo $container_id
+   #should look like:
+   273c9b19ea61414d8838772aa3aeb0f6f1b982a74555fb6631adb6232459fe80
 
 Once you have the container ID, you need to get the devicemapper block device
 ID for the container:
 
 .. code-block:: bash
 
-   container_id="273c9b19ea61414d8838772aa3aeb0f6f1b982a74555fb6631adb6232459fe80"
-   #Replace with your ID
    device_id=$(python -c 'import sys; import json; input = json.load(sys.stdin);\
    [sys.stdout.write(str(v["device_id"])) for k, v in input["Devices"].items() if
    k == sys.argv[1]]' "$container_id" < /var/lib/docker/devicemapper/devicemapper/json)
@@ -127,13 +128,29 @@ Now activate the volume and mount it:
 
 .. code-block:: bash
 
-   device_id="the device ID from previous step" #replace with the actual device_id
-   container="postgres" #replace with container name
-   pool=/dev/mapper/docker*pool
+   # Verify the your device_id and container variables are defined
+   echo $device_id
+   echo $container
+   pool=$(echo /dev/mapper/docker*pool)
    dmsetup create "${container}_recovery" --table "0 20971520 thin $pool $device_id"
    mkdir -p "/mnt/${container}_recovery"
+   mkdir -p "/root/${container}_recovery"
    mount -t ext4 -o rw,relatime,barrier=1,stripe=16,data=ordered,discard \
       "/dev/mapper/${container}_recovery" "/mnt/${container}_recovery"
+
+
+Verify that data is present in the mounted directory:
+
+   For postgres:
+.. code-block:: bash
+   ls -la /mnt/${container}_recovery/rootfs/var/lib/pgsql/9.3/data/
+   For astute:
+.. code-block:: bash
+   ls -la /mnt/${container}_recovery/rootfs/var/lib/astute 
+   For cobbler:
+.. code-block:: bash
+   ls -la /mnt/${container}_recovery/rootfs/var/lib/cobbler 
+
 
 Next, it is necessary to purge the container record from the Docker sqlite
 database. You may see an issue when running **dockerctl start CONTAINER**::
@@ -145,10 +162,10 @@ or if you are simply destroying and recreating it:
 
 .. code-block:: bash
 
-   #replace with container name and Fuel version
-   container_name="fuel-core-6.0-postgres"
-   container_id=$(sqlite3 /var/lib/docker/linkgraph.db "select entity_id from edge\
-      where name='${container_name}';")
+   #Make a backup dump of docker sqlite DB
+   cp /var/lib/docker/linkgraph.db /root/linkgraph_$(date +"%F-%T").db
+   container_id=$(sqlite3 /var/lib/docker/linkgraph.db \
+   "select entity_id from edge where name like '%$container%'")
    echo "Deleting container ID ${container_id}..."
    sqlite3 /var/lib/docker/linkgraph.db "delete from entity where\
       id='${container_id}';delete from edge where entity_id='${container_id}';"
@@ -161,7 +178,7 @@ For Cobbler:
 
 .. code-block:: bash
 
-   cp -R /mnt/cobbler_recovery/var/lib/cobbler /root/cobbler_recovery
+   cp -Rp /mnt/cobbler_recovery/rootfs/var/lib/cobbler /root/cobbler_recovery
    dockerctl destroy cobbler
    dockerctl start cobbler
    dockerctl copy "/root/cobbler_recovery/*" cobbler:/var/lib/cobbler/
@@ -171,22 +188,25 @@ For PostgreSQL:
 
 .. code-block:: bash
 
-   cp -R /mnt/postgres_recovery/var/lib/pgsql /root/postgres_recovery
+   cp -Rp /mnt/postgres_recovery/rootfs/var/lib/pgsql /root/postgres_recovery
    dockerctl destroy postgres
    dockerctl start postgres
-   dockerctl copy "/root/postgres_recovery/*" postgres:/var/lib/pgsql/
+   dockerctl shell postgres mv /var/lib/pgsql /root/pgsql_old
+   dockerctl copy /root/postgres_recovery/pgsql postgres:/var/lib/
+   dockerctl shell postgres chown -R postgres:postgres /var/lib/pgsql
    dockerctl restart postgres nailgun keystone ostf
 
 You may want to make a PostgreSQL backup at this point:
 
 .. code-block:: bash
 
-   dockerctl shell postgres su postgres -c "pg_dumpall --clean' \
-      > /root/postgres_backup_$(date).sql"
+   dockerctl shell postgres su - postgres -c 'pg_dumpall --clean' \
+         > /root/postgres_backup_$(date +"%F-%T").sql
 
 To recover a corrupted PostgreSQL database,
-you can import the dump to another PostgreSQL installation,
-where you can get a clean dump
+you can import the dump to another PostgreSQL installation with the same version,
+as on fuel master(in 6.0 it is 9.3.5)
+There you can get a clean dump
 that you then import to your PostgreSQL container:
 
 .. code-block:: bash
@@ -201,14 +221,13 @@ Now import the *dump.sql* file to the postgres container's database:
 
 .. code-block:: bash
 
-   dockerctl copy dump.sql postgres:/root/
-   dockerctl shell postgres su postgres -c "psql nailgun < /root/dump.sql"
+   dockerctl shell postgres su - postgres -c "psql nailgun" < dump.sql
 
 For Astute:
 
 .. code-block:: bash
 
-   cp -R /mnt/astute_recovery/var/lib/astute /root/astute_recovery
+   cp -Rp /mnt/astute_recovery/var/lib/astute /root/astute_recovery
    dockerctl destroy astute
    dockerctl start astute
    dockerctl copy "/var/lib/astute/*" astute:/var/lib/astute/
@@ -273,8 +292,9 @@ For stateful containers:
 
 .. code-block:: bash
 
-   #Replace with full container ID using docker ps -a | grep $container
-   container_id="df5f1adfe6858a13b0a9fe81217bf7db33d41a3d4ab8088d12d4301023d4cca3"
+   container_id=$(sqlite3 /var/lib/docker/linkgraph.db \
+   "select entity_id from edge where name like '%$container%'")
+   echo $container_id
    umount -l /dev/mapper/docker-*$container_id
    fsck -y /dev/mapper/docker-*$container_id
    dockerctl start $container
