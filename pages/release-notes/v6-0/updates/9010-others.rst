@@ -22,4 +22,12 @@ Resolved Issues
 * The memory leak in python-libvirt that affected Compute service
   has been fixed. See `LP1419362 <https://bugs.launchpad.net/mos/6.0-updates/+bug/1419362>`_.
 
+Other
+-----
 
+Resolved Issues
++++++++++++++++
+
+*  Sometimes the rpc subsystem could lose its temporary queues
+   and cause actions failure. The issue is fixed.
+   See `LP1415932 <https://bugs.launchpad.net/mos/+bug/1415932>`_.
