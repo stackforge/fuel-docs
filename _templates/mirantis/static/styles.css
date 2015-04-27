@@ -78,7 +78,7 @@ body a:hover {
 }
 
 .navbar-default {
-	height: 80px;
+	min-height: 80px;
 	background: #000;
 	padding-top: 20px;
 }
@@ -233,7 +233,7 @@ p.admonition-title {
 }
 
 div.admonition {
-	font-size: 13px;
+	font-size: 14px;
 }
 
 .cc {
@@ -248,6 +248,98 @@ div.admonition {
   margin-bottom: 10px;
 }
 
+img.width-50 {
+  width: 50%;
+}
+
+img.width-55 {
+  width: 55%;
+}
+
+img.width-60 {
+  width: 60%;
+}
+
+img.width-65 {
+  width: 65%;
+}
+
+img.width-70 {
+  width: 70%;
+}
+
+img.width-75 {
+  width: 75%;
+}
+
+img.width-80 {
+  width: 80%;
+}
+
+img.width-85 {
+  width: 85%;
+}
+
+img.width-90 {
+  width: 90%;
+}
+
+img.width-95 {
+  width: 95%;
+}
+
+img.width-100 {
+  width: 100%;
+}
+
+.form-control:focus {
+  border-color: #D3301A;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),0 0 8px #D3301A;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),0 0 8px #D3301A;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+  border-color: #222;
+}
+
+.cd-top {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  position: fixed;
+  bottom: 40px;
+  right: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  /* image replacement properties */
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  background: rgba(232, 98, 86, 0.8) url(cd-top-arrow.svg) no-repeat center 50%;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity .3s 0s, visibility 0s .3s;
+  -moz-transition: opacity .3s 0s, visibility 0s .3s;
+  transition: opacity .3s 0s, visibility 0s .3s;
+}
+
+.cd-top.cd-is-visible, .cd-top.cd-fade-out, .no-touch .cd-top:hover {
+  -webkit-transition: opacity .3s 0s, visibility 0s 0s;
+  -moz-transition: opacity .3s 0s, visibility 0s 0s;
+  transition: opacity .3s 0s, visibility 0s 0s;
+}
+
+.cd-top.cd-is-visible {
+  /* the button becomes visible */
+  visibility: visible;
+  opacity: 1;
+}
+
+.no-touch .cd-top:hover {
+  background-color: #e86256;
+  opacity: 1;
+}
+
 @media (max-width: 767px) and (min-width: 0px) {
 	.navbar-default .navbar-text {
 		margin-left: 15px;
@@ -259,16 +351,25 @@ div.admonition {
 		color: #ADADAD;
 		background-color: rgba(0, 0, 0, 0);
 	}
+	img.width-50, img.width-55, img.width-60, img.width-65, img.width-70, img.width-75, img.width-80, img.width-85, img.width-90, img.width-95 {
+		width: 100%;
+	}
 }
 
 @media (max-width: 991px) and (min-width: 768px) {
 	.navbar-form .form-control {
-		width: 170px;
+		width: 155px;
+	}
+	.navbar {
+		border-radius: 0;
 	}
 }
 
 @media (max-width: 1199px) and (min-width: 992px) {
 	.navbar-form .form-control {
 		width: 170px;
+	}
+	.navbar {
+		border-radius: 0;
 	}
 }
