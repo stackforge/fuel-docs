@@ -24,3 +24,10 @@ Resolved Issues
 * The issue of noVNC access to VMs when reverse DNS lookups fail has been fixed.
   See `LP1409661 <https://bugs.launchpad.net/mos/+bug/1409661>`_.
 
+* The IPAddress object is converted to string to address the
+  `LP1435712 <https://bugs.launchpad.net/mos/+bug/1435712>`_ issue.
+  If a user specifies an IP address using the :option:`--nic` option while booting
+  an instance with the :command:`nova boot` command, a Compute node invokes
+  the neutron client to create a port. However, as the IP address parameter used to
+  be an IPAddress object, the neutron client failed to send the request to the neutron
+  server.
