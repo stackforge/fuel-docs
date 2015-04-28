@@ -20,3 +20,4 @@ Documentation
   style-guide
   eula
   third-party-licenses
+  monitoring-guide
