@@ -1,0 +1,4 @@
+.. _mg-ceilometer:
+
+Ceilometer
+----------

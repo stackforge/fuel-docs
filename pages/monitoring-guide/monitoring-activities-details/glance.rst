@@ -1,0 +1,5 @@
+.. _mg-glance:
+
+Glance
+------
+
