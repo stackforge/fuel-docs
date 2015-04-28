@@ -12,25 +12,25 @@ issues with Corosync and MySQL.
 
 #. Verify that Corosync is really broken:
 
-   .. code-block:: shell
+   .. code-block:: bash
 
        service corosync status
 
    * You should see this error:
 
-     .. code-block:: shell
+     .. code-block:: bash
 
           corosync dead but pid file exists
 
 #. Start Corosync manually:
 
-   .. code-block:: shell
+   .. code-block:: bash
 
         service corosync start
 
 #. Run the following command:
 
-   .. code-block:: shell
+   .. code-block:: bash
 
          ps -ef | grep mysql
 
@@ -41,13 +41,13 @@ issues with Corosync and MySQL.
 
     * Check it with the following command:
 
-      .. code-block:: shell
+      .. code-block:: bash
 
          ps -ef | grep mysql
 
     * If it doesn't start, run:
 
-      .. code-block:: shell
+      .. code-block:: bash
 
          crm resource p_mysql
 
@@ -56,6 +56,6 @@ issues with Corosync and MySQL.
    does not contain any "Failed actions",
    run the following command:
 
-   .. code-block:: shell
+   .. code-block:: bash
 
         crm status
