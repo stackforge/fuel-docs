@@ -1,0 +1,4 @@
+.. _mg-cinder:
+
+Cinder
+------
