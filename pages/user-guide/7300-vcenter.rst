@@ -29,7 +29,7 @@ can be used as the host operating system on the Slave nodes
 for environments that support integration with vSphere:
 
 .. image:: /_images/user_screen_shots/vcenter-create-env.png
-   :width: 100%
+
 
 
 .. raw: pdf
@@ -210,7 +210,7 @@ see :ref:`Nova Network Topologies<nova-topologies-arch>`.
 Click **Verify Networks** button to check if networks are configured correctly.
 
        .. image:: /_images/user_screen_shots/nova-verify.png
-          :width: 100%
+
 
 Press **Save settings** button to continue.
 
