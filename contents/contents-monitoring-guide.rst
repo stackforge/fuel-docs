@@ -1,0 +1,9 @@
+.. include:: /pages/monitoring-guide/introduction.rst
+.. include:: /pages/monitoring-guide/assumptions.rst
+.. include:: /pages/monitoring-guide/intended-audience.rst
+.. include:: /pages/monitoring-guide/document-scope.rst
+.. include:: /pages/monitoring-guide/common-monitoring-practices/common-monitoring-practices.rst
+.. include:: /pages/monitoring-guide/monitoring-activities-details/monitoring-activities-details.rst
+.. include:: /pages/monitoring-guide/storage-clusters/storage-clusters.rst
+.. include:: /pages/monitoring-guide/hardware-and-system-monitoring/hardware-and-system-monitoring.rst
+.. include:: /pages/monitoring-guide/appendix/appendix.rst
