@@ -91,12 +91,12 @@ Follow the steps below:
    Click the Add Network button:
 
    .. image:: /_images/esx-manage-networks.png
-     :width: 70%
+
 
 #. In the "Add Networking" wizard, select the Virtual Machine Port group:
 
    .. image:: /_images/esx-connection-type.png
-     :width: 70%
+
 
 .. raw: pdf
 
@@ -106,7 +106,7 @@ Follow the steps below:
    to ensure that the network will be created in vSwitch0:
 
    .. image:: /_images/esx-target-device.png
-     :width: 70%
+
 
 #. Always name the network **br100**;
    this is the only value that works with Fuel;
@@ -115,7 +115,7 @@ Follow the steps below:
    on Fuel’s :ref:`network-settings-vcenter-ug` tab):
 
    .. image:: /_images/esx-connection-settings.png
-     :width: 70%
+
 
 .. _vcenter-limitations:
 

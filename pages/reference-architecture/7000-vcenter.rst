@@ -61,7 +61,7 @@ Multi-node HA Deployment with vSphere integration
 -------------------------------------------------
 
 .. image:: /_images/vcenter-ha-architecture.png
-   :width: 50%
+
 
 On a highly-available Controller cluster
 (meaning that three or more Controller nodes are configured),
@@ -81,7 +81,7 @@ Example of network topology
 .. # The link to the image source:
 .. # https://drive.google.com/file/d/0BxrQaxuQOwp3dG85ZXBuN2NiZVU/edit?usp=sharing
 .. image:: /_images/vcenter-network-topology.png
-   :width: 100%
+
 
 This is an example of the default Fuel OpenStack network configuration
 that a user should have
@@ -108,7 +108,7 @@ Fuel running under vSphere
 --------------------------
 
 .. image:: /_images/vCenter/Fuel_in_vCenter_networking.png
-   :width: 80%
+
 
 For information about configuring your vSphere environment
 so that you can install Fuel in it,

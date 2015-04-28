@@ -29,7 +29,7 @@ can be used as the host operating system on the Slave nodes
 for environments that support integration with vSphere:
 
 .. image:: /_images/user_screen_shots/vcenter-create-env.png
-   :width: 100%
+
 
 
 .. raw: pdf
@@ -48,19 +48,17 @@ environment. That means, you now have three options:
    See the :ref:`VMware tab<vmware-tab>` for more details.
 
   .. image:: /_images/user_screen_shots/select-vcenter-kvm.png
-   :width: 100%
 
 * enable both vCenter and KVM/QEMU - select vCenter checkbox
   and choose between KVM and QEMU radio buttons.
 
   .. image:: /_images/user_screen_shots/select-vcenter-kvm.png
-   :width: 100%
 
 * enable KVM/QEMU only - click the corresponding radio button
   and leave vCenter checkbox empty.
 
   .. image:: /_images/user_screen_shots/select-two-hypervisors.png
-   :width: 100%
+
 
 
 .. _vcenter-netv-service:
@@ -71,7 +69,7 @@ Select Network Service for vCenter
 Currently, the only support network option for vCenter is nova-network.
 
 .. image:: /_images/user_screen_shots/vcenter-networking-no-nsx.png
-   :width: 100%
+
 
 .. raw: pdf
 
@@ -92,7 +90,7 @@ enable it on the *Settings* tab of the Fuel web UI
 and finish backend configuration at the VMware tab.
 
 .. image:: /_images/user_screen_shots/cinder-storage-backend-vmware.png
-   :width: 100%
+
 
 
 Related projects for vCenter
@@ -104,7 +102,7 @@ with vSphere integration.
 
 
 .. image:: /_images/user_screen_shots/platform_services-vmware.png
-   :width: 100%
+
 
 Note that not all :ref:`Ceilometer<ceilometer-term>`
 metrics are collected for the vCenter environment.
@@ -120,7 +118,7 @@ Complete the creation of your vCenter environment
 
 
 .. image:: /_images/user_screen_shots/deploy_env.png
-   :width: 100%
+
 
 
 Select *Create* and click on the icon for your named environment.
@@ -150,7 +148,7 @@ The already known *Storage - Cinder* role can be enabled for Cinder with LVM or 
 
 
 .. image:: /_images/user_screen_shots/vcenter-add-nodes.png
-   :width: 100%
+
 
 .. _network-settings-vcenter-ug:
 
@@ -183,7 +181,7 @@ see :ref:`Nova Network Topologies<nova-topologies-arch>`.
 
 
       .. image:: /_images/user_screen_shots/select-nova-config-dhcp.png
-         :width: 100%
+
 
    #. In the *Nova-network configuration*,
       enable the 'Use VLAN tagging for fixed networks' checkbox
@@ -191,26 +189,26 @@ see :ref:`Nova Network Topologies<nova-topologies-arch>`.
       for the VLAN ID in the ESXi host network configuration:
 
       .. image:: /_images/user_screen_shots/nova-flatdhcp-man.png
-         :width: 100%
+
 
 - To enable *VLAN manager*, follow these steps:
 
    #. Click the *VLAN manager* radio button in the *Networks* tab:
 
       .. image:: /_images/user_screen_shots/select-nova-config-vlan.png
-         :width: 100%
+
 
    #. In the *Nova-network configuration*, select *Fixed network size*
       using drop-down menu. Specify *Number of fixed networks* and enter
       *Fixed VLAN ID range*:
 
        .. image:: /_images/user_screen_shots/nova-net-vlan.png
-          :width: 100%
+
 
 Click **Verify Networks** button to check if networks are configured correctly.
 
        .. image:: /_images/user_screen_shots/nova-verify.png
-          :width: 100%
+
 
 Press **Save settings** button to continue.
 
@@ -229,7 +227,7 @@ To enable VMware vCenter managed datastore as a backend for Glance,
 select *VMWare vCenter/ESXi datastore for images (Glance)* checkbox.
 
 .. image:: /_images/user_screen_shots/vcenter_glance_settings.png
-   :width: 100%
+
 
 .. _vmware-tab:
 
@@ -240,7 +238,7 @@ Beginning with Fuel 6.1 release, all vCenter-related settings
 are consolidated on the VMware tab of the Fuel web UI.
 
 .. image:: /_images/user_screen_shots/vmware-tab-common.png
-   :width: 50%
+
 
 vCenter
 +++++++
@@ -257,7 +255,7 @@ also specify Availability zone:
   by default, but it can be changed.
 
 .. image:: /_images/user_screen_shots/vmware-tab-vcenter.png
-  :width: 100%
+
 
 
 Nova-Computes
@@ -299,13 +297,13 @@ The following options are available:
      `VMware vSphere <http://docs.openstack.org/juno/config-reference/content/vmware.html>`_ guide.
 
 .. image:: /_images/user_screen_shots/vmware-tab-nova.png
-   :width: 100%
+
 
 Press +, add nova-compute services and fill in
 the information for one more Instance.
 
 .. image:: /_images/user_screen_shots/vmware-tab-nova-two.png
-   :width: 100%
+
 
 
 Network
@@ -315,7 +313,7 @@ If you decided to use VLAN Manager,
 enter the interface on which VLANs will be provisioned.
 
 .. image:: /_images/user_screen_shots/vmware-tab-vlan.png
-   :width: 100%
+
 
 
 Glance
@@ -326,7 +324,7 @@ To enable Glance, you should first select the checkbox on the *Settings* tab
 Then, you should enter the information for Glance.
 
 .. image:: /_images/user_screen_shots/vmware-tab-glance.png
-   :width: 100%
+
 
 
 For more information about how vCenter support is implemented,
