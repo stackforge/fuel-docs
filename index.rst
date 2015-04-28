@@ -46,11 +46,16 @@ installing Fuel and deploying Mirantis OpenStack.
 This document describes how to deploy Mirantis OpenStack environments
 using Fuel.
 
-:ref:`operations-guide` `(pdf) <pdf/Mirantis-OpenStack-6.0-OperationsGuide.pdf>`__
+:ref:`operations-guide` `(pdf) <pdf/Mirantis-OpenStack-6.0-MonitoringGuide.pdf>`__
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A collection of useful procedures for using and managing
 your Mirantis OpenStack environment.
+
+:ref:`monitoring-guide` `(pdf) <pdf/Mirantis-OpenStack-6.0-OperationsGuide.pdf>`__
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A general OpenStack monitoring strategy.
 
 :ref:`virtualbox` `(pdf) <pdf/Mirantis-OpenStack-6.0-Running-Mirantis-OpenStack-on-VirtualBox.pdf>`__
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

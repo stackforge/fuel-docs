@@ -15,7 +15,7 @@
   +--------------------------+----------------------+
   |                          |   .. cssclass:: right|
   |                          |                      |
-  | ©2015, Mirantis Inc.     |      Page ###Page### |
+  | ©2014, Mirantis Inc.     |      Page ###Page### |
   +--------------------------+----------------------+
 
 .. raw:: pdf
@@ -26,6 +26,7 @@
 
 .. include:: /pages/preface/preface.rst
 
-.. _operations-guide:
+.. _monitoring-guide:
 
-.. include:: /contents/contents-operations.rst
+.. include:: /contents/contents-monitoring-guide.rst
+
