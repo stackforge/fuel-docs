@@ -11,6 +11,7 @@ Documentation
   planning-guide
   user-guide
   operations
+  monitoring-guide
   virtualbox
   reference-architecture
   terminology
