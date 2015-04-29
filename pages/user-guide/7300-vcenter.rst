@@ -111,6 +111,12 @@ metrics are collected for the vCenter environment.
 For more details about the Ceilometer plugin for vCenter,
 see `Support for VMware vCenter Server <https://wiki.openstack.org/wiki/Ceilometer/blueprints/vmware-vcenter-server#Support_for_VMware_vCenter_Server>`_.
 
+Previously, when you selected vCenter,
+Compute and Controller nodes were placed on the same node,
+while Ceilometer compute agent was not.
+In Fuel 6.1 release, this logic was changed to provide
+metrics collection for the instances.
+
 .. raw: pdf
 
    PageBreak
