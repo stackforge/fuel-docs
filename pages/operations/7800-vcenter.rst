@@ -23,6 +23,8 @@ and/or the Nova CLI:
 - Use the Nova CLI to see the VMware cluster resources
   or to boot a new VM in vCenter.
 
+.. _1-1 mapping:
+
 Nova-compute and vSphere clusters mapping
 -----------------------------------------
 

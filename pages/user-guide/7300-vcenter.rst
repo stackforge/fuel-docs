@@ -111,6 +111,32 @@ metrics are collected for the vCenter environment.
 For more details about the Ceilometer plugin for vCenter,
 see `Support for VMware vCenter Server <https://wiki.openstack.org/wiki/Ceilometer/blueprints/vmware-vcenter-server#Support_for_VMware_vCenter_Server>`_.
 
+Previously, when you selected vCenter,
+Compute and Controller roles were assigned to the same node,
+while Ceilometer compute agent was not present on this node.
+
+In Fuel 6.1 release, this logic was changed to provide
+metrics collection for the instances.
+
+For previous Fuel releases,
+support for collecting polling meters
+from instances on vCenter was not implemented:
+only central agent polled services like Glance and Swift on
+Controller node. No metrics was collected from compute nodes.
+
+In 6.1, Ceilometer support for vCenter is implemented according
+to 1-1 mapping principle (the one done between :ref:`nova-compute and
+vSphere cluster <1-1 mapping>`).
+Currently, Ceilometer compute service are available
+for each vSphere cluster. That means,every agent polls resources
+about instances from those that only relate to their vSphere cluster.
+Every agent uses its own configuration file with authentication
+parameters of related to its own vSphere.
+What is more, monitoring under Pacemaker is introduced
+for every Ceilometer compute service to avoid failures
+(for example, failover of primary controller node)
+and missing polling data as the result.
+
 .. raw: pdf
 
    PageBreak
