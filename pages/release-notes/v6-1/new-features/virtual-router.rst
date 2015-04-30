@@ -1,8 +1,9 @@
+Virtual Router for public-less nodes
+------------------------------------
 
-Virtual Router for target nodes
--------------------------------
+With Fuel 6.1, Slave nodes
+that do not have public interface can now
+connect to the public networks without the
+Fuel Master node as the default gateway.
 
-See `Virtual router for env's nodes
-<https://mirantis.jira.com/browse/PROD-226>`_
-and `Blueprint for Virtual router for env's nodes
-<https://blueprints.launchpad.net/fuel/+spec/virtual-router-for-env-nodes>`_.
+See `Blueprint for Virtual router for env's nodes <https://blueprints.launchpad.net/fuel/+spec/virtual-router-for-env-nodes>`_ for details.
