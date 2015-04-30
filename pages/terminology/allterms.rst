@@ -52,6 +52,7 @@ Terminology Reference
 .. include:: /pages/terminology/m/mongodb.rst
 .. include:: /pages/terminology/m/murano.rst
 .. include:: /pages/terminology/m/mysql.rst
+.. include:: /pages/terminology/m/maintenance-mode.rst
 .. include:: /pages/terminology/n/nailgun.rst
 .. include:: /pages/terminology/n/native-vlan.rst
 .. include:: /pages/terminology/n/networking.rst
