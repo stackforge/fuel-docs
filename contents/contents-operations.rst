@@ -11,6 +11,7 @@
 .. include:: /pages/operations/2320-redeploy-node.rst
 .. include:: /pages/operations/2360-config-operating-system-node.rst
 .. include:: /pages/operations/2500-delete-ceph-osd.rst
+.. include:: /pages/operations/2510-ceph-osd-placement-groups.rst
 .. include:: /pages/operations/how-to-shutdown-cluster-ops.rst
 .. include:: /pages/operations/3000-ml2-create.rst
 .. include:: /pages/operations/3500-mcn.rst
