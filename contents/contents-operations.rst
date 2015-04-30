@@ -16,6 +16,7 @@
 .. include:: /pages/operations/6500-fuel-auth.rst
 .. include:: /pages/operations/7000-sahara.rst
 .. include:: /pages/operations/7400-murano.rst
+.. include:: /pages/operations/7450-mm-ops.rst
 .. include:: /pages/operations/7800-vcenter.rst
 .. include:: /pages/operations/8000-performance.rst
 .. include:: /pages/operations/8100-backup.rst
