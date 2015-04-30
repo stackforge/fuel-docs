@@ -12,6 +12,7 @@
 .. include:: /pages/operations/3500-mcn.rst
 .. include:: /pages/operations/5400-puppet-custom-attributes.rst
 .. include:: /pages/operations/docker-on-master.rst
+.. include:: /pages/operations/deploy-empty-role.rst
 .. include:: /pages/operations/2800-experimental.rst
 .. include:: /pages/operations/6500-fuel-auth.rst
 .. include:: /pages/operations/7000-sahara.rst
