@@ -47,17 +47,17 @@ environment. That means, you now have three options:
    finish this configuration using VMware tab of the Fuel web UI.
    See the :ref:`VMware tab<vmware-tab>` for more details.
 
-  .. image:: /_images/user_screen_shots/select-vcenter-kvm.png
+   .. image:: /_images/user_screen_shots/select-vcenter-kvm.png
 
-* enable both vCenter and KVM/QEMU - select vCenter checkbox
-  and choose between KVM and QEMU radio buttons.
+#. enable both vCenter and KVM/QEMU - select vCenter checkbox
+   and choose between KVM and QEMU radio buttons.
 
-  .. image:: /_images/user_screen_shots/select-vcenter-kvm.png
+   .. image:: /_images/user_screen_shots/select-vcenter-kvm.png
 
-* enable KVM/QEMU only - click the corresponding radio button
-  and leave vCenter checkbox empty.
+#. enable KVM/QEMU only - click the corresponding radio button
+   and leave vCenter checkbox empty.
 
-  .. image:: /_images/user_screen_shots/select-two-hypervisors.png
+   .. image:: /_images/user_screen_shots/select-two-hypervisors.png
 
 
 
@@ -146,7 +146,6 @@ is introduced. It will deploy Cinder with VMDK backend:
 that means, the new role provides block storage for VMs that are running on VMware vCenter.
 The already known *Storage - Cinder* role can be enabled for Cinder with LVM or Ceph.
 
-
 .. image:: /_images/user_screen_shots/vcenter-add-nodes.png
 
 
@@ -218,10 +217,10 @@ Settings
 ++++++++
 
 To enable VMware vCenter for volumes,
-you must first uncheck the Cinder LVM over iSCSI option.
-
-.. image:: /_images/user_screen_shots/vcenter-cinder-uncheck.png
-   :width: 100%
+you should add a node and assign
+*Storage - Cinder Proxy to VMware Datastore* role
+to it, see
+:ref:`Assign a role or roles to each node server <assign-roles-vcenter-ug>` for details.
 
 To enable VMware vCenter managed datastore as a backend for Glance,
 select *VMWare vCenter/ESXi datastore for images (Glance)* checkbox.
