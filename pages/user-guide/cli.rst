@@ -192,6 +192,22 @@ Also you can do it without ``--env`` or ``--node`` to remove some nodes without 
   fuel node remove --node 2,3
   fuel node remove --env 1
 
+.. _remove-inv:
+
+Delete nodes from Fuel DB.
+
+  * Remove offline nodes:
+
+    ::
+            fuel node --node-id <id> --delete-from-db
+            fuel node --node-id <id1> <id2> --delete-from-db
+
+  * Remove nodes with any status except for offline:
+
+    ::
+            fuel node --node-id <id> --delete-from-db --force
+
+
 .. _fuel-cli-node-group:
 
 Node group
