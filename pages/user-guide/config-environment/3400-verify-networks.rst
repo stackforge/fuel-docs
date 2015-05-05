@@ -20,18 +20,34 @@ The image below shows a sample result of the check.
 If there are errors, it is either in your configuration of interfaces
 or possibly the VLAN tagging feature is disabled on your switch port.
 
-.. image:: /_images/net_verify_failure.jpg
-   :width: 80%
+.. image:: /_images/user_screen_shots/net_verify_failure.png
+
 
 Resolve any errors before attempting to deploy your environment.
 After doing that, run the check once more. The *Verification succeeded*
 message should appear.
 
 .. image:: /_images/user_screen_shots/net_verify_success.png
-   :width: 80%
+
 
 .. note:: Currently, network verification does not check
    interfaces in bonds taking them for simple interfaces.
    In case of LACP L2 bonding, verification fails on the hardware.
    Due to this problem, interfaces in LACP bonds are excluded
    from the checklist.
+
+Beginning with Fuel 6.1, if you press **Deploy** button
+without verifying network, the Fuel web UI will display a warning.
+
+.. image:: /_images/user_screen_shots/verify-network-warning.png
+
+When deploying an environment with
+network verification in progress, you will also get
+a warning.
+
+.. image:: /_images/user_screen_shots/net_verify_in_progress.png
+
+If you try to deploy an environment with failed network verification,
+the Fuel web UI will display a warning.
+
+.. image:: /_images/user_screen_shots/net_verify_failure-warning.png
