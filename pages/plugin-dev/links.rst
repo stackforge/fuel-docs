@@ -30,9 +30,9 @@ Installation instructions
 
 Common installation instructions:
 
-* `Install Fuel Plugins <http://docs.mirantis.com/openstack/fuel/master/user-guide.html#install-fuel-plugins>`_ section from User Guide.
+* :ref:`Install Fuel Plugins <install-plugin>` section from User Guide.
 
-* `CLI command reference <http://docs.mirantis.com/openstack/fuel/master/user-guide.html#install-fuel-plugins>`_ section from User Guide.
+* :ref:`CLI command reference for Fuel Plugins <fuel-plugins-cli>` section from User Guide.
 
 Plugin-specific instructions
 ----------------------------
