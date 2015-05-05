@@ -16,10 +16,10 @@ and a list of unallocated nodes at the bottom.
 
 
 .. image:: /_images/user_screen_shots/assign-roles1.png
-   :width: 80%
+
 
 .. image:: /_images/user_screen_shots/assign-roles2.png
-   :width: 80%
+
 
 
 To assign roles to the nodes:
@@ -62,12 +62,20 @@ Fuel displays the configuration you have chosen:
 
 
 .. image:: /_images/user_screen_shots/assign-role-confirm.png
-   :width: 80%
+
 
 To rename the nodes, click on the "Untitled" string
 for each node and then type in the name you want to use.
 The suffix is the last digits of the MAC address for this node;
 you can keep these digits or delete them.
+
+Beginning with Fuel 6.1, you can remove
+a node from inventory if it is dead or
+there is need to delete it from the cluster.
+To do that, you should click **Forget** button
+next to the required node.
+
+.. image:: /_images/user_screen_shots/remove-node-inventory.png
 
 
 For more information, see:
