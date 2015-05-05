@@ -146,7 +146,6 @@ is introduced. It will deploy Cinder with VMDK backend:
 that means, the new role provides block storage for VMs that are running on VMware vCenter.
 The already known *Storage - Cinder* role can be enabled for Cinder with LVM or Ceph.
 
-
 .. image:: /_images/user_screen_shots/vcenter-add-nodes.png
 
 
