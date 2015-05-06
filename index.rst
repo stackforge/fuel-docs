@@ -37,63 +37,65 @@ to get a PDF file of that document.
 :ref:`planning-guide` `(pdf) <pdf/Mirantis-OpenStack-6.0-PlanningGuide.pdf>`__
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Planning information you should consider before
-installing Fuel and deploying Mirantis OpenStack.
+Explains how to plan Mirantis OpenStack deployment before installing
+Fuel. 
 
 :ref:`user-guide` `(pdf) <pdf/Mirantis-OpenStack-6.0-UserGuide.pdf>`__
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This document describes how to deploy Mirantis OpenStack environments
-using Fuel.
+Describes how to deploy and use Mirantis OpenStack environments
+using Fuel. Provides information on how to configure your environment
+with the Fuel UI wizard and the web UI. 
 
 :ref:`operations-guide` `(pdf) <pdf/Mirantis-OpenStack-6.0-OperationsGuide.pdf>`__
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A collection of useful procedures for using and managing
+Provides a collection of useful procedures for using and managing
 your Mirantis OpenStack environment.
 
 :ref:`monitoring-guide` `(pdf) <pdf/Mirantis-OpenStack-6.0-MonitoringGuide.pdf>`__
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A general OpenStack monitoring strategy.
+Provides general concept on how to monitor OpenStack.
 
 :ref:`virtualbox` `(pdf) <pdf/Mirantis-OpenStack-6.0-Running-Mirantis-OpenStack-on-VirtualBox.pdf>`__
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This document provides information about running Mirantis OpenStack on VirtualBox
+Explains how to run Mirantis OpenStack on VirtualBox
 for demonstration and evaluation purposes.
 
 :ref:`ref-arch` `(pdf) <pdf/Mirantis-OpenStack-6.0-ReferenceArchitecture.pdf>`__
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A deep dive into the structure of the Mirantis OpenStack environment,
-network considerations, and deployment options.
+Provides the deep dive into the structure of the Mirantis OpenStack environment,
+network considerations, deployment options and architectures.
 
 :ref:`plugin-dev` `(pdf) <pdf/Mirantis-OpenStack-6.0-FuelPluginGuide.pdf>`__
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Provides information on Fuel Plugins.
+Explains how to develop and certify your own plugin for Fuel.
 
 :ref:`terminology-ref` `(pdf) <pdf/Mirantis-OpenStack-6.0-Terminology-Reference.pdf>`__
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Short articles about OpenStack terminology and technology
-with references to other documentation and other useful information.
+Explains OpenStack terminology and technology
+with references to other documentation and useful information.
 
 :ref:`file-ref` `(pdf) <pdf/Mirantis-OpenStack-6.0-File-Format-Reference.pdf>`__
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Reference pages for select configuration files that Fuel uses.
+Provides information on how to use Fuel configuration files.
 
 :ref:`style-guide`
 ~~~~~~~~~~~~~~~~~~
 
-Contains style guidelines for the Mirantis OpenStack documentation.
+Contains style guidelines and instructions of
+how to write documentation for Mirantis OpenStack.
 
 :ref:`release-notes` `(pdf) <pdf/Mirantis-OpenStack-6.0-RelNotes.pdf>`__
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Release Notes provide general information about new features,
+Provide general information about new features,
 fixed issues, and known limitations in Mirantis OpenStack |version|.
 
 `Download Mirantis OpenStack <http://software.mirantis.com>`__
@@ -107,4 +109,4 @@ You can download the Mirantis OpenStack ISO, IMG, and VirtualBox scripts at http
 `Demos and tutorials <https://www.youtube.com/watch?v=ET4hkzb_QRM>`__
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Watch the Mirantis OpenStack demos at https://www.youtube.com/watch?v=ET4hkzb_QRM
+Watch the Mirantis OpenStack demos at `YouTube channel <https://www.youtube.com/watch?v=ET4hkzb_QRM>`_.
