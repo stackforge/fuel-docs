@@ -96,13 +96,13 @@ After rsync’ing the updates repository from the Mirantis mirror to the Fuel Ma
 
        `mos_apply_mu.py <https://review.fuel-infra.org/gitweb?p=tools/sustaining.git;a=blob_plain;f=scripts/mos_apply_mu.py;hb=refs/heads/master>`_
 
-This script updates all nodes one by one and should be run on the Fuel Master node in the following manner in order to update nodes in the environment `X`::
+This script updates all nodes one by one and should be run on the Fuel Master node in the following manner in order to update nodes in the environment `X` given that IP address of the Fuel Master node is Y.Y.Y.Y::
 
-       python mos_apply_mu.py --env-id=X --update
+       python mos_apply_mu.py --env-id=X --update --master-ip=Y.Y.Y.Y
 
 To update all environments, use `--all-envs` option::
 
-       python mos_apply_mu.py --update --all-envs
+       python mos_apply_mu.py --update --all-envs --master-ip=Y.Y.Y.Y
 
 The script will update all online nodes in all environments with respect to the version of an operating system in a particular environment.
 You can find your environment id in the list by running the following command on the Fuel Master node::
