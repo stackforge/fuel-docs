@@ -13,4 +13,5 @@
 .. include:: /pages/planning-guide/0010-prerequisites.rst
 .. include:: /pages/planning-guide/0080-reference-configuration.rst
 .. include:: /pages/planning-guide/ha-testing.rst
+.. include:: /pages/planning-guide/hcl.rst
 .. include:: /pages/planning-guide/0090-appendix.rst
