@@ -315,7 +315,7 @@ img.width-100 {
   overflow: hidden;
   text-indent: 100%;
   white-space: nowrap;
-  background: rgba(232, 98, 86, 0.8) url(cd-top-arrow.svg) no-repeat center 50%;
+  background: rgba(211, 48, 26, 0.8) url(cd-top-arrow.svg) no-repeat center 50%;
   visibility: hidden;
   opacity: 0;
   -webkit-transition: opacity .3s 0s, visibility 0s .3s;
@@ -336,7 +336,7 @@ img.width-100 {
 }
 
 .no-touch .cd-top:hover {
-  background-color: #e86256;
+  background-color: #D3301A;
   opacity: 1;
 }
 
