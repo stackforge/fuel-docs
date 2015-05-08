@@ -37,17 +37,17 @@ message should appear.
    from the checklist.
 
 Beginning with Fuel 6.1, if you press **Deploy** button
-without verifying network, the Fuel web UI will display a warning.
+the Fuel web UI will prevent you from deploying the
+environment in three cases:
 
-.. image:: /_images/user_screen_shots/verify-network-warning.png
+* you have not verified networks at all:
 
-When deploying an environment with
-network verification in progress, you will also get
-a warning.
+  .. image:: /_images/user_screen_shots/verify-network-warning.png
 
-.. image:: /_images/user_screen_shots/net_verify_in_progress.png
+* your network verification is in progress:
 
-If you try to deploy an environment with failed network verification,
-the Fuel web UI will display a warning.
+  .. image:: /_images/user_screen_shots/net_verify_in_progress.png
 
-.. image:: /_images/user_screen_shots/net_verify_failure-warning.png
+* your network verification failed:
+ 
+  .. image:: /_images/user_screen_shots/net_verify_failure-warning.png

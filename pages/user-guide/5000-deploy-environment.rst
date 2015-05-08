@@ -35,3 +35,10 @@ or by checking individual node logs in the **Logs** tab.
 
 .. include:: /pages/user-guide/stop_reset/0200-stop-deploy-ui.rst
 .. include:: /pages/user-guide/stop_reset/0500-reset-environment.rst
+
+Note, that beginning with Fuel 6.1, the Fuel web UI
+displays warnings if you try to press **Deploy** button
+with network verification in progress, failed or 
+skipped. See :ref:`Verify networks <verify-networks-ug>` for
+more details and screenshots.
+
