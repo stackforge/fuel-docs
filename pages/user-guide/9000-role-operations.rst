@@ -1,3 +1,4 @@
+.. _role-ops-user-guide:
 
 Role operations
 ================
