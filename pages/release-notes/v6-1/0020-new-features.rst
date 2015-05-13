@@ -54,6 +54,8 @@ and `Upgrade and OpenStack environment to a new major release
 .. include:: /pages/release-notes/v6-1/new-features/200-nodes.rst
 .. include:: /pages/release-notes/v6-1/new-features/heat-docker-resource.rst
 .. include:: /pages/release-notes/v6-1/new-features/granular-deploy.rst
+.. include:: /pages/release-notes/v6-1/new-features/remove-node-inventory.rst
+.. include:: /pages/release-notes/v6-1/new-features/verify-net.rst
 .. include:: /pages/release-notes/v6-1/new-features/base-os-role.rst
 .. include:: /pages/release-notes/v6-1/new-features/mos-separate-from-fuel.rst
 .. include:: /pages/release-notes/v6-1/new-features/patch-openstack.rst
@@ -62,6 +64,7 @@ and `Upgrade and OpenStack environment to a new major release
 .. include:: /pages/release-notes/v6-1/new-features/fencing.rst
 .. include:: /pages/release-notes/v6-1/new-features/virtual-router.rst
 .. include:: /pages/release-notes/v6-1/new-features/neutron-agents.rst
+
 
 
 
