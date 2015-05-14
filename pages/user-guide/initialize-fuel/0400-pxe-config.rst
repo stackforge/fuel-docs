@@ -78,8 +78,8 @@ Within Fuel Setup, you can configure the following parameters:
 * DNS options
 * Launch shell for optional pre-deployment tasks
 
-.. image:: /_images/fuelmenu_Network_Setup.jpg
-  :width: 50%
+.. image:: /_images/fuelmenu_Network_Setup.png
+
 
 Use the arrow keys to navigate through the tool and Space or Enter key to select
 an item.
@@ -158,8 +158,8 @@ Network Setup includes the following configurable sections:
   and makes the new settings effective.
 
 
-.. image:: /_images/fuelmenu_Network_Setup.jpg
-  :width: 50%
+.. image:: /_images/fuelmenu_Network_Setup.png
+
 
 Assume you are going to change PXE NIC from eth0 to eth1. eth0 is already up and
 its IP address is 10.20.0.2, set via kernel options. You want eth1 to use
