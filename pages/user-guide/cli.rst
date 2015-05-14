@@ -125,7 +125,7 @@ To create an environment, run:
 
 ::
 
-  fuel env create --name MyEnv --rel 1 
+  fuel env create --name <env_name> --rel 1 
 
 By default it creates environment in ``multinode`` mode, and ``nova`` network mode.
 To specify other modes, you can add optional arguments; for example:
@@ -138,20 +138,20 @@ Use the ``set`` action to change the name, mode, or network mode for the environ
 
 ::
 
-  fuel --env 1 env set --name NewEmvName --mode ha_compact
+  fuel --env <env_id> env set --name <NewEmvName> --mode ha_compact
 
 To delete the environment:
 
 ::
 
-  fuel --env 1 env delete
+  fuel --env <env_id> env delete
 
 To update the Mirantis OpenStack environment to a newer version
 (available since Fuel 5.1):
 
 ::
 
-  fuel env --update --env 1 --rel 42
+  fuel env --update --env <env_id> --rel 42
 
 To roll back a failed update,
 use this same command but modify the release ID.
@@ -170,27 +170,27 @@ and filter them by environment:
 
 ::
 
-  fuel --env-id 1 node list
+  fuel --env-id <env_id> node list
 
 Assign some nodes to environment with with specific roles
 
 ::
 
-  fuel node set --node 1 --role controller --env 1
-  fuel node set --node 2,3,4 --role compute,cinder --env 1
+  fuel node set --node <node_id> --role controller --env <env_id>
+  fuel node set --node <node_id>,<node_id>,<node_id> --role compute,cinder --env <env_id>
 
 Remove some nodes from environment
 
 ::
 
-  fuel node remove --node 2,3 --env 1
+  fuel node remove --node <node_id>,<node_id> --env <env_id>
 
 Also you can do it without ``--env`` or ``--node`` to remove some nodes without knowing their environment and remove all nodes of some environment respectively.
 
 ::
 
-  fuel node remove --node 2,3
-  fuel node remove --env 1
+  fuel node remove --node <node_id>,<node_id>
+  fuel node remove --env <env_id>
 
 .. _remove-inv:
 
@@ -230,27 +230,27 @@ and filter them by environment:
 
 ::
 
-  fuel --env 1 nodegroup
+  fuel --env <env_id> nodegroup
 
 Create a new node group
 
 ::
 
-  fuel --env 1 nodegroup --create --name "group 1"
+  fuel --env <env_id> nodegroup --create --name "group 1"
 
 Delete the specified node groups
 
 ::
 
-  fuel --env 1 nodegroup --delete --group 1
-  fuel --env 1 nodegroup --delete --group 2,3,4
+  fuel --env <env_id> nodegroup --delete --group <group_id>
+  fuel --env <env_id> nodegroup --delete --group <group_id1>,<group_id2>,<group_id3>
 
 Assign nodes to the specified node group:
 
 ::
 
-  fuel --env 1 nodegroup --assign --node 1 --group 1
-  fuel --env 1 nodegroup --assign --node 2,3,4 --group 1
+  fuel --env <env_id> nodegroup --assign --node <node_id> --group <group_id>
+  fuel --env <env_id> nodegroup --assign --node <node1_id>,<node2_id>,4 --group <group_id>
 
 
 .. _fuel-cli-config:
@@ -316,14 +316,14 @@ You can deploy environment changes with:
 
 ::
 
-  fuel --env 1 deploy-changes
+  fuel --env <env_id> deploy-changes
 
 Also, you can deploy and provision only some nodes like this
 
 ::
 
-  fuel --env 1 node --provision --node 1,2
-  fuel --env 1 node --deploy --node 1,2
+  fuel --env <env_id> node --provision --node <node1_id>,<node2_id>
+  fuel --env <env_id> node --deploy --node <node1_id>,<node2_id>
 
 .. _cli-fuel-password:
 
@@ -335,7 +335,7 @@ with either of the following:
 
 ::
 
-   fuel user --change-password --new-pass=*new*
+   fuel user --change-password --new-pass=<new_password>
 
 
 Note that **change-password** option
@@ -350,8 +350,8 @@ to other fuel CLI commands:
 
 
 .. note: In Release 5.1 and earlier, the **--os-username**
-         and **os-password** options are used
-         rather than **user** and **--change-password**.
+         and ``os-password`` options are used
+         rather than ``user`` and ``--change-password``.
          These options are not supported in Releases 5.1.1 and later.
 
 See :ref:`fuel-passwd-ops` for more information
