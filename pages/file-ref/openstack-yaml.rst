@@ -88,7 +88,7 @@ The "has_primary" line is added in Release 6.0
 to identify the Primary controller.
 In earlier releases,
 Galera searched for the Controller node with the lowest node-id value
-(see :ref:`nodes-arch`)
+(see :ref:`nodes-cli`)
 and made that the Primary Controller.
 This created problems when a new controller that had a lower node-id value
 was added to an existing Controller cluster

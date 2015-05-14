@@ -13,7 +13,7 @@ such as node-1, node-2, and so forth.
 Use the **fuel node list** command
 on the Fuel Master node to see the node IDs
 that are assigned for your environment.
-See :ref:`nodes-arch` for details about the information
+See :ref:`nodes-cli` for details about the information
 displayed by this command.
 
 Fuel assigns node numbers sequentially,

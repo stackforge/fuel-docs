@@ -1,19 +1,22 @@
 
-.. raw:: pdf
-
-   PageBreak
+.. _nodes-cli:
 
 
-.. _nodes-arch:
+What stands for acronyms in CLI commands
+++++++++++++++++++++++++++++++++++++++++
 
-How Nodes are Defined and Managed
----------------------------------
+CLI commands contain a number
+of acronyms.
+For better understanding of those,
+see the example command output below.
 
-:ref:`Nailgun<nailgun-term>` populates the database
-with hardware configuration information
-about all the managed :ref:`nodes<node-term>` it discovers
-as well as the configuration and status of each node.
-Use the **fuel node list** command on the Fuel Master node
+
+.. note:: :ref:`Nailgun <nailgun-term>` populates the database
+          with hardware configuration information
+          about all the managed :ref:`nodes <node-term>` it discovers
+          as well as the configuration and status of each node.
+
+The ``fuel node list`` command is used on the Fuel Master node
 to list out the current information about the nodes
 for the environment:
 
