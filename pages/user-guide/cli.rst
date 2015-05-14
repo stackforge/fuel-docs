@@ -55,11 +55,18 @@ and for getting actions and optional args for some namespace run:
 
   fuel <namespace> --help
 
+
 CLI commands reference
 ----------------------
 
+.. include:: pages/user-guide/0800-node-internals.rst
+
+
+
 Release
 +++++++
+
+For acronyms meaning, see :ref:`What stands for acronyms in CLI commands <nodes-arch>`.
 
 Get list of all available releases:
 
@@ -77,23 +84,26 @@ for specific release
 
 ::
 
-  fuel rel --rel 1
+  fuel rel --rel <release_number>
 
 Networks configuration
 ++++++++++++++++++++++
+
+For acronyms meaning, see
+:ref:`What stands for acronyms in CLI commands <nodes-arch>`.
 
 Download network configuration. This command reads networks from API
 and saves them in .yaml format on the file system:
 
 ::
 
-  fuel rel --rel 1 --network --download
+  fuel rel --rel <release_number> --network --download
 
 To see interaction with Nailgun API, run the following command with **--debug** option:
 
 ::
 
-  fuel rel --rel 1 --network --download --debug
+  fuel rel --rel <release_number> --network --download --debug
   GET http://10.108.80.2:8000/api/v1/releases/1/networks
 
 Modify network configuration.
@@ -101,19 +111,22 @@ You may want to modify the networks and upload the configuration back:
 
 ::
 
-  fuel rel --rel 1 --network --upload
+  fuel rel --rel <release_number> --network --upload
 
 
 To see interaction with Nailgun API, run the following command with **--debug** option:
 
 ::
 
-  fuel rel --rel 1 --network --upload --debug
+  fuel rel --rel <release_number> --network --upload --debug
   PUT http://10.108.80.2:8000/api/v1/releases/1/networks data={...}
 
 
 Environment
 +++++++++++
+
+For acronyms meaning,
+see :ref:`What stands for acronyms in CLI commands <nodes-arch>`.
 
 To list environments:
 
@@ -121,37 +134,41 @@ To list environments:
 
   fuel env
 
-To create an environment, run:
+To create an environment, run the following command using
+``--name`` and ``--rel`` (release) options:
 
 ::
 
-  fuel env create --name MyEnv --rel 1 
+  fuel env create --name <env_name> --rel <release_number>
+
 
 By default it creates environment in ``multinode`` mode, and ``nova`` network mode.
 To specify other modes, you can add optional arguments; for example:
 
 ::
 
-  fuel env create --name MyEnv --rel 1 --mode ha --network-mode neutron --net-segment-type vlan
+  fuel env create --name <env_name> --rel <release_number> \
+  --mode ha --network-mode neutron --net-segment-type vlan
+
 
 Use the ``set`` action to change the name, mode, or network mode for the environment; for example:
 
 ::
 
-  fuel --env 1 env set --name NewEmvName --mode ha_compact
+  fuel --env <env_id> env set --name <NewEmvName> --mode ha_compact
 
 To delete the environment:
 
 ::
 
-  fuel --env 1 env delete
+  fuel --env <env_id> env delete
 
 To update the Mirantis OpenStack environment to a newer version
 (available since Fuel 5.1):
 
 ::
 
-  fuel env --update --env 1 --rel 42
+  fuel env --update --env <env_id> --rel <release_number>
 
 To roll back a failed update,
 use this same command but modify the release ID.
@@ -159,6 +176,9 @@ use this same command but modify the release ID.
 
 Node
 ++++
+
+For acronyms meaning,
+see :ref:`What stands for acronyms in CLI commands <nodes-arch>`.
 
 To list all available nodes run:
 
@@ -170,27 +190,28 @@ and filter them by environment:
 
 ::
 
-  fuel --env-id 1 node list
+  fuel --env-id <env_id> node list
 
 Assign some nodes to environment with with specific roles
 
 ::
 
-  fuel node set --node 1 --role controller --env 1
-  fuel node set --node 2,3,4 --role compute,cinder --env 1
+  fuel node set --node <node_id> --role controller --env <env_id>
+  fuel node set --node <node1_id>,<node2_id>,<node3_id> \
+  --role compute,cinder --env <env_id>
 
 Remove some nodes from environment
 
 ::
 
-  fuel node remove --node 2,3 --env 1
+  fuel node remove --node <node_id>,<node_id> --env <env_id>
 
 Also you can do it without ``--env`` or ``--node`` to remove some nodes without knowing their environment and remove all nodes of some environment respectively.
 
 ::
 
-  fuel node remove --node 2,3
-  fuel node remove --env 1
+  fuel node remove --node <node1_id>,<node2_id>
+  fuel node remove --env <env_id>
 
 .. _remove-inv:
 
@@ -216,6 +237,9 @@ Delete nodes from Fuel DB.
 Node group
 ++++++++++
 
+For acronyms meaning,
+see :ref:`What stands for acronyms in CLI commands <nodes-arch>`.
+
 :ref:`Node groups<node-group-term>` are part of the
 :ref:`Multiple Cluster Networks<mcn-arch>` feature
 that is available for Fuel 6.0 and later.
@@ -230,27 +254,27 @@ and filter them by environment:
 
 ::
 
-  fuel --env 1 nodegroup
+  fuel --env <env_id> nodegroup
 
 Create a new node group
 
 ::
 
-  fuel --env 1 nodegroup --create --name "group 1"
+  fuel --env <env_id> nodegroup --create --name "group 1"
 
 Delete the specified node groups
 
 ::
 
-  fuel --env 1 nodegroup --delete --group 1
-  fuel --env 1 nodegroup --delete --group 2,3,4
+  fuel --env <env_id> nodegroup --delete --group <group_id>
+  fuel --env <env_id> nodegroup --delete --group <group1_id>,<group2_id>,<group3_id>
 
 Assign nodes to the specified node group:
 
 ::
 
-  fuel --env 1 nodegroup --assign --node 1 --group 1
-  fuel --env 1 nodegroup --assign --node 2,3,4 --group 1
+  fuel --env <env_id> nodegroup --assign --node <node_id> --group <group_id>
+  fuel --env <env_id> nodegroup --assign --node <node1_id>,<node2_id>,4 --group <group_id>
 
 
 .. _fuel-cli-config:
@@ -312,18 +336,21 @@ whose presence on disk may constitute a security threat.
 Deployment
 ++++++++++
 
+For acronyms meaning,
+see :ref:`What stands for acronyms in CLI commands <nodes-arch>`.
+
 You can deploy environment changes with:
 
 ::
 
-  fuel --env 1 deploy-changes
+  fuel --env <env_id> deploy-changes
 
 Also, you can deploy and provision only some nodes like this
 
 ::
 
-  fuel --env 1 node --provision --node 1,2
-  fuel --env 1 node --deploy --node 1,2
+  fuel --env <env_id> node --provision --node <node1_id>,<node2_id>
+  fuel --env <env_id> node --deploy --node <node1_id>,<node2_id>
 
 .. _cli-fuel-password:
 
@@ -335,7 +362,7 @@ with either of the following:
 
 ::
 
-   fuel user --change-password --new-pass=*new*
+   fuel user --change-password --new-pass=<new_password>
 
 
 Note that **change-password** option
@@ -350,8 +377,8 @@ to other fuel CLI commands:
 
 
 .. note: In Release 5.1 and earlier, the **--os-username**
-         and **os-password** options are used
-         rather than **user** and **--change-password**.
+         and ``os-password`` options are used
+         rather than ``user`` and ``--change-password``.
          These options are not supported in Releases 5.1.1 and later.
 
 See :ref:`fuel-passwd-ops` for more information
