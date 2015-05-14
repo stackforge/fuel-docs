@@ -9,6 +9,7 @@ Terminology Reference
 .. include:: /pages/terminology/b/bonding.rst
 .. include:: /pages/terminology/c/ceilometer.rst
 .. include:: /pages/terminology/c/ceph.rst
+.. include:: /pages/terminology/c/cic.rst
 .. include:: /pages/terminology/c/cinder.rst
 .. include:: /pages/terminology/c/cobbler.rst
 .. include:: /pages/terminology/c/compute-nodes.rst
