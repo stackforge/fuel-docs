@@ -11,7 +11,7 @@ Resolved Issues
   By tricking an authenticated user into clicking a malicious URL, a remote
   attacker was able to trigger a cross-site-websocket-hijacking vulnerability
   resulting in a potential hijack of consoles where a user was still logged in.
-  See `LP1420273 <https://bugs.launchpad.net/mos/+bug/1420273>`_.
+  See `LP1420273`_.
 
 * Previously, when RabbitMQ failed, a consumer had been disconnected
   before a publisher sent a message. Currently, if the consumer has not
@@ -19,14 +19,67 @@ Resolved Issues
   that is not bound to a queue to prevent a message loss. Setting
   ``passive = True`` does not cause a publisher failure anymore,
   and it retries if a consumer has not declared the receiving queue yet.
-  See `LP1427892 <https://bugs.launchpad.net/mos/+bug/1427892>`_.
+  See `LP1427892`_.
 
 * The issue of noVNC access to VMs when reverse DNS lookups fail has been fixed.
-  See `LP1409661 <https://bugs.launchpad.net/mos/+bug/1409661>`_.
+  See `LP1409661`_.
 
 * If a user specifies an IP address using the :option:`--nic` option while booting
   an instance with the :command:`nova boot` command, a Compute node invokes
   the neutron client to create a port. However, as the IP address parameter used to
   be an IPAddress object, the neutron client failed to send the request to the neutron
   server.
-  See `LP1435712 <https://bugs.launchpad.net/mos/+bug/1435712>`_.
+  See `LP1435712`_.
+
+* The update resolves nova-compute graceful shutdown issue: nova-compute no longer
+  hangs waiting for the external events that cannot be processed. All tasks waiting
+  for such events (plugging of VIFs by Neutron L2 agent, for example), are cancelled immediately
+  upon the SIGTERM signal receiving. Previously, nova-compute did not exit properly,
+  but waited for the external events which would never be triggered.
+  See `LP1433605`_.
+
+* By now, Nova allows booting an instance from a QCOW2 image with the virtual size greater
+  than the ``root_gb`` size specified in a flavor.
+  See `LP1427839`_.
+
+* Previously, it was impossible to create a snapshot of a vitrual machine spun up from
+  another snapshot, as the location of the respective information in a glance image
+  and a snapshot object differed. The update resolves the issue.
+  See `LP1431951`_.
+
+* Juno controller and Icehouse compute are now able to backport a Service object correctly.
+  Previously, when backporting the Service object to the Icehouse version, the embedded
+  ComputeNode object was sent back to the wrong version.
+  See `LP1436819`_.
+
+* The deletion of an instance, when using Juno controller and Icehouse compute, does not
+  cause an infinite loop anymore. This is achieved by the backporting of a FixedIP
+  object with an embedded version of a Network object added with this update.
+  See `LP1436825`_.
+
+* Currently, Nova-compute is able to restart successfully, even if ``_init_instance``
+  fails. Previously, the compute process used to exit unexpectedly in case an unhandled
+  exception was raised from an instance.
+  See `LP1438680`_.
+
+* The update fixes the issue with detaching of multipath volumes when using different
+  targets with the same portal.
+  See `LP1443974`_.
+
+* The update fixes the multipath performance issues with the ``connect_volume`` and similar
+  functions.
+  See `LP1443977`_.
+
+.. Links
+.. _`LP1420273`: https://bugs.launchpad.net/mos/+bug/1420273
+.. _`LP1427892`: https://bugs.launchpad.net/mos/+bug/1427892
+.. _`LP1409661`: https://bugs.launchpad.net/mos/+bug/1409661
+.. _`LP1435712`: https://bugs.launchpad.net/mos/+bug/1435712
+.. _`LP1433605`: https://bugs.launchpad.net/mos/+bug/1433605
+.. _`LP1427839`: https://bugs.launchpad.net/mos/+bug/1427839
+.. _`LP1431951`: https://bugs.launchpad.net/mos/+bug/1431951
+.. _`LP1436819`: https://bugs.launchpad.net/mos/+bug/1436819
+.. _`LP1436825`: https://bugs.launchpad.net/mos/+bug/1436825
+.. _`LP1438680`: https://bugs.launchpad.net/mos/+bug/1438680
+.. _`LP1443974`: https://bugs.launchpad.net/mos/+bug/1443974
+.. _`LP1443977`: https://bugs.launchpad.net/mos/+bug/1443977
