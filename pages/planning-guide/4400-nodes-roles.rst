@@ -82,8 +82,6 @@ storage cluster:
 .. note:: You do not need Cinder storage nodes if you are using
           Ceph RBD as storage backend for Cinder volumes.
 
-.. note:: You do not need Compute nodes if you are using
-          vCenter as the hypervisor.
 
 Of course, you are free to choose how to deploy OpenStack based on the
 amount of available hardware and on your goals (such as whether you

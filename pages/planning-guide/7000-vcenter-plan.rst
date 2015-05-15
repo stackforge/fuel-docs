@@ -14,20 +14,26 @@ you to specify several or all clusters for a single OpenStack environment,
 so that one nova-compute service manages
 multiple ESX host clusters via single vCenter server.
 
-.. note:: Beginning with Fuel 6.1, vCenter cannot be
-   integrated with NSX: NSX support is now deprecated.
-   Due to Pluggable Architecture, it might
-   be turned into a plugin in the future Fuel
-   releases.
+Please, note the following:
+
+* Beginning with Fuel 6.1, vCenter cannot be
+  integrated with NSX: NSX support is now deprecated.
+  Due to Pluggable Architecture, it might
+  be turned into a plugin in the future Fuel
+  releases.
 
 
-.. note:: In 5.x environments that use vCenter as the hypervisor,
-   the nova-compute service runs only on Controller nodes.
+* In 5.x environments that use vCenter as the hypervisor,
+  the nova-compute service runs only on Controller nodes.
 
-   In 6.0 Fuel release, the relation between a nova-compute service and an ESXi host cluster
-   is changed from one-to-many to one-to-one (so-called 1-1 mapping).
-   In other words, to manage multiple ESXi host clusters,
-   you now need to run multiple nova-compute services.
+* In 6.0 Fuel release, the relation between a nova-compute service and an ESXi host cluster
+  is changed from one-to-many to one-to-one (so-called 1-1 mapping).
+  In other words, to manage multiple ESXi host clusters,
+  you now need to run multiple nova-compute services.
+
+* In Fuel 6.1, each OpenStack environment can support more than one
+  vCenter cluster.
+
 
 The vCenter driver makes management convenient
 from both the OpenStack Dashboard (:ref:`horizon-term`)
@@ -66,14 +72,20 @@ to create a Mirantis OpenStack environment
 that is integrated with VMware vSphere,
 the vSphere installation must be up and running.
 Please check that you completed the following steps:
+
 * Install vSphere
+
 * Install vCenter
+
 * Install ESXi
+
 * Configure vCenter
 
-	* Create DataCenter
-	* Create vCenter cluster
-	* Add ESXi host(s)
+* Create DataCenter
+
+* Create vCenter cluster
+
+* Add ESXi host(s)
 
 .. raw:: pdf
 
@@ -125,7 +137,6 @@ Limitations
 - Only vCenter versions 5.1 and later are supported
 - It is not possible to specify the vCenter cluster
   where virtual instances will be launched.
-- Each OpenStack environment can support one vCenter cluster.
 - :ref:`security-groups-term` are not supported.
 - The only supported backend for Cinder is VMDK.
 - Volumes that are created by Cinder appear as SCSI disks. To be able
@@ -135,10 +146,6 @@ Limitations
   not able to use it.
 - The Ceph backend for Glance, Cinder and RadosGW object storage is not supported.
 - Murano is not supported. It requires Neutron and vCenter utilizes nova-network.
-- Fuel does not configure Ceilometer to collect metrics from vCenter virtual resources.
-  For more details about the Ceilometer plugin for vCenter,
-  see `Support for VMware vCenter Server
-  <https://wiki.openstack.org/wiki/Ceilometer/blueprints/vmware-vcenter-server#Support_for_VMware_vCenter_Server>`_
 
 
 .. note::    Mirantis has the following lab setup tested for Mirantis OpenStack release 6.0
