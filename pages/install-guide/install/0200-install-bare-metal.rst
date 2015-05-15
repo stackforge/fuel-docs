@@ -20,8 +20,8 @@ of the window and select it, insert blank DVD, and click `Burn`. If you prefer
 a different utility, check out the open source `Burn 
 <http://burn-osx.sourceforge.net/Pages/English/home.html>`_.
 
-Installing the ISO to a bootable USB stick, however, is an entirely different 
-matter. Canonical suggests `PenDriveLinux` which is a GUI tool for Windows.
+For detailed instructions on writing to a USB drive
+see `Writing a bootable Fuel 6.1 ISO to a USB drive <isoUSB-ops>`.
 
 On Windows, you can write the installation image with a number of different 
 utilities. The following list links to some of the more popular ones and they 
