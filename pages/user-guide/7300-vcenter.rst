@@ -91,7 +91,7 @@ and finish backend configuration at the VMware tab.
 
 .. image:: /_images/user_screen_shots/cinder-storage-backend-vmware.png
 
-
+.. _ceilometer-related-projects:
 
 Related projects for vCenter
 ++++++++++++++++++++++++++++
@@ -103,11 +103,6 @@ with vSphere integration.
 
 .. image:: /_images/user_screen_shots/platform_services-vmware.png
 
-
-Note that not all :ref:`Ceilometer<ceilometer-term>`
-metrics are collected for the vCenter environment.
-For more details about the Ceilometer plugin for vCenter,
-see `Support for VMware vCenter Server <https://wiki.openstack.org/wiki/Ceilometer/blueprints/vmware-vcenter-server#Support_for_VMware_vCenter_Server>`_.
 
 Previously, when you selected vCenter,
 Compute and Controller roles were assigned to the same node,

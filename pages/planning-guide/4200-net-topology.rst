@@ -65,8 +65,7 @@ Some other considerations when choosing a network topology:
 - :ref:`ovs-term`, :ref:`bonding-term`, and :ref:`murano-term`
   can only be implemented on Neutron.
 - VMware :ref:`vcenter-term` and :ref:`vsphere-term`
-  can only be implemented on :ref:`Nova-network<nova-network-term>`
-  with the FlatDHCP topology.
+  can only be implemented on :ref:`Nova-network<nova-network-term>`.
 - :ref:`bonding-term` is not supported for SR-IOV over
   the :ref:`mellanox-adapters` family.
 - Mellanox :ref:`sr-iov-term` and :ref:`iser-term` are supported only when
