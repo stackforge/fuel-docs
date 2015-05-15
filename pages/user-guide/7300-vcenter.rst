@@ -91,7 +91,7 @@ and finish backend configuration at the VMware tab.
 
 .. image:: /_images/user_screen_shots/cinder-storage-backend-vmware.png
 
-
+.. _ceilometer-related-projects:
 
 Related projects for vCenter
 ++++++++++++++++++++++++++++
