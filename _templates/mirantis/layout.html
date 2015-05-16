@@ -27,7 +27,7 @@
   {% endif %}
 {% else %}
   {% set theme_css_files = theme_css_files + [
-      'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css',
+      '_static/bootstrap-dropdown.js',
       '_static/bootstrap-' + bootstrap_version + '/css/bootstrap-' + bootstrap_additional_css + '.min.css',
       '_static/bootstrap-sphinx.css',
       '_static/styles.css'
@@ -41,9 +41,10 @@
 {% set css_files = css_files + theme_css_files + bootswatch_css_custom %}
 
 {% set script_files = script_files + [
-    '_static/bootstrap-dropdown.js',
+    'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.js',
     '_static/bootstrap-sphinx.js',
-    '_static/abtest.js'
+    '_static/abtest.js',
+    'https://cdnjs.cloudflare.com/ajax/libs/zeroclipboard/2.2.0/ZeroClipboard.js'
   ]
 %}
 
