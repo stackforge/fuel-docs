@@ -14,6 +14,8 @@ as the AMQP compliant messaging interface.
 
 For more information:
 
+- :ref:`tshoot-amqp-ops` how to troubleshoot.
+
 - The RabbitMQ site provides a nice
   `tutorial about AMQP <https://www.rabbitmq.com/tutorials/amqp-concepts.html>`_.
 

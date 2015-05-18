@@ -1,0 +1,119 @@
+.. index:: HowTo: Troubleshoot AMQP issues
+
+.. _tshoot-amqp-ops:
+
+How To Troubleshoot AMQP issues
+===============================
+
+The AMQP is a heart of OpenStack. If something gets wrong with
+the messaging layer, normally an OpenStack application can tolerate
+this by issuing reconnects, reporting some requests failed or
+retrying them as well. This depends on the particular application
+and underlying Oslo messaging library design. But there are some
+generic helth checks and troubleshooting steps for operators to
+know and to do as well.
+
+Check if there is a problem in Corosync/Pacemaker layer
+-------------------------------------------------------
+
+Normally, failures of the RabbitMQ multistate resource are automatically
+fixed by Corosync and Pacemaker. But if it cannot for some reason, there
+will be a "bad" status of the master_p_rabbitmq-server resource reported.
+The "good" status is when there is a single master exist for the
+master_p_rabbitmq-server and the rest of the resource instances are reported
+as slaves. Note, that the command ``pcs status`` issued on all controllers
+should be enough to gather all required information, see :ref:`crm-ops`.
+You can also try an extended output with the crm tool alternative:
+
+::
+
+    crm_mon -fotAW -1
+
+If there were some RabbitMQ resource failures, they will
+be shown in the command output with the time stamps, so you could
+search for events in logs around that moment.
+
+.. note:: If there are split clusters of Corosync running, you should
+  first fix your Corosync cluster, because you cannot resolve issues with
+  Pacemaker resources, including RabbitMQ cluster, when there is a
+  split brain in Corosync cluster.
+
+How to recover
+++++++++++++++
+
+It is recommended to cleanup and restart the master_p_rabbitmq-server
+pacemaker resource, see :ref:`crm-ops`.
+
+.. note:: Restarting the RabbitMQ pacemaker resource will introduce
+  a full downtime for AMQP cluster and OpenStack applications.
+  The downtime may take from few up to 20 minutes.
+
+Check if there is a problem in the RabbitMQ layer
+-------------------------------------------------
+
+Normally, failures of the RabbitMQ cluster are automatically healed
+by OCF resource agents in Pacemaker. But if it cannot for some
+reason, there may be unsynchronized queues, wrong cluster membership
+reported or partitions detected by the rabbitmqctl tool, or even
+some list channels/queueus requests may hang. Note, that the
+command ``rabbitmqctl report`` issued on all controllers should be enough
+to gather all required information, but there is also special group
+of Fuel OSTF HA health checks available in the Fuel UI and CLI, see also
+`RabbitMQ OSTF replication tests <https://blueprints.launchpad.net/fuel/+spec/ostf-rabbit-replication-tests>`.
+
+How to recover
+++++++++++++++
+
+It is recommended to cleanup and restart the master_p_rabbitmq-server
+pacemaker resource, see :ref:`crm-ops`.
+
+Check if there is a problem in the Oslo messaging layer
+-------------------------------------------------------
+
+Note, that normally an OpenStack application should be able to
+reconnect AMQP host and restore its operations, eventually.
+But if it cannot for some reason, there may be "down" status reports
+or failures of CLI commands and messaging related or
+publish/consume message related records in log files of the OpenStack
+services relying on Oslo messaging library.
+For example, there are may be following or similar records
+in log files:
+
+::
+
+    Timed out waiting for a reply to message...
+
+How to recover
+++++++++++++++
+
+It is recommended to restart the affected OpenStack service or
+services, see :ref:`manage-openstack-services-op`.
+
+.. note:: Restarting the OpenStack service will introduce
+  a short-time (near to zero) downtime for related OpenStack application.
+
+Check if there are AMQP problems with any of the OpenStack components
+---------------------------------------------------------------------
+
+Note, that normally an OpenStack application should be able to
+reconnect AMQP host and restore its operations, eventually.
+But if it cannot for some reason, there may be "down" status reports
+or failures of CLI commands and AMQP/messaging related records in log
+files of the services belonging to the affected OpenStack component
+under verification.
+For Nova, for example, there are may be following or similar records
+in log files residing in the /var/log/nova/ directory:
+
+::
+
+    AMQP server on ... is unreachable: [Errno 113] EHOSTUNREACH...
+
+How to recover
+++++++++++++++
+
+It is recommended to restart all instances of the OpenStack services
+related to the affected OpenStack component,
+see :ref:`manage-openstack-services-op`.
+For example, for Nova Compute component, you may want to restart all
+instances of the nova services at controllers and compute nodes affected
+by the AMQP issue.
