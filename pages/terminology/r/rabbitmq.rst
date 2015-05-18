@@ -14,6 +14,8 @@ Additional information is available:
 - :ref:`backport-rabbitmq-ocf-op` explains how to backport
   the RabbitMQ OCF script to pre-6.1 environments.
 
+- :ref:`tshoot-amqp-ops` how to troubleshoot.
+
 See:
 
 - `RabbitMQ documentation <http://www.rabbitmq.com/documentation.html>`_
