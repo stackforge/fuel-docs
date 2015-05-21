@@ -41,7 +41,6 @@ This section provides additional information
 about running Sahara.
 
 
-.. include:: /pages/operations/sahara/7600-security-groups.rst
 .. include:: /pages/operations/sahara/7700-prepare-to-test.rst
 .. include:: /pages/operations/sahara/7740-sahara-vmware.rst
 .. include:: /pages/operations/sahara/7750-test-details.rst
