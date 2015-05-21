@@ -36,4 +36,8 @@ For more information, see
   to enable the Zabbix server.
 - `Zabbix documentation <https://www.zabbix.com/documentation/2.2/manual>`_.
 
+In 6.1 release, Zabbix is implemented as a plugin for Fuel.
+You can read the documentation, download and configure
+Zabbix plugin using
+`Fuel Plugins Catalog <https://www.mirantis.com/products/openstack-drivers-and-plugins/fuel-plugins/>`_.
 
