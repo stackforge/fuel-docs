@@ -6,6 +6,7 @@ Issues in other components
 
 .. include:: /pages/release-notes/v6-1/other/4010-horizon.rst
 .. include:: /pages/release-notes/v6-1/other/6040-murano.rst
+.. include:: /pages/release-notes/v6-1/other/7040-sahara.rst
 .. include:: /pages/release-notes/v6-1/other/4020-keystone.rst
 .. include:: /pages/release-notes/v6-1/other/5010-ceilometer-mongodb.rst
 .. include:: /pages/release-notes/v6-1/other/5030-zabbix.rst
