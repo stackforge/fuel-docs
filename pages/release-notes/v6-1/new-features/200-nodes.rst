@@ -1,8 +1,12 @@
 
-Scalability Certification for 100-node environments
+Scalability Certification for 200-node environments
 ---------------------------------------------------
 
-See `Certify control plane and data plane on a scale up to 200 nodes
-<https://mirantis.jira.com/browse/PROD-141>`_
-and `200 nodes support
-<https://blueprints.launchpad.net/fuel/+spec/200-nodes-support>`_.
+Environments deployed with Fuel 6.1
+are certified as stable and scalable
+at up to 200 nodes.
+We continue to work to eliminate stability, scalability,
+and performance issues for larger environments.
+See the `200 nodes support
+<https://blueprints.launchpad.net/fuel/+spec/200-nodes-support>`_
+blueprint for details about the implementation.
