@@ -23,7 +23,7 @@ or some tests may fail.
 
    * Download the following image:
 
-     http://sahara-files.mirantis.com/mos60/sahara-juno-vanilla-1.2.1-ubuntu-14.04.qcow2
+     http://sahara-files.mirantis.com/mos61/sahara-juno-vanilla-2.4.1-ubuntu-14.04.qcow2
 
    * Then upload the image into OpenStack Image Service (Glance) into
      the 'admin' tenant and name it 'sahara'.
@@ -40,7 +40,7 @@ or some tests may fail.
 
    * Set username to ‘ubuntu’
 
-   * For tags, pick ‘vanilla’ plugin and ‘1.2.1’ version and press
+   * For tags, pick ‘vanilla’ plugin and ‘2.4.1’ version and press
      the ‘Add plugin tags’ button.
 
    * Finally push the ‘Done’ button
