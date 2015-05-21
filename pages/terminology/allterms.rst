@@ -98,5 +98,4 @@ Terminology Reference
 .. include:: /pages/terminology/v/vmdk.rst
 .. include:: /pages/terminology/v/vsphere.rst
 .. include:: /pages/terminology/z/zabbix.rst
-.. include:: /pages/terminology/z/zabbix-role.rst
 

@@ -14,8 +14,6 @@ that need high levels of stability.
 
 The following features are currently defined as experimental:
 
-- Zabbix integration; see :ref:`zabbix-plan`.
-
 - Ability to apply minor updates to OpenStack environments
   within the same OpenStack major release;
   see :ref:`upgrade-patch-top-ug`.

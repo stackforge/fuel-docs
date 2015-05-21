@@ -36,11 +36,6 @@ Fuel displays an icon
 next to roles that are not allowed.
 It also tells you about other environment settings that are required.
 
-.. note:: The Zabbix role appears on this screen
-          only when you have enabled
-          :ref:`experimental features<experimental-features-term>`
-          on the Fuel Master node.
-
 If you want to modify the roles assigned to a node:
 
 - If you assigned the wrong role to a node
@@ -89,7 +84,6 @@ For more information, see:
   ramifications of the different Storage roles.
 - :ref:`nodes-roles-plan` includes guidelines about setting up nodes.
 - :ref:`mongodb-term` for information about MongoDB.
-- :ref:`zabbix-plan` for information about Zabbix.
 - :ref:`operating-system-role-term` defines the Operating System role
   and points to other documents with additional information.
 

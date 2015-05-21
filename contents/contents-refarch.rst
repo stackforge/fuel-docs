@@ -11,7 +11,6 @@
 .. include:: /pages/reference-architecture/6070-nova-topologies.rst
 .. include:: /pages/reference-architecture/0100-openvswitch.rst
 .. include:: /pages/reference-architecture/0110-bonding.rst
-.. include:: /pages/reference-architecture/8100-zabbix.rst
 .. include:: /pages/reference-architecture/8000-fuel-upgrade.rst
 .. include:: /pages/reference-architecture/8800-base-os.rst
 .. include:: /pages/reference-architecture/9900-task-deployment.rst

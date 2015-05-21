@@ -58,7 +58,4 @@ see :ref:`assign-roles-ug`:
   when sampling large amounts of data at short intervals.
   See :ref:`ceilometer-mongodb-plan` for more information.
 
-- :ref:`Zabbix Server<zabbix-role-term>`:
-  Must always be deployed on its own node.
-
 
