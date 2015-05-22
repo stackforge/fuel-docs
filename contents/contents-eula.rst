@@ -1,0 +1,2 @@
+.. literalinclude:: LICENSE
+  :language: none
