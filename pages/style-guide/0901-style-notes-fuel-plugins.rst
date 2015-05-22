@@ -46,7 +46,7 @@ Plugin Guide is formed according to the template.
 In fact, it consists of four basic parts:
 
 #. Introductory - what functionality does the plugin have,
-   what technologues are involved, what are the plugin-specific
+   what technologies are involved, what are the plugin-specific
    terms, what are the use cases.
 
 #. Installation - how to perform configuration of additional components (for example,
@@ -137,7 +137,7 @@ Screenshots
 
 #. If your plugin works only in a specific Fuel configuration
    (for instance, with Neutron as a Networking Setup), please
-   provide a screeenshot with the selected option. For example,
+   provide a screenshot with the selected option. For example,
    this plugin works in Neutron with VLAN segmentation setup only.
    To demonstrate this, we should provide the following screenshot:
 

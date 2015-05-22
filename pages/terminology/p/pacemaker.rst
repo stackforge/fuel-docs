@@ -4,7 +4,7 @@
 Pacemaker
 ---------
 High-availability resource manager for Linux based clusters.
-Fuel uses Packemaker with :ref:`corosync-term`
+Fuel uses Pacemaker with :ref:`corosync-term`
 to implement :ref:`ha-term` for OpenStack services.
 
 See:

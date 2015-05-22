@@ -19,7 +19,7 @@ on the management, storage, and public networks.
 
 The version of CentOS that Fuel deploys
 has poor support for VLAN tagged packets
-so work-aronds are provided to improve the VLAN support
+so workarounds are provided to improve the VLAN support
 when using CentOS;
 see :ref:`vlan-splinters-ug`.
 

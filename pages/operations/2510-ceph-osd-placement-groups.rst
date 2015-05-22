@@ -5,7 +5,7 @@ How To: Adjust Placement Groups when adding additional Ceph OSD node(s)
 =======================================================================
 
 When adding additional Ceph OSD nodes to an environment, it may be
-necessary to addjust the placement groups (pg_num) and the placement
+necessary to adjust the placement groups (pg_num) and the placement
 groups for placement (pgp_num) for the pools. The following process
 can be used to update these two values for the Ceph cluster.
 These adjustments may not be necessary unless you add a significant

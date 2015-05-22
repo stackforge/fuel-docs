@@ -31,7 +31,7 @@ Other Questions
    for OpenStack packages.
 
 
-4. **[Q]** Is Neutron an active/standy HA? I got this understanding from the docs
+4. **[Q]** Is Neutron an active/standby HA? I got this understanding from the docs
    and I want to understand why. I was told that Grizzly and Havanna support multiple
    L3 agents but Mirantis OpenStack only supports a single L3 agent.
 

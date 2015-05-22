@@ -126,7 +126,7 @@ Stop and destroy a container:
 
 .. note:: This is not reversible, so use with caution.
 
-Find containets names by running:
+Find containers names by running:
 ::
 
   dockerctl list

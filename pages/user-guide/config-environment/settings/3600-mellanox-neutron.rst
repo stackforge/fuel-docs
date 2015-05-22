@@ -9,7 +9,7 @@ Mellanox Neutron components
 +++++++++++++++++++++++++++
 
 This section explains how to configure Mellanox ConnectX-3 adapters
-in your environement. See :ref:`mellanox-adapters` for
+in your environment. See :ref:`mellanox-adapters` for
 planning information.
 
 Kernel parameters configuration:

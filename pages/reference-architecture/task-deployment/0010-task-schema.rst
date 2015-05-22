@@ -85,7 +85,7 @@ Skipped
 -------
 
 Making a task ``skipped`` will guarantee that this task will not be executed,
-but all the task's depdendencies will be preserved:
+but all the task's dependencies will be preserved:
 
 .. code-block:: yaml
 
@@ -163,7 +163,7 @@ This task will upload data specified in ``data`` parameters to the
 Sync
 ----
 
-Sync task will distribute files from ``src`` direcory
+Sync task will distribute files from ``src`` directory
 on the Fuel Master node
 to ``dst`` directory on target hosts
 that will be matched by role:

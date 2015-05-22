@@ -3,7 +3,7 @@
 HowTo: Backport Galera Pacemaker OCF script
 -------------------------------------------
 
-Fuel 5.1 has completely redesigned OCF script which makes Galera cluster more reliable and predictible
+Fuel 5.1 has completely redesigned OCF script which makes Galera cluster more reliable and predictable
 
 .. note:: Schedule the maintenance window, Perform backups of all databases, Stop MySQL related services before any operations with Galera
 

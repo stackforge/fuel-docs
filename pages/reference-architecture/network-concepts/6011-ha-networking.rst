@@ -7,7 +7,7 @@ HA deployment for Networking
 
 Fuel leverages
 `Pacemaker resource agents <http://www.linux-ha.org/wiki/Resource_agents>`_
-in order to deploy highly avaiable networking for OpenStack environments.
+in order to deploy highly available networking for OpenStack environments.
 
 Virtual IP addresses deployment details
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -22,7 +22,7 @@ migrates to another node
 In order to achieve this, resource agent scripts for `ocf:heartbeat:haproxy`
 and `ocf:heartbeat:IPaddr2` were hardened with network namespaces support.
 
-Successfull failover of public VIP address requires controller nodes
+Successful failover of public VIP address requires controller nodes
 to perform active checking of the public gateway. Fuel configures
 the Pacemaker resource `clone_ping_vip__public` that makes public VIP to
 migrate in case the controller can't ping its public gateway.

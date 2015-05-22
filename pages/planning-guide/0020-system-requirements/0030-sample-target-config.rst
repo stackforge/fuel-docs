@@ -44,7 +44,7 @@ Each controller should have:
 - Hardware RAID1 Controller with at least 1TB formatted capacity
   for the Host operating system disk.
   Larger disks may be warranted
-  depending on expected database ang log storage requirements.
+  depending on expected database and log storage requirements.
   Note that it is non-trivial to expand the disk storage
   on running Controller nodes.
 - 2 NICs, either 1 Gbit/s or 10 Gbit/s

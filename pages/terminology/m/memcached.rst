@@ -14,10 +14,10 @@ and `Key-value stores <http://docs.openstack.org/admin-guide-cloud/content/dashb
 admin guides for details.
 :ref:`Swift<swift-object-storage-term>` proxy server is also
 configured to use the memcached,
-see `Object Storage documentaion <http://docs.openstack.org/admin-guide-cloud/content/object-storage-service.html>`_.
+see `Object Storage documentation <http://docs.openstack.org/admin-guide-cloud/content/object-storage-service.html>`_.
 
 .. note:: Fuel configures the Keystone to use the ``memcache_pool``
-   backend for tokens, but tokens revokations are tracked in the
+   backend for tokens, but tokens revocations are tracked in the
    :ref:`MySQL/Galera<galera-cluster-term>` backend due to
    security reasons. Starting from the Fuel 6.1 release, the
    memcached instances are also configured to consume no more

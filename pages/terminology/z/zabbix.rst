@@ -22,7 +22,7 @@ For Release 5.1, Zabbix can monitor the following:
 
 - Core infrastructure components: :ref:`mysql-term`,
   :ref:`rabbitmq-term`, :ref:`haproxy-term`,
-  memchached, and libvirtd.
+  memcached, and libvirtd.
 
 - Operating system statistics: Disk I/O, CPU load, free RAM, et cetera.
 

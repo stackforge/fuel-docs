@@ -18,7 +18,7 @@ Is it possible to specify cross-dependencies between groups?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In Fuel 6.0 or earlier, there is no model that will allow to run tasks
-on a primary Controller, then run on a controlle with getting back to the
+on a primary Controller, then run on a controller with getting back to the
 primary Controller.
 
 In Fuel 6.1, cross-dependencies are resolved by the ``post_deployment`` stage.
