@@ -55,6 +55,7 @@ To install PlantUML run this wget process:
     -O /sbin/plantuml.jar
 
 PlantumUML requires java:
+
     sudo apt-get install openjdk-7-jre
 
 We use [Inkscape](http://inkscape.org/ "Inkscape") to edit SVG images
@@ -122,18 +123,21 @@ Checks for structural changes:
 Testing the change locally:
 
 1. Download the branch:
-   git review -d <gerrit-id>
+
+        git review -d <gerrit-id>
 
 2. Check that it's based on the current tip of the master branch, look
    for "origin/master" next to commit hash in the output of:
-   git log --graph --decorate
+
+        git log --graph --decorate
 
 3. If it's not, check if it can be rebased onto master cleanly:
-   git rebase --onto master HEAD^
+
+        git rebase --onto master HEAD^
 
 4. Build HTML and PDF versions as described above. If rebase was
    necessary, build from the rebased version: you want to see what the
-   result of the merge into master will look like
+   result of the merge into master will look like.
 
 5. Check that the count of warnings reported by 'make pdf' hasn't
    increased relative to master.
