@@ -17,7 +17,7 @@ New Features and Resolved Issues in Mirantis OpenStack 6.0
 * Murano is now present in the Keystone service list.
   See `LP1362037 <https://bugs.launchpad.net/bugs/1362037>`_.
 
-* RabbitMQ now handles Murano users correnctly
+* RabbitMQ now handles Murano users correctly
   and so no longer loses Murano users
   when the Primary Controller in an HA cluster is shut down.
   See `LP1372483 <https://bugs.launchpad.net/fuel/+bug/1372483>`_.
@@ -41,7 +41,7 @@ Known Issues in Mirantis OpenStack 6.0
 
   #. Log into one of the Controller nodes
      and execute the **source openrc** command
-     to import credentials and access OpenStack servces from the CLI.
+     to import credentials and access OpenStack services from the CLI.
 
   #. Get the service-id for the Murano service:
 

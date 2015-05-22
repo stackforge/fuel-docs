@@ -4,7 +4,7 @@
 Test and Verification Issues
 ============================
 
-Resolved test and verifiation issues
+Resolved test and verification issues
 ------------------------------------
 
 Known test and verification issues

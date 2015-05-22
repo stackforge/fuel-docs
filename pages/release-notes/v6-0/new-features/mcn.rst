@@ -1,5 +1,5 @@
 
-Mutiple network domains per OpenStack environment
+Multiple network domains per OpenStack environment
 -------------------------------------------------
 
 Multiple network domains can now be used for environments
