@@ -106,7 +106,7 @@ but it has some known limitations:
 
 * External network is not configured when changing the ML2 mechanism
   to Mellanox and Open vSwitch.
-  When installing Centos HA with Neutron with VLAN
+  When installing CentOS HA with Neutron with VLAN
   and changing the ML2 mechanism to Mellanox and Open vSwitch,
   the external network is not configured after deployment.
   See `LP1369988 <https://bugs.launchpad.net/bugs/1369988>`_.
