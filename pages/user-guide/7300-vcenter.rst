@@ -13,6 +13,14 @@ Deploying vCenter
 that should be made before attempting to deploy
 Mirantis OpenStack with vSphere integration.
 
+Note, that before following the instructions
+below you should make sure that:
+
+* vCenter is accesible
+
+* the login and the password are correct.
+
+
 To deploy an OpenStack cloud that is integrated
 with the vSphere environment,
 click on the "New OpenStack environment" icon
