@@ -10,7 +10,7 @@ corresponds to your operating system. The OpenStack source code
 (.py) files are stored in different locations depending on the
 operating system:
 
-* **Centos**: /usr/lib/python2.6/site-packages/[component] (for example, /usr/lib/python2.6/site-packages/nova)
+* **CentOS**: /usr/lib/python2.6/site-packages/[component] (for example, /usr/lib/python2.6/site-packages/nova)
 
 * **Ubuntu**: /usr/share/pyshared/[component] (for example, /usr/share/pyshared/nova)
 

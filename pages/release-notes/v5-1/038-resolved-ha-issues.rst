@@ -90,7 +90,7 @@ Management network now restarts correctly
 
 The interface state is now checked when restarting
 the Management logical network.
-This solves the problems that sometime occured
+This solves the problems that sometimes occurred
 when br-mgmt (the bridge for the Management logical network
 on the Neutron topology) was shut down from the main Controller node,
 making the Controller cluster unreachable.

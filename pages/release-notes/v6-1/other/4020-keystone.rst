@@ -4,8 +4,8 @@
 OpenStack Identity (Keystone)
 -----------------------------
 
-Resolved Keyston Issues
-+++++++++++++++++++++++
+Resolved Keystone Issues
+++++++++++++++++++++++++
 
-Known Keyston Issues
-++++++++++++++++++++
+Known Keystone Issues
++++++++++++++++++++++

@@ -70,7 +70,7 @@ For more information:
   <http://pubs.vmware.com/vsphere-55/index.jsp#com.vmware.vsphere.install.doc/GUID-7C9A1E23-7FCD-4295-9CB1-C932F2423C63.html>`_.
 
 - See :ref:`Limitations<vcenter-limitations>` section for more details
-  on compatility with other VMware components and Mirantis lab setup.
+  on compatibility with other VMware components and Mirantis lab setup.
 
 
 vSphere Installation

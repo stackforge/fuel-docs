@@ -65,7 +65,7 @@ The meaning of these fields is:
             :provisioned:     Node is provisioned but not deployed
             :deploying:       Node is being deployed
                               (OpenStack is being installed and configured)
-            :error:    Deployment/provisiong of the node has failed
+            :error:    Deployment/provisioning of the node has failed
 
 :name:    Name of the node as displayed on the screen when you
           :ref:`assign roles to nodes<assign-roles-ug>`.

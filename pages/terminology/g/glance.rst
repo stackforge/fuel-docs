@@ -3,7 +3,7 @@
 Glance
 ------
 Glance is the OpenStack Image Storage project.
-Glance provides a scaleable, RESTful API for VM images and metadata.
+Glance provides a scalable, RESTful API for VM images and metadata.
 
 Fuel can deploy either of the following
 as the storage backend for Glance:

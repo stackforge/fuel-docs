@@ -73,7 +73,7 @@ are fixed:
 - Second rsyslog server definition no longer breaks logs
   to master. See `LP1339659 <https://bugs.launchpad.net/bugs/1339659>`_.
 
-- Logs are now rotated on bootstraped nodes.
+- Logs are now rotated on bootstrapped nodes.
   See `LP1364083 <https://bugs.launchpad.net/fuel/+bug/1364083>`_.
 
 - Bootstrap node does not die after a week of inactivity.
@@ -168,7 +168,7 @@ See `LP1342073 <https://bugs.launchpad.net/bugs/1342073>`_.
 and `LP1340968 <https://bugs.launchpad.net/bugs/1340968>`_.
 
 
-Openstack services are no longer started as soon as they are installed on Ubuntu systems
+OpenStack services are no longer started as soon as they are installed on Ubuntu systems
 ----------------------------------------------------------------------------------------
 
 Puppet installs the Fuel packages.
@@ -361,7 +361,7 @@ In earlier releases,
 using the Fuel CLI to add a new Compute node to an environment
 caused Puppet to run on all nodes in the environment.
 Configuration information is now stored per node rather than per cluster
-so that clusters can be managed seemlessly
+so that clusters can be managed seamlessly
 using either the Fuel UI or the Fuel CLI.
 See `LP1280318 <https://bugs.launchpad.net/fuel/+bug/1280318>`_.
 
@@ -431,7 +431,7 @@ Galera bugs were fixed
   so it does not time out.
   See `LP1354479 <https://bugs.launchpad.net/fuel/+bug/1354479>`_.
 
-* Galera now reassambles on Galera quorum loss.
+* Galera now reassembles on Galera quorum loss.
   See `LP1350545 <https://bugs.launchpad.net/fuel/+bug/1350545>`_.
 
 * Galera changes to config in Puppet manifests now correctly refresh MySQL service.
@@ -854,7 +854,7 @@ Other resolved issues
 * Puppet no longer generates wrong dnsmasq.upstream in Cobbler container.
   See `LP1327799 <https://bugs.launchpad.net/fuel/+bug/1327799>`_.
 
-* OpenStack engine now corretly checks releases for uniqueness.
+* OpenStack engine now correctly checks releases for uniqueness.
   See `LP1327198 <https://bugs.launchpad.net/fuel/+bug/1327198>`_.
 
 * Docker0 interface bug was fixed for PXE.
@@ -869,7 +869,7 @@ Other resolved issues
 * "Stevedore.extension" error no longer occurs.
   See `LP1325519 <https://bugs.launchpad.net/fuel/+bug/1325519>`_.
 
-* UI is not cached between FUel versions.
+* UI is not cached between Fuel versions.
   See `LP1325012 <https://bugs.launchpad.net/fuel/+bug/1325012>`_.
 
 * Production-oriented configuration parameters were set for Nova and Neutron.
@@ -926,7 +926,7 @@ Other resolved issues
 * "MultipleAgentFoundByTypeHost" error was fixed.
   See `LP1322228 <https://bugs.launchpad.net/fuel/+bug/1322228>`_.
 
-* Error in neutron-resheduling log no nolger occurs.
+* Error in neutron-resheduling log no longer occurs.
   See `LP1322221 <https://bugs.launchpad.net/fuel/+bug/1322221>`_.
 
 * After HA FlatDHCP deployment, redundant interfaces do not appear in controller node.
@@ -1136,7 +1136,7 @@ Other resolved issues
 * The syslog logging is not affected by /dev/log race conditions.
   See `LP1342068 <https://bugs.launchpad.net/fuel/+bug/1342068>`_.
 
-* Both cluster and volumes are removed in enrivonment, deployed with Cinder.
+* Both cluster and volumes are removed in environment, deployed with Cinder.
   See `LP1341650 <https://bugs.launchpad.net/fuel/+bug/1341650>`_.
 
 * *URI too long* error was fixed in Neutron security group rule list.

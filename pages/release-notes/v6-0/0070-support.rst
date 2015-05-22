@@ -11,6 +11,6 @@ registered trademarks of Mirantis, Inc. in the U.S. and/or certain other countri
 Ubuntu is a registered trademark of Canonical Ltd.
 VirtualBox is a registered trademark of Oracle Corporation.
 VMware, NSX, vCenter, and ESXi are trademarks or registered trademarks of VMware, Inc.
-Mellanox and ConnectX are reigstered trademarks of Mellanox Technologies.
+Mellanox and ConnectX are registered trademarks of Mellanox Technologies.
 All other registered trademarks or trademarks belong to their respective companies.
 Copyright 2014 Mirantis, Inc. All rights reserved.

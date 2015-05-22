@@ -101,7 +101,7 @@ See :ref:`experimental-features-term` for more information.
 The Fuel Master Node can now be backed up and restored
 ------------------------------------------------------
 Building on the :ref:`Docker<docker-term>` packaging architecture
-introduced in Mirantis Openstack 5.0,
+introduced in Mirantis OpenStack 5.0,
 the current state of the Fuel Master Node
 can now be backed up and, if necessary, restored.
 This must be done from the command line.

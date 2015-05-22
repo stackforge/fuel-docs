@@ -19,7 +19,7 @@ for select configuration files that Fuel uses.
    you will receive a warning
    that some attributes were modified from the outside.
    Some features may become inaccessible
-   from the  UI after you do this.
+   from the UI after you do this.
 
 These pages are under development;
 the information presented here has been reviewed

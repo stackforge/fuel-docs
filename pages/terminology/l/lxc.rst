@@ -4,7 +4,7 @@
 LXC (Linux containers)
 ----------------------
 
-LXC (Linux containers) are peacemeal containers
+LXC (Linux containers) are piecemeal containers
 that can be modified, upgraded, and backed up independently.
 LXC is a user space interface to the Linux kernel containment features.
 See `LXC <https://linuxcontainers.org/>`_

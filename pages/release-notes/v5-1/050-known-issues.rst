@@ -106,7 +106,7 @@ but it has some known limitations:
 
 * External network is not configured when changing the ML2 mechanism
   to Mellanox and Open vSwitch.
-  When installing Centos HA with Neutron with VLAN
+  When installing CentOS HA with Neutron with VLAN
   and changing the ML2 mechanism to Mellanox and Open vSwitch,
   the external network is not configured after deployment.
   See `LP1369988 <https://bugs.launchpad.net/bugs/1369988>`_.
@@ -326,7 +326,7 @@ soft trunks and hard trunks:
    This provides the least amount of performance overhead
    but the traffic may not be passed onto the OVS bridge in some edge cases.
 
-*  The **hard trunks mode** also configureS OVS to enable splinters
+*  The **hard trunks mode** also configures OVS to enable splinters
    but uses an explicitly defined list of all VLANs across all interfaces.
    This should prevent the occasional failures associated with the soft mode
    but requires that corresponding tags be created on all of the interfaces.
@@ -496,7 +496,7 @@ See `LP1370006 <https://bugs.launchpad.net/fuel/+bug/1370006>`_.
 Evacuate fails on Ceph backed volumes
 -------------------------------------
 
-VM instances that use ephermeral drives with Ceph RBD as the backend
+VM instances that use ephemeral drives with Ceph RBD as the backend
 cannot be evacuated using the **nova evacuate** command
 because of an error in the instance rebuild logic.
 To move such instances to another compute node,

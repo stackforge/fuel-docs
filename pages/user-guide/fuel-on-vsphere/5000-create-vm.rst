@@ -53,7 +53,7 @@ Select a guest operating system such as RHEL 6 64-bit:
 
 
 Set the memory size to at least 2GB and HDD size at least 50 GB.
-The Fuel Master node hardware recomendations are described here:
+The Fuel Master node hardware recommendations are described here:
 :ref:`HardwarePrerequisites`.
 A network adapter must be connected to the Fuel PXE network
 created above.

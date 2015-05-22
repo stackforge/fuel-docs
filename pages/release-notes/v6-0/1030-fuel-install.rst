@@ -78,7 +78,7 @@ Fuel default disk partition scheme is sub-optimal
 
 * On target nodes that use Ubuntu as the operating system,
   Ubuntu provisioning applies the default Base System partition
-  even if the user choses a different scheme.
+  even if the user chooses a different scheme.
 
 New node may not boot because of IOMMU issues
 +++++++++++++++++++++++++++++++++++++++++++++

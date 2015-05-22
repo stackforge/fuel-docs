@@ -6,7 +6,7 @@ Preparing Sahara for Testing
 
 The Platform Tests that are run as part of the Health Tests
 that test Sahara if it is configured in the Environment.
-Before runing the test,
+Before running the test,
 you must manually perform the actions listed below.
 
 Note that the tests are run in the tenant

@@ -33,19 +33,19 @@ The switches and servers is designed in this example to support five networks as
 **Cloud Networks**
 
 * Admin (PXE) network - 10.142.10.0/24 (no gateway, untagged via the 1GbE switch)
-* Managemenet network  - 192.168.0.0/24 (no gateway, VLAN 3 via Mellanox SX1036 40/56GbE switch)
+* Management network  - 192.168.0.0/24 (no gateway, VLAN 3 via Mellanox SX1036 40/56GbE switch)
 * Storage network     - 192.168.1.0/24 (no gateway, VLAN 4 via Mellanox SX1036 40/56GbE switch)
 * Public network      - 10.7.208.0/24  (gateway 10.7.208.1, untagged via the 1GbE switch)
 * Private network     - <any>          (no gateway, use range of VLANs e.g. 5-15 via Mellanox SX1036 40/56GbE switch)
 
-.. note:: Internet access is acheived via the Public network.
+.. note:: Internet access is achieved via the Public network.
 
 .. note:: All nodes should be connected to all networks (besides the Fuel node).
 
-.. note:: The 1GbE switch configuraiton for the Public and Admin (PXE) networks are similar to examples 1 and 2 above.
+.. note:: The 1GbE switch configuration for the Public and Admin (PXE) networks are similar to examples 1 and 2 above.
 
 
-**Network Configuation**
+**Network Configuration**
 
 * Floating IP range 10.7.208.101-200
 * DNS 8.8.4.4, 8.8.8.8
@@ -55,7 +55,7 @@ From server side (all nodes), ports with following VLAN IDs are used:
 
 *  eth0 - Admin (PXE) - untagged
 *  eth1 - Public - untagged
-*  eth2 (40/56GbE port) - Management VLAN 3, Storage VLAN 4 (+ VLANS 5-15 for the privte networks)
+*  eth2 (40/56GbE port) - Management VLAN 3, Storage VLAN 4 (+ VLANS 5-15 for the private networks)
 
 .. image:: /_images/user_screen_shots/interfaces_example.png
    :align: center

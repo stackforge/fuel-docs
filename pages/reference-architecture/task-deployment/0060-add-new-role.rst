@@ -70,7 +70,7 @@ follow these steps:
 
       fuel rel --sync-deployment-tasks --dir /etc/puppet/2014.2-6.1/
 
-#. :ref:`Create an enviroment <create-env-ug>`. Note the following:
+#. :ref:`Create an environment <create-env-ug>`. Note the following:
 
    * :ref:`configure public network <network-settings-ug>`
      properly since *redis* packages are fetched from the upstream.

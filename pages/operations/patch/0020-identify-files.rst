@@ -8,7 +8,7 @@ Identify files to be patched
 Identifying files or components to be patched usually involves investigating
 change logs for new OpenStack releases or git commit messages. You can find
 change logs using `OpenStack wiki search <https://wiki.openstack.org/wiki/Special:Search/ReleaseNotes>`_.
-Git commit messages are available from github.com or, in a more accesible form,
+Git commit messages are available from github.com or, in a more accessible form,
 on git.openstack.org. You will need to find the exact commit providing the fix
 for your problem.
 

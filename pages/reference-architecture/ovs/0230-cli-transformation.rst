@@ -51,7 +51,7 @@ Here are the the available options:
                                 # e.g. ['eth1','eth2']
     "bridge": "xxx",            # name of the bridge where the bond should be created
     "tag": 0,                   # [optional; default: 0] a 802.1q tag of traffic which
-                                # should be catched from an OVS bridge;
+                                # should be cached from an OVS bridge;
                                 # possible values: 0 (means port is a trunk),
                                 # 1-4094 (means port is an access)
     "trunks": [],               # [optional; default: []] a set of 802.1q tags

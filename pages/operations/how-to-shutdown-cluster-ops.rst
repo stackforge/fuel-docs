@@ -51,6 +51,6 @@ so the following sequence is possible:
 #. Wait several minutes and check the cluster state with *crm status* command.
    All Neutron agents including L3 and DHCP should be started.
 
-#. Restart all Openstack services.
+#. Restart all OpenStack services.
 
 #. Power on compute nodes.

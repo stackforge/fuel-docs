@@ -49,7 +49,7 @@ HowTo: Manage OpenStack services
 
    Next, you should inspect the output of command ``pcs resource``
    (or ``crm resource list``) and find the corresponding services listed, if any.
-   For example, if the 2nd chkconfig command reported on Centos OS:
+   For example, if the 2nd chkconfig command reported on CentOS:
 
    ::
 

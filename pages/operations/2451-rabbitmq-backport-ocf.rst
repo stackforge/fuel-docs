@@ -160,7 +160,7 @@ script are not applicable for them.
      - Add the parameter ``command_timeout`` with the value ``--signal=KILL``
 
        .. note:: The ``command_timeout`` parameter value is given for Ubuntu OS.
-          For Centos, this parameter should be set to a ``-s KILL``
+          For CentOS, this parameter should be set to a ``-s KILL``
 
 
        Use ``some_param="some_value"`` notation, or for the XML case:

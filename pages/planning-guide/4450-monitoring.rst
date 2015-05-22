@@ -5,7 +5,7 @@ Plan Monitoring Facilities
 ==========================
 
 Mirantis OpenStack can deploy two different
-metering and montoring facilities:
+metering and monitoring facilities:
 
 - **Ceilometer** to query and store metering data
   that can be used for billing purposes

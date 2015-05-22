@@ -92,7 +92,7 @@ packages on Ubuntu 12.04 as the host operating system for the OpenStack nodes.
 The Ubuntu 12.04 operating system is included in the ISO for Mirantis 
 OpenStack, so you can select Ubuntu from the Releases window and deploy 
 without requiring Internet access or downloading additional software. This 
-expands your choices for deployment to Centos with Mirantis OpenStack 
+expands your choices for deployment to CentOS with Mirantis OpenStack 
 hardened packages, Red Hat Enterprise Linux with Red Hat OpenStack, or 
 Ubuntu with Mirantis OpenStack hardened packages. 
 

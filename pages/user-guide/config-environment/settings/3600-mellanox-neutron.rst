@@ -9,7 +9,7 @@ Mellanox Neutron components
 +++++++++++++++++++++++++++
 
 This section explains how to configure Mellanox ConnectX-3 adapters
-in your environement. See :ref:`mellanox-adapters` for
+in your environment. See :ref:`mellanox-adapters` for
 planning information.
 
 Kernel parameters configuration:
@@ -52,5 +52,5 @@ iSER configuration:
 
 **Note:**
 `HowTo Install Mirantis Fuel 5.1 OpenStack with Mellanox Adapters Support <http://community.mellanox.com/docs/DOC-1474/>`_ includes
-advanced information regarding Mirantis Openstack installation over
+advanced information regarding Mirantis OpenStack installation over
 Mellanox hardware.

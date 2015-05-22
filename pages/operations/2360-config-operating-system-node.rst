@@ -22,7 +22,7 @@ Some general administrative tasks you may need to perform are:
   and populate the *fstab* file so they will mount automatically.
 - Configure additional :ref:`logical networks<logical-networks-arch>`
   you need; Fuel only configures the Admin/PXE network.
-- Set up any monitoring facilites you want to use
+- Set up any monitoring facilities you want to use
   such as **monit** and **atop**;
   configure **syslog** to send error messages to a centralized syslog server.
 - Tune kernel resources to optimize performance for the particular applications
