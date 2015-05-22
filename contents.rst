@@ -20,4 +20,3 @@ Documentation
   release-notes
   style-guide
   eula
-  third-party-licenses
