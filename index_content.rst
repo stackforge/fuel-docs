@@ -40,74 +40,75 @@
 
   Planning Guide
 
-  Planning information you should consider before
-  installing Fuel and deploying Mirantis OpenStack.
+  Explains how to plan Mirantis OpenStack deployment before installing
+  Fuel.
 
 
 .. container:: user-guide
 
   User Guide
 
-  This document describes how to deploy Mirantis OpenStack environments
-  using Fuel.
+  Describes how to deploy and use Mirantis OpenStack environments
+  with Fuel.
 
 .. container:: operations-guide
 
   Operations Guide
 
-  A collection of useful procedures for using and managing
+  Contains instructions on how to use and manage
   your Mirantis OpenStack environment.
 
 .. container:: monitoring-guide
 
   Monitoring Guide
 
-  A general OpenStack monitoring strategy.
+  Provides general concept on how to monitor OpenStack.
 
 .. container:: virtualbox
 
   Running Mirantis OpenStack on VirtualBox
 
-  This document provides information about running Mirantis OpenStack on VirtualBox
+  Explains how to run Mirantis OpenStack on VirtualBox
   for demonstration and evaluation purposes.
 
 .. container:: ref-arch
 
   Reference Architecture
 
-  A deep dive into the structure of the Mirantis OpenStack environment,
-  network considerations, and deployment options.
+  Provides the deep dive into the structure of the Mirantis OpenStack environment,
+  network considerations, deployment options and architectures.
 
 .. container:: plugin-dev
 
   Fuel Plugin Guide
 
-  Provides information on Fuel Plugins.
+  Explains how to develop and certify your own plugin for Fuel.
 
 .. container:: terminology-ref
 
   Terminology Reference
 
-  Short articles about OpenStack terminology and technology
+  Explains OpenStack terminology and technology
   with references to other documentation and other useful information.
 
 .. container:: file-ref
 
   File Format Reference
 
-  Reference pages for select configuration files that Fuel uses.
+  Provides information on how to use Fuel configuration files.
 
 .. container:: style-guide
 
   Style Guide
 
-  Contains style guidelines for the Mirantis OpenStack documentation.
+  Contains style guidelines and instructions on
+  how to write documentation for Mirantis OpenStack.
 
 .. container:: release-notes
 
   Release Notes
 
-  The Release Notes provide general information about new features,
+  Provide general information about new features,
   fixed issues, and known limitations in Mirantis OpenStack |version|.
 
 
