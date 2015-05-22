@@ -52,5 +52,5 @@ iSER configuration:
 
 **Note:**
 `HowTo Install Mirantis Fuel 5.1 OpenStack with Mellanox Adapters Support <http://community.mellanox.com/docs/DOC-1474/>`_ includes
-advanced information regarding Mirantis Openstack installation over
+advanced information regarding Mirantis OpenStack installation over
 Mellanox hardware.

@@ -168,7 +168,7 @@ See `LP1342073 <https://bugs.launchpad.net/bugs/1342073>`_.
 and `LP1340968 <https://bugs.launchpad.net/bugs/1340968>`_.
 
 
-Openstack services are no longer started as soon as they are installed on Ubuntu systems
+OpenStack services are no longer started as soon as they are installed on Ubuntu systems
 ----------------------------------------------------------------------------------------
 
 Puppet installs the Fuel packages.

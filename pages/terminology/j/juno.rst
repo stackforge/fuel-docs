@@ -4,7 +4,7 @@
 Juno
 ----
 
-Code name for the tenth release of the Openstack software.
+Code name for the tenth release of the OpenStack software.
 Mirantis OpenStack version 6.0 incorporates and supporte
 the Juno code base.
 The following improvements in Juno are not deployed

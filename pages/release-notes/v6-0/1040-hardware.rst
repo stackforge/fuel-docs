@@ -12,7 +12,7 @@ New Features and Resolved Issues in Mirantis OpenStack 6.0
   See `LP1270889 <https://bugs.launchpad.net/fuel/+bug/1270889>`_.
 
 
-Known Issues in Mirantis Openstack 6.0
+Known Issues in Mirantis OpenStack 6.0
 --------------------------------------
 
 CentOS issues using Neutron-enabled installations with VLANS
