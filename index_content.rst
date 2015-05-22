@@ -30,11 +30,10 @@
     <https://software.mirantis.com/trial-support-subscription/>`_
     is available.
 
-  This page contains the most recent Mirantis OpenStack documentation.
-  Select a title from the list below
-  or from the left menu and navigate through the topics.
-  Click on "pdf" in the list below
-  to get a PDF file of that document.
+  
+  To read web version of Mirantis OpenStack documentation,
+  click **Guides** tab.
+  To download pdf version, open **Downloads** tab.
 
 .. container:: planning-guide
 
