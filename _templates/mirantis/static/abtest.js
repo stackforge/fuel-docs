@@ -41,7 +41,6 @@ function generateCopyButton(url) {
 	return '<a data-toggle="tooltip" data-placement="bottom"class="copyMe" data-clipboard-text="' + url + '" data-original-title="Copy permalink to clipboard"><i class="fa fa-clipboard"></i></a>';
 }
 
-
 $(document).ready(function () {
 	var url = window.location.pathname;
 	var filename = url.substring(url.lastIndexOf('/') + 1);
@@ -70,6 +69,21 @@ $(document).ready(function () {
 			$('.virtualbox').html(virtualbox);
 			$('.plugin-dev').html(pluginDev);
 			$('.style-guide').html(styleGuide);
+		});
+
+		$.get("eula.html", function(data) {
+			var fuel_license = $(data).find('#fuel-license').html();
+			$('#fuel-license').html($(fuel_license).find('pre'));
+		});
+
+		$.get("third-party-licenses.html", function(data){
+			var third_party = $(data).find(".section > .section");
+			$(third_party).each(function(i,v){
+				var el = $(v).find('.reference');
+				var href = $(el).attr('href');
+				var heading = $(el).text();
+				$('#third-party-licenses').append('<a class="list-group-item" href="' + href + '"><i class="fa fa-file-pdf-o"></i> ' + heading + '</a>');
+			});
 		});
 
 	}

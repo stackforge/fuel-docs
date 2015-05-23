@@ -26,6 +26,8 @@ h4, h5 {
     font-weight: bold;
 }
 
+h3.no-margin { margin-top: 0; }
+
 a.toc-backref {
     color: #41454D;
     text-decoration: none;
@@ -436,6 +438,12 @@ div#home {
 
 ul#menuNav {
     margin-bottom: 25px;
+}
+
+a.list-group-item:focus, a.list-group-item:hover {
+  color: #FFF;
+  text-decoration: none;
+  background-color: #D3301A;
 }
 
 #preview-area {
