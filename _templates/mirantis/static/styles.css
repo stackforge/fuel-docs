@@ -26,6 +26,8 @@ h4, h5 {
     font-weight: bold;
 }
 
+h3.no-margin { margin-top: 0; }
+
 a.toc-backref {
     color: #41454D;
     text-decoration: none;
@@ -406,12 +408,6 @@ h1#main {
     min-height: 176px;
 }
 
-.panel-body:not(.panel-sidebar) > p:first-of-type {
-  font-size: 16px;
-  font-weight: bold;
-  font-family: 'PT Sans Caption', 'PT Sans', arial, sans-serif;
-}
-
 .panel p {
     font-size: 14px;
 }
@@ -438,6 +434,12 @@ ul#menuNav {
     margin-bottom: 25px;
 }
 
+a.list-group-item:focus, a.list-group-item:hover {
+  color: #FFF;
+  text-decoration: none;
+  background-color: #D3301A;
+}
+
 #preview-area {
   width: 60px;
   height: 60px;
@@ -451,6 +453,35 @@ ul#menuNav {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+.btn-default.red {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.btn-default.red.active, .btn-default.red.focus, .btn-default.red:active, .btn-default.red:focus, .btn-default.red:hover {
+  color: #fff;
+  background-color: #D3301A;
+  border-color: #AD2816;	
+}
+
+i.fa-file-pdf-o {
+  color: #D3301A;
+}
+
+.btn-default.red:hover i.fa-file-pdf-o {
+  color: #fff;
+}
+
+.btn-danger {
+  background-color: #D3301A;
+  border-color: #AD2816;
+  margin-bottom: 15px;
+}
+
+#pdfs h3 {
+  margin-top: 0;
 }
 
 .spinner {
