@@ -55,3 +55,11 @@ and pressed the :ref:`Deploy<deploy-changes>` button:
    into the newly installed systems,
    the Fuel Master node starts the deployment of OpenStack on them.
 
+.. note:: Beginning with 6.1 release, nodes discovery is supported
+   over the prepared Infiniband network via Fuel (with preconfigured
+   and running IB switch and Subnet Manager). This means, the
+   Fuel Master node will discover and use EIPOID (Ethernet IP
+   Over Infiniband) interfaces for the network roles. For
+   detailed instructions, see *Verify Infiniband links for nodes*
+   section in the official `Mellanox <https://community.mellanox.com/docs/DOC-2036>`_
+   documentation.
