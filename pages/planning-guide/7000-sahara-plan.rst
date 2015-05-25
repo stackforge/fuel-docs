@@ -76,6 +76,32 @@ Hadoop requires at least 1Gb of RAM to run.
 That means you must use flavors that have
 at least 1Gb of memory for Hadoop cluster nodes.
 
+**Hardware-assisted virtualization**
+
+In order for Sahara to work properly, hardware-assisted virtualization
+must be enabled for the hypervisor used by OpenStack. Its absence leads
+to frequent random errors during Hadoop deployment, because in that case
+VMs are too 'weak' to run such a heavywight application. To ensure that
+Sahara will work properly, you should do two things:
+
+- While deploying OpenStack environment via Fuel UI, select hypervisor
+  other than QEMU.
+- Make sure that CPUs on compute nodes support
+  hardware-assisted virtualization. To check that, run
+  the following command on deployed compute nodes:
+
+  ::
+
+      cat /proc/cpuinfo  | grep --color "vmx\|svm"
+
+While most modern x86 CPUs support hardware-assisted virtualization,
+its support still might be absent on compute nodes if they are themselves
+running as virtual machines. In that case hypervisor running compute
+nodes must support nested virtualization and have it enabled.
+VirtualBox does not support nested virtualization, and as a result
+environments deployed by :ref:`virtualbox` will have Sahara working
+poorly.
+
 **Communication between virtual machines**
 
 Be sure that communication between virtual machines is not blocked.
