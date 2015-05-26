@@ -43,7 +43,7 @@ function generateCopyButton(url) {
 
 function populateGuides(guides) {
 
-	$(guides).find('.section').each(function(i){
+	$(guides).find('.section').each(function (i) {
 		var index = i + 1;
 		var el = $(this).find('.reference');
 		var href = $(el).attr('href');
@@ -53,27 +53,27 @@ function populateGuides(guides) {
 	});
 
 	var columns = $('#guides .col-sm-3');
-	for(var i = 0; i < columns.length; i+=4) {
-		columns.slice(i, i+4).wrapAll("<div class='row'></div>");
+	for (var i = 0; i < columns.length; i += 4) {
+		columns.slice(i, i + 4).wrapAll("<div class='row'></div>");
 	}
 
 }
 
-function populatePdfs(pdfs){
-	
-	$(pdfs).each(function(){
+function populatePdfs(pdfs) {
+
+	$(pdfs).each(function () {
 		var href = $(this).attr('href');
 		var link = $(this).text();
 		$('#pdfs').append('<div class="col-lg-6"><a class="btn btn-default red btn-block" href="' + href + '"><i class="fa fa-file-pdf-o"></i> ' + link + '</a></div>');
 	});
 
 	var columns = $('#pdfs .col-lg-6');
-	for(var i = 0; i < columns.length; i+=2) {
-		columns.slice(i, i+2).wrapAll("<div class='row'></div>");
+	for (var i = 0; i < columns.length; i += 2) {
+		columns.slice(i, i + 2).wrapAll("<div class='row'></div>");
 	}
 }
 
-function populateDownload(download){
+function populateDownload(download) {
 	var el = $(download).find('h1 > .reference');
 	var href = $(el).attr('href');
 	var link = $(el).text();
@@ -89,9 +89,9 @@ $(document).ready(function () {
 		$('ul.nav.navbar-nav li.dropdown').not('.globaltoc-container').hide();
 
 
-		$.get( "index_content.html", function( data ) {
-  			var homeTitle = $(data).find('.home-title').html();
-  			var home = $(data).find('.what-is-mirantis-openstack').html();
+		$.get("index_content.html", function (data) {
+			var homeTitle = $(data).find('.home-title').html();
+			var home = $(data).find('.what-is-mirantis-openstack').html();
 			var guides = $(data).find('#guides');
 			populateGuides(guides);
 			var pdfs = $(data).find('#pdf .reference');
@@ -103,14 +103,14 @@ $(document).ready(function () {
 			$('#main').html(homeTitle);
 		});
 
-		$.get("eula.html", function(data) {
+		$.get("eula.html", function (data) {
 			var fuel_license = $(data).find('#fuel-license').html();
 			$('#fuel-license').html($(fuel_license).find('pre'));
 		});
 
-		$.get("third-party-licenses.html", function(data){
+		$.get("third-party-licenses.html", function (data) {
 			var third_party = $(data).find(".section > .section");
-			$(third_party).each(function(i,v){
+			$(third_party).each(function (i, v) {
 				var el = $(v).find('.reference');
 				var href = $(el).attr('href');
 				var heading = $(el).text();
@@ -143,7 +143,7 @@ $(document).ready(function () {
 	$('.headerlink').each(function () {
 		$(this).replaceWith(generateLinks($(this).attr('href'), $(this).parent().children('.toc-backref').text()));
 	});
-	
+
 	$('[data-toggle="tooltip"]').tooltip();
 
 	ZeroClipboard.config({
@@ -174,4 +174,19 @@ $(document).ready(function () {
 		}
 	);
 
+	$('a[data-toggle="tab"]').on('click', function (e) {
+		history.pushState(null, null, $(this).attr('href'));
+	});
+
 });
+
+(function () {
+	window.addEventListener("popstate", function (e) {
+		var activeTab = location.hash ? $('[href=' + location.hash + ']') : $('[href=#home]');
+		if (activeTab.length) {
+			activeTab.tab('show');
+		} else {
+			$('.nav-tabs a:first').tab('show');
+		}
+	});
+})();
