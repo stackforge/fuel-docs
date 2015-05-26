@@ -1,0 +1,36 @@
+
+.. _nova-rn:
+
+OpenStack Compute (Nova)
+------------------------
+
+Resolved Nova Issues
+++++++++++++++++++++
+
+* The encrypted volume can be successfully attached to an instance now.
+  See `LP1420849`_.
+
+Known Nova Issues
++++++++++++++++++
+
+* Occasionally, nova-api process starts using too much RAM (>2 GB).
+  This is a known, hard-to-reproduce issue. The workaround is to
+  restart the nova-api service.
+  See `LP1427688`_.
+
+* Live migration with the specified destination host should use
+  the same memory oversubscription logic as during an instance boot.
+  See `LP1452009`_.
+
+* An instance may hang with a kernel panic after the live migration
+  operation completes successfully. This only affects pure QEMU
+  virtualization. We recommend using offline migration of instances
+  until the issue is resolved.
+  See `LP1371130`_.
+
+
+.. Links:
+.. _`LP1420849`: https://bugs.launchpad.net/mos/6.1.x/+bug/1420849
+.. _`LP1427688`: https://bugs.launchpad.net/mos/6.1.x/+bug/1427688
+.. _`LP1452009`: https://bugs.launchpad.net/mos/7.0.x/+bug/1452009
+.. _`LP1371130`: https://bugs.launchpad.net/mos/7.0.x/+bug/1371130
