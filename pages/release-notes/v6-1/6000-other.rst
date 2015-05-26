@@ -1,8 +1,8 @@
 
 .. _other-rn:
 
-Issues in other components
-==========================
+Issues in OpenStack Components
+==============================
 
 * Glance may create unjustified CPU load on a standby cluster.
   The issue is with the multiple concurrent actions with the
@@ -41,6 +41,7 @@ Issues in other components
   of a Kubernetes cluster.
   See `LP1461564 <https://bugs.launchpad.net/fuel/+bug/1461564>`_.
 
+.. include:: /pages/release-notes/v6-1/other/2010-general.rst
 .. include:: /pages/release-notes/v6-1/other/4010-horizon.rst
 .. include:: /pages/release-notes/v6-1/other/6040-murano.rst
 .. include:: /pages/release-notes/v6-1/other/4020-keystone.rst
