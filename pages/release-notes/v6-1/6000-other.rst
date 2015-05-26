@@ -1,9 +1,10 @@
 
 .. _other-rn:
 
-Issues in other components
-==========================
+Issues in OpenStack Components
+==============================
 
+.. include:: /pages/release-notes/v6-1/other/2010-general.rst
 .. include:: /pages/release-notes/v6-1/other/4010-horizon.rst
 .. include:: /pages/release-notes/v6-1/other/6040-murano.rst
 .. include:: /pages/release-notes/v6-1/other/4020-keystone.rst
