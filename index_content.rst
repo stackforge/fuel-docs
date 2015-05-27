@@ -30,11 +30,86 @@
     <https://software.mirantis.com/trial-support-subscription/>`_
     is available.
 
-  This page contains the most recent Mirantis OpenStack documentation.
-  Select a title from the list below
-  or from the left menu and navigate through the topics.
-  Click on "pdf" in the list below
-  to get a PDF file of that document.
+  To read web version of Mirantis OpenStack documentation,
+  click `Guides <https://docs.mirantis.com/openstack/fuel/fuel-master/#guides>`_ tab.
+  To download pdf version, open
+  `Downloads <https://docs.mirantis.com/openstack/fuel/fuel-master/#downloads>`_ tab.
+
+
+.. container:: planning-guide
+
+  Planning Guide
+
+  Explains how to plan Mirantis OpenStack deployment before installing
+  Fuel.
+
+
+.. container:: user-guide
+
+  User Guide
+
+  Describes how to deploy and use Mirantis OpenStack environments
+  with Fuel.
+
+.. container:: operations-guide
+
+  Operations Guide
+
+  Contains instructions on how to use and manage
+  your Mirantis OpenStack environment.
+
+.. container:: monitoring-guide
+
+  Monitoring Guide
+
+  Provides general concept on how to monitor OpenStack.
+
+.. container:: virtualbox
+
+  Running Mirantis OpenStack on VirtualBox
+
+  Explains how to run Mirantis OpenStack on VirtualBox.
+
+.. container:: ref-arch
+
+  Reference Architecture
+
+  Provides the deep dive into the structure of the Mirantis OpenStack environment,
+  network considerations, deployment options and architectures.
+
+.. container:: plugin-dev
+
+  Fuel Plugin Guide
+
+  Explains how to develop and certify your own plugin for Fuel.
+
+.. container:: terminology-ref
+
+  Terminology Reference
+
+  Explains OpenStack terminology and technology
+  with references to other documentation and other useful information.
+
+.. container:: file-ref
+
+  File Format Reference
+
+  Provides information on how to use Fuel configuration files.
+
+.. container:: style-guide
+
+  Style Guide
+
+  Contains style guidelines and instructions on
+  how to write documentation for Mirantis OpenStack.
+
+.. container:: release-notes
+
+  Release Notes
+
+  Provide general information about new features,
+  fixed issues, and known limitations in Mirantis OpenStack |version|.
+
 
 
 PDF
@@ -75,8 +150,7 @@ Provides general concept on how to monitor OpenStack.
 
 `Running Mirantis OpenStack on VirtualBox <virtualbox.html#virtualbox>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Explains how to run Mirantis OpenStack on VirtualBox
-for demonstration and evaluation purposes.
+Explains how to run Mirantis OpenStack on VirtualBox.
 
 `Reference Architecture <reference-architecture.html#ref-arch>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -113,8 +187,7 @@ fixed issues, and known limitations in Mirantis OpenStack |version|.
 
 You can download the Mirantis OpenStack ISO, IMG, and VirtualBox scripts
 
-.. note:: You must sign in to download Mirantis OpenStack. 
-          If you do not have an account, sign up for a free account now.
+.. note:: You must fill in the form to download Mirantis OpenStack.
 
 `Demos and tutorials <https://www.youtube.com/watch?v=ET4hkzb_QRM>`__
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
