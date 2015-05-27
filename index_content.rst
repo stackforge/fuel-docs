@@ -196,3 +196,16 @@ You can download the Mirantis OpenStack ISO, IMG, and VirtualBox scripts
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Watch the Mirantis OpenStack demos at https://www.youtube.com/watch?v=ET4hkzb_QRM
+
+Prior releases
+~~~~~~~~~~~~~~
+
+`Mirantis OpenStack 6.0 <https://docs.mirantis.com/fuel/fuel-6.0/>`_
+`Mirantis OpenStack 5.1.1 <https://docs.mirantis.com/fuel/fuel-5.1/>`_
+`Mirantis OpenStack 5.1 <https://docs.mirantis.com/fuel/fuel-5.1/>`_
+`Mirantis OpenStack 5.0.1 <https://docs.mirantis.com/fuel/fuel-5.0/>`_
+`Mirantis OpenStack 4.1 <https://docs.mirantis.com/fuel/fuel-4.1/>`_
+`Mirantis OpenStack 4.0 <https://docs.mirantis.com/fuel/fuel-4.0/>`_
+`Mirantis OpenStack 3.2 <https://docs.mirantis.com/fuel/fuel-3.2.1/>`_
+`Mirantis OpenStack 3.0 <https://docs.mirantis.com/fuel/fuel-3.2.1/>`_
+
