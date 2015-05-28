@@ -101,6 +101,21 @@ function populateDownload(download) {
 	$('#download_content').append('<a href="' + href + '" class="btn btn-danger btn-lg btn-block" id="download_openstack">' + link + '</a>' + content);
 }
 
+function populateReleases(releases){
+
+	$(releases).each(function(){
+		var href = $(this).attr('href');
+		var link = $(this).text();
+		$('#prior_releases_content').append('<div class="col-sm-3"><a class="btn btn-default red btn-block" href="' + href + '">' + link + '</a></div>');
+		
+	});
+
+	var columns = $('#prior_releases_content .col-sm-3');
+	for (var i = 0; i < columns.length; i += 4) {
+		columns.slice(i, i + 4).wrapAll("<div class='row'></div>");
+	}
+}
+
 function populateContent(callback){
 	$.get("index_content.html", function (data) {
 		var homeTitle = $(data).find('.home-title').html();
@@ -111,7 +126,8 @@ function populateContent(callback){
 		populatePdfs(pdfs);
 		var download = $(data).find('#download-now');
 		populateDownload(download);
-
+		var releases = $(data).find('#prior-releases p .reference');
+		populateReleases(releases);
 		$('#home').html(home);
 		$('#main').html(homeTitle);
 	});
@@ -203,4 +219,8 @@ $(document).ready(function () {
 		history.pushState({}, '', $(this).attr('href'));
 	});
 
+	$('#home a[href=#guides], #home a[href=#downloads]').on('click', function(e){
+		var tab = $(this).attr('href');
+		$('.nav-tabs a[href="' + tab + '"]').tab('show');
+	});
 });

@@ -4,39 +4,6 @@
 
 .. _Homepage:
 
-.. container:: home-title
-
-  Mirantis OpenStack v6.1 Documentation
-
-.. container:: what-is-mirantis-openstack
-
-  Mirantis OpenStack is made up of three components:
-
-  * :ref:`hardened-packages-term`.
-    Hardened packages in Mirantis OpenStack
-    include the core OpenStack projects,
-    updated with each stable release of OpenStack,
-    and supporting a broad range of operating systems,
-    hypervisors, and deployment topologies.
-
-  * :ref:`fuel-term`.
-    Fuel is an open source, software life cycle management application
-    that deploys multiple `OpenStack <https://www.openstack.org/>`_
-    environments from a single interface
-    and then enables you to manage those environments post deployment.
-
-  * `Support <https://software.mirantis.com/support-options/>`_.
-    A complementary `30-day basic trial support subscription
-    <https://software.mirantis.com/trial-support-subscription/>`_
-    is available.
-
-  This page contains the most recent Mirantis OpenStack documentation.
-  Select a title from the list below
-  or from the left menu and navigate through the topics.
-  Click on "pdf" in the list below
-  to get a PDF file of that document.
-
-
 PDF
 ~~~
 
@@ -75,8 +42,7 @@ Provides general concept on how to monitor OpenStack.
 
 `Running Mirantis OpenStack on VirtualBox <virtualbox.html#virtualbox>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Explains how to run Mirantis OpenStack on VirtualBox
-for demonstration and evaluation purposes.
+Explains how to run Mirantis OpenStack on VirtualBox.
 
 `Reference Architecture <reference-architecture.html#ref-arch>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -106,6 +72,21 @@ how to write documentation for Mirantis OpenStack.
 Provide general information about new features,
 fixed issues, and known limitations in Mirantis OpenStack |version|.
 
+Prior releases
+~~~~~~~~~~~~~~
+
+`Mirantis OpenStack 6.0 <https://docs.mirantis.com/fuel/fuel-6.0/>`_
+`Mirantis OpenStack 5.1.1 <https://docs.mirantis.com/fuel/fuel-5.1/>`_
+`Mirantis OpenStack 5.1 <https://docs.mirantis.com/fuel/fuel-5.1/>`_
+`Mirantis OpenStack 5.0.1 <https://docs.mirantis.com/fuel/fuel-5.0/>`_
+`Mirantis OpenStack 4.1 <https://docs.mirantis.com/fuel/fuel-4.1/>`_
+`Mirantis OpenStack 4.0 <https://docs.mirantis.com/fuel/fuel-4.0/>`_
+`Mirantis OpenStack 3.2 <https://docs.mirantis.com/fuel/fuel-3.2.1/>`_
+`Fuel Web 3.0 <https://software.mirantis.com/refdoc-fuelweb3/video/>`_
+`Fuel CLI 3.0 <https://software.mirantis.com/refdoc-fuel3/preface/>`_
+`Fuel 2.1 <https://software.mirantis.com/reference-documentation-on-fuel-folsom-2-1/introduction-3/>`_
+`Fuel 2.0 <https://software.mirantis.com/reference-documentation-on-fuel-folsom/package-contents-2/>`_
+`Fuel 1.0 <https://software.mirantis.com/reference-documentation-on-fuel-essex/package-contents/>`_
 
 
 `Download Now <http://software.mirantis.com>`__
@@ -113,10 +94,40 @@ fixed issues, and known limitations in Mirantis OpenStack |version|.
 
 You can download the Mirantis OpenStack ISO, IMG, and VirtualBox scripts
 
-.. note:: You must sign in to download Mirantis OpenStack. 
-          If you do not have an account, sign up for a free account now.
+.. note:: You must fill in the form to download Mirantis OpenStack.
 
 `Demos and tutorials <https://www.youtube.com/watch?v=ET4hkzb_QRM>`__
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Watch the Mirantis OpenStack demos at https://www.youtube.com/watch?v=ET4hkzb_QRM
+
+.. container:: home-title
+
+  Mirantis OpenStack v6.1 Documentation
+
+.. container:: what-is-mirantis-openstack
+
+  Mirantis OpenStack is made up of three components:
+
+  * :ref:`hardened-packages-term`.
+    Hardened packages in Mirantis OpenStack
+    include the core OpenStack projects,
+    updated with each stable release of OpenStack,
+    and supporting a broad range of operating systems,
+    hypervisors, and deployment topologies.
+
+  * :ref:`fuel-term`.
+    Fuel is an open source, software life cycle management application
+    that deploys multiple `OpenStack <https://www.openstack.org/>`_
+    environments from a single interface
+    and then enables you to manage those environments post deployment.
+
+  * `Support <https://software.mirantis.com/support-options/>`_.
+    A complementary `30-day basic trial support subscription
+    <https://software.mirantis.com/trial-support-subscription/>`_
+    is available.
+
+  To read web version of Mirantis OpenStack documentation,
+  click `Guides <#guides>`_ tab.
+  To download pdf version, open
+  `Downloads <#downloads>`_ tab.
