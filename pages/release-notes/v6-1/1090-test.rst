@@ -7,6 +7,14 @@ Test and Verification Issues
 Resolved test and verifiation issues
 ------------------------------------
 
+Network verification issues
++++++++++++++++++++++++++++
+
+* Network verification does not fail anymore if a node is offline.
+  It checks for two or more nodes online to start the verification process,
+  otherwise Error message is generated.
+  See `LP1318659 <https://bugs.launchpad.net/fuel/+bug/1318659>`_.
+
 Known test and verification issues
 ----------------------------------
 
