@@ -110,7 +110,8 @@ After the restoration of connectivity, Pacemaker saw these duplicate resources
 running on different nodes. You can let it clean up this situation
 automatically or, if you do not want to wait, cleanup them manually.
 
-For more information, see `crm interactive help and documentation
+For more information, see
+`crm interactive help and documentation
 <https://www.suse.com/documentation/sle_ha/book_sleha/data/sec_ha_manual_config_crm.html>`_.
 
 Sometimes a cluster gets split into several parts. In this case, ``crm status``
