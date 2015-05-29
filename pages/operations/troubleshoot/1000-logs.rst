@@ -270,16 +270,38 @@ Fuel Master node log rotation template
 
 The Fuel Master node configures two log rotation templates:
 
-* The /etc/logrotate.d/10-fuel-docker.conf file is
-  called by the /etc/cron.daily/logrotate script. It provides daily
-  rotation of logs.
+* The `/etc/logrotate.d/10-fuel-docker.conf` file is
+  called by the logrotate script every 15 minutes.
 
-* The /etc/logrotate.d/20-fuel-docker.conf file is
-  called by the /etc/cron.hourly/logrotate script. It provides
-  an additional layer of rotation, based on the maximum log
-  file size criteria. This ensures that the free space
-  of /var/log is never exhausted with an appropriate consideration
-  for free space planning that matches the given log rotation settings.
+* The rotation of logs is performed when meeting one of the criteria: age - if
+  it is more than a week and a file is bigger than 10M on master or 5MB on
+  remote nodes; size - if it exceedes 100M on master or 20M on remote nodes,
+  regardless its age
+
+* You can run a quick test to check if the logrotate script works.
+  
+  Find the biggest file, and check the first and the last line::
+
+     .. code-block :: sh
+     
+        biggest_file=$(find /var/log/ -type f | xargs du -h | sort -h | tail -n 1 | cut -f2);
+        ls -lah $biggest_file;
+        head -n1 $biggest_file | head -c35; echo "";
+        tail -n1 $biggest_file | head -c35; echo "";
+
+  If it is older than your rotation schedule and bigger then maxsize,
+  than logrotate is not working correctly.
+
+* You can find an example of a writing rate evaluation for the neutron-server log file:
+  https://bugs.launchpad.net/fuel/+bug/1382515/comments/35
+
+* To purge old templates when doing backporting of the reworked logrotate configuration
+  for older Fuel releases you need to run:
+
+  .. code-block :: sh
+
+     rm /etc/logrotate.d/{1,2}0-fuel*
+
 
 Enabling debug logging for OpenStack services
 +++++++++++++++++++++++++++++++++++++++++++++
