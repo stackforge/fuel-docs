@@ -4,52 +4,42 @@
 How Fuel upgrade works
 ======================
 
-Users running Fuel 5.0 and later releases
-can upgrade the Fuel Master Node to the latest release
-and use the upgraded Fuel Master to manage environments
-that were created with earlier releases;
-see :ref:`upgrade-patch-top-ug` for instructions.
+Users running Fuel 6.0
+can upgrade the Fuel Master Node to the latest release.
+See :ref:`upgrade-patch-top-ug` for instructions.
 This section discusses the processing flow for the Fuel upgrade.
 
-The upgrade is implemented with four upgrade engines
+The upgrade is implemented with three upgrade engines
 (also called upgraders or upgrade stages).
 The engines are python modules
 that are located in a
 `separate directory <https://github.com/stackforge/fuel-web/tree/master/fuel_upgrade_system/fuel_upgrade/fuel_upgrade/engines>`_:
 
-- **Host system engine** -- Runs :ref:`puppet-term`
-  to upgrade the host-system.
-  Puppet upgrades fuelclient, dockerctl, and other packages.
+- **Host system engine** -- Copies
+  new repositories to Fuel Master node,
+  installs the ``fuel-6.1.0.rpm``
+  package and all the dependencies such as
+  Puppet manifests, bootstrap images,
+  provisioning images and so on.
 
-- **Bootstrap engine** -- Installs new bootstrap image
-  for :ref:`cobbler-term`.
+- **Docker engine**:
 
-- **Docker engine** -- Upgrades the Docker containers,
-  each of which contains a Fuel component.
-  See :ref:`docker-term` for more information:
+  #. Point the supervisor to a new
+     directory with the configuration files.
+     Since it is empty, no containers will be started
+     by the supervisor.
 
-  #. Stop all old containers.
+  #. Stop old containers.
 
-  #. Upload the new images.
-
-  #. Reconfigure the Supervisor with "autostart" set to False.
-     This prevents the Supervisor from running containers
-     during the upgrade process.
+  #. Upload new Docker images.
 
   #. Run containers one by one, in the proper order.
 
-  #. Reconfigure **supervisord** with "autostart" set to True.
-     This allows **supervisord** to start all of the containers
-     after it is restarted
-     and is the proper mode for **supervisord**
-     during normal operations.
-
+  #. Generate new supervisor configs.
   #. Verify the services running in the containers.
 
 - **OpenStack engine** -- Installs all data
   that is required for the OpenStack patching feature.
-
-  #. Installs new repositories.
 
   #. Installs Puppet manifests and modules.
 

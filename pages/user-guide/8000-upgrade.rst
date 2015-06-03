@@ -4,29 +4,9 @@
 Upgrading and Updating from Earlier Releases
 ============================================
 
-If you have a functional Mirantis OpenStack 5.x environment,
-you can upgrade the Fuel Master node to version 6.0
+If you have a functional Mirantis OpenStack 6.0 environment,
+you can upgrade the Fuel Master node to version 6.1
 but leave your current environments in place.
-
-The terminology used is:
-
-* You can **upgrade** the Fuel Master Node
-  to run the latest version of Fuel.
-  This version of Fuel can manage and deploy
-  environments that were deployed
-  with any Mirantis OpenStack 5.0 or later release.
-
-* A **minor update** is applied to an existing environment,
-  enabling it to use a later version of the OpenStack release
-  that is installed.
-  For example, minor updates were provided for
-  Mirantis OpenStack 5.x releases (Icehouse).
-  No update functionality is provided in Mirantis OpenStack 6.0,
-  but we plan to provide the ability to update
-  to upcoming Mirantis OpenStack 6.x releases.
-
-* A **patch** is a hot fix to one feature that is applied manually.
-  See :ref:`apply-patch-ops` for more information.
 
 .. _upgrade-ug:
 
@@ -34,9 +14,9 @@ Upgrade Fuel from Earlier Versions
 ----------------------------------
 
 You can upgrade a Fuel Master node
-to 6.0 from an earlier version of Mirantis OpenStack Release 5.x.
+to 6.1 from an earlier version of Mirantis OpenStack Release 5.x.
 After you do this, your new Fuel 6.0 console
-can manage your existing 5.x.x OpenStack environment(s)
+can manage your existing 6.x OpenStack environment(s)
 and create and manage new 6.0 OpenStack environments.
 
 The following table summarizes the available progressions
@@ -83,25 +63,30 @@ for upgrades of the Fuel Master Node:
 |                      |                        |                          |
 |                      |                        | 2014.2-6.0               |
 +----------------------+------------------------+--------------------------+
-
+| 6.0                  | 6.1                    | 2014.2-6.0               |
+|                      |                        |                          |
+|                      |                        | 2014.2.2-6.1             |
+|                      |                        |                          |
+|                      |                        |                          |
++----------------------+------------------------+--------------------------+
 
 Note the following:
 
-*  Fuel 6.0 can only deploy 6.0 environments.
+*  Fuel 6.1 can only deploy 6.1 environments.
 
 *  Fuel can manage environments that were deployed
-   with 5.x releases,
+   with 6.0 releases,
    assuming that you created the environment with the earlier release
    and upgraded the Fuel Master node rather than doing a fresh install.
    For a list of OpenStack releases and versions
    that your Fuel Master node can manage,
    click on the "Releases" tab at the top of your Fuel home page.
 
-*  If you do a fresh install of Fuel 6.0,
+*  If you do a fresh install of Fuel 6.1,
    you cannot manage environments deployed with earlier Fuel versions.
 
 *  If you are running Fuel 4.x or earlier,
-   you cannot upgrade Fuel but must install Mirantis OpenStack 6.0
+   you cannot upgrade Fuel but must install Mirantis OpenStack 6.1
    and redeploy your environment to use the new release.
 
 The following procedure upgrades the Fuel software
@@ -165,20 +150,8 @@ under the "Releases" tab on the Fuel UI:
 
    ::
 
-      New release available: Juno on Ubuntu 12.04.4 (2014.2-6.0)
+      New release available: Juno on Ubuntu 14.04.4 (2014.2.2-6.1)
       New release available: Juno on CentOS 6.5 (2014.2-6.0)
 
 
 .. _update-openstack-environ-ug:
-
-Update your OpenStack environment
----------------------------------
-
-Mirantis OpenStack 6.0 is our first release
-that is based on the OpenStack Juno release
-so no update functionality is provided.
-Update functionality was provided as
-an :ref:`experimental feature<experimental-features-term>`
-in 5.x releases
-and we plan to provide it in 6.x releases
-after 6.0.
