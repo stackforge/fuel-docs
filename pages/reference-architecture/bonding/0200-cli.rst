@@ -8,78 +8,86 @@ Public networks use the last NIC ("eth1").
 
 To create bonding interface using Open vSwitch, do the following:
 
-* Create a separate OVS bridge "br-bond0" instead of "br-eth2" and "br-eth3".
-* Connect "eth2" and "eth3" to "br-bond0" as a bonded port with property
+* Create a separate OVS bridge "br-bondnew" instead of "br-eth2" and "br-eth3".
+* Connect "eth2" and "eth3" to "br-bondnew" as a bonded port with property
   "lacp=active".
-* Connect "br-prv" and "br-storage" bridges to "br-bond0" by OVS patches.
+* Connect "br-prv" and "br-storage" bridges to "br-bondnew" by OVS patches.
 * Leave all of the other things unchanged.
 
-Here is an example of "network_scheme" section in the node configuration:
+Here is an example of ``network_scheme`` section in the node configuration:
 
-::
+ .. code-block:: ini
 
-  'network_scheme':
-    'provider': 'ovs'
-    'version': '1.0'
-    'interfaces':
-      'eth0': {}
-      'eth1': {}
-      'eth2': {}
-      'eth3': {}
-    'endpoints':
-      'br-ex':
-        'IP': ['172.16.0.2/24']
-        'gateway': '172.16.0.1'
-      'br-mgmt':
-        'IP': ['192.168.0.2/24']
-      'br-prv': {'IP': 'none'}
-      'br-storage':
-        'IP': ['192.168.1.2/24']
-      'eth0':
-        'IP': ['10.20.0.4/24']
-    'roles':
-      'ex': 'br-ex'
-      'fw-admin': 'eth0'
-      'management': 'br-mgmt'
-      'private': 'br-prv'
-      'storage': 'br-storage'
-    'transformations':
-    - 'action': 'add-br'
-      'name': 'br-ex'
-    - 'action': 'add-br'
-      'name': 'br-mgmt'
-    - 'action': 'add-br'
-      'name': 'br-storage'
-    - 'action': 'add-br'
-      'name': 'br-prv'
-    - 'action': 'add-br'
-      'name': 'br-bond0'
-    - 'action': 'add-br'
-      'name': 'br-eth1'
-    - 'action': 'add-bond'
-      'bridge': 'br-bond0'
-      'interfaces': ['eth2', 'eth3']
-      'properties': ['lacp=active']
-      'name': 'bond0'
-    - 'action': 'add-port'
-      'bridge': 'br-eth1'
-      'name': 'eth1'
-    - 'action': 'add-patch'
-      'bridges': ['br-bond0', 'br-storage']
-      'tags': [103, 0]
-    - 'action': 'add-patch'
-      'bridges': ['br-eth1', 'br-ex']
-      'tags': [101, 0]
-    - 'action': 'add-patch'
-      'bridges': ['br-eth1', 'br-mgmt']
-      'tags': [102, 0]
-    - 'action': 'add-patch'
-      'bridges': ['br-bond0', 'br-prv']
+  network_scheme:
+    provider: ovs
+    version: 1.1
+    interfaces:
+      eth0: {}
+      eth1: {}
+      eth2: {}
+      eth3: {}
+    endpoints:
+      br-ex:
+        IP: [172.16.0.2/24]
+        gateway: 172.16.0.1
+      br-mgmt:
+        IP: [192.168.0.2/24]
+      br-prv: {IP: none}
+      br-storage:
+        IP: [192.168.1.2/24]
+      eth0:
+        IP: [10.20.0.4/24]
+    roles:
+      ex: br-ex
+      fw-admin: eth0
+      management: br-mgmt
+      private: br-prv
+      storage: br-storage
+    transformations:
+    - action: add-br
+      name: br-ex
+      provider: ovs
+    - action: add-br
+      name: br-mgmt
+      provider: ovs
+    - action: add-br
+      name: br-storage
+      provider: ovs
+    - action: add-br
+      name: br-prv
+      provider: ovs
+    - action: add-br
+      name: br-bondnew
+      provider: ovs
+    - action: add-br
+      name: br-eth1
+      provider: ovs
+    - action: add-bond
+      bridge: br-bondnew
+      interfaces: [eth2, eth3]
+      properties: [lacp=active]
+      name: bondnew
+      provider: ovs
+    - action: add-port
+      bridge: br-eth1
+      name: eth1
+      provider: ovs
+    - action: add-patch
+      bridges: [br-bondnew, br-storage]
+      tags: [103, 0]
+    - action: add-patch
+      bridges: [br-eth1, br-ex]
+      tags: [101, 0]
+    - action: add-patch
+      bridges: [br-eth1, br-mgmt]
+      tags: [102, 0]
+    - action: add-patch
+      bridges: [br-bondnew, br-prv]
 
 If you are going to use Linux native bonding, follow these steps:
 
-* Create a new interface "bond0" instead of "br-eth2" and "br-eth3".
-* Connect "eth2" and "eth3" to "bond0" as a bonded port.
+* Create a new interface "bondnew" instead of "br-eth2" and "br-eth3".
+* Connect "eth2" and "eth3" to "bondnew" as a bonded port.
 * Add 'provider': 'lnx' to choose Linux native mode.
 * Add properties as a hash instead of an array used in ovs mode. Properties are same as options used
   during the bonding kernel modules loading. You should provide which mode this bonding interface should use. Any other
@@ -88,7 +96,7 @@ If you are going to use Linux native bonding, follow these steps:
   'properties':
     'mode': 1
 
-* Connect "br-prv" and "br-storage" bridges to "br-bond0" by OVS patches.
+* Connect "br-prv" and "br-storage" bridges to "br-bondnew" by OVS patches.
 * Leave all of the other things unchanged.
 
 ::
@@ -128,21 +136,21 @@ If you are going to use Linux native bonding, follow these steps:
     - 'action': 'add-br'
       'name': 'br-prv'
     - 'action': 'add-br'
-      'name': 'br-bond0'
+      'name': 'br-bondnew'
     - 'action': 'add-br'
       'name': 'br-eth1'
     - 'action': 'add-bond'
-      'bridge': 'br-bond0'
+      'bridge': 'br-bondnew'
       'interfaces': ['eth2', 'eth3']
       'provider': 'lnx'
       'properties':
         'mode': '1'
-      'name': 'bond0'
+      'name': 'bondnew'
     - 'action': 'add-port'
       'bridge': 'br-eth1'
       'name': 'eth1'
     - 'action': 'add-patch'
-      'bridges': ['br-bond0', 'br-storage']
+      'bridges': ['br-bondnew', 'br-storage']
       'tags': [103, 0]
     - 'action': 'add-patch'
       'bridges': ['br-eth1', 'br-ex']
@@ -151,4 +159,4 @@ If you are going to use Linux native bonding, follow these steps:
       'bridges': ['br-eth1', 'br-mgmt']
       'tags': [102, 0]
     - 'action': 'add-patch'
-      'bridges': ['br-bond0', 'br-prv']
+      'bridges': ['br-bondnew', 'br-prv']
