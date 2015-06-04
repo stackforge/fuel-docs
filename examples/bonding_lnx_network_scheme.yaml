@@ -1,0 +1,59 @@
+ network_scheme:
+    provider: ovs
+    version: 1.0
+    interfaces:
+      eth0: {}
+      eth1: {}
+      eth2: {}
+      eth3: {}
+    endpoints:
+      br-ex:
+        IP: [172.16.0.2/24]
+        gateway: 172.16.0.1
+      br-mgmt:
+        IP: [192.168.0.2/24]
+      br-prv: {IP: none}
+      br-storage:
+        IP: [192.168.1.2/24]
+      eth0:
+        IP: [10.20.0.4/24]
+    roles:
+      ex: br-ex
+      fw-admin: eth0
+      management: br-mgmt
+      private: br-prv
+      storage: br-storage
+    transformations:
+    - action: add-br
+      name: br-ex
+    - action: add-br
+      name: br-mgmt
+    - action: add-br
+      name: br-storage
+    - action: add-br
+      name: br-prv
+    - action: add-br
+      name: br-bondnew
+    - action: add-br
+      name: br-eth1
+    - action: add-bond
+      bridge: br-bondnew
+      interfaces: [eth2, eth3]
+      provider: lnx
+      properties:
+        mode: 1
+      name: bondnew
+    - action: add-port
+      bridge: br-eth1
+      name: eth1
+    - action: add-patch
+      bridges: [br-bondnew, br-storage]
+      tags: [103, 0]
+    - action: add-patch
+      bridges: [br-eth1, br-ex]
+      tags: [101, 0]
+    - action: add-patch
+      bridges: [br-eth1, br-mgmt]
+      tags: [102, 0]
+    - action: add-patch
+      bridges: [br-bondnew, br-prv]
