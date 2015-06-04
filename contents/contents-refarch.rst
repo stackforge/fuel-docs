@@ -15,3 +15,4 @@
 .. include:: /pages/reference-architecture/8800-base-os.rst
 .. include:: /pages/reference-architecture/9900-task-deployment.rst
 .. include:: /pages/reference-architecture/containers-master-node.rst
+.. include:: /pages/reference-architecture/61-network-perf.rst
