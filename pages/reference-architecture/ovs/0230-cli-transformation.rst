@@ -16,7 +16,8 @@ Here are the the available options:
 
   {
     "action": "add-br",         # type of primitive
-    "name": "xxx"               # unique name of the new bridge
+    "name": "xxx",              # unique name of the new bridge
+    "provider": "ovs"           # type of provider `linux` or `ovs`
   },
   {
     "action": "add-port",       # type of primitive

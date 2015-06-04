@@ -60,13 +60,58 @@ to change MTU parameters:
      eth0:
        mtu: 1234
        L2:
-         vlan_splinters: 'off'
+         vlan_splinters: off
      eth1:
        mtu: 4321
        L2:
-         vlan_splinters: 'off'
+         vlan_splinters:  off
      eth2:
        L2:
-         vlan_splinters: 'off'
-
-
+         vlan_splinters:  off 
+  provider:  ovs 
+    roles:
+      ex: br-ex 
+      fw-admin: eth0
+      management: br-mgmt
+      private: br-prv
+      storage: br-storage
+    transformations:
+    - action: add-br
+      name: br-ex
+      provider: ovs
+    - action: add-br
+      name: br-mgmt
+      provider: ovs
+    - action: add-br
+      name: br-storage
+      provider: ovs
+    - action: add-br
+      name: br-prv
+      provider: ovs
+    - action: add-br
+      name: br-bond0
+      provider: ovs
+    - action: add-br
+      name: br-eth1
+      provider: ovs
+    - action: add-bond
+      bridge: br-bond0
+      interfaces: [eth2, eth3]
+      properties: [lacp=active]
+      name: bond0
+      provider: ovs
+    - action: add-port
+      bridge: br-eth1
+      name: eth1
+      provider: ovs
+    - action: add-patch
+      bridges: [br-bond0, br-storage]
+      tags: [103, 0]
+    - action: add-patch
+      bridges: [br-eth1, br-ex]
+      tags: [101, 0]
+    - action: add-patch
+      bridges: [br-eth1, br-mgmt]
+      tags: [102, 0]
+    - action: add-patch
+      bridges: [br-bond0, br-prv]
