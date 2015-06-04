@@ -26,7 +26,7 @@ closer look at this substructure. The value of the 'network_scheme' key is a has
 the following keys:
 
 * **interfaces** - A hash of NICs and their low-level/physical parameters.
-  You can set an MTU and the 'VLAN splinters' feature here.
+  You can set an MTU feature here.
 * **provider** - Set to 'ovs' for Neutron.
 * **endpoints** - A hash of network ports (OVS ports or NICs) and their IP
   settings.
@@ -34,10 +34,10 @@ the following keys:
   internally-used roles in Puppet manifests ('management', 'storage', and so on).
 * **transformations** - An ordered list of OVS network primitives.
 
-Here is an example of a "network_scheme" section in a node's configuration, showing how
+Here is an example of a ``network_scheme`` section in a node's configuration, showing how
 to change MTU parameters:
 
-::
+ .. code-block:: ini
 
   network_scheme:
    endpoints:
@@ -59,14 +59,51 @@ to change MTU parameters:
    interfaces:
      eth0:
        mtu: 1234
-       L2:
-         vlan_splinters: 'off'
      eth1:
        mtu: 4321
-       L2:
-         vlan_splinters: 'off'
-     eth2:
-       L2:
-         vlan_splinters: 'off'
-
-
+   provider:  ovs
+   roles:
+      ex: br-ex
+      fw-admin: eth0
+      management: br-mgmt
+      private: br-prv
+      storage: br-storage
+   transformations:
+    - action: add-br
+      name: br-ex
+      provider: ovs
+    - action: add-br
+      name: br-mgmt
+      provider: ovs
+    - action: add-br
+      name: br-storage
+      provider: ovs
+    - action: add-br
+      name: br-prv
+      provider: ovs
+    - action: add-br
+      name: br-bondnew
+      provider: ovs
+    - action: add-br
+      name: br-eth1
+      provider: ovs
+    - action: add-bond
+      bridge: br-bondnew
+      interfaces: [eth2, eth3]
+      properties: [lacp=active]
+      name: bondnew
+    - action: add-port
+      bridge: br-eth1
+      name: eth1
+      provider: ovs
+    - action: add-patch
+      bridges: [br-bondnew, br-storage]
+      vlan_ids: [103, 0]
+    - action: add-patch
+      bridges: [br-eth1, br-ex]
+      vlan_ids: [101, 0]
+    - action: add-patch
+      bridges: [br-eth1, br-mgmt]
+      vlan_ids: [102, 0]
+    - action: add-patch
+      bridges: [br-bondnew, br-prv]
