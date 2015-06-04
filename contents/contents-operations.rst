@@ -34,3 +34,4 @@
 .. include:: /pages/operations/ha-testing-scenarios-ops.rst
 .. include:: /pages/operations/db-backup-ops.rst
 .. include:: /pages/operations/isoUSB-ops.rst
+.. include:: /pages/operations/emptyRole.rst
