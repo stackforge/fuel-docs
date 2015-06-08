@@ -23,4 +23,6 @@ with listings of commands and scripts that implement each particular action.
 .. include:: /pages/operations/upgrade/3030-clone-env-settings.rst
 .. include:: /pages/operations/upgrade/3040-install-seed.rst
 .. include:: /pages/operations/upgrade/3050-upgrade-cics.rst
+.. include:: /pages/operations/upgrade/3045-install-seed.rst
+.. include:: /pages/operations/upgrade/3055-upgrade-cics.rst
 .. include:: /pages/operations/upgrade/3060-upgrade-node.rst
