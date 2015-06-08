@@ -36,3 +36,5 @@
 .. include:: /pages/operations/db-backup-ops.rst
 .. include:: /pages/operations/isoUSB-ops.rst
 .. include:: /pages/operations/external-ubuntu-ops.rst
+.. include:: /pages/operations/empty-role.rst
+
