@@ -122,10 +122,10 @@ Watch the Mirantis OpenStack demos at https://www.youtube.com/watch?v=ET4hkzb_QR
     environments from a single interface
     and then enables you to manage those environments post deployment.
 
-  * `Support <https://software.mirantis.com/support-options/>`_.
-    A complementary `30-day basic trial support subscription
-    <https://software.mirantis.com/trial-support-subscription/>`_
-    is available.
+  * `Support <https://www.mirantis.com/services/enterprise-support-services/>`_.
+    When you've completed your evaluation of Mirantis OpenStack,
+    `get support <https://www.mirantis.com/services/enterprise-support-services/>`_
+    for your cloud workloads from the industry experts.
 
   To read web version of Mirantis OpenStack documentation,
   click `Guides <#guides>`_ tab.
