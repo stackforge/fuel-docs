@@ -1,0 +1,22 @@
+.. _updates-heat-rn:
+
+OpenStack Orchestration (Heat)
+------------------------------
+
+Resolved Issues
++++++++++++++++
+
+* While deleting the stacks, some of them could hang in the
+  UPDATE_IN_PROGRESS or DELETE_IN_PROGRESS state. The fix changed the
+  approach of the resource backup during the stack update. Now, to
+  back up a stack, the resource definition is saved (if it is not
+  present in the stack template yet). See `LP1446678`_.
+
+* Sometimes, the ``heat-api`` process was in the hot spin state, it
+  steadily consumed 85-95% of CPU and didn’t accept the HTTP requests
+  due to a bug in ``python-requests``. The issue has been fixed by
+  updating the ``python-urllib`` and ``python-requests`` packages.
+  See `LP1404983`_.
+
+.. _`LP1446678`: https://bugs.launchpad.net/mos/+bug/1446678
+.. _`LP1404983`: https://bugs.launchpad.net/mos/+bug/1404983
