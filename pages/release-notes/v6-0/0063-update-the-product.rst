@@ -132,6 +132,7 @@ Maintenance updates
 .. include:: /pages/release-notes/v6-0/updates/7010-cinder.rst
 .. include:: /pages/release-notes/v6-0/updates/6010-swift.rst
 .. include:: /pages/release-notes/v6-0/updates/8010-keystone.rst
+.. include:: /pages/release-notes/v6-0/updates/1020-heat.rst
 .. include:: /pages/release-notes/v6-0/updates/9010-others.rst
 
 
