@@ -86,3 +86,10 @@ Resolved Issues
   file if Ceilometer is enabled; otherwise, the parameter is set twice
   and causes duplicated messages in the RabbitMQ queue.
   See `LP1443772 <https://bugs.launchpad.net/mos/+bug/1443772>`_.
+
+* When Windows accesses a metadata URL, it tries to resolve MAC address
+  despite a routing table tells to go to a default gateway, which causes
+  a delay. The fix adds the explicit route to a subnet, for example
+  169.254.169.254/32, via a subnet's default gateway.
+  See `LP1461471 <https://bugs.launchpad.net/bugs/1461471>`_.
+
