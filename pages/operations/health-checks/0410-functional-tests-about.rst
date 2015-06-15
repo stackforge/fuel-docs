@@ -24,5 +24,7 @@ The following is a description of each sanity test available:
 * Check that VM is accessible via floating IP address
 * Check network connectivity from instance via floating IP
 * Check network connectivity from instance without floating IP
+* Launch instance with file injection
+* Launch instance and perform live migration
 * User creation and authentication in Horizon
 

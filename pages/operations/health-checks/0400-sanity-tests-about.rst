@@ -22,4 +22,5 @@ includes the suite of sanity tests implemented:
 * Check DNS resolution on a compute
 * Murano environment and service creation, listing and deletion
 * Networks availability
+* Ceilometer meter, alarm and resource list availability
 

@@ -70,3 +70,20 @@ Details of Heat Platform Tests
      of the stack.
   4. Verify the instance of the stack has been deleted.
 
+.. topic:: Check advanced stack actions: suspend, resume
+
+  The test verifies that the Heat service can suspend and resume the stack.
+
+  Target component: Heat
+
+  Scenario:
+
+  1. Create a stack.
+  2. Wait until the stack status will change to 'CREATE_COMPLETE'.
+  3. Call stack suspend action.
+  4. Wait until the stack status will change to 'SUSPEND_COMPLETE'.
+  5. Call stack resume action.
+  6. Wail until the stack status will change to 'RESUME_COMPLETE'.
+  7. Call stack check action.
+  8. Wail until the stack status will change to 'CHECK_COMPLETE'.
+  9. Delete the stack and wait for the stack to be deleted.

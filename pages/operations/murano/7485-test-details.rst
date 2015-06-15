@@ -9,22 +9,25 @@ test Murano functionality
 when Murano is installed in the OpenStack environment.
 This document describes the actual tests that are run.
 
-.. topic:: Murano environment with Linux Telnet service deployment
+.. topic:: Murano environment with WordPress application deployment
 
-  The test verifies that the Murano service can create and deploy the Linux Telnet service.
+  The test verifies that user can deploy WordPress application in Murano environment.
 
   Target component: Murano
 
   Scenario:
 
-  1. Check linux image with murano agent installed in glance.
-  2. Send request to create environment.
-  3. Send request to create session for environment.
-  4. Send request to create service Linux Telnet.
-  5. Request to deploy session.
-  6. Checking environment status.
-  7. Checking deployments status.
-  8. Send request to delete environment.
+  1. Send request to create environment.
+  2. Send request to create session for environment.
+  3. Send request to create MySQL.
+  4. Send request to create Linux-based service Apache.
+  5. Send request to create WordPress.
+  6. Request to deploy session.
+  7. Checking environment status.
+  8. Checking deployments status.
+  9. Checking ports availability.
+  10. Checking WordPress path.
+  11. Send request to delete environment.
 
   For more information, see:
   `Murano documentation <https://wiki.openstack.org/wiki/Murano#Documentation>`_
