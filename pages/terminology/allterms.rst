@@ -36,6 +36,7 @@ Terminology Reference
 .. include:: /pages/terminology/h/host-aggregates.rst
 .. include:: /pages/terminology/h/hypervisor.rst
 .. include:: /pages/terminology/i/icehouse.rst
+.. include:: /pages/terminology/i/idempotency-term.rst
 .. include:: /pages/terminology/i/identity-service.rst
 .. include:: /pages/terminology/i/image-service.rst
 .. include:: /pages/terminology/i/ironic.rst
