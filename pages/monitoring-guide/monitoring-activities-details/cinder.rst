@@ -36,12 +36,12 @@ instances.
    * - cinder-volume
      - RPC
      - storage-cinder
-     - db, amqp, :ref:`storage <storage>`
+     - db, amqp, :ref:`storage <c-storage>`
      - active/active (Ceph backend)
 
        n/a (LVM backend)
 
-.. _storage:
+.. _c-storage:
 
 Cinder can use different block storage backends like LVM or Ceph.
 
