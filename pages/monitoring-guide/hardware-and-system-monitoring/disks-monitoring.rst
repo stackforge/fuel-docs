@@ -11,7 +11,7 @@ errors are logged in ``/var/log/kern.log`` or ``/var/log/messages``,
 but the location may differ depending on your Linux distribution.
 
 A recommended approach is to watch your system logs for bad drives using
-programs like `Logstash`_ or `Heka`_ or even dedicated tools like
+programs like `Logstash`_ or `Heka`__ or even dedicated tools like
 `swift-drive-audit`_ that can be run using `Cron`_.
 
 Another approach to check the status of your disks is to rely on the `S.M.A.R.T`_
@@ -60,7 +60,7 @@ used with the :option:`-H` option.
 
 
 .. _`Logstash`: https://www.elastic.co/products/logstash
-.. _`Heka`: http://hekad.readthedocs.org/ 
+.. __`Heka`: http://hekad.readthedocs.org/
 .. _`swift-drive-audit`: http://docs.openstack.org/developer/swift/admin_guide.html#detecting-failed-drives
 .. _`Cron`: http://en.wikipedia.org/wiki/Cron
 .. _`S.M.A.R.T`: http://en.wikipedia.org/wiki/S.M.A.R.T.
