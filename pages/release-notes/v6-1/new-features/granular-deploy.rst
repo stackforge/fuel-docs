@@ -1,6 +1,6 @@
 
-Granular deployment based on tasks
-----------------------------------
+Granular deployment based on pluggable tasks
+--------------------------------------------
 
 In earlier releases,
 only one task (``site.pp``) was ran.

@@ -19,9 +19,7 @@ Other Enhancements
   anymore. Instead, use component specific credentials (Nova, Neutron, Glance
   and so on). See `LP1396594 <https://bugs.launchpad.net/bugs/1396594>`_.
 
-.. include:: /pages/release-notes/v6-1/new-features/bios-dev-network.rst
-.. include:: /pages/release-notes/v6-1/new-features/atop.rst
 
-.. include:: /pages/release-notes/v6-1/new-features/image-provision.rst
-.. include:: /pages/release-notes/v6-1/new-features/mongodb-external.rst
+
+
 
