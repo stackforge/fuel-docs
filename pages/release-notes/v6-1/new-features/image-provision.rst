@@ -1,15 +1,13 @@
 
-Enhancements to Fuel Agent for Image-based provisioning (experimental)
-----------------------------------------------------------------------
+Enhancements to Fuel Agent for Image-based provisioning
++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 The Fuel Agent,
 an :ref:`experimental feature<experimental-features-term>`
 that uses images to install the operating system
 on the target nodes instead of using customized versions
 of the native operating system installation scripts,
-is enhanced in 6.1.
-See `Make image based provisioning production ready...
-<https://mirantis.jira.com/browse/PROD-266>`_.
+is enhanced in 6.1:
 
 - Add connection tracking
   See `Add connection tracking to fuel-agent
