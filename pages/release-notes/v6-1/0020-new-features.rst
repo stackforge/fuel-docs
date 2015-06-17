@@ -31,22 +31,6 @@ Upgrading the Fuel Master Node does not update the OpenStack environment. See
 below for information about updating OpenStack environments.
 
 
-Fuel 6.1 can update existing 6.x Mirantis OpenStack environments (experimental)
--------------------------------------------------------------------------------
-
-An :ref:`experimental feature<experimental-features-term>`
-enables the Fuel Master Node to update existing environments
-to more recent maintenance releases within the same release series
-(for example, in the Icehouse release,
-one could update from 5.0 or 5.0.1 to 5.0.2,
-or 5.1 to 5.1.1).
-Once the Fuel Master Node is upgraded,
-Fuel provides an option to update an existing environment.
-
-Modifications in 6.1: see
-`Upgrade of OpenStack distro <https://mirantis.jira.com/browse/PROD-9>`_
-and `Upgrade and OpenStack environment to a new major release
-<https://blueprints.launchpad.net/fuel/+spec/upgrade-major-openstack-environment>`_.
 
 .. include:: /pages/release-notes/v6-1/new-features/ubuntu-14-04.rst
 .. include:: /pages/release-notes/v6-1/new-features/ubuntu-downloadable.rst
@@ -73,7 +57,7 @@ and `Upgrade and OpenStack environment to a new major release
 .. include:: /pages/release-notes/v6-1/new-features/ceilometer-vcenter.rst
 .. include:: /pages/release-notes/v6-1/new-features/mellanox-support.rst
 .. include:: /pages/release-notes/v6-1/new-features/role-operations.rst
-
+.. include:: /pages/release-notes/v6-1/new-features/0000-exp-features.rst
 
 
 Additional Information
