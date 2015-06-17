@@ -1,6 +1,6 @@
 
-Ceilometer can use an external MongoDB installation (experimental)
-------------------------------------------------------------------
+Ceilometer can use an external MongoDB installation
++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 The ability to configure :ref:`Ceilometer<ceilometer-term>`
 to use an external MongoDB cluster

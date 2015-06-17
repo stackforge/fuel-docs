@@ -8,7 +8,9 @@ host operating system.
 For details please see `Blueprint: Support Ubuntu 14.04 as a host node
 <https://blueprints.launchpad.net/fuel/+spec/support-ubuntu-trusty>`_.
 
-Please note that starting with Fuel 6.1,
+Note, that BIOS dev networking management replaced ethx naming scheme.
+
+Beginning with Fuel 6.1,
 the Ubuntu system packages are downloaded
 from the official Ubuntu mirrors, and
 Mirantis packages are downloaded from the
