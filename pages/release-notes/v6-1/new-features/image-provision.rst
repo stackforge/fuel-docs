@@ -1,6 +1,6 @@
 
-Enhancements to Fuel Agent for Image-based provisioning (experimental)
-----------------------------------------------------------------------
+Enhancements to Fuel Agent for Image-based provisioning
++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 The Fuel Agent,
 an :ref:`experimental feature<experimental-features-term>`
