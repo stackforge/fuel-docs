@@ -44,7 +44,8 @@ LBaaS is supported in HA
 
 LBaaS Fuel plugin, previously available
 in multi-node mode only, is now supported
-in HA.
+in HA. Please, note that HA works for the Controllers only,
+but not for the plugin itself.
 
 Zabbix is no longer supported as a core Fuel component
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
