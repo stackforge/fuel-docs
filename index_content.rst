@@ -92,7 +92,8 @@ Prior releases
 `Download Now <http://software.mirantis.com/openstack-download-form>`__
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can download the Mirantis OpenStack ISO, IMG, and VirtualBox scripts
+You can download the Mirantis OpenStack ISO, IMG, and 
+`VirtualBox scripts <https://software.mirantis.com/load/6-1-vbox/>`_
 
 .. note:: You must fill in the form to download Mirantis OpenStack.
 
