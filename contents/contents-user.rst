@@ -12,3 +12,6 @@
 .. include:: /pages/user-guide/9000-role-operations.rst
 .. include:: /pages/user-guide/cli.rst
 .. include:: /pages/user-guide/vmware-integration-notes.rst
+.. include:: /pages/user-guide/external-repos-ug.rst
+.. include:: /pages/user-guide/mos-linux-separate.rst
+.. include:: /pages/user-guide/streamlined-patching-ug.rst
