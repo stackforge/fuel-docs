@@ -1,9 +1,9 @@
 
+.. _streamlined-patching-ug:
+
+
 Streamlined patching
 --------------------
-
-The Mirantis OpenStack streamlined patching feature is the process
-of delivering product updates to users.
 
 For the detailed description of how streamlined patching is implemented
 see :ref:`Mirantis OpenStack streamlined patching<streamlined-patching-ref>`.
