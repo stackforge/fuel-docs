@@ -71,7 +71,12 @@ Other issues
   from instances. Instances also should receive metadata, as usual.
   See `LP1452768`_.
 
+* Compute node is accumulating the iptables' rules even though ports
+  and VMs are already deleted. With time, this accumulation slows
+  down the process of the VM's creation on the node. See `LP1465081`_.
+
 .. _`LP1393771`: https://bugs.launchpad.net/mos/6.1.x/+bug/1393771
 .. _`LP1455113`: https://bugs.launchpad.net/mos/6.1.x/+bug/1455113
 .. _`LP1436414`: https://bugs.launchpad.net/fuel/+bug/1436414
 .. _`LP1452768`: https://bugs.launchpad.net/mos/6.1.x/+bug/1452768
+.. _`LP1465081`: https://bugs.launchpad.net/mos/+bug/1465081
