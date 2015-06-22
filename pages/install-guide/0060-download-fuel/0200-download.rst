@@ -10,21 +10,5 @@ this mail includes credential you can use to download Fuel.
 If you do not receive the acknowledgment from Mirantis,
 write to: sw-access@mirantis.com.
 
-Fuel provides the following installation options: 
 
-* **ISO image**
-  Use as a file to install the virtualized deployment;
-  cut to DVD or upload to your IPMI server to install Fuel on bare metal.
-
-* **Raw sector file (IMG)**
-  Cut to a USB flash media device
-  that can be used to to install Fuel on bare metal.
-
-Both installation images contain the installer for Fuel Master node.
-
-
-.. seealso:: `Downloads <http://fuel.mirantis.com/your-downloads/>`_  
-
-
-
-
+.. seealso:: `Downloads <http://fuel.mirantis.com/your-downloads/>`_

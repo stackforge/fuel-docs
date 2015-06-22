@@ -24,8 +24,7 @@ to mount the ISO image directly
 to the server's virtual DVD drive.
 
 For a bare-metal installation,
-you can instead burn the ISO image to a DVD or
-burn the IMG file to a USB drive,
+you can instead burn the ISO image to a DVD or USB drive,
 then use that media to install the software.
 
 .. note:: You can use the same ISO image
