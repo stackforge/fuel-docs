@@ -37,6 +37,16 @@ Known deployment issues
   concurrent Puppet run at controllers. The workaround is to
   repeat the failed deploy action again. See `LP1330875`_.
 
+* Rarely, cloud deployment may fail if it is chosen to deploy with
+  Murano. This is because some process may listen to the same port
+  as the RabbitMQ used by Murano. The workaround is to reset the
+  environment and redeploy it. See `LP1467024`_.
+
+* Disk partitioning on controllers does not automatically reset back
+  to the default state if a Glance backend is changed. See `LP1450100`_.
+
 .. Links
 .. _`LP1347612`: https://bugs.launchpad.net/mos/6.1.x/+bug/1347612
 .. _`LP1330875`: https://bugs.launchpad.net/fuel/6.1.x/+bug/1330875
+.. _`LP1467024`: https://bugs.launchpad.net/fuel/+bug/1467024
+.. _`LP1450100`: https://bugs.launchpad.net/fuel/+bug/1450100

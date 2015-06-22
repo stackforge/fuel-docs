@@ -1,4 +1,3 @@
-
 .. _murano-rn:
 
 Application catalog (Murano)
@@ -49,11 +48,20 @@ Known Murano issues
   specify them in the ``setting.py`` file.
   See `LP1451604`_.
 
+* Murano does not delete stack after a failed deployment
+  of a Kubernetes cluster. See `LP1461564`_.
 
+* If nova-network is selected for an OpenStack installation with Fuel,
+  it is impossible to install Murano at same time.
+  Murano can be installed manually on a deployed OpenStack environment,
+  and will work with nova-network. See `LP1462341`_.
 
+.. Links
 .. _`LP1428138`: https://bugs.launchpad.net/mos/+bug/1428138
 .. _`LP1397273`: https://bugs.launchpad.net/mos/6.1.x/+bug/1397273
 .. _`LP1452679`: https://bugs.launchpad.net/mos/+bug/1452679
 .. _`LP1392351`: https://bugs.launchpad.net/mos/6.1.x/+bug/1392351
 .. _`LP1427678`: https://bugs.launchpad.net/mos/7.0.x/+bug/1427678
 .. _`LP1451604`: https://bugs.launchpad.net/fuel/6.1.x/+bug/1451604
+.. _`LP1461564`: https://bugs.launchpad.net/fuel/+bug/1461564
+.. _`LP1462341`: https://bugs.launchpad.net/fuel/+bug/1462341

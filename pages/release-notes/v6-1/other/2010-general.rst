@@ -52,6 +52,10 @@ Known OpenStack issues
   which are OpenStack services running the ``Oslo.messaging`` code.
   See `LP1394324`_.
 
+* Rebooting more than one controller may cause nova-compute services to
+  stop reporting their status. This is an issue with the oslo.messaging
+  queuing. See `LP1465757`_ and `LP1463440`_.
+
 .. Links
 .. _`LP1405549`: https://bugs.launchpad.net/fuel/6.0.x/+bug/1405549
 .. _`LP1367767`: https://bugs.launchpad.net/mos/+bug/1367767
@@ -60,3 +64,5 @@ Known OpenStack issues
 .. _`LP1402683`: https://bugs.launchpad.net/fuel/+bug/1402683
 .. _`LP1417521`: https://bugs.launchpad.net/fuel/+bug/1417521
 .. _`LP1394324`: https://bugs.launchpad.net/fuel/6.1.x/+bug/1394324
+.. _`LP1465757`: https://bugs.launchpad.net/fuel/+bug/1465757
+.. _`LP1463440`: https://bugs.launchpad.net/fuel/+bug/1463440

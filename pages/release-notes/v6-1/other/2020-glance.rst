@@ -28,8 +28,21 @@ Known Glance issues
   responding (with an HTTP 503 error). As a workaround, restart the
   ``glance-api`` service. For more information, see `LP1459743`_.
 
+* Glance may create unjustified CPU load on a standby cluster.
+  The issue is with the multiple concurrent actions with the
+  cloud (e.g. various CRUD operations) performed by users.
+  Each new action may create a heavier load on the CPU.
+  The workaround is to restart the affected service, which will
+  drop the CPU consumption by the service back to almost zero.
+  See `LP1463522`_.
+
+* An attempt to create a Glance image with incorrect checksum
+  results in a 500 error. See `LP1452712`_.
+
 .. _`LP1401118`: https://bugs.launchpad.net/mos/+bug/1401118
 .. _`LP1443913`: https://bugs.launchpad.net/fuel/7.0.x/+bug/1443913
 .. _`LP1456573`: https://bugs.launchpad.net/mos/7.0.x/+bug/1456573
 .. _`LP1441156`: https://bugs.launchpad.net/fuel/6.0.x/+bug/1441156
 .. _`LP1459743`: https://bugs.launchpad.net/fuel/+bug/1459743
+.. _`LP1463522`: https://bugs.launchpad.net/fuel/+bug/1463522
+.. _`LP1452712`: https://bugs.launchpad.net/fuel/+bug/1452712

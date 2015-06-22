@@ -1,0 +1,25 @@
+.. _heat-rn:
+
+OpenStack Orchestration (Heat)
+------------------------------
+
+Known Heat issues
++++++++++++++++++
+
+* For the time being, the default Heat configuration for HA
+  environments is set to False. It may lead to the Heat failures in
+  destructive scenarios (when you power off some controllers, for
+  example). See `LP1465840`_.
+
+  As a workaround, change the parameter to ``rabbit_ha_queues=True``
+  in the ``/etc/heat/heat.conf`` configuration file. Once you change
+  the Heat configuration files on all the controllers, manually
+  restart all the Heat services on all the OpenStack controllers::
+
+   # service heat-api restart
+   # service heat-engine restart
+   # service heat-api-cfn restart
+   # service heat-api-cloudwatch restart
+
+.. Links
+.. _`LP1465840`: https://bugs.launchpad.net/fuel/+bug/1465840
