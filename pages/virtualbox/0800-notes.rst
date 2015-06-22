@@ -7,9 +7,9 @@ Additional Notes
   You must run it as a normal user
   and add this user name to the *vboxusers* security group,
   which is automatically created as part of the VirtualBox installation.
-  The following command adds the "myname" user to the vboxusers group:
+  The following command adds the "myname" user to the vboxusers group::
 
-     sudo useradd -G vboxusers myname
+   sudo useradd -G vboxusers myname
 
 - If the target server where you run VirtualBox
   is not running X11,
