@@ -8,14 +8,14 @@ Major Component Versions
 * **Operating Systems**
 
   * CentOS 6.5 (x86_64 architecture only)
-  * Ubuntu 12.04.4 (x86_64 architecture only)
+  * Ubuntu 14.04.4 (x86_64 architecture only)
 
 * **Puppet** (IT automation tool)** `3.4.2
   <https://docs.puppetlabs.com/puppet/3/reference/release_notes.html>`_
 
 * **MCollective** `2.3.3 <https://docs.puppetlabs.com/mcollective/releasenotes.html>`_
 
-* **Cobbler (bare-metal provisioning tool)** 2.2.3
+* **Cobbler (bare-metal provisioning tool)** 2.4.4
 
 * **OpenStack Integrated Projects**
 
@@ -44,7 +44,7 @@ Major Component Versions
 
 * **Networking backend**
 
-  * Open vSwitch 1.10.2
+  * Open vSwitch 2.3.1
 
 * **HA Proxy** 1.5.3
 
@@ -52,11 +52,11 @@ Major Component Versions
 
 * **RabbitMQ** `3.3.5 <http://www.rabbitmq.com/release-notes/README-3.3.5.txt>`_
 
-* **Pacemaker** `1.1.10
-  <https://github.com/ClusterLabs/pacemaker/releases/Pacemaker-1.1.10>`_
+* **Pacemaker** `1.1.12
+  <https://github.com/ClusterLabs/pacemaker/releases/Pacemaker-1.1.12>`_
 
-* **Corosync** `1.4.6
-  <https://github.com/corosync/corosync/wiki/Corosync-1.4.6-release-notes>`_
+* **Corosync** `2.3.4
+  <https://github.com/corosync/corosync/wiki/Corosync-2.3.4-Release-Notes>`_
 
 * **MongoDB** `2.4.6
   <http://docs.mongodb.org/manual/release-notes/2.4/>`_
@@ -64,9 +64,9 @@ Major Component Versions
 * **Ceph** `0.80.7  <http://ceph.com/docs/master/release-notes/#v0-80-7-firefly>`_ "Firefly"
 
 * **MySQL**
-  `5.5.28 <http://dev.mysql.com/doc/relnotes/mysql/5.5/en/>`_
+  `5.6.16 <http://dev.mysql.com/doc/relnotes/mysql/5.5/en/>`_
   (CentOS),
-  `5.5.40 <http://dev.mysql.com/doc/relnotes/mysql/5.5/en/>`_
+  `5.6.16 <http://dev.mysql.com/doc/relnotes/mysql/5.5/en/>`_
   (Ubuntu)
 
 * **Zabbix** `2.2.2 <http://www.zabbix.com/rn2.2.0.php>`_
