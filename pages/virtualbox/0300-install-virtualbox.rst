@@ -20,7 +20,7 @@ verify whether you meet these requirements:
 
 #. Run VirtualBox on a stable host system; we recommend 64-bit host OS.
    The scripts have been tested on Mac OS 10.7.5, Mac OS 10.8.3,
-   Ubuntu 12.04, Ubuntu 12.10, Fedora 19, OpenSUSE 12.2/12.3,
+   Ubuntu 12.04, Ubuntu 12.10, Ubuntu 14.04, Fedora 19, OpenSUSE 12.2/12.3,
    and Windows 7 x64 + Cygwin_x64.
 
 #. Download and install
@@ -32,8 +32,7 @@ verify whether you meet these requirements:
 #. Download and extract
    `Mirantis VirtualBox scripts <https://software.mirantis.com/load/6-0-vbox/>`_
 
-#. Download the `Mirantis OpenStack package <https://software.mirantis.com/openstack-downloads/>`_
-   in either IMG or ISO format.
+#. Download the `Mirantis OpenStack ISO <https://software.mirantis.com/openstack-downloads/>`_.
 
 If you want to run these scripts on Windows directly, you should also:
 
@@ -44,7 +43,7 @@ If you want to run these scripts on Windows directly, you should also:
    To do this, search by the names of the packages required
    in the :guilabel:`Select Packages` dialog of the Cygwin install wizard:
 
-   .. image:: /_images/Cygwin_setup_select_packages.png
+   .. image:: /_images/procps.png
       :align: center
 
 |
