@@ -32,8 +32,7 @@ verify whether you meet these requirements:
 #. Download and extract
    `Mirantis VirtualBox scripts <https://software.mirantis.com/load/6-0-vbox/>`_
 
-#. Download the `Mirantis OpenStack package <https://software.mirantis.com/openstack-downloads/>`_
-   in either IMG or ISO format.
+#. Download the `Mirantis OpenStack ISO <https://software.mirantis.com/openstack-downloads/>`_.
 
 If you want to run these scripts on Windows directly, you should also:
 
