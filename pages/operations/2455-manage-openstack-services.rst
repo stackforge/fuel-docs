@@ -74,20 +74,48 @@ HowTo: Manage OpenStack services
    and the Pacemaker resources list is:
    ::
 
-       vip__public    (ocf::fuel:ns_IPaddr2): Started
-       Clone Set: clone_ping_vip__public [ping_vip__public]
-           Started: [ node-2.test.domain.local node-3.test.domain.local ]
-       vip__management        (ocf::fuel:ns_IPaddr2): Started
-       Clone Set: clone_p_haproxy [p_haproxy]
-           Started: [ node-2.test.domain.local node-3.test.domain.local ]
-       Clone Set: clone_p_mysql [p_mysql]
-           Started: [ node-2.test.domain.local node-3.test.domain.local ]
-       Master/Slave Set: master_p_rabbitmq-server [p_rabbitmq-server]
-           Masters: [ node-3.test.domain.local ]
-           Slaves: [ node-2.test.domain.local ]
-       Clone Set: clone_p_openstack-heat-engine [p_openstack-heat-engine]
-           Started: [ node-3.test.domain.local ]
-           Stopped: [ node-2.test.domain.local ]
+       root@node-1:~# crm status
+
+       Stack: corosync
+       Current DC: node-1.domain.tld (1) - partition with quorum
+       Version: 1.1.12-561c4cf
+       3 Nodes configured
+       43 Resources configured
+
+       Online: [ node-1.domain.tld node-2.domain.tld node-5.domain.tld ]
+
+        Clone Set: clone_p_vrouter [p_vrouter]
+            Started: [ node-1.domain.tld node-2.domain.tld node-5.domain.tld ]
+        vip__management (ocf::fuel:ns_IPaddr2): Started node-1.domain.tld
+        vip__public_vrouter (ocf::fuel:ns_IPaddr2): Started node-1.domain.tld
+        vip__management_vrouter (ocf::fuel:ns_IPaddr2): Started node-1.domain.tld
+        vip__public (ocf::fuel:ns_IPaddr2): Started node-2.domain.tld
+        Master/Slave Set: master_p_conntrackd [p_conntrackd]
+            Masters: [ node-1.domain.tld ]
+            Slaves: [ node-2.domain.tld node-5.domain.tld ]
+        Clone Set: clone_p_haproxy [p_haproxy]
+            Started: [ node-1.domain.tld node-2.domain.tld node-5.domain.tld ]
+        Clone Set: clone_p_dns [p_dns]
+            Started: [ node-1.domain.tld node-2.domain.tld node-5.domain.tld ]
+        Clone Set: clone_p_mysql [p_mysql]
+            Started: [ node-1.domain.tld node-2.domain.tld node-5.domain.tld ]
+        Master/Slave Set: master_p_rabbitmq-server [p_rabbitmq-server]
+            Masters: [ node-1.domain.tld ]
+            Slaves: [ node-2.domain.tld node-5.domain.tld ]
+        Clone Set: clone_p_heat-engine [p_heat-engine]
+            Started: [ node-1.domain.tld node-2.domain.tld node-5.domain.tld ]
+        Clone Set: clone_p_neutron-plugin-openvswitch-agent [p_neutron-plugin-openvswitch-agent]
+            Started: [ node-1.domain.tld node-2.domain.tld node-5.domain.tld ]
+        Clone Set: clone_p_neutron-dhcp-agent [p_neutron-dhcp-agent]
+            Started: [ node-1.domain.tld node-2.domain.tld node-5.domain.tld ]
+        Clone Set: clone_p_neutron-metadata-agent [p_neutron-metadata-agent]
+            Started: [ node-1.domain.tld node-2.domain.tld node-5.domain.tld ]
+        Clone Set: clone_p_neutron-l3-agent [p_neutron-l3-agent]
+            Started: [ node-1.domain.tld node-2.domain.tld node-5.domain.tld ]
+        Clone Set: clone_p_ntp [p_ntp]
+            Started: [ node-1.domain.tld node-2.domain.tld node-5.domain.tld ]
+        Clone Set: clone_ping_vip__public [ping_vip__public]
+            Started: [ node-1.domain.tld node-2.domain.tld node-5.domain.tld ]
 
    You may notice, that there is only a heat-engine service is managed by
    Pacemaker and disabled in OS. At any controller node, use the following
