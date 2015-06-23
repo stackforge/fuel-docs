@@ -8,3 +8,5 @@ Fuel 6.1 now provides
 in one cloud.
 For example, you can set KVM with vCenter or QEMU with
 vCenter. For instructions, see :ref:`User Guide <vcenter-start-create-env-ug>`.
+For reference architecture, see :ref:`<dualhyperv-arch>`.
+

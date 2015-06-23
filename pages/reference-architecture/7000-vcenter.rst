@@ -57,6 +57,17 @@ instead, Fuel puts the Nova-compute service on a Controller node.
 
    PageBreak
 
+.. _dualhyperv-arch:
+
+Dual hypervisor support
+-----------------------
+
+Beginning with Fuel 6.1, you can deploy
+an environment with two hypervisors: vCenter, KVM/QEMU
+using availability zones.
+
+.. image:: /_images/dual-hyperv-arch.png
+
 Multi-node HA Deployment with vSphere integration
 -------------------------------------------------
 

@@ -47,8 +47,9 @@ for environments that support integration with vSphere:
 Select vCenter Hypervisor for vCenter
 +++++++++++++++++++++++++++++++++++++
 
-Beginning with Fuel 6.1, you can create a dual hypervisor
-environment. That means, you now have three options:
+Beginning with Fuel 6.1, you can create a :ref:`dual hypervisor
+environment <dualhyperv-arch>`.
+That means, you now have three options:
 
 #. enable vCenter only - select vCenter checkbox
    and leave the radio button as is; you will then
