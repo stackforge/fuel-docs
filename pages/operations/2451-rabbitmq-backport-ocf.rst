@@ -211,32 +211,31 @@ script are not applicable for them.
    ::
 
       # pcs resource show p_rabbitmq-server
-       Resource: p_rabbitmq-server (class=ocf provider=mirantis type=rabbitmq-server)
-        Attributes: command_timeout="-s KILL" erlang_cookie=EOKOWXQREETZSHFNTPEY \ 
-                    node_port=5673
+
+       Resource: p_rabbitmq-server (class=ocf provider=fuel type=rabbitmq-server)
+        Attributes: node_port=5673 debug=true command_timeout=--signal=KILL erlang_cookie=EOKOWXQREETZSHFNTPEY
         Meta Attrs: migration-threshold=INFINITY failure-timeout=360s
-        Operations: start interval=0 timeout=360 (p_rabbitmq-server-start-0)
-                    monitor interval=30 timeout=60 (p_rabbitmq-server-monitor-30)
-                    notify interval=0 timeout=180 (p_rabbitmq-server-notify-0)
+        Operations: monitor interval=103 timeout=60 OCF_CHECK_LEVEL=30 (p_rabbitmq-server-monitor-103)
                     monitor interval=27 role=Master timeout=60 (p_rabbitmq-server-monitor-27)
-                    demote interval=0 timeout=60 (p_rabbitmq-server-demote-0)
+                    start interval=0 timeout=360 (p_rabbitmq-server-start-0)
+                    stop interval=0 timeout=120 (p_rabbitmq-server-stop-0)
                     promote interval=0 timeout=120 (p_rabbitmq-server-promote-0)
-                    stop interval=0 timeout=60 (p_rabbitmq-server-stop-0)
+                    demote interval=0 timeout=120 (p_rabbitmq-server-demote-0)
+                    notify interval=0 timeout=180 (p_rabbitmq-server-notify-0)
 
    or with the crm tool:
    ::
 
       # crm configure show p_rabbitmq-server
-      primitive p_rabbitmq-server ocf:mirantis:rabbitmq-server \
-              op start timeout=360 interval=0 \
-              op monitor timeout=60 interval=30 \
-              op notify timeout=180 interval=0 \
-              op monitor timeout=60 role=Master interval=27 \
-              op demote timeout=60 interval=0 \
-              op promote timeout=120 interval=0 \
-              op stop timeout=60 interval=0 \
-              params command_timeout="-s KILL" erlang_cookie=EOKOWXQREETZSHFNTPEY \
-              node_port=5673
+      primitive p_rabbitmq-server ocf:fuel:rabbitmq-server \
+              op monitor interval=103 timeout=60 OCF_CHECK_LEVEL=30 \
+              op monitor interval=27 role=Master timeout=60 \
+              op start interval=0 timeout=360 \
+              op stop interval=0 timeout=120 \
+              op promote interval=0 timeout=120 \
+              op demote interval=0 timeout=120 \
+              op notify interval=0 timeout=180 \
+              params node_port=5673 debug=true command_timeout="--signal=KILL" erlang_cookie=EOKOWXQREETZSHFNTPEY \
               meta migration-threshold=INFINITY failure-timeout=360s
 
 
