@@ -29,8 +29,8 @@ verify whether you meet these requirements:
 #. Download and install
    `VirtualBox extensions <https://www.virtualbox.org/wiki/Downloads>`_.
 
-#. Download and extract
-   `Mirantis VirtualBox scripts <https://software.mirantis.com/load/6-0-vbox/>`_
+#. Download Mirantis VirtualBox scripts from the
+   `Downloads <https://docs.mirantis.com/openstack/fuel/fuel-master/#downloads>`_ tab.
 
 #. Download the `Mirantis OpenStack ISO <https://software.mirantis.com/openstack-downloads/>`_.
 

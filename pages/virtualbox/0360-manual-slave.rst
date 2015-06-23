@@ -33,17 +33,15 @@ Next, create Slave nodes where OpenStack needs to be installed.
 
 #. Set Network as first in the boot order:
 
-   .. image:: /_images/vbox-image1.jpg
+   .. image:: /_images/vbox-image1.png
       :align: center
-      :width: 75%
 
 #. Configure two or more network adapters on each VM (in order to use single network
    adapter for each VM you should choose :guilabel:`Use VLAN Tagging` later in the
    Fuel UI):
 
-   .. image:: /_images/vbox-image2.jpg
+   .. image:: /_images/vbox-image2.png
       :align: center
-      :width: 75%
 
 #. Open :guilabel:`Advanced` collapse, and set the following options:
 
