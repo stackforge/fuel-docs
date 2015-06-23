@@ -1,6 +1,6 @@
 
 Scalability certification for 200-node environments
----------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Environments deployed with Fuel 6.1
 are certified as stable and scalable

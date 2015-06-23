@@ -1,5 +1,5 @@
 Multiple L3 Agents per environment
-----------------------------------
+++++++++++++++++++++++++++++++++++
 
 Fuel 6.1 deploys one :ref:`L3 Agent<l3-agent-term>` per
 Controller node, which helps eliminate HA bottlenecks
@@ -13,7 +13,7 @@ See :ref:`tshoot-corosync-ops` for examples and the
 for details about the implementation.
 
 Neutron agent state reporting
------------------------------
++++++++++++++++++++++++++++++
 
 Mirantis OpenStack 6.1 has obtained its own logic to determine
 if agents are dead or alive. Agents now do not rely
@@ -34,7 +34,7 @@ for details about the implementation.
        should be handled with the help of Mirantis support team.
 
 Multiple DHCP-agents
---------------------
+++++++++++++++++++++
 
 In Mirantis OpenStack 6.1, multiple DHCP agents are configured with
 one on each Controller. In earlier releases, each environment

@@ -1,7 +1,7 @@
 .. _role-operations:
 
 Role operations with Nailgun REST API and Fuel Client
------------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Now you can create, update or delete roles
 using :ref:`Nailgun <nailgun-term>`

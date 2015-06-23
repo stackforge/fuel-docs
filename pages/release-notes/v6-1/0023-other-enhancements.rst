@@ -1,5 +1,5 @@
 Other Enhancements
-==================
+------------------
 
 * OpenStack nodes no longer lose DNS and NTP
   on Fuel Master node outage.

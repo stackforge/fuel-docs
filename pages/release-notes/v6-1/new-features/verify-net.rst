@@ -1,6 +1,6 @@
 
 Fuel web UI reminds about network verification before deployment
-----------------------------------------------------------------
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 The Fuel web UI now provides messages
 for network verification when you try to click **Deploy**

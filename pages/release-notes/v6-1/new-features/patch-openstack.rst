@@ -1,6 +1,6 @@
 
 Streamlined patching
---------------------
+++++++++++++++++++++
 
 The streamlined patching feature introduced in Mirantis OpenStack 6.1
 is the process of delivering product updates to users.

@@ -34,30 +34,30 @@ Other
 
 * Implementation of new resource types:
 
-  - OS::Glance::Image.
+  * OS::Glance::Image.
 
-  - OS::Heat::SwiftSignal.
+  * OS::Heat::SwiftSignal.
 
-    - Provides the option to store Wait Condition (and Software Deployment)
-        data in Swift.
+    * Provides the option to store Wait Condition (and Software Deployment)
+      data in Swift.
 
-  - OS::Heat::StructuredDeployments.
+  * OS::Heat::StructuredDeployments.
 
-    - Groups code for multiple lifecycle events into a single deployment
-        resource.
+    * Groups code for multiple lifecycle events into a single deployment
+      resource.
 
-  - OS::Heat::SoftwareDeployments.
+  * OS::Heat::SoftwareDeployments.
 
-    - Provides a way of avoiding circular dependencies when deploying an
+    * Provides a way of avoiding circular dependencies when deploying an
       interdependent cluster of servers.
 
-  - OS::Heat::SoftwareComponent.
+  * OS::Heat::SoftwareComponent.
 
-  - OS::Nova::ServerGroup.
+  * OS::Nova::ServerGroup.
 
-  - OS::Sahara::NodeGroupTemplate.
+  * OS::Sahara::NodeGroupTemplate.
 
-  - OS::Sahara::ClusterTemplate.
+  * OS::Sahara::ClusterTemplate.
 
 * Remember the previously-supplied parameters when updating a stack.
 

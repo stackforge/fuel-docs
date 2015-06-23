@@ -1,8 +1,8 @@
 
 .. _vmware-technologies-rn:
 
-VMware Support Issues in Mirantis OpenStack
-===========================================
+VMware Support Issues
+=====================
 
 .. _vcenter-rn:
 

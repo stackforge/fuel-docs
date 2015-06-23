@@ -1,6 +1,6 @@
 
 Downloadable Ubuntu release
----------------------------
++++++++++++++++++++++++++++
 
 With Fuel 6.1, you can now download the
 Ubuntu system packages from either the

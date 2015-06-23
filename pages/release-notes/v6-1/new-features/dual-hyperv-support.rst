@@ -1,7 +1,7 @@
 .. _dual-hyperv-support:
 
 KVM and vCenter support for one OpenStack cloud
------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++
 
 Fuel 6.1 now provides
 `dual hypervisors <https://blueprints.launchpad.net/fuel/+spec/vmware-dual-hypervisor>`_

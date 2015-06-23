@@ -1,7 +1,7 @@
 .. _vmware-ui-settings-tab:
 
 VMware Settings tab on the Fuel web UI
---------------------------------------
+++++++++++++++++++++++++++++++++++++++
 
 Previously, VMware settings were included into
 Settings tab of the Fuel web UI alongside with other configuration

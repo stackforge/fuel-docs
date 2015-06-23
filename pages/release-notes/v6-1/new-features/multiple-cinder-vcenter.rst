@@ -1,7 +1,7 @@
 .. _multiple-cinder-vcenter:
 
 Multiple Cinder types support
------------------------------
++++++++++++++++++++++++++++++
 
 Previously, when vCenter was used as a hypervisor,
 it could use volumes only from Cinder :ref:`VMDK<vmdk-term>`.

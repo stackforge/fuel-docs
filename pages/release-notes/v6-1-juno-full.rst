@@ -19,17 +19,15 @@ The following table lists the released revisions of this documentation:
 +-----------------------+---------------+--------------+
 | Revision              | Date          | Description  |
 +=======================+===============+==============+
-| 6.1 G.A.              | ??-???-2015   | Initial G.A. |
+| 6.1 G.A.              | 23-Jun-2015   | Initial G.A. |
 +-----------------------+---------------+--------------+
 
 .. include:: /pages/release-notes/v6-1/0020-new-features.rst
-.. include:: /pages/release-notes/v6-1/0023-other-enhancements.rst
 .. include:: /pages/release-notes/v6-1/0025-supported-software-list.rst
 .. include:: /pages/release-notes/v6-1/1030-fuel-install.rst
 .. include:: /pages/release-notes/v6-1/1040-hardware.rst
 .. include:: /pages/release-notes/v6-1/1050-network.rst
 .. include:: /pages/release-notes/v6-1/1060-openstack.rst
-.. include:: /pages/release-notes/v6-1/1080-update-upgrade.rst
 .. include:: /pages/release-notes/v6-1/1090-test.rst
 .. include:: /pages/release-notes/v6-1/9020-high-availability.rst
 .. include:: /pages/release-notes/v6-1/9030-ibp.rst

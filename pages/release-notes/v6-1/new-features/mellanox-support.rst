@@ -1,7 +1,7 @@
 .. _mellanox-support:
 
 Infiniband support is enabled for nodes discovery
--------------------------------------------------
++++++++++++++++++++++++++++++++++++++++++++++++++
 
 The nodes discovery is now enabled
 over the prepared Infiniband network via Fuel over

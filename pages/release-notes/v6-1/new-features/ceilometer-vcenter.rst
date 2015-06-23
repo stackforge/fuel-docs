@@ -1,7 +1,7 @@
 .. _ceilometer-vcenter-support:
 
 Ceilometer support for vCenter is improved
-------------------------------------------
+++++++++++++++++++++++++++++++++++++++++++
 
 In 6.1, Ceilometer support for vCenter is implemented according
 to 1-1 mapping principle (the one done between :ref:`nova-compute and

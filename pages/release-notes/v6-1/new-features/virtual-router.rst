@@ -1,5 +1,5 @@
 Virtual Router for public-less nodes
-------------------------------------
+++++++++++++++++++++++++++++++++++++
 
 With Fuel 6.1, Slave nodes
 that do not have public interface can now

@@ -1,5 +1,5 @@
-Cinder new features
-===================
+Cinder-related features
+-----------------------
 
 Mirantis OpenStack 6.1 includes a number of improvements for OpenStack Block Storage (Cinder):
 

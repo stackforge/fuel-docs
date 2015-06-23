@@ -1,5 +1,5 @@
-Ceilometer new features
-=======================
+Ceilometer-related features
+---------------------------
 
 Mirantis OpenStack 6.1 includes a number of improvements for
 Telemetry module:

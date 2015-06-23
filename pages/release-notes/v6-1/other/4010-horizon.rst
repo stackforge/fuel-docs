@@ -4,10 +4,6 @@
 OpenStack dashboard (Horizon)
 -----------------------------
 
-Resolved Horizon issues
-+++++++++++++++++++++++
-
-
 Known Horizon issues
 ++++++++++++++++++++
 

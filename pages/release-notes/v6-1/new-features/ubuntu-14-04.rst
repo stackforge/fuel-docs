@@ -1,12 +1,10 @@
 
 Ubuntu 14.04 is supported for target nodes
-------------------------------------------
+++++++++++++++++++++++++++++++++++++++++++
 
-Ubuntu 14.04 is now supported as a
-host operating system.
+Ubuntu 14.04 is now supported as a host operating system.
 
-For details,
-please see
+For details, please see
 `Support Ubuntu 14.04 as a host node <https://blueprints.launchpad.net/fuel/+spec/support-ubuntu-trusty>`_ blueprint.
 
 Note, that BIOS dev networking management replaced ethx naming scheme.

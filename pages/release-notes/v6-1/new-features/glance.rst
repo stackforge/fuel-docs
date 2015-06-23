@@ -1,5 +1,5 @@
-Glance new features
--------------------
+Glance-related features
+-----------------------
 
 * A new metadata definitions catalog, where a user can register
   the metadata definitions to be used on various resource types

@@ -1,6 +1,6 @@
 
 Nodes can be removed from Fuel inventory
-----------------------------------------
+++++++++++++++++++++++++++++++++++++++++
 
 If a previously discovered node is now offline,
 it is now possible to remove the node from the Fuel inventory via CLI or UI.

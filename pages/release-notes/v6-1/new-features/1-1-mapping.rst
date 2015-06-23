@@ -1,7 +1,7 @@
 .. _1-1-mapping:
 
 Nova-compute and vSphere clusters mapping
------------------------------------------
++++++++++++++++++++++++++++++++++++++++++
 
 In earlier Fuel releases, 1-N mapping between nova-compute service
 and vSphere cluster (cluster that is formed from ESXi hosts by vCenter server)

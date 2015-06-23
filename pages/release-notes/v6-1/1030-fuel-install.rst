@@ -1,11 +1,11 @@
 
 .. _fuel-install.rst:
 
-Fuel Installation and Deployment Issues
-=======================================
+Fuel Installation and Deployment
+================================
 
-New features and resolved issues in Mirantis OpenStack 6.1
-----------------------------------------------------------
+New installation and deployment features and resolved issues
+------------------------------------------------------------
 
 * Removing and redeploying a Controller node
   does not result in an error.
@@ -34,29 +34,25 @@ New features and resolved issues in Mirantis OpenStack 6.1
   Now it deletes the ``demo_hostonly`` networks only.
   See `LP1384976`_.
 
-Known issues in Mirantis OpenStack 6.1
---------------------------------------
+Known installation and deployment issues
+----------------------------------------
 
 * An attempt to join a Corosync cluster after a hard
   reboot of a Controller node fails.
   See `LP1434141 <https://bugs.launchpad.net/fuel/+bug/1434141>`_.
   The workaround is to do the following:
 
-   1. Stop both the Corosync and Pacemaker on the faulty node.
-   2. Delete the faulty node from the cluster.
-   3. Issue the following command on the other node:
-
-    ::
+  #. Stop both the Corosync and Pacemaker on the faulty node.
+  #. Delete the faulty node from the cluster.
+  #. Issue the following command on the other node::
 
       crm node delete <faulty_node_name>
 
-   4. Back up and remove CIB XMLs on the faulty node:
-
-    ::
+  #. Back up and remove CIB XMLs on the faulty node::
 
       rm -rf /var/lib/pacemaker/cib*.xml
 
-   5. Start Corosync on the faulty node.
+  #. Start Corosync on the faulty node.
 
 * Additional MongoDB roles cannot be added
   to an existing deployment.
@@ -81,12 +77,12 @@ Known issues in Mirantis OpenStack 6.1
 * If the /var partition gets filled up and you run out
   of disk space, you may run into one of the following issues:
 
-   * Fuel Web UI fails to work.
+  * Fuel Web UI fails to work.
 
-   * The *dockerctl list -l* output reports that the nailgun, ostf,
-     and/or keystone container is down.
+  * The *dockerctl list -l* output reports that the nailgun, ostf,
+    and/or keystone container is down.
 
-   * The output of the *fuel task* command reports a *400: Bad Request*.
+  * The output of the *fuel task* command reports a *400: Bad Request*.
 
   For detailed symptoms, cause, and resolution
   see :ref:`Fuel Master and Docker disk space troubleshooting<docker-disk-full-top-tshoot>`.
@@ -145,10 +141,6 @@ Known issues in Mirantis OpenStack 6.1
   please add/remove controllers during a maintenance window.
   See `LP1451515 <https://bugs.launchpad.net/fuel/+bug/1451515>`_
   and `LP1449584 <https://bugs.launchpad.net/mos/+bug/1449584>`_.
-
-Known installation and deployment issues
-----------------------------------------
-
 
 .. Links
 .. _`LP1384976`: https://bugs.launchpad.net/fuel/6.1.x/+bug/1384976

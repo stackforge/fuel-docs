@@ -4,10 +4,6 @@
 OpenStack Block Storage (Cinder)
 --------------------------------
 
-Resolved Cinder issues
-++++++++++++++++++++++
-
-
 Known Cinder issues
 +++++++++++++++++++
 

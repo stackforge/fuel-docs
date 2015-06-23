@@ -1,6 +1,6 @@
 
 External DNS and NTP support
-----------------------------
+++++++++++++++++++++++++++++
 
 With Fuel 6.1 you can now change DNS and NTP servers
 for Slave nodes through the Fuel web UI.

@@ -1,5 +1,5 @@
-Keystone new features
-=====================
+Keystone-related features
+-------------------------
 
 Mirantis OpenStack 6.1 contains improvements for the Identity service:
 
