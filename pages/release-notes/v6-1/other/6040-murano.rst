@@ -1,6 +1,6 @@
 .. _murano-rn:
 
-Application catalog (Murano)
+Application Catalog (Murano)
 ----------------------------
 
 Resolved Murano issues

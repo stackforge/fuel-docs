@@ -1,9 +1,9 @@
 .. _glance-rn:
 
-OpenStack image (Glance)
+OpenStack Image (Glance)
 ------------------------
 
-Resolved glance issues
+Resolved Glance issues
 ++++++++++++++++++++++
 
 * In case of slow connection to the external storage, Glance

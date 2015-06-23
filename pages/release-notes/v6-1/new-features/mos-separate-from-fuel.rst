@@ -1,11 +1,5 @@
-
-<<<<<<< HEAD
-External repositories for Mirantis OpenStack and Linux distributions
---------------------------------------------------------------------
-=======
 Fuel repository separated from Mirantis OpenStack
 +++++++++++++++++++++++++++++++++++++++++++++++++
->>>>>>> 6952992... [RN6_1] RN cleaning up
 
 Starting with Fuel 6.1, the repositories for
 Mirantis OpenStack and Linux packages are separate.

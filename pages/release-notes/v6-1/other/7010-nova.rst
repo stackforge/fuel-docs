@@ -4,13 +4,13 @@
 OpenStack Compute (Nova)
 ------------------------
 
-Resolved Nova Issues
+Resolved Nova issues
 ++++++++++++++++++++
 
 * An encrypted volume can now be successfully attached to an instance.
   See `LP1420849`_.
 
-Known Nova Issues
+Known Nova issues
 +++++++++++++++++
 
 * Occasionally, nova-api process starts using too much RAM (>2 GB).

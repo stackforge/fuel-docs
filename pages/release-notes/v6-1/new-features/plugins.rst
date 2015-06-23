@@ -10,7 +10,6 @@ a message will appear on the Fuel web UI informing you
 about the deployed plugins, their names and description.
 
 
-
 Fuel Plugins SDK is released
 ++++++++++++++++++++++++++++
 

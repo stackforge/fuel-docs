@@ -3,7 +3,7 @@
 OpenStack Identity (Keystone)
 -----------------------------
 
-Resolved Keystone Issues
+Resolved Keystone issues
 ++++++++++++++++++++++++
 
 * The eventlet monkeypatching now precedes the logging system

@@ -1,5 +1,5 @@
 
-Sahara-related Features
+Sahara-related features
 -----------------------
 
 * Sahara panel in OpenStack Dashboard is moved to

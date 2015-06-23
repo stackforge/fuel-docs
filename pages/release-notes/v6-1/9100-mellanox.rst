@@ -1,7 +1,7 @@
 
 .. _mellanox-rn:
 
-Known Limitations for the Mellanox SR-IOV Plugin
+Known limitations for the Mellanox SR-IOV plugin
 ------------------------------------------------
 
 In 6.1 release, Mellanox

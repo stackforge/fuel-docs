@@ -1,8 +1,8 @@
 
-Nova-related Features
+Nova-related features
 ---------------------
 
-Instance Features
+Instance features
 +++++++++++++++++
 
 * Users are allowed to `specify an image to use for rescue`_ instead of
@@ -73,7 +73,7 @@ Other
   See the `Server Group Quotas`_ specification for details.
 
 
-Libvirt Specific
+Libvirt specific
 ++++++++++++++++
 
 * Performance of listing instances on modern libvirt versions

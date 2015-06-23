@@ -4,7 +4,6 @@
 Storage Technologies Issues
 ===========================
 
-
 Resolved storage technologies issues
 ------------------------------------
 

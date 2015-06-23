@@ -4,7 +4,6 @@
 Issues with Image Based Provisioning
 ====================================
 
-
 Known issues with image based provisioning
 ------------------------------------------
 

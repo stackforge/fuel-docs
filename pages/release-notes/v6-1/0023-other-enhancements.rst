@@ -1,4 +1,4 @@
-Other Enhancements
+Other enhancements
 ------------------
 
 * OpenStack nodes no longer lose DNS and NTP

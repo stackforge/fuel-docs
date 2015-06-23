@@ -1,5 +1,5 @@
 
-Horizon-related Features
+Horizon-related features
 ------------------------
 
 Sahara
@@ -14,16 +14,16 @@ jobs while tracking the progress of those jobs.
 Nova
 ++++
 
-The new action panel for nova instances provides a list of all
-actions taken on all instances in current project, allowing
-users to view resulting errors or actions performed by other users.
+* The new action panel for nova instances provides a list of all
+  actions taken on all instances in current project, allowing
+  users to view resulting errors or actions performed by other users.
 
-Administrators now have the ability to evacuate instances from
-hypervisors that can aid in system maintenance by providing a
-mechanism to migrate all instances to other hosts.
+* Administrators now have the ability to evacuate instances from
+  hypervisors that can aid in system maintenance by providing a
+  mechanism to migrate all instances to other hosts.
 
-Cinder Features
-+++++++++++++++
+Cinder
+++++++
 
 * State of a snapshot resetting enabled.
 * State of a volume resetting enabled.

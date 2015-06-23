@@ -12,7 +12,7 @@ Support for the latest OpenStack Juno release
 
 The OpenStack core projects in
 the Mirantis OpenStack hardened packages support
-the `OpenStack Juno 2014.2
+the `OpenStack Juno 2014.2.2
 <https://wiki.openstack.org/wiki/ReleaseNotes/Juno>`_ release.
 Fuel 6.1 deploys this version of OpenStack on either CentOS or Ubuntu.
 
@@ -56,14 +56,14 @@ Upgrading the Fuel Master Node does not update the OpenStack environment.
 
 .. include:: /pages/release-notes/v6-1/new-features/plugins.rst
 
-.. include:: /pages/release-notes/v6-1/new-features/neutron.rst
-.. include:: /pages/release-notes/v6-1/new-features/nova.rst
-.. include:: /pages/release-notes/v6-1/new-features/heat.rst
-.. include:: /pages/release-notes/v6-1/new-features/horizon.rst
+.. include:: /pages/release-notes/v6-1/new-features/ceilometer.rst
 .. include:: /pages/release-notes/v6-1/new-features/cinder.rst
 .. include:: /pages/release-notes/v6-1/new-features/glance.rst
-.. include:: /pages/release-notes/v6-1/new-features/ceilometer.rst
+.. include:: /pages/release-notes/v6-1/new-features/heat.rst
+.. include:: /pages/release-notes/v6-1/new-features/horizon.rst
 .. include:: /pages/release-notes/v6-1/new-features/keystone.rst
+.. include:: /pages/release-notes/v6-1/new-features/neutron.rst
+.. include:: /pages/release-notes/v6-1/new-features/nova.rst
 .. include:: /pages/release-notes/v6-1/new-features/sahara.rst
 
 .. include:: /pages/release-notes/v6-1/new-features/0000-exp-features.rst
@@ -71,7 +71,7 @@ Upgrading the Fuel Master Node does not update the OpenStack environment.
 .. include:: /pages/release-notes/v6-1/0023-other-enhancements.rst
 
 
-Additional Information
+Additional information
 ----------------------
 
 For information about Issues and Blueprints for Mirantis OpenStack 6.1,

@@ -1,9 +1,9 @@
 .. _neutron-rn:
 
-OpenStack networking (Neutron)
+OpenStack Networking (Neutron)
 ------------------------------
 
-Resolved Neutron Issues
+Resolved Neutron issues
 +++++++++++++++++++++++
 
 * In rare circumstances, there was no connectivity to instances in HA

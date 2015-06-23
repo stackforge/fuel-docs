@@ -1,7 +1,7 @@
 
 .. _horizon-rn:
 
-OpenStack dashboard (Horizon)
+OpenStack Dashboard (Horizon)
 -----------------------------
 
 Known Horizon issues

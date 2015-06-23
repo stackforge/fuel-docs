@@ -1,4 +1,4 @@
-Neutron-related Features
+Neutron-related features
 ------------------------
 
 Neutron features supported in 6.1
