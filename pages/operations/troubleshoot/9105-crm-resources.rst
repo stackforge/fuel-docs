@@ -12,58 +12,157 @@ consistent. This section discusses some frequently-used commands.
 
 This command shows you the main information about the Pacemaker cluster and
 the state of the resources being managed.
-For example::
 
-  crm(live)# status
-  ============
-  root@node-2:/usr/lib/ocf/resource.d/mirantis# crm status
-  Last updated: Thu Dec 18 16:06:27 2014
-  Last change: Thu Dec 18 15:09:07 2014 via cibadmin on node-1.test.domain.local
-  Stack: classic openais (with plugin)
-  Current DC: node-1.test.domain.local - partition with quorum
-  Version: 1.1.10-42f2063
-  3 Nodes configured, 3 expected votes
-  27 Resources configured
-  ============
+On the conrtoller node run::
 
-  Online: [ node-1.test.domain.local node-2.test.domain.local node-3.test.domain.local ]
+ root@node-1:~# crm
 
-  vip__public    (ocf::mirantis:ns_IPaddr2):     Started node-1.test.domain.local
-   Clone Set: clone_ping_vip__public [ping_vip__public]
-       Started: [ node-1.test.domain.local node-2.test.domain.local node-3.test.domain.local ]
-   vip__management        (ocf::mirantis:ns_IPaddr2):     Started node-1.test.domain.local
-   Clone Set: clone_p_heat-engine [p_heat-engine]
-       Started: [ node-1.test.domain.local node-2.test.domain.local node-3.test.domain.local ]
-   Master/Slave Set: master_p_rabbitmq-server [p_rabbitmq-server]
-       Masters: [ node-1.test.domain.local ]
-       Slaves: [ node-2.test.domain.local node-3.test.domain.local ]
-   Clone Set: clone_p_neutron-plugin-openvswitch-agent [p_neutron-plugin-openvswitch-agent]
-       Started: [ node-1.test.domain.local node-2.test.domain.local node-3.test.domain.local ]
-   Clone Set: clone_p_neutron-dhcp-agent [p_neutron-dhcp-agent]
-       Started: [ node-1.test.domain.local node-2.test.domain.local node-3.test.domain.local ]
-   Clone Set: clone_p_neutron-metadata-agent [p_neutron-metadata-agent]
-       Started: [ node-1.test.domain.local node-2.test.domain.local node-3.test.domain.local ]
-   Clone Set: clone_p_neutron-l3-agent [p_neutron-l3-agent]
-       Started: [ node-1.test.domain.local node-2.test.domain.local node-3.test.domain.local ]
-   Clone Set: clone_p_mysql [p_mysql]
-       Started: [ node-1.test.domain.local node-2.test.domain.local node-3.test.domain.local ]
-   Clone Set: clone_p_haproxy [p_haproxy]
-       Started: [ node-1.test.domain.local node-2.test.domain.local node-3.test.domain.local ]
+Then run the :command:`status` command::
+
+ crm(live)#
+ crm(live)# status
+
+Example of the output for the above command::
+
+ ============
+ Last updated: Tue Jun 23 08:47:23 2015
+ Last change: Mon Jun 22 17:24:32 2015
+ Stack: corosync
+ Current DC: node-1.domain.tld (1) - partition with quorum
+ Version: 1.1.12-561c4cf
+ 3 Nodes configured
+ 43 Resources configured
+ ============
+
+ Online: [ node-1.domain.tld node-2.domain.tld node-3.domain.tld ]
+
+ Clone Set: clone_p_vrouter [p_vrouter]
+     Started: [ node-1.domain.tld node-2.domain.tld node-3.domain.tld ]
+ vip__management (ocf::fuel:ns_IPaddr2): Started node-1.domain.tld
+ vip__public_vrouter (ocf::fuel:ns_IPaddr2): Started node-1.domain.tld
+ vip__management_vrouter (ocf::fuel:ns_IPaddr2): Started node-1.domain.tld
+ vip__public (ocf::fuel:ns_IPaddr2): Started node-2.domain.tld
+ Master/Slave Set: master_p_conntrackd [p_conntrackd]
+     Masters: [ node-1.domain.tld ]
+     Slaves: [ node-2.domain.tld node-3.domain.tld ]
+ Clone Set: clone_p_haproxy [p_haproxy]
+     Started: [ node-1.domain.tld node-2.domain.tld node-3.domain.tld ]
+ Clone Set: clone_p_dns [p_dns]
+     Started: [ node-1.domain.tld node-2.domain.tld node-3.domain.tld ]
+ Clone Set: clone_p_mysql [p_mysql]
+     Started: [ node-1.domain.tld node-2.domain.tld node-3.domain.tld ]
+ Master/Slave Set: master_p_rabbitmq-server [p_rabbitmq-server]
+     Masters: [ node-1.domain.tld ]
+     Slaves: [ node-2.domain.tld node-3.domain.tld ]
+ Clone Set: clone_p_heat-engine [p_heat-engine]
+     Started: [ node-1.domain.tld node-2.domain.tld node-3.domain.tld ]
+ Clone Set: clone_p_neutron-plugin-openvswitch-agent [p_neutron-plugin-openvswitch-agent]
+     Started: [ node-1.domain.tld node-2.domain.tld node-3.domain.tld ]
+ Clone Set: clone_p_neutron-dhcp-agent [p_neutron-dhcp-agent]
+     Started: [ node-1.domain.tld node-2.domain.tld node-3.domain.tld ]
+ Clone Set: clone_p_neutron-metadata-agent [p_neutron-metadata-agent]
+     Started: [ node-1.domain.tld node-2.domain.tld node-3.domain.tld ]
+ Clone Set: clone_p_neutron-l3-agent [p_neutron-l3-agent]
+     Started: [ node-1.domain.tld node-2.domain.tld node-3.domain.tld ]
+ Clone Set: clone_p_ntp [p_ntp]
+     Started: [ node-1.domain.tld node-2.domain.tld node-3.domain.tld ]
+ Clone Set: clone_ping_vip__public [ping_vip__public]
+     Started: [ node-1.domain.tld node-2.domain.tld node-3.domain.tld ]
+
+Or run the :command:`crm status` command::
+
+ root@node-1:~# crm status
+
+Example of the output for the above command::
+
+ ============
+ Last updated: Tue Jun 23 08:47:52 2015
+ Last change: Mon Jun 22 17:24:32 2015
+ Stack: corosync
+ Current DC: node-1.domain.tld (1) - partition with quorum
+ Version: 1.1.12-561c4cf
+ 3 Nodes configured
+ 43 Resources configured
+ ============
+
+ Online: [ node-1.domain.tld node-2.domain.tld node-3.domain.tld ]
+
+ Clone Set: clone_p_vrouter [p_vrouter]
+     Started: [ node-1.domain.tld node-2.domain.tld node-3.domain.tld ]
+ vip__management (ocf::fuel:ns_IPaddr2): Started node-1.domain.tld
+ vip__public_vrouter (ocf::fuel:ns_IPaddr2): Started node-1.domain.tld
+ vip__management_vrouter (ocf::fuel:ns_IPaddr2): Started node-1.domain.tld
+ vip__public (ocf::fuel:ns_IPaddr2): Started node-2.domain.tld
+ Master/Slave Set: master_p_conntrackd [p_conntrackd]
+     Masters: [ node-1.domain.tld ]
+     Slaves: [ node-2.domain.tld node-3.domain.tld ]
+ Clone Set: clone_p_haproxy [p_haproxy]
+     Started: [ node-1.domain.tld node-2.domain.tld node-3.domain.tld ]
+ Clone Set: clone_p_dns [p_dns]
+     Started: [ node-1.domain.tld node-2.domain.tld node-3.domain.tld ]
+ Clone Set: clone_p_mysql [p_mysql]
+     Started: [ node-1.domain.tld node-2.domain.tld node-3.domain.tld ]
+ Master/Slave Set: master_p_rabbitmq-server [p_rabbitmq-server]
+     Masters: [ node-1.domain.tld ]
+     Slaves: [ node-2.domain.tld node-3.domain.tld ]
+ Clone Set: clone_p_heat-engine [p_heat-engine]
+     Started: [ node-1.domain.tld node-2.domain.tld node-3.domain.tld ]
+ Clone Set: clone_p_neutron-plugin-openvswitch-agent [p_neutron-plugin-openvswitch-agent]
+     Started: [ node-1.domain.tld node-2.domain.tld node-3.domain.tld ]
+ Clone Set: clone_p_neutron-dhcp-agent [p_neutron-dhcp-agent]
+     Started: [ node-1.domain.tld node-2.domain.tld node-3.domain.tld ]
+ Clone Set: clone_p_neutron-metadata-agent [p_neutron-metadata-agent]
+     Started: [ node-1.domain.tld node-2.domain.tld node-3.domain.tld ]
+ Clone Set: clone_p_neutron-l3-agent [p_neutron-l3-agent]
+     Started: [ node-1.domain.tld node-2.domain.tld node-3.domain.tld ]
+ Clone Set: clone_p_ntp [p_ntp]
+     Started: [ node-1.domain.tld node-2.domain.tld node-3.domain.tld ]
+ Clone Set: clone_ping_vip__public [ping_vip__public]
+     Started: [ node-1.domain.tld node-2.domain.tld node-3.domain.tld ]
+
 
 **crm(live)# resource**
 
 Here you can enter resource-specific commands::
 
-  crm(live)resource#  status
+  root@node-1:~# crm
+  crm(live)# resource
+  crm(live)resource# status
 
-  Clone Set: clone_p_neutron-openvswitch-agent [p_neutron-openvswitch-agent]
-      Started: [ node-1.test.domain.local node-2.test.domain.local node-3.test.domain.local ]
-  Clone Set: clone_p_neutron-dhcp-agent [p_neutron-dhcp-agent]
-      Started: [ node-1.test.domain.local node-2.test.domain.local node-3.test.domain.local ]
-  Clone Set: clone_p_neutron-metadata-agent [p_neutron-metadata-agent]
-      Started: [ node-1.test.domain.local node-2.test.domain.local node-3.test.domain.local ]
-  Clone Set: clone_p_neutron-l3-agent [p_neutron-l3-agent]
-      Started: [ node-1.test.domain.local node-2.test.domain.local node-3.test.domain.local ]
+Example of the output for the above command::
+
+ Clone Set: clone_p_vrouter [p_vrouter]
+     Started: [ node-1.domain.tld node-2.domain.tld node-3.domain.tld ]
+ vip__management	(ocf::fuel:ns_IPaddr2):	Started
+ vip__public_vrouter	(ocf::fuel:ns_IPaddr2):	Started
+ vip__management_vrouter	(ocf::fuel:ns_IPaddr2):	Started
+ vip__public	(ocf::fuel:ns_IPaddr2):	Started
+ Master/Slave Set: master_p_conntrackd [p_conntrackd]
+     Masters: [ node-1.domain.tld ]
+     Slaves: [ node-2.domain.tld node-3.domain.tld ]
+ Clone Set: clone_p_haproxy [p_haproxy]
+     Started: [ node-1.domain.tld node-2.domain.tld node-3.domain.tld ]
+ Clone Set: clone_p_dns [p_dns]
+     Started: [ node-1.domain.tld node-2.domain.tld node-3.domain.tld ]
+ Clone Set: clone_p_mysql [p_mysql]
+     Started: [ node-1.domain.tld node-2.domain.tld node-3.domain.tld ]
+ Master/Slave Set: master_p_rabbitmq-server [p_rabbitmq-server]
+     Masters: [ node-1.domain.tld ]
+     Slaves: [ node-2.domain.tld node-3.domain.tld ]
+ Clone Set: clone_p_heat-engine [p_heat-engine]
+     Started: [ node-1.domain.tld node-2.domain.tld node-3.domain.tld ]
+ Clone Set: clone_p_neutron-plugin-openvswitch-agent [p_neutron-plugin-openvswitch-agent]
+     Started: [ node-1.domain.tld node-2.domain.tld node-3.domain.tld ]
+ Clone Set: clone_p_neutron-dhcp-agent [p_neutron-dhcp-agent]
+     Started: [ node-1.domain.tld node-2.domain.tld node-3.domain.tld ]
+ Clone Set: clone_p_neutron-metadata-agent [p_neutron-metadata-agent]
+     Started: [ node-1.domain.tld node-2.domain.tld node-3.domain.tld ]
+ Clone Set: clone_p_neutron-l3-agent [p_neutron-l3-agent]
+     Started: [ node-1.domain.tld node-2.domain.tld node-3.domain.tld ]
+ Clone Set: clone_p_ntp [p_ntp]
+     Started: [ node-1.domain.tld node-2.domain.tld node-3.domain.tld ]
+ Clone Set: clone_ping_vip__public [ping_vip__public]
+     Started: [ node-1.domain.tld node-2.domain.tld node-3.domain.tld ]
 
 **crm(live)resource#  start|restart|stop|cleanup <resource_name>**
 
