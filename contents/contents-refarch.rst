@@ -18,4 +18,3 @@
 .. include:: /pages/reference-architecture/containers-master-node.rst
 .. include:: /pages/reference-architecture/fuel-rep-mirror.rst
 .. include:: /pages/reference-architecture/61-network-perf.rst
-.. include:: /pages/reference-architecture/streamlined-patching-ref.rst
