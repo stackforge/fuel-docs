@@ -18,7 +18,7 @@ as `vboxnet0`, `vboxnet1`, `vboxnet2` correspondingly,
 and assigned IP addresses for adapters::
 
   vboxnet0 - 10.20.0.1/24
-  vboxnet1 - 172.16.0.1/24
+  vboxnet1 - 172.16.0.254/24
   vboxnet2 - 172.16.1.1/24
 
 For the demo environment on VirtualBox,
