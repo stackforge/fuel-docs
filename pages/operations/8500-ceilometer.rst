@@ -73,15 +73,16 @@ to the *ceilometer.conf* file:
   hypervisor_inspector=vsphere
 
   [vmware]
-  See Note [1] below.
+  # See Note [1] below.
 
   [alarm]
-  evaluation_interval=<Period of evaluation cycle>  See Note [2] below.
+  evaluation_interval=<Period of evaluation cycle> # See Note [2] below.
 
 :Note [1]:   Configure according to the `VMware documentation <http://docs.openstack.org/developer/ceilometer/configuration.html#vmware-configuration-options>`_.
 
-:Note [2]:  This value should be >= than the configured pipeline interval
-            for the collection of the underlying metrics.
+:Note [2]:  This value of <Period of evaluation cycle> should be >= than
+            the configured pipeline interval for the collection of the
+            underlying metrics.
 
 You must also patch a known
 `Icehouse bug <https://bugs.launchpad.net/ceilometer/+bug/1330330>`_ with the VMware inspector.
