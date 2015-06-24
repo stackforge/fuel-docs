@@ -65,6 +65,7 @@ Upgrading the Fuel Master Node does not update the OpenStack environment.
 .. include:: /pages/release-notes/v6-1/new-features/neutron.rst
 .. include:: /pages/release-notes/v6-1/new-features/nova.rst
 .. include:: /pages/release-notes/v6-1/new-features/sahara.rst
+.. include:: /pages/release-notes/v6-1/new-features/murano.rst
 
 .. include:: /pages/release-notes/v6-1/new-features/0000-exp-features.rst
 
