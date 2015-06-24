@@ -250,6 +250,19 @@ p.admonition-title {
 
 div.admonition {
     font-size: 14px;
+    padding: 15px;
+}
+
+.alert-info {
+    background: transparent;
+}
+
+.alert-warning {
+    background: transparent;
+}
+
+.alert {
+    border-width: 4px;
 }
 
 .cc {
