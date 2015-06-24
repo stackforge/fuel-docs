@@ -250,6 +250,33 @@ p.admonition-title {
 
 div.admonition {
     font-size: 14px;
+    padding: 15px;
+}
+
+.alert-info {
+    background: transparent;
+    border-color: #31708F;
+}
+
+.alert-warning {
+    background: transparent;
+    border-color: #f7941c;
+}
+
+.alert {
+    border-width: 4px;
+}
+
+.alert p {
+    color: #41454D;
+}
+
+.alert-info p.admonition-title {
+    color: #31708F;
+}
+
+.alert-warning p.admonition-title {
+    color: #f7941c;
 }
 
 .cc {
