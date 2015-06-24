@@ -38,5 +38,6 @@
 .. include:: /pages/operations/isoUSB-ops.rst
 .. include:: /pages/operations/external-ubuntu-ops.rst
 .. include:: /pages/operations/empty-role.rst
+.. include:: /pages/operations/configuring-repos-ops.rst
 .. include:: /pages/operations/streamlined-patching.rst
 

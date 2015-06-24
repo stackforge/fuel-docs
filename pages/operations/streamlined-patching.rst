@@ -1,7 +1,7 @@
 .. _streamlined-patching-ops:
 
-Applying streamlined patching
-=============================
+Applying streamlined patches
+============================
 
 .. note::
    The primary user of the the streamlined patching feature is
@@ -24,8 +24,8 @@ There are two types of officially supported updates:
    without breaking each other.
 2. Security updates -- These are released as soon as they are available.
 
-Streamlined patching prerequisites
-----------------------------------
+Patching prerequisites
+----------------------
 
 * Make sure you are registered at at the `official Mirantis website <https://software.mirantis.com/openstack-download-form/>`_.
   Once you are registered, you will receive regular email notifications
@@ -33,61 +33,24 @@ Streamlined patching prerequisites
   you can click on the patching items listed there. This will lead you to
   the `errata portal <http://errata.mirantis.com/>`_.
 
+* Make sure you have the repositories configured correctly as
+  described in :ref:`Configuring repositories<configuring-repos-ops>`.
+
 * At the portal you will see a list of all the available patches.
   Each patching item will have detailed instructions on how to
   download and apply each of them.
-
-* Make sure you have the repositories configured correctly as
-  described below.
-
-Configuring repositories
-------------------------
-
-By default, your environments will have the configuration of the
-repositories that point to the Mirantis update and security
-repository mirrors. There is also an 'Auxiliary' repository configured
-on the Fuel Master node which can be used to deliver packages
-to the nodes.
-
-To change the list of repositories, you will need to
-amend the three fields which contain the required information
-for the repositories configuration depending on the
-distribution you install.
-
-For CentOS
-++++++++++
-
-::
-
-  |repo-name|repo-baseurl|repo-priority|
-
-e.g
-
-::
-
-  my-repo http://my-domain.local/repo 10
-
-For Ubuntu
-++++++++++
-
-::
-
-  |repo-name|apt-sources-list-string|repo-priority|
-
-my-repo deb http://my-domain.local/repo trusty main 1200
-
-Additional information
-++++++++++++++++++++++
-
-For additional information read the following:
-
-* Ubuntu: `PinningHowto <https://help.ubuntu.com/community/PinningHowto>`_
-* CentOS: `yum-plugin-priorities <http://wiki.centos.org/PackageManagement/Yum/Priorities>`_
 
 Applying the patches
 --------------------
 
 Each patch item listed at the the `errata portal <http://errata.mirantis.com/>`_
 will have the exact commands you need to run to download and apply
-the patch -- usually ``yum`` or ``apt-get``.
-The listed commands need to be executed on every node that you need to patch.
+the patch -- usually ``yum`` or ``apt-get``, followed by restarting
+the associated service. The listed commands need to be executed on
+every node that you need to patch.
+
+In addition to the patch itself, Mirantis will also provide steps to verify that the patch was applied successfully.
+
+See below for an example.
+
+.. image:: /_images/errataPatching.png
