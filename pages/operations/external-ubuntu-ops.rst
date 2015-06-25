@@ -1,21 +1,8 @@
 
 .. _external-ubuntu-ops:
 
-Configuring repositories
-========================
-
-Configuring repositories is not specific to the Mirantis OpenStack
-or Fuel products.
-The process of setting up repositories and repository priorities
-is the same one you normally do on your Linux distribution.
-
-Consult with your distribution's help if you are not sure:
-
-* `Ubuntu <https://help.ubuntu.com/community/Repositories/Ubuntu>`_
-* `CentOS <http://wiki.centos.org/PackageManagement/Yum/Priorities>`_
-
 Downloading Ubuntu system packages
-----------------------------------
+==================================
 
 In Fuel 6.0 and older there is an option
 to select an Ubuntu release in Fuel
@@ -52,16 +39,17 @@ do the following:
           the new nodes that you are going to add
           to a cluster.
 
+See also :ref:`Configuring repositories<configuring-repos-ops>`.
+
 There is also a ``fuel-createmirror`` script on the
 Fuel Master node that you can use to synchronize Ubuntu
 packages to the Fuel Master node.
 
-fuel-createmirror usage
------------------------
+Setting up local mirrors
+------------------------
 
-The ``fuel-createmirror`` script creates and
-updates local mirrors of Mirantis OpenStack
-and/or Ubuntu packages.
+You can create and update local mirrors of Mirantis OpenStack
+and/or Ubuntu packages using the ``fuel-createmirror`` script.
 
 .. note:: The script supports only rsync mirrors.
    Please refer to the `official upstream Ubuntu mirrors list <https://launchpad.net/ubuntu/+archivemirrors>`_.

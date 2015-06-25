@@ -3,6 +3,11 @@
 Configuring repositories
 ========================
 
+You may need to configure repositories to:
+
+* :ref:`Download Ubuntu packages<external-ubuntu-ops>`
+* :ref:`Apply patches<patching-ops>`
+
 By default, your environments will have the configuration of the
 repositories that point to the Mirantis update and security
 repository mirrors. There is also an 'Auxiliary' repository configured
@@ -41,7 +46,10 @@ For Ubuntu
 Repository priorities
 ---------------------
 
-For information on repository priorities read the following:
+The process of setting up repositories and repository priorities
+is the same one you normally do on your Linux distribution.
+
+Consult with your distribution's help if you are not sure:
 
 * Ubuntu: `PinningHowto <https://help.ubuntu.com/community/PinningHowto>`_
 * CentOS: `yum-plugin-priorities <http://wiki.centos.org/PackageManagement/Yum/Priorities>`_
