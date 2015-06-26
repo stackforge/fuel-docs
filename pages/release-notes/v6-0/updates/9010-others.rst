@@ -22,6 +22,23 @@ Resolved Issues
 * The memory leak in python-libvirt that affected Compute service
   has been fixed. See `LP1419362 <https://bugs.launchpad.net/mos/6.0-updates/+bug/1419362>`_.
 
+
+Oslo.Messaging
+--------------
+
+Resolved Issues
++++++++++++++++
+
+* In the ``reconnect()`` method, a variable was defined after it had been
+  used in the ``if`` section. This could lead to an unpredictable behavior
+  while getting timeout exception on connection. The varaiable definition
+  in ``Connection.reconnect()`` has been fixed.
+  See `LP1465300 <https://bugs.launchpad.net/mos/+bug/1465300>`_.
+
+* Now, in case of restarting RabbitMQ during rpc-call
+  ``oslo.messaging``, RPC does not get stuck doing infinite connection
+  retries anymore. See `LP1457055`_.
+
 Other Resolved Issues
 ---------------------
 
