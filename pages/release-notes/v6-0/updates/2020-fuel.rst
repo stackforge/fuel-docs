@@ -1,0 +1,10 @@
+.. _updates-fuel-rn:
+
+OpenStack Fuel
+--------------
+
+Resolved Issues
++++++++++++++++
+
+* The OCF scripts update procedure by RPM/DEB packages is introduced.
+  See `LP1465771 <https://bugs.launchpad.net/fuel/+bug/1465771>`_.

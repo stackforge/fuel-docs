@@ -112,6 +112,7 @@ CentOS-based deployments
 Maintenance updates
 -------------------
 
+.. include:: /pages/release-notes/v6-0/updates/2020-fuel.rst
 .. include:: /pages/release-notes/v6-0/updates/1010-horizon.rst
 .. include:: /pages/release-notes/v6-0/updates/2010-nova.rst
 .. include:: /pages/release-notes/v6-0/updates/3010-neutron.rst
