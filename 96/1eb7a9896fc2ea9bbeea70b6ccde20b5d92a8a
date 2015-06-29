@@ -1,0 +1,12 @@
+Verified+2: Jenkins
+Code-Review+1: Vladimir Kuklin <vkuklin@mirantis.com>
+Verified+1: Fuel CI <fuel-ci-bot@mirantis.com>
+Code-Review+2: Irina <ipovolotskaya@mirantis.com>
+Workflow+1: Irina <ipovolotskaya@mirantis.com>
+Code-Review+1: Alexandr Nevenchannyy <anevenchannyy@mirantis.com>
+Code-Review+1: Denis V. Meltsaykin <dmeltsaykin@mirantis.com>
+Submitted-by: Jenkins
+Submitted-at: Mon, 29 Jun 2015 15:06:38 +0000
+Reviewed-on: https://review.openstack.org/195976
+Project: stackforge/fuel-docs
+Branch: refs/heads/stable/6.0
