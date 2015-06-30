@@ -8,7 +8,8 @@ You can contact support online, through email, or by phone. Instructions on how
 to use any of these contact options can be found
 through `Mirantis Service Desk <https://mirantis.zendesk.com/home>`_.
 
-**To learn more about how Mirantis can help your business, please visit www.mirantis.com.**
+**To learn more about how Mirantis can help your business, please visit**
+`www.mirantis.com <https://www.mirantis.com>`_.
 Mirantis, Fuel, the Mirantis logos and other Mirantis marks are trademarks or
 registered trademarks of Mirantis, Inc. in the U.S. and/or certain other countries.
 Ubuntu is a registered trademark of Canonical Ltd.
