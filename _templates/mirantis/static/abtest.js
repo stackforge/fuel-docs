@@ -244,6 +244,8 @@ $(document).ready(function () {
 		$('.nav-tabs a[href="' + tab + '"]').tab('show');
 	});
 
+	$('a.toc-backref').contents().unwrap();
+
 	prepareList();
 
 });

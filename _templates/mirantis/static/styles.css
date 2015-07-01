@@ -19,15 +19,15 @@ body {
 }
 
 #site-title {
-  float: left;
-  transition: all 0.2s ease;
-  display: block;
-  max-width: 100%;
-  margin-right: 15px;
-  line-height: 48px;
-  font-size: 17px;
-  font-weight: bold;
-  color: #FFF;
+    float: left;
+    transition: all 0.2s ease;
+    display: block;
+    max-width: 100%;
+    margin-right: 15px;
+    line-height: 48px;
+    font-size: 17px;
+    font-weight: bold;
+    color: #FFF;
 }
 
 h2, h3, h4 {
@@ -152,10 +152,74 @@ ul.navbar-nav li {
 }
 
 footer {
-    padding: 20px 0 0 0;
-    background: #161B24 url(gearcloud_dark_footer.jpg) no-repeat top center;
+    padding: 0;
+    background: #000 url(gearcloud_mosaas_footer1.jpg) no-repeat top center;
     background-size: cover;
-    margin-top: 50px;
+}
+
+footer section {
+    padding: 15px 0;
+}
+
+footer section.fsprod {
+}
+
+footer section.fscomp {
+}
+
+footer hr {
+    opacity: 0.3;
+}
+
+div.footsm {
+    font-size: 0.9em;
+}
+
+footer ul {
+    margin: 0 0 15px 0;
+    list-style-type: none;
+    list-style-image: none;
+    padding: 0;
+}
+
+footer ul li {
+    line-height: 16px;
+    margin-bottom: 0;
+}
+
+footer a {
+    font-family: 'PT Sans Caption', 'PT Sans', arial, sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #a8b2be;
+}
+
+footer a:hover {
+    color: #FF7171;
+}
+
+footer p {
+    margin-bottom: 6px;
+}
+
+footer p a {
+    font-family: 'PT Sans Narrow', 'Arial Narrow', arial, sans-serif;
+    font-size: 15px;
+    color: black;
+    text-transform: uppercase;
+}
+
+span.pureplay_btm {
+    color: #d63327;
+    font-size: 12px;
+}
+
+span.mira_btm {
+    color: white
+}
+
+span.copy_btm {
+    color: #929aa2;
 }
 
 .footer_copy {
@@ -164,25 +228,51 @@ footer {
     padding: 10px 0;
 }
 
-footer a {
-    color: #AAA;
-    font-family: 'PT Sans Caption', 'PT Sans', arial, sans-serif;
-    font-size: 11px;
-    text-transform: uppercase;
+a.fproduct img {
+    max-height: 90px;
+    margin: 0 auto 10px auto;
 }
 
-footer a:hover {
-    color: #0bcaff;
+a.fproduct div {
+    width: 80px;
+    height: 48px;
+    margin: 7px auto 20px auto;
+    background-size: cover;
 }
 
-footer ul {
-    list-style-type: none;
-    list-style-image: none;
+a.fproduct div.footerglyph1 {
+    background: url(footer_mos_a.png) no-repeat;
+    background-position: 0 0;
+    background-size: cover;
 }
 
-footer ul li {
-    line-height: 16px;
-    margin-bottom: 0;
+a.fproduct div.footerglyph2 {
+    background: url(footer_murano_a.png) no-repeat;
+    background-position: 0 0;
+    background-size: cover;
+}
+
+a.fproduct div.footerglyph3 {
+    background: url(footer_drivers_a.png) no-repeat;
+    background-position: 0 0;
+    background-size: cover;
+}
+
+a.fproduct:hover div {
+    background-position: 0 100%;
+}
+
+a.fproduct span {
+    display: block;
+    text-align: center;
+    text-transform: none;
+    font-size: 1.3em;
+    line-height: 1.1em;
+    color: white;
+}
+
+a.fproduct:hover span {
+    color: white;
 }
 
 span.mira_btm {
@@ -203,10 +293,15 @@ div.col-address {
 }
 
 a.fmenu_section {
-    font-size: 1.2em;
+    font-size: 22px;
     padding-bottom: 12px;
     display: inline-block;
     color: #FFF;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-top: 30px;
+    color: #FFF;
+    margin-bottom: 10px;
 }
 
 .section > .section {
@@ -553,20 +648,23 @@ i.fa-file-pdf-o {
 
 #contents ul.simple, #contents ul.simple li {
     list-style: none;
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
     cursor: pointer;
 }
+
 #contents ul.simple p {
-    margin:0;
-    display:block;
+    margin: 0;
+    display: block;
 }
+
 #contents ul.simple a:hover {
-    background-color:#F5F5F5;
+    background-color: #F5F5F5;
 }
+
 #contents ul.simple li {
-    line-height:140%;
-    text-indent:0px;
+    line-height: 140%;
+    text-indent: 0px;
     background-position: 1px 3px;
     padding-left: 20px;
     background-repeat: no-repeat;
@@ -580,13 +678,13 @@ i.fa-file-pdf-o {
     background-image: url(expanded.png);
 }
 
-#contents ul.simple .expanded > ul{
-  padding-left: 0px;
-  margin-bottom: 5px;
+#contents ul.simple .expanded > ul {
+    padding-left: 0px;
+    margin-bottom: 5px;
 }
 
 div.topic {
-  padding: 7px;
+    padding: 7px;
 }
 
 @media (max-width: 767px) and (min-width: 0px) {
@@ -641,5 +739,21 @@ div.topic {
 @media (min-width: 768px) {
     .navbar {
         border-radius: 0;
+    }
+
+    footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 589px;
+    }
+
+    body {
+        margin-bottom: 589px;
+    }
+
+    html {
+        position: relative;
+        min-height: 100%;
     }
 }
