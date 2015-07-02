@@ -62,14 +62,13 @@ In order to get to the Fuel Setup, press the <TAB> key on the very first install
 ``showmenu=no`` to ``showmenu=yes``. Alternatively, you can press a key to
 start Fuel Setup during the first boot after installation.
 
-.. image:: /_images/fuel_welcome_customized_settings.jpg
+.. image:: /_images/fuel_welcome_customized_settings.png
   :width: 50%
 
 
 Within Fuel Setup, you can configure the following parameters:
 
 * DHCP/Static configuration for each network interface
-* Docker internal network configuration
 * Select interface for Fuel Admin network
 * Define DHCP pool (bootstrap) and static range (installed nodes)
 * Set NTP servers for Time settings
@@ -78,7 +77,7 @@ Within Fuel Setup, you can configure the following parameters:
 * DNS options
 * Launch shell for optional pre-deployment tasks
 
-.. image:: /_images/fuelmenu_Network_Setup.jpg
+.. image:: /_images/fuelmenu_Network_Setup.png
   :width: 50%
 
 Use the arrow keys to navigate through the tool and Space or Enter key to select
@@ -87,17 +86,11 @@ an item.
 Network Setup
 -------------
 
-.. Warning::
-
-  This section must be configured only in scope of Fuel Master node first boot!
-  Setting new network settings for the already installed master node requires
-  that all Docker containers be rebuilt and possibly further manual reconfiguration!
-
 This section is used to set network interface settings. It shows all network
 interfaces currently available. During the first boot, it shows only available
-ethX NICs and docker0 bridge; if you run Fuel Setup on already deployed master
-node it will additionally present you vethXXX interfaces.
-You may set configuration for each interface, enable or disable particular NICs.
+ethX NICs; if you run Fuel Setup on already deployed master node it will
+additionally present you vethXXX interfaces. You may set configuration for
+each interface, enable or disable particular NICs.
 
 Unlike the other tabs, this tab has the ability to immediately apply only changes
 related to this tab.
@@ -110,21 +103,6 @@ related to this tab.
   there is possibility to use Shell Login from Fuel Setup
   during the first boot, perform necessary network settings with proper care,
   return back to the Fuel Setup and continue with master node installation.
-
-
-About the Docker0 bridge.
-
-.. image:: /_images/fuelmenu_Network_Docker.jpg
-  :width: 50%
-
-This virtual bridge connects external physical
-interfaces with the internal Docker virtual network.
-It has default 172.17.42.0/16 CIDR but, as Docker chooses this network automatically,
-this CIDR may vary from installation to installation. This virtual network
-exists inside the master node only.
-Be sure this CIDR does not intersect with Admin(PXE) one in case you are going to
-customize this network.
-
 
 Configuring Network settings
 
@@ -157,8 +135,7 @@ Network Setup includes the following configurable sections:
 * Button Apply - Validates the unsaved settings on the Network Setup section
   and makes the new settings effective.
 
-
-.. image:: /_images/fuelmenu_Network_Setup.jpg
+.. image:: /_images/fuelmenu_Network_Setup.png
   :width: 50%
 
 Assume you are going to change PXE NIC from eth0 to eth1. eth0 is already up and
@@ -187,7 +164,7 @@ in advance.
   To set the master node network interfaces properly, one must set and APPLY
   correct network settings on the Network Setup tab BEFORE proceeding with PXE setup.
 
-.. image:: /_images/fuelmenu_Network_Customized_Setup.jpg
+.. image:: /_images/fuelmenu_Network_Customized_Setup.png
   :width: 50%
 
 Once you have finished with the network Setup you may proceed to :ref:`PXE<pxe-term>`
@@ -227,11 +204,6 @@ PXE setup includes the following options:
   IP addresses. These addresses should be located inside the CIDR that is configured
   for the currently selected NIC.
 
-  .. note:: In Fuel versions 5.1 and earlier, there was
-     a separate Static Pool, and docker0 would incorrectly show
-     up in the list of available PXE interfaces, this is no longer
-     relevant in current version.
-
 * Check button - verifies the current unsaved settings against the currently
   selected NIC without applying.
 
@@ -246,11 +218,12 @@ Let us continue the example we started in the Network Settings section:
 
 #. As usual, use Check button to verify the current unsaved settings.
 
-  .. warning::
-     Setting the PXE NIC with Fuel Setup when the Fuel Master node is already deployed
-     may lead to non-working PXE boot functionality. In order to get PXE working,
-     one must rebuild all Docker containers and set the remaining related settings
-     manually.
+   .. warning::
+
+      Setting the PXE NIC with Fuel Setup when the Fuel Master node is already deployed
+      may lead to non-working PXE boot functionality. In order to get PXE working,
+      one must rebuild all Docker containers and set the remaining related settings
+      manually.
 
 .. image:: /_images/fuelmenu_PXE_Setup.png
   :width: 50%
@@ -262,7 +235,7 @@ DNS & Hostname
 Use this section to configure the remained master node network settings.
 These settings may be reconfigured after the master node has been deployed.
 
-.. image:: /_images/fuelmenu_DNS.jpg
+.. image:: /_images/fuelmenu_DNS.png
   :width: 50%
 
 Details on settings:
@@ -292,7 +265,7 @@ Use this section to set NTP server names
 in order to get proper time synchronization.
 Synchronized time is mandatory for OpenStack services.
 
-.. image:: /_images/fuelmenu_TimeSync.jpg
+.. image:: /_images/fuelmenu_TimeSync.png
   :width: 50%
 
 If you have access from master node to the external or corporate network -
@@ -371,6 +344,9 @@ Options:
 
 Once you have made your changes,
 go to Save & Quit.
+
+.. image:: /_images/fuelmenu_Quit_Setup.png
+  :width: 50%
 
 You can run ``fuelmenu`` from a root shell on the Fuel Master node
 after deployment to make minor changes
