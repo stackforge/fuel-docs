@@ -122,4 +122,4 @@ Maintenance updates
 .. to include:: /pages/release-notes/v6-1/updates/6010-swift.rst
 .. to include:: /pages/release-notes/v6-1/updates/8010-keystone.rst
 .. to include:: /pages/release-notes/v6-1/updates/1020-heat.rst
-.. to include:: /pages/release-notes/v6-1/updates/9010-others.rst
+.. include:: /pages/release-notes/v6-1/updates/9010-others.rst
