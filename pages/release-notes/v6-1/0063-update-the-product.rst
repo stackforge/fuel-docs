@@ -113,7 +113,7 @@ Maintenance updates
 -------------------
 
 .. to include:: /pages/release-notes/v6-1/updates/2020-fuel.rst
-.. to include:: /pages/release-notes/v6-1/updates/1010-horizon.rst
+.. include:: /pages/release-notes/v6-1/updates/1010-horizon.rst
 .. to include:: /pages/release-notes/v6-1/updates/2010-nova.rst
 .. to include:: /pages/release-notes/v6-1/updates/3010-neutron.rst
 .. to include:: /pages/release-notes/v6-1/updates/4010-glance.rst
