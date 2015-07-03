@@ -12,3 +12,9 @@ two times in a row will stop at the GRUB screen. The node will not
 automatically boot until the user selects an option in the GRUB menu.
 There is no timeout.
 See `LP1465586 <https://bugs.launchpad.net/fuel/+bug/1465586>`_.
+
+Image building requires using a high I/O rate disk on the Fuel Master
+node when depoyed over a QEMU/KVM virtual machine. The issue is that
+with the default disk settings the operation is likely to time out
+before the building process completes successfully and will error
+out with the "Provision timeout" message.
