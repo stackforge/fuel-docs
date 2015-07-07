@@ -3,6 +3,48 @@
 OpenStack Fuel
 --------------
 
+Known Issues
+++++++++++++
+
+* The Fuel library uses `centos-versions.yaml` and `ubuntu-versions.yaml`
+  to look up package versions when running the puppet. To add a
+  controller node the puppet is run on all controllers not just a
+  new one. When puppet encounters a package of a different version
+  in `centos/ubuntu-versions.yaml`, it tries to reinstall it.
+  In case of Maintenance Updates this leads to a failed deployment.
+  See `LP1470650 <https://bugs.launchpad.net/fuel/+bug/1470650>`_.
+
+  Workaround:
+
+  #. Remove `centos/ubuntu-versions.yaml` from `/etc/puppet/manifests`::
+
+      mv /etc/puppet/manifests/*.yaml ~/
+
+  #. Remove the deleted controller node (if such) from:
+
+     * CIB::
+
+        crm node delete <node>
+
+       .. note::
+          You may need to execute this command twice as at first time it
+          may time out and not delete the node from CIB.
+
+     * Neutron agents::
+
+        for agent in `neutron agent-list | awk '/<node>/ {print $2}'`; \
+        do neutron agent-delete $agent; done
+
+     * Nova services::
+
+        mysql nova -e "delete from services where host like '%<node>%'"
+
+     * Ceph osd (if enabled)::
+
+        ceph osd remove <node>
+
+  3. Press deploy changes.
+
 Resolved Issues
 +++++++++++++++
 
