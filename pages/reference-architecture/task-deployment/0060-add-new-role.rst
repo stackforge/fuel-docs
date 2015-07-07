@@ -64,11 +64,9 @@ follow these steps:
             puppet_modules: /etc/puppet/modules
             timeout: 180
 
-#. Run the following command:
+#. Run the following command::
 
-   ::
-
-      fuel rel --sync-deployment-tasks --dir /etc/puppet/2014.2-6.1/
+    fuel rel --sync-deployment-tasks --dir /etc/puppet/2014.2.2-6.1/
 
 #. :ref:`Create an enviroment <create-env-ug>`. Note the following:
 

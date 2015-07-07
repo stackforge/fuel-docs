@@ -7,7 +7,7 @@ If you would like to add extra task for
 an existing role, follow these steps:
 
 #. Add the task description to
-   ``/etc/puppet/2014.2-6.1/modules/my_tasks.yaml`` file.
+   ``/etc/puppet/2014.2.2-6.1/modules/my_tasks.yaml`` file.
 
    .. code-block:: yaml
 
@@ -25,7 +25,7 @@ an existing role, follow these steps:
 
    ::
 
-      fuel rel --sync-deployment-tasks --dir /etc/puppet/2014.2-6.1
+      fuel rel --sync-deployment-tasks --dir /etc/puppet/2014.2.2-6.1
 
 After syncing the task to nailgun database, you will be able to deploy it on
 the selected groups.
