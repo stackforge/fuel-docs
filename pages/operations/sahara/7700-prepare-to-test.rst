@@ -22,8 +22,7 @@ or some tests may fail.
 #. Get an image with Hadoop for Sahara and register it with Sahara.
 
    * Download the following image:
-
-     http://sahara-files.mirantis.com/mos60/sahara-juno-vanilla-1.2.1-ubuntu-14.04.qcow2
+     http://sahara-files.mirantis.com/mos61/sahara-juno-vanilla-1.2.1-ubuntu-14.04.qcow2
 
    * Then upload the image into OpenStack Image Service (Glance) into
      the 'admin' tenant and name it 'sahara'.
