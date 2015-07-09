@@ -113,9 +113,3 @@ that runs on a single server.
               such as Ceilometer with MongoDB, Zabbix,
               and Ceph are also apt to cause problems
               when OpenStack is deployed on a single server.
-
-networks-metadata section
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-volumes-metadata section
-~~~~~~~~~~~~~~~~~~~~~~~~
