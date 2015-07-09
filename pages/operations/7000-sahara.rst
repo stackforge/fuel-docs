@@ -2,7 +2,7 @@
 .. index:: Sahara Deployment
 
 
-.. _sahara-deployment-label:
+.. _sahara-deployment:
 
 
 Sahara Deployment
