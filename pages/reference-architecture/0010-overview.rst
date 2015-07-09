@@ -11,14 +11,16 @@ OpenStack Environment Architecture
 
 .. contents :local:
 
-Fuel deploys an OpenStack Environment
-with nodes that provide a specific set of functionality.
-Beginning with Fuel 5.0,
-a single architecture model can support HA (High Availability)
-and non-HA deployments;
-you can deploy a non-HA environment
-and then add additional nodes to implement HA
-rather than needing to redeploy the environment from scratch.
+Fuel deploys an OpenStack Environment with nodes that provide a
+specific set of functionality. In Fuel 6.1, you can deploy
+an environment with a single controller node and then add extra
+ones.
+
+Even if you deploy a cluster with one controller only, Pacemaker will
+handle all the necessary resources that run simultaneously (like in a
+multi-controller deployment). If you decide to add extra controllers
+to this cluster, Pacemaker will use the OSF scripts to
+migrate services to the new controller nodes.
 
 The OpenStack environment consists of multiple physical server nodes
 (or an equivalent VM),
