@@ -3,7 +3,7 @@ Murano-related features
 -----------------------
 
 * New OpenStack application catalog was published to
-  `Communtiy App Catalog <http://apps.openstack.org/>`_, enabling users to
+  `Community App Catalog <http://apps.openstack.org/>`_, enabling users to
   select Murano packages, Heat templates, and Glance images they would
   like to add to their cloud.
 
