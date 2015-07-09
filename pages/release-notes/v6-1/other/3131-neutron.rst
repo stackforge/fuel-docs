@@ -7,7 +7,7 @@ Resolved Neutron issues
 +++++++++++++++++++++++
 
 * In rare circumstances, there was no connectivity to instances in HA
-  neutron environment. Open vSwitch streams that enable network access
+  Neutron environment. Open vSwitch streams that enable network access
   to VM instances were dropped. Ports created when
   ``neutron-openvswitch-agent`` was down got a DOWN status and
   ``binding:vif_type=binding_failed`` as it should be. When an agent
@@ -77,8 +77,16 @@ Other issues
   slows down the process of VM's creation on the node.
   See `LP1465081`_.
 
+* Instances metadata on CentOS 6.6 cloud images with cloud-init 0.7.5
+  may be unset in Neutron environments. When an environment is deployed
+  with one of the Neutron topologies and CentOS 6.6 cloud images are
+  used, instances can be unreachable via SSH due to cloud-init failure
+  because users' keypairs and the rest of configuration data may not be
+  set correctly. See `LP1406286`_.
+
 .. _`LP1393771`: https://bugs.launchpad.net/mos/6.1.x/+bug/1393771
 .. _`LP1455113`: https://bugs.launchpad.net/mos/6.1.x/+bug/1455113
 .. _`LP1436414`: https://bugs.launchpad.net/fuel/+bug/1436414
 .. _`LP1452768`: https://bugs.launchpad.net/mos/6.1.x/+bug/1452768
 .. _`LP1465081`: https://bugs.launchpad.net/mos/+bug/1465081
+.. _`LP1406286`: https://bugs.launchpad.net/mos/+bug/1406286
