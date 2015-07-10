@@ -1,7 +1,5 @@
 .. _links:
 
-Fuel Plugin Guide
-=================
 
 Fuel Plugin Guide is now split into separate sources of information
 according to the issues covered:
