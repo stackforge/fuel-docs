@@ -17,10 +17,9 @@ running virtual IP addresses reside in separate `haproxy`
 network namespace. Using a separate namespace forces Linux kernel to treat
 connections from OpenStack services to HAProxy as remote ones, this ensures
 reliable failover of established connections when the management IP address
-migrates to another node
-(see `LP1285449 <https://bugs.launchpad.net/fuel/+bug/1285449>`_).
-In order to achieve this, resource agent scripts for `ocf:heartbeat:haproxy`
-and `ocf:heartbeat:IPaddr2` were hardened with network namespaces support.
+migrates to another node.
+In order to achieve this, resource agent scripts for `ocf:fuel:ns_haproxy`
+and `ocf:fuel:ns_IPaddr2` were hardened with network namespaces support.
 
 Successfull failover of public VIP address requires controller nodes
 to perform active checking of the public gateway. Fuel configures
