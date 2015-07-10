@@ -2,9 +2,6 @@
 
 .. _plugin-dev:
 
-=================
-Fuel Plugin Guide
-=================
 
 .. contents:: :local:
 
