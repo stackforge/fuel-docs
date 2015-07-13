@@ -38,9 +38,9 @@ Major Component Versions
 
 * **Hypervisor**
 
-  * KVM
-  * QEMU
-  * vCenter
+  * CentOS: KVM, libvirt 1.2.5; QEMU 2.0.5
+  * Ubuntu: KVM, libvirt 1.2.5; QEMU 2.0.0
+  * vCenter 5.5 Update 2
 
 * **Networking backend**
 
