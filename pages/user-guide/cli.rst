@@ -313,10 +313,10 @@ CLI basically implements standard CRUD for operating on a role.
            description: Installs swift server.
            has_primary: true # we need primary-swift and swift during orchestration
            name: Swift
-           name: swift
-        volumes_roles_mapping:
-        - allocate_size: min
-         id: os
+         name: swift
+         volumes_roles_mapping:
+           - allocate_size: min
+             id: os
 
   - Then use ``--create`` flag to proceed. When created,
     you can start using a new role for your own tasks:
