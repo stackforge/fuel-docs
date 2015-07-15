@@ -10,12 +10,11 @@ This guide gives instructions for using
 the Fuel Master Node and the graphical Fuel screens
 to deploy a Mirantis OpenStack environment.
 
-If you already have a deployed Fuel Master Node based on v5.x,
-go to :ref:`upgrade-patch-top-ug` for instructions about
-upgrading to Fuel 5.1
-and updating your existing OpenStack distribution
+If you already have a deployed Fuel Master Node based on versions
+5.x or 6.0, go to :ref:`upgrade-patch-top-ug` for instructions on
+upgrading to Fuel 6.1 and updating your existing OpenStack distribution
 to use the latest maintenance release of Mirantis OpenStack.
-If you are deploying Mirantis OpenStack 5.x for the first time,
+If you are deploying Mirantis OpenStack 6.1 for the first time,
 continue reading this document for instructions.
 
 Before you do the procedures in this document,
