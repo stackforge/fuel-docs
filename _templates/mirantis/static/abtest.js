@@ -10,6 +10,15 @@ document.write(unescape("%3Cscript src='" + _conv_host + "/js/10012224-10012014.
 			$('.nav-tabs a:first').tab('show');
 		}
 	});
+
+
+	var url = window.location.pathname;
+	var filename = url.substring(url.lastIndexOf('/') + 1);
+
+	if (filename == 'contents.html') {
+		window.location.href = 'index.html';
+
+	}
 })();
 
 function showHashTab(){
@@ -243,8 +252,6 @@ $(document).ready(function () {
 		var tab = $(this).attr('href');
 		$('.nav-tabs a[href="' + tab + '"]').tab('show');
 	});
-
-	$('a.toc-backref').contents().unwrap();
 
 	prepareList();
 
