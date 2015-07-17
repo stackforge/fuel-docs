@@ -11,7 +11,6 @@ Hypervisor
 
 
 .. image:: /_images/user_screen_shots/select-two-hypervisors.png
-   :width: 50%
 
 Choose one of the following:
 

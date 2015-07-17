@@ -8,15 +8,14 @@ When you click on the "New OpenStack Environment" icon
 on the Fuel UI, the following screen is displayed:
 
 .. image:: /_images/user_screen_shots/name_environ.png
-   :width: 50%
 
 Give the environment a name
 and select the Linux distribution from the drop-down list:
 
 ::
 
-    Juno on Ubuntu 14.04.4 (2014.2.2-6.1)
-    Juno on CentOS 6.5 (2014.2-6.0)
+    Juno on Ubuntu 14.04.1 (2014.2.2-6.1)(default)
+    Juno on CentOS 6.5 (2014.2.2-6.1)
 
 This is the operating system that will be installed
 on the target nodes in the environment.

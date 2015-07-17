@@ -10,7 +10,6 @@ High-availability (HA) or non-HA mode
 
 
 .. image:: /_images/user_screen_shots/choose_deploy_mode.png
-   :width: 50%
 
 Choose between these two modes,
 which are described on the screen
