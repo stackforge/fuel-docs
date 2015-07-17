@@ -142,5 +142,8 @@ Known installation and deployment issues
   See `LP1451515 <https://bugs.launchpad.net/fuel/+bug/1451515>`_
   and `LP1449584 <https://bugs.launchpad.net/mos/+bug/1449584>`_.
 
+* S3 endpoint is broken.
+  See `LP1477457 <https://bugs.launchpad.net/fuel/+bug/1477457>`_. 
+
 .. Links
 .. _`LP1384976`: https://bugs.launchpad.net/fuel/6.1.x/+bug/1384976
