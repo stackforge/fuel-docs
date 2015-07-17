@@ -17,12 +17,7 @@ and a list of unallocated nodes at the bottom.
 
 .. image:: /_images/user_screen_shots/assign-roles1.png
 
-
-.. image:: /_images/user_screen_shots/assign-roles2.png
-
-
-
-To assign roles to the nodes:
+| To assign roles to the nodes:
 
 - Select the role or roles you want to assign;
   roles that cannot be assigned are indicated.
@@ -35,6 +30,8 @@ Fuel displays an icon
 (a gold triangle with an exclamation point)
 next to roles that are not allowed.
 It also tells you about other environment settings that are required.
+
+.. image:: /_images/user_screen_shots/assign-roles2.png
 
 If you want to modify the roles assigned to a node:
 
