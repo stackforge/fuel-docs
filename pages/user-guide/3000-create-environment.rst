@@ -35,10 +35,6 @@ but you must create each environment separately.
 | environment and choose the |                                           |
 | Operating System (distro)  |                                           |
 +----------------------------+-------------------------------------------+
-| Choose your Deployment     | See :ref:`mode-ha-ug`                     |
-| Mode (Multi-node HA or non |                                           |
-| HA).                       |                                           |
-+----------------------------+-------------------------------------------+
 | Choose your                | See :ref:`hypervisor-ug`                  |
 | :ref:`hypervisor-term`     |                                           |
 +----------------------------+-------------------------------------------+
@@ -64,7 +60,6 @@ but you must create each environment separately.
 .. include:: /pages/user-guide/create-environment/1050-change-password.rst
 .. include:: /pages/user-guide/create-environment/1100-statistics.rst
 .. include:: /pages/user-guide/create-environment/1500-name-distro.rst
-.. include:: /pages/user-guide/create-environment/2000-mode-ha.rst
 .. include:: /pages/user-guide/create-environment/2500-hypervisor.rst
 .. include:: /pages/user-guide/create-environment/3000-choose-network.rst
 .. include:: /pages/user-guide/create-environment/3500-cinder-glance-backend.rst

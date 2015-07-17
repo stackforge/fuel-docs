@@ -9,9 +9,10 @@ OpenStack is architected to support HA; see the
 `OpenStack High Availability Guide <http://docs.openstack.org/high-availability-guide/content/ch-intro.html>`_
 for more information about the OpenStack implementation.
 
-When you create an OpenStack environment with Fuel,
-you are asked to choose either an HA or non-HA deployment mode
-on the :ref:`mode-ha-ug` screen.
+Prior to Fuel 6.1, while creating an OpenStack environment, 
+you were asked to choose either an HA or non-HA deployment mode.
+Starting with Fuel 6.1 the only supported mode is HA.
+
 Before Mirantis OpenStack 5.1,
 different internal architectures were used for the two modes;
 if you deployed a non-HA environment,

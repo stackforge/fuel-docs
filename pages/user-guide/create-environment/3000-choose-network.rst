@@ -9,7 +9,6 @@ Network service
 ---------------
 
 .. image:: /_images/user_screen_shots/network-services.png
-   :width: 50%
 
 Five network topologies are supported;
 see :ref:`net-topology-plan`.
