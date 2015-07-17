@@ -35,10 +35,6 @@ but you must create each environment separately.
 | environment and choose the |                                           |
 | Operating System (distro)  |                                           |
 +----------------------------+-------------------------------------------+
-| Choose your Deployment     | See :ref:`mode-ha-ug`                     |
-| Mode (Multi-node HA or non |                                           |
-| HA).                       |                                           |
-+----------------------------+-------------------------------------------+
 | Choose your                | See :ref:`hypervisor-ug`                  |
 | :ref:`hypervisor-term`     |                                           |
 +----------------------------+-------------------------------------------+

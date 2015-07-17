@@ -9,7 +9,6 @@ Related projects
 ----------------
 
 .. image:: /_images/user_screen_shots/platform_services.png
-   :width: 50%
 
 Choose additional related projects
 that should be included in your environment:

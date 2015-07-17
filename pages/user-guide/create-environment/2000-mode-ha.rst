@@ -5,33 +5,9 @@
 
 .. _mode-ha-ug:
 
-High-availability (HA) or non-HA mode
--------------------------------------
+High-availability (HA) mode
+---------------------------
 
-
-.. image:: /_images/user_screen_shots/choose_deploy_mode.png
-   :width: 50%
-
-Choose between these two modes,
-which are described on the screen
-when they are selected:
-
-- **Multi-node with HA** -- Deploys an OpenStack environment
-  that is ready for :ref:`ha-term`.
-  Three Controller nodes must be configured
-  for the environment to be considered HA
-  but you can deploy a single-controller node in this mode
-  and :ref:`add controllers<add-controller-ops>`
-  at a later time
-  to implement High Availability.
-
-- **Multi-node** -- Deploys an OpenStack environment that
-  is not managed by an HA stack such as Pacemaker.
-  You cannot add more controllers in this mode
-  without redeploying the environment in HA  mode.
-
-All new deployments should use the "Multi-node with HA" mode.
-The "Multi-node" mode is retained for
-backward compatibility
-but is expected to be deprecated in an upcoming release.
-
+Prior to Fuel 6.1, it was possible to choose between multi-node and
+multi-node with HA modes. Starting from Fuel 6.1, the only supported
+deployment mode is HA.
