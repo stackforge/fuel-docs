@@ -34,4 +34,5 @@ The following table lists the released revisions of this documentation:
 .. include:: /pages/release-notes/v5-1/040-resolved-issues.rst
 .. include:: /pages/release-notes/v5-1/050-known-issues.rst
 .. include:: /pages/release-notes/v5-1/060-obtain-the-product.rst
+.. include:: /pages/release-notes/v5-1/063-update-the-product.rst
 .. include:: /pages/release-notes/v5-1/070-support.rst
