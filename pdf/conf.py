@@ -27,5 +27,6 @@ pdf_documents = [
     ('pdf/pdf_plugin-dev', u'Mirantis-OpenStack-6.1-FuelPluginGuide', u'Fuel Plugin Guide', u'2015, Mirantis Inc.'),
     ('pdf/pdf_terminology', u'Mirantis-OpenStack-6.1-Terminology-Reference', u'Terminology Reference', u'2015, Mirantis Inc.'),
     ('pdf/pdf_file-ref', u'Mirantis-OpenStack-6.1-File-Format-Reference', u'File Format Reference', u'2015, Mirantis Inc.'),
+    ('pdf/pdf_mu', u'Mirantis-OpenStack-6.1-Maintenance-Updates', u'Maintenance Updates', u'2015, Mirantis Inc.'),
     ('pdf/pdf_relnotes', u'Mirantis-OpenStack-6.1-RelNotes', u'Release Notes', u'2015, Mirantis Inc.', {'pdf_use_toc': False}),
 ]
