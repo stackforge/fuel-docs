@@ -1,0 +1,201 @@
+.. _mos61mu-1466490:
+
+Neutron L2 agent performs a DoS because of incorrectly allowed address pairs
+============================================================================
+
+By adding an address pair which is rejected as invalid by the ipset tool, an authenticated user may break 
+the Neutron L2 agent resulting in a denial of service attack. Neutron setups that use the IPTables firewall driver are affected.
+See `LP1466490 <https://bugs.launchpad.net/bugs/1466490>`_, `CVE2015-3221 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=2015-3221>`_.
+
+Affected packages
+-----------------
+* Centos@6.1: openstack-neutron=2014.2.2-fuel6.1.mira32
+* Centos@6.1: openstack-neutron-bigswitch=2014.2.2-fuel6.1.mira32
+* Centos@6.1: openstack-neutron-brocade=2014.2.2-fuel6.1.mira32
+* Centos@6.1: openstack-neutron-cisco=2014.2.2-fuel6.1.mira32
+* Centos@6.1: openstack-neutron-hyperv=2014.2.2-fuel6.1.mira32
+* Centos@6.1: openstack-neutron-ibm=2014.2.2-fuel6.1.mira32
+* Centos@6.1: openstack-neutron-linuxbridge=2014.2.2-fuel6.1.mira32
+* Centos@6.1: openstack-neutron-mellanox=2014.2.2-fuel6.1.mira32
+* Centos@6.1: openstack-neutron-metaplugin=2014.2.2-fuel6.1.mira32
+* Centos@6.1: openstack-neutron-metering-agent=2014.2.2-fuel6.1.mira32
+* Centos@6.1: openstack-neutron-midonet=2014.2.2-fuel6.1.mira32
+* Centos@6.1: openstack-neutron-ml2=2014.2.2-fuel6.1.mira32
+* Centos@6.1: openstack-neutron-nec=2014.2.2-fuel6.1.mira32
+* Centos@6.1: openstack-neutron-nuage=2014.2.2-fuel6.1.mira32
+* Centos@6.1: openstack-neutron-ofagent=2014.2.2-fuel6.1.mira32
+* Centos@6.1: openstack-neutron-oneconvergence-nvsd=2014.2.2-fuel6.1.mira32
+* Centos@6.1: openstack-neutron-opencontrail=2014.2.2-fuel6.1.mira32
+* Centos@6.1: openstack-neutron-openvswitch=2014.2.2-fuel6.1.mira32
+* Centos@6.1: openstack-neutron-plumgrid=2014.2.2-fuel6.1.mira32
+* Centos@6.1: openstack-neutron-ryu=2014.2.2-fuel6.1.mira32
+* Centos@6.1: openstack-neutron-vmware=2014.2.2-fuel6.1.mira32
+* Centos@6.1: openstack-neutron-vpn-agent=2014.2.2-fuel6.1.mira32
+* Centos@6.1: python-neutron=2014.2.2-fuel6.1.mira32
+* Ubuntu@6.1: neutron-common=2014.2.2-1~u14.04+mos31
+* Ubuntu@6.1: neutron-dhcp-agent=2014.2.2-1~u14.04+mos31
+* Ubuntu@6.1: neutron-l3-agent=2014.2.2-1~u14.04+mos31
+* Ubuntu@6.1: neutron-lbaas-agent=2014.2.2-1~u14.04+mos31
+* Ubuntu@6.1: neutron-metadata-agent=2014.2.2-1~u14.04+mos31
+* Ubuntu@6.1: neutron-metering-agent=2014.2.2-1~u14.04+mos31
+* Ubuntu@6.1: neutron-plugin-bigswitch-agent=2014.2.2-1~u14.04+mos31
+* Ubuntu@6.1: neutron-plugin-bigswitch=2014.2.2-1~u14.04+mos31
+* Ubuntu@6.1: neutron-plugin-brocade=2014.2.2-1~u14.04+mos31
+* Ubuntu@6.1: neutron-plugin-cisco=2014.2.2-1~u14.04+mos31
+* Ubuntu@6.1: neutron-plugin-hyperv=2014.2.2-1~u14.04+mos31
+* Ubuntu@6.1: neutron-plugin-ibm-agent=2014.2.2-1~u14.04+mos31
+* Ubuntu@6.1: neutron-plugin-ibm=2014.2.2-1~u14.04+mos31
+* Ubuntu@6.1: neutron-plugin-linuxbridge-agent=2014.2.2-1~u14.04+mos31
+* Ubuntu@6.1: neutron-plugin-linuxbridge=2014.2.2-1~u14.04+mos31
+* Ubuntu@6.1: neutron-plugin-metaplugin=2014.2.2-1~u14.04+mos31
+* Ubuntu@6.1: neutron-plugin-metering-agent=2014.2.2-1~u14.04+mos31
+* Ubuntu@6.1: neutron-plugin-midonet=2014.2.2-1~u14.04+mos31
+* Ubuntu@6.1: neutron-plugin-ml2=2014.2.2-1~u14.04+mos31
+* Ubuntu@6.1: neutron-plugin-mlnx-agent=2014.2.2-1~u14.04+mos31
+* Ubuntu@6.1: neutron-plugin-mlnx=2014.2.2-1~u14.04+mos31
+* Ubuntu@6.1: neutron-plugin-nec-agent=2014.2.2-1~u14.04+mos31
+* Ubuntu@6.1: neutron-plugin-nec=2014.2.2-1~u14.04+mos31
+* Ubuntu@6.1: neutron-plugin-nicira=2014.2.2-1~u14.04+mos31
+* Ubuntu@6.1: neutron-plugin-oneconvergence-agent=2014.2.2-1~u14.04+mos31
+* Ubuntu@6.1: neutron-plugin-oneconvergence=2014.2.2-1~u14.04+mos31
+* Ubuntu@6.1: neutron-plugin-openflow-agent=2014.2.2-1~u14.04+mos31
+* Ubuntu@6.1: neutron-plugin-openvswitch-agent=2014.2.2-1~u14.04+mos31
+* Ubuntu@6.1: neutron-plugin-openvswitch=2014.2.2-1~u14.04+mos31
+* Ubuntu@6.1: neutron-plugin-plumgrid=2014.2.2-1~u14.04+mos31
+* Ubuntu@6.1: neutron-plugin-ryu-agent=2014.2.2-1~u14.04+mos31
+* Ubuntu@6.1: neutron-plugin-ryu=2014.2.2-1~u14.04+mos31
+* Ubuntu@6.1: neutron-plugin-vmware=2014.2.2-1~u14.04+mos31
+* Ubuntu@6.1: neutron-plugin-vpn-agent=2014.2.2-1~u14.04+mos31
+* Ubuntu@6.1: neutron-server=2014.2.2-1~u14.04+mos31
+* Ubuntu@6.1: neutron-vpn-agent=2014.2.2-1~u14.04+mos31
+* Ubuntu@6.1: python-neutron=2014.2.2-1~u14.04+mos31
+
+Fixed packages
+--------------
+* Centos@6.1: openstack-neutron=2014.2.2-fuel6.1.mira34
+* Centos@6.1: openstack-neutron-bigswitch=2014.2.2-fuel6.1.mira34
+* Centos@6.1: openstack-neutron-brocade=2014.2.2-fuel6.1.mira34
+* Centos@6.1: openstack-neutron-cisco=2014.2.2-fuel6.1.mira34
+* Centos@6.1: openstack-neutron-hyperv=2014.2.2-fuel6.1.mira34
+* Centos@6.1: openstack-neutron-ibm=2014.2.2-fuel6.1.mira34
+* Centos@6.1: openstack-neutron-linuxbridge=2014.2.2-fuel6.1.mira34
+* Centos@6.1: openstack-neutron-mellanox=2014.2.2-fuel6.1.mira34
+* Centos@6.1: openstack-neutron-metaplugin=2014.2.2-fuel6.1.mira34
+* Centos@6.1: openstack-neutron-metering-agent=2014.2.2-fuel6.1.mira34
+* Centos@6.1: openstack-neutron-midonet=2014.2.2-fuel6.1.mira34
+* Centos@6.1: openstack-neutron-ml2=2014.2.2-fuel6.1.mira34
+* Centos@6.1: openstack-neutron-nec=2014.2.2-fuel6.1.mira34
+* Centos@6.1: openstack-neutron-nuage=2014.2.2-fuel6.1.mira34
+* Centos@6.1: openstack-neutron-ofagent=2014.2.2-fuel6.1.mira34
+* Centos@6.1: openstack-neutron-oneconvergence-nvsd=2014.2.2-fuel6.1.mira34
+* Centos@6.1: openstack-neutron-opencontrail=2014.2.2-fuel6.1.mira34
+* Centos@6.1: openstack-neutron-openvswitch=2014.2.2-fuel6.1.mira34
+* Centos@6.1: openstack-neutron-plumgrid=2014.2.2-fuel6.1.mira34
+* Centos@6.1: openstack-neutron-ryu=2014.2.2-fuel6.1.mira34
+* Centos@6.1: openstack-neutron-vmware=2014.2.2-fuel6.1.mira34
+* Centos@6.1: openstack-neutron-vpn-agent=2014.2.2-fuel6.1.mira34
+* Centos@6.1: python-neutron=2014.2.2-fuel6.1.mira34
+* Ubuntu@6.1: neutron-common=2014.2.2-1~u14.04+mos32
+* Ubuntu@6.1: neutron-dhcp-agent=2014.2.2-1~u14.04+mos32
+* Ubuntu@6.1: neutron-l3-agent=2014.2.2-1~u14.04+mos32
+* Ubuntu@6.1: neutron-lbaas-agent=2014.2.2-1~u14.04+mos32
+* Ubuntu@6.1: neutron-metadata-agent=2014.2.2-1~u14.04+mos32
+* Ubuntu@6.1: neutron-metering-agent=2014.2.2-1~u14.04+mos32
+* Ubuntu@6.1: neutron-plugin-bigswitch-agent=2014.2.2-1~u14.04+mos32
+* Ubuntu@6.1: neutron-plugin-bigswitch=2014.2.2-1~u14.04+mos32
+* Ubuntu@6.1: neutron-plugin-brocade=2014.2.2-1~u14.04+mos32
+* Ubuntu@6.1: neutron-plugin-cisco=2014.2.2-1~u14.04+mos32
+* Ubuntu@6.1: neutron-plugin-hyperv=2014.2.2-1~u14.04+mos32
+* Ubuntu@6.1: neutron-plugin-ibm-agent=2014.2.2-1~u14.04+mos32
+* Ubuntu@6.1: neutron-plugin-ibm=2014.2.2-1~u14.04+mos32
+* Ubuntu@6.1: neutron-plugin-linuxbridge-agent=2014.2.2-1~u14.04+mos32
+* Ubuntu@6.1: neutron-plugin-linuxbridge=2014.2.2-1~u14.04+mos32
+* Ubuntu@6.1: neutron-plugin-metaplugin=2014.2.2-1~u14.04+mos32
+* Ubuntu@6.1: neutron-plugin-metering-agent=2014.2.2-1~u14.04+mos32
+* Ubuntu@6.1: neutron-plugin-midonet=2014.2.2-1~u14.04+mos32
+* Ubuntu@6.1: neutron-plugin-ml2=2014.2.2-1~u14.04+mos32
+* Ubuntu@6.1: neutron-plugin-mlnx-agent=2014.2.2-1~u14.04+mos32
+* Ubuntu@6.1: neutron-plugin-mlnx=2014.2.2-1~u14.04+mos32
+* Ubuntu@6.1: neutron-plugin-nec-agent=2014.2.2-1~u14.04+mos32
+* Ubuntu@6.1: neutron-plugin-nec=2014.2.2-1~u14.04+mos32
+* Ubuntu@6.1: neutron-plugin-nicira=2014.2.2-1~u14.04+mos32
+* Ubuntu@6.1: neutron-plugin-oneconvergence-agent=2014.2.2-1~u14.04+mos32
+* Ubuntu@6.1: neutron-plugin-oneconvergence=2014.2.2-1~u14.04+mos32
+* Ubuntu@6.1: neutron-plugin-openflow-agent=2014.2.2-1~u14.04+mos32
+* Ubuntu@6.1: neutron-plugin-openvswitch-agent=2014.2.2-1~u14.04+mos32
+* Ubuntu@6.1: neutron-plugin-openvswitch=2014.2.2-1~u14.04+mos32
+* Ubuntu@6.1: neutron-plugin-plumgrid=2014.2.2-1~u14.04+mos32
+* Ubuntu@6.1: neutron-plugin-ryu-agent=2014.2.2-1~u14.04+mos32
+* Ubuntu@6.1: neutron-plugin-ryu=2014.2.2-1~u14.04+mos32
+* Ubuntu@6.1: neutron-plugin-vmware=2014.2.2-1~u14.04+mos32
+* Ubuntu@6.1: neutron-plugin-vpn-agent=2014.2.2-1~u14.04+mos32
+* Ubuntu@6.1: neutron-server=2014.2.2-1~u14.04+mos32
+* Ubuntu@6.1: neutron-vpn-agent=2014.2.2-1~u14.04+mos32
+* Ubuntu@6.1: python-neutron=2014.2.2-1~u14.04+mos32
+
+Patching scenario - CentOS
+--------------------------
+
+1. Run the following commands on OpenStack compute nodes, OpenStack controller nodes
+   ::
+
+       yum clean expire-cache
+       yum -y update openstack-neutron*
+       yum -y update python-neutron*
+
+2. Run the following commands on OpenStack controller nodes
+   ::
+
+       pcs resource disable p_neutron-l3-agent
+       pcs resource disable p_neutron-metadata-agent
+       pcs resource disable p_neutron-dhcp-agent
+       pcs resource disable p_neutron-plugin-openvswitch-agent
+       service neutron-server stop
+
+3. Run the following command on OpenStack compute nodes
+   ::
+
+       service neutron-openvswitch-agent restart
+
+4. Run the following command on OpenStack controller nodes
+   ::
+
+       service neutron-server start
+       pcs resource enable p_neutron-plugin-openvswitch-agent
+       pcs resource enable p_neutron-dhcp-agent
+       pcs resource enable p_neutron-metadata-agent
+       pcs resource enable p_neutron-l3-agent
+
+Patching scenario - Ubuntu
+--------------------------
+
+1. Run the following commands on OpenStack compute nodes, OpenStack controller nodes
+   ::
+
+       apt-get update
+       apt-get install --only-upgrade -y neutron-*
+       apt-get install --only-upgrade -y python-neutron*
+
+2. Run the following commands on OpenStack controller nodes
+   ::
+
+       pcs resource disable p_neutron-l3-agent 
+       pcs resource disable p_neutron-metadata-agent 
+       pcs resource disable p_neutron-dhcp-agent 
+       pcs resource disable p_neutron-plugin-openvswitch-agent 
+       initctl stop neutron-server
+
+3. Run the following command on OpenStack compute nodes
+   ::
+
+       initctl restart neutron-plugin-openvswitch-agent
+
+4. Run the following command on OpenStack controller nodes
+   ::
+
+       initctl start neutron-server
+       pcs resource enable p_neutron-plugin-openvswitch-agent 
+       pcs resource enable p_neutron-dhcp-agent 
+       pcs resource enable p_neutron-metadata-agent 
+       pcs resource enable p_neutron-l3-agent 
+
