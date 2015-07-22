@@ -18,6 +18,7 @@ Documentation
   plugin-dev
   file-ref
   release-notes
+  maintenance-updates
   style-guide
   eula
   third-party-licenses
