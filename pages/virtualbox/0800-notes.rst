@@ -2,6 +2,8 @@
 Additional Notes
 ================
 
+- 
+
 - Do not run VirtualBox as the root user
   or as any user with superuser permissions.
   You must run it as a normal user
@@ -15,3 +17,13 @@ Additional Notes
   is not running X11,
   you must modify the scripts to use the headless option:
   "VBoxManage startvm ... --type headless"
+
+- As part of the improved networking configuration in Mirantis
+  OpenStack 6.1, the VirtualBox scripts now use
+  Intel e1000 Desktop as a virtual network adapter. This means that
+  starting with Mirantis OpenStack 6.1, you can deploy on VirtualBox
+  with Intel network cards only.
+
+  Mirantis OpenStack 6.0 and older use AMD PCNet 32 Fast III as
+  a virtual network adapter and cannot be deployed on VirtualBox
+  with Intel network cards.
