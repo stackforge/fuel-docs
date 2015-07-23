@@ -102,7 +102,7 @@ To upgrade the Fuel Master Node:
 #. **Be sure that no installations are in progress in the environment.**
 
 #. Download the upgrade tarball by going to
-   `http://software.mirantis.com`. Click `Download Now` and on your right
+   http://software.mirantis.com. Click `Download Now` and on your right
    select `Mirantis OpenStack Upgrade`.
    Put the downloaded file to a location on the Fuel Master Node
    that has at least 2 GB of free space for
@@ -114,14 +114,12 @@ To upgrade the Fuel Master Node:
    and then transfer the file to the Fuel Master
    using **scp** or an SSH client.
 
-#. Extract the tarball contents:
+#. Extract the tarball contents::
 
-    ::
+     cd /var/tmp  # Use the directory where the tarball is located
+     lrzuntar filename.tar.lrz
 
-       cd /var/tmp  # Use the directory where the tarball is located
-       lrzuntar filename.tar.lrz
-
-    .. warning:: The Fuel Master node must have at least 2 GB of RAM
+   .. warning:: The Fuel Master node must have at least 2 GB of RAM
       in order for **lrzip** to decompress the upgrade archive.
       See :ref:`HardwarePrerequisites` for a full list of
       hardware requirements for the Master node.
@@ -133,11 +131,9 @@ To upgrade the Fuel Master Node:
       then transfer the extracted files to the Master node.
 
 #. Run the upgrade script from that same directory and supply
-   the Fuel administrator (*admin* user) password:
+   the Fuel administrator (*admin* user) password::
 
-    ::
-
-       ./upgrade.sh --password <password>
+     ./upgrade.sh --password <password>
 
    If you do not specify the password here,
    you will be prompted for the password.
@@ -150,12 +146,10 @@ To upgrade the Fuel Master Node:
 
 When the upgrade is complete,
 the following messages will appear
-under the "Releases" tab on the Fuel UI:
+under the "Releases" tab on the Fuel UI::
 
-   ::
-
-      New release available: Juno on Ubuntu 14.04.4 (2014.2.2-6.1)
-      New release available: Juno on CentOS 6.5 (2014.2-6.0)
+  New release available: Juno on Ubuntu 14.04.1 (2014.2.2-6.1)
+  New release available: Juno on CentOS 6.5 (2014.2.2-6.1)
 
 
 .. _update-openstack-environ-ug:
