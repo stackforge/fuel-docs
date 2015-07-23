@@ -17,29 +17,26 @@ For example,
 `Neutron LBaaS <https://software.mirantis.com/download-mirantis-openstack-fuel-plug-ins/#lbaas>`_
 provides Load-Balancing-as-a-Service for Neutron, OpenStack Network Service.
 
-Certification
--------------
+Validation
+----------
 
-The Fuel Plugins Certification is
-a set of technical and business
-processes that Mirantis uses
-to verify Fuel plugins built by vendors,
-allowing customer choice of plugins to lead to a predictable outcome.
-That means, Mirantis Certification ensures the quality of developed solution.
+The Fuel Plugins Validation is a set of technical and business
+processes that Mirantis uses to verify Fuel plugins built by vendors,
+allowing a customer's choice of plugins to lead to a predictable outcome.
+That means, Mirantis Validation ensures the quality of developed solution.
 
-In terms of Certification, Fuel plugins fall into two categories:
+In terms of Validation, Fuel plugins fall into two categories:
 
-* *Certified* -  thoroughly reviewed, tested and supported by Mirantis.
+* *Validated* -  thoroughly reviewed, tested and supported by Mirantis.
 
-* *Non-Certified* - reviewed, tested in terms of code and installation procedure,
+* *Non-Validated* - reviewed, tested in terms of code and installation procedure,
   but not supported by Mirantis.
 
 
-See the certification requirements at
+See the validation requirements at
 `Mirantis website <https://www.mirantis.com/partners/become-mirantis-technology-partner/fuel-plugin-development/fuel-plugin-certification/>`_.
 
-For information on development requirements
-and FAQ, see
+For information on development requirements and FAQ, see
 `Fuel Plugins <https://wiki.openstack.org/wiki/Fuel/Plugins>`_ wiki page.
 
 
