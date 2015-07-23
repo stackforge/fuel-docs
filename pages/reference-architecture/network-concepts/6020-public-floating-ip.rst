@@ -22,19 +22,18 @@ are required on your hardware router to connect the two ranges.
 
 **Public range with Nova-Network requirements:**
 
-  * Each deployed node
-    requires one IP address from the Public IP range.
+* Each deployed node requires one IP address from the Public IP range.
 
-  * For HA environments, one extra IP address is required
-    for the environment's Virtual IP.
+* For HA environments, one extra IP address is required
+  for the environment's Virtual IP.
 
 **Floating range with Nova-Network requirements:**
 
-  * Every VM (instance) connected to the external network
-    requires one IP address from the Floating IP range.
-    These IP addresses are assigned on demand
-    and may be released from the VM
-    and returned back to the pool of non-assigned Floating IP addresses.
+* Every VM (instance) connected to the external network
+  requires one IP address from the Floating IP range.
+  These IP addresses are assigned on demand
+  and may be released from the VM
+  and returned back to the pool of non-assigned Floating IP addresses.
 
 Neutron requirements
 ~~~~~~~~~~~~~~~~~~~~
@@ -46,47 +45,46 @@ Fuel cannot configure Neutron with external workarounds at this time.
 
 **Public range with Neutron requirements:**
 
-  * Each deployed Controller node and each deployed Zabbix node
-    requires one IP address from the Public IP range.
+* Each deployed Controller node and each deployed Zabbix node
+  requires one IP address from the Public IP range.
 
-  * This IP address goes to the node's bridge to the external network ("br-ex").
+* This IP address goes to the node's bridge to the external network ("br-ex").
 
-  * For HA environments, an additional IP address is required
-    for the environment's Virtual IP.
+* For HA environments, an additional IP address is required for the environment's
+  Virtual IP.
 
-Note the following:
+.. note::
 
-*   Public IP addresses can still be allocated to all nodes
-    in a 5.1 Neutron environment.
-    This can be enabled under the "Settings" tab
-    by selecting **Public network assignment ->
+  * Beginning with 5.1 Neutron environment, public IP addresses
+    can be allocated to all nodes. This can be enabled under
+    the `Settings` tab by selecting **Public network assignment ->
     Assign public network to all nodes**.
-    This setting is absent when using Nova-Net
+    This setting is absent when using Nova-Network,
     because a public IP address is always allocated to each node.
 
-*   When using Fuel 5.1 to manage 5.0.x environments,
-    the environment must conform to the 5.0.x practice,
+  * When using Fuel 6.1 to manage 6.0 environments,
+    the environment must conform to the 6.0 practice,
     so each target node must have a public IP assigned to it,
     even when using Neutron.
 
-*   Default gateways on nodes that do not have public IP addresses
-    point to the master node's IP address for Fuel 5.1;
-    this behavior is expected to change in future releases.
+  * For Fuel 5.1, default gateways on nodes that do not have public
+    IP addresses point to the master node's IP address.
 
 
 **Floating range with Neutron requirements:**
 
-  * Each defined tenant, including the Admin tenant,
-    requires one IP address from the Floating range.
-  * This IP address goes to the virtual interface of the tenant's virtual router.
-    Therefore, one Floating IP is assigned to the Admin tenant automatically
-    as part of the OpenStack deployment process.
+* Each defined tenant, including the Admin tenant,
+  requires one IP address from the Floating range.
 
-  * Each VM (instance) connected to the external network
-    requires one IP address from the Floating IP range.
-    These IP addresses are assigned on demand
-    and may be released from the VM
-    and returned back to the pool of non-assigned Floating IP addresses.
+* This IP address goes to the virtual interface of the tenant's virtual router.
+  Therefore, one Floating IP is assigned to the Admin tenant automatically
+  as part of the OpenStack deployment process.
+
+* Each VM (instance) connected to the external network
+  requires one IP address from the Floating IP range.
+  These IP addresses are assigned on demand
+  and may be released from the VM
+  and returned back to the pool of non-assigned Floating IP addresses.
 
 Example
 ~~~~~~~
@@ -102,27 +100,21 @@ Consider the following environment:
 
 Calculate the required number of Public and Floating IP addresses as follows:
 
-:Nova-Network with HA:
+:Nova-Network:
 
        The Public range must have [(X+Y+Z) + 2] IP addresses
        (one for each node in the environment plus two for the
        environment's Virtual IP addresses; the Floating range
        must have M IPs.
 
-:Neutron with HA:
+:Neutron:
 
         The Public range must have [(X+Y) +2] IP addresses
         (one for each Controller and Zabbix node plus two for
         the environment's Virtual IP addresses); the Floating
         range must have K+M IP addresses.
 
-:If you are not using the HA deployment:
-         You may decrease the Public range by one IP address 
-         (which would be allocated for the Virtual IP in HA mode).
-
-
-.. note::  All 5.0.x environments and 5.1 Neutron environments
-           for which **Public network assignment -> Assign public network to all nodes**
-           is set have the same requirements as those shown for Nova-Network.
-
-
+.. note::
+   All 6.1 Neutron environments, for which **Public network assignment ->
+   Assign public network to all nodes** is set, have the same requirements
+   as those shown for Nova-Network.
