@@ -28,13 +28,13 @@ The default username for these images depends on the distribution:
 | CentOS 6.6       | cloud-user|
 +------------------+-----------+
 
-You can find MD5 checksum of an image by adding .md5 suffix to the image url,
-for example,
-`<http://sahara-files.mirantis.com/mos61/sahara-juno-vanilla-2.4.1-ubuntu-14.04.qcow2.md5>`_.
+You can find MD5 checksum of an image by adding the ``.md5`` suffix
+to the image url, for example
+http://sahara-files.mirantis.com/mos61/sahara-juno-vanilla-2.4.1-ubuntu-14.04.qcow2.md5.
 
-For check an .iso file with an MD5 hash, run the following command:
+To check an ``.iso`` file with an MD5 hash, run:
 
-.. sourcecode:: console
+.. code:: console
 
     $ md5sum -c sahara-juno-vanilla-2.4.1-ubuntu-14.04.qcow2.md5
-..
+    ..
