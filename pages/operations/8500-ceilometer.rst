@@ -110,3 +110,5 @@ see :ref:`assign-roles-ug` for instructions.
 This resolves the Ceilometer performance issues caused
 by the volume of concurrent read/write operations.
 
+
+.. include:: /pages/operations/ceilometer/8510-prepare-to-test.rst
