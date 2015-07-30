@@ -63,17 +63,27 @@ you can download and install new Fuel Plugins.
 Please, note that they will be available within
 a few weeks of the Mirantis OpenStack 6.1 release:
 
-+----------------------+------------+---------+-----------+
-|  Monitoring          | Networking | Storage | HA        |
-+======================+============+=========+===========+
-| LMA Collector        | VPNaaS     | EMC VNX | HA fencing|
-+----------------------+------------+---------+-----------+
-| Elasticsearch-Kibana | FWaaS      |         |           |
-+----------------------+------------+---------+-----------+
-| Zabbix               | Mellanox   |         |           |
-+----------------------+------------+---------+-----------+
-| InfluxDB-Grafana     | Cisco ACI  |         |           |
-+----------------------+------------+---------+-----------+
-|                      | Calico     |         |           |
-+----------------------+------------+---------+-----------+
++----------------------+------------+---------+
+|  Monitoring          | Networking | Storage |
++======================+============+=========+
+| LMA Collector        | VPNaaS     | EMC VNX |
++----------------------+------------+---------+
+| Elasticsearch-Kibana | FWaaS      |         |
++----------------------+------------+---------+
+| Zabbix               | Mellanox   |         |
++----------------------+------------+---------+
+| InfluxDB-Grafana     | Cisco ACI  |         |
++----------------------+------------+---------+
+|                      | Calico     |         |
++----------------------+------------+---------+
+
+.. note:: LBaaS plugins compatible with Fuel 6.0 and 6.1 are not
+ supported for customer deployments due to the limitations
+ of the community solution, including no failover of load-balanced
+ objects or HTTPS termination. Mirantis will
+ review capabilities of the project in the community again in
+ advance of the Fuel 8.0 release.
+Unsupported plugins are published to
+`DriverLog <http://stackalytics.com/driverlog/?project_id=openstack%2Ffuel&vendor=&release_id=>`_.
+
 
