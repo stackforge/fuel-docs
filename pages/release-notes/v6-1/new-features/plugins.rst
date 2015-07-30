@@ -77,3 +77,12 @@ a few weeks of the Mirantis OpenStack 6.1 release:
 |                      | Calico     |         |           |
 +----------------------+------------+---------+-----------+
 
+.. note:: LBaaS plugin is not supported for 6.0 and 6.1 Fuel releases
+          since LBaaS v 2.0
+          is not yet adopted by Community as out-of-the-box solution;
+          in other words, current plugin implementation has no
+          failover of load-balanced objects in case of individual load-balancing
+          instance failure; neither has it HTTPs termination.
+          LBaaS might be delivered as the plugin by 8.0 Fuel release.
+
+
