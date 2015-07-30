@@ -107,7 +107,7 @@ function populateReleases(releases){
 		var href = $(this).attr('href');
 		var link = $(this).text();
 		$('#prior_releases_content').append('<div class="col-md-3"><a class="btn btn-default red btn-block" href="' + href + '">' + link + '</a></div>');
-		
+
 	});
 
 	var columns = $('#prior_releases_content .col-md-3');
@@ -249,5 +249,40 @@ $(document).ready(function () {
 	$('ul.nav.navbar-nav > li > a[href="contents.html"]').attr('href', 'index.html');
 
 	prepareList();
+
+	var lastId, curId, curText,
+		topMenu = $("#breadcrumb"),
+		topMenuHeight = topMenu.outerHeight()+15,
+
+		menuItems = $('ul.dropdown-menu.localtoc > li').find('a'),
+		scrollItems = menuItems.map(function(){
+			var item = $($(this).attr("href"));
+			if (item.length) { return item; }
+		});
+	$(window).scroll(function(){
+		var fromTop = $(this).scrollTop()+topMenuHeight;
+
+		var cur = scrollItems.map(function(){
+			if ($(this).offset().top < fromTop)
+				return this;
+		});
+		cur = cur[cur.length-1];
+		var ele = cur && cur.length ? cur[0] : "";
+		if(ele){curId = ele.id; curText = $(ele).find(':header:first').text(); }
+
+		$('#guide-href').text($('h1:first').text()).attr('href', window.location.pathname.split('/').pop());
+
+		if (lastId !== curId) {
+			lastId = curId;
+
+			$('#guide-section-href').text(curText).attr('href', '#'+curId);
+		}
+
+		if($(window).scrollTop() > 1000){
+			$('#breadcrumb').fadeIn();
+		} else {
+			$('#breadcrumb').hide();
+		}
+	});
 
 });
