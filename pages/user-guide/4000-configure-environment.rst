@@ -35,6 +35,8 @@ that you use to finish configuring your environment.
 | Map logical networks to    | See :ref:`map-logical-to-physical`        |
 | NICs                       |                                           |
 +----------------------------+-------------------------------------------+
+| Select offloading modes    | See :ref:`selectable-offload`             |
++----------------------------+-------------------------------------------+
 | Click **Verify Networks**  | See :ref:`verify-networks-ug`             |
 | to check and confirm the   |                                           |
 | network configuration.     |                                           |
@@ -68,6 +70,7 @@ or :ref:`reset the environment<Reset_Environment>`.
 .. include:: /pages/user-guide/config-environment/1200-customize-partitions.rst
 .. include:: /pages/user-guide/config-environment/1400-network-settings.rst
 .. include:: /pages/user-guide/config-environment/3000-nic-bonding-ui.rst
+.. include:: /pages/user-guide/config-environment/3100-selectable-offload.rst
 .. include:: /pages/user-guide/config-environment/0220-map-logical-to-physical-nic.rst
 .. include:: /pages/user-guide/config-environment/3400-verify-networks.rst
 .. include:: /pages/user-guide/config-environment/5000-settings.rst
