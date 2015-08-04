@@ -61,6 +61,26 @@ for each node and then type in the name you want to use.
 The suffix is the last digits of the MAC address for this node;
 you can keep these digits or delete them.
 
+Beginning with Fuel 7.0, you can define the hostnames of the slave
+nodes through Fuel UI or CLI prior to deploying an environment.
+
+To do this, in Fuel UI click "Nodes" and then click the settings icon
+next to the node for which you want to define the hostname:
+
+.. image:: /_images/user_screen_shots/define-hostname01.png
+
+In the pop-up window, type in the hostname that you would like to
+assign to the node:
+
+.. image:: /_images/user_screen_shots/define-hostname02.png
+
+You can also set the hostname through Fuel CLI by issuing the
+following command:
+
+::
+
+  fuel node --node 2 --hostname test-name
+
 Beginning with Fuel 6.1, you can remove
 a node from inventory if it is dead or
 there is need to delete it from the cluster.
@@ -71,7 +91,6 @@ To remove any node from inventory using the
 Fuel CLI, see :ref:`Remove a node from Fuel DB <remove-inv>`.
 
 .. image:: /_images/user_screen_shots/remove-node-inventory.png
-
 
 For more information, see:
 
