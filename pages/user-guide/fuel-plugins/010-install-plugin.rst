@@ -75,3 +75,12 @@ Installation procedure is common for all plugins, but their requirements differ.
 For Fuel plugins CLI reference, see :ref:`the corresponding section <fuel-plugins-cli>`.
 
 
+Virtual IP reservation via Fuel Plugin's metadata
+-------------------------------------------------
+
+Some plugins require an additional VIP for a proper configuration.
+Previously, VIPs reservation was based on networks' metadata.
+Now, it is based on network roles' description. Thus, a plugin developer
+has a better way to create extra VIPs as a puppet resource in the
+pre-deployment or post-deployment stage. Read implementation details in
+`Fuel Plugin SDK <https://wiki.openstack.org/wiki/Fuel/Plugins#Virtual_IP_reservation_via_Fuel_Plugin.27s_metadata>`_.
