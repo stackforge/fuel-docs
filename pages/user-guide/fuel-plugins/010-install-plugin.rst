@@ -75,3 +75,113 @@ Installation procedure is common for all plugins, but their requirements differ.
 For Fuel plugins CLI reference, see :ref:`the corresponding section <fuel-plugins-cli>`.
 
 
+Virtual IP reservation via Fuel Plugin's metadata
+-------------------------------------------------
+
+Some plugins require an additional VIP for a proper configuration.
+Previously, VIPs reservation was based on networks' metadata.
+Now, it is based on network roles' description. Thus, a plugin developer
+has a better way to create extra VIPs as a puppet resource in the
+pre-deployment or post-deployment stage.
+
+First, a user should define VIPs in plugin's metadata and install
+a plugin before creating an environment.
+
+.. note::
+   The last limitation will be solved in 7.0.
+
+Such reserved addresses can be later used in puppet manifests
+inside other plugin tasks.
+
+For example, Zabbix can be configured in a way that it receives
+SNMP traffic on dedicated VIP. In that case, a plugin developer
+can define extra VIPs in a plugin configuration file and use
+it as a puppet’s resource.
+
+VIP reservation is possible only via plugin metadata. This is done
+by adding a new file ``network_roles.yaml``.
+
+Network roles configuration file format looks like:
+
+ .. code-block:: yaml
+
+    - id: "name_of_network_role"
+      default_mapping: "public"
+      properties:
+        subnet: true
+        gateway: false
+        vip:
+          - name: "testvip_a"
+            alias: "alias_name"
+            namespace: "haproxy"
+            node_roles: ["primary-controller", "controller"]
+          - name: "testvip_b"
+
+ .. note::
+
+    ``alias``, ``namespace``, and ``node_roles`` parameters are optional.
+
+    ``name`` - a string that contains a unique name within
+    the environment;
+    
+    ``namespace`` - a string that points to a network namespace
+    to be used for landing of the VIP, null if not defined;
+    
+    ``node_roles`` - a list of node roles where VIPs should be set up.
+    If not defined, its value will be set to ["primary-controller", "controller"].
+
+
+In the above example, a new network role is described as that contains 2 VIPs
+(with names ``testvip_a`` and ``testvip_b``).
+So, the whole workflow should look like this:
+
+#. A plugin developer adds ``network_roles.yaml`` to the plugin.
+#. The plugin is compiled and installed on the Fuel master node.
+
+   .. note::
+
+      The package version 3.0.0 is required.
+
+#. A cluster is created with plugin enabled.
+   Once configured the deployment begins.
+#. After deployment process starts, Nailgun allocates VIPs for each network role
+   and sends VIPs and other metadata to astute.
+#. During deployment, VIPs are available in puppet manifests inside the structure
+   network_metadata['vips'] via Hiera.
+
+For example:
+
+.. code-block:: puppet
+
+ class vip_example::primary_controller {
+  $vip_name = 'my_vip_a'
+  $vip_nic = hiera('public_int', undef)
+
+  $network_meta = hiera('network_metadata')
+  $vip_addr = $network_meta['vips'][$vip_name]['ipaddr']
+
+  cs_resource { $vip_name:
+    ensure          => present,
+    primitive_class => 'ocf',
+    provided_by     => 'heartbeat',
+    primitive_type  => 'IPaddr2',
+    parameters      => {
+      'nic'                  => $vip_nic,
+      'ip'                   => $vip_addr,
+    },
+    metadata => {
+      'migration-threshold' => '3',   # will be try start 3 times before migrate to another node
+      'failure-timeout'     => '60',  # forget any fails of starts after this timeout
+      'resource-stickiness' => '1'
+    },
+  }
+
+  service { $vip_name:
+    ensure   => 'running',
+    enable   => true,
+    provider => 'pacemaker',
+  }
+
+  Cs_resource[$vip_name] -> Service[$vip_name]
+
+ }
