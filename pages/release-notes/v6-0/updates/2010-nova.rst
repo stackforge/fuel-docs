@@ -79,6 +79,11 @@ Resolved Issues
   is updated to pass context to ``detach_sriov_ports``.
   See `LP1452294`_.
 
+* When the volume is detached immediately after attachment there was 
+  a race condition between updating volume status and saving information
+  to the db. This was fixed by saving information to the db before
+  the attachment. See `LP1457041`_.
+
 .. Links
 .. _`LP1420273`: https://bugs.launchpad.net/mos/+bug/1420273
 .. _`LP1427892`: https://bugs.launchpad.net/mos/+bug/1427892
@@ -94,3 +99,4 @@ Resolved Issues
 .. _`LP1443977`: https://bugs.launchpad.net/mos/+bug/1443977
 .. _`LP1454174`: https://bugs.launchpad.net/mos/+bug/1454174
 .. _`LP1452294`: https://bugs.launchpad.net/mos/+bug/1452294
+.. _`LP1457041`: https://bugs.launchpad.net/mos/+bug/1457041
