@@ -460,32 +460,26 @@ Fuel Plugins CLI
 For summary information on Fuel plugins, see :ref:`Install Fuel plugins <install-plugin>`
 section.
 
-* Once a plugin is downloaded and copied
-  to the Fuel Master node,
-  you can install it with:
+* If you have fp Fuel Plugin, run:
 
-  ::
+  ... code-block:: yaml
 
     fuel plugins --install <fuel-plugin-file>
 
-  It is recommended that you install rpm plugins
-  using the command above.
 
-  Nevertheless, if you would
-  like to do that manually, follow these steps:
+* If you have rpm plugin, run:
 
-  * Run the following command:
-
-    ::
+    ... code-block:: yaml
 
         yum install <fuel-plugin-file>
 
-  * Register the plugin in :ref:`Nailgun<nailgun-term>` with
-    *fuel plugins --register <fuel-plugin-name>==<fuel-plugin-version>*
-    command.
-    You can run *fuel plugins --sync* instead, but
-    in this case Fuel Client will update all
-    plugins on the file system in Nailgun.
+  * Enter the command below - otherwise, the plugin
+    won't appear in the output of ``fuel plugins --list``
+    command and the Fuel Web UI:
+
+    ... code-block:: yaml
+
+       fuel plugins --sync
 
 * You can see the list of all installed plugins using:
 
