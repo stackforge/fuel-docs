@@ -460,65 +460,75 @@ Fuel Plugins CLI
 For summary information on Fuel plugins, see :ref:`Install Fuel plugins <install-plugin>`
 section.
 
-* Once a plugin is downloaded and copied
-  to the Fuel Master node,
-  you can install it with:
+* If you have fp Fuel Plugin, run:
 
-  ::
+  .. code-block:: bash
 
-    fuel plugins --install <fuel-plugin-file>
+     fuel plugins --install <fuel-plugin-file>
 
-  It is recommended that you install rpm plugins
-  using the command above.
 
-  Nevertheless, if you would
-  like to do that manually, follow these steps:
+* If you have an rpm plugin, you can run 2 different combinations.
 
-  * Run the following command:
+  * The first one presumes that you are using ``yum install``:
 
-    ::
+    .. code-block:: bash
 
-        yum install <fuel-plugin-file>
+         yum install <fuel-plugin-file>
 
-  * Register the plugin in :ref:`Nailgun<nailgun-term>` with
-    *fuel plugins --register <fuel-plugin-name>==<fuel-plugin-version>*
-    command.
-    You can run *fuel plugins --sync* instead, but
-    in this case Fuel Client will update all
-    plugins on the file system in Nailgun.
+         fuel plugins --register <fuel-plugin-name>==<fuel-plugin-version>
+
+
+    In this case, the latter command will register the plugin in :ref:`Nailgun<nailgun-term>`.
+
+  * The second one presumes that you are using the same installation command
+    as for fp plugins:
+
+
+    .. code-block:: bash
+
+      fuel plugins --install <fuel-plugin-file>
+
+      fuel plugins --sync
+
 
 * You can see the list of all installed plugins using:
 
-  ::
+  .. code-block:: bash
 
-     fuel plugins --list
+      fuel plugins --list
 
 
   You should get the following output:
 
-  ::
 
-            fuel plugins --list
+  .. code-block:: bash
 
-         id |    name                  | version  | package_version
-        ----|--------------------------|----------|--------
-        1   | <fuel-plugin-name>       | 1.0.0    | 2.0.0
+    fuel plugins --list
+
+     id |    name                  | version  | package_version
+    ----|--------------------------|----------|--------
+     1  | <fuel-plugin-name>       | 1.0.0    | 2.0.0
 
 
 * To remove a plugin, run:
 
-  ::
+  .. code-block:: bash
 
      fuel plugins --remove <fuel-plugin-name>==<fuel-plugin-version>
 
 
 * To update an rpm plugin, run:
 
-  ::
+  .. code-block:: bash
 
     fuel plugins --update <fuel-plugin-file>
 
 
-  .. note::  Updates are *not* supported for fp plugins.
+  .. note::  Updates are *not* supported for:
+
+             * fp plugins
+
+             * major versions of rpm plugins (e.g. you can only update from 1.0.0 to 1.0.1).
+
 
 To see the list of all available options, use ``fuel plugins --help`` command.
