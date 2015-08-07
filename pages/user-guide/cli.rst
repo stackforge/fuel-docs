@@ -86,6 +86,18 @@ for specific release
 
   fuel rel --rel <release_number>
 
+Version
++++++++
+
+To get all the details on the Fuel environment installed, run the
+following command::
+ 
+ fuel fuel-version
+
+.. warning::
+   The argument ``--fuel-version`` will be deprecated since the Fuel
+   7.0 release. Please use :command:`fuel-version` command instead.
+
 Networks configuration
 ++++++++++++++++++++++
 
