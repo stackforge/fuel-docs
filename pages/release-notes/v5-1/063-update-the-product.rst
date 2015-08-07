@@ -136,12 +136,16 @@ CentOS-based deployments
 
 #. To update packages, run::
 
-       yum update --skip-broken
+       yum update --skip-broken --nogpgcheck
 
 .. note::
       Due to ruby21 installation method (its dependencies are not
       present in the repository), the ``--skip-broken`` flag is
       required.
+
+.. note::	
+     Signing the RPM packages is not supported in MOS 6.0 repositories,
+     so the ``--nogpgcheck`` flag is required.
 
 .. note::
       After updating on all nodes OpenStack services need to be
