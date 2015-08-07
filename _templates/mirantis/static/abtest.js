@@ -1,6 +1,13 @@
 var _conv_host = (("https:" == document.location.protocol) ? "https://d9jmv9u00p0mv.cloudfront.net" : "http://cdn-1.convertexperiments.com");
 document.write(unescape("%3Cscript src='" + _conv_host + "/js/10012224-10012014.js' type='text/javascript'%3E%3C/script%3E"));
 
+jQuery.ajax({
+            url: "https://mirantis.jira.com/s/4ed53ccf16578ed4b1d4b6b7efa13491-T/en_USltmd6x/65007/316/1.4.25/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector-embededjs/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector-embededjs.js?locale=en-US&collectorId=23810080",
+        type: "get",
+    cache: true,
+    dataType: "script"
+});
+
 (function () {
 	$(window).on("popstate", function (e) {
 		var activeTab = location.hash ? $('[href=' + location.hash + ']') : $('[href=#home]');
