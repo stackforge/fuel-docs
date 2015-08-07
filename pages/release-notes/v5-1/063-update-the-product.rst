@@ -136,7 +136,7 @@ CentOS-based deployments
 
 #. To update packages, run::
 
-       yum update --skip-broken
+       yum update --skip-broken --nogpgcheck
 
 .. note::
       Due to ruby21 installation method (its dependencies are not
