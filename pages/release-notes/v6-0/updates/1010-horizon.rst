@@ -26,7 +26,15 @@ Resolved Issues
   dashboard in Horizon were affected. The issue is fixed by escaping
   the description parameter from Heat template. See `LP1462095`_.
 
+* An authenticated user may conduct a persistent XSS attack by
+  setting a malicious metadata to a Glance image, a Nova flavor, or a
+  host aggregate, and by tricking an administrator to load the updated
+  metadata page. Once executed in a legitimate context, this attack
+  may result in a privilege escalation. To fix this, the metadata is
+  escaped and then is interpreted as JSON. See `LP1468744`_.
+
 .. Links
 .. _`LP1399271`: https://bugs.launchpad.net/mos/6.0-updates/+bug/1399271
 .. _`LP1446213`: https://bugs.launchpad.net/mos/+bug/1446213
 .. _`LP1462095`: https://bugs.launchpad.net/mos/+bug/1462095
+.. _`LP1468744`: https://bugs.launchpad.net/mos/+bug/1468744
