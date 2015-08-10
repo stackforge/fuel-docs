@@ -8,8 +8,7 @@ Resolved Issues
 +++++++++++++++
 
 * Glance no longer fails to import (copy from a remote source)
-  large images (>5GB) if Swift backend is in use. See `LP 1411704
-  <https://bugs.launchpad.net/mos/6.0-updates/+bug/1411704>`_.
+  large images (>5GB) if Swift backend is in use. See `LP1411704`_.
 
 * Previously, a storage quota bypass flaw persisted in the Image
   service setups configured with ``user_storage_quota``. By deleting
@@ -24,7 +23,7 @@ Resolved Issues
   was not able to upload image. It happened because of a one-minute
   timeout that broke the connection if 16 MB chunk had not been
   downloaded within that time period. To prevent these timeouts,
-  the chunk size is reduced to 4 MB. See `LP1401118 <https://bugs.launchpad.net/mos/+bug/1401118>`_.
+  the chunk size is reduced to 4 MB. See `LP1401118`_.
 
 * When an image is created using the :guilabel:`Create Image` button
   in the OpenStack dashboard, and the user selects the
@@ -35,7 +34,7 @@ Resolved Issues
   finally running out of the file-system space. Now the image is
   cleaned up from the ``/tmp`` after the upload (succeeded or
   failed) from the OpenStack dashboard.
-  See `LP1389380 <https://bugs.launchpad.net/mos/+bug/1389380>`_.
+  See `LP1389380`_.
 
 * Previously, uploading an image to the vCenter backend without
   checking the session resulted in the broken pipe socket error.
@@ -43,4 +42,17 @@ Resolved Issues
   IOError was not handled by the store. Now there is a check whether
   the session is authenticated before uploading the image. The IOError
   is handled, and the response code is checked. See
-  `LP1436034 <https://bugs.launchpad.net/mos/+bug/1436034>`_.
+  `LP1436034`_.
+
+* Currently, the WSGI server allows persist connections. Hence, even
+  after the response is sent to a client, it does not close the
+  client's socket connection. Because of this problem, the green
+  thread is not released back to the pool. The fix introduces new
+  configuration options: ``http_keepalive`` and ``client_socket_timeout``.
+  See `LP1463522`_.
+
+.. _`LP1411704`: https://bugs.launchpad.net/mos/6.0-updates/+bug/1411704
+.. _`LP1401118`: https://bugs.launchpad.net/mos/+bug/1401118
+.. _`LP1389380`: https://bugs.launchpad.net/mos/+bug/1389380
+.. _`LP1436034`: https://bugs.launchpad.net/mos/+bug/1436034
+.. _`LP1463522`: https://bugs.launchpad.net/mos/+bug/1463522

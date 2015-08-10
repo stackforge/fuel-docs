@@ -104,6 +104,11 @@ Resolved Issues
   is modified, it has to be updated by administrator. See
   `LP1396594`_.
 
+* When there are too many security groups in the cluster, the listing
+  of security group rules fails with a RequestURITooLong exception.
+  The fix skips the None id when getting ``security_group_ids`` in
+  the `securitygroup.py` file. See `LP1429065`_.
+
 Known Issues
 ++++++++++++
 
@@ -164,4 +169,5 @@ Known Issues
 .. _`LP1461471`: https://bugs.launchpad.net/bugs/1461471
 .. _`LP1442251`: https://bugs.launchpad.net/fuel/+bug/1442251
 .. _`LP1396594`: https://bugs.launchpad.net/fuel/+bug/1396594
+.. _`LP1429065`: https://bugs.launchpad.net/mos/+bug/1429065
 .. _`LP1436414`: https://bugs.launchpad.net/fuel/+bug/1436414
