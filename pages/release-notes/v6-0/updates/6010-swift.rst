@@ -18,5 +18,10 @@ Resolved Issues
 * Now it is possible to change the default permissions for files
   created by Swift in order to restrict access to these files.
 
+* Because of Upstart limitations when program makes more than two
+  fork/clone operations, a ``respawn`` stanza was added to the Swift
+  ``.upstart`` scripts. See `LP1466101`_.
+
 .. Links
 .. _`LP1442041`: https://bugs.launchpad.net/mos/+bug/1442041
+.. _`LP1466101`: https://bugs.launchpad.net/mos/+bug/1466101

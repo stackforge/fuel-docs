@@ -23,8 +23,13 @@ Resolved Issues
    to an image. Now, when uploading volumes to image, backing files
    are disallowed. See `LP1465333`_.
 
-.. Links
+* Sometimes connection to Ceph hangs and user may not attach volumes
+  to VMs. The patch fixes possible deadlock in the Cinder threads
+  during RBD calls. See `LP1459781`_.
+
+.. Links:
 .. _`LP1422350`: https://bugs.launchpad.net/mos/+bug/1422350
 .. _`LP1444546`: https://bugs.launchpad.net/mos/+bug/1444546
 .. _`LP1457055`: https://bugs.launchpad.net/mos/+bug/1457055
 .. _`LP1465333`: https://bugs.launchpad.net/mos/+bug/1465333
+.. _`LP1459781`: https://bugs.launchpad.net/mos/+bug/1459781

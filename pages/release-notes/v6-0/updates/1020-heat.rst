@@ -17,5 +17,18 @@ Resolved Issues
   updating the ``python-urllib`` and ``python-requests`` packages.
   See `LP1404983`_.
 
+* If evaluation period is set shorter than the instance starting
+  time and ``repeat_actions`` is set to True, extra instances are
+  created, even when the cooldown time is set to long enough. The fix
+  prevents the creation of undesirable extra instances. See `LP1474332`_.
+
+* The authentication process that requests a domain user token now
+  provides ``user_id`` instead of username. Authentication
+  with ``user_id`` is more reliable, as it works even when ``username``
+  is truncated or modified in any other way before it is passed to
+  Keystone. See `LP1481197`_.
+
 .. _`LP1446678`: https://bugs.launchpad.net/mos/+bug/1446678
 .. _`LP1404983`: https://bugs.launchpad.net/mos/+bug/1404983
+.. _`LP1474332`: https://bugs.launchpad.net/mos/+bug/1474332
+.. _`LP1481197`: https://bugs.launchpad.net/mos/+bug/1481197
