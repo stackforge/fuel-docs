@@ -3,29 +3,11 @@
 OpenStack Fuel
 --------------
 
-Known Issues
-++++++++++++
-
-* The Fuel library uses `centos-versions.yaml` and `ubuntu-versions.yaml`
-  to look up package versions when running the puppet. To add a
-  controller node, the puppet runs on all controllers not just on a
-  new one. When puppet encounters a package of a different version
-  in `centos/ubuntu-versions.yaml`, it tries to reinstall it.
-  In case of Maintenance Updates this leads to a failed deployment.
-  See `LP1470650 <https://bugs.launchpad.net/fuel/+bug/1470650>`_.
-
-  Workaround:
-
-  #. Remove `centos/ubuntu-versions.yaml` from `/etc/puppet/manifests`::
-
-      mv /etc/puppet/manifests/*.yaml ~/
-
-
 Resolved Issues
 +++++++++++++++
 
 * The OCF scripts update procedure by RPM/DEB packages is introduced.
-  See `LP1465771 <https://bugs.launchpad.net/fuel/+bug/1465771>`_.
+  See `LP1465771`_.
   However, there is no class for this package in Mirantis OpenStack 6.0.
   But you can install it manually.
 
@@ -38,3 +20,20 @@ Resolved Issues
    yum install fuel-ha-utils6.0
 
   Run the above commands on all the cluster servers.
+
+* The Fuel library uses ``centos-versions.yaml`` and
+  ``ubuntu-versions.yaml`` to look up package versions when running
+  the puppet. To add a controller node, the puppet runs on all
+  controllers, not just on a new one. When puppet encounters a package
+  of a different version in ``centos/ubuntu-versions.yaml``, it tries
+  to reinstall it. In case of Maintenance Updates, this leads to a
+  failed deployment. The fix removes the module of the package for
+  MOS 6.0. See `LP1470650`_.
+
+* RabbitMQ expiration policies were added to the OCF script to fix
+  the issue with growing number of RabbitMQ queues during unexpected
+  shutdown of controllers. See `LP1429124`_.
+
+.. _`LP1465771`: https://bugs.launchpad.net/fuel/+bug/1465771
+.. _`LP1470650`: https://bugs.launchpad.net/fuel/+bug/1470650
+.. _`LP1429124`: https://bugs.launchpad.net/fuel/+bug/1429124
