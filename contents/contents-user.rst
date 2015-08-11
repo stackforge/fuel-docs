@@ -11,5 +11,6 @@
 .. include:: /pages/user-guide/8000-upgrade.rst
 .. include:: /pages/user-guide/9000-role-operations.rst
 .. include:: /pages/user-guide/cli.rst
-.. include:: /pages/user-guide/vmware-integration-notes.rst
 .. include:: /pages/user-guide/patching-ug.rst
+.. include:: /pages/user-guide/rollback-ug.rst
+.. include:: /pages/user-guide/vmware-integration-notes.rst
