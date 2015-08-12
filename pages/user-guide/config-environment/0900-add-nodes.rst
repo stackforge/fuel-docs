@@ -4,9 +4,10 @@
 Add nodes to the environment
 ----------------------------
 
-The initial screen shows the total number of nodes
-that have been discovered in your environment
-and the number of nodes that are unallocated.
+The default screen shows the total number of nodes
+that have been discovered in your environment.
+And the ratio of unallocated to total nodes is shown in the top right
+of the page.
 Click on the "Add nodes" button to add nodes
 to your environment:
 

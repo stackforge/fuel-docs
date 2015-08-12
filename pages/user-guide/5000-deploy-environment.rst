@@ -9,7 +9,7 @@ Deploy Changes
 ==============
 
 When you have made all the configuration changes you want to make,
-click the "Deploy Changes" button
+click the "Deploy Changes" button on the Dashboard
 to deploy the environment you have defined.
 
 When you are satisfied with your configuration,

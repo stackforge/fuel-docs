@@ -64,9 +64,9 @@ you can keep these digits or delete them.
 Beginning with Fuel 6.1, you can remove
 a node from inventory if it is dead or
 there is need to delete it from the cluster.
-To do that, you should click **Forget** button
-next to the required node. This works for any offline
-node both deployed and not.
+To do that, you should click the **Remove** button
+next to the required node or select the node and hit *Delete*. This
+works for any offline node both deployed and not.
 To remove any node from inventory using the
 Fuel CLI, see :ref:`Remove a node from Fuel DB <remove-inv>`.
 
