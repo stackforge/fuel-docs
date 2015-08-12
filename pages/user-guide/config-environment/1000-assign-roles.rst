@@ -107,6 +107,12 @@ where <NODE_ID> points to a specific node identified by its ID
 (a number) that you can get by issuing the ``fuel nodes`` command;
 <NODE_HOSTNAME> is the new hostname for the node that want to set.
 
+Beginning with Fuel 7.0, after adding and enabling custom plugins for
+a cluster, a user can define a new role described in these plugins
+via Web UI as well as via :ref:`Fuel CLI<cli_usage>`.
+You can find more information in `Fuel Plugins SDK
+<https://wiki.openstack.org/wiki/Fuel/Plugins#Configuration_of_Fuel_Plugins_with_new_roles>`_.
+
 For more information, see:
 
 - :ref:`nodes-roles-arch` describes the Controller,
