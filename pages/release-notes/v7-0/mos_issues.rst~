@@ -1,0 +1,11 @@
+
+.. _other-rn:
+
+Mirantis OpenStack Components Issues
+====================================
+
+.. here is the place to include files from /fuel_issues.
+   For example:
+
+.. include:: /pages/release-notes/v7-0/mos_issues/skeleton.rst
+

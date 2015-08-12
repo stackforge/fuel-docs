@@ -1,0 +1,47 @@
+What's New in Mirantis OpenStack 7.0
+====================================
+
+Mirantis is pleased to make Mirantis OpenStack 7.0
+available to our customers, partners and the community.
+
+New Features Included in Mirantis OpenStack 7.0
+-----------------------------------------------
+
+.. TODO: this should be updated
+
+Support for the latest OpenStack Juno release
++++++++++++++++++++++++++++++++++++++++++++++
+
+The OpenStack core projects in
+the Mirantis OpenStack hardened packages support
+the `OpenStack Juno 2014.2.2
+<https://wiki.openstack.org/wiki/ReleaseNotes/Juno>`_ release.
+Fuel 6.1 deploys this version of OpenStack on either CentOS or Ubuntu.
+
+Fuel Master Node can be upgraded from 5.1.x or 6.0 to 6.1 GA
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+If you are running a Mirantis OpenStack 5.1, 5.1.1, or 6.0 environment,
+you can upgrade your Fuel Master Node to Fuel 6.1.
+Fuel can manage environments that were deployed with 6.0 releases,
+assuming that you created the environment with the earlier release
+and upgraded the Fuel Master node rather than doing a fresh install.
+For a list of OpenStack releases and versions that your Fuel Master
+node can manage, click on the "Releases" tab at the top of your Fuel home page.
+
+See :ref:`upgrade-ug` for details.
+
+Upgrading the Fuel Master Node does not update the OpenStack environment.
+
+
+.. here is the place to include files from /new_features.
+   For example:
+   .. include:: /pages/release-notes/v7-0/new-features/sample.rst
+
+
+Additional information
+----------------------
+
+For information about Issues and Blueprints for Mirantis OpenStack 6.1,
+see the `Fuel for OpenStack 6.1 Milestone
+<https://launchpad.net/fuel/6.1.x>`_ page.
