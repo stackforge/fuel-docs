@@ -72,6 +72,33 @@ Fuel CLI, see :ref:`Remove a node from Fuel DB <remove-inv>`.
 
 .. image:: /_images/user_screen_shots/remove-node-inventory.png
 
+Beginning with Fuel 7.0, a user can define a new role via Web UI
+as well as via Fuel CLI. 
+If a plugin is enabled for a cluster on the **Settings** tab, then
+a user can select a plugin role from a roles list on the **Nodes**
+tab and attach it to specific nodes. And, vice versa, it should not
+be displayed in the roles list when the plugin is disabled for the
+cluster (environment).
+
+Below you can see the default role (the last one in the list) added
+by the automatically generated default plugin.
+
+.. image:: /_images/user_screen_shots/newrole_default.png
+
+You can find the new "RabbitMQ" role in the list if the appropriate plugin
+https://github.com/mattymo/detach-rabbitmq was installed and enabled.
+
+.. image:: /_images/user_screen_shots/newrole_rabbitmq.png
+
+If a user wants to disable a plugin, but there are nodes with this
+plugin’s role in a cluster, then it should be done clearly with the
+existing mechanism: on the **Nodes** tab a user should remove the
+plugin’s role from all nodes and then disable the plugin on
+the **Settings** tab.
+
+.. note::
+   When the cluster is deployed, the user can't disable a plugin
+   and as a result remove plugin’s role(s) from nodes.
 
 For more information, see:
 
