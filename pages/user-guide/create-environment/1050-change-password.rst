@@ -2,9 +2,19 @@
 
 Change Fuel Password
 --------------------
+It is highly recommended that you change the default password
+to the one that meets your company's security requirements.
 
-You can change the Fuel password from the Fuel UI screen;
-click on "Change password" at the upper right of the screen.
+Until you do, Fuel will keep reminding you that the password
+has not been changed yet:
+
+.. image:: /_images/user_screen_shots/change_pass_notification.png
+
+You can change the Fuel password from the Fuel UI screen
+Click the user icon at the upper right of the screen:
+
+.. image:: /_images/user_screen_shots/change_pass_ui.png
+
 The following screen is displayed:
 
 .. image:: /_images/authx/change_pass_not_vis.png
