@@ -14,8 +14,7 @@ and select the Linux distribution from the drop-down list:
 
 ::
 
-    Juno on Ubuntu 14.04.1 (2014.2.2-6.1)(default)
-    Juno on CentOS 6.5 (2014.2.2-6.1)
+    Kilo on Ubuntu 14.04.1 (2015.1.0-7.0) (default)
 
 This is the operating system that will be installed
 on the target nodes in the environment.

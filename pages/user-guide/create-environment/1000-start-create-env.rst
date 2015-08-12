@@ -22,6 +22,10 @@ The Fuel UI screen appears:
 .. image:: /_images/user_screen_shots/create_new_environ.png
    :width: 80%
 
+The Dashboard tab is your go-to place to review all the necessary
+information about your OpenStack environment:
+
+.. image:: /_images/user_screen_shots/fuel-dashboard01.png
 
 Click on the "New OpenStack environment" icon
 to launch the wizard that creates a new OpenStack environment.
