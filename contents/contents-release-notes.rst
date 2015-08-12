@@ -1,3 +1,4 @@
+.. include /pages/release-notes/v7-0-kilo-full.rst
 .. include:: /pages/release-notes/v6-1-juno-full.rst
 .. include /pages/release-notes/v6-0-juno-full.rst
 .. include /pages/release-notes/v5-1-icehouse-full.rst
