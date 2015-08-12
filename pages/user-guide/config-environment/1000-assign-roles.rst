@@ -28,7 +28,7 @@ and a list of unallocated nodes at the bottom.
 As you make your selections,
 Fuel displays an icon
 (a gold triangle with an exclamation point)
-next to roles that are not allowed.
+next to the roles that are not allowed.
 It also tells you about other environment settings that are required.
 
 .. image:: /_images/user_screen_shots/assign-roles2.png
@@ -38,23 +38,18 @@ If you want to modify the roles assigned to a node:
 - If you assigned the wrong role to a node
   (for example, you defined a node as a Compute node but want it
   to be a Ceph OSD node),
-  select that node and click the "Delete" button.
+  select that node and click the "Delete" button:
+
+  .. image:: /_images/user_screen_shots/assign-roles3.png
+
   This moves that node back to the pool of "Unallocated nodes"
   so you can click on "Add Node" to assign a new role.
 - If you want to add a role to a node
   (for example, you defined a node as a Compute node but want it
   to also have a Ceph OSD role),
-  select that node and click the additional roles you want to assign
-  (in this case, click the "Ceph OSD" node
-  and leave the "Compute" role selected);
-  click the "Apply Changes" button.
+  select that node and click "Edit Roles":
 
-When you click the "Apply Changes" button,
-Fuel displays the configuration you have chosen:
-
-
-.. image:: /_images/user_screen_shots/assign-role-confirm.png
-
+  .. image:: /_images/user_screen_shots/assign-roles4.png
 
 To rename the nodes, click on the "Untitled" string
 for each node and then type in the name you want to use.
@@ -64,9 +59,8 @@ you can keep these digits or delete them.
 Beginning with Fuel 6.1, you can remove
 a node from inventory if it is dead or
 there is need to delete it from the cluster.
-To do that, you should click **Forget** button
-next to the required node. This works for any offline
-node both deployed and not.
+To do that, you should select the node and hit *Delete*. This
+works for any offline node both deployed and not.
 To remove any node from inventory using the
 Fuel CLI, see :ref:`Remove a node from Fuel DB <remove-inv>`.
 
