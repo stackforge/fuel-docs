@@ -3,8 +3,11 @@
 Change Fuel Password
 --------------------
 
-You can change the Fuel password from the Fuel UI screen;
-click on "Change password" at the upper right of the screen.
+You can change the Fuel password from the Fuel UI screen
+Click the user icon at the upper right of the screen:
+
+.. image:: /_images/user_screen_shots/change_pass_ui.png
+
 The following screen is displayed:
 
 .. image:: /_images/authx/change_pass_not_vis.png

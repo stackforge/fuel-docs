@@ -6,7 +6,7 @@ Add nodes to the environment
 
 The initial screen shows the total number of nodes
 that have been discovered in your environment
-and the number of nodes that are unallocated.
+and the number of nodes that are unallocated at the top right.
 Click on the "Add nodes" button to add nodes
 to your environment:
 

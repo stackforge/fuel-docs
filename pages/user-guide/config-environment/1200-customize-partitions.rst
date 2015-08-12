@@ -28,12 +28,9 @@ The following partition types may be configured:
 - MongoDB: used for Ceilometer information stored in MongoDB
 - Mysql database: stores Zabbix statistics on Zabbix nodes
 
-To modify the disk allocation,
-click on the bar for a disk.
-This example is for a node that runs
-both a Compute node and a Storage - Cinder role;
-clicking on the center bar gives a display
-similar to the following:
+To modify the disk allocation, click *Configure Disks*:
+
+.. image:: /_images/user_screen_shots/partition-disks0.png
 
 .. image:: /_images/user_screen_shots/partition-disks.png
    :width: 80%
