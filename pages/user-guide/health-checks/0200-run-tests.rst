@@ -4,7 +4,7 @@ Running Post-Deployment Checks
 Now, let`s take a closer look on what should be done to execute the tests and
 to understand if something is wrong with your OpenStack environment.
 
-.. image::  /_images/001-health-check-tab.jpg
+.. image::  /_images/001-health-check-tab.png
   :align: center
   :width: 100%
 
@@ -34,7 +34,7 @@ this section.
 
 An actual test run looks like this:
 
-.. image::  /_images/002-health-check-results.jpg
+.. image::  /_images/002-health-check-results.png
   :align: center
   :width: 100%
 
