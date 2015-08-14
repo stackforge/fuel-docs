@@ -772,6 +772,7 @@ div.topic {
   color: #fff;
   display: none;
   overflow: hidden;
+  z-index: 999;
 }
 
 #breadcrumb span {
@@ -788,4 +789,23 @@ div.topic {
 
 span#guide {
   margin-right: 15px;
+}
+
+.zero-clipboard {
+  position: relative;
+}
+
+.btn-clipboard {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  display: block;
+  padding: 5px 8px;
+  font-size: 12px;
+  color: #767676;
+  cursor: pointer;
+  background-color: #FFF;
+  border: 1px solid #E1E1E8;
+  border-radius: 0 4px 0 4px;
 }

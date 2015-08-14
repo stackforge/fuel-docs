@@ -207,6 +207,10 @@ $(document).ready(function () {
 
 	$('[data-toggle="tooltip"]').tooltip();
 
+	$('pre').each(function(){
+		$('<div class="zero-clipboard"><span class="btn-clipboard copy copyMe" data-clipboard-text="'+ $(this).text().replace(/"/g, '&quot;') +'">Copy</span></div>').insertBefore(this);
+	});
+
 	ZeroClipboard.config({
 		forceHandCursor: false,
 		swfPath: "https://cdnjs.cloudflare.com/ajax/libs/zeroclipboard/2.1.6/ZeroClipboard.swf"
