@@ -58,7 +58,7 @@ function generateTwitter(url, title) {
 }
 
 function generateCopyButton(url) {
-	return '<a data-toggle="tooltip" data-placement="bottom"class="copyMe" data-clipboard-text="' + url + '" data-original-title="Copy permalink to clipboard"><i class="fa fa-clipboard"></i></a>';
+	return '<a data-toggle="tooltip" data-placement="bottom" class="copyMe" data-clipboard-text="' + url + '" data-original-title="Copy permalink to clipboard"><i class="fa fa-clipboard"></i></a>';
 }
 
 function populateGuides(guides) {
@@ -206,6 +206,10 @@ $(document).ready(function () {
 	});
 
 	$('[data-toggle="tooltip"]').tooltip();
+
+	$('pre').each(function(){
+		$('<div class="zero-clipboard"><span a data-toggle="tooltip" data-placement="top" data-original-title="Copy permalink to clipboard" class="btn-clipboard copy copyMe" data-clipboard-text="'+ $(this).text().replace(/"/g, '&quot;') +'"><i class="fa fa-clipboard"></i></span></div>').insertBefore(this);
+	});
 
 	ZeroClipboard.config({
 		forceHandCursor: false,
