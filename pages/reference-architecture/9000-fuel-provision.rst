@@ -14,11 +14,11 @@ They are:
 2) Image based method -- A base image is created and copied to each node to
    be used to deploy the operating system on the local disks.
 
-Starting with Mirantis Openstack 6.1, the image based method is used by
-default. It significantly reduces the time required for provisioning and
-it is more reliable to copy the same image on all nodes instead of building
-an operating system from scratch on each node.
-
+.. note:: Starting with Mirantis Openstack 7.0, only the image based
+          method is used. Image based provisioning significantly reduces
+          the time required for provisioning and it is more reliable to
+          copy the same image on all nodes instead of building an
+          operating system from scratch on each node.
 
 Image Based Provisioning
 ========================
