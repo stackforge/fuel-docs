@@ -1,27 +1,24 @@
 
 .. _fuel-agent-arch:
 
-Two provisioning methods
-========================
-
-There are two possible methods of provisioning an operating system on a node.
-They are:
-
-1) Classic method -- Anaconda or Debian-installer is used to build the
-   operating system from scratch on each node using online or local
-   repositories.
-
-2) Image based method -- A base image is created and copied to each node to
-   be used to deploy the operating system on the local disks.
-
-Starting with Mirantis Openstack 6.1, the image based method is used by
-default. It significantly reduces the time required for provisioning and
-it is more reliable to copy the same image on all nodes instead of building
-an operating system from scratch on each node.
-
-
 Image Based Provisioning
 ========================
+
+Operating systems are usually distributed with their own installers
+(e.g. Anaconda or Debian-installer). Fuel 7.0 does not these
+installers. Instead, Fuel 7.0 uses image based provisioning,
+which is a faster and enterprise-ready method.
+
+Whereas installers like Anaconda or Debian-installer were used in older
+Fuel versions to build the operating system from scratch on each node
+using online or local repositories, with image based provisioning
+a base image is created and copied to each node to be used to deploy
+the operating system on the local disks.
+
+Image based provisioning significantly reduces the time required
+for provisioning and it is more reliable to copy the same image
+on all nodes instead of building an operating system from scratch
+on each node.
 
 Image based provisioning is implemented using the Fuel Agent. The image
 based provisioning process consists of two independent steps, which are:
@@ -139,8 +136,7 @@ The Fuel Agent is installed into a bootstrap ramdisk. An operating system
 can easily be installed on a node if the node has been booted with this
 ramdisk. We can simply run the ``/usr/bin/provision`` executable with
 the required input data to start provisioning. This allows provisioning
-to occur without a reboot unlike the classic provisioning method using
-Anaconda or Debian-installer.
+to occur without a reboot.
 
 The input data need to contain at least the following information:
 

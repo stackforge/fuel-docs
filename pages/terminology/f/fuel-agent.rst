@@ -17,10 +17,6 @@ mechanism since 6.1.
 
 See:
 
-- :ref:`provision-method-ug` gives instructions
-  for implementing provisioning with the Fuel Agent
-  when configuring your environment.
-
 - :ref:`fuel-agent-arch` gives details about how
   the Fuel Agent provisions the OpenStack environment.
 
