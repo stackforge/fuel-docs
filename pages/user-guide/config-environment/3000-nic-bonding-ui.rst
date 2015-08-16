@@ -14,21 +14,22 @@ mapping logical networks to NICs.
 Use "Configure Interfaces" tab to configure interface bonding.
 
 1. Select node(s) and click "Configure Interfaces".
-   Select interfaces to be aggregated. All interfaces except Admin-PXE can be aggregated.
+   Select interfaces to be aggregated.
 
-.. image:: /_images/bonding-setup-in-ui-2.*
-  :width: 75%
+   .. image:: /_images/bonding-setup-in-ui-2.*
 
-3. Click "Bond interfaces". Now you can select the appropriate bonding mode from the "Mode" drop-down list.
+3. Click "Bond interfaces". Now you can select the appropriate bonding
+   mode from the "Mode" drop-down list.
 
-.. image:: /_images/bonding-setup-in-ui-3.*
-  :width: 45%
+   .. note:: When bonding an Admin interface, only the balance-rr
+             (round-robin) and Active Backup modes are available. Fuel
+             currently does not support Admin interface bonding in LACP
+             mode.
 
-4. Reassign networks, create additional bonds, etc. You can make all required changes and
-   click "Apply" after that.
+   .. image:: /_images/bonding-setup-in-ui-3.*
 
-.. image:: /_images/bonding-setup-in-ui-45.*
-  :width: 90%
+4. Reassign networks, create additional bonds, etc. You can make all
+   required changes and click "Apply" after that.
 
 You can add one or more interfaces to the bond.
 Select a bond and the interface(s) to add, then click "Bond Interfaces".
@@ -37,4 +38,3 @@ when the bond has 3 or more slave interfaces.
 To remove an interface from a bond,
 click "Remove" at the left-bottom from interface icon.
 To unbond interfaces, select bond and click "Unbond Interfaces".
-
