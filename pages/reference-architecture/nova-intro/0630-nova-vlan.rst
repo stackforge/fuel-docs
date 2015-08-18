@@ -40,12 +40,15 @@ Simplifying the configuration of VLAN Manager,
 there is no known limitation
 that Fuel could add in this particular networking mode.
 
+.. _conf_netw:
+
 Configuring the network
 -----------------------
 
 Once you choose a networking topology (Nova-network FlatDHCP or VLAN),
 you must configure equipment accordingly.
-The diagram below shows an example configuration.
+The diagram below shows an example configuration (with a router network
+IP 12.0.0.1/24).
 
 .. image:: /_images/physical-network.png
   :width: 90%
