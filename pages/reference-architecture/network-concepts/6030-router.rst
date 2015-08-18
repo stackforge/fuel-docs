@@ -4,11 +4,16 @@
 Router
 ------
 
-Your network must have an IP address set on a router
-in the Public :ref:`logical-networks-arch`.
-Without this, your VMs are unable to access the outside world.
-In many of the examples provided in these documents, 
-that IP is 12.0.0.1 in VLAN 101.
+Your network must have an IP address in the Public :ref:`Logical Networks
+<logical-networks-arch>` set on a router port as an "External Gateway".
+Without this, your VMs are unable to access the outside world. In many
+of the examples provided in these documents, that IP is :ref:`12.0.0.1 in VLAN 101 <conf_netw>`.
+
+If you add a new router, set a gateway IP for it from a network that you select:
+
+.. image:: /_images/new_router.png
+
+.. image:: /_images/set_gateway.png
 
 The Fuel UI includes a field on the networking tab for the gateway address.
 When OpenStack deployment starts,
