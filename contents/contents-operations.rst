@@ -43,3 +43,4 @@
 .. include:: /pages/operations/patching-ops.rst
 .. include:: /pages/operations/reduced-footprint-ops.rst
 .. include:: /pages/operations/tls-ssl-ops.rst
+.. include:: /pages/operations/templates-networking-ops.rst
