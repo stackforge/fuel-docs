@@ -156,9 +156,9 @@ Select *Create* and click on the icon for your named environment.
 Configuring your environment for vCenter
 ----------------------------------------
 
-After you exit from the "Create a New OpenStack Environment" wizard,
-Fuel displays a set of configuration tabs
-that you use to finish configuring your environment.
+After you exit from the `Create a New OpenStack Environment` wizard,
+Fuel displays a set of configuration tabs that you use to finish
+configuring your environment.
 
 Let's focus on the steps specific for OpenStack environments
 integrated with vSphere.
@@ -168,15 +168,42 @@ integrated with vSphere.
 Assign a role or roles to each node server
 ++++++++++++++++++++++++++++++++++++++++++
 
-For VMware vCenter integration,
-the nova-compute service (with VCDriver configured) runs on the Controller node.
+For VMware vCenter integration, a nova-compute service (with VCDriver
+configured) runs on the Controller node, by default.
+
+Here is the *Nodes* tab with all the node roles available for
+OpenStack environment that support vCenter.
+
+.. image:: /_images/user_screen_shots/vcenter_nodes_assign_roles.png
+
+
+**The Compute VMware role**
+
+Beginning with Fuel 7.0, you are able to deploy a nova-compute service on
+a standalone node rather than on the Controller node.
+
+To do this, follow these steps:
+
+* Assign the *Compute VMware* role to the node.
+
+  .. note:: You cannot combine *Compute VMware* node role with
+     any other available roles.
+
+* Select this node as the *Target node* for the nova-compute service
+  on the *VMware* tab for a specific cluster. See the :ref:`nova_computes`
+  configuration for the details.
+
+
+**The Storage - Cinder Proxy to VMware Datastore role**
 
 Beginning with Fuel 6.1, the *Storage - Cinder Proxy to VMware Datastore* role
-is introduced. It will deploy Cinder with VMDK backend:
-that means, the new role provides block storage for VMs that are running on VMware vCenter.
-The already known *Storage - Cinder* role can be enabled for Cinder with LVM or Ceph.
+is introduced. If checked, it deploys Cinder with VMDK backend providing
+block storage for VMs that are running on VMware vCenter.
 
-.. image:: /_images/user_screen_shots/vcenter-add-nodes.png
+
+**The Storage - Cinder role**
+
+This node role can be enabled for the Cinder with LVM or Ceph environment.
 
 
 .. _network-settings-vcenter-ug:
@@ -206,37 +233,36 @@ see :ref:`Nova Network Topologies<nova-topologies-arch>`.
 
 - To enable *FlatDHCP manager*, follow these steps:
 
-   #. Click the *FlatDHCP manager* radio button in the *Networks* tab:
+  #. Click the *FlatDHCP manager* radio button in the *Networks* tab:
+
+     .. image:: /_images/user_screen_shots/select-nova-config-dhcp.png
 
 
-      .. image:: /_images/user_screen_shots/select-nova-config-dhcp.png
+  #. In the *Nova-network configuration*,
+     enable the 'Use VLAN tagging for fixed networks' checkbox
+     and enter the VLAN tag you selected
+     for the VLAN ID in the ESXi host network configuration:
 
-
-   #. In the *Nova-network configuration*,
-      enable the 'Use VLAN tagging for fixed networks' checkbox
-      and enter the VLAN tag you selected
-      for the VLAN ID in the ESXi host network configuration:
-
-      .. image:: /_images/user_screen_shots/nova-flatdhcp-man.png
+     .. image:: /_images/user_screen_shots/nova-flatdhcp-man.png
 
 
 - To enable *VLAN manager*, follow these steps:
 
-   #. Click the *VLAN manager* radio button in the *Networks* tab:
+  #. Click the *VLAN manager* radio button in the *Networks* tab:
 
-      .. image:: /_images/user_screen_shots/select-nova-config-vlan.png
+     .. image:: /_images/user_screen_shots/select-nova-config-vlan.png
 
 
-   #. In the *Nova-network configuration*, select *Fixed network size*
-      using drop-down menu. Specify *Number of fixed networks* and enter
-      *Fixed VLAN ID range*:
+  #. In the *Nova-network configuration*, select *Fixed network size*
+     using drop-down menu. Specify *Number of fixed networks* and enter
+     *Fixed VLAN ID range*:
 
-       .. image:: /_images/user_screen_shots/nova-net-vlan.png
+     .. image:: /_images/user_screen_shots/nova-net-vlan.png
 
 
 Click **Verify Networks** button to check if networks are configured correctly.
 
-       .. image:: /_images/user_screen_shots/nova-verify.png
+.. image:: /_images/user_screen_shots/nova-verify.png
 
 
 Press **Save settings** button to continue.
@@ -266,8 +292,6 @@ VMware tab
 Beginning with Fuel 6.1 release, all vCenter-related settings
 are consolidated on the VMware tab of the Fuel web UI.
 
-.. image:: /_images/user_screen_shots/vmware-tab-common.png
-
 
 vCenter
 +++++++
@@ -286,53 +310,56 @@ also specify Availability zone:
 .. image:: /_images/user_screen_shots/vmware-tab-vcenter.png
 
 
+.. _nova_computes:
 
 Nova-Computes
 +++++++++++++
 
-Beginning with Fuel 6.1,
-each nova-compute service controls
-a single vSphere cluster.
-For each vSphere cluster,
-you need to configure separate nova-compute service that will be running on the Controller node.
+Each nova-compute service controls a single vSphere cluster.
+For each vSphere cluster, you need to configure separate nova-compute
+service that will be running either on the Controller node,
+or on a standalone host.
 
 The following options are available:
 
-#. for vCenter only environment, do not add any compute nodes.
+* for vCenter only environment, do not add any compute nodes.
 
-#. for dual hypervisors support (KVM or QEMU with vCenter),
-   you should do the following:
-   after selecting vCenter checkbox in the Fuel UI wizard, specify vCenter settings (host or IP),
-   username, password and which clusters you want to use.
+* for dual hypervisors environments, define the following:
 
-   * The cluster name is used to specify the cluster you would like
-     to use for OpenStack.
+  * **vSphere cluster** - specifies the name of the cluster that this nova-compute
+    service will be managing.
 
-   * Service name is the name that will be used to reference to your cluster in OpenStack.
-     Usually, you can copy cluster name from the field above,
-     but if the cluster name contains non-ASCII characters,
-     you must provide valid service name for it
-     (string that contains numbers, letters (a-z) and
-     underscore).
+  * **Service name** - specifies the service name to reference to your cluster.
+    It is a string that should not contain non-ASCII characters.
 
-   * Datastore regexp is used
-     to indicate data stores to use with Compute.
-     For example, if you add *nas.*, all data stores that have a name starting
-     with "nas" will be chosen.
-     If you plan to use all available datastores, leave the field blank.
-     In this case, nova-compute service will pick the first data store returned by the vSphere API.
-     To learn more about
-     this setting, see
-     `VMware vSphere <http://docs.openstack.org/juno/config-reference/content/vmware.html>`_ guide.
+  * **Datastore regex** - indicates data stores to use with Compute.
+    For example, if you define `openstack-.*`, all data stores that have
+    a name starting with `openstack-` are chosen.
 
-.. image:: /_images/user_screen_shots/vmware-tab-nova.png
+    If you plan to use all available datastores, leave the field blank.
+    In this case, nova-compute service will pick the first data store returned by
+    the vSphere API.
 
+    .. seealso:: To learn more about the **Datastore regex** setting, see the
+       `VMware vSphere <http://docs.openstack.org/juno/config-reference/content/vmware.html>`_
+       guide.
 
-Press +, add nova-compute services and fill in
-the information for one more Instance.
+  * **Target node** - a dropdown list with the following items:
 
-.. image:: /_images/user_screen_shots/vmware-tab-nova-two.png
+    * the *controllers* option is selected by default.
+      It deploys the nova-compute service on controller nodes.
+      If selected, the nova-compute service is backed up by *pacemaker*.
 
+    * names of all the nodes with the *Compute VMware* role assigned.
+      Select one of the available nodes if you decide to run
+      the compute-service on that standalone node.
+      In this case nova-compute service gets no high availability,
+      though it can be provided if this host is a vSphere virtual machine.
+      This way, the nova-compute service is backed up by VMware HA.
+
+    .. image:: /_images/user_screen_shots/vmware-tab-nova-computes.png
+
+If required, configure more nova-compute instances by clicking *+*.
 
 
 Network
