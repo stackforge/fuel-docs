@@ -10,6 +10,7 @@ Storage
 +++++++
 
 .. image:: /_images/user_screen_shots/settings-storage.png
+   :width: 60%
 
 You can use this screen to modify the choices made
 for :ref:`persistent storage<persistent-storage-term>`

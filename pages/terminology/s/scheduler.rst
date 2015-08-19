@@ -13,8 +13,7 @@ This scheduler is superior to the "Simpler" or "naive" scheduler
 that older versions of Fuel deployed.
 Fuel 5.0 and Fuel 4.1.1
 are the first versions of Fuel that allow you
-to choose which scheduler you use;
-see :ref:`scheduler-ug`.
+to choose which scheduler you use.
 
 The Filter Scheduler uses the :ref:`overcommit-term`
 to compute available resources.

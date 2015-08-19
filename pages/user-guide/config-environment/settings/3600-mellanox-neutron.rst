@@ -31,8 +31,8 @@ Mellanox Neutron plugin configuration:
    :width: 75%
 
 **Note:** The maximum number of supported vNICs is 16.
-See `HowTo Install Mirantis Fuel 5.1 OpenStack with Mellanox Adapters Support
-<http://community.mellanox.com/docs/DOC-1474/>`_
+See `HowTo Install Mellanox OpenStack Plugin for Mirantis Fuel
+<https://community.mellanox.com/docs/DOC-2165>`_
 to get instructions for changing the maximum number of vNICs.
 
 iSER configuration:
@@ -49,8 +49,3 @@ iSER configuration:
 
 .. image:: /_images/user_screen_shots/storage-iser.png
    :width: 80%
-
-**Note:**
-`HowTo Install Mirantis Fuel 5.1 OpenStack with Mellanox Adapters Support <http://community.mellanox.com/docs/DOC-1474/>`_ includes
-advanced information regarding Mirantis Openstack installation over
-Mellanox hardware.
