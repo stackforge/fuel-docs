@@ -146,44 +146,91 @@ and missing polling data as the result.
 Complete the creation of your vCenter environment
 +++++++++++++++++++++++++++++++++++++++++++++++++
 
-
 .. image:: /_images/user_screen_shots/deploy_env.png
-
-
 
 Select *Create* and click on the icon for your named environment.
 
-Configuring your environment for vCenter
-----------------------------------------
 
-After you exit from the "Create a New OpenStack Environment" wizard,
-Fuel displays a set of configuration tabs
-that you use to finish configuring your environment.
+Configuring a vCenter environment
+---------------------------------
 
-Let's focus on the steps specific for OpenStack environments
-integrated with vSphere.
+Select your OpenStack environment integrated with vSphere to display
+the configuration screen. Set up the environment using the following tabs.
 
 .. _assign-roles-vcenter-ug:
 
-Assign a role or roles to each node server
-++++++++++++++++++++++++++++++++++++++++++
+Nodes tab
++++++++++
 
-For VMware vCenter integration,
-the nova-compute service (with VCDriver configured) runs on the Controller node.
+Assign a role to a node server by checking the required one from
+the list of the available node roles.
 
-Beginning with Fuel 6.1, the *Storage - Cinder Proxy to VMware Datastore* role
-is introduced. It will deploy Cinder with VMDK backend:
-that means, the new role provides block storage for VMs that are running on VMware vCenter.
-The already known *Storage - Cinder* role can be enabled for Cinder with LVM or Ceph.
+.. list-table:: **Node roles for the OpenStack environments that support vCenter**
+   :widths: 10 30
+   :header-rows: 1
 
-.. image:: /_images/user_screen_shots/vcenter-add-nodes.png
+   * - Role
+     - Description
+
+   * - **Controller**
+     - The Controller node initiates orchestration activities and provides
+       an external API. Other components like Glance, Keystone, Horizon,
+       and Nova-Scheduler installs on the Controller node as well.
+
+       | The default value.
+
+   * - **Compute**
+     - The Compute node creates, manages, and terminates VMs.
+
+   * - **Storage - Cinder**
+     - The Cinder node provides scheduling of block storage resources,
+       typically delivered over ISCi or other compatible back-end
+       storage systems. You can use Block storage for database storage,
+       expandable file systems, or to provide a server with access
+       to raw block level devices. This node role can be enabled for
+       the Cinder with LVM or Ceph environment.
+
+   * - **Storage - Cinder Proxy to VMware Datastore**
+     - Cinder-VMware provides scheduling of block storage resources delivered
+       over VMware vCenter.
+       You can use Block storage for database storage, expandable
+       file systems, or to provide a server with access to raw block
+       level devices. 
+
+   * - **Operating System**
+     - The Operating System node intalls base operating system without
+       additional packages and configurations.
+
+   * - **Compute VMware**
+     - The Compute VMware node runs nova-compute with VCDriver that manages
+       ESXI computing resources through VMware vCenter. It enables you to deploy
+       a ``nova-compute`` service on a standalone node rather than on
+       the Controller node.
+
+
+Deploying nova-compute on a standalone node
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Assign a *Compute VMware* role to the node.
+
+   .. note::
+
+      You cannot combine *Compute VMware* node role with any other
+      available roles.
+
+#. In the *VMware tab* for a specific cluster, select this node
+   as the *Target node* for the ``nova-compute`` service.
+
+   .. seealso::
+
+      * :ref:`nova_computes` configuration.
 
 
 .. _network-settings-vcenter-ug:
 
 
-Network settings
-++++++++++++++++
+Networks tab
+++++++++++++
 
 You should choose either the Nova-network FlatDHCP or the VLAN manager:
 
@@ -206,45 +253,33 @@ see :ref:`Nova Network Topologies<nova-topologies-arch>`.
 
 - To enable *FlatDHCP manager*, follow these steps:
 
-   #. Click the *FlatDHCP manager* radio button in the *Networks* tab:
+  #. In the *Networks* tab, click the *FlatDHCP manager* radio button.
 
+  #. In the *Nova-network configuration*, enable the *Use VLAN tagging
+     for fixed networks* checkbox.
 
-      .. image:: /_images/user_screen_shots/select-nova-config-dhcp.png
-
-
-   #. In the *Nova-network configuration*,
-      enable the 'Use VLAN tagging for fixed networks' checkbox
-      and enter the VLAN tag you selected
-      for the VLAN ID in the ESXi host network configuration:
-
-      .. image:: /_images/user_screen_shots/nova-flatdhcp-man.png
-
+  #. Type the VLAN tag you selected for the VLAN ID in the ESXi host
+     network configuration.
 
 - To enable *VLAN manager*, follow these steps:
 
-   #. Click the *VLAN manager* radio button in the *Networks* tab:
+  #. In the *Networks* tab, click the *VLAN manager* radio button.
 
-      .. image:: /_images/user_screen_shots/select-nova-config-vlan.png
+  #. In the *Nova-network configuration*, select *Fixed network size*
+     using drop-down menu.
 
+  #. Specify *Number of fixed networks* and type *Fixed VLAN ID range*.
 
-   #. In the *Nova-network configuration*, select *Fixed network size*
-      using drop-down menu. Specify *Number of fixed networks* and enter
-      *Fixed VLAN ID range*:
+  #. Click the **Verify Networks** button to check if networks are configured
+     correctly.
 
-       .. image:: /_images/user_screen_shots/nova-net-vlan.png
+  #. Click the **Save settings** button to continue.
 
-
-Click **Verify Networks** button to check if networks are configured correctly.
-
-       .. image:: /_images/user_screen_shots/nova-verify.png
-
-
-Press **Save settings** button to continue.
 
 .. _settings-tab:
 
-Settings
-++++++++
+Settings tab
+++++++++++++
 
 To enable VMware vCenter for volumes,
 you should add a node and assign
@@ -261,16 +296,14 @@ select *VMWare vCenter/ESXi datastore for images (Glance)* checkbox.
 .. _vmware-tab:
 
 VMware tab
-----------
+++++++++++
 
 Beginning with Fuel 6.1 release, all vCenter-related settings
 are consolidated on the VMware tab of the Fuel web UI.
 
-.. image:: /_images/user_screen_shots/vmware-tab-common.png
-
 
 vCenter
-+++++++
+^^^^^^^
 
 In this section, you should enter not only vCenter credentials
 (previously found on the Fuel UI wizard and *Settings* of the Fuel web UI
@@ -286,57 +319,56 @@ also specify Availability zone:
 .. image:: /_images/user_screen_shots/vmware-tab-vcenter.png
 
 
+.. _nova_computes:
 
 Nova-Computes
-+++++++++++++
+^^^^^^^^^^^^^
 
-Beginning with Fuel 6.1,
-each nova-compute service controls
-a single vSphere cluster.
-For each vSphere cluster,
-you need to configure separate nova-compute service that will be running on the Controller node.
+Each nova-compute service controls a single vSphere cluster.
+For each vSphere cluster, you need to configure separate nova-compute
+service that will be running either on the Controller node,
+or on a standalone host.
 
 The following options are available:
 
-#. for vCenter only environment, do not add any compute nodes.
+* for vCenter only environment, do not add any compute nodes.
 
-#. for dual hypervisors support (KVM or QEMU with vCenter),
-   you should do the following:
-   after selecting vCenter checkbox in the Fuel UI wizard, specify vCenter settings (host or IP),
-   username, password and which clusters you want to use.
+* for dual hypervisors environments, define the following:
 
-   * The cluster name is used to specify the cluster you would like
-     to use for OpenStack.
+  * **vSphere cluster** - specifies the name of the cluster that this nova-compute
+    service will be managing.
 
-   * Service name is the name that will be used to reference to your cluster in OpenStack.
-     Usually, you can copy cluster name from the field above,
-     but if the cluster name contains non-ASCII characters,
-     you must provide valid service name for it
-     (string that contains numbers, letters (a-z) and
-     underscore).
+  * **Service name** - specifies the service name to reference to your cluster.
+    It is a string that should not contain any non-ASCII characters.
 
-   * Datastore regexp is used
-     to indicate data stores to use with Compute.
-     For example, if you add *nas.*, all data stores that have a name starting
-     with "nas" will be chosen.
-     If you plan to use all available datastores, leave the field blank.
-     In this case, nova-compute service will pick the first data store returned by the vSphere API.
-     To learn more about
-     this setting, see
-     `VMware vSphere <http://docs.openstack.org/juno/config-reference/content/vmware.html>`_ guide.
+  * **Datastore regexp** - indicates datastores to use with Compute.
+    For example, if you define `openstack-.*`, all datastores that have
+    a name starting with `openstack-` are chosen.
 
-.. image:: /_images/user_screen_shots/vmware-tab-nova.png
+    If you plan to use all available datastores, leave the field blank.
+    In this case, nova-compute service will pick the first datastore returned by
+    the vSphere API.
 
+    .. seealso:: To learn more about the Datastore regexp setting, see the
+       `VMware vSphere <http://docs.openstack.org/juno/config-reference/content/vmware.html>`_
+       guide.
 
-Press +, add nova-compute services and fill in
-the information for one more Instance.
+  * **Target node** - a dropdown list with the following items:
 
-.. image:: /_images/user_screen_shots/vmware-tab-nova-two.png
+    * the *controllers* option is selected by default.
+      It deploys the nova-compute service on the Controller nodes.
 
+    * names of all the nodes with the compute-vmware role assigned.
+      Select one of the available nodes if you decide to run
+      the compute-service on that standalone node.
+
+    .. image:: /_images/user_screen_shots/vmware-tab-nova-computes.png
+
+If required, configure more nova-compute instances by clicking *+*.
 
 
 Network
-+++++++
+^^^^^^^
 
 If you decided to use VLAN Manager,
 enter the interface of ESXi hosts on which VLANs will be provisioned.
@@ -346,7 +378,7 @@ enter the interface of ESXi hosts on which VLANs will be provisioned.
 
 
 Glance
-++++++
+^^^^^^
 
 To enable Glance, you should first select the checkbox on the *Settings* tab
 (see :ref:`VMware vCenter/ESXi datastore for images (Glance) <settings-tab>`).
