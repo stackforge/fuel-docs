@@ -12,12 +12,13 @@ New Features Included in Mirantis OpenStack 7.0
 
 .. here is the place to include files from /new_features
    For example:
-.. include:: /pages/release-notes/v7-0/new_features/skeleton.rst
+   .. include:: /pages/release-notes/v7-0/new_features/skeleton.rst
 
 .. include:: /pages/release-notes/v7-0/new_features/kilo_support.rst
 .. include:: /pages/release-notes/v7-0/new_features/master_node_upgrade.rst
 .. include:: /pages/release-notes/v7-0/new_features/plugins.rst
 .. include:: /pages/release-notes/v7-0/new_features/neutron.rst
+.. include:: /pages/release-notes/v7-0/new_features/compute_vmware_role.rst
 
 
 .. seealso::
