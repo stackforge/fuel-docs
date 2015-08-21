@@ -38,7 +38,7 @@ Some general guiding principles:
   and to avoid performance bottlenecks.
 - For demonstration and study purposes,
   you can deploy OpenStack on VirtualBox;
-  see :ref:`Running Fuel on VirtualBox<virtualbox>` for more information.
+  see :ref:`QuickStart Guide<qs_intro>` for more information.
   This option has the lowest hardware requirements
 - OpenStack can be deployed on smaller hardware configurations
   by combining multiple roles on the nodes
