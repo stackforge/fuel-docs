@@ -18,11 +18,11 @@ exclude_patterns = ['_*', 'pages', 'contents', 'index', '*-guide', '*.rst']
 
 pdf_documents = [ 
 #   (master_doc, project, project, copyright),
+    ('pdf/pdf_quickstart-guide', u'Mirantis-OpenStack-6.1-QuickStartGuide', u'QuickStart Guide', u'2015, Mirantis Inc.'),
     ('pdf/pdf_planning-guide', u'Mirantis-OpenStack-6.1-PlanningGuide', u'Planning Guide', u'2015, Mirantis Inc.'),
     ('pdf/pdf_user', u'Mirantis-OpenStack-6.1-UserGuide',  u'User Guide', u'2015, Mirantis Inc.'),
     ('pdf/pdf_operations', u'Mirantis-OpenStack-6.1-OperationsGuide', u'Operations Guide', u'2015, Mirantis Inc.'),
     ('pdf/pdf_monitoring-guide', u'Mirantis-OpenStack-6.1-MonitoringGuide', u'Monitoring Guide', u'2015, Mirantis Inc.'),
-    ('pdf/pdf_virtualbox', u'Mirantis-OpenStack-6.1-Running-Mirantis-OpenStack-on-VirtualBox', u'Running Mirantis OpenStack on VirtualBox', u'2015, Mirantis Inc.'),
     ('pdf/pdf_reference', u'Mirantis-OpenStack-6.1-ReferenceArchitecture', u'Reference Architecture', u'2015, Mirantis Inc.'),
     ('pdf/pdf_plugin-dev', u'Mirantis-OpenStack-6.1-FuelPluginGuide', u'Fuel Plugin Guide', u'2015, Mirantis Inc.'),
     ('pdf/pdf_terminology', u'Mirantis-OpenStack-6.1-Terminology-Reference', u'Terminology Reference', u'2015, Mirantis Inc.'),
