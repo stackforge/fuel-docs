@@ -8,11 +8,11 @@ Documentation
 
 .. toctree::
 
+  quickstart-guide
   planning-guide
   user-guide
   operations
   monitoring-guide
-  virtualbox
   reference-architecture
   terminology
   plugin-dev

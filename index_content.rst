@@ -7,6 +7,7 @@
 PDF
 ~~~
 
+`QuickStart Guide PDF <pdf/Mirantis-OpenStack-6.1-QcuikStartGuide.pdf>`_
 `Planning Guide PDF <pdf/Mirantis-OpenStack-6.1-PlanningGuide.pdf>`_
 `User Guide PDF <pdf/Mirantis-OpenStack-6.1-UserGuide.pdf>`_
 `Operations Guide PDF <pdf/Mirantis-OpenStack-6.1-OperationsGuide.pdf>`_
@@ -20,6 +21,10 @@ PDF
 
 Guides
 ~~~~~~
+
+`QuickStart Guide <quickstart-guide.html#quickstart-guide>`_
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Learn how to install Mirantis OpenStack on VirtualBox.
 
 `Planning Guide <planning-guide.html#planning-guide>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
