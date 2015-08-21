@@ -32,7 +32,7 @@ then use that media to install the software.
    in VirtualBox.
    In that case, copy the ISO file to the appropriate directory
    and boot directly from that disk file.
-   See :ref:`virtualbox`.
+   See :ref:`QuickStart Guide <quickstart-guide>`.
 
 
 Use any standard software to burn the ISO to a writable DVD.
