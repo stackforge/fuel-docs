@@ -99,8 +99,8 @@ its support still might be absent on compute nodes if they are themselves
 running as virtual machines. In that case hypervisor running compute
 nodes must support passing through hardware-assisted virtualization to
 nested VMs and have it enabled. VirtualBox does not have that feature,
-and as a result environments deployed by :ref:`virtualbox` will have
-Sahara working poorly.
+and as a result environments deployed as described in the :ref:`QuickStart 
+Guide <quickstart-guide>` will have Sahara working poorly.
 
 **Communication between virtual machines**
 

@@ -55,13 +55,13 @@ other than the bare-metal installation:
   to deploy a Mirantis OpenStack Environment on Oracle VirtualBox.
   VirtualBox deployment is useful for demonstrations
   and is a good way to begin your exploration of the tools and technologies.
-  See `0 to OpenStack in 60 Minutes or less
-  <https://software.mirantis.com/quick-start/>`_
-  to get started,
-  with additional information in :ref:`Running Fuel on VirtualBox<virtualbox>`.
-  Note that deployments on top of VirtualBox
-  do not generally meet the performance and robustness requirements
-  of most production environments.
+  See :ref:`0 to OpenStack in 60 Minutes or less<quickstart-guide>`
+  
+.. note::
+
+  The environments you deploy on VirtualBox are for testing purposes only.
+  Typically, a production environment requires extensive resources and 
+  network planning.
 
 - You can :ref:`install Fuel master node on vSphere<fuel-on-vsphere-ug>`
   and deploy a Mirantis OpenStack Environment
