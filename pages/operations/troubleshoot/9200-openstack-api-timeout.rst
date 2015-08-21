@@ -64,5 +64,3 @@ access the Public network for Nova API. The reason is because Keystone returns
 the list of OpenStack services URLs, and for production-grade deployments it 
 is required to access services over public network. 
 
-.. seealso:: :ref:`access_to_public_net` if you want to configure the 
-  installation on VirtualBox and fix issues like the one above.
