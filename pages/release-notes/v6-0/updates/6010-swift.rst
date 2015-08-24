@@ -23,6 +23,12 @@ Resolved Issues
   unexpected shutdowns of services. The fix adds ``respawn`` stanza
   and sets limit to 20 retries within 5 seconds as a reasonable value
   for such kind of services. See `LP1466101`_.
+.. note::
+      Due to a conflict between configuration files, replace the old
+      `swift-container-sync.conf` file in the `/etc/init` with the
+      `swift-container-sync.conf.dpkg-dist` file which was created
+      during the upgrade.
+     
 
 .. Links
 .. _`LP1442041`: https://bugs.launchpad.net/mos/+bug/1442041
