@@ -88,6 +88,15 @@ Ubuntu-based deployments
 
        apt-get upgrade
 
+.. note::
+      Running ``apt-get upgrade`` manually means that you also ought
+      to resolve any configuration file conflict occurred during the
+      upgrade. It is highly recommended to resolve those conflicts
+      carefully, having clear understanding of a possible impact of
+      your actions. If you are not sure whether the conflict should
+      be resolved with the new version of file, it would be always
+      safer to ignore all changes by choosing ``No``.
+
 CentOS-based deployments
 ------------------------
 
