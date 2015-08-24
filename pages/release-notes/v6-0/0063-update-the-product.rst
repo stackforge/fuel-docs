@@ -88,6 +88,14 @@ Ubuntu-based deployments
 
        apt-get upgrade
 
+.. note::
+      When you run ``apt-get upgrade``, you may get messages about
+      conflicts with upgrading configuration files. You must understand
+      how upgrading the configuration files may affect your system.
+      Upgrade the configuration files with caution.
+      If you are not sure if updating the file will resolve the conflict,
+      decline the changes by choosing ``No``.
+
 CentOS-based deployments
 ------------------------
 
