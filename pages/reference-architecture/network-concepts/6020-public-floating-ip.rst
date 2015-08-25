@@ -50,6 +50,9 @@ Fuel cannot configure Neutron with external workarounds at this time.
 
 * Two additional IP addresses for the environment's Virtual IPs and one for
   the default gateway are required.
+  
+* When the Neutron DVR feature is enabled, it requires one additional
+  IP address for each Compute node.
 
 .. note::
 
