@@ -48,8 +48,12 @@ Fuel cannot configure Neutron with external workarounds at this time.
   requires one IP address from the Public IP range. This IP address
   goes to the node's bridge to the external network ("br-ex").
 
-* Two additional IP addresses for the environment's Virtual IPs and one for
-  the default gateway are required.
+* Two additional IP addresses for the environment's Virtual IPs and one
+  for the default gateway are required.
+
+* When the Neutron DVR feature is enabled, it requires one additional
+  IP address for each Compute node in case you plan to use Floating IPs
+  in the deployment.
 
 .. note::
 
@@ -172,3 +176,10 @@ addresses:
 
    **n/a** - this value is not applicable to Nova-Network environments.
 
+With DVR enabled, you need to add one additional IP for each Compute
+node in case you plan to use Floating IPs in the deployment. Based on
+the data in the table, for the Public IP range you need:
+
+* for VLAN: (X+N) + 10 = **16**
+
+* For GRE: (X+Z+N) + 10 = **34**
