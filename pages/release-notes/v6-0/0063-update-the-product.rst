@@ -21,7 +21,7 @@ Automated way to install updates to all nodes
 Run the following command on the Fuel Master node to obtain a local mirror of the updates repository::
 
        rsync -vap --chmod=Dugo+x \
-       rsync://mirror.fuel-infra.org/fwm/6.0/updates/ /var/www/nailgun/updates/
+       rsync://mirror.fuel-infra.org/mirror/fwm/6.0/updates/ /var/www/nailgun/updates/
 
 .. note::
       Note that you must have an access to the Internet on the Fuel Master node to download the repository.
