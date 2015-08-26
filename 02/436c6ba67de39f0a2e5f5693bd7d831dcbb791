@@ -1,0 +1,9 @@
+Verified+2: Jenkins
+Code-Review+2: Irina <ipovolotskaya@mirantis.com>
+Workflow+1: Irina <ipovolotskaya@mirantis.com>
+Code-Review+2: Denis Klepikov <dklepikov@mirantis.com>
+Submitted-by: Jenkins
+Submitted-at: Wed, 26 Aug 2015 11:09:02 +0000
+Reviewed-on: https://review.openstack.org/217065
+Project: stackforge/fuel-docs
+Branch: refs/heads/stable/6.1
