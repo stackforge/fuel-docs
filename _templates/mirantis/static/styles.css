@@ -1,6 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=PT+Sans|PT+Sans+Narrow|PT+Sans+Caption);
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
 
+.dropdown-menu>li>a[href='style-guide.html'] {
+    display: none;
+}
+
 html, body {
   font-family: 'PT Sans', arial, sans-serif;
   font-size: 15px;

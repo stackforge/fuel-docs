@@ -18,6 +18,5 @@ Documentation
   plugin-dev
   file-ref
   release-notes
-  style-guide
   eula
   third-party-licenses
