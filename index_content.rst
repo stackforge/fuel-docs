@@ -67,11 +67,6 @@ with references to other documentation and other useful information.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Provides information on how to use Fuel configuration files.
 
-`Style Guide <style-guide.html#style-guide>`_
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Contains style guidelines and instructions on
-how to write documentation for Mirantis OpenStack.
-
 `Release Notes <release-notes.html#release-notes>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Provide general information about new features,
