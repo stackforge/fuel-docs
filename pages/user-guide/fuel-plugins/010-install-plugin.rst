@@ -14,8 +14,9 @@ Plugins are downloadable software components that extend the functionality of yo
 environments in a flexible, repeatable and reliable manner.
 
 For example,
-`Neutron LBaaS <https://software.mirantis.com/download-mirantis-openstack-fuel-plug-ins/#lbaas>`_
-provides Load-Balancing-as-a-Service for Neutron, OpenStack Network Service.
+`Neutron VPNaaS <https://software.mirantis.com/download-mirantis-openstack-fuel-plug-ins/#lbaas>`_
+provides flexible IPSec VPN feature-set supported by Neutron CLI and,
+more simply, in Horizon, by adding a new set of tabs to Network. 
 
 Validation
 ----------
@@ -34,7 +35,7 @@ In terms of Validation, Fuel plugins fall into two categories:
 
 
 See the validation requirements at
-`Mirantis website <https://www.mirantis.com/partners/become-mirantis-technology-partner/fuel-plugin-development/fuel-plugin-certification/>`_.
+`Mirantis website <https://www.mirantis.com/partners/become-mirantis-unlocked-partner/fuel-plugin-development/fuel-plugin-validation/>`_.
 
 For information on development requirements and FAQ, see
 `Fuel Plugins <https://wiki.openstack.org/wiki/Fuel/Plugins>`_ wiki page.
@@ -46,7 +47,7 @@ Installation steps
 Installation procedure is common for all plugins, but their requirements differ.
 
 #. Download a plugin from
-   `Fuel Plugins Catalog <https://software.mirantis.com/download-mirantis-openstack-fuel-plug-ins/>`_.
+   `Fuel Plugins Catalog <https://www.mirantis.com/products/openstack-drivers-and-plugins/fuel-plugins/>`_.
 
 #. Get acquainted with the plugin documentation to learn about
    prerequisites and limitations.
