@@ -72,3 +72,11 @@ Installation procedure is common for all plugins, but their requirements differ.
 For Fuel plugins CLI reference, see :ref:`the corresponding section <fuel-plugins-cli>`.
 
 
+View installed plugins
+----------------------
+
+You can review installed plugins on the "Plugins" tab in Fuel Web UI with
+their version, MOS compatibility information, the certification status, and a provider's name.
+
+.. image:: /_images/user_screen_shots/plugins-tab.png
+
