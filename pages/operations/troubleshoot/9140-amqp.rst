@@ -23,7 +23,13 @@ The status is considered "good" when there exists a single master for the
 master_p_rabbitmq-server and the rest of the resource instances are reported
 as slaves. Note, that the command ``pcs status`` issued on all controllers
 should be enough to gather all the required information, see :ref:`crm-ops`.
-You can also try issuing an extended output with the crm tool alternative:
+
+.. note:: If there are split clusters of Corosync running, you should
+  first fix your Corosync cluster, because you cannot resolve issues with the
+  Pacemaker resources, including RabbitMQ cluster, when there is a
+  split brain in the Corosync cluster.
+
+You may also want to collect an extended status output with the crm tool alternative:
 
 ::
 
@@ -33,10 +39,14 @@ If there are some RabbitMQ resource failures, they will
 be shown in the command output with the time stamps, so you can
 search for the events in the logs around that moment.
 
-.. note:: If there are split clusters of Corosync running, you should
-  first fix your Corosync cluster, because you cannot resolve issues with the
-  Pacemaker resources, including RabbitMQ cluster, when there is a
-  split brain in the Corosync cluster.
+.. note:: If the master_p_rabbitmq-server's ``pcs status`` output looks "good" but
+  there is outdated time stamp of the last monitor action displayed in the
+  last-rc-change section, you should clean up the master_p_rabbitmq-server,
+  see below for how to recover.
+
+.. warn:: This state is very dangerous as Pacemaker thinks everything is alright,
+  while in fact it doesn't monitor the resource health anymore! This also applies
+  to the rest of the resources reported by the ``crm_mon -fotAW -1`` command.
 
 How to recover
 ++++++++++++++
