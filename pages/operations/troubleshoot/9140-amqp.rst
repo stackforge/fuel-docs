@@ -23,20 +23,31 @@ The status is considered "good" when there exists a single master for the
 master_p_rabbitmq-server and the rest of the resource instances are reported
 as slaves. Note, that the command ``pcs status`` issued on all controllers
 should be enough to gather all the required information, see :ref:`crm-ops`.
-You can also try issuing an extended output with the crm tool alternative:
-
-::
-
-    crm_mon -fotAW -1
-
-If there are some RabbitMQ resource failures, they will
-be shown in the command output with the time stamps, so you can
-search for the events in the logs around that moment.
 
 .. note:: If there are split clusters of Corosync running, you should
   first fix your Corosync cluster, because you cannot resolve issues with the
   Pacemaker resources, including RabbitMQ cluster, when there is a
   split brain in the Corosync cluster.
+
+You may also want to collect an extended status output with the crm tool alternative:
+
+.. code-block:: console
+
+   crm_mon -fotAW -1
+
+If there are some RabbitMQ resource failures, they will
+be shown in the command output with the time stamps, so you can
+search for the events in the logs around that moment.
+
+.. note:: If the master_p_rabbitmq-server's ``pcs status`` output looks "good" but
+  there is outdated time stamp of the last monitor action displayed in the
+  last-rc-change section, you should clean up the master_p_rabbitmq-server,
+  see below for how to recover.
+
+.. warning:: This state is very dangerous as Pacemaker thinks everything
+   is alright, while in fact it does not monitor the resource health
+   anymore. This also applies to the rest of the resources reported
+   by the :command:`crm_mon -fotAW -1` command.
 
 How to recover
 ++++++++++++++
@@ -59,7 +70,7 @@ some list channels/queues requests may hang. Note, that the
 command ``rabbitmqctl report`` issued on all controllers should be enough
 to gather all the required information, but there is also a special group
 of Fuel OSTF HA health checks available in the Fuel UI and CLI. See also
-`RabbitMQ OSTF replication tests <https://blueprints.launchpad.net/fuel/+spec/ostf-rabbit-replication-tests>`.
+`RabbitMQ OSTF replication tests <https://blueprints.launchpad.net/fuel/+spec/ostf-rabbit-replication-tests>`_.
 
 How to recover
 ++++++++++++++
