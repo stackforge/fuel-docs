@@ -1,0 +1,16 @@
+Verified+2: Jenkins
+Code-Review+1: Vadim Rovachev <vrovachev@mirantis.com>
+Code-Review+1: Nadya Shakhat <nprivalova@mirantis.com>
+Code-Review+1: Ilya Tyaptin <ityaptin@mirantis.com>
+Verified+1: Fuel CI <fuel-ci-bot@mirantis.com>
+Code-Review+1: Igor Degtiarov <idegtiarov@mirantis.com>
+Code-Review+2: Irina <ipovolotskaya@mirantis.com>
+Workflow+1: Irina <ipovolotskaya@mirantis.com>
+Code-Review+1: Denis Klepikov <dklepikov@mirantis.com>
+Code-Review+1: Evgeny Konstantinov <evkonstantinov@mirantis.com>
+Code-Review+1: Olga Gusarenko <ogusarenko@mirantis.com>
+Submitted-by: Jenkins
+Submitted-at: Mon, 31 Aug 2015 13:02:00 +0000
+Reviewed-on: https://review.openstack.org/207044
+Project: stackforge/fuel-docs
+Branch: refs/heads/master
