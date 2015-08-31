@@ -9,7 +9,7 @@ Plugins are downloadable software components that extend the functionality of yo
 environments in a flexible, repeatable, and reliable manner.
 
 For example,
-`Neutron VPNaaS <https://www.mirantis.com/products/openstack-drivers-and-plugins/fuel-plugins/>`_
+`Neutron VPNaaS <https://www.mirantis.com/products/openstack-drivers-and-plugins/fuel-plugins/#vpnaas>`_
 provides flexible IPSec VPN feature-set supported by Neutron CLI and,
 more simply, in Horizon, by adding a new set of tabs to Network. 
 
