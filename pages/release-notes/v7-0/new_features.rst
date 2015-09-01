@@ -18,6 +18,7 @@ New Features Included in Mirantis OpenStack 7.0
 .. include:: /pages/release-notes/v7-0/new_features/master_node_upgrade.rst
 .. include:: /pages/release-notes/v7-0/new_features/plugins.rst
 .. include:: /pages/release-notes/v7-0/new_features/neutron.rst
+.. include:: /pages/release-notes/v7-0/new_features/keystone.rst
 
 
 .. seealso::

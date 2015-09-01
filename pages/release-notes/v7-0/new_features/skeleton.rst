@@ -1,5 +1,5 @@
 
-.. add ref-label:
+.. _add ref-label:
 
 New feature name
 ++++++++++++++++
