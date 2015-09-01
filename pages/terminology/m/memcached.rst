@@ -9,12 +9,12 @@ Memcached is a general-purpose distributed memory caching system
 that OpenStack uses as a highly available backend for the
 :ref:`Keystone<keystone-term>` and the OpenStack Dashboard
 (:ref:`horizon-term`).
-See `Caching layer <http://docs.openstack.org/admin-guide-cloud/content/section_caching-layer.html>`_
-and `Key-value stores <http://docs.openstack.org/admin-guide-cloud/content/dashboard-session-key-value-store.html>`_
+See `Caching layer <http://docs.openstack.org/admin-guide-cloud/keystone_caching_layer.html>`_
+and `Key-value stores <http://docs.openstack.org/admin-guide-cloud/dashboard_sessions.html>`_
 admin guides for details.
 :ref:`Swift<swift-object-storage-term>` proxy server is also
 configured to use the memcached,
-see `Object Storage documentaion <http://docs.openstack.org/admin-guide-cloud/content/object-storage-service.html>`_.
+see `Object Storage documentaion <http://docs.openstack.org/admin-guide-cloud/common/get_started_object_storage.html>`_.
 
 .. note:: Fuel configures the Keystone to use the ``memcache_pool``
    backend for tokens, but tokens revokations are tracked in the
@@ -30,4 +30,3 @@ Additional information is available:
   pre-6.1 environments.
 
 .. SeeAlso:: `Caching layer configuration <http://docs.openstack.org/juno/config-reference/content/section_keystone-cache.html>`_
-

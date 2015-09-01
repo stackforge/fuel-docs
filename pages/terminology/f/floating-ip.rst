@@ -14,14 +14,14 @@ To associate a floating IP address with your VM:
 
 #. Add a floating IP address to the VM using either the
    `Horizon dashboard
-   <http://docs.openstack.org/admin-guide-cloud/content/section_l3_router_and_nat.html>`_
+   <http://docs.openstack.org/admin-guide-cloud/networking_adv-features.html#l3-routing-and-nat>`_
    or the `command line
-   <http://docs.openstack.org/user-guide/content/manage_ip_addresses.html>`_.
+   <http://docs.openstack.org/user-guide/cli_manage_ip_addresses.html>`_.
 
 #. Configure the :ref:`Security Group<security-groups-term>`
    to enable the kind of access required for the VM.
    See `Configure access and security
-   <http://docs.openstack.org/user-guide/content/Launching_Instances_using_Dashboard.html>`_
+   <http://docs.openstack.org/user-guide/configure_access_and_security_for_instances.html>`_
    for instances.
 
 #. Select the appropriate rule for ICMP and SSH access;
@@ -46,9 +46,7 @@ For more information:
   see :ref:`public-floating-ips-arch`.
 
 - `Configure public (floating) IP addresses
-  <http://docs.openstack.org/admin-guide-cloud/content/nova-associate-public-ip.html>`_
+  <http://docs.openstack.org/admin-guide-cloud/compute-networking-nova.html>`_
 
 - `L3 routing and NAT
-  <http://docs.openstack.org/admin-guide-cloud/content/section_l3_router_and_nat.html>`_
-
-
+  <http://docs.openstack.org/admin-guide-cloud/networking_adv-features.html#l3-routing-and-nat>`_

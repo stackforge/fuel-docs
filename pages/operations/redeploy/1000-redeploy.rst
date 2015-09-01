@@ -19,7 +19,7 @@ to be MongoDB nodes.
 To redeploy a non-controller node,
 follow these steps:
 
-#. Use `live migration <http://docs.openstack.org/admin-guide-cloud/content/section_configuring-compute-migrations.html>`_
+#. Use `live migration <http://http://docs.openstack.org/admin-guide-cloud/compute-configuring-migrations.html>`_
    to move instances from the Compute nodes
    you are going to redeploy.
 
@@ -47,5 +47,3 @@ you will have to manually apply any configuration changes you made
 and reinstall the software that was running on the node
 or restore the system from the backup you made
 before redeploying the node.
-
-

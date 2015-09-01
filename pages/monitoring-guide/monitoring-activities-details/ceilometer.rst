@@ -72,7 +72,8 @@ replaced by a single process named *ceilometer-polling*.
 .. note::
    Since several storage backends can be used by Ceilometer, the
    monitoring of these backends is not addressed in this document.
-   See `Ceilometer backends list <http://docs.openstack.org/admin-guide-cloud/content/section_telemetry-supported-dbs.html>`_.
+   See `Ceilometer backends list <http://http://docs.openstack.org/
+   admin-guide-cloud/telemetry-system-architecture.html#supported-databases>`_.
 
 |
 

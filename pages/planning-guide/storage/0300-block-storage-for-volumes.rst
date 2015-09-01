@@ -59,7 +59,7 @@ for the Cinder storage backend include:
   copy-on-write cloning of Glance images into bootable Ceph volumes.
 
 * Ceph supports `live migration
-  <http://docs.openstack.org/admin-guide-cloud/content/section_live-migration-usage.html>`_
+  <http://docs.openstack.org/admin-guide-cloud/compute-live-migration-usage.html>`_
   of VMs with ephemeral drives
   whereas LVM only supports live migration of volume backed VMs.
 

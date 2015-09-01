@@ -64,7 +64,7 @@ for the Glance image server include:
   must be copied to separate Glance, Cinder, and Nova locations.
 
 * Ceph supports `live migration
-  <http://docs.openstack.org/admin-guide-cloud/content/section_live-migration-usage.html>`_
+  <http://docs.openstack.org/admin-guide-cloud/compute-live-migration-usage.html>`_
   of VMs with ephemeral drives
   whereas Cinder with LVM backend
   only supports live migration of volume backed VMs.
@@ -89,5 +89,3 @@ for the Glance image server include:
   When using Ceph, it is extremely important
   that you configure :ref:`NTP<ntp-ug>`
   or some other time synchronization facility for your environment.
-
-
