@@ -171,6 +171,19 @@ On the Fuel Master node,
 */var/log/remote* is a symbolic link to the
 */var/log/docker-logs/remote* directory.
 
+Logging events from Fuel OCF agents are collected both locally
+in /var/log/daemon.log and remotely. The naming convention for
+a remote log file is the following::
+
+  ocf-<AGENT-NAME>.log
+
+For example:
+
+  ocf-foo-agent.log
+
+.. note:: RabbitMQ logs its OCF events to the lrmd.log file
+          to keep it backwards compatible.
+
 .. _atop-ops:
 
 atop logs
