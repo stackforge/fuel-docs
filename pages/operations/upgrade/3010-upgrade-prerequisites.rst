@@ -12,7 +12,7 @@ This section describes prerequisites and gives a list of commands used
 to check if the requirements are met.
 
 Versions of Fuel installer and environment
-__________________________________________
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 First, you need to check the versions of Fuel installer and the
 environment you've picked for the upgrade. Version of Fuel must be
@@ -20,7 +20,7 @@ equal to 7.0. Version of environment must be equal to 6.1. You
 can check versions using the Fuel Web UI or CLI client to Fuel API.
 
 Configuration of environment
-____________________________
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The configuration of the environment picked for the upgrade must
 comply to the architecture constraints for the upgrade procedure.
@@ -28,7 +28,7 @@ You can check the applicability of the procedure to your configuration
 via Fuel Web UI.
 
 Check Upgrade Prerequisites
-___________________________
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 *Pick environment to upgrade*
 

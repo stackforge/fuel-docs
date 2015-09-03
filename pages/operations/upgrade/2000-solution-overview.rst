@@ -48,7 +48,7 @@ explains the specifics of the deployment of such a 'shadow' environment,
 also referred to as Upgrade Seed environment in this section.
 
 Clone configuration of 6.1 environment
-________________________________________
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The first step in the upgrade procedure is to install a new 7.0 Upgrade
 Seed environment. The settings and attributes of the Seed environment
@@ -110,7 +110,7 @@ This ensures that the Controller has no physical connection to Management
 and Public network.
 
 Using Fuel for isolated deployment
-__________________________________
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Fuel is responsible for the assignment of IP addresses to logical
 interfaces in the Management, Public and other types of networks.
@@ -132,7 +132,7 @@ The exact commands to create an isolated Upgrade Seed environment are
 listed in the :ref:`Upgrade Script <upg_script>` chapter.
 
 Initial state of Ceph cluster
-_____________________________
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 According to the upgrade scenario, Ceph cluster must be installed in
 a way that allows for replacing the original Monitors of the 6.1
@@ -228,7 +228,7 @@ disconnected from all networks except Admin. The sections that follow
 explain what happens and why at every stage of the upgrade process.
 
 Start OpenStack services on 7.0 Controller
-__________________________________________
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 As part of Maintenance mode, OpenStack component services were shut
 down on 7.0 CIC before upgrading the database. These services include
@@ -243,7 +243,7 @@ take longer than starting all other services, so check it carefully
 before you proceed with the upgrade.
 
 Delete ports on 6.1 Controllers
-_________________________________
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Before 7.0 CIC can take over the virtual network addresses in the
 upgraded environment, you need to disconnect 6.1 CICs to release
@@ -254,7 +254,7 @@ This procedure is automated by the upgrade script and executed as part
 of the ``upgrade-cics`` subcommand.
 
 Connect 7.0 Controller
-______________________
+^^^^^^^^^^^^^^^^^^^^^^
 
 After 6.1 CICs are disconnected from all networks in the environment,
 7.0 CIC can take over their former VIP addresses. The take-over
@@ -324,7 +324,7 @@ partitions or disks. These patches are applied automatically by the
 Upgrade Script.
 
 Disable rebalance
-_________________
+^^^^^^^^^^^^^^^^^
 
 By default, Ceph initiates rebalance of data when OSD node goes down.
 Rebalancing means that the data of replicas is moved between the

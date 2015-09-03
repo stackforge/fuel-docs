@@ -11,7 +11,7 @@ Seed Controllers and swaps the Controllers connections to the
 Management and External networks.
 
 Maintenance mode
-________________
+^^^^^^^^^^^^^^^^
 
 To prevent the loss of data in OpenStack state database, API
 interaction with the environment must be disabled. This mode
@@ -30,7 +30,7 @@ usual.
     your users in advance.
 
 Database migration
-__________________
+^^^^^^^^^^^^^^^^^^
 
 Before the databases could be upgraded, all OpenStack services on
 7.0 Controller must be stopped to prevent corruption of the metadata.
@@ -50,7 +50,7 @@ start upgrading the state databases of OpenStack services:
     octane upgrade-db ${ORIG_ID} ${SEED_ID}
 
 Upgrade Ceph cluster
-____________________
+^^^^^^^^^^^^^^^^^^^^
 
 To replace Ceph Monitors on the same IP addresses, the upgrade script
 must preserve the cluster's identity and auth parameters. It copies the
@@ -65,7 +65,7 @@ cluster:
     octane upgrade-ceph ${ORIG_ID} ${SEED_ID}
 
 Upgrade CICs
-____________
+^^^^^^^^^^^^
 
 The following section describes the procedure for replacing Controllers
 from 6.1 environment with the Controllers from 7.0 environment
@@ -83,7 +83,7 @@ to transparently switch from the old to the upgraded control plane
 without the need to reconfigure and renumber every service.
 
 Commands to switch the Control Plane
-____________________________________
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Run the following command to switch from 6.1 to 7.0 Control Plane:
 

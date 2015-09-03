@@ -14,8 +14,8 @@ You do not need any new hardware for the upgrade.
 
 .. warning::
 
-    During the upgrade it virtual machines and other resources might experience
-    temporary network disconnects. Schedule the upgrade during maintenance
+    During the upgrade, virtual machines and other resources might experience
+    temporary network disconnects. Schedule the upgrade during a maintenance
     window.
 
 Upgrade Scenario
@@ -35,7 +35,7 @@ below in more details:
   <db-backup-ops>` for the whole duration of the upgrade procedure to
   prevent user data loss and/or corruption.
 * Copy the state databases of all the upgradeable OpenStack components
-  to the new Controller and upgrade these wuth the standard
+  to the new Controller and upgrade these with the standard
   ‘database migration’ feature of OpenStack.
 * Reconfigure the Ceph cluster in such a way that the Monitors on the
   new 7.0 CICs replace the Monitors of the 6.1 environment, retaining
@@ -70,7 +70,7 @@ has certain prerequisites and dependencies. You need to verify if your
 installation of Mirantis OpenStack meets these requirements.
 
 Fuel installer
-______________
+^^^^^^^^^^^^^^
 
 Mirantis OpenStack 6.1 environment must be deployed and managed by
 Fuel installer to be upgradeable. If you installed your environment
@@ -89,7 +89,7 @@ for the detailed description of which components are modified and why.
 .. _architecture-constraints:
 
 Architecture constraints
-________________________
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 Make sure that your Mirantis OpenStack 6.1 environment meets
 the following architecture constraints. Otherwise, these instructions
@@ -112,7 +112,7 @@ will not work for you:
 +----------------------------------------------------+------------------+
 
 Fuel upgrade to 7.0
-___________________
+^^^^^^^^^^^^^^^^^^^
 
 In this guide we assume that the user upgrades Fuel installer from
 version 6.1 to 7.0. The upgrade of Fuel installer is a standard
@@ -120,7 +120,7 @@ feature of the system. Upgraded Fuel retains the ability to manage
 6.1 environments, which is leveraged by the environment upgrade solution.
 
 Additional hardware
-___________________
+^^^^^^^^^^^^^^^^^^^
 
 The upgrade strategy requires installing 7.0 environment that will
 result in an OpenStack cluster along with the original environment.

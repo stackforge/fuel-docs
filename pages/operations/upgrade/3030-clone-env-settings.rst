@@ -12,7 +12,7 @@ configurations, like credentials of the service users, are also copied
 from the original environment wherever possible.
 
 Environment clone command
-_________________________
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Run the following command to create Upgrade Seed environment:
 

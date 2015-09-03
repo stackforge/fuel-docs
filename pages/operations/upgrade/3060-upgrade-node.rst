@@ -25,7 +25,7 @@ describes these common steps to upgrade a node and how to use the
 Upgrade Script to upgrade a node with any of the supported roles.
 
 Prepare Ceph OSD node to upgrade
-________________________________
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Preparations for the upgrade of Ceph OSD node include steps to minimize
 data transfers inside the Ceph cluster during the upgrade. They also
@@ -39,7 +39,7 @@ rebalance must be turned off. We use the standard Ceph flag ``noout``
 to disable the rebalance on a node outage.
 
 Prepare Compute node to upgrade
-_______________________________
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Compute node runs virtual machines in hypervisor processes.
 To satisfy the requirement to minimize the downtime of virtual
@@ -61,7 +61,7 @@ that host. This does not affect the ability to migrate VMs from that
 host.
 
 Reassign node to Seed environment
-_________________________________
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 There is an ``/api/cluster/<:id>/upgrade`` extension to the Fuel API
 that allows moving a node from an environment the its Upgrade Seed. So
@@ -72,7 +72,7 @@ Note that with this extension the reassigned node will not change its
 ID or host name.
 
 Verify node upgrade
-___________________
+^^^^^^^^^^^^^^^^^^^
 
 After the successful installation you need to make sure that the node
 is connected to CICs properly, according to its role. Ceph OSD node
@@ -81,7 +81,7 @@ the Nova controller services. Below in the list of commands you will
 find how to check these requirements.
 
 Node Upgrade command
-____________________
+^^^^^^^^^^^^^^^^^^^^
 
 Run the following command to upgrade a node identified by the ``NODE_ID``
 parameter:

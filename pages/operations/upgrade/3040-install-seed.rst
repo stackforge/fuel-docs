@@ -14,7 +14,7 @@ Fuel to install an operating system and configure disks on nodes.
 that affects all CIC nodes, and deploy OpenStack platform onto them.
 
 Modified deployment settings
-____________________________
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To deploy a 7.0 CIC node properly, we need to prepare deployment
 information to make Fuel configure nodes and OpenStack services
@@ -40,9 +40,9 @@ of the same cache directory. You can use them to check that the
 deployment is properly configured.
 
 Install Controller commands
-___________________________
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The upgrade automation script allows upgrading a contorller that
+The upgrade automation script allows upgrading a controller that
 exists in the original 6.1 environment. Select which controller
 you would like to upgrade and run the following command. Replace
 ``<NODE-ID>`` with the actual ID of 6.1 Controller you'd like to

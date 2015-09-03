@@ -37,7 +37,7 @@ to ``fuelclient`` CLI command that is used to call Upgrade extension in the
 Fuel API.
 
 Commands uninstall components
-_____________________________
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Run the following command to revert the changes made to the source
 code and configuration of components of the Fuel installer::

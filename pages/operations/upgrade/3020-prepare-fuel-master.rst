@@ -17,14 +17,14 @@ Explanations of specific patches and their purpose will be given below
 in the sections dedicated to the steps that make use of those patches:
 
 Install the Upgrade Script
-__________________________
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The upgrade logic is automated in the script named ``octane``.
 You need to download and install this script from RPM repository
 on your Fuel Master node.
 
 Prepare environment variables
-_____________________________
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 There are several variables that need to be set before you start
 the upgrade procedure. They will be used throughout the whole process.
@@ -34,7 +34,7 @@ for the upgrade.
 .. _upgrade-patch-commands:
 
 Commands To Prepare The Fuel Master Node
-________________________________________
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Install the ``octane`` application using ``yum`` package manager:
 
