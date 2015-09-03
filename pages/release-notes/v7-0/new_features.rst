@@ -40,6 +40,13 @@ OpenStack on Ubuntu.
    | `Ceph 0.80.9 Firefly`_
    | `MySQL 5.6.23`_ (Ubuntu)"
 
+.. note:: Deployment of Mirantis OpenStack 7.0 onto CentOS for host
+          operating system is not supported due to incompatibility
+          between CentOS 6.5 and OpenStack Kilo.
+          Mirantis is actively working on updating support for
+          CentOS-based deployments.
+          Support for CentOS 7.0 is currently targeted for the
+          upcoming Mirantis OpenStack 8.0 Liberty release.
 
 .. Links for OpenStack integrated projects:
 .. _`Kilo release 2015.1.0`: https://wiki.openstack.org/wiki/ReleaseNotes/Kilo
@@ -87,6 +94,3 @@ New Features Included in Mirantis OpenStack 7.0
    For information about Issues and Blueprints for Mirantis OpenStack 7.0,
    see the `Fuel for OpenStack 7.0 Milestone <https://launchpad.net/fuel/7.0.x>`_
    page.
-
-
-
