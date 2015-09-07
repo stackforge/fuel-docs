@@ -30,6 +30,27 @@ Deployment flow:
 #. Boot another bare metal machine via Fuel PXE.
 #. Enable the **Advanced** feature group in Fuel.
 #. Create a new environment in Fuel.
+#. Optionally, modify the libvirt VM template on the Fuel Master node:
+   ``/etc/puppet/modules/osnailyfacter/templates/vm_libvirt.erb``
+   The default template supports tunneling segmentation.
+   If you use VLAN segmentation, change the bridge name 'br-mesh'
+   to 'br-prv' and set type to 'openvswitch'.
+   For example::
+
+     <interface type='bridge'>
+        <source bridge='br-prv'/>
+        <virtualport type='openvswitch'/>
+        <model type='virtio'/>
+     </interface>
+
+#. If you use tagged VLANs (VLAN segmentation or 'Use VLAN tagging' in
+   the "Networks" tab), you should upload a network template. For details
+   see :ref:`templates-networking-ops`.
+   See also network template samples for reduced footprint:
+  
+   * `VLAN segmentation <https://github.com/stackforge/fuel-docs/blob/master/examples/network-template-tunneling-with-tagging.yaml>`_
+   * `VLAN tagging <https://github.com/stackforge/fuel-docs/blob/master/examples/network-template-vlan.yaml>`_
+
 #. Assign the "virt" role to the discovered node.
 #. Upload the virtual machine configuration to Fuel.
 #. Provision the bare metal node with the "virt" role. This
