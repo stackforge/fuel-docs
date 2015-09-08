@@ -37,6 +37,11 @@ Known issues
   cloud-init failure. It happens because users' keypairs and the rest
   of configuration data may not be set correctly. See `LP1406286`_.
 
+* Now you can access a VM via a floating IP from an external
+  network. VMs could not access the Internet due to an improper
+  configuration of network interfaces on Compute nodes.
+  See `LP1492138`_.
+
 .. Links
 .. _`LP1383674`: https://bugs.launchpad.net/neutron/+bug/1383674
 .. _`LP1483253`: https://bugs.launchpad.net/fuel/+bug/1483253
@@ -44,3 +49,4 @@ Known issues
 .. _`LP1464817`: https://bugs.launchpad.net/fuel/+bug/1464817
 .. _`LP1458633`: https://bugs.launchpad.net/mos/7.0.x/+bug/1458633
 .. _`LP1406286`: https://bugs.launchpad.net/mos/7.0.x/+bug/1406286
+.. _`LP1492138`: https://bugs.launchpad.net/fuel/+bug/1492138
