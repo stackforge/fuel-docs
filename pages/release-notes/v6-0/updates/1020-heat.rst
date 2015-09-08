@@ -23,6 +23,12 @@ Resolved Issues
   is truncated or modified in any other way before it is passed to
   Keystone. See `LP1481197`_.
 
+* If evaluation period is shorter than the instance starting
+  time and ``repeat_actions`` is set to True, extra instances are
+  created even when the cooldown is long enough. The fix prevents
+  the creation of undesirable extra instances. See `LP1474332`_.
+
 .. _`LP1446678`: https://bugs.launchpad.net/mos/+bug/1446678
 .. _`LP1404983`: https://bugs.launchpad.net/mos/+bug/1404983
 .. _`LP1481197`: https://bugs.launchpad.net/mos/+bug/1481197
+.. _`LP1474332`: https://bugs.launchpad.net/mos/+bug/1474332
