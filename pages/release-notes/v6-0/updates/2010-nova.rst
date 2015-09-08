@@ -84,6 +84,32 @@ Resolved Issues
   information to the database. This was fixed by saving information
   to the database before the volume attachment. See `LP1457041`_.
 
+* If you resize an existing instance to a larger flavor and later
+  delete it, the ``scp`` and ``rsync`` processes continue running until
+  they finish transferring the file data.
+  If during the ``scp`` and ``rsync`` processes execution the user
+  repeats that operation, it may lead to the disk space reduction on
+  the Compute nodes, as well as may impact the management network.
+  A new module *instancejobtracker* added to the libvirt driver
+  eliminates this issue. The module adds, removes, or terminates the
+  processes running against particular instances. Therefore, now the
+  ``scp`` and ``rsync`` processes are terminated before you delete an
+  instance. See `LP1466077`_.
+
+* If Nova boots a VM with a pre-created Neutron port, this port will
+  be deleted once you remove the VM. The fix disassociates the
+  existing port from the instance instead of deleting it when you
+  remove a VM. See `LP1486727`_.
+
+* When nova-compute fails over, it creates a new folder with
+  cached images and downloads them again. Typically, this happens when
+  you use nova-compute with VMware vCenter and set the
+  :option:`remove_unused_base_images` option. This may result in a
+  longer VM booting time.
+  The fix introduces a new configuration option :option:`cache_prefix`
+  that allows using a shared folder to speed up the VM booting time.
+  See `LP1482121`_.
+
 .. Links
 .. _`LP1420273`: https://bugs.launchpad.net/mos/+bug/1420273
 .. _`LP1427892`: https://bugs.launchpad.net/mos/+bug/1427892
@@ -100,3 +126,6 @@ Resolved Issues
 .. _`LP1454174`: https://bugs.launchpad.net/mos/+bug/1454174
 .. _`LP1452294`: https://bugs.launchpad.net/mos/+bug/1452294
 .. _`LP1457041`: https://bugs.launchpad.net/mos/+bug/1457041
+.. _`LP1466077`: https://bugs.launchpad.net/mos/+bug/1466077
+.. _`LP1486727`: https://bugs.launchpad.net/mos/+bug/1486727
+.. _`LP1482121`: https://bugs.launchpad.net/mos/+bug/1482121
