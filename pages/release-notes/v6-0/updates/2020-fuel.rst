@@ -14,11 +14,10 @@ Known Issues
   reinstall it. In case of Maintenance Updates this leads to a failed
   deployment. See `LP1470650`_.
 
-  Workaround:
+  Workaround is to remove `centos/ubuntu-versions.yaml` from
+  `/etc/puppet/manifests`::
 
-  #. Remove `centos/ubuntu-versions.yaml` from `/etc/puppet/manifests`::
-
-       mv /etc/puppet/manifests/*.yaml ~/
+    mv /etc/puppet/manifests/*.yaml ~/
 
 Resolved Issues
 +++++++++++++++
@@ -38,5 +37,10 @@ Resolved Issues
 
   Run the above commands on all the cluster servers.
 
+* RabbitMQ expiration policies were added to the OCF script to fix
+  the issue with a growing number of RabbitMQ queues during an
+  unexpected shutdown of controllers. See `LP1429124`_.
+
 .. _`LP1470650`: https://bugs.launchpad.net/fuel/+bug/1470650
 .. _`LP1465771`: https://bugs.launchpad.net/fuel/+bug/1465771
+.. _`LP1429124`: https://bugs.launchpad.net/fuel/+bug/1429124
