@@ -14,5 +14,10 @@ Resolved issues
   restarts, it automatically re-creates the network flows and drops
   only the old ones. See `LP1383674`_.
 
+* Fixed the issue with accesing floating IPs of VMs from the external
+  network. VMs could not access the Internet due to improper configuration
+  of network interfaces on Compute nodes. See `LP1492138`_.
+
 .. Links
 .. _`LP1383674`: https://bugs.launchpad.net/neutron/+bug/1383674
+.. _`LP1492138`: https://bugs.launchpad.net/fuel/+bug/1492138
