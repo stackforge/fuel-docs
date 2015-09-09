@@ -117,3 +117,51 @@ see :ref:`manage-openstack-services-op`.
 For example, for Nova Compute component, you may want to restart all
 instances of the Nova services on the Controllers and Compute nodes affected
 by the AMQP issue.
+
+
+How to make RabbitMQ OCF script tolerate rabbitmqctl timeouts
+-------------------------------------------------------------
+
+If on a node where RabbitMQ is deployed other processes consume
+a significant part of CPU, RabbitMQ starts responding
+slow to queries by ``rabbitmqctl`` utility. The utility is
+used by the OCF script to monitor the state of the RabbitMQ.
+When the utility fails to return in a pre-defined period of time,
+the OCF script considers the RabbitMQ being down and restarts it,
+which might lead to a several minutes cloud downtime. Such restarts
+are undesirable, as they cause a downtime without any benefit.
+To mitigate the issue, the OCF script can be told to tolerate
+certain amount of ``rabbitmqctl`` timeouts in a row using the
+following command:
+
+.. code-block: console
+
+       crm_resource --resource p_rabbitmq-server --set-parameter \
+           max_rabbitmqctl_timeouts --parameter-value N
+
+Here N should be replaced with the number of timeouts. For instance,
+if it is set to `3`, the OCF script will tolerate two rabbitmqctl
+timeouts in a row, but fail if the third one occurs.
+
+By default, the parameter is set to `1`, which means ``rabbitmqctl``
+timeout is not tolerated at all. The downside of increasing the
+parameter is a delay in restarting RabbitMQ when it is down.
+For example, if a real issue occurs, which causes ``rabbitmqctl``
+timeout, the OCF script will detect that only after N monitor runs
+and then restart RabbitMQ, which might fix the issue.
+
+To understand that RabbitMQ's restart was caused by a ``rabbitmqctl``
+timeout you should examine `lrmd.log` of the corresponding Controller
+on the Fuel Master node in `/var/log/docker-logs/remote/ directory`
+for the presence of the following lines:
+
+.. code-block: log 
+
+    "the invoked command exited 137: /usr/sbin/rabbitmqctl list_channels ..."
+
+This indicates a rabbitmqctl timeout. The next line will explain if it
+caused restart or not. For example:
+
+.. code-block: log 
+
+     "rabbitmqctl timed out 2 of max. 3 time(s) in a row. Doing nothing for now."
