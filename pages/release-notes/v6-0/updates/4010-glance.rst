@@ -48,11 +48,17 @@ Resolved Issues
   after the response is sent to a client, it does not close the
   client's socket connection. Because of this problem, the green
   thread is not released back to the pool. The fix introduces new
-  configuration options: ``http_keepalive`` and ``client_socket_timeout``.
-  See `LP1463522`_.
+  configuration options: ``http_keepalive`` and
+  ``client_socket_timeout``. See `LP1463522`_.
+
+* Previously, the errors in ``glance-registry`` were handled
+  incorrectly; so ``glance-registry`` went down with an error saying
+  that the initial error was not in unicode. The fix correctly encodes
+  the exception error messages to the unicode strings. See `LP1474015`_.
 
 .. _`LP1411704`: https://bugs.launchpad.net/mos/6.0-updates/+bug/1411704
 .. _`LP1401118`: https://bugs.launchpad.net/mos/+bug/1401118
 .. _`LP1389380`: https://bugs.launchpad.net/mos/+bug/1389380
 .. _`LP1436034`: https://bugs.launchpad.net/mos/+bug/1436034
 .. _`LP1463522`: https://bugs.launchpad.net/mos/+bug/1463522
+.. _`LP1474015`: https://bugs.launchpad.net/mos/+bug/1474015
