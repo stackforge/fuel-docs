@@ -27,9 +27,17 @@ Resolved Issues
   with cluster. The patch fixes possible deadlock in Cinder threads
   during RBD calls. See `LP1459781`_.
 
+* Now the volume attribute content in the Nimble driver is
+  properly checked in the ``display_name`` and ``display_description``
+  arguments. If these arguments are not empty, they are translated to
+  a volume backend description. The patch also modifies other places
+  where returning an empty string makes sense rather than a ``None``
+  value, as well as a ``return`` value checking. See `LP1481681`_.
+
 .. Links:
 .. _`LP1422350`: https://bugs.launchpad.net/mos/+bug/1422350
 .. _`LP1444546`: https://bugs.launchpad.net/mos/+bug/1444546
 .. _`LP1457055`: https://bugs.launchpad.net/mos/+bug/1457055
 .. _`LP1465333`: https://bugs.launchpad.net/mos/+bug/1465333
 .. _`LP1459781`: https://bugs.launchpad.net/mos/+bug/1459781
+.. _`LP1481681`: https://bugs.launchpad.net/mos/+bug/1481681
