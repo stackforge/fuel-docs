@@ -24,11 +24,18 @@ Resolved Issues
   and sets limit to 20 retries within 5 seconds as a reasonable value
   for such kind of services. See `LP1466101`_.
 
-.. note::
-      Due to a conflict between configuration files, replace the old
-      `swift-container-sync.conf` file in the `/etc/init` with the
-      `swift-container-sync.conf.dpkg-dist` file which was created
-      during the upgrade.
+  .. note::
+     Due to a conflict between configuration files, replace the old
+     `swift-container-sync.conf` file in the `/etc/init` with the
+     `swift-container-sync.conf.dpkg-dist` file which was created
+     during the upgrade.
+
+* If a malicious user has a ``temp_url`` key authorized for a *PUT*
+  access in a Swift account (tenant), they can retrieve different objects
+  in the same Swift account (CVE-2015-5223). All Swift setups are
+  affected.
+  The fix prevents allowing the *PUT* method in temporary URLs to
+  create pointers to other data.
 
 .. Links
 .. _`LP1442041`: https://bugs.launchpad.net/mos/+bug/1442041
