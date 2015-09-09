@@ -33,8 +33,14 @@ Resolved Issues
   may result in a privilege escalation. To fix this, the metadata is
   escaped and then is interpreted as JSON. See `LP1468744`_.
 
+* The CVE-2014-8124 contains a regression that leads users to log in
+  a second time after being logged out due to an inactivity. A
+  ``last_activity`` timestamp is added to the session to fix this
+  regression. See `LP1481494`_.
+
 .. Links
 .. _`LP1399271`: https://bugs.launchpad.net/mos/6.0-updates/+bug/1399271
 .. _`LP1446213`: https://bugs.launchpad.net/mos/+bug/1446213
 .. _`LP1462095`: https://bugs.launchpad.net/mos/+bug/1462095
 .. _`LP1468744`: https://bugs.launchpad.net/mos/+bug/1468744
+.. _`LP1481494`: https://bugs.launchpad.net/mos/+bug/1481494
