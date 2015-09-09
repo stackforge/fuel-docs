@@ -61,6 +61,14 @@ the Mirantis OpenStack 6.1 deployments.
 
 -----
 
+.. include:: /pages/maintenance-updates/v61/1486907-mu2-openstack.rst
+
+-----
+
+.. include:: /pages/maintenance-updates/v61/1467671-node-fail-reboot.rst
+
+-----
+
 Proposed updates
 ****************
 
