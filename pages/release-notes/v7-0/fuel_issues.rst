@@ -8,4 +8,5 @@ Fuel Resolved and Known Issues
    For example:
 
 .. include:: /pages/release-notes/v7-0/fuel_issues/skeleton.rst
+.. include:: /pages/release-notes/v7-0/fuel_issues/hardware_support.rst
 
