@@ -31,6 +31,9 @@ There are no urgent security updates available at the moment.
 Published updates
 -----------------
 
+Maintenance Update 1:
+^^^^^^^^^^^^^^^^^^^^^
+
 * :ref:`#1463802 <mos61mu-1463802>` RPC clients cannot find a reply
   queue after the last RabbitMQ server restarts in the cluster
 
@@ -46,6 +49,13 @@ Published updates
 * :ref:`#1469149 <mos61mu-1469149>` backend_argument containing a
   password leaked in logs
 
+Maintenance Update 2:
+^^^^^^^^^^^^^^^^^^^^^
+
+* :ref:`#1486907 <mos61mu-1486907>` Cumulative OpenStack update (7 fixes)
+
+* :ref:`#1467671 <mos61mu-1467671>` Node with Broadcast NetXtreme II NIC
+  failed to reboot
 
 Proposed updates
 ----------------
