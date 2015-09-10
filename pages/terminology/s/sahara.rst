@@ -6,7 +6,7 @@ Sahara (formerly known as "Savanna")
 Sahara is the OpenStack service
 that provisions an Apache Hadoop cluster on top of OpenStack.
 Sahara currently supports Vanilla Apache Hadoop, Hortonworks Data Platform
-(HDP), Cloudera Hadoop Distribution (CDH) and Apache Spark.
+(HDP), Cloudera Hadoop Distribution (CDH), Apache Spark and MapR.
 
 To enable Sahara in your OpenStack environment
 that is deployed using Fuel,
