@@ -48,8 +48,8 @@ Deployment flow:
    see :ref:`templates-networking-ops`.
    See also network template samples for reduced footprint:
 
-   * `VLAN segmentation <https://github.com/stackforge/fuel-docs/blob/master/examples/network-template-tunneling-with-tagging.yaml>`_
-   * `VLAN tagging <https://github.com/stackforge/fuel-docs/blob/master/examples/network-template-vlan.yaml>`_
+   * `VLAN segmentation <https://raw.githubusercontent.com/stackforge/fuel-docs/master/examples/network-template-tunneling-with-tagging.yaml>`_
+   * `VLAN tagging <https://raw.githubusercontent.com/stackforge/fuel-docs/master/examples/network-template-vlan.yaml>`_
 
 #. Assign the "virt" role to the discovered node.
 #. Upload the virtual machine configuration to Fuel.
