@@ -15,6 +15,7 @@ It is vendor-agnostic and currently supports the following distributions:
 - Hortonworks Data Platform (HDP)
 - Cloudera Hadoop Distribution (CDH)
 - Apache Spark
+- MapR
 
 Sahara can install Hadoop clusters on demand.
 The user must populate several parameters
@@ -23,7 +24,7 @@ and Sahara will deploy this cluster in a few minutes.
 It can also scale the cluster by adding or removing nodes as needed.
 
 - For Sahara usage guidelines, read the User Guide section of the
-  `Sahara documentation <http://sahara.readthedocs.org/en/stable-juno/>`_.
+  `Sahara documentation <http://sahara.readthedocs.org/en/stable-kilo/>`_.
 
 - The list of prebuilt images is available here: :ref:`sahara-images-ops`.
   The images are usually
