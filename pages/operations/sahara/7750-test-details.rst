@@ -25,7 +25,7 @@ Target component
 
    * Specify the ``User Name`` value for this OS.
 
-   * Set the following values: ``Plugin=vanilla``, ``Version=2.4.1``.
+   * Set the following values: ``Plugin=vanilla``, ``Version=2.6.0``.
 
    * Click `Add plugin tags` and `Done`.
 
@@ -36,7 +36,7 @@ Target component
    * Click `Create Template`.
 
    * In the `Create Node Group template` dialog, set the following values:
-     ``Plugin name=Vanilla Apache Hadoop``, ``Hadoop version=2.4.1``.
+     ``Plugin name=Vanilla Apache Hadoop``, ``Hadoop version=2.6.0``.
      Click `Create` to proceed.
 
    * In the second `Create Node Group template` dialog, set the following values:
@@ -54,7 +54,7 @@ Target component
    * Click `Create Template`.
 
    * In the `Create Node Group template` dialog, set the following values:
-     ``Plugin name=Vanilla Apache Hadoop`` and ``Hadoop version=2.4.1``.
+     ``Plugin name=Vanilla Apache Hadoop`` and ``Hadoop version=2.6.0``.
      Click `Create` to proceed.
 
    * In the second `Create Node Group template` dialog, set the following values:
@@ -71,7 +71,7 @@ Target component
    * Click `Create Template`.
 
    * In the `Create Cluster Template` dialog, set the following values:
-     ``Plugin name=Vanilla Apache Hadoop``, ``Hadoop version=2.4.1``.
+     ``Plugin name=Vanilla Apache Hadoop``, ``Hadoop version=2.6.0``.
      Click `Create` to proceed.
 
    * In the second `Create Cluster Template` dialog, set the following values:
@@ -91,7 +91,7 @@ Target component
    * Click `Launch Cluster`.
 
    * In the `Launch Cluster` dialog, set the following values:
-     ``Plugin name=Vanilla Apache Hadoop``, ``Hadoop version=2.4.1``.
+     ``Plugin name=Vanilla Apache Hadoop``, ``Hadoop version=2.6.0``.
      Click `Create` to proceed.
 
    * In the second `Launch Cluster` dialog, set ``Cluster Name=vanilla2-cluster``.
@@ -118,4 +118,4 @@ Target component
 
 
 For more information, see
-`Sahara documentation <http://sahara.readthedocs.org/en/stable-juno/>`_.
+`Sahara documentation <http://sahara.readthedocs.org/en/stable-kilo/>`_.
