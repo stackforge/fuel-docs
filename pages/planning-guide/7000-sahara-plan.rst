@@ -7,7 +7,7 @@ Planning a Sahara Deployment
 :ref:`Sahara<sahara-term>` enables users
 to easily provision and manage Apache Hadoop clusters
 in an OpenStack environment.
-Sahara works with either Release 1.x or 2.x of Hadoop.
+Sahara supports only 2.x Release of Hadoop.
 
 The Sahara control processes run on the Controller node.
 The entire Hadoop cluster runs in VMs
@@ -17,16 +17,15 @@ A typical set-up is:
 - One VM that runs management and monitoring processes (Apache Ambari,
   Cloudera Manager, Ganglia, Nagios)
 - One VM that serves as the Hadoop master node
-  to run JobTracker (ResourceManager for Hadoop Release 2.x) and NameNode.
+  to run ResourceManager and NameNode.
 - Many VMs that serve as Hadoop worker nodes,
-  each of which runs TaskTracker (NodeManager for Hadoop Release 2.x)
-  and DataNodes.
+  each of which runs NodeManager and DataNodes.
 
 You must have exactly one instance of each management and master processes
 running in the environment. Other than that,
 you are free to use other configurations.
-For example, you can run the TaskTracker/NodeManager and DataNodes
-in the same VM that runs JobTracker/ResourceManager and NameNode;
+For example, you can run the NodeManager and DataNodes
+in the same VM that runs ResourceManager and NameNode;
 such a configuration may not produce performance levels
 that are acceptable for a production environment
 but it works for evaluation and demonstration purposes.
@@ -34,6 +33,10 @@ You could also run DataNodes and TaskTrackers in separate VMs.
 
 Sahara can use either :ref:`swift-object-storage-term` or :ref:`ceph-term`
 for object storage.
+
+Note, if Swift public URL configured with SSL, Sahara will work only with
+prepared :ref:`images<sahara-images-ops>`.
+
 Special steps are required to implement data locality for Swift;
 see `Data-locality <http://docs.openstack.org/developer/sahara/userdoc/features.html#data-locality>`_
 for details.
@@ -63,6 +66,23 @@ is hidden in the OpenStack Dashboard.
 
 In either case, Sahara assigns a floating IP to each VM it spawns
 so be sure to allocate enough floating IPs.
+
+Sometimes it is impossible to provide access to all nodes (because of limited
+number of floating IPs or security policies). In these cases access can be
+gained using other nodes of the cluster as proxy gateways. To enable this you
+should set **is_proxy_gateway** parameter to true for the node group you want
+to use as proxy. Sahara will communicate with all other cluster instances
+through the instances of this node group.
+
+Note, if **use_floating_ips** is set to true and the cluster contains a node
+group with **is_proxy_gateway=True**, the requirement to have
+**floating_ip_pool** specified is applied only to the proxy node group.
+Other instances will be accessed through proxy instances using the standard
+private network.
+
+Note, the Cloudera Hadoop plugin doesn't support access to the Cloudera manager
+through a proxy node. This means that for CDH clusters only nodes with
+the Cloudera manager can be designated as proxy gateway nodes.
 
 **Security Groups**
 
@@ -105,6 +125,51 @@ Sahara working poorly.
 **Communication between virtual machines**
 
 Be sure that communication between virtual machines is not blocked.
+
+**Default templates**
+
+Sahara bundles default templates that define simple clusters for the supported
+plugins. These templates are already added to the sahara database so you don't
+have to worry about their creation.
+
+There is an overview of the supported default templates for each plugin:
+
+For Vanilla Apache Hadoop 2.6.0:
+
+There are 2 node groups created for this plugin. First one is named
+vanilla-2-master and contains all management Hadoop components - NameNode,
+HistoryServer and ResourceManager. It also includes Oozie server required to
+run Hadoop jobs. Second one is named vanilla-2-worker and contains components
+required for data storage and processing - NodeManager and DataNode.
+
+The cluster template is also represented for this plugin. It's named vanilla-2
+and contains 1 master and 3 worker nodes.
+
+For Cloudera Hadoop Distribution (CDH) 5.4.0:
+
+There are 3 node groups created for this plugin. First one is named
+cdh-5-master and contains all management Hadoop components - NameNode,
+HistoryServer and ResourceManager. It also includes Oozie server required to
+run Hadoop jobs. Second one is named cdh-5-manager and contains Cloudera
+Management component that provides UI to manage Hadoop cluster. Third one is
+named cdh-5-worker and contains components required for data storage and
+processing - NodeManager and DataNode.
+
+The cluster template is also represented for this plugin. It's named cdh-5
+and contains 1 manager, 1 master and 3 worker nodes.
+
+For Hortonworks Data Platform (HDP) 2.2:
+
+There are also 2 node groups created for this plugin. First one named
+hdp-2-2-master and contains all management Hadoop components - Ambari,
+NameNode, MapReduce HistoryServer, ResourceManager, YARN Timeline Server,
+ZooKeeper. It also includes Oozie server required to run Hadoop jobs.
+Second one named hdp-2-2-worker and contains components required for data
+storage and processing - NodeManager and DataNode.
+
+The cluster template is also represented for this plugin. It's named hdp-2-2
+and contains 1 master and 4 worker nodes.
+
 
 For additional information about using Sahara to run
 Apache Hadoop, see the
