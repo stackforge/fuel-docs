@@ -19,6 +19,8 @@ Resolved Issues
 .. include:: /pages/release-notes/v7-0/fuel_issues/tenant_dhcp_verification_resolved.rst
 .. include:: /pages/release-notes/v7-0/fuel_issues/rabbitmq_murano_same_port_resolved.rst
 .. include:: /pages/release-notes/v7-0/fuel_issues/serial-console.rst
+.. include:: /pages/release-notes/v7-0/fuel_issues/fuel_install_resolved.rst
+.. include:: /pages/release-notes/v7-0/fuel_issues/hardware_support_resolved.rst
 
 Known Issues
 ------------
@@ -37,3 +39,4 @@ Known Issues
 .. include:: /pages/release-notes/v7-0/fuel_issues/upgrade_revert_issue.rst
 .. include:: /pages/release-notes/v7-0/fuel_issues/rabbitmq_node_restart.rst
 .. include:: /pages/release-notes/v7-0/fuel_issues/deprecation_warning_known.rst
+.. include:: /pages/release-notes/v7-0/fuel_issues/fuel_install_issue.rst
