@@ -1,8 +1,5 @@
 Neutron-related features
-------------------------
-
-Neutron features supported in 7.0
-+++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++
 
 * Neutron Distributed Virtual Router (DVR). Neutron DVR significantly
   increases performance and eliminates a single point of failure. For
@@ -10,3 +7,7 @@ Neutron features supported in 7.0
 
 * Networking options have been amended from VLAN and GRE to VLAN and
   tunneling. The default tunnel protocol has been changed to VXLAN.
+
+* Now, you can deploy Neutron with ``gre`` along with ``vxlan``
+  segmentation type. ``gre`` is still available in Fuel CLI as a usual
+  option, but it is deprecated.
