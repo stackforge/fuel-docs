@@ -9,4 +9,4 @@ Fuel Resolved and Known Issues
 
 .. include:: /pages/release-notes/v7-0/fuel_issues/skeleton.rst
 .. include:: /pages/release-notes/v7-0/fuel_issues/hardware_support.rst
-
+.. include:: /pages/release-notes/v7-0/fuel_issues/fuel_install.rst
