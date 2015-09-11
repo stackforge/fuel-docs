@@ -18,6 +18,8 @@ Resolved Issues
 .. include:: /pages/release-notes/v7-0/fuel_issues/redeploy_custom_ip_resolved.rst
 .. include:: /pages/release-notes/v7-0/fuel_issues/tenant_dhcp_verification_resolved.rst
 .. include:: /pages/release-notes/v7-0/fuel_issues/rabbitmq_murano_same_port_resolved.rst
+.. include:: /pages/release-notes/v7-0/fuel_issues/fuel_install_resolved.rst
+.. include:: /pages/release-notes/v7-0/fuel_issues/hardware_support_resolved.rst
 
 Known Issues
 ------------
@@ -34,3 +36,4 @@ Known Issues
 .. include:: /pages/release-notes/v7-0/fuel_issues/deployment_failure_issue.rst
 .. include:: /pages/release-notes/v7-0/fuel_issues/progress_bar_plugin_issue.rst
 .. include:: /pages/release-notes/v7-0/fuel_issues/upgrade_revert_issue.rst
+.. include:: /pages/release-notes/v7-0/fuel_issues/fuel_install_issue.rst
