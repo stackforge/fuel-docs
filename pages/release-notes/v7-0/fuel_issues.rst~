@@ -7,6 +7,7 @@ Fuel Resolved and Known Issues
 Resolved Issues
 +++++++++++++++
 
+<<<<<<< HEAD
 .. include:: /pages/release-notes/v7-0/fuel_issues/database_growth_resolved.rst
 .. include:: /pages/release-notes/v7-0/fuel_issues/ip_range_resolved.rst
 .. include:: /pages/release-notes/v7-0/fuel_issues/intel_x710_resolved.rst
@@ -18,8 +19,6 @@ Resolved Issues
 .. include:: /pages/release-notes/v7-0/fuel_issues/redeploy_custom_ip_resolved.rst
 .. include:: /pages/release-notes/v7-0/fuel_issues/tenant_dhcp_verification_resolved.rst
 .. include:: /pages/release-notes/v7-0/fuel_issues/rabbitmq_murano_same_port_resolved.rst
-.. include:: /pages/release-notes/v7-0/fuel_issues/hardware_support_resolved.rst
-.. include:: /pages/release-notes/v7-0/fuel_issues/fuel_install_resolved.rst
 
 Known Issues
 ++++++++++++
@@ -35,4 +34,8 @@ Known Issues
 .. include:: /pages/release-notes/v7-0/fuel_issues/disk_partitioning_issue.rst
 .. include:: /pages/release-notes/v7-0/fuel_issues/deployment_failure_issue.rst
 .. include:: /pages/release-notes/v7-0/fuel_issues/progress_bar_plugin_issue.rst
-.. include:: /pages/release-notes/v7-0/fuel_issues/fuel_install_issue.rst
+=======
+.. include:: /pages/release-notes/v7-0/fuel_issues/skeleton.rst
+.. include:: /pages/release-notes/v7-0/fuel_issues/hardware_support.rst
+.. include:: /pages/release-notes/v7-0/fuel_issues/fuel_install.rst
+>>>>>>> [RN 7.0]Fuel install&deploy issues

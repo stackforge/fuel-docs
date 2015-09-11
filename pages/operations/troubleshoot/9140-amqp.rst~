@@ -1,0 +1,167 @@
+.. index:: HowTo: Troubleshoot AMQP issues
+
+.. _tshoot-amqp-ops:
+
+How To Troubleshoot AMQP issues
+===============================
+
+AMQP is the heart of OpenStack. If something gets wrong with
+the messaging layer, normally an OpenStack application can tolerate
+this by issuing reconnects, reporting some requests as failed or
+retrying them. While this depends on the particular application
+and the underlying Oslo messaging library design, there are also some
+generic health checks and troubleshooting steps for operators to
+know and to do.
+
+Check if there is a problem in the Corosync/Pacemaker layer
+-----------------------------------------------------------
+
+Normally, failures of the RabbitMQ multistate resource are automatically
+fixed by Corosync and Pacemaker. But if a failure cannot be automatically fixed
+for some reason, the master_p_rabbitmq-server resource status will be considered "bad".
+The status is considered "good" when there exists a single master for the
+master_p_rabbitmq-server and the rest of the resource instances are reported
+as slaves. Note, that the command ``pcs status`` issued on all controllers
+should be enough to gather all the required information, see :ref:`crm-ops`.
+You can also try issuing an extended output with the crm tool alternative:
+
+::
+
+    crm_mon -fotAW -1
+
+If there are some RabbitMQ resource failures, they will
+be shown in the command output with the time stamps, so you can
+search for the events in the logs around that moment.
+
+.. note:: If there are split clusters of Corosync running, you should
+  first fix your Corosync cluster, because you cannot resolve issues with the
+  Pacemaker resources, including RabbitMQ cluster, when there is a
+  split brain in the Corosync cluster.
+
+How to recover
+++++++++++++++
+
+It is recommended to clean up and restart the master_p_rabbitmq-server
+Pacemaker resource, see :ref:`crm-ops`.
+
+.. note:: Restarting the RabbitMQ Pacemaker resource will introduce
+  a full downtime for the AMQP cluster and OpenStack applications.
+  The downtime may take from a few to up to 20 minutes.
+
+Check if there is a problem in the RabbitMQ layer
+-------------------------------------------------
+
+Normally, failures of the RabbitMQ cluster are automatically healed
+by OCF resource agents in Pacemaker. But if this fails for some
+reason, there may be unsynchronized queues, wrong cluster membership
+reported, or partitions detected by the rabbitmqctl tool, or even
+some list channels/queues requests may hang. Note, that the
+command ``rabbitmqctl report`` issued on all controllers should be enough
+to gather all the required information, but there is also a special group
+of Fuel OSTF HA health checks available in the Fuel UI and CLI. See also
+`RabbitMQ OSTF replication tests <https://blueprints.launchpad.net/fuel/+spec/ostf-rabbit-replication-tests>`.
+
+How to recover
+++++++++++++++
+
+It is recommended to clean up and restart the master_p_rabbitmq-server
+Pacemaker resource, see :ref:`crm-ops`.
+
+Check if there is a problem in the Oslo messaging layer
+-------------------------------------------------------
+
+Note, that normally an OpenStack application should be able to
+reconnect the AMQP host and restore its operations, eventually.
+But if it cannot for some reason, there may be "down" status reports
+or failures of CLI commands and messaging related or
+publish/consume message related records in the log files of the OpenStack
+services relying on the Oslo messaging library.
+For example, there may be records in the log files
+similar to the following ones:
+
+::
+
+    Timed out waiting for a reply to message...
+
+How to recover
+++++++++++++++
+
+It is recommended to restart the affected OpenStack service or
+services, see :ref:`manage-openstack-services-op`.
+
+.. note:: Restarting the OpenStack service will introduce
+  a short (near to zero) downtime for the related OpenStack application.
+
+Check if there are AMQP problems with any of the OpenStack components
+---------------------------------------------------------------------
+
+Note, that normally an OpenStack application should be able to
+reconnect the AMQP host and restore its operations, eventually.
+But if it cannot for some reason, there may be "down" status reports
+or failures of CLI commands and AMQP/messaging related records in the log
+files of the services belonging to the affected OpenStack component
+under verification.
+For Nova, for example, there may be records in the log files in
+the /var/log/nova/ directory similar to the following ones:
+
+::
+
+    AMQP server on ... is unreachable: [Errno 113] EHOSTUNREACH...
+
+How to recover
+++++++++++++++
+
+It is recommended to restart all instances of the OpenStack services
+related to the affected OpenStack component,
+see :ref:`manage-openstack-services-op`.
+For example, for Nova Compute component, you may want to restart all
+instances of the Nova services on the Controllers and Compute nodes affected
+by the AMQP issue.
+
+
+How to make RabbitMQ OCF script tolerate rabbitmqctl timeouts
+-------------------------------------------------------------
+
+If on a node where RabbitMQ is deployed other processes consume
+a significant part of CPU, RabbitMQ starts responding
+slow to queries from ``rabbitmqctl`` utility. The utility is
+used by the OCF script to monitor the state of the RabbitMQ.
+When the utility fails to complete in a pre-defined period of time,
+the OCF script considers the RabbitMQ being down and restarts it,
+which might lead to a several minutes cloud downtime. Such restarts
+are undesirable, as they cause a downtime without any benefit.
+To mitigate the issue, you can configure the OCF script to tolerate
+certain amount of ``rabbitmqctl`` timeouts in a row using the
+following command:
+
+.. code-block: console
+
+       crm_resource --resource p_rabbitmq-server --set-parameter \
+           max_rabbitmqctl_timeouts --parameter-value N
+
+Replace N with the number of timeouts. For instance,
+if it is set to `3`, the OCF script will tolerate two rabbitmqctl
+timeouts in a row, but fail if the third one occurs.
+
+By default, the parameter is set to `1`, which means ``rabbitmqctl``
+timeout is not tolerated at all. The downside of increasing the
+parameter is a delay in restarting RabbitMQ when it is down.
+For example, if a real issue occurs and causes a ``rabbitmqctl``
+timeout, the OCF script will detect that only after N monitor runs
+and then restart RabbitMQ, which might fix the issue.
+
+To understand that RabbitMQ's restart was caused by a ``rabbitmqctl``
+timeout, you should examine `lrmd.log` of the corresponding Controller
+on the Fuel Master node in `/var/log/docker-logs/remote/ directory`
+for the presence of the following lines:
+
+::
+
+    "the invoked command exited 137: /usr/sbin/rabbitmqctl list_channels ..."
+
+This indicates a rabbitmqctl timeout. The next line will explain if it
+caused restart or not. For example:
+
+::
+
+     "rabbitmqctl timed out 2 of max. 3 time(s) in a row. Doing nothing for now."

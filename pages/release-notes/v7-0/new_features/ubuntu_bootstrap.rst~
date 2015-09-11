@@ -1,0 +1,34 @@
+.. _ubuntu_bootstrap:
+
+Deployment with Ubuntu 14.04 bootstrap
+++++++++++++++++++++++++++++++++++++++
+
+You can now deploy an OpenStack environment using the Ubuntu 14.04
+bootstrap. However, currently this functionality is suitable for
+:ref:`experimental or testing purposes only <experimental-features-term>`.
+We do not recommend applying Ubuntu 14.04 bootstrap if you use
+bare-metal nodes on big OpenStack environments and/or if your
+deployment automation relies on a persistent naming of network devices
+during the deployment process.
+
+Because Ubuntu 14.04 bootstrap uses asynchronous device
+initialization, the naming of devices (in particular, network
+interfaces) is not guaranteed to be persistent. If you re-install
+Ubuntu 14.04 bootstrap on the same node, devices may randomly
+switch names, depending on what device boots first. This only affects
+bare-metal nodes, since NICs on virtual nodes have constant
+initialization time. See `LP1487044`_.
+
+If you deploy an environment that uses bare-metal nodes with Ubuntu
+14.04 bootstrap, check each node and manually reassign the networks
+to the correct interfaces.
+
+.. note::
+   To build an Ubuntu based bootstrap image, the Fuel Master node must
+   have an access to the Internet or at least access to the Ubuntu and
+   Mirantis OpenStack mirrors. See `LP1486551`_.
+
+.. Links
+
+.. _`LP1487044`: https://bugs.launchpad.net/mos/+bug/1487044
+.. _`LP1486551`: https://bugs.launchpad.net/mos/+bug/1486551

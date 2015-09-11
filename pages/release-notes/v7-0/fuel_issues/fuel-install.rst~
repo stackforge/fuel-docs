@@ -1,0 +1,26 @@
+
+.. _fuel-install.rst:
+
+Fuel Installation and Deployment
+================================
+
+Resolved issues
+---------------
+
+* Previously, deployment might fail with an error::
+
+   "<class 'cobbler.cexceptions.CX'>:'MAC address duplicated"
+
+  That behavior was caused by mass nodes removing from Cobbler
+  ans some of them can remain. As Cobbler is not designed
+  to be scalable, it stores all data in plain text files
+  and manipulates them quite slowly.
+
+  The fix removes makes sure that there are no nodes in
+  Cobbler with the same MAC addresses. Otherwise Cobbler
+  throws MAC address duplication error.
+
+  See `LP1394188 <https://bugs.launchpad.net/fuel/+bug/1394188>`_.
+
+.. Links
+.. _`LP1491725`: https://bugs.launchpad.net/fuel/+bug/1491725
