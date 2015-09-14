@@ -226,6 +226,26 @@ Patching a CentOS slave node
   supporting  documentation.
 * Reboot the node.
 
+
+Applying Puppet changes on a slave node
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You may want to apply all changes on a slave node or just a single
+granular task so that Fuel Puppet changes take effect.
+
+To run a complete Puppet cycle on a slave node, run:
+* Update fuel-libraryX.X on Fuel Master ``yum update``
+* Run ``fuel node --node NODE_ID --deploy``
+
+If you want to just update Puppet manifests and apply a single task, then run:
+
+* Update fuel-libraryX.X on Fuel Master ``yum update``
+* Run ``fuel node --node node-XX --deploy --task rsync_core_puppet hiera globals TASK``
+
+.. note::
+   The tasks rsync_core_puppet, hiera, and globals are required for
+   processing any Puppet changes.
+
 **Does installing a new cluster come with all the latest updates?**
 
 Yes, installing a new cluster comes with all the latest updates.
