@@ -61,7 +61,7 @@ images: $(PDFs)
 
 all: clean html dirhtml singlehtml latexpdf pdf
 
-html: images
+rawhtml: images
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
@@ -176,6 +176,11 @@ doctest:
 	$(SPHINXBUILD) -b doctest $(ALLSPHINXOPTS) $(BUILDDIR)/doctest
 	@echo "Testing of doctests in the sources finished, look at the " \
 	      "results in $(BUILDDIR)/doctest/output.txt."
+
+html: rawhtml
+	python lunr.py
+	@echo
+	@echo "Lunr search index complete"
 
 SPELL = aspell
 ASPELLOPTS = --dont-backup -d en --personal=.aspell_en.wordlist
