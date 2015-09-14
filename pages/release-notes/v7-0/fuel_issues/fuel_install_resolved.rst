@@ -16,6 +16,10 @@
   conflicts with a VM subnetwork in a production cluster.
   See `LP1437410`_.
 
+* The fix adds the upstream DNS servers to ``dnsmasq.conf``
+  to fix subdomain resolving. See `LP1491583`_.
+
 .. Links
 .. _`LP1491725`: https://bugs.launchpad.net/fuel/+bug/1491725
 .. _`LP1437410`: https://bugs.launchpad.net/fuel/7.0.x/+bug/1437410
+.. _`LP1491583`: https://bugs.launchpad.net/fuel/+bug/1491583
