@@ -72,6 +72,10 @@ Provides information on how to use Fuel configuration files.
 Provide general information about new features,
 fixed issues, and known limitations in Mirantis OpenStack |version|.
 
+`Managed Services On Demand <https://docs.mirantis.com/openstack/express/latest/>`_
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Provides documentation for Managed Services On Demand, formerly Mirantis OpenStack Express
+
 Prior releases
 ~~~~~~~~~~~~~~
 
