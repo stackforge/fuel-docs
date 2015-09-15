@@ -19,7 +19,7 @@ The following table lists the released revisions of this documentation:
 +-----------------------+---------------+--------------+
 | Revision              | Date          | Description  |
 +=======================+===============+==============+
-| 7.0 G.A.              | xx-Sep-2015   | Initial G.A. |
+| 7.0 G.A.              | 30-Sept-2015  | Initial G.A. |
 +-----------------------+---------------+--------------+
 
 
