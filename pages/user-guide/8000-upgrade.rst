@@ -4,8 +4,8 @@
 Upgrading and Updating from Earlier Releases
 ============================================
 
-If you have a functional Mirantis OpenStack 6.0 environment,
-you can upgrade the Fuel Master node to version 6.1
+If you have a functional Mirantis OpenStack 6.x environment,
+you can upgrade the Fuel Master node to version 7.0
 but leave your current environments in place.
 
 .. _upgrade-ug:
@@ -13,14 +13,14 @@ but leave your current environments in place.
 Upgrade Fuel from Earlier Versions
 ----------------------------------
 
-* If you are running Fuel 4.x or earlier, you cannot upgrade to 6.1.
-* If you are running Fuel 5.x, you cannot upgrade *directly* to 6.1.
-  You will need to upgrade from 5.x to 6.0 first, and then you can
-  upgrade to 6.1.
-* If you are running Fuel 6.0, you can upgrade to Fuel 6.1
+* If you are running Fuel 4.x or earlier, you cannot upgrade to 7.0.
+* If you are running Fuel 5.x, you cannot upgrade *directly* to 7.0.
+  You will need to upgrade from 5.x to 6.x first, and then you can
+  upgrade to 7.0.
+* If you are running Fuel 6.x, you can upgrade to Fuel 7.0.
 
-Fuel 6.1 console can manage your existing 6.x OpenStack environment(s)
-and create and manage new 6.1 OpenStack environments.
+Fuel 7.0 console can manage your existing 6.x OpenStack environment(s)
+and create and manage new 7.0 OpenStack environments.
 
 The following table summarizes the available progressions
 for upgrades of the Fuel Master Node:
@@ -66,30 +66,37 @@ for upgrades of the Fuel Master Node:
 |                      |                        |                          |
 |                      |                        | 2014.2-6.0               |
 +----------------------+------------------------+--------------------------+
-| 6.0                  | 6.1                    | 2014.2-6.0               |
+| 6.0                  | 6.1, then apply all 6.1| 2014.2.6.0               |
+|                      | updates, then to 7.0   | 2014.2.2-6.1             |
+|                      |                        | 2015.x-7.0               |
 |                      |                        |                          |
-|                      |                        | 2014.2.2-6.1             |
 |                      |                        |                          |
 |                      |                        |                          |
 +----------------------+------------------------+--------------------------+
-
+| 6.1                  | Apply all 6.1 updates, | 2014.2-6.0               |
+|                      | then to 7.0            | 2014.2.2-6.1             |
+|                      |                        | 2015.x-7.0               |
+|                      |                        |                          |
+|                      |                        |                          |
+|                      |                        |                          |
++----------------------+------------------------+--------------------------+
 Note the following:
 
-*  Fuel 6.1 can only deploy 6.1 environments.
+*  Fuel 7.0 can only deploy 7.0 environments.
 
 *  Fuel can manage environments that were deployed
-   with 6.0 releases,
+   with 6.x releases,
    assuming that you created the environment with the earlier release
    and upgraded the Fuel Master node rather than doing a fresh install.
    For a list of OpenStack releases and versions
    that your Fuel Master node can manage,
    click on the "Releases" tab at the top of your Fuel home page.
 
-*  If you do a fresh install of Fuel 6.1,
+*  If you do a fresh install of Fuel 7.0,
    you cannot manage environments deployed with earlier Fuel versions.
 
 *  If you are running Fuel 4.x or earlier,
-   you cannot upgrade Fuel but must install Mirantis OpenStack 6.1
+   you cannot upgrade Fuel but must install Mirantis OpenStack 7.0
    and redeploy your environment to use the new release.
 
 The following procedure upgrades the Fuel software
@@ -146,10 +153,8 @@ To upgrade the Fuel Master Node:
 
 When the upgrade is complete,
 the following messages will appear
-under the `Releases` tab in the Fuel web UI::
+under the `Releases` tab in the Fuel Web UI::
 
-  New release available: Juno on Ubuntu 14.04.1 (2014.2.2-6.1)
-  New release available: Juno on CentOS 6.5 (2014.2.2-6.1)
-
+  New release available: Kilo on Ubuntu 14.04 (2015.1.0-7.0)
 
 .. _update-openstack-environ-ug:
