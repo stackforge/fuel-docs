@@ -1,0 +1,9 @@
+Verified+2: Jenkins
+Code-Review+1: Fabrizio Soppelsa <fsoppelsa@mirantis.com>
+Code-Review+2: Evgeny Konstantinov <evkonstantinov@mirantis.com>
+Workflow+1: Evgeny Konstantinov <evkonstantinov@mirantis.com>
+Submitted-by: Jenkins
+Submitted-at: Thu, 17 Sep 2015 09:22:09 +0000
+Reviewed-on: https://review.openstack.org/224503
+Project: stackforge/fuel-docs
+Branch: refs/heads/master
