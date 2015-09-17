@@ -1,7 +1,11 @@
+
 .. _patching-ops:
 
 Applying patches
 ================
+
+This section describes how to apply, rollback, and verify the packages applied
+to the Fuel Master node and the Fuel Slave nodes.
 
 Introduction
 ------------
@@ -15,6 +19,8 @@ Patching in brief:
 * You can always check what patches are available and get instructions
   on how to apply them at the
   `Maintenance Update section of the Release Notes <https://docs.mirantis.com/openstack/fuel/fuel-7.0/release-notes.html#maintenance-updates>`_.
+* The changes that the patches introduce will applied to the new OpenStack
+  environments. The changes will not be applied to the existing environments.
 
 Usage scenarios
 ---------------
@@ -226,11 +232,10 @@ Patching a CentOS slave node
   supporting  documentation.
 * Reboot the node.
 
-
 Applying Puppet changes on a slave node
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You may want to apply all changes on a slave node or just a single
+You may want to apply all changes on a slave node or run a single
 granular task so that Fuel Puppet changes take effect.
 
 To run a complete Puppet cycle on a slave node, run:
@@ -247,6 +252,53 @@ If you want to just update Puppet manifests and apply a single task, then run:
    The tasks rsync_core_puppet, hiera, and globals are required for
    processing any Puppet changes.
 
-**Does installing a new cluster come with all the latest updates?**
+Verifying the installed packages on the Fuel Master node
+--------------------------------------------------------
 
-Yes, installing a new cluster comes with all the latest updates.
+After you apply a patch to the Fuel Master node, you can verify that the Fuel
+Master node is using the latest packages.
+
+To verify the packages on the Fuel Master node:
+
+#. Log in to the Fuel Master node CLI.
+#. Type:
+
+::
+
+   yum clean expire-cache
+   yum -y update
+
+Verifying the installed packages on the Fuel Slave nodes
+--------------------------------------------------------
+
+When you apply a patch to the Fuel Slave nodes, ensure that the versions of packages
+on all Fuel Slave nodes are identical. Therefore, verify that the Fuel Slave
+nodes within one OpenStack environment have the same repository configuration,
+as well as the same versions of packages are installed on all nodes.
+
+To verify the packages are up-to-date on the Fuel Slave nodes:
+
+#. Log in to the Fuel Master node CLI.
+#. Update the list of available packages:
+
+::
+
+   apt-get update
+
+#. Update all packages:
+
+::
+
+   apt-get upgrade
+
+4. Log in to the Fuel Master node GUI:
+5. Click **Support**.
+6. Generate and download a diagnostic snapshot by clicking
+   **Generate Diagnostic Snapshot**.
+
+   The Fuel Master node generates ``ubuntu_installed_debs.txt``.
+
+7. Analyze ``ubuntu_installed_debs.txt`` to verify the versions of the packages.
+
+   Additionally, you can analyze the ``ubuntu_repo_list.txt`` file to verify
+   the repositories.
