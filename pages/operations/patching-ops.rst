@@ -226,7 +226,6 @@ Patching a CentOS slave node
   supporting  documentation.
 * Reboot the node.
 
-
 Applying Puppet changes on a slave node
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -247,6 +246,29 @@ If you want to just update Puppet manifests and apply a single task, then run:
    The tasks rsync_core_puppet, hiera, and globals are required for
    processing any Puppet changes.
 
-**Does installing a new cluster come with all the latest updates?**
+When you deploy a new environment, the latest updates are applied to that
+environment.
 
-Yes, installing a new cluster comes with all the latest updates.
+Verifying a Patch
+-----------------
+
+When you apply a patch to the Fuel Master node, ensure that the Fuel Slave
+nodes use the same versions of packages as the Fuel Master node. Therefore,
+verify that the Fuel Master node and the Fuel Slave nodes have the same set
+of repositories and that the latest packages from the repositories are
+installed on all nodes.
+
+To match the versions of packages on the Fuel Master node and the Fuel
+Slave nodes:
+
+# Log in to the Fuel Master node CLI.
+# Check the latest repository updates:
+
+::
+  # yum clean expire-cache
+  # yum -y update
+
+# Run the following script:
+
+::
+  # bootstrap_admin_node.sh
