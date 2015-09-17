@@ -58,6 +58,17 @@ Known issues
     !yaql "log.debug('Error: {0}' text)"
     $value: !yaql "[1, 2] * 3"
 
+* An environment deployment fails when a user token expires (one hour after
+  login). See `LP1496397`_.
+
+  Workaround:
+
+  #. Open the configuration files of all your Controller nodes.
+  #. Find the parameter ``use_trusts = false`` in the [engine] section.
+  #. Change the value for this parameter to *true* in the configuration
+     files of all your Controller nodes.
+  #. Restart Murano API and the engine services.
+
 * Murano does not free resources after redeployment. You can remove a
   component from the already deployed environment, but the resources
   associated with that component are not released unless the entire
@@ -79,5 +90,6 @@ Known issues
 .. _`LP1442910`: https://bugs.launchpad.net/mos/+bug/1442910
 .. _`LP1441246`: https://bugs.launchpad.net/mos/7.0.x/+bug/1441246
 .. _`LP1495590`: https://bugs.launchpad.net/mos/+bug/1495590
+.. _`LP1496397`: https://bugs.launchpad.net/fuel/+bug/1496397
 .. _`LP1392351`: https://bugs.launchpad.net/mos/6.1.x/+bug/1392351
 .. _`LP1452679`: https://bugs.launchpad.net/mos/+bug/1452679
