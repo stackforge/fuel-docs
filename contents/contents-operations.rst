@@ -30,7 +30,6 @@
 .. include:: /pages/operations/8500-ceilometer.rst
 .. include:: /pages/operations/8600-heat.rst
 .. include:: /pages/operations/8800-horizon.rst
-.. include:: /pages/operations/8850-horizon-https.rst
 .. include:: /pages/operations/8900-testing-details.rst
 .. include:: /pages/operations/corosync2.rst
 .. include:: /pages/operations/9000-troubleshoot.rst
