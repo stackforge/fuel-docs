@@ -309,6 +309,6 @@ script are not applicable for them.
        rabbitmqctl cluster_status
        rabbitmqctl list_users
 
-#. Restart RabbitMQ related services.
+#. Restart RabbitMQ related services:
 
    See :ref:`manage-openstack-services-op` for details.

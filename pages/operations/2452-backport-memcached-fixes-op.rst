@@ -72,7 +72,7 @@ the fixes are not applicable for them.
        [token]
        driver = keystone.token.persistence.backends.memcache_pool.Token
 
-#. Restart all Keystone related services.
+#. Restart all Keystone related services:
 
    - Restart Keystone on every Controller.
    - Restart Neutron on every Controller (if installed).

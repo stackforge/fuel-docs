@@ -37,7 +37,7 @@ commands to match those used by the specific version of MySQL.
        https://raw.githubusercontent.com/stackforge/fuel-library/master/deployment/puppet/ \
        galera/files/ocf/mysql-wss
 
-#. The OCF script requires some modification
+#. The OCF script requires some modification:
    as it was originally designed for MySQL 5.6:
 
    ::
@@ -45,7 +45,7 @@ commands to match those used by the specific version of MySQL.
         perl -pi -e 's/--wsrep-new-cluster/--wsrep-cluster-address=gcomm:\/\//g' \
         /etc/puppet/modules/galera/files/ocf/mysql-wss
 
-#. Copy the script to all controllers
+#. Copy the script to all controllers:
    ::
 
        for i in $(fuel nodes | awk '/ready.*controller.*True/{print $1}'); \
@@ -57,7 +57,7 @@ commands to match those used by the specific version of MySQL.
        node-$i:/usr/lib/ocf/resource.d/mirantis/mysql-wss; done
 
 
-#. Configure the p_mysql resource for the new Galera OCF script
+#. Configure the p_mysql resource for the new Galera OCF script:
    ::
 
         crm configure edit p_mysql
@@ -90,7 +90,7 @@ commands to match those used by the specific version of MySQL.
    .. note:: During this operation, the MySQL/Galera cluster will be restarted.
       This may take up to 5 minutes.
 
-#. Check whether Galera Cluster is synced and functioning.
+#. Check whether Galera Cluster is synced and functioning:
    ::
 
        mysql -e "show global status like 'wsrep_cluster_status'"
@@ -101,7 +101,7 @@ commands to match those used by the specific version of MySQL.
 
        mysql -e "show global status like 'wsrep_incoming_addresses'"
 
-#. Restart MySQL related services.
+#. Restart MySQL related services:
 
    - Restart neutron on every Controller (if installed).
    - Restart the remaining OpenStack services

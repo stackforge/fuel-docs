@@ -13,7 +13,7 @@ Fuel 5.1 has completely redesigned OCF script which makes Galera cluster more re
        crm configure edit p_mysql
          meta is-managed=false
 
-2. Check the status. It should show clone_p_mysql primitives as Unmanaged
+2. Check the status. It should show clone_p_mysql primitives as Unmanaged:
    ::
 
        crm_mon -1
@@ -28,18 +28,18 @@ Fuel 5.1 has completely redesigned OCF script which makes Galera cluster more re
 
        perl -pi -e 's/--wsrep-new-cluster/--wsrep-cluster-address=gcomm:\/\//g' /etc/puppet/modules/galera/files/ocf/mysql-wss
 
-5. Copy the script to all controllers
+5. Copy the script to all controllers:
    ::
 
        for i in $(fuel nodes | awk '/ready.*controller.*True/{print $1}'); do scp /etc/puppet/modules/galera/files/ocf/mysql-wss node-$i:/etc/puppet/modules/galera/files/ocf/mysql-wss; done
        for i in $(fuel nodes | awk '/ready.*controller.*True/{print $1}'); do scp /etc/puppet/modules/galera/files/ocf/mysql-wss node-$i:/usr/lib/ocf/resource.d/mirantis/mysql-wss; done
 
-6. Configure p_mysql resource for new Galera OCF script
+6. Configure p_mysql resource for new Galera OCF script:
    ::
 
         crm configure edit p_mysql
 
-Primitive for Ubuntu should look like
+Primitive for Ubuntu should look like:
    ::
 
        crm configure primitive p_mysql ocf:mirantis:mysql-wss \
@@ -51,7 +51,7 @@ Primitive for Ubuntu should look like
               op stop timeout="175" interval="0" \
               meta is-managed=true
 
-Primitive for CentOS should look like
+Primitive for CentOS should look like:
    ::
 
       crm configure primitive p_mysql ocf:mirantis:mysql-wss \
@@ -65,9 +65,9 @@ Primitive for CentOS should look like
 
 .. note:: During this operation MySQL cluster will be restarted. This may take up to 5 minute
 
-7. Check Galera Cluster is fully assembled
+7. Check Galera Cluster is fully assembled:
    ::
 
        mysql -e "show global status like 'wsrep_incoming_addresses'"
 
-8. Start MySQL related services
+8. Start MySQL related services.
