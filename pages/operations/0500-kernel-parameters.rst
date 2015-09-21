@@ -36,6 +36,9 @@ Some parameters that are frequently set for Fuel and OpenStack are:
 **ttys0=<speed>**
   serial console for videoless servers
 
+**console=ttyS0,9600**
+  enable serial console
+
 **nofb**
   disable Linux framebuffer
 
