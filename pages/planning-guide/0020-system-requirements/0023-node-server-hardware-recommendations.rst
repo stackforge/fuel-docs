@@ -6,44 +6,50 @@ Target Node Server Hardware Recommendations
 -------------------------------------------
 
 Determining the appropriate hardware
-for the target nodes requires a good understanding
-of the software that will be run on those nodes.
-The OpenStack community documentation
-provides basic guidelines:
+for the target nodes depends on the node type.
 
-- `Compute and Image System Requirements
-  <http://docs.openstack.org/grizzly/openstack-compute/install/yum/content/compute-system-requirements.html>`_
+- Controller nodes
+   Use at least three Controller nodes for high-availability. Further resource
+   scaling depends on your use case and requires extensive assessment of your
+   environment and business needs.
 
-- `System requirements for Object Storage
-  <http://docs.openstack.org/trunk/install-guide/install/yum/content/object-storage-system-requirements.html>`_
+- Compute nodes
+   The number and hardware configuration of the compute nodes depend on the
+   following:
 
-The `OpenStack Operations Guide
-<http://docs.openstack.org/openstack-ops/content/>`_
-includes advice about
-capacity planning and scaling
-and should be read in conjunction with
+   - Number of virtual machines
+   - Applications that you plan to run on these virtual machines
+   - Types of workloads
+
+- Storage nodes
+   The number and capacity of the storage nodes highly depend on
+   the type of the storage, redundancy, and the workloads that you run
+   on the compute nodes.
+
+The OpenStack documentation provides additional guidelines on how to plan your
+resources:
+
+- `OpenStack Architecture Design Guide
+  <http://docs.openstack.org/arch-design/content/technical-considerations-general-purpose.html>`_
+
+- `OpenStack Operations Guide
+  <http://docs.openstack.org/openstack-ops/content/>`_
+
+Use the information provided in these documents in conjunction with
 this *Planning Guide*.
 
-Other information is available
-elsewhere in this documentation set:
+For more information, see:
 
-- For information about assigning roles to nodes,
-  see :ref:`nodes-roles-plan`.
+- :ref:`sample-target-node-config-plan`
 
-- For information about storage requirements
-  and other hardware issues
-  for the :ref:`MongoDB<mongodb-term>` database
-  that is used with :ref:`Ceilometer<ceilometer-term>`,
-  see :ref:`ceilometer-mongodb-plan`.
+- :ref:`nodes-roles-plan`
 
-- For general information about calculating hardware requirements,
-  see :ref:`hardware-plan`.
+- :ref:`ceilometer-mongodb-plan`
 
-To help determine the correct sizing for OpenStack Node servers,
-use the `Mirantis Hardware Bill of Materials
-calculator <https://www.mirantis.com/openstack-services/bom-calculator/>`__.
+- :ref:`hardware-plan`
 
-For more information on the logic used in the utility and basic directions,
-see: “\ `How do you calculate how much hardware you need for
-your OpenStack
-cloud? <http://www.mirantis.com/blog/openstack-hardware-bom-calculator/>`__\ ”.
+- `OpenStack Hardware Compatibility List
+  <https://www.mirantis.com/products/openstack-drivers-and-plugins/hardware-compatibility-list/>`__
+
+- `How do you calculate how much hardware you need for your OpenStack cloud?
+  <http://www.mirantis.com/blog/openstack-hardware-bom-calculator/>`__
