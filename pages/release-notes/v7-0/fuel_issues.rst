@@ -18,6 +18,7 @@ Resolved Issues
 .. include:: /pages/release-notes/v7-0/fuel_issues/redeploy_custom_ip_resolved.rst
 .. include:: /pages/release-notes/v7-0/fuel_issues/tenant_dhcp_verification_resolved.rst
 .. include:: /pages/release-notes/v7-0/fuel_issues/rabbitmq_murano_same_port_resolved.rst
+.. include:: /pages/release-notes/v7-0/fuel_issues/serial-console.rst
 
 Known Issues
 ------------
