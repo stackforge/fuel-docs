@@ -464,6 +464,8 @@ to other fuel CLI commands:
 See :ref:`fuel-passwd-ops` for more information
 about Fuel authentication.
 
+.. include:: /pages/user-guide/cli/cli_change_ip_range.rst
+
 .. _fuel-plugins-cli:
 
 Fuel Plugins CLI
