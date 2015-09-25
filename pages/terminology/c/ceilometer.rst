@@ -25,7 +25,7 @@ and performs a large volume of database writes;
 with 100 resources and default configs Ceilometer collects around
 16k samples per hour.
 
-Mirantis OpenStack 5.x defaults to installing :ref:`mongodb-term`
+Mirantis OpenStack defaults to installing :ref:`mongodb-term`
 as the recommended back-end database for OpenStack Telemetry.
 The Fuel Master Node enables you to choose
 the installation of MongoDB as a role onto a node;
@@ -39,6 +39,6 @@ For more information, see
 * :ref:`ceilometer-ops` discusses how to configure Ceilometer
   and work with its output.
 * `Ceilometer wiki <https://wiki.openstack.org/wiki/Ceilometer>`_
-* `Ceilometer blob <https://github.com/openstack/ceilometer/blob/stable/icehouse/doc/source/install/dbreco.rst>`_
+* `Ceilometer manual <https://github.com/openstack/ceilometer/blob/master/doc/source/install/manual.rst>`_
 
 
