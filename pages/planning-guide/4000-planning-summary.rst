@@ -21,9 +21,6 @@ complete to plan the Mirantis OpenStack deployment.
 | Select a network topology  | See :ref:`net-topology-plan`              |
 |                            |                                           |
 +----------------------------+-------------------------------------------+
-| Choose the Linux distro    | See :ref:`linux-distro-plan`              |
-| to use on your nodes       |                                           |
-+----------------------------+-------------------------------------------+
 | Determine how many nodes   | See :ref:`nodes-roles-plan`               |
 | to deploy and which roles  |                                           |
 | to assign to each and      |                                           |
