@@ -29,12 +29,11 @@ to launch the wizard that creates a new OpenStack environment.
 
 .. _vcenter-start-create-env-ug:
 
-Create Environment and Choose Distribution for vCenter
-++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Create Environment
+++++++++++++++++++
 
-Either the CentOS or Ubuntu distro
-can be used as the host operating system on the Slave nodes
-for environments that support integration with vSphere:
+Select an OpenStack release and type a name for the OpenStack
+environment:
 
 .. image:: /_images/user_screen_shots/vcenter-create-env.png
 

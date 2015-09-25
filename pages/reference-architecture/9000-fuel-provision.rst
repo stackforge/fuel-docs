@@ -30,10 +30,6 @@ repositories in a directory which is then packed into the operating system
 image. The build script is run once no matter how many nodes one is going
 to deploy.
 
-Currently, the CentOS image is built at the development stage and then
-this image is put into Mirantis OpenStack ISO and used for all CentOS
-based environments.
-
 Ubuntu images are built on the master node, one operating system image
 per environment. We need to build different images for each environment
 because each environment has its own set of repositories. In order to

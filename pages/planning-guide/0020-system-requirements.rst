@@ -38,7 +38,6 @@ Some general remarks:
 - Select peripheral hardware that is supported
   by the operating system distribution
   that you are using for the target nodes
-  (see :ref:`linux-distro-plan`)
   and for the VM instances that will be deployed.
 
   Integrating new hardware drivers

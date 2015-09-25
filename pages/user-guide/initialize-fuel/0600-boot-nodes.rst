@@ -21,7 +21,7 @@ Master Node.
    the Fuel Master node that runs the DHCP server.
 #. When a node receives the response from the Fuel Master node,
    it fetches the pxelinux bootloader
-   and then the bootstrap image (CentOS based Linux in memory)
+   and then the bootstrap image.
    from the Fuel Master node's TFTP server and boots into it.
 #. When this image is loaded,
    it reports the node's readiness and configuration to the Fuel Master.
