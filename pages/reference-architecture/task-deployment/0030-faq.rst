@@ -6,10 +6,11 @@ FAQ
 What can I use for deployment with groups?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In Fuel 6.1, it is possible to use only Puppet for the main deployment.
+You can only use Puppet for the main deployment.
 
-All agents, except for Puppet, work in a blocking way. The current deployment
-model cannot execute some tasks that are blocking and non-blocking.
+All agents, except for Puppet, work in a blocking way.
+The current deployment model cannot execute some tasks
+that are blocking and non-blocking.
 
 In the ``pre_deployment`` and ``post_deployment`` stages,
 any of the supported task drivers can be used.
@@ -18,15 +19,16 @@ Is it possible to specify cross-dependencies between groups?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In Fuel 6.0 or earlier, there is no model that will allow to run tasks
-on a primary Controller, then run on a controlle with getting back to the
-primary Controller.
+on a primary Controller, then run on a Controller with getting back to
+the primary Controller.
 
-In Fuel 6.1, cross-dependencies are resolved by the ``post_deployment`` stage.
+In Fuel 6.1 and newer, the cross-dependencies are resolved by the
+``post_deployment`` stage.
 
-How I can end at the provision state?
+How can I end at the provision state?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Provision is not a part of task-based deployment in Fuel 6.1.
+Provision is not a part of task-based deployment.
 
 How to stop deployment at the network configuration state?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

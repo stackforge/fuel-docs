@@ -3,8 +3,8 @@
 Additional task for an existing role
 ------------------------------------
 
-If you would like to add extra task for
-an existing role, follow these steps:
+If you would like to add an extra task for an existing role,
+follow these steps:
 
 #. Add the task description to
    ``/etc/puppet/2014.2.2-6.1/modules/my_tasks.yaml`` file.

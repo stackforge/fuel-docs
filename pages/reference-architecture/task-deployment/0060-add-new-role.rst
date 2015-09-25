@@ -3,7 +3,6 @@
 Creating a separate role and attaching a task to it
 ---------------------------------------------------
 
-
 To create a separate role and attach a task to it,
 follow these steps:
 
@@ -27,7 +26,7 @@ follow these steps:
 
          fuel role --rel 1 --create --file redis.yaml
 
-#. After this is done, you can go to the Fuel web UI and check if a role
+#. After this is done, you can go to the Fuel Web UI and check if a role
    *redis* is created.
 
 #. You can now attach tasks to the role. First, install redis puppet module:
@@ -73,9 +72,9 @@ follow these steps:
    * :ref:`configure public network <network-settings-ug>`
      properly since *redis* packages are fetched from the upstream.
 
-   * enable *Assign public network to all nodes* option on the
+   * enable the *Assign public network to all nodes* option on the
      :ref:`Settings <settings-ug>` tab
-     of the Fuel web UI.
+     of the Fuel Web UI.
 
 #. Provision the *redis* node:
 
@@ -84,7 +83,8 @@ follow these steps:
        fuel node --node <1> --env <1> --provision
 
 #. Finish the installation on ``install_redis``
-   (there is no need to execute all tasks from ``post_deployment`` stage):
+   (there is no need to execute all tasks from the ``post_deployment``
+   stage):
 
    ::
 

@@ -21,7 +21,7 @@ Stages
 Stages are used to build a graph skeleton.
 The skeleton is then extended with additional functionality like provisioning, etc.
 
-The deployment graph of Fuel 6.1 has the following stages:
+The deployment graph has the following stages:
 
 ::
 
@@ -45,7 +45,7 @@ Here is the stage example:
 Groups
 ------
 
-In Fuel 6.1, groups are a representation of roles in the main deployment graph:
+Groups are a representation of roles in the main deployment graph:
 
 ::
 
@@ -62,7 +62,7 @@ In Fuel 6.1, groups are a representation of roles in the main deployment graph:
 .. note:: Primary-controller should be installed when Controller starts its own execution.
           The execution of this group should be finished to consider ``deploy_end`` done.
 
-Here is the full graph of groups, available in 6.1:
+Here is the full graph of groups:
 
 .. image:: /_images/groups.png
 
@@ -70,7 +70,7 @@ Strategy
 ~~~~~~~~
 
 You can also specify a strategy for groups in the ``parameters`` section.
-Fuel 6.1 supports the following strategies:
+Fuel supports the following strategies:
 
 * parallel - all nodes in this group will be executed in parallel. If there are
   other groups that do not depend on each other, they will be executed in parallel
@@ -104,9 +104,9 @@ Puppet
 ------
 
 Task of ``type: puppet`` is the preferable way to execute the deployment code on nodes.
-Only mcollective agent is capable of executing code in background.
+Only MCollective agent is capable of executing code in background.
 
-In Fuel 6.1, this is the only task that can be used in the main deployment stages,
+In Fuel this is the only task that can be used in the main deployment stages,
 between ``deploy_start`` and ``deploy_end``.
 
 Example:
@@ -203,4 +203,3 @@ of files, as provided in example:
           dst: /var/lib/astute/neutron/neutron.pub
       permissions: '0600'
       dir_permissions: '0700'
-

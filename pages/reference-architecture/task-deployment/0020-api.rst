@@ -5,7 +5,8 @@ API
 
 If you want to change or add some tasks right on
 the Fuel Master node, just add the ``tasks.yaml`` file
-and respective manifests in the folder for the release that you are interested in.
+and respective manifests in the folder for the release
+that you are interested in.
 Then run the following command:
 
 ::
@@ -13,7 +14,7 @@ Then run the following command:
        fuel rel --sync-deployment-tasks --dir /etc/puppet
 
 If you want to overwrite the deployment tasks for any specific
-release/cluster, use the following commands:
+release/environment, use the following commands:
 
 ::
 
@@ -24,19 +25,22 @@ release/cluster, use the following commands:
        fuel env --env <id> --deployment-tasks --upload
 
 
-After this is done, you will be able to run a customized graph of tasks.
+After this is done, you will be able to run a customized graph
+of tasks.
 To do that, use a basic command:
 
 ::
 
       fuel node --node <1>,<2>,<3> --tasks upload_repos netconfig
 
-The developer will need to specify nodes that should be used in deployment and
-task IDs. The order in which these are provided does not matter.
+The developer will need to specify the nodes that should be used
+in deployment and task IDs. The order in which these are provided
+does not matter.
 It will be computed from the dependencies specified in the database.
 
-.. note:: The node will not be executed, if a task is mapped to Controller role,
-          but the node where you want to apply the task does not have this role.
+.. note:: The node will not be executed, if a task is mapped to
+          Controller role, but the node where you want to apply
+          the task does not have this role.
 
 Skipping tasks
 --------------
@@ -48,12 +52,11 @@ Use the ``skip`` parameter to skip tasks:
        fuel node --node <1>,<2>,<3> --skip netconfig hiera
 
 The list of tasks specified with the ``skip`` parameter will
-be skipped during
-graph traversal in Nailgun.
+be skipped during graph traversal in Nailgun.
 
-If there are task dependencies, you may want to make use of a "smarter" traversal
-- you will need to
-specify the start and end nodes in the graph:
+If there are task dependencies, you may want to make use of
+a "smarter" traversal -- you will need to specify the start
+and end nodes in the graph:
 
 ::
 
@@ -61,19 +64,18 @@ specify the start and end nodes in the graph:
 
 
 This will deploy everything up to the netconfig task, including it.
-This means, that this commands will deploy all tasks
+This means, that this command will deploy all tasks
 that are a part of ``pre_deployment``: keys generation, rsync
 manifests, sync time, upload repos, including such tasks as hiera setup,
-globals computation and maybe some other
-basic preparatory tasks:
+globals computation and maybe some other basic preparatory tasks:
 
 ::
 
       fuel node --node <1>,<2>,<3> --start netconfig
 
 
-Start from ``netconfig`` task (including it), deploy all the tasks that are
-a part of ``post_deployment``.
+Start from ``netconfig`` task (including it), deploy all the tasks that
+are a part of ``post_deployment``.
 
 For example, if you want to execute only the netconfig successors,
 use:
@@ -90,8 +92,8 @@ You will also be able to use ``start`` and ``end`` at the same time:
        fuel node --node <1>,<2>,<3> --start netconfig --end upload_cirros
 
 
-Nailgun will build a path that includes only necessary tasks to join these two
-points.
+Nailgun will build a path that includes only necessary tasks to join
+these two points.
 
 
 .. _render-graph:
@@ -99,7 +101,7 @@ points.
 Graph representation
 --------------------
 
-Beginning with Fuel 6.1, in addition to commands above,
+Beginning with Fuel 6.1, in addition to the commands above,
 there also exists a helper that allows
 to download deployment graph in DOT `DOT <http://www.graphviz.org/doc/info/lang.html>`_
 format and later render it.
@@ -109,24 +111,23 @@ Commands for downloading graphs
 
 Use the following commands to download graphs:
 
-* To download a full graph for environment with id 1
+* To download a full graph for environment with ID 1
   and print it on the screen, use the command below.
-  Note, that it will print its output to the stdout.
+  Note, that it will print its output to stdout.
 
   ::
 
       fuel graph --env <1> --download
 
-* To download graph and save it to the ``graph.gv`` file:
+* To download the graph and save it to the ``graph.gv`` file:
 
   ::
 
       fuel graph --env <1> --download > graph.gv
 
 
-* It is also possible to specify the same
-  options as for the deployment command.
-  Point out start and end nodes in graph:
+* It is also possible to specify the same options as for the deployment
+  command. Point out the start and end nodes in the graph:
 
   ::
 
@@ -148,15 +149,15 @@ Use the following commands to download graphs:
 
       fuel graph --env <1> --download --skip netconfig hiera  > graph.gv
 
-* To completely remove skipped tasks from
-  graph visualization, use ``--remove`` parameter:
+* To completely remove the skipped tasks from graph visualization,
+  use the ``--remove`` parameter:
 
   ::
 
      fuel graph --env <1> --download --start netconfig --end upload_cirros --remove skipped > graph.gv
 
 
-* To see only parents of a particular tasks:
+* To see only the parents of a particular tasks:
 
   ::
 
