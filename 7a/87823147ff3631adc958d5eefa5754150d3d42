@@ -1,0 +1,9 @@
+Verified+2: Jenkins
+Verified+1: Fuel CI <fuel-ci-bot@mirantis.com>
+Code-Review+2: Evgeny Konstantinov <evkonstantinov@mirantis.com>
+Workflow+1: Evgeny Konstantinov <evkonstantinov@mirantis.com>
+Submitted-by: Jenkins
+Submitted-at: Mon, 28 Sep 2015 14:22:55 +0000
+Reviewed-on: https://review.openstack.org/228468
+Project: stackforge/fuel-docs
+Branch: refs/heads/master
