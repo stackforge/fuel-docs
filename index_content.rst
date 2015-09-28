@@ -7,7 +7,7 @@
 PDF
 ~~~
 
-`QuickStart Guide PDF <pdf/Mirantis-OpenStack-6.1-QcuikStartGuide.pdf>`_
+`QuickStart Guide PDF <pdf/Mirantis-OpenStack-6.1-QuikStartGuide.pdf>`_
 `Planning Guide PDF <pdf/Mirantis-OpenStack-6.1-PlanningGuide.pdf>`_
 `User Guide PDF <pdf/Mirantis-OpenStack-6.1-UserGuide.pdf>`_
 `Operations Guide PDF <pdf/Mirantis-OpenStack-6.1-OperationsGuide.pdf>`_
