@@ -49,6 +49,32 @@ When deploying an OpenStack Environment
 that includes Sahara for running Hadoop
 you need to consider a few special conditions.
 
+**Plugin Capabilities**
+
+The following table provides a plugin capability matrix:
+
++--------------------------+---------+----------+----------+-------+------+
+|                          | Plugin                                       |
+|                          +---------+----------+----------+-------+------+
+| Feature                  | Vanilla | HDP      | Cloudera | Spark | MapR |
++==========================+=========+==========+==========+=======+======+
+| Nova network             | x       | x        | x        | x     | x    |
++--------------------------+---------+----------+----------+-------+------+
+| Neutron network          | x       | x        | x        | x     | x    |
++--------------------------+---------+----------+----------+-------+------+
+| Cluster Scaling          | x       | x        | x        | x     | N/A  |
++--------------------------+---------+----------+----------+-------+------+
+| Swift Integration        | x       | x        | x        | x     | N/A  |
++--------------------------+---------+----------+----------+-------+------+
+| Cinder Support           | x       | x        | x        | x     | x    |
++--------------------------+---------+----------+----------+-------+------+
+| Data Locality            | x       | x        | N/A      | x     | N/A  |
++--------------------------+---------+----------+----------+-------+------+
+| EDP                      | x       | x        | x        | x     | x    |
++--------------------------+---------+----------+----------+-------+------+
+| High Availability        | N/A     | x        | N/A      | N/A   | N/A  |
++--------------------------+---------+----------+----------+-------+------+
+
 **Floating IPs**
 
 Fuel configures Sahara to use floating IPs to manage the VMs.
