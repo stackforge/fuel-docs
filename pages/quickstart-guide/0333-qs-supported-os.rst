@@ -1,17 +1,31 @@
 .. _qs_supported_os:
 
-Supported Host Operating Systems for Scripted Installation
-----------------------------------------------------------
+Supported Host Operating Systems and VirtualBox Versions
+--------------------------------------------------------
 
 Mirantis OpenStack supports scripted installation on the
-following operating systems:
+following operating systems and versions of VirtualBox:
 
-* Mac OS 10.7.5
-* Ubuntu 12.04, 12.10, 14.04
-* Fedora 19
-* OpenSUSE 12.2, 12.3
-* Microsoft Windows 7 x64 bit with Cygwin x64
-* Microsoft Windows 8 x64 bit with Cygwin x64
++----------------------------+---------------------+------------------------+
+| Operating system           | VirtualBox version  | VirtualBox version     |
+|                            | for scripted        | for manual installation|
+|                            | installation        |                        |
++----------------------------+---------------------+------------------------+
+| Ubuntu Linux 12.04, 12.10, | 4.2.12 - 5.0.x      | 4.2.12 - 5.0.x         |
+| 14.04                      |                     |                        |
++----------------------------+---------------------+------------------------+
+| Fedora 19                  | 4.2.12 - 5.0.x      | 4.2.12 - 5.0.x         |
++----------------------------+---------------------+------------------------+
+| OpenSUSE 12.2 - 13.2       | 4.2.12 - 5.0.x      | 4.2.12 - 5.0.x         |
++----------------------------+---------------------+------------------------+
+| Microsoft Windows 7, 8 x64 | 4.2.12 - 4.3.30     | 4.2.12 - 5.0.x         |
+| with Cygwin x64            |                     |                        |
+|                            |                     |                        |
+| Microsoft Windows 10 x64   | 4.3.30 - 5.0.x      | 4.3.x - 5.0.x          |
+| with Cygwin x64            |                     |                        |
++----------------------------+---------------------+------------------------+
+| Mac OS 10.7.5              | 4.3.x               | 4.3.x                  |
++----------------------------+---------------------+------------------------+
 
 .. seealso::
 
