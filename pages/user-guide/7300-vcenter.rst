@@ -168,7 +168,8 @@ Assign a role to a node server
 
 #. In the configuration screen, select the `Nodes` tab.
 #. Assign a role to the node server by checking the required option from
-   the available options list:
+   the available options list. By default, the *Compute VMware* role node is
+   selected.
 
    .. list-table:: **Node roles for the OpenStack environments that support vCenter**
       :widths: 10 30
@@ -214,13 +215,14 @@ Assign a role to a node server
 Deploy nova-compute on a standalone node
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you need to distribute nova-compute services among available nodes
+To distribute nova-compute services among available nodes
 and deploy nova-compute on a standalone node, proceed with the
 following steps.
 
 **Procedure**:
 
-#. Assign a *Compute VMware* role to the node.
+#. Verify that the default *Compute VMware* option for a specific node server
+   is selected in the `Nodes` tab.
 
 #. In the *VMware tab* for a specific cluster, select this node
    as the *Target node* for the ``nova-compute`` service.
