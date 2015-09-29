@@ -17,12 +17,11 @@ by clicking the gear wheel to the right of the node listing;
 in the detailed information window that is displayed,
 click the "Configure Interfaces" button.
 
-.. image:: /_images/network_settings.jpg
+.. image:: /_images/scr_configure_interfaces.png
   :align: center
   :width: 100%
 
-On this screen,
-you can drag-and-drop logical networks to physical interfaces
+Then drag-and-drop logical networks to physical interfaces
 according to your network setup.
 
 All logical networks other than the Admin ("Fuel") network
