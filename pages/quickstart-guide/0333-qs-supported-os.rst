@@ -1,17 +1,26 @@
 .. _qs_supported_os:
 
-Supported Host Operating Systems for Scripted Installation
-----------------------------------------------------------
+Supported Host Operating Systems and VirtualBox Versions
+--------------------------------------------------------
 
 Mirantis OpenStack supports scripted installation on the
-following operating systems:
+following operating systems and versions of VirtualBox:
 
-* Mac OS 10.7.5
-* Ubuntu 12.04, 12.10, 14.04
-* Fedora 19
-* OpenSUSE 12.2, 12.3
-* Microsoft Windows 7 x64 bit with Cygwin x64
-* Microsoft Windows 8 x64 bit with Cygwin x64
++----------------------------+---------------------------+
+| **Operating System**       | **VirtualBox Version**    |
++----------------------------+---------------------------+
+| Ubuntu Linux 12.04, 12.10, | 4.2.12 - 5.0.x            |
+| 14.04                      |                           |
++----------------------------+---------------------------+
+| Fedora 19                  | 4.2.12 - 5.0.x            |
++----------------------------+---------------------------+
+| OpenSUSE 12.2, 12.3        | 4.2.12 - 5.0.x            |
++----------------------------+---------------------------+
+| Microsoft Windows 7, 8, 10 | 4.3.x                     |
+| x 64 with Cywin x64        |                           |
++----------------------------+---------------------------+
+| Mac OS 10.7.5              | 4.3.x                     |
++----------------------------+---------------------------+
 
 .. seealso::
 
