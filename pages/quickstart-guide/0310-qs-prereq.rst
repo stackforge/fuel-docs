@@ -12,7 +12,7 @@ Your environment must meet the following software prerequisites:
 
   If you use Microsoft Windows, use Cygwin.
 
-- `VirtualBox <https://www.virtualbox.org/>`_ 4.2.16 or later
+- `VirtualBox <https://www.virtualbox.org/>`_
 - `Oracle VM VirtualBox Extension Pack <https://www.virtualbox.org/>`_ for your version of VirtualBox
 - `Mirantis OpenStack ISO <https://docs.mirantis.com/openstack/fuel/fuel-master/#downloads>`_
 - `Mirantis VirtualBox scripts <https://docs.mirantis.com/openstack/fuel/fuel-master/#downloads>`_ (recommended)
@@ -27,3 +27,4 @@ Your environment must meet the following software prerequisites:
 .. seealso::
 
    - :ref:`Downloading the Mirantis Openstack Image <qs_download>`
+   - :ref:`qs_supported_os`
