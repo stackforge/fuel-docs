@@ -52,7 +52,7 @@ mirrors.
     * After the patch is installed, restart the affected service as
       specified in the documentation.
 
-  * Patching a slave node running Ubuntu or CentOS:
+  * Patching a slave node:
 
     * Run the command specified in the documentation to download the patch.
     * Run the command specified in the documentation to install the patch.
@@ -82,7 +82,7 @@ OpenStack see :ref:`Configuring repositories<configuring-repos-ops>`.
     * After the patch is installed, restart the affected service as
       specified in the documentation.
 
-  * Patching a slave node running Ubuntu or CentOS:
+  * Patching a slave node:
 
     * Run the command specified in the documentation to download the patch.
     * Run the command specified in the documentation to install the patch.
@@ -111,7 +111,7 @@ patches from your local mirrors.
     * After the patch is installed, restart the affected service as
       specified in the documentation.
 
-  * Patching a slave node running Ubuntu or CentOS:
+  * Patching a slave node:
 
     * Run the command specified in the documentation to download the patch.
 
@@ -138,23 +138,6 @@ Rolling back Fuel Master node
 * Run ``dockerctl destroy all``.
 * Run ``dockerctl start all``.
 * Wait for bootstrap to complete.
-
-Rolling back a CentOS slave node
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-* Evacuate all the running resources from the node.
-* Make sure new workloads are not scheduled to the node: Put nova
-  services in maintenance, turn on Pacemaker into maintenance mode etc.
-* Install packages with specific versions:
-
-  ``yum list all <component_name_or_part_of_the_name_like_kernel>``
-
-  ``yum downgrade <pkgname><pkg version>``
-* Roll back the packages on the node.
-  `Refer to this article <https://access.redhat.com/solutions/64069>`__ as an example.
-* Roll back all the changes to the configuration you made when applying
-  the patching instructions.
-* Reboot the node.
 
 Rolling back an Ubuntu slave node
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -220,14 +203,6 @@ Patching an Ubuntu slave node
 
 * Run ``apt-get update``.
 * Run ``apt-get upgrade``.
-* Apply all the additional configuration options as described in the
-  supporting  documentation.
-* Reboot the node.
-
-Patching a CentOS slave node
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-* Run ``yum update``.
 * Apply all the additional configuration options as described in the
   supporting  documentation.
 * Reboot the node.
