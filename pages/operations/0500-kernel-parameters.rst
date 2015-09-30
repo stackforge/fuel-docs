@@ -28,8 +28,7 @@ Kernel parameters can be set in any of the following ways:
   where you want to set kernel parameters;
   see :ref:`kernel-cmd-line-ops`.
 
-Any kernel parameter supported by the Linux distribution being used
-(either Ubuntu or CentOS)
+Any kernel parameter supported by Ubuntu
 can be set for the target nodes and the Fuel Master node.
 Some parameters that are frequently set for Fuel and OpenStack are:
 

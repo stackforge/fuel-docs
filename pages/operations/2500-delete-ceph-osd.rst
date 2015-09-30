@@ -73,8 +73,6 @@ in the cluster.
 
    ::
 
-    On CentOS hosts:
-      # service ceph stop osd.0
     On Ubuntu hosts:
       # stop ceph-osd id=0
 

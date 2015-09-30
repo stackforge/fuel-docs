@@ -21,8 +21,6 @@ Check the operating systems:
   id | name                 | state       | operating_system | version
   ---|----------------------|-------------|------------------|-------------
   2  | Kilo on Ubuntu 14.04 | available   | Ubuntu           | 2015.1.0-7.0
-  1  | Kilo on CentOS 6.5   | unavailable | CentOS           | 2015.1.0-7.0
-
 
 Note down the numbers under the ``id`` column. You will
 need these later.

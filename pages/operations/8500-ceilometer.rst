@@ -59,7 +59,6 @@ Install **ceilometer-compute-agent** on the Controller node
 using the appropriate command:
 ::
 
-  yum install openstack-ceilometer-compute (CentOS)
   apt-get install ceilometer-agent-compute (Debian)
 
 Configure Ceilometer by adding the following lines

@@ -6,7 +6,7 @@ Configuring an Operating System node
 
 Fuel provisions
 the :ref:`Operating System Role<operating-system-role-term>`
-with either the CentOS or Ubuntu operating system
+with the supported operating system
 that was selected for the environment
 but :ref:`Puppet<puppet-term>` does not deploy other packages
 on this node.
@@ -31,9 +31,8 @@ Some general administrative tasks you may need to perform are:
 You are pretty much free to install and configure
 this node any way you like.
 By default, all the repositories from the Fuel Master node are configured so
-you can install packages from these repositories by running
-**apt-get install <package-name>** on Ubuntu
-or **yum install <package-name>** on CentOS.
+you can install packages from these repositories by running the
+**apt-get install <package-name>** command on Ubuntu.
 You can also use **scp** to copy other software packages to this node
 and then install them using **apt-get** or **yum**.
 

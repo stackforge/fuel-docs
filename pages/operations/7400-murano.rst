@@ -36,9 +36,6 @@ to set up a Murano base image;
 see `Creating a Murano Image <http://murano.readthedocs.org/en/latest/image_builders/index.html>`_.
 Images can be uploaded via Glance.
 
-Fuel can install Murano on either CentOS or Ubuntu;
-simply check the appropriate check box when configuring your environment.
-
 .. include:: /pages/operations/murano/7410-components.rst
 .. include:: /pages/operations/murano/7482-test-prepare.rst
 .. include:: /pages/operations/murano/7485-test-details.rst

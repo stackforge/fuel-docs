@@ -11,18 +11,13 @@ HowTo: Manage OpenStack services
    list of `OpenStack projects <http://git.openstack.org/cgit/openstack/governance/plain/reference/projects.yaml>`_
    and their statuses in SysV or Upstart use the following commands:
 
-   On CentOS:
+   On Ubuntu:
    ::
 
        services=$(curl http://git.openstack.org/cgit/open \
        stack/governance/plain/reference/projects.yaml | \
          egrep -v 'Security|Documentation|Infrastructure' | \
          perl -n -e'/^(\w+):$/ && print "openstack-",lc $1,".*\$|",lc $1,".*\$|"')
-
-       chkconfig --list | grep -oE $services | grep ':on'
-
-   On Ubuntu, replace the last command to:
-   ::
 
        initctl list | grep -oE $services | grep start
 
@@ -37,11 +32,6 @@ HowTo: Manage OpenStack services
    In order to figure out the list of services managed by Pacemaker, you should
    first find disabled or not running services with the command:
 
-   On CentOS:
-   ::
-
-       chkconfig --list | grep -oE $services | grep -v ':on'
-
    On Ubuntu:
    ::
 
@@ -49,29 +39,8 @@ HowTo: Manage OpenStack services
 
    Next, you should inspect the output of command ``pcs resource``
    (or ``crm resource list``) and find the corresponding services listed, if any.
-   For example, if the 2nd chkconfig command reported on Centos OS:
 
-   ::
-
-       openstack-cinder-backup 0:off   1:off   2:off   3:off   4:off   ...
-       openstack-cinder-volume 0:off   1:off   2:off   3:off   4:off   ...
-       openstack-glance-scrubber       0:off   1:off   2:off   3:off   ...
-       openstack-heat-engine   0:off   1:off   2:off   3:off   4:off   ...
-       openstack-nova-console  0:off   1:off   2:off   3:off   4:off   ...
-       openstack-nova-metadata-api     0:off   1:off   2:off   3:off   ...
-       openstack-nova-xvpvncproxy      0:off   1:off   2:off   3:off   ...
-
-       ...  5:off   6:off
-       ...  5:off   6:off
-       ...  4:off   5:off   6:off
-       ...  0:off   5:off
-       ...  0:off   5:off
-       ...  4:off   5:off   6:off
-       ...  4:off   5:off   6:off
-
-
-
-   and the Pacemaker resources list is:
+   The Pacemaker resources list is:
    ::
 
        root@node-1:~# crm status

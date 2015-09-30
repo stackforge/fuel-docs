@@ -62,7 +62,7 @@ commands to match those used by the specific version of MySQL.
 
         crm configure edit p_mysql
 
-   The primitive for Ubuntu should look like:
+   Example of primitive for Ubuntu:
       ::
 
           crm configure primitive p_mysql ocf:mirantis:mysql-wss \
@@ -73,19 +73,6 @@ commands to match those used by the specific version of MySQL.
                  op start timeout="475" interval="0" \
                  op stop timeout="175" interval="0" \
                  meta is-managed=true
-
-   The primitive for CentOS should look like:
-      ::
-
-         crm configure primitive p_mysql ocf:mirantis:mysql-wss \
-                params socket="/var/lib/mysql/mysql.sock" \
-                pid="/var/run/mysql/mysqld.pid" \
-                test_passwd="password" test_user="wsrep_sst" \
-                op monitor timeout="55" interval="60" enabled=true \
-                op start timeout="475" interval="0" \
-                op stop timeout="175" interval="0" \
-                meta is-managed=true
-
 
    .. note:: During this operation, the MySQL/Galera cluster will be restarted.
       This may take up to 5 minutes.

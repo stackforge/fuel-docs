@@ -254,8 +254,7 @@ the **atop** options and commands.
 
 Each target node has a configuration file
 that controls the behavior of **atop** on that node.
-On Ubuntu nodes, this is the */etc/default/atop* file;
-on CentOS nodes, this is the */etc/sysconfig/atop* file.
+On Ubuntu nodes, this is the */etc/default/atop* file.
 The contents of the file are:
 
 .. code-block :: sh
