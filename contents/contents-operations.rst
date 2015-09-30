@@ -34,6 +34,7 @@
 .. include:: /pages/operations/corosync2.rst
 .. include:: /pages/operations/9000-troubleshoot.rst
 .. include:: /pages/operations/9600-upgrade.rst
+.. include:: /pages/operations/enable_ubuntu_bootstrap.rst
 .. include:: /pages/operations/ha-testing-scenarios-ops.rst
 .. include:: /pages/operations/db-backup-ops.rst
 .. include:: /pages/operations/isoUSB-ops.rst
