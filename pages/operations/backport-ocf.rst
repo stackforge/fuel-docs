@@ -39,7 +39,7 @@ Fuel 5.1 has completely redesigned OCF script which makes Galera cluster more re
 
         crm configure edit p_mysql
 
-Primitive for Ubuntu should look like:
+Primitive for Ubuntu:
    ::
 
        crm configure primitive p_mysql ocf:mirantis:mysql-wss \
@@ -50,18 +50,6 @@ Primitive for Ubuntu should look like:
               op start timeout="475" interval="0" \
               op stop timeout="175" interval="0" \
               meta is-managed=true
-
-Primitive for CentOS should look like:
-   ::
-
-      crm configure primitive p_mysql ocf:mirantis:mysql-wss \
-             params socket="/var/lib/mysql/mysql.sock" \
-             pid="/var/run/mysql/mysqld.pid" \
-             test_passwd="password" test_user="wsrep_sst" \
-             op monitor timeout="55" interval="60" enabled=true \
-             op start timeout="475" interval="0" \
-             op stop timeout="175" interval="0" \
-             meta is-managed=true
 
 .. note:: During this operation MySQL cluster will be restarted. This may take up to 5 minute
 

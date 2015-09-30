@@ -15,13 +15,6 @@ add a Linux based image to Murano:
 
       http://murano-files.mirantis.com/ubuntu_14_04-murano-agent_stable_juno.qcow2
 
-      .. note:: This VM image is usable whether the base operating system
-               is Ubuntu or CentOS.
-               The base operating system of a Murano image
-               is not related to the base operating system of the OpenStack environment;
-               Ubuntu images can be run in a CentOS-based OpenStack environment
-               and vice versa.
-
       If you would like to build your own Linux image,
       you can use the Murano agent.
       For instructions, see the `Murano documentation (Linux Image Builder)
