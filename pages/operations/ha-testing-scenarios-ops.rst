@@ -12,7 +12,7 @@ Regular testing scenarios
 Nova-network
 ++++++++++++
 
-These tests are run on both CentOS and Ubuntu.
+You can run the following tests on the supported operating system.
 
 1. Deploy a cluster in HA mode with VLAN Manager.
    Steps to perform:
@@ -207,7 +207,7 @@ These tests are run on both CentOS and Ubuntu.
 Neutron
 +++++++
 
-These tests are run on both CentOS and Ubuntu.
+You can run the following tests on the supported operating system.
 
 1. Deploy a cluster in HA mode with Neutron GRE segmentation.
    Steps to perform:
@@ -353,7 +353,7 @@ These tests are run on both CentOS and Ubuntu.
 Bonding
 +++++++
 
-These scenarios can be applied to both Ubuntu and CentOS.
+You can run the following tests on the supported operating system:
 
 1. Deploy cluster in HA mode for Neutron VLAN with bonding.
    Steps to perform:
@@ -482,7 +482,8 @@ Failover testing scenarios
 
    * Check that AMQP connection has re-appeared for heat-engine.
 
-The following testing scenarios (from 5 to 11) may be mixed with Nova or Neutron, CentOS or Ubuntu.
+The following testing scenarios (from 5 to 11) may be mixed with Nova or
+Neutron.
 
 5. Shut down primary controller.
    Steps to perform:

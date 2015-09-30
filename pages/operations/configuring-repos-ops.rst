@@ -21,19 +21,6 @@ amend the three fields which contain the required information
 for the repositories configuration depending on the
 distribution you install.
 
-For CentOS
-----------
-
-::
-
-  |repo-name|repo-baseurl|repo-priority|
-
-e.g
-
-::
-
-  my-repo http://my-domain.local/repo 10
-
 For Ubuntu
 ----------
 
@@ -49,7 +36,4 @@ Repository priorities
 The process of setting up repositories and repository priorities
 is the same one you normally do on your Linux distribution.
 
-Consult with your distribution's help if you are not sure:
-
-* Ubuntu: `PinningHowto <https://help.ubuntu.com/community/PinningHowto>`_
-* CentOS: `yum-plugin-priorities <http://wiki.centos.org/PackageManagement/Yum/Priorities>`_
+For more information, see the documentation to your Linux distribution.
