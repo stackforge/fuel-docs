@@ -262,6 +262,12 @@ a.fproduct div.footerglyph3 {
   background-size: cover;
 }
 
+a.fproduct div.footerglyph4 {
+  background: url(footer_unlocked_a.png) no-repeat;
+  background-position: 0 0;
+  background-size: cover;
+}
+
 a.fproduct:hover div {
   background-position: 0 100%;
 }
@@ -270,7 +276,7 @@ a.fproduct span {
   display: block;
   text-align: center;
   text-transform: none;
-  font-size: 1.3em;
+  font-size: 1.1em;
   line-height: 1.1em;
   color: white;
 }
