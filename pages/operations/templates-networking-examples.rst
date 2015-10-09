@@ -15,14 +15,22 @@ all other traffic.
 
 **To configure two networks:**
 
-1. Create a new network for all non-PXE traffic:
+1. Apply the following patch to Nailgun:
+
+* https://review.openstack.org/#/c/227040/
+
+2. Apply the following patch to the Puppet manifests:
+
+* https://review.openstack.org/#/c/225941/
+
+3. Create a new network for all non-PXE traffic:
 
    ::
 
     # fuel network-group --create --name everything --cidr <cidr>
     --gateway <gateway> --nodegroup <nodegroup>
 
-2. Set the ``render_addr_mask`` parameter to `internal` for this network by
+4. Set the ``render_addr_mask`` parameter to `internal` for this network by
    typing:
 
    ::
@@ -38,21 +46,22 @@ all other traffic.
    ``render_addr_mask`` set to `internal` in its metadata. Therefore, update
    ``render_addr_mask`` for this network.
 
-3. Save `network template for two networks <examples/two_networks.yaml>`_
+4. Save `network template for two networks
+   <https://raw.githubusercontent.com/stackforge/fuel-docs/master/examples/network_templates/two_networks.yaml>`_
    as ``network_template_<env id>.yaml``.
 
    .. note::
       Verify that ``nic_mapping`` matches your configuration.
 
-4. Upload the network template by typing:
+5. Upload the network template by typing:
 
    ::
 
     # fuel network-template --upload --env <env id>
 
-5. Deploy the environment.
+6. Deploy the environment.
 
-6. After Fuel completes the deployment, verify that only one bridge is
+   When Fuel completes the deployment, verify that only one bridge is
    configured by typing:
 
    ::
@@ -82,18 +91,42 @@ available.
 
 **To configure a single network:**
 
-1. Save `network template for one network <examples/one_network.yaml>`_
+1. Apply the following patches to Nailgun:
+
+* https://review.openstack.org/#/c/227040/
+* https://review.openstack.org/#/c/226844/
+
+2. Apply the following patch to the Puppet manifests:
+
+* https://review.openstack.org/#/c/225941/
+
+3. Modify the admin network through the database by typing:
+
+   ::
+
+    # dockerctl shell postgres
+    # sudo -u postgres psql nailgun
+    nailgun=# UPDATE network_groups SET meta='{"unmovable": true, "use_gateway":
+        true, "notation": "ip_ranges", "render_addr_mask": "internal",
+        "render_type": null, "map_priority": 0, "configurable": false}'
+        WHERE id=1;
+
+   .. note::
+      You cannot modify the admin network using CLI.
+
+4. Save `network template for one network
+   <https://raw.githubusercontent.com/stackforge/fuel-docs/master/examples/network_templates/one_network.yaml>`_
    as ``network_template_<env id>.yaml``.
 
-2. Upload the network template by typing:
+5. Upload the network template by typing:
 
    ::
 
     # fuel network-template --upload --env <env id>
 
-3. Deploy the  environment.
+6. Deploy the  environment.
 
-4. Proceed to :ref:`neutron_config`.
+7. Proceed to :ref:`neutron_config`.
 
 .. _neutron_config:
 
