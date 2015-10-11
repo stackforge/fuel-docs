@@ -72,4 +72,10 @@ the Mirantis OpenStack 6.1 deployments.
 Proposed updates
 ****************
 
+TODO add warning
+TODO text regarding proposed updates
 There are no proposed updates available at the moment.
+
+-----
+
+.. include:: /pages/maintenance-updates/v61/1504916-mu3-openstack.rst
