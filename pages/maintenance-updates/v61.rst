@@ -35,7 +35,7 @@ There are no urgent security updates available at the moment.
 Published updates
 *****************
 
-The following updates for Mirantis OpenStack are available. These
+The following updates for Mirantis OpenStack 6.1 are available. These
 updates passed thorough testing and are recommended to be applied to
 the Mirantis OpenStack 6.1 deployments.
 
@@ -72,4 +72,13 @@ the Mirantis OpenStack 6.1 deployments.
 Proposed updates
 ****************
 
-There are no proposed updates available at the moment.
+.. warning:: The proposed updates for Mirantis OpenStack 6.1 did NOT
+   pass a full cycle of testing and are shared for early access and evaluation
+   purposes only. We do not recommend applying the proposed updates to production
+   deployments. Use them at your own risk.
+
+The following updates for Mirantis OpenStack 6.1 are shared for an early access.
+
+-----
+
+.. include:: /pages/maintenance-updates/v61/1504916-mu3-openstack.rst

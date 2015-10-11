@@ -60,5 +60,5 @@ Maintenance Update 2:
 Proposed updates
 ----------------
 
-There are no proposed updates available at the moment.
+* :ref:`#1504916 <mos61mu-1504916>` Cumulative OpenStack update (14 fixes)
 
