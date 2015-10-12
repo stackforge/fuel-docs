@@ -33,8 +33,8 @@ for the upgrade.
 
 .. _upgrade-patch-commands:
 
-Commands To Prepare The Fuel Master Node
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Commands to Install the Upgrade Script
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Install the ``octane`` application using ``yum`` package manager:
 
@@ -42,8 +42,27 @@ Install the ``octane`` application using ``yum`` package manager:
 
     yum install -y fuel-octane
 
-The upgrade script prepares the Fuel Master node with a single command:
+Alternatively, you can use the Git version control system to install the
+script from the source code that resides in the upstream repository.
+
+To install the script from the upstream repository:
+
+1. Install dependenecy packages using ``yum install``:
 
 ::
 
-    octane prepare
+    yum install -y git patch python-pip python-paramiko
+
+2. Clone the ``fuel-octane`` repository:
+
+::
+
+    git clone https://git.openstack.org/stackforge/fuel-octane -b stable/7.0
+
+3. Change current directory to ``fuel-octane``.
+
+4. Install the upgrade script:
+
+::
+
+    cd fuel-octane && pip install -e ./
