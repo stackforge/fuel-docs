@@ -50,4 +50,4 @@ upgrade:
 
 ::
 
-    ./octane upgrade-node ${SEED_ID} isolated <NODE-ID>
+    octane upgrade-node ${SEED_ID} isolated <NODE-ID>
