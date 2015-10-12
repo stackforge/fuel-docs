@@ -23,8 +23,8 @@ and the list of commands:
 
 .. _upgrade-cleanup-revert:
 
-Revert Patches
-++++++++++++++
+Uninstall Upgrade Script
+++++++++++++++++++++++++
 
 The final goal of the upgrade procedure is to get the upgraded
 environment as close as possible to the environment installed with
@@ -42,7 +42,7 @@ Commands uninstall components
 Run the following command to revert the changes made to the source
 code and configuration of components of the Fuel installer::
 
-    octane cleanup-fuel
+    yum erase -y fuel-octane
 
 .. _upgrade-cleanup-delete-env:
 

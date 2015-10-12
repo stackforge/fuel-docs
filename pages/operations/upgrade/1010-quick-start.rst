@@ -33,7 +33,26 @@ install the Upgrade Script in the system:
 ::
 
     yum install -y fuel-octane
-    octane prepare
+
+Alternatively, you can install the script from Git repository. First,
+install dependency packages:
+
+::
+
+    yum install -y git patch python-pip python-paramiko
+
+Then use ``git`` command to clone the ``fuel-octane`` repository. You
+need to specify branch ``stable/7.0`` as a default:
+
+::
+
+    git clone https://git.openstack.org/stackforge/fuel-octane -b stable/7.0
+
+Finally, install the script as a Python package using ``pip`` command:
+
+::
+
+    cd fuel-octane && pip install -e ./
 
 *2. Pick environment to upgrade*
 
@@ -57,7 +76,7 @@ and store its ID to a variable:
 
 ::
 
-    SEED_ID=$(./octane upgrade-env $ORIG_ID)
+    SEED_ID=$(octane upgrade-env $ORIG_ID)
 
 *4. Upgrade the first Controller*
 
@@ -128,16 +147,7 @@ identified by ID:
 
     octane upgrade-node $SEED_ID <ID>
 
-*10. Clean up the Fuel Master node*
-
-When no nodes remain in the 6.1 environment, run the following
-command to restore the original state of the 7.0 Fuel Master node:
-
-::
-
-    octane cleanup-fuel
-
-*11. Delete the original 6.1 environment*
+*10. Delete the original 6.1 environment*
 
 After verification of the upgraded 7.0 environment, delete the
 original 6.1 environment with the following command:
