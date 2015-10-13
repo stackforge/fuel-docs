@@ -1,0 +1,27 @@
+.. _mos61mu-1495658:
+
+Unclear message about MOS maintenance updates
+=============================================
+
+In order to prevent address logging issues when some host ssh keys are
+missing, we need to run a ssh-keygen -A as part of our ssh server setup
+on Ubuntu.
+See `LP1484693 <https://bugs.launchpad.net/bugs/1484693>`_.
+
+Affected packages
+-----------------
+* **Centos/@6.1:**
+
+Fixed packages
+--------------
+* **Centos/@6.1:**
+
+Patching scenario
+-----------------
+
+#. Run the following commands on Fuel master node::
+
+        yum clean expire-cache
+        yum -y update fuel-library
+
+TODO:...

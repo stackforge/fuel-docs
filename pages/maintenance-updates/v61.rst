@@ -95,3 +95,7 @@ The following updates for Mirantis OpenStack 6.1 are shared for an early access.
 
 .. include:: /pages/maintenance-updates/v61/1495658-improve-upd-message.rst
 
+-----
+
+.. include:: /pages/maintenance-updates/v61/1484693-ssh-keys.rst
+
