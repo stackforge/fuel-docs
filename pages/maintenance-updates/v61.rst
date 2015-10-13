@@ -82,3 +82,7 @@ The following updates for Mirantis OpenStack 6.1 are shared for an early access.
 -----
 
 .. include:: /pages/maintenance-updates/v61/1504916-mu3-openstack.rst
+
+-----
+
+.. include:: /pages/maintenance-updates/v61/1452389-atop-logrotate.rst
