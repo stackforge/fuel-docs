@@ -65,3 +65,6 @@ Proposed updates
 * :ref:`#1452389 <mos61mu-1452389>` logrotate is rotating already rotated atop's logs
 
 * :ref:`#1487517 <mos61mu-1487517>` Status of alarms and queues is silently ignored in RabbitMQ monitoring OCF
+
+* :ref:`#1495658 <mos61mu-1495658>` Unclear message about MOS maintenance updates
+
