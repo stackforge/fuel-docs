@@ -65,3 +65,7 @@ Proposed updates
 * :ref:`#1452389 <mos61mu-1452389>` logrotate is rotating already rotated atop's logs
 
 * :ref:`#1487517 <mos61mu-1487517>` Status of alarms and queues is silently ignored in RabbitMQ monitoring OCF
+
+* :ref:`#1484693 <mos61mu-1484693>` OpenSSH fills auth.log up due to missing ed25519 host key file
+
+* :ref:`#1482121 <mos61mu-1482121>` After failover nova-compute used with vCenter searches VM images in the new directory
