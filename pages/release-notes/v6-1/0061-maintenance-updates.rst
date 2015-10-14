@@ -68,3 +68,4 @@ Proposed updates
 
 * :ref:`#1495658 <mos61mu-1495658>` Unclear message about MOS maintenance updates
 
+* :ref:`#1482121 <mos61mu-1482121>` After failover nova-compute used with vCenter searches VM images in the new directory
