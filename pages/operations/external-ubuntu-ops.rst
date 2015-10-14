@@ -84,6 +84,25 @@ configuration file (see below):
    http_proxy=http://username:password@host:port/
    RSYNC_PROXY=username:password@host:port
 
+You may also want to configure Docker to use the proxy to
+download the Ubuntu image needed to resolve the packages
+dependencies. Add the above environment variables to the
+file Â`/etc/sysconfig/docker`, and export them:
+
+::
+
+   http_proxy=http://username:password@host:port/
+   RSYNC_PROXY=username:password@host:port
+   export http_proxy RYSNC_PROXY
+
+Then, restart the docker daemon:
+
+::
+
+   service docker restart
+
+Or alternatively (recommended), reboot the master node.
+
 Issue the following command to get the *fuel-createmirror* help:
 
 ::
