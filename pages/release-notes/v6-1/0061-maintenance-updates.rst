@@ -69,3 +69,5 @@ Proposed updates
 * :ref:`#1484693 <mos61mu-1484693>` OpenSSH fills auth.log up due to missing ed25519 host key file
 
 * :ref:`#1482121 <mos61mu-1482121>` After failover nova-compute used with vCenter searches VM images in the new directory
+
+* :ref:`#1486690 <mos61mu-1486690>` [logrotate] The sharedscripts option conflicts with delaycompress option
