@@ -102,3 +102,7 @@ The following updates for Mirantis OpenStack 6.1 are shared for an early access.
 -----
 
 .. include:: /pages/maintenance-updates/v61/1482121-nova-vcenter.rst
+
+-----
+
+.. include:: /pages/maintenance-updates/v61/1486690-logrotate-fuel.rst
