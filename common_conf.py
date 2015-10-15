@@ -197,7 +197,11 @@ html_favicon = '_static/mirantis_icon.ico'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-html_extra_path = ['_templates/mirantis/static/index.html', '_templates/mirantis/static/search.html']
+# A list of paths that contain extra files not directly related to the
+# documentation, such as robots.txt or .htaccess. Relative paths are taken
+# as relative to the configuration directory. They are copied to the output
+# directory. They will overwrite any existing file of the same name.
+html_extra_path = ['_templates/mirantis/static/index.html', '_templates/mirantis/static/search.html', 'examples']
 
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.
