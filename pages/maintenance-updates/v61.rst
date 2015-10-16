@@ -90,3 +90,7 @@ The following updates for Mirantis OpenStack 6.1 are shared for an early access.
 -----
 
 .. include:: /pages/maintenance-updates/v61/1487517-rabbitmq-ocf.rst
+
+-----
+
+.. include:: /pages/maintenance-updates/v61/1484693-ssh-keys.rst
