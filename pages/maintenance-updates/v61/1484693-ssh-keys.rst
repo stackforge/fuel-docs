@@ -1,0 +1,35 @@
+.. _mos61mu-1484693:
+
+OpenSSH fills auth.log up due to missing ed25519 host key file
+==============================================================
+
+During the installation of OpenSSH, the `ssh-keygen` utility does not generate
+all the needed host keys. Therefore, the `OpenSSH` process generates error messages
+that overfill the ``auth.log`` file. See `LP1484693 <https://bugs.launchpad.net/bugs/1484693>`_.
+
+Affected packages
+-----------------
+* **CentOS/@6.1:** fuel-library6.1=6.1.0-6756.2
+
+Fixed packages
+--------------
+* **CentOS/@6.1:** fuel-library6.1=6.1.0-6757.2
+
+Patching scenario - Fuel Master node
+------------------------------------
+
+Run the following commands on the Fuel Master node::
+
+        yum clean expire-cache
+        yum -y update fuel-library
+
+.. note:: After updating the fuel-library package on the Fuel Master node, only
+   newly created environments are deployed with the fixed behavior of OpenSSH.
+   In order to fix the existing environments, execute the commands below.
+
+Patching scenario - Ubuntu
+--------------------------
+
+Run the following command on all the slave nodes to make sure all the possible keys are generated::
+
+        ssh-keygen -A
