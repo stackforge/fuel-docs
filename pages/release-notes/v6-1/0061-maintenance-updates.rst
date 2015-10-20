@@ -71,3 +71,7 @@ Proposed updates
 * :ref:`#1482121 <mos61mu-1482121>` [vcenter] After a failover nova-compute searches for images in a new directory
 
 * :ref:`#1486690 <mos61mu-1486690>` [logrotate] The sharedscripts option conflicts with delaycompress option
+
+* :ref:`#1470831 <mos61mu-1470831>` [IBP] Speed up the image building
+
+* :ref:`#1484502 <mos61mu-1484502>` [vCenter][OSTF] Test fails in dual hypervisor mode

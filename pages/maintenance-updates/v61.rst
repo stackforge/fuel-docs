@@ -102,3 +102,11 @@ The following updates for Mirantis OpenStack 6.1 are shared for an early access.
 -----
 
 .. include:: /pages/maintenance-updates/v61/1486690-logrotate-fuel.rst
+
+-----
+
+.. include:: /pages/maintenance-updates/v61/1470831-ibp-speedup.rst
+
+-----
+
+.. include:: /pages/maintenance-updates/v61/1484502-ostf-failure.rst
