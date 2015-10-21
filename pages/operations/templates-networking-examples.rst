@@ -38,7 +38,8 @@ all other traffic.
    ``render_addr_mask`` set to `internal` in its metadata. Therefore, update
    ``render_addr_mask`` for this network.
 
-3. Save `network template for two networks <examples/two_networks.yaml>`_
+3. Save `network template for two networks
+   <https://raw.githubusercontent.com/openstack/fuel-docs/stable/7.0/examples/two_networks.yaml>`_
    as ``network_template_<env id>.yaml``.
 
    .. note::
@@ -82,18 +83,33 @@ available.
 
 **To configure a single network:**
 
-1. Save `network template for one network <examples/one_network.yaml>`_
+1. Modify the admin network through the database by typing:
+
+   ::
+
+    # dockerctl shell postgres
+    # sudo -u postgres psql nailgun
+    nailgun=# UPDATE network_groups SET meta='{"unmovable": true, "use_gateway":
+        true, "notation": "ip_ranges", "render_addr_mask": "internal",
+        "render_type": null, "map_priority": 0, "configurable": false}'
+        WHERE id=1;
+
+   .. note::
+      You cannot modify the admin network using CLI.
+
+2. Save `network template for one network
+   <https://raw.githubusercontent.com/openstack/fuel-docs/stable/7.0/examples/one_network.yaml>`_
    as ``network_template_<env id>.yaml``.
 
-2. Upload the network template by typing:
+3. Upload the network template by typing:
 
    ::
 
     # fuel network-template --upload --env <env id>
 
-3. Deploy the  environment.
+4. Deploy the  environment.
 
-4. Proceed to :ref:`neutron_config`.
+5. Proceed to :ref:`neutron_config`.
 
 .. _neutron_config:
 
