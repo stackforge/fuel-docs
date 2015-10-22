@@ -8,13 +8,15 @@ the running RabbitMQ instance if "heavy" operations cause timeouts.
 Also, the script is unable to determine the RabbitMQ deadlocking if there is
 no free memory left.
 
-The resulting solution consists of two changes:
+The resulting solution consists of three changes:
 
 * Avoid deadlocking of RabbitMQ if there are no free memory resources left. See `LP1463433 <https://bugs.launchpad.net/bugs/1463433>`_.
 
 * Make the OCF script ignore a small number of timeouts in rabbitmqctl
   for 'heavy' operations: ``list_channels``, ``get_alarms`` and ``list_queues``.
   See `LP1487517 <https://bugs.launchpad.net/bugs/1487517>`_ and `LP1479815 <https://bugs.launchpad.net/bugs/1479815>`_.
+
+* Fix the error in the calculation of RabbitMQ memory consumption. See `LP1503331 <https://bugs.launchpad.net/bugs/1503331`_.
 
 As a part of this change, adjust the default timeouts of monitor actions in the deployed environment.
 
@@ -27,10 +29,10 @@ Affected packages
 
 Fixed packages
 --------------
-* **CentOS/@6.1:** fuel-library6.1=6.1.0-6761.2
-* **CentOS/@6.1:** fuel-ha-utils6.1=6.1.0-6761.2
-* **Ubuntu/@6.1:** fuel-library6.1=6.1.0-6761.2
-* **Ubuntu/@6.1:** fuel-ha-utils6.1=6.1.0-6761.2
+* **CentOS/@6.1:** fuel-library6.1=6.1.0-6762.2
+* **CentOS/@6.1:** fuel-ha-utils6.1=6.1.0-6762.2
+* **Ubuntu/@6.1:** fuel-library6.1=6.1.0-6762.2
+* **Ubuntu/@6.1:** fuel-ha-utils6.1=6.1.0-6762.2
 
 Patching scenario - Fuel Master node
 ------------------------------------
