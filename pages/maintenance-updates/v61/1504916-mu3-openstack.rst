@@ -19,6 +19,13 @@ following bug fixes:
 
   See `LP1421439 <https://bugs.launchpad.net/bugs/1421439>`_.
 
+* Fixed the issue with Cinder ``ISCSIDriver`` containing LVM-specific calls
+  which can lead to failures in drivers inherited from ``ISCSIDriver``.
+  The fix moves the LVM-specific calls back to ``LVMISCSIDriver`` and keeps
+  the base ``ISCSIDriver`` class as a generic one.
+
+  See `LP1481523 <https://bugs.launchpad.net/bugs/1481523>`_.
+
 * Fixed the issue with Keystone collecting garbage for the list of tokens on
   every request. It could result in significant performance degradation. The
   fix reduces the frequency of garbage collection, and now this operation
