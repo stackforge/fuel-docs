@@ -26,4 +26,4 @@ Run the following commands on the Fuel Master node::
 
         dockerctl shell ostf
         yum clean expire-cache
-        yum -y update fuel-agent
+        yum -y update fuel-ostf
