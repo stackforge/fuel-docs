@@ -79,6 +79,25 @@ following bug fixes:
 
   See `LP1493263 <https://bugs.launchpad.net/bugs/1493263>`_.
 
+* Added proxy support for Murano client to make it usable in environments
+  without direct access to the Internet.
+
+  See `LP1501889 <https://bugs.launchpad.net/bugs/1501889>`_.
+
+* Added Murano middleware to handle SSL proxies to enable Murano
+  deployments behind SSL termination proxy.
+
+  See `LP1504611 <https://bugs.launchpad.net/bugs/1504611>`_.
+
+* Fixed 2 usability issues on Network Topology page in Horizon:
+  # Terminate Instance button is now functional - it failed because the page was
+    generated with wrong data.
+  # "Small" and "Normal" buttons now have correct state - they were randomly
+    enabled and disabled in some conditions.
+
+  See `LP1398397 <https://bugs.launchpad.net/bugs/1398397>`_,
+  `LP1504171 <https://bugs.launchpad.net/bugs/1504171>`_.
+
 Fixed security vulnerabilities
 ------------------------------
 
@@ -132,9 +151,12 @@ Fixed security vulnerabilities
 Affected packages
 -----------------
 
+* **CentOS\@6.1:** murano=2014.2.2-fuel6.1.mira17
 * **CentOS\@6.1:** openstack-cinder=2014.2.2-fuel6.1.mira10
 * **CentOS\@6.1:** openstack-cinder-doc=2014.2.2-fuel6.1.mira10
 * **CentOS\@6.1:** openstack-dashboard=2014.2.2-fuel6.1.mira27
+* **CentOS\@6.1:** openstack-glance=2014.2.2-fuel6.1.mira10
+* **CentOS\@6.1:** openstack-glance-doc=2014.2.2-fuel6.1.mira10
 * **CentOS\@6.1:** openstack-heat-api=2014.2.2-fuel6.1.mira12
 * **CentOS\@6.1:** openstack-heat-api-cfn=2014.2.2-fuel6.1.mira12
 * **CentOS\@6.1:** openstack-heat-api-cloudwatch=2014.2.2-fuel6.1.mira12
@@ -159,15 +181,24 @@ Affected packages
 * **CentOS\@6.1:** python-cinder=2014.2.2-fuel6.1.mira10
 * **CentOS\@6.1:** python-django-horizon=2014.2.2-fuel6.1.mira27
 * **CentOS\@6.1:** python-django-horizon-doc=2014.2.2-fuel6.1.mira27
+* **CentOS\@6.1:** python-glance=2014.2.2-fuel6.1.mira10
 * **CentOS\@6.1:** python-glanceclient=0.15.0-fuel6.1.mira5
 * **CentOS\@6.1:** python-glanceclient=doc-0.15.0-fuel6.1.mira5
 * **CentOS\@6.1:** python-keystone=2014.2.2-fuel6.1.mira23
+* **CentOS\@6.1:** python-muranoclient=0.5.6-fuel6.1.mira4
 * **CentOS\@6.1:** python-nova=2014.2.2-fuel6.1.mira30
+* **CentOS\@6.1:** python-oslo-messaging=1.4.1-fuel6.1.mira32
+* **CentOS\@6.1:** python-oslo-messaging-doc=1.4.1-fuel6.1.mira32
+* **CentOS\@6.1:** sahara=2014.2.2-fuel6.1.mira16
 * **Ubuntu\@6.1:** cinder-api=2014.2.2-1~u14.04+mos14
 * **Ubuntu\@6.1:** cinder-backup=2014.2.2-1~u14.04+mos14
 * **Ubuntu\@6.1:** cinder-common=2014.2.2-1~u14.04+mos14
 * **Ubuntu\@6.1:** cinder-scheduler=2014.2.2-1~u14.04+mos14
 * **Ubuntu\@6.1:** cinder-volume=2014.2.2-1~u14.04+mos14
+* **Ubuntu\@6.1:** glance=2014.2.2-1~u14.04+mos10
+* **Ubuntu\@6.1:** glance-api=2014.2.2-1~u14.04+mos10
+* **Ubuntu\@6.1:** glance-common=2014.2.2-1~u14.04+mos10
+* **Ubuntu\@6.1:** glance-registry=2014.2.2-1~u14.04+mos10
 * **Ubuntu\@6.1:** heat-api=2014.2.2-1~u14.04+mos12
 * **Ubuntu\@6.1:** heat-api-cfn=2014.2.2-1~u14.04+mos12
 * **Ubuntu\@6.1:** heat-api-cloudwatch=2014.2.2-1~u14.04+mos12
@@ -176,6 +207,7 @@ Affected packages
 * **Ubuntu\@6.1:** heat-engine=2014.2.2-1~u14.04+mos12
 * **Ubuntu\@6.1:** keystone=2014.2.2-1~u14.04+mos23
 * **Ubuntu\@6.1:** keystone-doc=2014.2.2-1~u14.04+mos23
+* **Ubuntu\@6.1:** murano=2014.2.2-1~u14.04+mos15
 * **Ubuntu\@6.1:** nova-ajax-console-proxy=2014.2.2-1~u14.04+mos33
 * **Ubuntu\@6.1:** nova-api=2014.2.2-1~u14.04+mos33
 * **Ubuntu\@6.1:** nova-api-ec2=2014.2.2-1~u14.04+mos33
@@ -207,11 +239,16 @@ Affected packages
 * **Ubuntu\@6.1:** openstack-dashboard=2014.2.2-1~u14.04+mos27
 * **Ubuntu\@6.1:** python-cinder=2014.2.2-1~u14.04+mos14
 * **Ubuntu\@6.1:** python-django-horizon=2014.2.2-1~u14.04+mos27
+* **Ubuntu\@6.1:** python-glance=2014.2.2-1~u14.04+mos10
+* **Ubuntu\@6.1:** python-glance-doc=2014.2.2-1~u14.04+mos10
 * **Ubuntu\@6.1:** python-glanceclient=0.15.0-1~u14.04+mos5
 * **Ubuntu\@6.1:** python-heat=2014.2.2-1~u14.04+mos12
 * **Ubuntu\@6.1:** python-keystone=2014.2.2-1~u14.04+mos23
+* **Ubuntu\@6.1:** python-muranoclient_0.5.6-1~u14.04+mos5
 * **Ubuntu\@6.1:** python-nova=2014.2.2-1~u14.04+mos33
+* **Ubuntu\@6.1:** python-oslo.messaging=1.4.1-1~u14.04+mos12
 * **Ubuntu\@6.1:** python-swift=2.2.0-1~u14.04+mos6
+* **Ubuntu\@6.1:** sahara=2014.2.2-1~u14.04+mos16
 * **Ubuntu\@6.1:** swift=2.2.0-1~u14.04+mos6
 * **Ubuntu\@6.1:** swift-account=2.2.0-1~u14.04+mos6
 * **Ubuntu\@6.1:** swift-container=2.2.0-1~u14.04+mos6
@@ -223,9 +260,12 @@ Affected packages
 Fixed packages
 --------------
 
-* **CentOS\@6.1:** openstack-cinder=2014.2.2-fuel6.1.mira11
-* **CentOS\@6.1:** openstack-cinder-doc=2014.2.2-fuel6.1.mira11
-* **CentOS\@6.1:** openstack-dashboard=2014.2.2-fuel6.1.mira29
+* **CentOS\@6.1:** murano=2014.2.2-fuel6.1.mira18
+* **CentOS\@6.1:** openstack-cinder=2014.2.2-fuel6.1.mira12
+* **CentOS\@6.1:** openstack-cinder-doc=2014.2.2-fuel6.1.mira12
+* **CentOS\@6.1:** openstack-dashboard=2014.2.2-fuel6.1.mira31
+* **CentOS\@6.1:** openstack-glance=2014.2.2-fuel6.1.mira11
+* **CentOS\@6.1:** openstack-glance-doc=2014.2.2-fuel6.1.mira11
 * **CentOS\@6.1:** openstack-heat-api=2014.2.2-fuel6.1.mira14
 * **CentOS\@6.1:** openstack-heat-api-cfn=2014.2.2-fuel6.1.mira14
 * **CentOS\@6.1:** openstack-heat-api-cloudwatch=2014.2.2-fuel6.1.mira14
@@ -234,31 +274,47 @@ Fixed packages
 * **CentOS\@6.1:** openstack-heat-engine=2014.2.2-fuel6.1.mira14
 * **CentOS\@6.1:** openstack-keystone=2014.2.2-fuel6.1.mira24
 * **CentOS\@6.1:** openstack-keystone-doc=2014.2.2-fuel6.1.mira24
-* **CentOS\@6.1:** openstack-nova=2014.2.2-fuel6.1.mira32
-* **CentOS\@6.1:** openstack-nova-api=2014.2.2-fuel6.1.mira32
-* **CentOS\@6.1:** openstack-nova-cells=2014.2.2-fuel6.1.mira32
-* **CentOS\@6.1:** openstack-nova-cert=2014.2.2-fuel6.1.mira32
-* **CentOS\@6.1:** openstack-nova-common=2014.2.2-fuel6.1.mira32
-* **CentOS\@6.1:** openstack-nova-compute=2014.2.2-fuel6.1.mira32
-* **CentOS\@6.1:** openstack-nova-conductor=2014.2.2-fuel6.1.mira32
-* **CentOS\@6.1:** openstack-nova-console=2014.2.2-fuel6.1.mira32
-* **CentOS\@6.1:** openstack-nova-doc=2014.2.2-fuel6.1.mira32
-* **CentOS\@6.1:** openstack-nova-network=2014.2.2-fuel6.1.mira32
-* **CentOS\@6.1:** openstack-nova-novncproxy=2014.2.2-fuel6.1.mira32
-* **CentOS\@6.1:** openstack-nova-objectstore=2014.2.2-fuel6.1.mira32
-* **CentOS\@6.1:** openstack-nova-scheduler=2014.2.2-fuel6.1.mira32
-* **CentOS\@6.1:** python-cinder=2014.2.2-fuel6.1.mira11
-* **CentOS\@6.1:** python-django-horizon=2014.2.2-fuel6.1.mira29
-* **CentOS\@6.1:** python-django-horizon-doc=2014.2.2-fuel6.1.mira29
-* **CentOS\@6.1:** python-glanceclient=0.15.0-fuel6.1.mira6
-* **CentOS\@6.1:** python-glanceclient-doc=0.15.0-fuel6.1.mira6
+* **CentOS\@6.1:** openstack-nova=2014.2.2-fuel6.1.mira34
+* **CentOS\@6.1:** openstack-nova-api=2014.2.2-fuel6.1.mira34
+* **CentOS\@6.1:** openstack-nova-cells=2014.2.2-fuel6.1.mira34
+* **CentOS\@6.1:** openstack-nova-cert=2014.2.2-fuel6.1.mira34
+* **CentOS\@6.1:** openstack-nova-common=2014.2.2-fuel6.1.mira34
+* **CentOS\@6.1:** openstack-nova-compute=2014.2.2-fuel6.1.mira34
+* **CentOS\@6.1:** openstack-nova-conductor=2014.2.2-fuel6.1.mira34
+* **CentOS\@6.1:** openstack-nova-console=2014.2.2-fuel6.1.mira34
+* **CentOS\@6.1:** openstack-nova-doc=2014.2.2-fuel6.1.mira34
+* **CentOS\@6.1:** openstack-nova-network=2014.2.2-fuel6.1.mira34
+* **CentOS\@6.1:** openstack-nova-novncproxy=2014.2.2-fuel6.1.mira34
+* **CentOS\@6.1:** openstack-nova-objectstore=2014.2.2-fuel6.1.mira34
+* **CentOS\@6.1:** openstack-nova-scheduler=2014.2.2-fuel6.1.mira34
+* **CentOS\@6.1:** openstack-swift=2.2.0-fuel6.1.mira4
+* **CentOS\@6.1:** openstack-swift-account=2.2.0-fuel6.1.mira4
+* **CentOS\@6.1:** openstack-swift-container=2.2.0-fuel6.1.mira4
+* **CentOS\@6.1:** openstack-swift-doc=2.2.0-fuel6.1.mira4
+* **CentOS\@6.1:** openstack-swift-object=2.2.0-fuel6.1.mira4
+* **CentOS\@6.1:** openstack-swift-proxy=2.2.0-fuel6.1.mira4
+* **CentOS\@6.1:** python-cinder=2014.2.2-fuel6.1.mira12
+* **CentOS\@6.1:** python-django-horizon=2014.2.2-fuel6.1.mira31
+* **CentOS\@6.1:** python-django-horizon-doc=2014.2.2-fuel6.1.mira31
+* **CentOS\@6.1:** python-glance=2014.2.2-fuel6.1.mira11
+* **CentOS\@6.1:** python-glanceclient-0.15.0-fuel6.1.mira6
+* **CentOS\@6.1:** python-glanceclient-doc-0.15.0-fuel6.1.mira6
 * **CentOS\@6.1:** python-keystone=2014.2.2-fuel6.1.mira24
-* **CentOS\@6.1:** python-nova=2014.2.2-fuel6.1.mira32
-* **Ubuntu\@6.1:** cinder-api=2014.2.2-1~u14.04+mos15
-* **Ubuntu\@6.1:** cinder-backup=2014.2.2-1~u14.04+mos15
-* **Ubuntu\@6.1:** cinder-common=2014.2.2-1~u14.04+mos15
-* **Ubuntu\@6.1:** cinder-scheduler=2014.2.2-1~u14.04+mos15
-* **Ubuntu\@6.1:** cinder-volume=2014.2.2-1~u14.04+mos15
+* **CentOS\@6.1:** python-muranoclient=0.5.6-fuel6.1.mira5
+* **CentOS\@6.1:** python-neutron=2014.2.2-fuel6.1.mira34
+* **CentOS\@6.1:** python-nova=2014.2.2-fuel6.1.mira34
+* **CentOS\@6.1:** python-oslo-messaging-1.4.1-fuel6.1.mira33
+* **CentOS\@6.1:** python-oslo-messaging-doc-1.4.1-fuel6.1.mira33
+* **CentOS\@6.1:** sahara=2014.2.2-fuel6.1.mira17
+* **Ubuntu\@6.1:** cinder-api=2014.2.2-1~u14.04+mos16
+* **Ubuntu\@6.1:** cinder-backup=2014.2.2-1~u14.04+mos16
+* **Ubuntu\@6.1:** cinder-common=2014.2.2-1~u14.04+mos16
+* **Ubuntu\@6.1:** cinder-scheduler=2014.2.2-1~u14.04+mos16
+* **Ubuntu\@6.1:** cinder-volume=2014.2.2-1~u14.04+mos16
+* **Ubuntu\@6.1:** glance=2014.2.2-1~u14.04+mos11
+* **Ubuntu\@6.1:** glance-api=2014.2.2-1~u14.04+mos11
+* **Ubuntu\@6.1:** glance-common=2014.2.2-1~u14.04+mos11
+* **Ubuntu\@6.1:** glance-registry=2014.2.2-1~u14.04+mos11
 * **Ubuntu\@6.1:** heat-api=2014.2.2-1~u14.04+mos14
 * **Ubuntu\@6.1:** heat-api-cfn=2014.2.2-1~u14.04+mos14
 * **Ubuntu\@6.1:** heat-api-cloudwatch=2014.2.2-1~u14.04+mos14
@@ -267,49 +323,56 @@ Fixed packages
 * **Ubuntu\@6.1:** heat-engine=2014.2.2-1~u14.04+mos14
 * **Ubuntu\@6.1:** keystone=2014.2.2-1~u14.04+mos24
 * **Ubuntu\@6.1:** keystone-doc=2014.2.2-1~u14.04+mos24
-* **Ubuntu\@6.1:** nova-ajax-console-proxy=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** nova-api=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** nova-api-ec2=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** nova-api-metadata=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** nova-api-os-compute=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** nova-api-os-volume=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** nova-baremetal=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** nova-cells=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** nova-cert=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** nova-common=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** nova-compute=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** nova-compute-kvm=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** nova-compute-libvirt=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** nova-compute-lxc=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** nova-compute-qemu=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** nova-compute-vmware=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** nova-compute-xen=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** nova-conductor=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** nova-console=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** nova-consoleauth=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** nova-doc=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** nova-network=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** nova-novncproxy=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** nova-objectstore=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** nova-scheduler=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** nova-spiceproxy=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** nova-volume=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** nova-xvpvncproxy=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** openstack-dashboard=2014.2.2-1~u14.04+mos29
-* **Ubuntu\@6.1:** python-cinder=2014.2.2-1~u14.04+mos15
-* **Ubuntu\@6.1:** python-django-horizon=2014.2.2-1~u14.04+mos29
-* **Ubuntu\@6.1:** python-glanceclient=0.15.0-1~u14.04+mos6
+* **Ubuntu\@6.1:** murano=2014.2.2-1~u14.04+mos16
+* **Ubuntu\@6.1:** nova-ajax-console-proxy=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** nova-api=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** nova-api-ec2=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** nova-api-metadata=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** nova-api-os-compute=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** nova-api-os-volume=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** nova-baremetal=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** nova-cells=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** nova-cert=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** nova-common=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** nova-compute=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** nova-compute-kvm=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** nova-compute-libvirt=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** nova-compute-lxc=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** nova-compute-qemu=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** nova-compute-vmware=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** nova-compute-xen=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** nova-conductor=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** nova-console=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** nova-consoleauth=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** nova-doc=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** nova-network=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** nova-novncproxy=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** nova-objectstore=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** nova-scheduler=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** nova-spiceproxy=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** nova-volume=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** nova-xvpvncproxy=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** openstack-dashboard=2014.2.2-1~u14.04+mos32
+* **Ubuntu\@6.1:** python-cinder=2014.2.2-1~u14.04+mos16
+* **Ubuntu\@6.1:** python-django-horizon=2014.2.2-1~u14.04+mos32
+* **Ubuntu\@6.1:** python-glance=2014.2.2-1~u14.04+mos11
+* **Ubuntu\@6.1:** python-glance-doc=2014.2.2-1~u14.04+mos11
+* **Ubuntu\@6.1:** python-glanceclient_0.15.0-1~u14.04+mos6
 * **Ubuntu\@6.1:** python-heat=2014.2.2-1~u14.04+mos14
 * **Ubuntu\@6.1:** python-keystone=2014.2.2-1~u14.04+mos24
-* **Ubuntu\@6.1:** python-nova=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** python-swift=2.2.0-1~u14.04+mos7
-* **Ubuntu\@6.1:** swift=2.2.0-1~u14.04+mos7
-* **Ubuntu\@6.1:** swift-account=2.2.0-1~u14.04+mos7
-* **Ubuntu\@6.1:** swift-container=2.2.0-1~u14.04+mos7
-* **Ubuntu\@6.1:** swift-doc=2.2.0-1~u14.04+mos7
-* **Ubuntu\@6.1:** swift-object=2.2.0-1~u14.04+mos7
-* **Ubuntu\@6.1:** swift-object-expirer=2.2.0-1~u14.04+mos7
-* **Ubuntu\@6.1:** swift-proxy=2.2.0-1~u14.04+mos7
+* **Ubuntu\@6.1:** python-muranoclient_0.5.6-1~u14.04+mos6
+* **Ubuntu\@6.1:** python-neutron=2014.2.2-1~u14.04+mos32
+* **Ubuntu\@6.1:** python-nova=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** python-oslo.messaging=1.4.1-1~u14.04+mos13
+* **Ubuntu\@6.1:** python-swift=2.2.0-1~u14.04+mos8
+* **Ubuntu\@6.1:** sahara=2014.2.2-1~u14.04+mos17
+* **Ubuntu\@6.1:** swift=2.2.0-1~u14.04+mos8
+* **Ubuntu\@6.1:** swift-account=2.2.0-1~u14.04+mos8
+* **Ubuntu\@6.1:** swift-container=2.2.0-1~u14.04+mos8
+* **Ubuntu\@6.1:** swift-doc=2.2.0-1~u14.04+mos8
+* **Ubuntu\@6.1:** swift-object=2.2.0-1~u14.04+mos8
+* **Ubuntu\@6.1:** swift-object-expirer=2.2.0-1~u14.04+mos8
+* **Ubuntu\@6.1:** swift-proxy=2.2.0-1~u14.04+mos8
 
 Patching scenario - CentOS
 --------------------------
@@ -318,16 +381,22 @@ Patching scenario - CentOS
    Controller nodes, OpenStack Cinder nodes::
 
        yum clean expire-cache
+       yum -y update murano
        yum -y update openstack-cinder
        yum -y update openstack-dashboard
+       yum -y update openstack-glance*
        yum -y update openstack-heat*
        yum -y update openstack-keystone*
        yum -y update openstack-nova*
        yum -y update openstack-swift*
        yum -y update python-cinder
        yum -y update python-django-horizon*
+       yum -y update python-glance
        yum -y update python-glanceclient
+       yum -y update python-muranoclient
        yum -y update python-nova
+       yum -y update python-oslo-messaging*
+       yum -y update sahara
 
 #. Run the following commands on OpenStack Controller nodes::
 
@@ -353,16 +422,22 @@ Patching scenario - Ubuntu
 
        apt-get update
        apt-get install --only-upgrade -y cinder*
+       apt-get install --only-upgrade -y glance*
        apt-get install --only-upgrade -y heat*
        apt-get install --only-upgrade -y keystone*
+       apt-get install --only-upgrade -y murano
        apt-get install --only-upgrade -y nova*
        apt-get install --only-upgrade -y python-cinder
        apt-get install --only-upgrade -y python-django-horizon
+       apt-get install --only-upgrade -y python-glance
        apt-get install --only-upgrade -y python-glanceclient
        apt-get install --only-upgrade -y python-heat
        apt-get install --only-upgrade -y python-keystone
+       apt-get install --only-upgrade -y python-muranoclient
        apt-get install --only-upgrade -y python-nova
+       apt-get install --only-upgrade -y python-oslo.messaging
        apt-get install --only-upgrade -y python-swift
+       apt-get install --only-upgrade -y sahara
        apt-get install --only-upgrade -y swift*
 
 #. Run the following commands on OpenStack Controller nodes::
