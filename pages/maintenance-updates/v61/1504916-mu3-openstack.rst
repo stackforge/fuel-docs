@@ -79,6 +79,21 @@ following bug fixes:
 
   See `LP1493263 <https://bugs.launchpad.net/bugs/1493263>`_.
 
+* Added proxy support for Murano client to make it usable in environments
+  without direct access to the Internet.
+
+  See `LP1501889 <https://bugs.launchpad.net/bugs/1501889>`_.
+
+* Added Murano middleware to handle SSL proxies to enable Murano
+  deployments behind SSL termination proxy.
+
+  See `LP1504611 <https://bugs.launchpad.net/bugs/1504611>`_.
+
+* Fixed 2 usability issues on Network Topology page in Horizon.
+
+  See `LP1398397 <https://bugs.launchpad.net/bugs/1398397>`_,
+  `LP1504171 <https://bugs.launchpad.net/bugs/1504171>`_.
+
 Fixed security vulnerabilities
 ------------------------------
 
@@ -223,9 +238,12 @@ Affected packages
 Fixed packages
 --------------
 
-* **CentOS\@6.1:** openstack-cinder=2014.2.2-fuel6.1.mira11
-* **CentOS\@6.1:** openstack-cinder-doc=2014.2.2-fuel6.1.mira11
-* **CentOS\@6.1:** openstack-dashboard=2014.2.2-fuel6.1.mira29
+* **CentOS\@6.1:** murano=2014.2.2-fuel6.1.mira18
+* **CentOS\@6.1:** openstack-cinder=2014.2.2-fuel6.1.mira12
+* **CentOS\@6.1:** openstack-cinder-doc=2014.2.2-fuel6.1.mira12
+* **CentOS\@6.1:** openstack-dashboard=2014.2.2-fuel6.1.mira31
+* **CentOS\@6.1:** openstack-glance=2014.2.2-fuel6.1.mira11
+* **CentOS\@6.1:** openstack-glance-doc=2014.2.2-fuel6.1.mira11
 * **CentOS\@6.1:** openstack-heat-api=2014.2.2-fuel6.1.mira14
 * **CentOS\@6.1:** openstack-heat-api-cfn=2014.2.2-fuel6.1.mira14
 * **CentOS\@6.1:** openstack-heat-api-cloudwatch=2014.2.2-fuel6.1.mira14
@@ -234,31 +252,71 @@ Fixed packages
 * **CentOS\@6.1:** openstack-heat-engine=2014.2.2-fuel6.1.mira14
 * **CentOS\@6.1:** openstack-keystone=2014.2.2-fuel6.1.mira24
 * **CentOS\@6.1:** openstack-keystone-doc=2014.2.2-fuel6.1.mira24
-* **CentOS\@6.1:** openstack-nova=2014.2.2-fuel6.1.mira32
-* **CentOS\@6.1:** openstack-nova-api=2014.2.2-fuel6.1.mira32
-* **CentOS\@6.1:** openstack-nova-cells=2014.2.2-fuel6.1.mira32
-* **CentOS\@6.1:** openstack-nova-cert=2014.2.2-fuel6.1.mira32
-* **CentOS\@6.1:** openstack-nova-common=2014.2.2-fuel6.1.mira32
-* **CentOS\@6.1:** openstack-nova-compute=2014.2.2-fuel6.1.mira32
-* **CentOS\@6.1:** openstack-nova-conductor=2014.2.2-fuel6.1.mira32
-* **CentOS\@6.1:** openstack-nova-console=2014.2.2-fuel6.1.mira32
-* **CentOS\@6.1:** openstack-nova-doc=2014.2.2-fuel6.1.mira32
-* **CentOS\@6.1:** openstack-nova-network=2014.2.2-fuel6.1.mira32
-* **CentOS\@6.1:** openstack-nova-novncproxy=2014.2.2-fuel6.1.mira32
-* **CentOS\@6.1:** openstack-nova-objectstore=2014.2.2-fuel6.1.mira32
-* **CentOS\@6.1:** openstack-nova-scheduler=2014.2.2-fuel6.1.mira32
-* **CentOS\@6.1:** python-cinder=2014.2.2-fuel6.1.mira11
-* **CentOS\@6.1:** python-django-horizon=2014.2.2-fuel6.1.mira29
-* **CentOS\@6.1:** python-django-horizon-doc=2014.2.2-fuel6.1.mira29
-* **CentOS\@6.1:** python-glanceclient=0.15.0-fuel6.1.mira6
-* **CentOS\@6.1:** python-glanceclient-doc=0.15.0-fuel6.1.mira6
+* **CentOS\@6.1:** openstack-neutron=2014.2.2-fuel6.1.mira34
+* **CentOS\@6.1:** openstack-neutron-bigswitch=2014.2.2-fuel6.1.mira34
+* **CentOS\@6.1:** openstack-neutron-brocade=2014.2.2-fuel6.1.mira34
+* **CentOS\@6.1:** openstack-neutron-cisco=2014.2.2-fuel6.1.mira34
+* **CentOS\@6.1:** openstack-neutron-hyperv=2014.2.2-fuel6.1.mira34
+* **CentOS\@6.1:** openstack-neutron-ibm=2014.2.2-fuel6.1.mira34
+* **CentOS\@6.1:** openstack-neutron-linuxbridge=2014.2.2-fuel6.1.mira34
+* **CentOS\@6.1:** openstack-neutron-mellanox=2014.2.2-fuel6.1.mira34
+* **CentOS\@6.1:** openstack-neutron-metaplugin=2014.2.2-fuel6.1.mira34
+* **CentOS\@6.1:** openstack-neutron-metering-agent=2014.2.2-fuel6.1.mira34
+* **CentOS\@6.1:** openstack-neutron-midonet=2014.2.2-fuel6.1.mira34
+* **CentOS\@6.1:** openstack-neutron-ml2=2014.2.2-fuel6.1.mira34
+* **CentOS\@6.1:** openstack-neutron-nec=2014.2.2-fuel6.1.mira34
+* **CentOS\@6.1:** openstack-neutron-nuage=2014.2.2-fuel6.1.mira34
+* **CentOS\@6.1:** openstack-neutron-ofagent=2014.2.2-fuel6.1.mira34
+* **CentOS\@6.1:** openstack-neutron-oneconvergence-nvsd=2014.2.2-fuel6.1.mira34
+* **CentOS\@6.1:** openstack-neutron-opencontrail=2014.2.2-fuel6.1.mira34
+* **CentOS\@6.1:** openstack-neutron-openvswitch=2014.2.2-fuel6.1.mira34
+* **CentOS\@6.1:** openstack-neutron-plumgrid=2014.2.2-fuel6.1.mira34
+* **CentOS\@6.1:** openstack-neutron-ryu=2014.2.2-fuel6.1.mira34
+* **CentOS\@6.1:** openstack-neutron-vmware=2014.2.2-fuel6.1.mira34
+* **CentOS\@6.1:** openstack-neutron-vpn-agent=2014.2.2-fuel6.1.mira34
+* **CentOS\@6.1:** openstack-nova=2014.2.2-fuel6.1.mira34
+* **CentOS\@6.1:** openstack-nova-api=2014.2.2-fuel6.1.mira34
+* **CentOS\@6.1:** openstack-nova-cells=2014.2.2-fuel6.1.mira34
+* **CentOS\@6.1:** openstack-nova-cert=2014.2.2-fuel6.1.mira34
+* **CentOS\@6.1:** openstack-nova-common=2014.2.2-fuel6.1.mira34
+* **CentOS\@6.1:** openstack-nova-compute=2014.2.2-fuel6.1.mira34
+* **CentOS\@6.1:** openstack-nova-conductor=2014.2.2-fuel6.1.mira34
+* **CentOS\@6.1:** openstack-nova-console=2014.2.2-fuel6.1.mira34
+* **CentOS\@6.1:** openstack-nova-doc=2014.2.2-fuel6.1.mira34
+* **CentOS\@6.1:** openstack-nova-network=2014.2.2-fuel6.1.mira34
+* **CentOS\@6.1:** openstack-nova-novncproxy=2014.2.2-fuel6.1.mira34
+* **CentOS\@6.1:** openstack-nova-objectstore=2014.2.2-fuel6.1.mira34
+* **CentOS\@6.1:** openstack-nova-scheduler=2014.2.2-fuel6.1.mira34
+* **CentOS\@6.1:** openstack-swift=2.2.0-fuel6.1.mira4
+* **CentOS\@6.1:** openstack-swift-account=2.2.0-fuel6.1.mira4
+* **CentOS\@6.1:** openstack-swift-container=2.2.0-fuel6.1.mira4
+* **CentOS\@6.1:** openstack-swift-doc=2.2.0-fuel6.1.mira4
+* **CentOS\@6.1:** openstack-swift-object=2.2.0-fuel6.1.mira4
+* **CentOS\@6.1:** openstack-swift-proxy=2.2.0-fuel6.1.mira4
+* **CentOS\@6.1:** python-cinder=2014.2.2-fuel6.1.mira12
+* **CentOS\@6.1:** python-django-horizon=2014.2.2-fuel6.1.mira31
+* **CentOS\@6.1:** python-django-horizon-doc=2014.2.2-fuel6.1.mira31
+* **CentOS\@6.1:** python-glance=2014.2.2-fuel6.1.mira11
+* **CentOS\@6.1:** python-glanceclient-0.15.0-fuel6.1.mira6
+* **CentOS\@6.1:** python-glanceclient-doc-0.15.0-fuel6.1.mira6
 * **CentOS\@6.1:** python-keystone=2014.2.2-fuel6.1.mira24
-* **CentOS\@6.1:** python-nova=2014.2.2-fuel6.1.mira32
-* **Ubuntu\@6.1:** cinder-api=2014.2.2-1~u14.04+mos15
-* **Ubuntu\@6.1:** cinder-backup=2014.2.2-1~u14.04+mos15
-* **Ubuntu\@6.1:** cinder-common=2014.2.2-1~u14.04+mos15
-* **Ubuntu\@6.1:** cinder-scheduler=2014.2.2-1~u14.04+mos15
-* **Ubuntu\@6.1:** cinder-volume=2014.2.2-1~u14.04+mos15
+* **CentOS\@6.1:** python-muranoclient=0.5.6-fuel6.1.mira5
+* **CentOS\@6.1:** python-neutron=2014.2.2-fuel6.1.mira34
+* **CentOS\@6.1:** python-nova=2014.2.2-fuel6.1.mira34
+* **CentOS\@6.1:** python-oslo-messaging-1.4.1-fuel6.1.mira33
+* **CentOS\@6.1:** python-oslo-messaging-doc-1.4.1-fuel6.1.mira33
+* **CentOS\@6.1:** sahara=2014.2.2-fuel6.1.mira17
+
+* **Ubuntu\@6.1:** cinder-api=2014.2.2-1~u14.04+mos16
+* **Ubuntu\@6.1:** cinder-backup=2014.2.2-1~u14.04+mos16
+* **Ubuntu\@6.1:** cinder-common=2014.2.2-1~u14.04+mos16
+* **Ubuntu\@6.1:** cinder-scheduler=2014.2.2-1~u14.04+mos16
+* **Ubuntu\@6.1:** cinder-volume=2014.2.2-1~u14.04+mos16
+* **Ubuntu\@6.1:** fuel-ha-utils_6.1.0-6765.1
+* **Ubuntu\@6.1:** glance=2014.2.2-1~u14.04+mos11
+* **Ubuntu\@6.1:** glance-api=2014.2.2-1~u14.04+mos11
+* **Ubuntu\@6.1:** glance-common=2014.2.2-1~u14.04+mos11
+* **Ubuntu\@6.1:** glance-registry=2014.2.2-1~u14.04+mos11
 * **Ubuntu\@6.1:** heat-api=2014.2.2-1~u14.04+mos14
 * **Ubuntu\@6.1:** heat-api-cfn=2014.2.2-1~u14.04+mos14
 * **Ubuntu\@6.1:** heat-api-cloudwatch=2014.2.2-1~u14.04+mos14
@@ -267,49 +325,92 @@ Fixed packages
 * **Ubuntu\@6.1:** heat-engine=2014.2.2-1~u14.04+mos14
 * **Ubuntu\@6.1:** keystone=2014.2.2-1~u14.04+mos24
 * **Ubuntu\@6.1:** keystone-doc=2014.2.2-1~u14.04+mos24
-* **Ubuntu\@6.1:** nova-ajax-console-proxy=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** nova-api=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** nova-api-ec2=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** nova-api-metadata=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** nova-api-os-compute=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** nova-api-os-volume=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** nova-baremetal=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** nova-cells=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** nova-cert=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** nova-common=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** nova-compute=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** nova-compute-kvm=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** nova-compute-libvirt=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** nova-compute-lxc=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** nova-compute-qemu=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** nova-compute-vmware=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** nova-compute-xen=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** nova-conductor=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** nova-console=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** nova-consoleauth=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** nova-doc=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** nova-network=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** nova-novncproxy=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** nova-objectstore=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** nova-scheduler=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** nova-spiceproxy=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** nova-volume=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** nova-xvpvncproxy=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** openstack-dashboard=2014.2.2-1~u14.04+mos29
-* **Ubuntu\@6.1:** python-cinder=2014.2.2-1~u14.04+mos15
-* **Ubuntu\@6.1:** python-django-horizon=2014.2.2-1~u14.04+mos29
-* **Ubuntu\@6.1:** python-glanceclient=0.15.0-1~u14.04+mos6
+* **Ubuntu\@6.1:** murano=2014.2.2-1~u14.04+mos16
+* **Ubuntu\@6.1:** neutron-common=2014.2.2-1~u14.04+mos32
+* **Ubuntu\@6.1:** neutron-dhcp-agent=2014.2.2-1~u14.04+mos32
+* **Ubuntu\@6.1:** neutron-l3-agent=2014.2.2-1~u14.04+mos32
+* **Ubuntu\@6.1:** neutron-lbaas-agent=2014.2.2-1~u14.04+mos32
+* **Ubuntu\@6.1:** neutron-metadata-agent=2014.2.2-1~u14.04+mos32
+* **Ubuntu\@6.1:** neutron-metering-agent=2014.2.2-1~u14.04+mos32
+* **Ubuntu\@6.1:** neutron-plugin-bigswitch=2014.2.2-1~u14.04+mos32
+* **Ubuntu\@6.1:** neutron-plugin-bigswitch-agent=2014.2.2-1~u14.04+mos32
+* **Ubuntu\@6.1:** neutron-plugin-brocade=2014.2.2-1~u14.04+mos32
+* **Ubuntu\@6.1:** neutron-plugin-cisco=2014.2.2-1~u14.04+mos32
+* **Ubuntu\@6.1:** neutron-plugin-hyperv=2014.2.2-1~u14.04+mos32
+* **Ubuntu\@6.1:** neutron-plugin-ibm=2014.2.2-1~u14.04+mos32
+* **Ubuntu\@6.1:** neutron-plugin-ibm-agent=2014.2.2-1~u14.04+mos32
+* **Ubuntu\@6.1:** neutron-plugin-linuxbridge=2014.2.2-1~u14.04+mos32
+* **Ubuntu\@6.1:** neutron-plugin-linuxbridge-agent=2014.2.2-1~u14.04+mos32
+* **Ubuntu\@6.1:** neutron-plugin-metaplugin=2014.2.2-1~u14.04+mos32
+* **Ubuntu\@6.1:** neutron-plugin-metering-agent=2014.2.2-1~u14.04+mos32
+* **Ubuntu\@6.1:** neutron-plugin-midonet=2014.2.2-1~u14.04+mos32
+* **Ubuntu\@6.1:** neutron-plugin-ml2=2014.2.2-1~u14.04+mos32
+* **Ubuntu\@6.1:** neutron-plugin-mlnx=2014.2.2-1~u14.04+mos32
+* **Ubuntu\@6.1:** neutron-plugin-mlnx-agent=2014.2.2-1~u14.04+mos32
+* **Ubuntu\@6.1:** neutron-plugin-nec=2014.2.2-1~u14.04+mos32
+* **Ubuntu\@6.1:** neutron-plugin-nec-agent=2014.2.2-1~u14.04+mos32
+* **Ubuntu\@6.1:** neutron-plugin-nicira=2014.2.2-1~u14.04+mos32
+* **Ubuntu\@6.1:** neutron-plugin-oneconvergence=2014.2.2-1~u14.04+mos32
+* **Ubuntu\@6.1:** neutron-plugin-oneconvergence-agent=2014.2.2-1~u14.04+mos32
+* **Ubuntu\@6.1:** neutron-plugin-openflow-agent=2014.2.2-1~u14.04+mos32
+* **Ubuntu\@6.1:** neutron-plugin-openvswitch=2014.2.2-1~u14.04+mos32
+* **Ubuntu\@6.1:** neutron-plugin-openvswitch-agent=2014.2.2-1~u14.04+mos32
+* **Ubuntu\@6.1:** neutron-plugin-plumgrid=2014.2.2-1~u14.04+mos32
+* **Ubuntu\@6.1:** neutron-plugin-ryu=2014.2.2-1~u14.04+mos32
+* **Ubuntu\@6.1:** neutron-plugin-ryu-agent=2014.2.2-1~u14.04+mos32
+* **Ubuntu\@6.1:** neutron-plugin-vmware=2014.2.2-1~u14.04+mos32
+* **Ubuntu\@6.1:** neutron-plugin-vpn-agent=2014.2.2-1~u14.04+mos32
+* **Ubuntu\@6.1:** neutron-server=2014.2.2-1~u14.04+mos32
+* **Ubuntu\@6.1:** neutron-vpn-agent=2014.2.2-1~u14.04+mos32
+* **Ubuntu\@6.1:** nova-ajax-console-proxy=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** nova-api=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** nova-api-ec2=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** nova-api-metadata=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** nova-api-os-compute=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** nova-api-os-volume=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** nova-baremetal=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** nova-cells=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** nova-cert=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** nova-common=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** nova-compute=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** nova-compute-kvm=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** nova-compute-libvirt=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** nova-compute-lxc=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** nova-compute-qemu=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** nova-compute-vmware=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** nova-compute-xen=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** nova-conductor=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** nova-console=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** nova-consoleauth=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** nova-doc=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** nova-network=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** nova-novncproxy=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** nova-objectstore=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** nova-scheduler=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** nova-spiceproxy=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** nova-volume=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** nova-xvpvncproxy=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** openstack-dashboard=2014.2.2-1~u14.04+mos32
+* **Ubuntu\@6.1:** python-cinder=2014.2.2-1~u14.04+mos16
+* **Ubuntu\@6.1:** python-django-horizon=2014.2.2-1~u14.04+mos32
+* **Ubuntu\@6.1:** python-glance=2014.2.2-1~u14.04+mos11
+* **Ubuntu\@6.1:** python-glance-doc=2014.2.2-1~u14.04+mos11
+* **Ubuntu\@6.1:** python-glanceclient_0.15.0-1~u14.04+mos6
 * **Ubuntu\@6.1:** python-heat=2014.2.2-1~u14.04+mos14
 * **Ubuntu\@6.1:** python-keystone=2014.2.2-1~u14.04+mos24
-* **Ubuntu\@6.1:** python-nova=2014.2.2-1~u14.04+mos35
-* **Ubuntu\@6.1:** python-swift=2.2.0-1~u14.04+mos7
-* **Ubuntu\@6.1:** swift=2.2.0-1~u14.04+mos7
-* **Ubuntu\@6.1:** swift-account=2.2.0-1~u14.04+mos7
-* **Ubuntu\@6.1:** swift-container=2.2.0-1~u14.04+mos7
-* **Ubuntu\@6.1:** swift-doc=2.2.0-1~u14.04+mos7
-* **Ubuntu\@6.1:** swift-object=2.2.0-1~u14.04+mos7
-* **Ubuntu\@6.1:** swift-object-expirer=2.2.0-1~u14.04+mos7
-* **Ubuntu\@6.1:** swift-proxy=2.2.0-1~u14.04+mos7
+* **Ubuntu\@6.1:** python-muranoclient_0.5.6-1~u14.04+mos6
+* **Ubuntu\@6.1:** python-neutron=2014.2.2-1~u14.04+mos32
+* **Ubuntu\@6.1:** python-nova=2014.2.2-1~u14.04+mos37
+* **Ubuntu\@6.1:** python-oslo.messaging=1.4.1-1~u14.04+mos13
+* **Ubuntu\@6.1:** python-swift=2.2.0-1~u14.04+mos8
+* **Ubuntu\@6.1:** sahara=2014.2.2-1~u14.04+mos17
+* **Ubuntu\@6.1:** swift=2.2.0-1~u14.04+mos8
+* **Ubuntu\@6.1:** swift-account=2.2.0-1~u14.04+mos8
+* **Ubuntu\@6.1:** swift-container=2.2.0-1~u14.04+mos8
+* **Ubuntu\@6.1:** swift-doc=2.2.0-1~u14.04+mos8
+* **Ubuntu\@6.1:** swift-object=2.2.0-1~u14.04+mos8
+* **Ubuntu\@6.1:** swift-object-expirer=2.2.0-1~u14.04+mos8
+* **Ubuntu\@6.1:** swift-proxy=2.2.0-1~u14.04+mos8
 
 Patching scenario - CentOS
 --------------------------
