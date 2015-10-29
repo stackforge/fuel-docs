@@ -57,10 +57,10 @@ Maintenance Update 2:
 * :ref:`#1467671 <mos61mu-1467671>` Node with Broadcast NetXtreme II NIC
   failed to reboot
 
-Proposed updates
-----------------
+Maintenance Update 3:
++++++++++++++++++++++
 
-* :ref:`#1504916 <mos61mu-1504916>` Cumulative OpenStack update (15 fixes)
+* :ref:`#1504916 <mos61mu-1504916>` Cumulative OpenStack update (19 fixes)
 
 * :ref:`#1452389 <mos61mu-1452389>` logrotate is rotating already rotated atop's logs
 
@@ -77,3 +77,8 @@ Proposed updates
 * :ref:`#1484502 <mos61mu-1484502>` [vCenter][OSTF] Test fails in dual hypervisor mode
 
 * :ref:`#1495949 <mos61mu-1495949>` [vCenter] nova-compute.conf doesn't contain vlan_interface option
+
+Proposed updates
+----------------
+
+There are no proposed updates available at the moment.
