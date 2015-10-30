@@ -6,15 +6,20 @@ Applying patches
 Introduction
 ------------
 
+This section describes how to apply and rollback the patches to the Fuel
+Master node and the Fuel slave nodes.
+
 Patching in brief:
 
 * The patching feature is introduced in Mirantis OpenStack 6.1
   and will not work in older releases.
-* The list of patches and instructions on how to apply patches is
-  at the `errata portal <https://errata.mirantis.com/>`__. This is
-  your go-to information source for all available patches.
+* You can always check what patches are available and get instructions
+  on how to apply them at the
+  `Maintenance Update section of the Release Notes <https://docs.mirantis.com/openstack/fuel/fuel-6.1/release-notes.html#maintenance-updates>`_.
 * There are two types of patches: bugfixes and security updates.
 * Patches are downloaded from the Mirantis public repositories.
+* The changes that the patches introduce will be applied to the new OpenStack
+  environments.
 
 Usage scenarios
 ---------------
@@ -25,27 +30,27 @@ Default scenario
 In the default scenario you download patches from the default Mirantis
 mirrors.
 
-* Make sure you are registered at at the `official Mirantis website <https://software.mirantis.com/openstack-download-form/>`__.
-* Once you are registered, you will receive regular email notifications
-  on the available patches with a link to the `errata portal <http://errata.mirantis.com/>`__.
-* Your repos by default are configured to download the patches from
+* The documentation is always available in the
+  `Maintenance Update section of the Release Notes <https://docs.mirantis.com/openstack/fuel/fuel-6.1/release-notes.html#maintenance-updates>`_.
+* Your repositories by default are configured to download the patches from
   Mirantis. The patching repos are:
 
   .. image:: /_images/patchingReposOps.png
 
-* Check each item and proceed with the instructions described in each
-  errata item (plan accordingly).
+* Check each patching item and proceed with the instructions (plan
+  accordingly: for example, schedule a maintenance slot to run the
+  update).
 
   * Patching Fuel Master node:
 
-    * Run the command specified in the errata item to install the patch.
+    * Run the command specified in the documentation to install the patch.
     * After the patch is installed, restart the affected service as
-      specified in the errata item.
+      specified in the documentation.
 
   * Patching a slave node running Ubuntu or CentOS:
 
-    * Run the command specified in the errata item to download the patch.
-    * Run the command specified in the errata item to install the patch.
+    * Run the command specified in the documentation to download the patch.
+    * Run the command specified in the documentation to install the patch.
 
 Custom scenario: deploying from local mirrors; patching from local mirrors
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -56,24 +61,23 @@ patches from your local mirrors.
 For information on how to create and update local mirrors of Mirantis
 OpenStack see :ref:`Configuring repositories<configuring-repos-ops>`.
 
-* Make sure you are registered at at the `official Mirantis website <https://software.mirantis.com/openstack-download-form/>`__.
-* Once you are registered, you will receive regular email notifications
-  on the available patches with a link to the `errata portal <http://errata.mirantis.com/>`__.
-* Check each item and proceed with the instructions described in each
-  errata item (plan accordingly).
+* The documentation is always available in the
+  `Maintenance Update section of the Release Notes <https://docs.mirantis.com/openstack/fuel/fuel-6.1/release-notes.html#maintenance-updates>`_.
+* Check each item and proceed with the instructions described in the
+  documentation (plan accordingly).
 
   * Patching Fuel Master node:
 
     * Make sure your local mirror is up to date: run ``fuel-createmirror -M``
-    * Run the command specified in the errata item to download the patch.
-    * Run the command specified in the errata item to install the patch.
+    * Run the command specified in the documentation to download the patch.
+    * Run the command specified in the documentation to install the patch.
     * After the patch is installed, restart the affected service as
-      specified in the errata item.
+      specified in the documentation.
 
   * Patching a slave node running Ubuntu or CentOS:
 
-    * Run the command specified in the errata item to download the patch.
-    * Run the command specified in the errata item to install the patch.
+    * Run the command specified in the documentation to download the patch.
+    * Run the command specified in the documentation to install the patch.
 
 Custom scenario: deploying from Mirantis mirrors; patching from local mirrors
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -81,26 +85,25 @@ Custom scenario: deploying from Mirantis mirrors; patching from local mirrors
 In this custom scenario you deploy from Mirantis mirrors and download
 patches from your local mirrors.
 
-* Make sure you are registered at at the `official Mirantis website <https://software.mirantis.com/openstack-download-form/>`__.
 * Configure your local mirrors to download patches from Mirantis
   mirrors as described in :ref:`Configuring repositories<configuring-repos-ops>`.
-* Once you are registered, you will receive regular email notifications
-  on the available patches with a link to the `errata portal <http://errata.mirantis.com/>`__.
-* Check each item and proceed with the instructions described in each
-  errata item (plan accordingly).
+* The documentation is always available in the
+  `Maintenance Update section of the Release Notes <https://docs.mirantis.com/openstack/fuel/fuel-6.1/release-notes.html#maintenance-updates>`_.
+* Check each item and proceed with the instructions described in the
+  documentation (plan accordingly).
 
   * Patching Fuel Master node:
 
     * Make sure your local mirror is up to date: run ``fuel-createmirror -M``
-    * Run the command specified in the errata item to download the patch.
-    * Run the command specified in the errata item to install the patch.
+    * Run the command specified in the documentation to download the patch.
+    * Run the command specified in the documentation to install the patch.
     * After the patch is installed, restart the affected service as
-      specified in the errata item.
+      specified in the documentation.
 
   * Patching a slave node running Ubuntu or CentOS:
 
-    * Run the command specified in the errata item to download the patch.
-    * Run the command specified in the errata item to install the patch.
+    * Run the command specified in the documentation to download the patch.
+    * Run the command specified in the documentation to install the patch.
 
 Additional information
 ++++++++++++++++++++++
@@ -138,7 +141,8 @@ Rolling back a CentOS slave node
 
   ``yum downgrade <pkgname><pkg version>``
 * Roll back the packages on the node.
-  `Refer to this article <https://access.redhat.com/solutions/64069>`__ as an example.
+  `Refer to this article <https://access.redhat.com/solutions/64069>`__ as
+  an example.
 * Roll back all the changes to the configuration you made when applying
   the patching instructions.
 * Reboot the node.
@@ -207,16 +211,16 @@ Patching an Ubuntu slave node
 
 * Run ``apt-get update``.
 * Run ``apt-get upgrade``.
-* Apply all the additional configuration options as described in all the
-  related `errata items <http://errata.mirantis.com/>`__.
+* Apply all the additional configuration options as described in the
+  supporting  documentation.
 * Reboot the node.
 
 Patching a CentOS slave node
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * Run ``yum update``.
-* Apply all the additional configuration options as described in all the
-  related `errata items <http://errata.mirantis.com/>`__.
+* Apply all the additional configuration options as described in the
+  supporting  documentation.
 * Reboot the node.
 
 
