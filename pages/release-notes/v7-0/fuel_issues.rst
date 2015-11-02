@@ -9,7 +9,6 @@ Resolved Issues
 
 .. include:: /pages/release-notes/v7-0/fuel_issues/database_growth_resolved.rst
 .. include:: /pages/release-notes/v7-0/fuel_issues/ip_range_resolved.rst
-.. include:: /pages/release-notes/v7-0/fuel_issues/intel_x710_resolved.rst
 .. include:: /pages/release-notes/v7-0/fuel_issues/backup_auth_resolved.rst
 .. include:: /pages/release-notes/v7-0/fuel_issues/rabbitmq_dump_resolved.rst
 .. include:: /pages/release-notes/v7-0/fuel_issues/mysql_unmanaged_resolved.rst
@@ -21,7 +20,6 @@ Resolved Issues
 .. include:: /pages/release-notes/v7-0/fuel_issues/serial-console.rst
 .. include:: /pages/release-notes/v7-0/fuel_issues/ip_ranges_resolved.rst
 .. include:: /pages/release-notes/v7-0/fuel_issues/fuel_install_resolved.rst
-.. include:: /pages/release-notes/v7-0/fuel_issues/hardware_support_resolved.rst
 .. include:: /pages/release-notes/v7-0/fuel_issues/ostf_resolved.rst
 
 Known Issues
@@ -33,6 +31,7 @@ Known Issues
 .. include:: /pages/release-notes/v7-0/fuel_issues/managementVIP_issue.rst
 .. include:: /pages/release-notes/v7-0/fuel_issues/swift_download_issue.rst
 .. include:: /pages/release-notes/v7-0/fuel_issues/disk_allocation_issue.rst
+.. include:: /pages/release-notes/v7-0/fuel_issues/intel_x710_issue.rst
 .. include:: /pages/release-notes/v7-0/fuel_issues/fuelmenu_serial_issue.rst
 .. include:: /pages/release-notes/v7-0/fuel_issues/ha_pacemaker_ram_issue.rst
 .. include:: /pages/release-notes/v7-0/fuel_issues/disk_partitioning_issue.rst
