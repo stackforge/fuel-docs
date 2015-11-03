@@ -28,9 +28,6 @@ Requirements for an environment that runs multiple cluster networks are:
 To configure an environment that uses multiple cluster networks,
 do the following.
 
-#.  Add each DHCP network into the
-    :ref:`dnsmasq.template<dnsmasq-template-ref>` file.
-
 #. Start a **dhcp-helper** process:
 
    .. code-block:: sh
