@@ -78,7 +78,9 @@ CloudFormation-compatible Query API.
      - diag
 
    * - API errors
-     -
+     - Logs or HAProxy:
+
+       All HTTP 500 error code.
      - Alert:
 
        When a sudden spike of errors is detected.

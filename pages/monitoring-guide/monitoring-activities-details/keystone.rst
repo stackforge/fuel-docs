@@ -111,9 +111,9 @@ operations:
      - diag
 
    * - API errors
-     - Logs:
+     - Logs or HAProxy:
 
-       all entries with HTTP 500 error code
+       All HTTP 500 error code.
      - alert:
 
        When a sudden spike of errors is detected.

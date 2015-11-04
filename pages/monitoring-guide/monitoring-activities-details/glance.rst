@@ -101,9 +101,9 @@ A more intrusive test checks the complete creation of an image:
      - diag
 
    * - API errors
-     - Logs
+     - Logs or HAProxy:
 
-       All entries with HTTP 500 error code.
+       All HTTP 500 error code.
 
        Examples of a log entry containing a failed image upload error:
 

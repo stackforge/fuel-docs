@@ -80,7 +80,8 @@ replaced by a single process named *ceilometer-polling*.
 **API checks**
 
 Check the proper functioning of the API with a read operation like
-listing of samples:
+listing of samples:	122
+	123		
 
 * GET /v2/samples
 
@@ -103,9 +104,9 @@ listing of samples:
      - Purpose
 
    * - API errors
-     - Logs:
+     - Logs or HAProxy:
 
-       all entries with HTTP 500 error
+       All HTTP 500 error code.
      - Alert:
 
        When a sudden spike of errors is detected.
