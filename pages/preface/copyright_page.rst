@@ -6,7 +6,7 @@
 
 .. _CopyrightPage:
 
-2014 Mirantis, Inc. All rights reserved. 
+2015 Mirantis, Inc. All rights reserved. 
 
 This product is protected by U.S. and international copyright and 
 intellectual property laws.  No part of this publication may be 
