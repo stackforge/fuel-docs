@@ -121,9 +121,9 @@ A more intrusive test may want to check the complete creation of a volume:
      - diag
 
    * - API errors
-     - Logs
+     - Logs or HAproxy
 
-       all entries with HTTP 500 error code
+       all with HTTP 500 error code
      - alert:
 
        When a sudden spike of errors is detected.

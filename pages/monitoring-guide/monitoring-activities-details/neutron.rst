@@ -119,10 +119,11 @@ Example:
      - diag
 
    * - API errors
-     - Logs:
+     - Logs or HAproxy:
 
-       All entries with HTTP 500 error code
+       All HTTP 500 error code
 
+       Log example:
        INFO neutron.wsgi [{req-id} None] 192.168.0.1 - - [11/Mar/2015
        19:17:22] "POST /v2.0/networks.json HTTP/1.1" 500 324 0.178729
 

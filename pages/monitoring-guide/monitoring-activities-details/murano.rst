@@ -75,9 +75,9 @@ example:
      - Purpose
 
    * - API errors
-     - Logs:
+     - Logs or HAproxy:
 
-       All entries with HTTP 500 error
+       All HTTP 500 error code.
      - Alert:
 
        When a sudden spike of errors is detected.

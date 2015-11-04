@@ -260,11 +260,11 @@ delete a keypair:
        threshold depending on the data-points distribution.
 
    * - API errors
-     - Logs:
+     - Logs or HAproxy:
 
-       all entries with HTTP 500 error code
+       all HTTP 500 error code.
 
-       Example:
+       Log example:
        POST /v2/{tenant-id}/os-volumes_boot HTTP/1.1"
        status: 500 len: 354 time: 32.3032150
        #where status: 500 indicates error
