@@ -11,7 +11,7 @@ for remove in exclude:
 
 doc = []
 
-def formatheading(filename, headings, guide, type):
+def formatheading(filename, link, headings, guide, type):
   title = headings.text[:-1]
   parent = headings.parent
   url = filename + '#' + headings.parent.attrs['id']
@@ -22,6 +22,7 @@ def formatheading(filename, headings, guide, type):
     for tag in parent.find_all('h3'):
       tag.parent.replaceWith('')
   else:
+    url = filename + '#' + link
     for tag in parent.find_all('h3'):
       tag.replaceWith('')
     for tag in parent.find_all('h4'):
@@ -45,12 +46,15 @@ for file in files:
     guide = title.text[:-1]
 
   for headings in h3.findAll('h3'):
-    result = formatheading(filename, headings, guide, 'h3')
+    parent = headings.parent
+    parenth3 = parent.parent.findAll('h2')
+    link = parenth3[0].parent.attrs['id']
+    result = formatheading(filename, link, headings, guide, 'h3')
     if result['body']:
       doc.append(result)
 
   for headings in h2.findAll('h2'):
-    result = formatheading(filename, headings, guide, 'h2')
+    result = formatheading(filename, '', headings, guide, 'h2')
     if result['body']:
       doc.append(result)
 
