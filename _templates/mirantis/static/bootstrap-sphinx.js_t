@@ -1,150 +1,307 @@
 (function ($) {
-  /**
-   * Patch TOC list.
-   *
-   * Will mutate the underlying span to have a correct ul for nav.
-   *
-   * @param $span: Span containing nested UL's to mutate.
-   * @param minLevel: Starting level for nested lists. (1: global, 2: local).
-   */
-  var patchToc = function ($ul, minLevel) {
-    var findA,
-      patchTables,
-      $localLi;
+    /**
+     * Patch TOC list.
+     *
+     * Will mutate the underlying span to have a correct ul for nav.
+     *
+     * @param $span: Span containing nested UL's to mutate.
+     * @param minLevel: Starting level for nested lists. (1: global, 2: local).
+     */
 
-    // Find all a "internal" tags, traversing recursively.
-    findA = function ($elem, level) {
-      level = level || 0;
-      var $items = $elem.find("> li > a.internal, > ul, > li > ul");
+    var patchToc = function ($ul, minLevel) {
+        var findA,
+            patchTables,
+            $localLi;
 
-      // Iterate everything in order.
-      $items.each(function (index, item) {
-        var $item = $(item),
-          tag = item.tagName.toLowerCase(),
-          $childrenLi = $item.children('li'),
-          $parentLi = $($item.parent('li'), $item.parent().parent('li'));
+        // Find all a "internal" tags, traversing recursively.
+        findA = function ($elem, level) {
+            level = level || 0;
+            var $items = $elem.find("> li > a.internal, > ul, > li > ul");
 
-        // Add dropdowns if more children and above minimum level.
-        if (tag === 'ul' && level >= minLevel && $childrenLi.length > 0) {
-          $parentLi
-            .addClass('dropdown-submenu')
-            .children('a').first().attr('tabindex', -1);
+            // Iterate everything in order.
+            $items.each(function (index, item) {
+                var $item = $(item),
+                    tag = item.tagName.toLowerCase(),
+                    $childrenLi = $item.children('li'),
+                    $parentLi = $($item.parent('li'), $item.parent().parent('li'));
 
-          $item.addClass('dropdown-menu');
-        }
+                // Add dropdowns if more children and above minimum level.
+                if (tag === 'ul' && level >= minLevel && $childrenLi.length > 0) {
+                    $parentLi
+                        .addClass('dropdown-submenu')
+                        .children('a').first().attr('tabindex', -1);
 
-        findA($item, level + 1);
-      });
+                    $item.addClass('dropdown-menu');
+                }
+
+                findA($item, level + 1);
+            });
+        };
+
+        findA($ul);
     };
 
-    findA($ul);
-  };
-
-  /**
-   * Patch all tables to remove ``docutils`` class and add Bootstrap base
-   * ``table`` class.
-   */
-  patchTables = function () {
-    $("table.docutils")
-      .removeClass("docutils")
-      .addClass("table")
-      .attr("border", 0);
-  };
-
-  $(window).load(function () {
-    /*
-     * Scroll the window to avoid the topnav bar
-     * https://github.com/twbs/bootstrap/issues/1768
+    /**
+     * Patch all tables to remove ``docutils`` class and add Bootstrap base
+     * ``table`` class.
      */
-    if ($("#navbar.navbar-fixed-top").length > 0) {
-      var navHeight = $("#navbar").height(),
-        shiftWindow = function() { scrollBy(0, -navHeight - 20); };
+    patchTables = function () {
+        $("table.docutils")
+            .removeClass("docutils")
+            .addClass("table")
+            .attr("border", 0);
+    };
 
-      if (location.hash) {
-        setTimeout(shiftWindow, 1);
-      }
+    $(window).load(function () {
+        /*
+         * Scroll the window to avoid the topnav bar
+         * https://github.com/twbs/bootstrap/issues/1768
+         */
+        if ($("#navbar.navbar-fixed-top").length > 0) {
+            var navHeight = $("#navbar").height(),
+            //shiftWindow = function() { scrollBy(0, -navHeight - 20); };
+                shiftWindow = function() { console.log('shiftWindow'); window.scrollTo(0, 0); };
 
-      window.addEventListener("hashchange", shiftWindow);
-    }
-  });
+            if (location.hash) {
+                setTimeout(shiftWindow, 1);
+            }
 
-  $(document).ready(function () {
-    // Add styling, structure to TOC's.
-    $(".dropdown-menu").each(function () {
-      $(this).find("ul").each(function (index, item){
-        var $item = $(item);
-        $item.addClass('unstyled');
-      });
+            window.addEventListener("hashchange", shiftWindow);
+        }
     });
 
-    // Global TOC.
-    if ($("ul.globaltoc li").length) {
-      patchToc($("ul.globaltoc"), 1);
-    } else {
-      // Remove Global TOC.
-      $(".globaltoc-container").remove();
-    }
-
-    // Local TOC.
-    $(".bs-sidenav ul").addClass("nav nav-list");
-    $(".bs-sidenav > ul > li > a").addClass("nav-header");
-
-    // Local TOC.
-    patchToc($("ul.localtoc"), 2);
-
-    // Mutate sub-lists (for bs-2.3.0).
-    $(".dropdown-menu ul").not(".dropdown-menu").each(function () {
-      var $ul = $(this),
-        $parent = $ul.parent(),
-        tag = $parent[0].tagName.toLowerCase(),
-        $kids = $ul.children().detach();
-
-      // Replace list with items if submenu header.
-      if (tag === "ul") {
-        $ul.replaceWith($kids);
-      } else if (tag === "li") {
-        // Insert into previous list.
-        $parent.after($kids);
-        $ul.remove();
-      }
-    });
-
-    // Add divider in page TOC.
-    $localLi = $("ul.localtoc li");
-    if ($localLi.length > 2) {
-      $localLi.first().after('<li class="divider"></li>');
-    }
-
-    // Manually add dropdown.
-    // Appears unnecessary as of:
-    //   https://github.com/ryan-roemer/sphinx-bootstrap-theme/pull/90
-    // Remove next time around...
-    // a.dropdown-toggle class needed in globaltoc.html
-    //$('.dropdown-toggle').dropdown();
-
-    // Patch tables.
-    patchTables();
-
-    // Add Note, Warning styles. (BS v2,3 compatible).
-    $('.admonition').addClass('alert alert-info')
-      .filter('.warning, .caution')
-        .removeClass('alert-info')
-        .addClass('alert-warning').end()
-      .filter('.error, .danger')
-        .removeClass('alert-info')
-        .addClass('alert-danger alert-error').end();
-
-    // Inline code styles to Bootstrap style.
-    $('tt.docutils.literal').not(".xref").each(function (i, e) {
-      // ignore references
-      if (!$(e).parent().hasClass("reference")) {
-        $(e).replaceWith(function () {
-          return $("<code />").html($(this).html());
+    $(document).ready(function () {
+        // Add styling, structure to TOC's.
+        $(".dropdown-menu").each(function () {
+            $(this).find("ul").each(function (index, item){
+                var $item = $(item);
+                $item.addClass('unstyled');
+            });
         });
-      }});
 
-    // Update sourcelink to remove outerdiv (fixes appearance in navbar).
-    var $srcLink = $(".nav #sourcelink");
-    $srcLink.parent().html($srcLink.html());
-  });
+        // Global TOC.
+        if ($("ul.globaltoc li").length) {
+            patchToc($("ul.globaltoc"), 1);
+        } else {
+            // Remove Global TOC.
+            $(".globaltoc-container").remove();
+        }
+
+        $('h1').first().addClass('page-header');
+
+        $('#contents').remove();
+
+        $('.center-col > .tab-content > .section > .section').each(function(){
+            $(this).addClass('tab-pane fade');
+            if($(this).hasClass('active')){
+                $(this).addClass('in');
+            }
+        });
+
+        if(!$('.center-col > .tab-content> .section > .section').hasClass('active')){
+            $('.center-col > .tab-content> .section > .section').first().addClass('active in');
+        }
+
+        $('.center-col > .tab-content> .section > .section').unwrap();
+
+        // Local TOC.
+        //$(".bs-sidenav ul").addClass("nav nav-list");
+        $("#nav-spy > ul").addClass("list-group list-group-accordion");
+        $("#nav-spy > ul > li").addClass("list-group-item");
+        $("#nav-spy > ul > li").each(function(){
+            if($(this).hasClass('current')){
+                $(this).addClass('active');
+            }
+        });
+
+        $("#nav-spy > ul > li").each(function(){
+            $(this).has('ul').children().first('a').addClass('sign-toggle').removeAttr("href");
+        });
+        $("#nav-spy > ul > li > ul").addClass("collapse");
+        // $('#nav-spy > ul').prepend('<li class="list-group-item list-group-header br-n">Documentation Menu</li>');
+
+        var scrollBtn = $('.scrollup');
+        // on scoll toggle scrollTop in/out
+        $(window).scroll(function () {
+            if ($('body').hasClass('scrolling')) {return;}
+            if ($(this).scrollTop() > 300) {
+                scrollBtn.fadeIn();
+            } else {
+                scrollBtn.fadeOut();
+            }
+        });
+        // on button click scrollTop
+        $('.scrollup, .return-top').on('click', function (e) {
+            e.preventDefault();
+            scrollReset();
+        });
+
+        // if link item clicked scrollTop
+        $('#nav-spy li a').on('click', function (e) {
+
+            if ($(this).hasClass('sign-toggle')) { return; }
+
+            var href = $(this).attr('href');
+            if (!href.split('#')[0]) { e.preventDefault(); window.location.hash = href; }
+
+            windowCheck();
+
+        });
+
+        function windowCheck(){
+            if ($(window).scrollTop() > 234) {
+                scrollReset(135);
+            }
+            if($(document).width() < 941) {
+
+                if ($('body.left-col-hidden').length == 0) {
+                    $('body').addClass('left-col-hidden');
+                }
+            }
+        }
+
+        // scrollTop function
+        function scrollReset(pos) {
+            if(pos == undefined) { pos = 0; }
+            scrollBtn.fadeOut();
+            $("html, body").addClass('scrolling').animate({
+                scrollTop: pos
+            }, 320, function(){
+                $("html, body").removeClass('scrolling')
+            });
+
+            return false;
+        }
+
+        function nav(){
+
+            $('.dynamic-nav').remove();
+            $('.sphinx-content').hide();
+            var current_id = document.location.hash;
+            var current_page = $(current_id);
+            var prev_header = '';
+            var next_header = '';
+
+            var prev = $(current_page).prev('div.section');
+            var next = $(current_page).next('div.section');
+
+            if(prev.length == 0){
+                $('#prev > .sphinx-content').show();
+            } else {
+                prev_header = '&laquo; ' + $(prev).find(':header:first').text().replace(/[^\x00-\x7F]/g,'');
+                var prevEl = $('<div class="dynamic-nav"><a href="#'+ $(prev).attr('id') + '">'+prev_header+'</a><h4>View Previous Section</h4></div>');
+                $('#prev').append(prevEl);
+                prevEl.one('click', function(){
+                    windowCheck();
+                })
+            }
+
+            if(next.length == 0){
+                $('#next > .sphinx-content').show();
+            } else {
+                next_header = $(next).find(':header:first').text().replace(/[^\x00-\x7F]/g,'') + ' &raquo;';
+                var nextEl = $('<div class="dynamic-nav"><a href="#'+ $(next).attr('id') + '">'+next_header+'</a><h4>View Next Section</h4></div>');
+                $('#next').append(nextEl);
+                nextEl.one('click', function(){
+                    windowCheck();
+                })
+            }
+        }
+
+        nav();
+
+        $(window).hashchange(function(){ nav(); });
+
+        // list-group-accordion functionality
+        var listAccordion = $('.list-group-accordion');
+        var accordionItems = listAccordion.find('.list-group-item');
+        var accordionLink = listAccordion.find('.sign-toggle');
+
+        accordionLink.on('click', function() {
+            var This = $(this);
+            var Parent = This.parent('.list-group-item');
+
+            if (Parent.hasClass('active')) {
+                Parent.toggleClass('active');
+            } else {
+                accordionItems.removeClass('active');
+                Parent.addClass('active');
+            }
+        });
+
+        var toggleInput = $('#left-col-toggle');
+        toggleInput.on('click', function() {
+            if ($('body.left-col-hidden').length) {
+                $('body').removeClass('left-col-hidden');
+            } else {
+                $('body').addClass('left-col-hidden');
+            }
+        });
+
+        if($(document).width() < 941) {
+
+            if ($('body.left-col-hidden').length == 0) {
+                $('body').addClass('left-col-hidden');
+            }
+        }
+
+
+        // Local TOC.
+        patchToc($("ul.localtoc"), 2);
+
+        // Mutate sub-lists (for bs-2.3.0).
+        $(".dropdown-menu ul").not(".dropdown-menu").each(function () {
+            var $ul = $(this),
+                $parent = $ul.parent(),
+                tag = $parent[0].tagName.toLowerCase(),
+                $kids = $ul.children().detach();
+
+            // Replace list with items if submenu header.
+            if (tag === "ul") {
+                $ul.replaceWith($kids);
+            } else if (tag === "li") {
+                // Insert into previous list.
+                $parent.after($kids);
+                $ul.remove();
+            }
+        });
+
+        // Add divider in page TOC.
+        $localLi = $("ul.localtoc li");
+        if ($localLi.length > 2) {
+            $localLi.first().after('<li class="divider"></li>');
+        }
+
+        // Manually add dropdown.
+        // Appears unnecessary as of:
+        //   https://github.com/ryan-roemer/sphinx-bootstrap-theme/pull/90
+        // Remove next time around...
+        // a.dropdown-toggle class needed in globaltoc.html
+        //$('.dropdown-toggle').dropdown();
+
+        // Patch tables.
+        patchTables();
+
+        // Add Note, Warning styles. (BS v2,3 compatible).
+        $('.admonition').addClass('alert alert-info')
+            .filter('.warning, .caution')
+            .removeClass('alert-info')
+            .addClass('alert-warning').end()
+            .filter('.error, .danger')
+            .removeClass('alert-info')
+            .addClass('alert-danger alert-error').end();
+
+        // Inline code styles to Bootstrap style.
+        $('tt.docutils.literal').not(".xref").each(function (i, e) {
+            // ignore references
+            if (!$(e).parent().hasClass("reference")) {
+                $(e).replaceWith(function () {
+                    return $("<code />").html($(this).html());
+                });
+            }});
+
+        // Update sourcelink to remove outerdiv (fixes appearance in navbar).
+        var $srcLink = $(".nav #sourcelink");
+        $srcLink.parent().html($srcLink.html());
+    });
 }(window.$jqTheme || window.jQuery));

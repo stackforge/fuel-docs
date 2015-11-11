@@ -46,7 +46,7 @@ source_suffix = '.rst'
 #source_encoding = 'utf-8-sig'
 
 # The master toctree document.
-# master_doc = 'contents'
+master_doc = 'contents'
 
 # General information about the project.
 project = u'Mirantis OpenStack'
@@ -197,11 +197,7 @@ html_favicon = '_static/mirantis_icon.ico'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-# A list of paths that contain extra files not directly related to the
-# documentation, such as robots.txt or .htaccess. Relative paths are taken
-# as relative to the configuration directory. They are copied to the output
-# directory. They will overwrite any existing file of the same name.
-html_extra_path = ['_templates/mirantis/static/index.html', '_templates/mirantis/static/search.html', 'examples']
+# html_extra_path = ['_templates/mirantis/static/index.html']
 
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.
@@ -215,6 +211,10 @@ html_use_smartypants = False
 #html_sidebars = {
 #  '**': ['searchbox.html', 'globaltoc.html'],
 #}
+
+html_sidebars = {
+  '**': ['globaltoc.html'],
+}
 
 # Additional templates that should be rendered to pages, maps page names to
 # template names.
