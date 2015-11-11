@@ -13,22 +13,19 @@
   {# BS2 needs "bootstrap-responsive.css". BS3 doesn't. #}
   {% if theme_bootstrap_version == "3" %}
     {% set theme_css_files = theme_css_files + [
-        'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css',
+        'https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css',
         '_static/bootstrap-sphinx.css'
       ]
     %}
   {% else %}
     {% set theme_css_files = theme_css_files + [
-        '_static/bootswatch-' + bootstrap_version + '/' + theme_bootswatch_theme + '/bootstrap.min.css',
-        '_static/bootstrap-' + bootstrap_version + '/css/bootstrap-' + bootstrap_additional_css + '.min.css',
         '_static/bootstrap-sphinx.css'
       ]
     %}
   {% endif %}
 {% else %}
   {% set theme_css_files = theme_css_files + [
-      'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css',
-      '_static/bootstrap-' + bootstrap_version + '/css/bootstrap-' + bootstrap_additional_css + '.min.css',
+        'https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css',
       '_static/bootstrap-sphinx.css',
       '_static/styles.css'
     ]
@@ -42,6 +39,8 @@
 
 {% set script_files = script_files + [
     'https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js',
+    'https://cdnjs.cloudflare.com/ajax/libs/lunr.js/0.5.11/lunr.min.js',
+    'https://cdnjs.cloudflare.com/ajax/libs/jquery-hashchange/v1.3/jquery.ba-hashchange.min.js',
     '_static/bootstrap-dropdown.js',
     '_static/bootstrap-sphinx.js',
     '_static/abtest.js',
@@ -65,13 +64,9 @@
 {% if theme_bootstrap_version == "3" %}
   {%- macro bsidebar() %}
       {%- if render_sidebar %}
-      <div class="{{ bs_span_prefix }}3">
-        <div id="sidebar" class="bs-sidenav" role="complementary">
           {%- for sidebartemplate in sidebars %}
             {%- include sidebartemplate %}
           {%- endfor %}
-        </div>
-      </div>
       {%- endif %}
   {%- endmacro %}
 {% else %}
@@ -104,12 +99,48 @@
 {%- block content %}
 {{ navBar() }}
 <div class="container">
-  <div class="row">
-    {%- block sidebar1 %}{{ bsidebar() }}{% endblock %}
-    <div class="{{ bs_span_prefix }}{{ bs_content_width }}">
-      {% block body %}{% endblock %}
+  <div class="docs-container mt40" id="docs">
+    <div class="row table-layout">
+      <div class="col-xs-3 left-col">
+        {%- block sidebar1 %}{{ bsidebar() }}{% endblock %}
+      </div>
+      <div class="col-xs-9 center-col va-t">
+        <div class="tab-content pn" id="docs-content">
+          {% block body %}{% endblock %}
+            {% if theme_navbar_sidebarrel %}
+              {% block sidebarrel %}
+                {% include "relations.html" %}
+              {% endblock %}
+            {% endif %}
+          <div class="top-wrapper clearfix">
+            <div class="row">
+<div class="col-xs-2">
+<a class="return-top">Share this page</a>
+</div>
+              <div class="col-xs-6">
+<div id="share" class="btn-group" role="group" aria-label="social">
+  <button data-toggle="tooltip" title="Copy permalink to clipboard"  type="button" id="bottom-copy" class="btn btn-primary copyMe"><i class="fa fa-copy"></i></button>
+  <button data-toggle="tooltip" title="Share on Facebook" type="button" id="bottom-facebook" class="btn btn-primary"><i class="fa fa-facebook-official"></i></button>
+  <button data-toggle="tooltip" title="Share on Twitter" type="button" id="bottom-twitter" class="btn btn-primary"><i class="fa fa-twitter"></i></button>
+  <button data-toggle="tooltip" title="Share on Google+" type="button" id="bottom-google-plus" class="btn btn-primary"><i class="fa fa-google-plus"></i></button>
+  <button data-toggle="tooltip" title="Share on LinkedIn" type="button" id="bottom-linkedin" class="btn btn-primary"><i class="fa fa-linkedin"></i></button>
+  <button data-toggle="tooltip" title="Contribute" type="button" id="bottom-github" class="btn btn-primary"><i class="fa fa-github"></i></button>
+</div>
+              </div>
+              <div class="col-xs-2">
+                <a class="return-top">Was this helpful?</a>
+              </div>
+              <div class="col-xs-2">
+                <div class="btn-group" role="group" aria-label="helpful">
+                  <button type="button" class="btn btn-default">Yes</button>
+                  <button type="button" class="btn btn-default">No</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    {% block sidebar2 %} {# possible location for sidebar #} {% endblock %}
   </div>
 </div>
 {%- endblock %}
