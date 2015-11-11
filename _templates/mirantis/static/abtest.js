@@ -1,14 +1,6 @@
 var _conv_host = (("https:" == document.location.protocol) ? "https://d9jmv9u00p0mv.cloudfront.net" : "http://cdn-1.convertexperiments.com");
 document.write(unescape("%3Cscript src='" + _conv_host + "/js/10012224-10012014.js' type='text/javascript'%3E%3C/script%3E"));
 
-//collector
-jQuery.ajax({
-            url: "https://mirantis.jira.com/s/4ed53ccf16578ed4b1d4b6b7efa13491-T/en_USltmd6x/65007/316/1.4.25/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector-embededjs/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector-embededjs.js?locale=en-US&collectorId=23810080",
-        type: "get",
-    cache: true,
-    dataType: "script"
-});
-
 (function () {
 	$(window).on("popstate", function (e) {
 		var activeTab = location.hash ? $('[href=' + location.hash + ']') : $('[href=#home]');
@@ -29,134 +21,13 @@ function showHashTab(){
 	}
 }
 
-function generateLinks(url, title) {
-	var currentLocation = window.location;
-	var linkUrl = currentLocation.protocol + '//' + currentLocation.host + currentLocation.pathname + url;
-	var facebook = generateFacebook(linkUrl);
-	var googlePlus = generateGooglePlus(linkUrl);
-	var linkedIn = generateLinkedIn(linkUrl, title);
-	var twitter = generateTwitter(linkUrl, title);
-	var copyMe = generateCopyButton(linkUrl);
-	return '<span class="share headerlink">' + copyMe + facebook + googlePlus + linkedIn + twitter + '</span>';
+function getParameterByName(name) {
+	name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+	var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+		results = regex.exec(location.search);
+	return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
-function generateFacebook(url) {
-	return '<a class="facebook" data-toggle="tooltip" data-placement="bottom" title="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=' + url + '"><i class="fa fa-facebook-square"></i></a>';
-}
-
-function generateGooglePlus(url) {
-	return '<a class="googlePlus" data-toggle="tooltip" data-placement="bottom" title="Share on Google Plus" href="https://plus.google.com/share?url=' + url + '"><i class="fa fa-google-plus-square"></i></a>';
-}
-
-function generateLinkedIn(url, title) {
-	var params = {
-		mini: 'true',
-		url: url,
-		title: title,
-		summary: title,
-		source: ''
-	};
-
-	var queryString = $.param(params);
-	return '<a class="linkedIn" data-toggle="tooltip" data-placement="bottom" title="Share on LinkedIn" href="https://www.linkedin.com/shareArticle?' + queryString + '"><i class="fa fa-linkedin-square"></i></a>';
-}
-
-function generateTwitter(url, title) {
-	return '<a class="twitter" data-toggle="tooltip" data-placement="bottom" title="Share on Twitter" href="https://twitter.com/home?status=' + encodeURIComponent(title) + ' ' + encodeURIComponent(url) + '"><i class="fa fa-twitter-square"></i></a>';
-}
-
-function generateCopyButton(url) {
-	return '<a data-toggle="tooltip" data-placement="bottom" class="copyMe" data-clipboard-text="' + url + '" data-original-title="Copy permalink to clipboard"><i class="fa fa-clipboard"></i></a>';
-}
-
-function populateGuides(guides) {
-
-	$(guides).find('.section').each(function (i) {
-		var index = i + 1;
-		var el = $(this).find('.reference');
-		var href = $(el).attr('href');
-		var heading = $(el).text();
-		var content = $(this).find('p').html();
-		$('#guides').append('<div class="col-sm-3"><a href="' + href + '"><div class="panel panel-default"><div class="panel-body"><h4>' + heading + '</h4><p>' + content + '</p></div></div></a></div>');
-	});
-
-	var columns = $('#guides .col-sm-3');
-	for (var i = 0; i < columns.length; i += 4) {
-		columns.slice(i, i + 4).wrapAll("<div class='row'></div>");
-	}
-
-}
-
-function populatePdfs(pdfs) {
-
-	$(pdfs).each(function () {
-		var href = $(this).attr('href');
-		var link = $(this).text();
-		$('#pdfs').append('<div class="col-lg-6"><a class="btn btn-default red btn-block" href="' + href + '"><i class="fa fa-file-pdf-o"></i> ' + link + '</a></div>');
-	});
-
-	var columns = $('#pdfs .col-lg-6');
-	for (var i = 0; i < columns.length; i += 2) {
-		columns.slice(i, i + 2).wrapAll("<div class='row'></div>");
-	}
-}
-
-function populateDownload(download) {
-	var el = $(download).find('h1 > .reference');
-	var href = $(el).attr('href');
-	var link = $(el).text();
-	var content = $(download).clone().find('h1').remove().end().find('.note').addClass('alert alert-info').end().html();
-	$('#download_content').append('<a href="' + href + '" class="btn btn-danger btn-lg btn-block" id="download_openstack">' + link + '</a>' + content);
-}
-
-function populateReleases(releases){
-
-	$(releases).each(function(){
-		var href = $(this).attr('href');
-		var link = $(this).text();
-		$('#prior_releases_content').append('<div class="col-md-3"><a class="btn btn-default red btn-block" href="' + href + '">' + link + '</a></div>');
-
-	});
-
-	var columns = $('#prior_releases_content .col-md-3');
-	for (var i = 0; i < columns.length; i += 4) {
-		columns.slice(i, i + 4).wrapAll("<div class='row'></div>");
-	}
-}
-
-function populateContent(callback){
-	$.get("index_content.html", function (data) {
-		var homeTitle = $(data).find('.home-title').html();
-		var home = $(data).find('.what-is-mirantis-openstack').html();
-		var guides = $(data).find('#guides');
-		populateGuides(guides);
-		var pdfs = $(data).find('#pdf .reference');
-		populatePdfs(pdfs);
-		var download = $(data).find('#download-now');
-		populateDownload(download);
-		var releases = $(data).find('#prior-releases p .reference');
-		populateReleases(releases);
-		$('#home').html(home);
-		$('#main').html(homeTitle);
-	});
-
-	$.get("eula.html", function (data) {
-		var fuel_license = $(data).find('#fuel-license').html();
-		$('#fuel-license').html($(fuel_license).find('pre'));
-	});
-
-	$.get("third-party-licenses.html", function (data) {
-		var third_party = $(data).find(".section > .section");
-		$(third_party).each(function (i, v) {
-			var el = $(v).find('.reference');
-			var href = $(el).attr('href');
-			var heading = $(el).text();
-			$('#third-party-licenses').append('<a class="btn btn-default red btn-block" href="' + href + '"><i class="fa fa-file-pdf-o"></i> ' + heading + '</a>');
-		});
-	});
-
-	callback();
-}
 
 function prepareList(){
 	$('#contents ul.simple').find('li:has(ul)').unbind('click').click(function(event) {
@@ -176,13 +47,6 @@ function prepareList(){
 $(document).ready(function () {
 	var url = window.location.pathname;
 	var filename = url.substring(url.lastIndexOf('/') + 1);
-
-	if (filename == 'index.html' || filename == '') {
-		$('ul.nav.navbar-nav li.dropdown').not('.globaltoc-container').hide();
-
-		populateContent(showHashTab);
-
-	}
 
 	// browser window scroll (in pixels) after which the "back to top" link is shown
 	var offset = 300,
@@ -205,12 +69,7 @@ $(document).ready(function () {
 	});
 
 	$('.headerlink').each(function () {
-		var parentTag = $( this ).parent().get( 0 ).tagName;
-		if(parentTag == 'H1' || parentTag == 'H2'){
-			$(this).replaceWith(generateLinks($(this).attr('href'), $(this).parent().children('.toc-backref').text()));
-		} else {
-			$(this).empty();
-		}
+		$(this).empty();
 	});
 
 	$('[data-toggle="tooltip"]').tooltip();
@@ -262,39 +121,64 @@ $(document).ready(function () {
 
 	prepareList();
 
-	var lastId, curId, curText,
-		topMenu = $("#breadcrumb"),
-		topMenuHeight = topMenu.outerHeight()+15,
+if(/search.html$/.test(window.location.pathname)) {
 
-		menuItems = $('ul.dropdown-menu.localtoc > li').find('a'),
-		scrollItems = menuItems.map(function(){
-			var item = $($(this).attr("href"));
-			if (item.length) { return item; }
-		});
-	$(window).scroll(function(){
-		var fromTop = $(this).scrollTop()+topMenuHeight;
-
-		var cur = scrollItems.map(function(){
-			if ($(this).offset().top < fromTop)
-				return this;
-		});
-		cur = cur[cur.length-1];
-		var ele = cur && cur.length ? cur[0] : "";
-		if(ele){curId = ele.id; curText = $(ele).find(':header:first').text(); }
-
-		$('#guide-href').text($('h1:first').text()).attr('href', window.location.pathname.split('/').pop());
-
-		if (lastId !== curId) {
-			lastId = curId;
-
-			$('#guide-section-href').text(curText).attr('href', '#'+curId);
-		}
-
-		if($(window).scrollTop() > 1000){
-			$('#breadcrumb').fadeIn();
-		} else {
-			$('#breadcrumb').hide();
-		}
+	var index = lunr(function () {
+		this.field('title', {boost: 10});
+		this.field('body');
+		this.field('href');
+		this.ref('id');
 	});
+
+	var store = {};
+
+	if (getParameterByName('q')) {
+
+		$('#search-results').append('<div class="loader"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div>');
+
+		$.getJSON("_static/data.json", function (data) {
+			$(data).each(function (i, item) {
+				index.add({
+					title: item.title,
+					body: item.body,
+					href: item.url,
+					guide: item.guide,
+					id: i
+				});
+				store[i] = {title: item.title, body: item.body, guide: item.guide, href: item.url};
+			});
+
+			var query = getParameterByName('q');
+			var results = index.search('fuel');
+			var length = 210;
+			var bodyText = '';
+			var results = index.search(query);
+
+			$('#search-progress').hide();
+			$('#search-results').empty().append(
+				results.length ?
+					results.map(function (result) {
+						var el = $('<p>')
+							.append($('<a>')
+								.attr('href', store[result.ref].href)
+								.text(store[result.ref].title)
+						);
+						var body = store[result.ref].body.toLowerCase();
+						var bodySearch = body.search(query.toLowerCase());
+						if (bodySearch > 100) {
+							bodyText = jQuery.trim(store[result.ref].body).substring(bodySearch, bodySearch + length).split(" ").slice(0, -1).join(" ") + "...";
+						} else {
+							bodyText = jQuery.trim(store[result.ref].body).substring(0, length).split(" ").slice(0, -1).join(" ") + "...";
+						}
+						el.append($('<p>').text());
+						el.append($('<p>').html('<span class="text-muted">Guide: <em>' + store[result.ref].guide + '</em></span><br>' + bodyText));
+						return el;
+					}) : $('<p><strong>No results found</strong></p>')
+
+			);
+
+		});
+	}
+}
 
 });
