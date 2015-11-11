@@ -1,0 +1,44 @@
+.. _MU-v7-0:
+
+Maintenance Updates for Mirantis OpenStack 7.0
+##############################################
+
+This section contains a list of available maintenance updates for
+Mirantis OpenStack 7.0.
+For detailed information on a specific update, refer to the information
+below. For general considerations on applying updates, see :ref:`patching-ops`.
+
+.. warning:: The instructions below are part of Mirantis OpenStack
+   Maintenance Updates. Applying Mirantis OpenStack Maintenance
+   Updates may cause a downtime of entire OpenStack environment or
+   specific OpenStack services.
+   You must schedule a maintenance window and notify cloud users in
+   advance.
+
+.. note:: Applying Mirantis OpenStack Maintenance Updates may
+   override manually applied custom patches.
+
+   It is recommended to back up your deployment and test updates on
+   your staging environment before applying updates to production.
+   If you have any questions or concerns, consult Mirantis Support.
+
+
+Security updates
+****************
+
+There are no urgent security updates available at the moment.
+
+Published updates
+*****************
+
+The following updates for Mirantis OpenStack 7.0 are available. These
+updates passed thorough testing and are recommended to be applied to
+the Mirantis OpenStack 7.0 deployments.
+
+.. Include here a path to the file with bug, for example:
+   include:: /pages/maintenance-updates/v7.0/sample.rst
+
+Proposed updates
+****************
+
+There are no proposed updates available at the moment.

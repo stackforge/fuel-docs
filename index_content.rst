@@ -17,6 +17,7 @@ PDF
 `Terminology Reference PDF <pdf/Mirantis-OpenStack-7.0-Terminology-Reference.pdf>`_
 `File Format Reference PDF <pdf/Mirantis-OpenStack-7.0-File-Format-Reference.pdf>`_
 `Release Notes PDF <pdf/Mirantis-OpenStack-7.0-RelNotes.pdf>`_
+`Maintenance Updates PDF <pdf/Mirantis-OpenStack-7.0-MU.pdf>`_
 
 Guides
 ~~~~~~
@@ -64,8 +65,13 @@ Provides information on how to use Fuel configuration files.
 
 `Release Notes <release-notes.html#release-notes>`_
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Provide general information about new features,
+Provides general information about new features,
 fixed issues, and known limitations in Mirantis OpenStack |version|.
+
+`Maintenance Updates <maintenance-updates.html#maintenance-updates>`_
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Provides a list of available Maintenance Updates for Mirantis OpenStack
+|version|.
 
 Prior releases
 ~~~~~~~~~~~~~~
