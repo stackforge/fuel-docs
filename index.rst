@@ -26,5 +26,3 @@ Mirantis OpenStack consists of the following components:
     get support for Mirantis OpenStack from the industry experts.
     For more information go to
     https://www.mirantis.com/services/enterprise-support-services/
-
-To view the HTML version of documentation, go to http://docs.mirantis.com
