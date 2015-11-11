@@ -1,49 +1,46 @@
-  <div id="navbar" class="{{ theme_navbar_class }} navbar-default">
+<nav class="navbar bg-light docs-navbar">
     <div class="container">
-      <div class="navbar-header">
-        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        {%- block sidebarlogo %}
-          <a class="navbar-brand" href="{{ pathto(theme_roottarget) }}" title="{{ project|e }}">
-            {%- if logo %}<img src="{{ pathto('_static/' + logo, 1) }}">{%- endif %}
-          </a>
-            {% if theme_navbar_title -%}<span id="site-title">{{ theme_navbar_title|e }}{%- else -%}{{ project|e }}</span>{%- endif -%}
-          </a>
-        {%- endblock %}
-      </div>
-
-        <div class="collapse navbar-collapse nav-collapse">
-          <ul class="nav navbar-nav">
-            {% if theme_navbar_links %}
-              {%- for link in theme_navbar_links %}
-                <li><a href="{{ pathto(*link[1:]) }}">{{ link[0] }}</a></li>
-              {%- endfor %}
-            {% endif %}
-            {% block navbartoc %}
-              {% include "globaltoc.html" %}
-              {% if theme_navbar_pagenav %}
-                {% include "navbartoc.html" %}
-              {% endif %}
-            {% endblock %}
-            {% if theme_navbar_sidebarrel %}
-              {% block sidebarrel %}
-                {% include "relations.html" %}
-              {% endblock %}
-            {% endif %}
-            {% block navbarextra %}
-            {% endblock %}
-            {% if theme_source_link_position == "nav" %}
-              <li class="hidden-sm">{% include "sourcelink.html" %}</li>
-            {% endif %}
-          </ul>
-
-          {% block navbarsearch %}
-            {% include "navbarsearchbox.html" %}
-          {% endblock %}
+        <div class="row">
+            <div class="col-xs-12 col_miramenu_int">
+                <div class="mm_miralogo" style="float: left; margin-right: 20px;">
+                    <a href="https://www.mirantis.com/" title="Home" alt="Mirantis | The #1 Pure Play OpenStack Company" rel="home">
+                        <img src="https://www.mirantis.com/wp-content/themes/pre2015/imgresp/responsive_logo_inverted.png" class="img-responsive">
+                    </a>
+                </div>
+                <div class="hidden-xs hidden-sm" id="mira-menu-int">
+                    <a href="https://www.mirantis.com/products/mirantis-openstack-software/" class="glink" id="miramenu1">Products</a>
+                    <a href="https://www.mirantis.com/solutions/dev-test/" class="glink" id="miramenu2">Solutions</a>
+                    <a href="https://www.mirantis.com/services/implementation/" class="glink" id="miramenu3">Services</a>
+                    <a href="https://training.mirantis.com/" class="glink" id="miramenu4">Training</a>
+                    <a href="https://www.mirantis.com/partners/" class="glink" id="miramenu5">Partners</a>
+                    <a href="https://www.mirantis.com/openstack/" class="glink" id="miramenu6">Resources</a>
+                    <a href="https://www.mirantis.com/support/enterprise-support-services/" class="glink" id="miramenu7">Support</a>
+                </div>
+                <div class="top-menu-social">
+                    <a href="https://www.linkedin.com/company/mirantis" target="_blank" id="top-linkedin">
+                        <span class="fa-stack fa-lg"><i class="fa fa-circle-thin fa-stack-2x"></i><i
+                                class="fa fa-linkedin fa-stack-1x"></i></span>
+                    </a>
+                    <a href="https://www.facebook.com/MirantisUS" target="_blank" id="top-facebook">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle-thin fa-stack-2x"></i>
+                            <i class="fa fa-facebook fa-stack-1x"></i>
+                        </span>
+                    </a>
+                    <a href="https://twitter.com/MirantisIT" target="_blank" id="top-twitter">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle-thin fa-stack-2x"></i>
+                            <i class="fa fa-twitter fa-stack-1x"></i>
+                        </span>
+                    </a>
+                    <a href="https://plus.google.com/+MirantisOpenStackNow" target="_blank" id="top-google-plus">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle-thin fa-stack-2x"></i>
+                            <i class="fa fa-google-plus fa-stack-1x"></i>
+                        </span>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
-  </div>
+</nav>

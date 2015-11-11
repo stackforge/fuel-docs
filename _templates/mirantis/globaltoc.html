@@ -1,10 +1,86 @@
-<li class="dropdown globaltoc-container">
-  <a role="button"
-     id="dLabelGlobalToc"
-     data-toggle="dropdown"
-     data-target="#"
-     href="{{ pathto(master_doc) }}">{{ theme_navbar_site_name }} <b class="caret"></b></a>
-  <ul class="dropdown-menu globaltoc"
-      role="menu"
-      aria-labelledby="dLabelGlobalToc">{{ toctree(maxdepth=theme_globaltoc_depth|toint, collapse=False, includehidden=theme_globaltoc_includehidden|tobool) }}</ul>
-</li>
+<span id="left-col-toggle" class="fa fa-navicon"></span>
+
+<ul class="list-group">
+  <li class="list-group-item list-group-header br-n">
+    Current Version
+  </li>
+  <li class="list-group-item">
+    <span class="badge badge-primary">7.0</span> Mirantis OpenStack
+  </li>
+</ul>
+
+<ul class="list-group">
+  <li class="list-group-item">
+<form id="searchForm" action="search.html" method="get">
+    <input id="searchInput" type="text" name="q" placeholder="Search Documentation" />
+    <button class="btn btn-default" type="submit">Go</button>
+</form>
+  </li>
+</ul>
+<div id="nav-spy" class="posr">
+  {{ toctree(maxdepth=theme_globaltoc_depth|toint, collapse=False, includehidden=theme_globaltoc_includehidden|tobool) }}
+</div>
+
+<ul class="list-group list-group-accordion">
+  <li class="list-group-item list-group-header br-n">
+    Additional Documentation
+  </li>
+  <li class="list-group-item">
+    <a class="reference internal sign-toggle">
+      Other Versions
+    </a>
+    <ul class="collapse">
+      <li class="">
+        <a href="https://docs.mirantis.com/fuel/fuel-6.1/"> Mirantis OpenStack 6.1 Docs </a>
+      </li>
+      <li class="">
+        <a href="https://docs.mirantis.com/fuel/fuel-6.0/"> Mirantis OpenStack 6.0 Docs </a>
+      </li>
+      <li class="">
+        <a href="https://docs.mirantis.com/fuel/fuel-5.1/"> Mirantis OpenStack 5.1.1 Docs </a>
+      </li>
+      <li class="">
+        <a href="https://docs.mirantis.com/fuel/fuel-5.1/"> Mirantis OpenStack 5.1 Docs </a>
+      </li>
+      <li class="">
+        <a href="https://docs.mirantis.com/fuel/fuel-5.0/"> Mirantis OpenStack 5.0.1 Docs </a>
+      </li>
+      <li class="">
+        <a href="https://docs.mirantis.com/fuel/fuel-4.1/"> Mirantis OpenStack 4.1 Docs </a>
+      </li>
+      <li class="">
+        <a href="https://docs.mirantis.com/fuel/fuel-4.0/"> Mirantis OpenStack 4.0 Docs </a>
+      </li>
+      <li class="">
+        <a href="https://docs.mirantis.com/fuel/fuel-3.2.1/"> Mirantis OpenStack 3.2 Docs </a>
+      </li>
+      <li class="">
+        <a href="https://software.mirantis.com/refdoc-fuelweb3/video/"> Fuel Web 3.0 Docs </a>
+      </li>
+      <li class="">
+        <a href="https://software.mirantis.com/refdoc-fuel3/preface/"> Fuel CLI 3.0 Docs </a>
+      </li>
+      <li class="">
+        <a href="https://software.mirantis.com/reference-documentation-on-fuel-folsom-2-1/introduction-3/"> Fuel 2.1 Docs </a>
+      </li>
+      <li class="">
+        <a href="https://software.mirantis.com/reference-documentation-on-fuel-folsom/package-contents-2/"> Fuel 2.0 Docs </a>
+      </li>
+      <li class="">
+        <a href="https://software.mirantis.com/reference-documentation-on-fuel-essex/package-contents/"> Fuel 1.0 Docs </a>
+      </li>
+    </ul>
+  </li>
+  <li class="list-group-item">
+    <a href="https://docs.fuel-infra.org/fuel-dev/" target="_blank">Developer's Guide</a>
+  </li>
+  <li class="list-group-item">
+    <a href="#" target="_blank">SDK</a>
+  </li>
+  <li class="list-group-item">
+    <a href="#" target="_blank">API</a>
+  </li>
+  <li class="list-group-item">
+    <a href="pdfs.html">Download PDFs</a>
+  </li>
+</ul>
