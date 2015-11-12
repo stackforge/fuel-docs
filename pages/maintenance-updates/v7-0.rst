@@ -40,9 +40,23 @@ Maintenance Update 1
 
 * :ref:`How to update the product <mos70mu1-how-to-update>`
 
+* :ref:`Resolved issues <mos70mu1-issues>`
+
+* :ref:`Updated packages <mos70mu1-packages>`
+
 Proposed updates
 ****************
 
 There are no proposed updates available at the moment.
 
+-----
+
 .. include:: /pages/maintenance-updates/v7.0/mos70mu1-how-to-update.rst
+
+-----
+
+.. include:: /pages/maintenance-updates/v7.0/mos70mu1-issues.rst
+
+-----
+
+.. include:: /pages/maintenance-updates/v7.0/mos70mu1-packages.rst
