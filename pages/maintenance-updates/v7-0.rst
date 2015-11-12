@@ -35,10 +35,22 @@ The following updates for Mirantis OpenStack 7.0 are available. These
 updates passed thorough testing and are recommended to be applied to
 the Mirantis OpenStack 7.0 deployments.
 
-.. Include here a path to the file with bug, for example:
-   include:: /pages/maintenance-updates/v7.0/sample.rst
+Maintenance Update 1
+++++++++++++++++++++
+
+* :ref:`Resolved issues <mos70mu1-issues>`
+
+* :ref:`Updated packages <mos70mu1-packages>`
 
 Proposed updates
 ****************
 
 There are no proposed updates available at the moment.
+
+-----
+
+.. include:: /pages/maintenance-updates/v7.0/mos70mu1-issues.rst
+
+-----
+
+.. include:: /pages/maintenance-updates/v7.0/mos70mu1-packages.rst
