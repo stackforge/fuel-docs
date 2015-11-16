@@ -18,31 +18,32 @@ Please, follow the instruction below to install updates.
 
 Automated way to install updates to all nodes
 ---------------------------------------------
-Run the following command on the Fuel Master node to obtain a local mirror of the updates repository::
-
-       rsync -vap --chmod=Dugo+x \
-       rsync://mirror.fuel-infra.org/mirror/fwm/6.0/updates/ /var/www/nailgun/updates/
 
 .. note::
       Note that you must have an access to the Internet on the Fuel Master node to download the repository.
 
-After rsync’ing the updates repository from the Mirantis mirror to the Fuel Master node internal repository, a special script can be used for the automated update of the nodes in all or particular environments:
+You can use the
+`mos_apply_mu.py <https://github.com/Mirantis/tools-sustaining/raw/master/scripts/mos_apply_mu.py>`_
+script to update the nodes automatically in selected or all environments.
 
-       `mos_apply_mu.py <https://github.com/Mirantis/tools-sustaining/raw/master/scripts/mos_apply_mu.py>`_
+This script downloads the latest packages from the repository and then updates
+all the nodes simultaneously. You must run the script in the Fuel Master node
+CLI using the following conventions: X - an OpenStack environment, `user_name`
+- the Fuel root user, `user_password` - password for the Fuel root user,
+`tenant_name` - name of the Fuel tenant. Use the corresponding values from
+your environment::
 
-This script updates all nodes one by one and should be run on the Fuel Master node in the following manner in order to update nodes in the environment `X` given that IP address of the Fuel Master node is 10.20.0.2, Fuel user name is `user_name`, password is `user_password` and tenant_name is `tenant_name`::
-
-       python mos_apply_mu.py --env-id=X --update --master-ip=10.20.0.2 \
+       python mos_apply_mu.py --env-id=X --update \
        --user=user_name --pass=user_password --tenant=tenant_name
 
 To update all environments, use `--all-envs` option::
 
-       python mos_apply_mu.py --update --all-envs --master-ip=10.20.0.2 \
+       python mos_apply_mu.py --update --all-envs \
        --user=user_name --pass=user_password --tenant=tenant_name
 
 The status of the update process can be checked by using `--check` option::
 
-       python mos_apply_mu.py --check --all-envs --master-ip=10.20.0.2 \
+       python mos_apply_mu.py --check --all-envs \
        --user=user_name --pass=user_password --tenant=tenant_name
 
 The script will update all online nodes in all environments with respect to the version of an operating system in a particular environment.
@@ -61,7 +62,7 @@ To get the list of available options, run the script without parameters::
 All output from nodes can be found in `/var/log/remote/$ip$/nodes-update.log` where $ip$ the IP address of particular node.
 
 Manual updating procedure for Linux CentOS- and Ubuntu-based nodes
---------------------------------------------------------------------
+------------------------------------------------------------------
 
 To be able to update the nodes of your environment you should setup local updates repository on the Fuel Master node and use it as an update mirror.
 Run the following command on the Fuel Master node to obtain a local mirror of the updates repository::
