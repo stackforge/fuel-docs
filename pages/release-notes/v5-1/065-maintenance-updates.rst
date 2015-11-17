@@ -27,13 +27,6 @@ Nova
   the ``max_age_quota`` value was calculated incorrectly. The fix puts
   the timestamps in the correct order. See `LP1440740`_.
 
-* If an instance is created from a multi-part image (separate kernel
-  and ramdisk files), and ``resume_guests_state_on_host_boot=True``,
-  the resulting ``_hard_reboot`` fails and puts the instance into an
-  error state. The fix ensures that the attempts to get access to the
-  images are possible when the authorization token is not available
-  in context. See `LP1462991`_.
-
 * Currently, Nova is able to restart successfully, even if
   ``_init_instance`` fails. Previously, the compute process used to
   exit unexpectedly in case an unhandled exception was raised from
