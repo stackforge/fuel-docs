@@ -1,21 +1,24 @@
 .. _vsphere_configure_network:
 
-Configure the networks
-======================
+Configure networks
+~~~~~~~~~~~~~~~~~~
 
-Configure network for Fuel Admin (PXE) traffic
-----------------------------------------------
+To enable inter-node communication, you must configure networks on
+VMware vCenter.
+
+Configure a network for Fuel Admin (PXE) traffic
+------------------------------------------------
 
 You must configure a network for the Fuel Admin (PXE) traffic
 and enable Promiscuous mode.
 
 **To configure a network for the Fuel Admin (PXE) traffic:**
 
- #. Go to the vCenter screen.
- #. Choose **Hosts**.
- #. Select the host on which you want to run the Fuel Master node.
- #. Click the **Networking** button.
- #. Click the **Add Host Networking** icon.
+#. Go to the vCenter screen.
+#. Choose **Hosts**.
+#. Select the host on which you want to run the Fuel Master node.
+#. Click the **Networking** button.
+#. Click the **Add Host Networking** icon.
 
 Create a vCenter Port Group network
 -----------------------------------

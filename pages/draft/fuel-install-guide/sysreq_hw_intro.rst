@@ -12,5 +12,5 @@ deployments.
 
 .. seealso::
 
-   - : ref: `sysreq_master_node_hardware_recs`
-   - : ref: `sysreq_target_node_hardware_recs`
+   - :ref:`sysreq_master_node_hardware_recs`
+   - :ref:`sysreq_fuel_slave_node_hw_recs`

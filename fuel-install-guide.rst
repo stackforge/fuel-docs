@@ -1,6 +1,6 @@
 .. index:: Fuel Installation Guide
 
-.. _fuel-install-guide:
+.. _fuel_install_guide:
 
 =======================
 Fuel Installation Guide

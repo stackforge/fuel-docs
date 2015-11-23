@@ -24,7 +24,7 @@ Before you install the Fuel Master node, complete the steps described in
    line, configure the IP address, default gateway, and DNS server settings of
    the Fuel Master node.
 
-#. Proceed to :ref:`install_configure_network_parameters`.
+#. Proceed to :ref:`Configure network parameters <install_set_up_fuel>`.
 
 .. note::
 

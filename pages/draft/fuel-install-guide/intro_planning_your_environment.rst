@@ -1,4 +1,3 @@
-
 .. _intro_planning:
 
 Planning your environment

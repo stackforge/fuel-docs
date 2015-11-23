@@ -29,12 +29,12 @@ initial configuration.
 **To log in to the Fuel web UI:**
 
 #. In a web browser, type the IP address and port number that you have
-   assigned for the Fuel web UI in :ref:`install_set_up_fuel`.
+   assigned for the Fuel web UI in :ref:`Set up Fuel <install_set_up_fuel>`.
 
    Fuel prompts you for the login credentials.
 
 #. In a web browser, enter the Fuel UI login and password that you have
-   set for the Fuel web UI in :ref:`install_set_up_fuel`
+   set for the Fuel web UI in :ref:`Set up Fuel <install_set_up_fuel>`.
 
    If you use the default network settings, use the following values:
 
@@ -54,12 +54,12 @@ initial configuration.
 
    The Fuel web UI initial screen displays.
 
-#. Proceed to :ref:`install_boot_the_fuel_slave_nodes`.
+#. Proceed to :ref:`Boot the Fuel Slave nodes <install_boot_nodes>`.
 
 **To log in to the Fuel CLI:**
 
 #. In the Fuel Master node console, type the root login and password that you
-   have assigned in :ref:`install_set_up_fuel`.
+   have assigned in :ref:`Set up Fuel <install_set_up_fuel>`.
 
    If you use the default settings, type the following login credentials:
 
@@ -76,10 +76,8 @@ initial configuration.
 
 #. Alternatively, connect to the Fuel Master node :ref:`using SSH <shell-ops>`.
 
-#. Proceed to :ref:`install_boot_the_fuel_slave_nodes`.
+#. Proceed to :ref:`Boot the Fuel Slave nodes <install_boot_nodes>`.
 
 .. seealso::
 
-   - :ref:`install_login_fuel_master_node_multiple_nics`
-   - :ref:`ug_create_new_env`
-
+   - :ref:`Log in to the Fuel Master node with multiple NICs <install_login_fuel_master_node_multiple_nics>`

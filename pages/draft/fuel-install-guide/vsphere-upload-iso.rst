@@ -1,7 +1,7 @@
 .. _vsphere_upload_iso:
 
 Upload the Fuel ISO to the VMware vSphere datastore
-===================================================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You need to download the `Fuel ISO <https://www.fuel-infra.org/#fuelget>`_
 and upload it do a vSphere datastore.

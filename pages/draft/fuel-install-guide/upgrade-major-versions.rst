@@ -37,7 +37,8 @@ before running the actual upgrade:
 
      export ORIG_ID=<ENVIRONMENT_ID>
 
-#. Upgrade the Fuel Master node. See :ref:`upgrade_fuel_master`.
+#. Upgrade the Fuel Master node.
+   See :ref:`Upgrade the Fuel Master node <upgrade_fuel_master>`.
 
 #. Proceed to :ref:`upgrade_prepare_master`.
 
@@ -126,13 +127,15 @@ You must deploy the Controller node with the following modifications:
 Upgrade the databases
 ~~~~~~~~~~~~~~~~~~~~~
 
-To upgrade the databases, put the environment :ref:`Maintenance Mode <db-backup-ops>`.
+To upgrade the databases, put the environment in :ref:`Maintenance Mode <db-backup-ops>`.
 
 **To upgrade the databases:**
 
-#. Upgrade the state databases of the OpenStack services by typing::
+#. Upgrade the state databases of the OpenStack services by typing:
 
-   octane upgrade-db ${ORIG_ID} ${SEED_ID}
+   ::
+
+       octane upgrade-db ${ORIG_ID} ${SEED_ID}
 
 Upgrade Ceph cluster
 ~~~~~~~~~~~~~~~~~~~~
@@ -146,9 +149,11 @@ that will complete the following:
 
 **To upgrade the Ceph cluster:**
 
-#. Run the following command::
+#. Run the following command:
 
-    octane upgrade-ceph ${ORIG_ID} ${SEED_ID}
+   ::
+
+       octane upgrade-ceph ${ORIG_ID} ${SEED_ID}
 
 Upgrade Control Plane
 ~~~~~~~~~~~~~~~~~~~~~

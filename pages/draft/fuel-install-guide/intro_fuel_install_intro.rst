@@ -1,8 +1,7 @@
 .. _intro_fuel_install:
 
-=====================================
-Introduction to the Fuel Installation
-=====================================
+Introduction to Fuel Installation
+=================================
 
 This section provides an overview of the Fuel installation
 process. You can install Fuel on a server with an Internet connection or
@@ -11,9 +10,9 @@ on your choice, the workflow differs.
 
 This section includes the following topics:
 
-* : ref :intro_fuel
-* : ref :intro_install_overview
-* : ref :intro_planning
+* :ref:`intro_fuel`
+* :ref:`intro_install_overview`
+* :ref:`intro_planning`
 
 
 

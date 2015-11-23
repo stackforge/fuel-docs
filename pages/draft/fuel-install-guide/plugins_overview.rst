@@ -1,6 +1,5 @@
 .. _plugins_overview:
 
-
 Fuel plugins overview
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -37,14 +36,11 @@ Fuel currently has the following plugins:
     environment before you deploy your environment. You will not be able to
     add plugins after deployment.
 
-`Fuel Plugins SDK`_ enables you to develop virtually any plugin that you
-need to meet your environment prerequisites.
+`Fuel Plugins SDK <https://wiki.openstack.org/wiki/Fuel/Plugins>`_ enables
+you to develop virtually any plugin that you need to meet your environment
+prerequisites.
 
 
 .. seealso::
 
-   - `Fuel Plugins catalog`_
-
-.. links
-.. _`Fuel Plugins SDK`: https://wiki.openstack.org/wiki/Fuel/Plugins
-.. _`Fuel Plugins catalog`: https://www.fuel-infra.org/plugins/catalog.html
+   - `Fuel Plugins catalog <https://www.fuel-infra.org/plugins/catalog.html>`_

@@ -46,11 +46,11 @@ Fuel Master node.
 #. In Menu, select **PXE Setup**.
 #. Set the DHCP pool range and gateway.
 #. Verify your configuration by clicking **Check**.
-#. Proceed to :ref : `install_boot_fuel_master_node`
+#. Proceed to :ref:`install_login_fuel_master_node`.
 
 .. seealso::
 
-   - :ref : `install_configure_a_network_interface_for_fuel_web_ui`
+   - :ref:`install_configure_a_network_interface_for_fuel_web_ui`
 
 
 .. _install_configure_a_network_interface_for_fuel_web_ui:
@@ -72,8 +72,8 @@ the Fuel web UI.
 
    Fuel now uses the selected interface for the Fuel web UI.
 
-#. Proceed to :ref : `install_boot_fuel_master_node`
+#. Proceed to :ref:`install_boot_fuel_master_node`
 
 .. seealso::
 
-   - :ref : ` install_change_admin_network_interface`
+   - :ref:`install_login_fuel_master_node_multiple_nics`

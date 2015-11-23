@@ -1,7 +1,7 @@
 .. _sysreq_master_node_hardware_recs:
 
 Fuel Master node hardware requirements
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------------
 
 When planning hardware for the Fuel Master node, verify that your hardware
 meets the following minimum requirements:

@@ -1,7 +1,7 @@
 .. _vsphere_boot_master:
 
 Boot the Fuel Master node
-=========================
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. When the Mirantis ISO boot menu appears, press the **Tab** key
    on the keyboard and modify the last kernel parameter ``showmenu``
