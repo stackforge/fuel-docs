@@ -9,6 +9,12 @@ Horizon
   The patch prevents the web-server memory overrun when downloading
   objects from Swift. See `LP1423311`_.
 
+* By making repeated requests to the Horizon login page a remote
+  attacker may generate unwanted session records, potentially
+  resulting in a denial of service. Only Horizon setups using
+  a db or memcached session engine are affected. See `LP1398893`_
+  and `LP1399271`_.
+
 Nova
 ++++
 
@@ -72,6 +78,15 @@ Keystone
   verification was disabled leaving TLS connections opened to MITM
   attacks. See `LP1442579`_.
 
+* Due to mechanical error, python-keystoneclient does not respect
+  ``insecure`` option in api-paste.ini regardless it’s set to
+  True or False. The fix restores correct behavior. See `LP1509329`_.
+
+* OpenStack Identity (Keystone) logs the backend_argument configuration
+  option content, which allows remote authenticated users to obtain
+  passwords and other sensitive backend information by reading the Keystone
+  logs. See `LP1469149`_.
+
 Glance
 ++++++
 
@@ -91,6 +106,39 @@ Glance
   ``oslo_utils.encodeutils`` that is needed by ``exception_to_str()``
   in order to emit the original error message. See `LP1474015`_.
 
+* By submitting a HTTP PUT request with a 'x-image-meta-status'
+  header, a tenant can manipulate the status of their images.
+  A malicious tenant may exploit this flaw to reactivate disabled
+  images, bypass storage quotas and in some cases replace image
+  contents. Setups using the Glance v1 API allow the illegal modification
+  of image status. Setups which also use the v2 API may allow a subsequent
+  re-upload of image contents. See `LP1496798`_.
+
+* A storage quota bypass flaw was found in OpenStack Image (glance).
+  If an image was deleted while it was being uploaded, it would not count
+  towards a user's quota. A malicious user could use this flaw to
+  deliberately fill the backing store, and cause a denial of service.
+  See `LP1414685`_.
+
+* If image was deleted during file upload when we want to update image
+  status from 'saving' to 'active' it's expected to get Duplicate error
+  and delete stale chunks after that. But if user's token is expired
+  there will be Unathorized exception and chunks will stay in store
+  and clog it. Only Glance setups configured with user_storage_quota
+  are affected. See `LP1497984`_.
+
+* By setting  a malicious image location an authenticated user can
+  download or delete any file on the Glance server for which the Glance
+  process user has access to. Only setups using the Glance V2 API are
+  affected by this flaw. See `LP1403102`_.
+
+* The path traversal vulnerabilities in Glance were not fully patched
+  in OSSA 2014-041.By setting a malicious image location to a filesystem://
+  scheme an authenticated user can still download or delete any file
+  on the Glance server for which the Glance process user has access to.
+  Only setups using the Glance V2 API are affected by this flaw.
+  See `LP1514467`_.
+
 Swift
 +++++
 
@@ -103,6 +151,23 @@ Swift
   affected only if the ``allow_version`` setting value was manually
   changed in the Swift configuration file.
 
+* When in possession of a tempurl ``key`` authorized for ``PUT``,
+  a malicious actor may retrieve other objects in the same Swift account
+  (tenant). The fix disallows the ``PUT`` method in tempurls to create
+  pointers to other data, what prevents discoverability attacks and a tricky
+  and potentially unexpected consequences of the unsafe ``PUT`` method.
+  See `LP1487450`_.
+
+* Previously, upstart scenarios did not allow Swift to automatically
+  respawn in case if unexpected shutdown occurs. The fix introduces minor
+  changes to the upstart scripts including ``respawn`` options. See
+  `LP1466101`_.
+
+* Swift doesn’t apply the documented metadata constraints properly, this
+  leads to a possibility of exceeding metadata limits by making multiple
+  requests. The fix adds new metadata validation method, which enforces
+  existing limits across all the requests. See `LP1509328`_.
+
 Heat
 ++++
 
@@ -112,6 +177,35 @@ Heat
   instances may not be removed. The fix removes the redundant delete
   calls to a volume in order to avoid a race condition. See
   `LP1459605`_.
+
+Cinder
+++++++
+
+* By overwriting an image with a malicious qcow2 header, an authenticated
+  user may mislead Cinder upload-to-image action, resulting in disclosure
+  of any file from the Cinder server. All Cinder setups are affected.
+  See `LP1465333`_.
+
+* RBD is a python binding for librados which isn't patched by eventlet.
+  Making long-running tasks like removing big (~100GB, ~1TB) volumes
+  blocks eventlet loop and all cinder-volume service hangs until it
+  finished when rados_connect_timeout is disabled. It makes cinder-volume
+  services unavailable for a while. This patch moves all rados calls
+  to a separate python thread which doesn't block eventlet loop.
+  See `LP1444546`_.
+
+* If detach volume from instance immediately after attaching, volume
+  ends up in an undeletable state (it remains marked in-use, but it not
+  attached to instance). See `LP1510957`_.
+
+Neutron
++++++++
+
+* Race condition in OpenStack Neutron, when using the ML2 plugin or the
+  security groups AMQP API, allows authenticated users to bypass IP
+  anti-spoofing controls by changing the device owner of a port to start
+  with network: before the security group rules are applied. See
+  `LP1489958`_.
 
 Other resolved issues
 +++++++++++++++++++++
@@ -141,3 +235,19 @@ Other resolved issues
 .. _`LP1459605`: https://bugs.launchpad.net/mos/+bug/1459605
 .. _`LP1415932`: https://bugs.launchpad.net/mos/+bug/1415932
 .. _`LP1463802`: https://bugs.launchpad.net/mos/+bug/1463802
+.. _`LP1398893`: https://launchpad.net/bugs/1398893
+.. _`LP1399271`: https://launchpad.net/bugs/1399271
+.. _`LP1496798`: https://launchpad.net/bugs/1496798
+.. _`LP1414685`: https://launchpad.net/bugs/1414685
+.. _`LP1497984`: https://launchpad.net/bugs/1497984
+.. _`LP1403102`: https://launchpad.net/bugs/1403102
+.. _`LP1514467`: https://launchpad.net/bugs/1514467
+.. _`LP1465333`: https://launchpad.net/bugs/1465333
+.. _`LP1444546`: https://launchpad.net/bugs/1444546
+.. _`LP1510957`: https://launchpad.net/bugs/1510957
+.. _`LP1487450`: https://launchpad.net/bugs/1487450
+.. _`LP1466101`: https://launchpad.net/bugs/1466101
+.. _`LP1509328`: https://launchpad.net/bugs/1509328
+.. _`LP1509329`: https://launchpad.net/bugs/1509329
+.. _`LP1469149`: https://launchpad.net/bugs/1469149
+.. _`LP1489958`: https://launchpad.net/bugs/1489958
