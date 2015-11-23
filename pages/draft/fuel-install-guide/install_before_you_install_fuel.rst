@@ -7,14 +7,12 @@ Before you install Fuel, verify that you have completed the following tasks:
 
 #. Read and complete the tasks described in the following sections:
 
-   * : ref: `intro_install_overview`
-   * : ref: `sysreq_intro`
+* :ref:`intro_install_overview`
+* :ref:`sysreq_intro`
 
 #. If you use bare-metal hardware, set up and connect all hardware.
-
 #. If you use virtual hardware, configure all required virtual machines,
    network, and storage parameters.
-
 #. Select a workflow:
 
 * If you install Fuel on a server with an Internet connection, follow this

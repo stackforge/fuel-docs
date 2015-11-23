@@ -1,6 +1,5 @@
 .. _preinstall_intro:
 
-===========================
 Pre-installation checklists
 ===========================
 

@@ -1,4 +1,3 @@
-
 .. _intro_planning:
 
 Planning your environment
@@ -24,9 +23,11 @@ production environment, you must decide on the following:
 This guide explains what OpenStack configurations you can deploy using Fuel,
 as well as briefly describes guidelines and examples on how to plan resources
 for your environment. However, we recommend that you read `OpenStack
-Architecture Design Guide <http://docs.openstack.org/arch-design/content/>`_,
+Architecture Design Guide <http://docs.openstack.org/arch-design/content/>`__,
 so you can better estimate your network, storage, and compute requirements.
 
 .. seealso::
 
-   - : ref: `sysreq_intro`
+   - :ref:`System requirements <sysreq_intro>`
+
+

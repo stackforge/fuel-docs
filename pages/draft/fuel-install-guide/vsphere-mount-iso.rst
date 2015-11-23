@@ -1,7 +1,7 @@
 .. _vsphere_mount_iso:
 
 Mount the Fuel ISO
-==================
+~~~~~~~~~~~~~~~~~~
 
 You must mount the Fuel ISO to install the Fuel Master node
 on the virtual machine.

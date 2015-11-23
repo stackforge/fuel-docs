@@ -1,7 +1,7 @@
 .. _vsphere_create_vm:
 
 Create the Fuel Master node virtual machine
-===========================================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You need to create a new virtual machine with a guest
 operating system to run the Fuel Master node on it.

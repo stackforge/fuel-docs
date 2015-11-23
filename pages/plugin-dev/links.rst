@@ -37,7 +37,8 @@ Plugin-specific instructions
 
 Every plugin has its own prerequisites, limitations and use cases.
 To learn about specific instructions and recommendations, enter
-`Fuel Plugins Catalog <https://software.mirantis.com/download-mirantis-openstack-fuel-plug-ins/>`_.
+`Fuel Plugins Catalog
+<https://software.mirantis.com/download-mirantis-openstack-fuel-plug-ins/>`__.
 
 Validation
 ----------

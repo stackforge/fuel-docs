@@ -14,8 +14,5 @@ following recommendations:
 
 .. seealso::
 
-   - `Fuel plugins catalog`_
-
-.. links
-.. _`Fuel plugins catalog`: http://stackalytics.com/report/driverlog?project_id=openstack%2Ffuel
-
+   - `Fuel plugins catalog
+     <http://stackalytics.com/report/driverlog?project_id=openstack%2Ffuel¬>`_

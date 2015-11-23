@@ -1,5 +1,6 @@
 .. _install_boot_nodes:
 
+
 Boot the Fuel Slave nodes
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 

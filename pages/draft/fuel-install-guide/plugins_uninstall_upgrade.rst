@@ -1,4 +1,5 @@
-.. _upgrade_uninstall_plugin:
+.. _plugins_upgrade_uninstall_plugin:
+
 
 Uninstall a plugin
 ~~~~~~~~~~~~~~~~~~
@@ -16,7 +17,7 @@ uninstall the Fuel plugins before upgrading Fuel.
       set -eux
       echo uninstall > /tmp/myplugin_uninstall
 
-  where ``myplugin`` is the name of your plugin.
+   where ``myplugin`` is the name of your plugin.
 
 #. Put the ``uninstall.sh`` script in your plugin folder.
 #. Type::

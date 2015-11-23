@@ -39,7 +39,7 @@ General guidelines for the Fuel Salve nodes:
 .. seealso::
 
    - `OpenStack Architecture Design Guide
-     <http://docs.openstack.org/arch-design/content/technical-considerations-general-purpose.html>`_
+     <http://docs.openstack.org/arch-design/content/technical-considerations-general-purpose.html>`__
    - `OpenStack Operations Guide
      <http://docs.openstack.org/openstack-ops/content/>`_
-   - : ref: `sysreqs_sample_target_node_config`
+   - :ref:`sysreqs_sample_target_node_config`

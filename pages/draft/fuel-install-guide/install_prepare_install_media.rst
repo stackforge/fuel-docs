@@ -1,11 +1,14 @@
 .. _install_prepare_install_media:
 
-Preparing an installation media
+Prepare an installation media
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 After downloading the :ref:`Fuel ISO image <install_download_iso>`, you must
 prepare the installation media by mounting the ISO or burning a DVD/USB
 drive.
+
+
+.. _install_create_dvd:
 
 Create a DVD drive
 ------------------
@@ -45,6 +48,9 @@ bare-metal hardware.
 #. Proceed to the
    :ref:`Fuel Master node installation <install_install_fuel_master_node>`.
 
+
+.. _install_create_usb:
+
 Create a USB drive with the Fuel ISO on a UNIX system
 -----------------------------------------------------
 
@@ -65,7 +71,7 @@ install Fuel on your machine.
 
       # dd if=/path-to-your-ISO of=/path-to-your-USB
 
-   Example:
+   **Example:**
 
    .. code-block:: console
 
@@ -75,5 +81,5 @@ install Fuel on your machine.
                 on the USB drive and places a bootable Fuel ISO
                 on it.
 
-#. Proceed to the
-   :ref:`Fuel Master node installation <install_install_fuel_master_node>`.
+#. Proceed to
+   :ref:`Install the Fuel Master node <install_install_fuel_master_node>`.

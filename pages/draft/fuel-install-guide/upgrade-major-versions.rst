@@ -28,16 +28,21 @@ before running the actual upgrade:
 #. Select the environment that complies with the above prerequisites
    and assign its ID to the ``ORIG_ID`` variable:
 
- #. On the Fuel Master node, type::
+   #. On the Fuel Master node, type:
 
-     fuel env
+      ::
 
- #. Select the environment ID from the list.
- #. Assign the environment ID to the ``ORIG_ID`` variable::
+         fuel env
 
-     export ORIG_ID=<ENVIRONMENT_ID>
+   #. Select the environment ID from the list.
+   #. Assign the environment ID to the ``ORIG_ID`` variable:
 
-#. Upgrade the Fuel Master node. See :ref:`upgrade_fuel_master`.
+      ::
+
+         export ORIG_ID=<ENVIRONMENT_ID>
+
+#. Upgrade the Fuel Master node.
+   See :ref:`Upgrade the Fuel Master node <upgrade_fuel_master>`.
 
 #. Proceed to :ref:`upgrade_prepare_master`.
 
@@ -92,8 +97,8 @@ settings parameters to the new environment.
 
      octane upgrade-env ${ORIG_ID}
 
- where ORIG_ID is the ID of the environment that you assigned at the
- :ref:`upgrade_prerequisites` step.
+   where ORIG_ID is the ID of the environment that you assigned at the
+   :ref:`upgrade_prerequisites` step.
 
 #. Running the ``octane upgrade-env ${ORIG_ID}`` command will display
    the ID of the new Fuel 7.0 environment.
@@ -126,13 +131,15 @@ You must deploy the Controller node with the following modifications:
 Upgrade the databases
 ~~~~~~~~~~~~~~~~~~~~~
 
-To upgrade the databases, put the environment :ref:`Maintenance Mode <db-backup-ops>`.
+To upgrade the databases, put the environment in :ref:`Maintenance Mode <db-backup-ops>`.
 
 **To upgrade the databases:**
 
-#. Upgrade the state databases of the OpenStack services by typing::
+#. Upgrade the state databases of the OpenStack services by typing:
 
-   octane upgrade-db ${ORIG_ID} ${SEED_ID}
+   ::
+
+       octane upgrade-db ${ORIG_ID} ${SEED_ID}
 
 Upgrade Ceph cluster
 ~~~~~~~~~~~~~~~~~~~~
@@ -146,19 +153,22 @@ that will complete the following:
 
 **To upgrade the Ceph cluster:**
 
-#. Run the following command::
+#. Run the following command:
 
-    octane upgrade-ceph ${ORIG_ID} ${SEED_ID}
+   ::
 
-Upgrade Control Plane
-~~~~~~~~~~~~~~~~~~~~~
+       octane upgrade-ceph ${ORIG_ID} ${SEED_ID}
 
-Before upgrading the Control plane, verify that you have completed the following tasks:
+Upgrade the Control Plane
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
- - Clone the environment settings
- - Deployed the Controller node in the new environment
- - Upgraded the databases
- - Upgraded the Ceph cluster
+Before upgrading the Control plane, verify that you have completed the
+following tasks:
+
+- Clone the environment settings
+- Deployed the Controller node in the new environment
+- Upgraded the databases
+- Upgraded the Ceph cluster
 
 **To upgrade the Control Plane:**
 
@@ -166,7 +176,9 @@ Run the following command::
 
   octane upgrade-control ${ORIG_ID} ${SEED_ID}
 
-This command switches the services from the original environment to the new one and swaps the Controller connections to the Management and External networks.
+This command switches the services from the original environment to the new
+one and swaps the Controller connections to the Management and External
+networks.
 
 Upgrade hypervisor host
 ~~~~~~~~~~~~~~~~~~~~~~~

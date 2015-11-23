@@ -48,7 +48,7 @@ Installation steps
 Installation procedure is common for all plugins, but their requirements differ.
 
 #. Download a plugin from
-   `Fuel Plugins Catalog <https://www.mirantis.com/products/openstack-drivers-and-plugins/fuel-plugins/>`_.
+   `Fuel Plugins Catalog <http://stackalytics.com/report/driverlog?project_id=openstack%2Ffuel>`__.
 
 #. Get acquainted with the plugin documentation to learn about
    prerequisites and limitations.

@@ -23,47 +23,55 @@ or through Fuel CLI using the ``fuel-createmirror`` script.
 #. Log in to the Fuel Master node CLI.
 #. Run the ``fuel-createmirror`` script:
 
- * If you use the default Fuel root password, type::
+   * If you use the default Fuel root password, type: 
 
-     fuel-createmirror
+     ::
 
- * If you change the default Fuel root password, type::
+        fuel-createmirror
 
-     fuel-createmirror --password PASSWORD
+   * If you change the default Fuel root password, type: 
 
-#. Restart the the docker daemon::
+     ::
 
-    service docker restart
+        fuel-createmirror --password PASSWORD
+
+#. Restart the the docker daemon
+
+   ::
+
+      service docker restart
 
    Alternatively (recommended), reboot the Fuel Master node.
 
-About ``fuel-createmirror``
----------------------------
+About the fuel-createmirror script
+----------------------------------
 
 The ``fuel-createmirror`` is a built-in Fuel script that enables
 you to modify the Fuel repository sources from the CLI.
 
-``fuel-createmirror`` details:
+* The script supports only RSYNC  mirrors.
+  See the `the list of official upstream Ubuntu mirrors <https://launchpad.net/ubuntu/+archivemirrors>`_.
 
-  * The script supports only rsync mirrors.
-    See the `official upstream Ubuntu mirrors list <https://launchpad.net/ubuntu/+archivemirrors>`_.
+* The script uses a Docker container with Ubuntu to support dependencies
+  resolution.
 
-  * The script uses a Docker container with Ubuntu to support dependencies
-    resolution.
+* To view help information, type ``fuel-createmirror -h``.
 
-  * To view help information, type ``fuel-createmirror -h``.
+* The script supports running behind an HTTP proxy configured to
+  Port 873 (rsync). The following environment variables can be set either
+  system-wide (via ~/.bashrc), or in the script configuration file:
 
-  * The script supports running behind an HTTP proxy configured to
-    Port 873 (rsync). The following environment variables can be set either
-    system-wide (via ~/.bashrc), or in the script configuration file::
+  ::
 
        http_proxy=http://username:password@host:port/
        RSYNC_PROXY=username:password@host:port
 
-    You can also configure Docker to use the proxy to download the Ubuntu
-    image needed to resolve the packages dependencies. Add the environment
-    variables to the `/etc/sysconfig/docker` file, and export them::
+* You can also configure Docker to use the proxy to download the Ubuntu
+  image needed to resolve the packages dependencies. Add the environment
+  variables to the `/etc/sysconfig/docker` file, and export them: 
 
-      http_proxy=http://username:password@host:port/
-      RSYNC_PROXY=username:password@host:port
-      export http_proxy RYSNC_PROXY
+  ::
+
+     http_proxy=http://username:password@host:port/
+     RSYNC_PROXY=username:password@host:port
+     export http_proxy RYSNC_PROXY

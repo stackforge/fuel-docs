@@ -1,7 +1,7 @@
 .. _vsphere_verify_master:
 
 Verify the Fuel Master node operation
-=====================================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You need to verify that the Fuel Master node operates correctly.
 

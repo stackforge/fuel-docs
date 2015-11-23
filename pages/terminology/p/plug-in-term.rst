@@ -16,7 +16,7 @@ more simply, in Horizon, by adding a new set of tabs to Network.
 You can download Fuel plugins, read
 the documentation and perform required
 installation steps using
-`Fuel Plugins Catalog <https://www.mirantis.com/products/openstack-drivers-and-plugins/fuel-plugins/>`_.
+`Fuel Plugins Catalog <https://www.mirantis.com/products/openstack-drivers-and-plugins/fuel-plugins/>`__.
 For common instructions on installation,
 see :ref:`Install Fuel Plugins <install-plugin>`.
 

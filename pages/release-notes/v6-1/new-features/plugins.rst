@@ -52,13 +52,14 @@ Zabbix is no longer supported as a core Fuel component
 
 Zabbix is now only available as a plugin for Fuel.
 For information on prerequisites, installation
-and configuration instructions, see the `Fuel Plugins Catalog <https://software.mirantis.com/download-mirantis-openstack-fuel-plug-ins/>`_.
+and configuration instructions, see the `Fuel Plugins Catalog
+<https://software.mirantis.com/download-mirantis-openstack-fuel-plug-ins/>`__.
 
 New Plugins for Fuel are available
 ++++++++++++++++++++++++++++++++++
 
 Using the
-`Fuel Plugins Catalog <https://software.mirantis.com/download-mirantis-openstack-fuel-plug-ins/>`_,
+`Fuel Plugins Catalog <https://software.mirantis.com/download-mirantis-openstack-fuel-plug-ins/>`__,
 you can download and install new Fuel Plugins.
 Please, note that they will be available within
 a few weeks of the Mirantis OpenStack 6.1 release:

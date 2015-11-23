@@ -18,4 +18,4 @@ node.
 
 .. seealso::
 
-    - : ref: upgrade_local_repo
+    - :ref:`upgrade_local_repo`

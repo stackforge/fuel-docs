@@ -1,8 +1,7 @@
 .. _vsphere_install_master:
 
-Install the Fuel Master node on VMware vSphere 
-==============================================
-
+Install the Fuel Master node on VMware vSphere
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 You need to install the Fuel Master node on the created
 virtual machine.
 

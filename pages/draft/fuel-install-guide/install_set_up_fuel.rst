@@ -1,4 +1,4 @@
-.. _install_configure_network_parameters:
+.. _install_set_up_fuel:
 
 Set up Fuel
 ~~~~~~~~~~~
@@ -22,7 +22,7 @@ finalize network configuration before you install the Fuel Master node.
    OpentStack environments.
 
 If you are installing Fuel for testing purposes, you can keep the default
-settings and proceed to :ref :`install_boot_fuel_master_node`.
+settings and proceed to :ref:`install_install_fuel_master_node`.
 
 **To set up Fuel:**
 
@@ -116,9 +116,10 @@ settings and proceed to :ref :`install_boot_fuel_master_node`.
    |                                      | configurations.                  |
    +--------------------------------------+----------------------------------+
 
-2. Proceed to :ref : `install_boot_fuel_master_node`.
+2. Proceed to :ref:`install_install_fuel_master_node`.
 
 .. seealso::
 
-   - :ref : `install_configure_a_network_interface_for_fuel_web_ui`
-   - :ref : `install_change_admin_network_interface`
+   - :ref:`Configure a network interface for the Fuel web UI
+     <install_configure_a_network_interface_for_fuel_web_ui>`
+   - :ref:`Change the Admin (PXE) network interface <install_change_admin_network_interface>`

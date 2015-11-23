@@ -16,5 +16,5 @@ repository.
 
 #. Go to the `Fuel project page <https://www.fuel-infra.org>`_.
 #. Download the ISO to your computer.
-#. Proceed to : ref:`install_prepare_install_media`.
+#. Proceed to :ref:`install_prepare_install_media`.
 

@@ -17,20 +17,20 @@ The documentation for each patch item is available in the
 
 Check each patch item and proceed with the instructions.
 
-* To patch the Fuel Master node:
+**To patch the Fuel Master node:**
 
- #. Log in to the Fuel Master node.
+#. Log in to the Fuel Master node.
 
-  * If you use a local repository, update it by typing::
+   * If you use a local repository, update it by typing::
 
          fuel-createmirror -M
 
- #. Run the command specified in the documentation to download and install the patch.
+#. Run the command specified in the documentation to download and install the patch.
 
-* To patch a Fuel Slave node:
+**To patch a Fuel Slave node:**
 
- #. Run the command specified in the documentation to download and
-    install the patch.
+#. Run the command specified in the documentation to download and
+   install the patch.
 
 **Apply all accumulated changes in one go:**
 
