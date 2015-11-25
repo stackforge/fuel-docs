@@ -30,7 +30,7 @@ verify whether you meet these requirements:
    `VirtualBox extensions <https://www.virtualbox.org/wiki/Downloads>`_.
 
 #. Download Mirantis VirtualBox scripts from the
-   `Downloads <https://docs.mirantis.com/openstack/fuel/fuel-master/#downloads>`_ tab.
+   `Downloads <https://docs.mirantis.com/openstack/fuel/fuel-6.1/#downloads>`_ tab.
 
 #. Download the `Mirantis OpenStack ISO <https://software.mirantis.com/openstack-downloads/>`_.
 
