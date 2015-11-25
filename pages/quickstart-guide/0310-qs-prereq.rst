@@ -14,8 +14,8 @@ Your environment must meet the following software prerequisites:
 
 - `VirtualBox <https://www.virtualbox.org/>`_
 - `Oracle VM VirtualBox Extension Pack <https://www.virtualbox.org/>`_ for your version of VirtualBox
-- `Mirantis OpenStack ISO <https://docs.mirantis.com/openstack/fuel/fuel-master/#downloads>`_
-- `Mirantis VirtualBox scripts <https://docs.mirantis.com/openstack/fuel/fuel-master/#downloads>`_ (recommended)
+- `Mirantis OpenStack ISO <https://docs.mirantis.com/openstack/fuel/fuel-7.0/#downloads>`_
+- `Mirantis VirtualBox scripts <https://docs.mirantis.com/openstack/fuel/fuel-7.0/#downloads>`_ (recommended)
 
   The Mirantis VirtualBox scripts version must match the version of
   Mirantis OpenStack.
