@@ -96,8 +96,6 @@ $(document).ready(function () {
 
     prepareList();
 
-    showHashTab();
-
     if(/search.html$/.test(window.location.pathname)) {
 
         var index = lunr(function () {
