@@ -23,13 +23,6 @@ It is possible, although not recommended,
 to run both the Compute and Controller roles
 on a single server by editing the *openstack.yaml* file.
 
-    .. note:: In environments that use vCenter as the hypervisor,
-       the  Nova-compute service can run **only** on Controller nodes.
-       Because of this, Fuel does not allow you
-       to :ref:`assign<assign-roles-vcenter-ug>`
-       the "Compute" role to any node
-       when vCenter is selected as the hypervisor.
-
 Also see:
 
 - :ref:`storage-plan`
