@@ -8,8 +8,8 @@ Benefits
   operations and tell you which component or components are not working
   properly.
 
-* Performing these checks manually would consumed a great deal of time,
-  but it only take a few minutes to run the full suite of tests
+* Performing these checks manually would consume a great deal of time,
+  but it only takes a few minutes to run the full suite of tests
   from the Fuel console.
 
 * Aside from verifying that everything is working correctly,
