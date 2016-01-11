@@ -4,8 +4,11 @@
 # You can set these variables from the command line.
 SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
-PAPER         = letter
+PAPER         =
 BUILDDIR      = _build
+#PLANTUML      = plantuml.jar
+PLANTUML_FROM_PKG  = /usr/share/plantuml/plantuml.jar
+
 
 # Internal variables.
 PAPEROPT_a4     = -D latex_paper_size=a4
@@ -14,11 +17,7 @@ ALLSPHINXOPTS   = -d $(BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 # the i18n builder cannot share the environment and doctrees with the others
 I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 
-IMAGEDIRS     = _images
-
-.PHONY: help clean html dirhtml singlehtml pickle json htmlhelp qthelp devhelp \
-	epub latex latexpdf pdf text man changes linkcheck doctest gettext spell \
-	spell_all
+.PHONY: help clean html dirhtml singlehtml pickle json htmlhelp qthelp devhelp epub latex latexpdf text man changes linkcheck doctest gettext
 
 help:
 	@echo "Please use \`make <target>' where <target> is one of"
@@ -33,8 +32,8 @@ help:
 	@echo "  epub       to make an epub"
 	@echo "  latex      to make LaTeX files, you can set PAPER=a4 or PAPER=letter"
 	@echo "  latexpdf   to make LaTeX files and run them through pdflatex"
+	@echo "  pdf        to make PDF using rst2pdf"
 	@echo "  text       to make text files"
-	@echo "  pdf        to make pdf files"
 	@echo "  man        to make manual pages"
 	@echo "  texinfo    to make Texinfo files"
 	@echo "  info       to make Texinfo files and run them through makeinfo"
@@ -42,36 +41,33 @@ help:
 	@echo "  changes    to make an overview of all changed/added/deprecated items"
 	@echo "  linkcheck  to check all external links for integrity"
 	@echo "  doctest    to run all doctests embedded in the documentation (if enabled)"
-	@echo "  spell      to run aspell against .rst files changed in current commit"
-	@echo "  spell_all  to run aspell against all .rst files in pages/ directory"
 
 clean:
 	-rm -rf $(BUILDDIR)/*
-	-@rm -f $(PDFs)
 
-# Pattern rule for converting SVG to PDF
-%.pdf : %.svg
-	inkscape -f $< -A $@
+#$(PLANTUML):
+#	@if [ -f $(PLANTUML_FROM_PKG) ]; \
+#	then \
+#		echo "Have installed plantuml. Creating link $(PLANTUML) on $(PLANTUML_FROM_PKG)."; \
+#		ln -sf $(PLANTUML_FROM_PKG) $(PLANTUML); \
+#	else \
+#		echo "Downloading plantuml.jar."; \
+#		wget https://downloads.sourceforge.net/project/plantuml/plantuml.jar -O $(PLANTUML); \
+#	fi
+#	$(ACTION.TOUCH)
 
-# Build a list of SVG files to convert to PDFs
-PDFs := $(foreach dir, $(IMAGEDIRS), $(patsubst %.svg,%.pdf,$(wildcard $(dir)/*.svg)))
-
-# Make a rule to build all images
-images: $(PDFs)
-
-all: clean html dirhtml singlehtml latexpdf pdf
-
-rawhtml: images
-	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
+html: 
+#$(PLANTUML)
+	$(SPHINXBUILD) -b html -W $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
 
-dirhtml: images
+dirhtml:
 	$(SPHINXBUILD) -b dirhtml $(ALLSPHINXOPTS) $(BUILDDIR)/dirhtml
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/dirhtml."
 
-singlehtml: images
+singlehtml:
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) $(BUILDDIR)/singlehtml
 	@echo
 	@echo "Build finished. The HTML page is in $(BUILDDIR)/singlehtml."
@@ -86,13 +82,13 @@ json:
 	@echo
 	@echo "Build finished; now you can process the JSON files."
 
-htmlhelp: images
+htmlhelp:
 	$(SPHINXBUILD) -b htmlhelp $(ALLSPHINXOPTS) $(BUILDDIR)/htmlhelp
 	@echo
 	@echo "Build finished; now you can run HTML Help Workshop with the" \
 	      ".hhp project file in $(BUILDDIR)/htmlhelp."
 
-qthelp: images
+qthelp:
 	$(SPHINXBUILD) -b qthelp $(ALLSPHINXOPTS) $(BUILDDIR)/qthelp
 	@echo
 	@echo "Build finished; now you can run "qcollectiongenerator" with the" \
@@ -101,7 +97,7 @@ qthelp: images
 	@echo "To view the help file:"
 	@echo "# assistant -collectionFile $(BUILDDIR)/qthelp/fuel.qhc"
 
-devhelp: images
+devhelp:
 	$(SPHINXBUILD) -b devhelp $(ALLSPHINXOPTS) $(BUILDDIR)/devhelp
 	@echo
 	@echo "Build finished."
@@ -110,28 +106,28 @@ devhelp: images
 	@echo "# ln -s $(BUILDDIR)/devhelp $$HOME/.local/share/devhelp/fuel"
 	@echo "# devhelp"
 
-epub: images
+epub:
 	$(SPHINXBUILD) -b epub $(ALLSPHINXOPTS) $(BUILDDIR)/epub
 	@echo
 	@echo "Build finished. The epub file is in $(BUILDDIR)/epub."
 
-latex: images
+latex:
 	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
 	@echo
 	@echo "Build finished; the LaTeX files are in $(BUILDDIR)/latex."
 	@echo "Run \`make' in that directory to run these through (pdf)latex" \
 	      "(use \`make latexpdf' here to do that automatically)."
 
-pdf: images
-	$(SPHINXBUILD) -b pdf -c pdf $(ALLSPHINXOPTS) $(BUILDDIR)/pdf
-	@echo
-	@echo "Build finished; the PDF file is in $(BUILDDIR)/pdf."
-
-latexpdf: images
+latexpdf:
 	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
 	@echo "Running LaTeX files through pdflatex..."
 	$(MAKE) -C $(BUILDDIR)/latex all-pdf
 	@echo "pdflatex finished; the PDF files are in $(BUILDDIR)/latex."
+
+pdf:
+	$(SPHINXBUILD) -b pdf $(ALLSPHINXOPTS) $(BUILDDIR)/pdf
+	@echo
+	@echo "Build finished; the PDF file is in $(BUILDDIR)/pdf."
 
 text:
 	$(SPHINXBUILD) -b text $(ALLSPHINXOPTS) $(BUILDDIR)/text
@@ -176,25 +172,3 @@ doctest:
 	$(SPHINXBUILD) -b doctest $(ALLSPHINXOPTS) $(BUILDDIR)/doctest
 	@echo "Testing of doctests in the sources finished, look at the " \
 	      "results in $(BUILDDIR)/doctest/output.txt."
-
-html: rawhtml
-	./lunr.py
-	@echo
-	@echo "Lunr search index complete"
-
-SPELL = aspell
-ASPELLOPTS = --dont-backup -d en --personal=.aspell_en.wordlist
-RSTS := $(shell find pages/ -type f -name '*.rst')
-
-COMMIT_RSTS := $(shell git diff-tree --no-commit-id --name-only -r HEAD)
-spell:
-	@for rst in $(COMMIT_RSTS); do \
-		$(SPELL) $(ASPELLOPTS) check $$rst; \
-	done
-
-spell_all:
-	@for rst in $(RSTS); do \
-		$(SPELL) $(ASPELLOPTS) check $$rst; \
-	done
-	@echo "Spell check complete"
-

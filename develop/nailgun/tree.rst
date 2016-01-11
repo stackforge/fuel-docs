@@ -1,0 +1,25 @@
+.. _nailgun-development:
+
+Nailgun Development Instructions
+================================
+
+.. toctree::
+    development/env
+    development/i18n
+    development/db_migrations
+    development/shell_doc
+    development/ui_dependencies
+    development/code_testing
+
+
+Nailgun Customization Instructions
+==================================
+
+.. _nailgun-customization:
+
+.. toctree::
+    customization/partitions
+    customization/reliability
+    customization/roles
+    customization/settings
+    customization/bonding_in_ui
