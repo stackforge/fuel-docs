@@ -1,7 +1,9 @@
-sphinx==1.2.2
+sphinx==1.3b3
 cloud_sptheme
 sphinxcontrib-blockdiag
 rst2pdf
+funcparserlib
+webcolors
 sphinxcontrib-actdiag
 sphinxcontrib-seqdiag
 sphinxcontrib-nwdiag
