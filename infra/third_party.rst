@@ -28,7 +28,7 @@ Requirements
     '-1's to be manually confirmed.
 
 * A third-party system may only leave one comment per patch set
-  (unless it is retriggered).
+  (unless it is re-triggered).
 
 * The maintainers are responsible for re-triggering tests when their third
   party testing system breaks.
@@ -127,7 +127,7 @@ setup to test on if required.  In SmokeStack's case all failures are manually
 reviewed before getting pushed to OpenStack, while this may not scale it is
 advisable during the initial testing of the setup.
 
-There are several triggers that gerrit will match to alter the
+There are several triggers that Gerrit will match to alter the
 formatting of comments.  The raw regular expressions can be seen in
 `gerrit.pp <https://git.openstack.org/cgit/openstack-infra/system-config/tree/modules/openstack_project/manifests/gerrit.pp>`_.
 For example, to have your test results formatted in the same manner as
@@ -155,7 +155,7 @@ account. Once logged in you will need to do several things:
   it isn't already set. This is the username your CI system will use to
   SSH to Gerrit in order to read the event stream.
 
-  2. Set the account's fullname at https://review.fuel-infra.org/#/settings/contact
+  2. Set the account's full name at https://review.fuel-infra.org/#/settings/contact
   This name should follow a few rules in order to make it clear in Gerrit
   comments what this CI system exists to test. The name should have three
   pieces ``Organization`` ``Product/technology`` ``CI designator``. The
@@ -257,7 +257,7 @@ infrastructure with OpenStack's Gerrit. By using the sandbox project you
 can test your CI system without affecting regular OpenStack reviews.
 
 Once you confirm your CI system works as you expect, change your
-configuration of the gerrit trigger plugin or zuul to subscribe to gerrit
+configuration of the Gerrit trigger plugin or zuul to subscribe to Gerrit
 events from your target project.
 
 Permissions on your Third Party System
@@ -273,15 +273,15 @@ abilities before you vote on other projects.
 .. _openstack-dev/ci-sandbox: https://review.fuel-infra.org/[ADDME]
 
 The Fuel Infrastructure team disables mis-behaving third-party ci
-accounts at its discretion. This documentation endeavours to outline specific
+accounts at its discretion. This documentation endeavors to outline specific
 circumstances that may lead to an account being disabled. There have been
 times when third-party ci systems behave in ways we didn't envision
 and therefore were unable to document prior to the event. If your
 third-party ci system has been disabled, please don't hesitate to contact
 devops team.
 
-In order to get your Third Pary CI account to have voting permissions on
-repos in gerrit in addition to ``fuel-external/test`` you have a greater
+In order to get your Third Party CI account to have voting permissions on
+repos in Gerrit in addition to ``fuel-external/test`` you have a greater
 chance of success if you follow these steps:
 
 * Set up your system and test it according to "Testing your CI setup" outlined
@@ -292,7 +292,7 @@ chance of success if you follow these steps:
   demonstrate the format for your system communication to the repos
   you want your system to test.
 
-* Once your Third Party Account has a history on gerrit so that others
+* Once your Third Party Account has a history on Gerrit so that others
   can evaluate your format for comments, and the stability of your
   voting pattern (in the sandbox repo):
 
