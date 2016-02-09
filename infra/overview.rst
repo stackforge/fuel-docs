@@ -7,7 +7,7 @@ Overview
 Fuel Infrastructure is the set of systems (servers and services) which provide
 the following functionality:
 
-* Automatic tests for every patchset committed to Fuel Gerrit repositories
+* Automatic tests for every patch set committed to Fuel Gerrit repositories
 * Fuel nightly builds
 * Regular integration tests
 * Custom builds and custom tests
@@ -53,7 +53,7 @@ comfortable than static IP configuration.
 #. Add a new zone to your current DNS setup or use an external, online DNS service.
 
    #. Add a zone named ``test.local``.
-   #. Add an appropriate A and its coresponding PTR record for the
+   #. Add an appropriate A and its corresponding PTR record for the
       ``puppet-master`` name (mandatory for deployment) at least.
    #. If you use a static IP, verify that the ``/etc/resolv.conf`` file points
       to your DNS,
@@ -154,7 +154,7 @@ For minimal environment we need 3 systems:
 * Jenkins slave with enabled slave function for ISO building and deployment
   testing. This can be done in different ways. For instance, you can create
   hiera role for such server with the values provided below. Please keep in
-  mind that you have to explicitely set run_test and build_fuel_iso variables
+  mind that you have to explicitly set run_test and build_fuel_iso variables
   to true, as ones are not enabled by default.
 
    .. code-block:: ini
@@ -285,7 +285,7 @@ the exact Java WAR file that is used(link). To manage Gerrit instance we use
 `Jeepyb <http://docs.openstack.org/infra/system-config/jeepyb.html>`_ - the tool written by Openstack Infra
 team, which allows to store projects configuration in YAML format.
 
-To use Jeepyb with gerrit you need to create "projects.yaml" configuration file,
+To use Jeepyb with Gerrit you need to create "projects.yaml" configuration file,
 where for each project you add the following information:
 
 * project name
@@ -293,7 +293,7 @@ where for each project you add the following information:
 * project ACL
 * project upstream
 
-If "upstream" option is specified, Jeepyb will automaticaly import the upstream
+If "upstream" option is specified, Jeepyb will automatically import the upstream
 repository to this new project. To apply the configuration, use "manage-projects" command.
 
 Every project has ACL file. One ACL file can be reused in several projects. In
@@ -301,7 +301,7 @@ ACL file, access rights are defined based on the Gerrit user groups.
 For example, in this file you can allow certain group to use the Code-Review
 +/-2 marks.
 
-In our gerrit, we have some global projects - <projects>/. The Core Reviewers
+In our Gerrit, we have some global projects - <projects>/. The Core Reviewers
 for these projects are <one-core-group>.
 
 Contributing
