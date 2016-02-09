@@ -143,7 +143,7 @@ modification of only two files in the fuel-main repository::
 .. note:: Changes made to bootstrap do not affect package sets for
     target systems, so in case if you're adding support for NIC,
     for example, you have to add installation of all related
-    packages to kickstart/preceed as well.
+    packages to kickstart/preseed as well.
 
 The `Adding OFED drivers installation
 <https://review.openstack.org/#/c/103427>`_ commit shows the
