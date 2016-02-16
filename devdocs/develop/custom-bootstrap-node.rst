@@ -1,276 +1,433 @@
 .. _custom-bootstrap-node:
 
-
 Bootstrap node
 ==============
 
-When you would like to bring changes
-into bootstrap, you should take up either of the
-options:
+The Fuel bootstrap nodes can be based on the CentoOS or Ubuntu
+distributions and are respectfully called CentOS or Ubuntu bootstrap
+nodes. In previous versions of Fuel, the Fuel bootstrap nodes
+were based exclusively on CentOS. However, since Fuel 7.0, you can
+select from the two bootstraps. Initially, the Ubuntu bootstrap was
+introduced as an experimental feature. In current version, the Ubuntu
+bootstrap feature is fully supported.
 
-* create an additional
-  "piece" of bootstrap (initrd_update)
-  that will be injected into the
-  original initramfs image on the bootstrap.
-  That means, avoid modifying the original initramfs
-  image for bootstrap
+Ubuntu bootstrap
+----------------
 
-* modify the original initramfs image manually
+This section describes how to build and use the Ubuntu bootstrap.
 
-* create a custom initramfs image for
+.. note::
+
+ The CentOS bootstrap located in the
+ ``/var/www/nailgun/bootstrap`` folder,
+ The Ubuntu bootstrap is located in the
+ ``/var/www/nailgun/bootstraps/active`` folder.
+ The bootstrap location can be changed in the future releases.
+
+To modify a bootsrtap, use one of the following options:
+
+* Create a custom ``initramfs`` image for
   bootstrap to replace the default one.
+
+* Modify the copy of original ``initramfs`` image manually
+  and activate it (please consider this option as a last resort,
+  because it quite risky, see the warning below).
 
 Let's take a look at every approach in more details.
 
-Creating and injecting the initrd_update into bootstrap
--------------------------------------------------------
-
-A typical use case for creating initrd_update looks as follows:
-a great number of proprietary drivers for equipment cannot be
-shipped with GA Fuel ISO due to legal issues
-and should be installed by users themselves.
-
-That means, you can add (or inject) the required issues (drivers,
-scripts etc.) during Fuel ISO
-installation procedure.
-
-Injection workflow consists of several stages:
-
-#. Prepare the injected initramfs image with the required kernel modules (for CentOS).
-#. Modify bootstrap (CentOS)
-
-Prepare injected initramfs image for CentOS
-+++++++++++++++++++++++++++++++++++++++++++
-
-The injected initramfs image should contain
-the files what are going to be put on (or let's say injected into)
-the original initramfs on the bootstrap in addition to
-the deployed (original) RAM file system.
-
-The injected initramfs image should have the following structure:
-
-::
-
-    /
-    /lib/modules/<kernel-version>/kernel/<path-to-the-driver>/<module.ko>
-    /etc/modprobe.d/<module>.conf
-
-Let's put all required files into the folder called *dd-src* and create the image.
-For example, we need the 2.6.32-504 (CentOs 6.6) kernel:
-
-#. Create the working folder dd-src:
-
-   ::
-
-       mkdir dd-src
-
-#. Put the kernel modules into:
-
-   ::
-
-      mkdir -p ./dd-src/lib/modules/2.6.32-504.1.3.el6.x86_64/kernel/drivers/scsi
-      cp hpvsa.ko ./dd-src/lib/modules/2.6.32-504.1.3.el6.x86_64/kernel/drivers/scsi
-
-
-#. Put the *<module-name>.conf* file with the modprobe command into
-   the *etc/modprobe.d/* folder:
-
-   ::
-
-      mkdir -p ./dd-src/etc/modprobe.d/
-      echo modprobe hpvsa > ./dd-src/etc/modprobe.d/hpvsa.conf
-      chmod +x ./dd-src/etc/modprobe.d/hpvsa.conf
-
-
-   There is the second (deprecated) way:
-   create the */etc/rc.modules* executable file and list the command to probe with the module name.
-   Do not use */etc/rc.local* file for this purpose,
-   because it is too late for init hardware:
-
-   ::
-
-      mkdir ./dd-src/etc
-      echo modprobe hpvsa > ./dd-src/etc/rc.modules
-      chmod +x ./dd-src/etc/rc.modules
-
-
-
-
-#. Create the dd-src.tar.gz file for coping to the Fuel Master node:
-
-   ::
-
-      tar -czvf dd-src.tar.gz ./dd-src
-
-   The *dd-src.tar.gz* file can now be copied to the Fuel Master node.
-
-
-Adding initrd_update image to the bootstrap
-+++++++++++++++++++++++++++++++++++++++++++
-
-.. note:: Currently, the bootstrap is based on CentOS (kernel and modules).
-
-
-Let's assume that the Fuel Master node has been deployed:
-
-#. Connect to the Fuel Master node:
-
-   ::
-
-       ssh root@<your-Fuel-Master-node-IP>
-
-#. Prepare initramfs update image:
-
-   ::
-
-      tar -xzvf dd-src.tar.gz
-      cd dd-src
-      find . | cpio --quiet -o -H newc | gzip -9 > /tmp/initrd_update.img
-
-#. Copy into the TFTP (PXE) bootstrap folder:
-
-   ::
-
-       cp /tmp/initrd_update.img /var/www/nailgun/bootstrap/
-       chmod 755 /var/www/nailgun/bootstrap/initrd_update.img
-
-#. Copy inside the cobbler container to the folder:
-
-   ::
-
-       dockerctl copy initrd_update.img cobbler:/var/lib/tftpboot/initrd_update.img
-
-#. Modify the bootstrap menu initrd parameter.
-
-   * Log into the cobbler container:
-
-     ::
-
-         dockerctl shell cobbler
-
-   * Get the variable kopts variable value:
-
-      ::
-
-          cobbler profile dumpvars --name=bootstrap | grep kernel_options
-          kernel_options : ksdevice=bootif locale=en_US text mco_user=mcollective initrd=initrd_update.img biosdevname=0 lang url=http://10.20.0.2:8000/api priority=critical mco_pass=HfQqE2Td kssendmac
-
-   * Add *initrd=initrd_update.img* at the beginning of the string
-     and re-sync the container. It turns into the kernel
-     parameter passing to the kernel on boot
-     'initrd=initramfs.img,initrd_update.img':
-
-     ::
-
-         cobbler profile edit --name bootstrap --kopts='initrd=initrd_update.img ksdevice=bootif lang=  locale=en_US text mco_user=mcollective priority=critical url=http://10.20.0.2:8000/api biosdevname=0 mco_pass=HfQqE2Td kssendmac'
-         cobbler sync
-
-
-Modifying initramfs image manually for bootstrap node
------------------------------------------------------
-
-To edit the initramfs (initrd) image,
-you should unpack it, modify and pack back.
-Initramfs image is a gzip-ed cpio archive.
-
-To change initramfs image, follow these steps:
-
-#. Create a folder for modifying initramfs image and copy the initramfs image into it:
-
-   ::
-
-     mkdir /tmp/initrd-orig
-     dockerctl copy cobbler:/var/lib/tftpboot/images/bootstrap/initramfs.img /tmp/initrd-orig/
-
-#. Unpack initramfs image. First of all, unzip it:
-
-   ::
-
-      cd /tmp/initrd-orig/
-      mv initramfs.img initramfs.img.gz
-      gunzip initramfs.img.gz
-
-#. Unpack the cpio archive to the initramfs folder:
-
-   ::
-
-      mkdir initramfs
-      cd initramfs
-      cpio -i < ../initramfs.img
-
-#. Now you have the file system what you have in the RAM on the bootstrap:
-
-   ::
-
-     ls -l /tmp/initrd-orig/initramfs
-
-#. Modify it as you need. For example, copy files or modify the scripts:
-
-   ::
-
-      cp hpvsa.ko lib/modules/2.6.32-504.1.3.el6.x86_64/kernel/drivers/scsi/
-      echo "modprobe hpvsa" > etc/modprobe.d/hpvsa.conf
-
-
-    To get more information on how to pass options to
-    the module, start dependent modules or black-list modules please,
-    consult see the *modprobe.d* man page.
-
-    ::
-
-        vi etc/modprobe.d/blacklist.conf
-
-#. Pack the intiramfs back to **initfamfs.img.new** image:
-
-   ::
-
-      cd /tmp/initrd-orig/initramfs
-      find . | cpio --quiet -o -H newc | gzip -9 > /tmp/initramfs.img.new
-
-#. Clean up. Remove */tmp/initrd-orig* temporary folder:
-
-   ::
-
-      rm -Rf /tmp/initrd-orig/
+.. warning:: Altering the active bootstrap image is quite risky.
+  Please create a backup copy of the active bootstrap image,
+  make your changes on a copy of the active bootstrap and activate
+  the altered image later. 
+  You can always create new custom boostrap if something went wrong
+  and activate the new bootstrap.
 
 
 Creating a custom bootstrap node
---------------------------------
+++++++++++++++++++++++++++++++++
 
-This option requires further investigation
-and will be introduced in the near future.
+You can create a new Ubuntu bootstrap using the
+:command:`fuel-bootsrtap` command.
+To create and activate a new Ubuntu bootstrap:
+
+#. Build a new bootstrap image as a ``.tar`` archive.
+
+#. Import the configured image from the archive.
+
+#. Activate the new image.
+
+.. note:: The commands for creating the Ubuntu bootstrap
+   vary for different versions of Fuel.
+
+To build the new bootstrp image:
+
+#. Type the command: 
+   
+   .. code-block:: console
+
+      fuel-bootstrap build
+
+   **System reponse:**
+   
+   .. code-block:: console
+
+    Try to build image with data:
+    bootstrap:
+     container: {format: tar.gz, meta_file: metadata.yaml}
+     extend_kopts: biosdevname=0 net.ifnames=1 debug ignore_loglevel log_buf_len=10M
+       print_fatal_signals=1 LOGLEVEL=8
+     extra_files: [/usr/share/fuel_bootstrap_cli/files/trusty]
+     label: 93f117b9-65b7-41fa-ade2-52002989dda1
+     modules:
+     - {mask: kernel, name: kernel, uri: 'http://127.0.0.1:8080/bootstraps/93f117b9-65b7-41fa-ade2-52002989dda1/vmlinuz'}
+     - {compress_format: xz, mask: initrd, name: initrd, uri: 'http://127.0.0.1:8080/bootstraps/93f117b9-65b7-41fa-ade2-52002989dda1/initrd.img'}
+     - &id001 {compress_format: xz, container: raw, format: ext4, mask: rootfs, name: rootfs,
+       uri: 'http://127.0.0.1:8080/bootstraps/93f117b9-65b7-41fa-ade2-52002989dda1/root.squashfs'}
+     post_script_file: null
+     root_ssh_authorized_file: /root/.ssh/id_rsa.pub
+     uuid: 93f117b9-65b7-41fa-ade2-52002989dda1
+
+    ...
+
+    Build process is in progress. Usually it takes 15-20 minutes. It depends on your Internet connection and hardware performance.
+    --- Building bootstrap image (do_mkbootstrap) ---
+    *** Preparing image space ***
+    Installing BASE operating system into image
+    Starting new HTTP connection (1): 127.0.0.1
+    Starting new HTTP connection (1): mirror.fuel-infra.org
+    Starting new HTTP connection (1): mirror.fuel-infra.org
+    Starting new HTTP connection (1): mirror.fuel-infra.org
+    Building initramfs
+    Building squashfs
+    squashfs_image clean-up
+    Creating archive: /tmp/93f117b9-65b7-41fa-ade2-52002989dda1.tar.gz
+    --- Building bootstrap image END (do_mkbootstrap) ---
+    Cleanup chroot
+    Bootstrap image 93f117b9-65b7-41fa-ade2-52002989dda1 has been built: /tmp/93f117b9-65b7-41fa-ade2-52002989dda1.tar.gz
 
 
-Replacing default bootstrap node with the custom one
-++++++++++++++++++++++++++++++++++++++++++++++++++++
+   A new bootstrap image has been successfully built.
+   By default, Fuel places the new bootstrap image into the
+   ``/tmp`` folder. For example,
+   ``/tmp/93f117b9-65b7-41fa-ade2-52002989dda1.tar.gz``.
 
-Let's suppose that you have created or modified
-the initramfs image. It is placed in the */tmp* folder under **initramfs.img.new** name.
+#. Import the bootstrap image:
 
-To replace the default boostrap with the custom,
-follow these steps:
+   .. code-block:: console
 
-#. Save the previous initramfs image:
+      fuel-bootstrap import /tmp/93f117b9-65b7-41fa-ade2-52002989dda1.tar.gz
 
-   ::
+   **System response:**
 
-       mv /var/www/nailgun/bootstrap/initramfs.img /var/www/nailgun/bootstrap/initramfs.img.old
+   .. code-block:: console
 
+     fuel-bootstrap import /tmp/93f117b9-65b7-41fa-ade2-52002989dda1.tar.gz
 
-#. Copy the new initramfs image into the bootstrap folder:
+     Try extract /tmp/93f117b9-65b7-41fa-ade2-52002989dda1.tar.gz to /tmp/tmpaLrxol
+     Bootstrap image 93f117b9-65b7-41fa-ade2-52002989dda1 has been imported.
 
-   ::
+#. Activate the bootstrap image:
 
-      cd /tmp
-      cp initramfs.img.new /var/www/nailgun/bootstrap/initramfs.img
-      dockerctl copy /var/www/nailgun/bootstrap/initramfs.img cobbler:/var/lib/tftpboot/images/bootstrap/initramfs.img
+   .. code-block:: console
 
-#. Make the Cobbler update the files:
+      fuel-bootstrap activate 93f117b9-65b7-41fa-ade2-52002989dda1
 
-   ::
+   **System response:**
 
-      cobbler sync
+   .. code-block:: console
 
+    Starting new HTTP connection (1): 10.20.0.2
+    Starting new HTTP connection (1): 10.20.0.2
+    Starting new HTTP connection (1): 10.20.0.2
+    Starting new HTTP connection (1): 10.20.0.2
+    Bootstrap image 93f117b9-65b7-41fa-ade2-52002989dda1 has been activated.
+
+.. note::
+
+   If you use Fuel 7.0, create and activate a custom Ubuntu
+   bootstrap image using the following commands:
+
+   .. code-block:: console
+
+      fuel-bootstrap-image
+      fuel-bootstrap-image-set ubuntu
+
+See also:
+
+   * **Fuel Installation Guide**
+
+Modifying initramfs image manually for the bootstrap node
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+The ``fuel-bootstrap`` utility builds Ubuntu bootstrap. The bootstrap is 
+splitted into two files: ``initrd.img`` and ``root.squashfs``.
+Fuel downloads and unpacks the ``intrd.img`` file as a temporary
+file system during the PXE boot.
+The image makes initialization and downloads the ``root.squashfs`` image.
+After that, the ``root.squashfs`` is unpacked. The mount point of the file
+system is switched to ``root.squasfs``.
+
+There is a possibility to add a package into a bootstrap
+"on the fly" using the following command:
+
+.. code-block:: console
+
+   fuel-bootstrap build --package <package-name>
+
+The command adds the package into both images: ``initrd.img`` and
+the ``root.squashfs``.
+
+You can add an arbitrary files and folders into
+``root.squasfs`` (but not to ``initrd.img``) using
+the following command:
+
+.. code-block:: console
+
+  fuel-bootstrap build --extra-dir <root-path>
+
+There are tasks that require editing a bootstrap manually.
+For example, adding kernel module binaries into ``initramfs`` and ``root.squashfs``.
+
+To edit the ``initramfs`` (``initrd.img``) image, unpack the image, modify, and pack it back.
+The ``initramfs`` image is a compressed ``cpio`` archive.
+
+.. warning:: The ``initrd.img`` and ``root.squashfs`` location may vary
+  for different Fuel versions.
+
+.. warning:: Install ``squashfs-tools`` prior to working
+ with the ``root.squashfs`` image.
+
+To change the ``initramfs`` image (``initrd.img``) and ``root.squashfs``, follow the steps below.
+
+#. Unpack ``initrd.img`` and ``root.squashfs``:
+
+   #. Create a folder for modifying bootstrap and copy the ``initramfs``
+      and ``root.squashfs`` images into it:
+
+      .. code-block:: console
+
+         mkdir /tmp/initrd-orig
+         cp /var/www/nailgun/bootstraps/active/initrd.img  /tmp/initrd-orig/
+         cp /var/www/nailgun/bootstraps/active/root.squashfs /tmp/initrd-orig/
+
+   #. Unpack ``initramfs``.
+
+      #. Uncompress the ``initrd.img`` file:
+
+         .. code-block:: console
+
+            cd /tmp/initrd-orig/
+            mv initrd.img initrd.img.xz
+            xz -d initrd.img.xz
+
+      #. Unpack the ``cpio`` archive to the ``initramfs`` folder:
+
+         .. code-block:: console
+
+            mkdir initramfs
+            cd initramfs
+            cpio -i < ../initramfs.img
+
+   #. Unpack the ``root.squashfs`` image into the ``squashfs-root`` folder:
+
+      .. code-block:: console
+
+         unsquashfs root.squashfs
+
+   #. See the RAM content that you will have in the bootstrap:
+
+      .. code-block:: console
+
+         ls -l /tmp/initrd-orig/initramfs
+         ls -l /tmp/initrd-orig/squashfs-root
+
+#. Modify ``initrd.img`` and ``root.squashfs``
+
+   .. warning::
+
+      To add or update a new kernel module, use the :command:`depmod` command.
+      It will update the ``modules.alias`` and ``modules.dep`` files informing
+      the kernel about the new module.
+
+   .. note::
+
+      There is `a safe way to update kernel modules`_ for Ubuntu, when
+      the new module is installed into the ``/lib/moduels/<version>/updates`` folder.
+      The previous kernel module is still kept in the system, but hidden by
+      the new module. When something goes wrong with the new module it can be
+      easily removed from the ``/update`` folder and the older version of module
+      will be returned back.
+
+      .. _`a safe way to update kernel modules`: http://www.linuxvox.com/2009/10/update-kernel-modules-the-smart-and-safe-way/
+
+   #. Modify it as you need. For example, copy new kernel module ``aacraid`` into the ``initrd``:
+
+      .. code-block:: console
+
+         mkdir -p /tmp/initrd-orig/initramfs/lib/modules/3.13.0-77-generic/updates
+         cp aacraid.ko /tmp/initrd-orig/initramfs/lib/modules/3.13.0-77-generic/updates
+
+   #. Modify the ``squashfs-root`` by copying the new kernel module ``aacraid``
+      into the specidfied folder:
+
+      .. code-block:: console
+
+         mkdir -p /tmp/initrd-orig/squashfs-root/lib/modules/3.13.0-77-generic/updates
+         cp aacraid.ko /tmp/initrd-orig/squashfs-root/lib/modules/3.13.0-77-generic/updates
+
+   #. Run :command:`depmod` to update information about kernel modules on ``initrd`` and ``root.squashfs``:
+
+      .. code-block::  console
+
+         depmod -a -b /tmp/initrd-orig/initramfs/ -F /tmp/initrd-orig/squashfs-root/boot/System.map-3.13.0-77-generic 3.13.0-77-generic
+         depmod -a -b /tmp/initrd-orig/squashfs-root/ -F /tmp/initrd-orig/squashfs-root/boot/System.map-3.13.0-77-generic 3.13.0-77-generic
+
+      See :command:`depmod` command parameters:
+
+      .. code-block:: console
+
+         depmod -a -b <base dir> -F <System.map location> <kernel version>
+
+      **System response**
+
+      .. code-block:: console
+
+         ====  =================================================================
+          -a     Rebuild information for all modules
+          -b     Base folder, If your modules are not currently in the (normal)
+                 directory /lib/modules/version. In our case it were the folders
+                 where initramfs and root.squasfs
+          -F     location of the System.map produced when the kernel was built
+         ====  =================================================================
+
+      .. note::
+
+         It is important to pass a correct kernel version to the :command:`depmod` command
+         at the end of the parameters. Otherwise, the version of the current kernel on
+         the Fuel master node will be used.
+
+         The following files will be modified in the ``initramfs`` and ``squashfs-root``
+         folders after running the :command:`depmod` command:
+
+         * ``lib/modules/3.13.0-77-generic/modules.alias``
+         * ``lib/modules/3.13.0-77-generic/modules.alias.bin``
+         * ``lib/modules/3.13.0-77-generic/modules.dep``
+         * ``lib/modules/3.13.0-77-generic/modules.dep.bin``
+         * ``lib/modules/3.13.0-77-generic/modules.symbols.bin``
+
+      To get more information on how to:
+
+      * Pass options to a module
+      * Start ``dependent`` modules
+      * Start ``black-list`` modules
+
+      see the ``modprobe.d`` man page.
+
+#. Pack the ``initramfs`` and ``squashfs-root``
+
+   #. Pack the ``intiramfs`` back to ``initfamfs.img.new`` image:
+
+      .. code-block:: console
+
+          find /tmp/initrd-orig/initramfs | cpio --quiet -o -H newc | xz --check=crc32 > ../initrd.img.new
+
+   #. Pack the ``squashfs`` to the ``root.squashfs.new``
+
+      .. warning::
+
+         ``squashfs`` utilities (``mksquashfs``) installed on a user's machine or
+         the Fuel Master node can be incompatible with ``squashfs`` code in the bootstrap
+         kernel. To varify the generated ``squashfs image`` is compatible with the
+         bootstrap kernel, use ``mksquashfs`` utility installed in ``squashfs-root``.
+         A simple way to do that is using bind mounts:
+
+      .. code-block:: console
+
+            mkdir squashfs-root/mnt/src
+            mkdir squashfs-root/mnt/dst
+            mkdir dst
+            mount --bind squashfs-root squashfs-root/mnt/src
+            mount -o remount,ro,bind squashfs-root/mnt/src # make it read-only
+            mount --bind dst squashfs-root/mnt/dst
+            # mksquashfs needs /proc
+            mount -t proc foobar squashfs-root/proc
+            chroot squashfs-root mksquashfs /mnt/src /mnt/dst/root.squashfs.new -comp xz -no-append
+            # clean up
+            umount squashfs-root/mnt/src
+            umount squashfs-root/mnt/dst
+            umount squashfs-root/proc
+
+      The output of the mksquashfs command should be as follows:
+
+      .. code-block:: console
+
+            mksquashfs squashfs-root root.squashfs.new -comp xz
+
+              quashfs squashfs-root root.squashfs.new -comp xz
+              Parallel mksquashfs: Using 2 processors
+              Creating 4.0 filesystem on root.squashfs.new, block size 131072.
+              [================================================\] 105857/105857 100%
+
+              Exportable Squashfs 4.0 filesystem, xz compressed, data block size 131072
+         	compressed data, compressed metadata, compressed fragments, compressed xattrs
+         	duplicates are removed
+              Filesystem size 598514.76 Kbytes (584.49 Mbytes)
+         	47.89% of uncompressed filesystem size (1249842.98 Kbytes)
+              Inode table size 933186 bytes (911.31 Kbytes)
+         	23.04% of uncompressed inode table size (4050950 bytes)
+              Directory table size 1904568 bytes (1859.93 Kbytes)
+         	48.93% of uncompressed directory table size (3892589 bytes)
+              Number of duplicate files found 7780
+              Number of inodes 121770
+              Number of files 106698
+              Number of fragments 4627
+              Number of symbolic links  6388
+              Number of device nodes 81
+              Number of fifo nodes 0
+              Number of socket nodes 0
+              Number of directories 8603
+              Number of ids (unique uids + gids) 18
+              Number of uids 4
+         	root (0)
+         	unknown (102)
+         	unknown (100)
+         	unknown (101)
+              Number of gids 17
+         	root (0)
+         	unknown (44)
+         	unknown (29)
+         	tty (5)
+         	man (15)
+         	disk (6)
+         	unknown (42)
+         	unknown (102)
+         	unknown (43)
+         	unknown (103)
+         	mem (8)
+         	unknown (106)
+         	ftp (50)
+         	unknown (101)
+         	unknown (105)
+         	adm (4)
+         	unknown (104)
+
+   #. Copy new files and update the current bootstrap
+
+      .. code-block:: console
+
+          cp root.squashfs.new initrd.img.new /var/www/nailgun/bootstraps/active/
+          cd /var/www/nailgun/bootstraps/active/
+          mv initrd.img initrd.img.orig
+          mv root.squashfs root.squashfs.orig
+          cp initrd.img.new initrd.img
+          cp root.squashfs.new root.squashfs
+          cobbler sync
+
+   #. Clean up. Remove ``/tmp/initrd-orig`` temporary folder:
+
+      .. code-block:: console
+
+         rm -Rf /tmp/initrd-orig
 
 .. _chroot:
 
@@ -322,7 +479,7 @@ The script completes the following steps:
    Unmount the ``chroot/proc`` file system and delete ``chroot``
    when you do not need it anymore.
 
-.. code-block:: bash
+.. code-block:: console
 
  #!/bin/bash
 
@@ -414,7 +571,7 @@ Creating a DKMS package from sources
 
 Before creating a ``DKMS`` package from sources, verify that you have
 completed the following steps:
-   
+
 #. Create the :ref:`chroot folder <chroot>`.
 #. Install the following packages to the ``chroot`` folder: ``DKMS``,
    ``build-essential``, and ``debhelper``.
@@ -529,7 +686,7 @@ the ``chroot`` .
 The second produced package is a DKMS module. The output is placed into the
 ``/tmp/dkms-deb`` folder:
 
-.. code-block:: bash
+.. code-block:: console
 
  $ ls /tmp/dkms-deb/
  i40e-1.3.47-ubuntu-dd.tar  i40e-dkms_1.3.47_all.deb
@@ -547,7 +704,7 @@ The second produced package is a DKMS module. The output is placed into the
    finally deletes ``chroot`` made by the first script. Run the script with
    the root privileges.
 
-.. code-block:: bash
+.. code-block:: console
 
  #!/bin/bash
  # Check passed parameters, expectations are following:
@@ -853,3 +1010,260 @@ The example below shows the ``compat.h`` file wrapper:
  extern void netif_napi_add_compat(struct net_device *, struct napi_struct *,
                int (*poll) (struct napi_struct *, int), int);
  #endif /*********************** NAPI backport *****************************/
+
+CentOS bootstrap
+----------------
+
+This section describes creating a custom CentOS bootstrap image.
+
+.. note::
+
+   Since the Fuel 8.0 version, CentOS bootstrap is depricated and not
+   recommended for using.
+
+Creating and injecting the initrd_update into bootstrap
++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+A typical use case for creating initrd_update looks as follows:
+a great number of proprietary drivers for equipment cannot be
+shipped with GA Fuel ISO due to legal issues
+and should be installed by users themselves.
+
+That means, you can add (or inject) the required issues (drivers,
+scripts etc.) during Fuel ISO
+installation procedure.
+
+Injection workflow consists of several stages:
+
+#. Prepare the injected initramfs image with the required kernel modules (for CentOS).
+#. Modify bootstrap (CentOS)
+
+**Prepare injected initramfs image for CentOS**
+
+The injected initramfs image should contain
+the files what are going to be put on (or let's say injected into)
+the original initramfs on the bootstrap in addition to
+the deployed (original) RAM file system.
+
+The injected initramfs image should have the following structure:
+
+::
+
+    /
+    /lib/modules/<kernel-version>/kernel/<path-to-the-driver>/<module.ko>
+    /etc/modprobe.d/<module>.conf
+
+Let's put all required files into the folder called *dd-src* and create the image.
+For example, we need the 2.6.32-504 (CentOs 6.6) kernel:
+
+#. Create the working folder dd-src:
+
+   ::
+
+       mkdir dd-src
+
+#. Put the kernel modules into:
+
+   ::
+
+      mkdir -p ./dd-src/lib/modules/2.6.32-504.1.3.el6.x86_64/kernel/drivers/scsi
+      cp hpvsa.ko ./dd-src/lib/modules/2.6.32-504.1.3.el6.x86_64/kernel/drivers/scsi
+
+
+#. Put the *<module-name>.conf* file with the modprobe command into
+   the *etc/modprobe.d/* folder:
+
+   ::
+
+      mkdir -p ./dd-src/etc/modprobe.d/
+      echo modprobe hpvsa > ./dd-src/etc/modprobe.d/hpvsa.conf
+      chmod +x ./dd-src/etc/modprobe.d/hpvsa.conf
+
+
+   There is the second (deprecated) way:
+   create the */etc/rc.modules* executable file and list the command to probe with the module name.
+   Do not use */etc/rc.local* file for this purpose,
+   because it is too late for init hardware:
+
+   ::
+
+      mkdir ./dd-src/etc
+      echo modprobe hpvsa > ./dd-src/etc/rc.modules
+      chmod +x ./dd-src/etc/rc.modules
+
+
+
+
+#. Create the dd-src.tar.gz file for coping to the Fuel Master node:
+
+   ::
+
+      tar -czvf dd-src.tar.gz ./dd-src
+
+   The *dd-src.tar.gz* file can now be copied to the Fuel Master node.
+
+
+**Adding initrd_update image to the bootstrap**
+
+.. note:: Currently, the bootstrap is based on CentOS (kernel and modules).
+
+
+Let's assume that the Fuel Master node has been deployed:
+
+#. Connect to the Fuel Master node:
+
+   ::
+
+       ssh root@<your-Fuel-Master-node-IP>
+
+#. Prepare initramfs update image:
+
+   ::
+
+      tar -xzvf dd-src.tar.gz
+      cd dd-src
+      find . | cpio --quiet -o -H newc | gzip -9 > /tmp/initrd_update.img
+
+#. Copy into the TFTP (PXE) bootstrap folder:
+
+   ::
+
+       cp /tmp/initrd_update.img /var/www/nailgun/bootstrap/
+       chmod 755 /var/www/nailgun/bootstrap/initrd_update.img
+
+#. Copy inside the cobbler container to the folder:
+
+   ::
+
+       dockerctl copy initrd_update.img cobbler:/var/lib/tftpboot/initrd_update.img
+
+#. Modify the bootstrap menu initrd parameter.
+
+   * Log into the cobbler container:
+
+     ::
+
+         dockerctl shell cobbler
+
+   * Get the variable kopts variable value:
+
+      ::
+
+          cobbler profile dumpvars --name=bootstrap | grep kernel_options
+          kernel_options : ksdevice=bootif locale=en_US text mco_user=mcollective initrd=initrd_update.img biosdevname=0 lang url=http://10.20.0.2:8000/api priority=critical mco_pass=HfQqE2Td kssendmac
+
+   * Add *initrd=initrd_update.img* at the beginning of the string
+     and re-sync the container. It turns into the kernel
+     parameter passing to the kernel on boot
+     'initrd=initramfs.img,initrd_update.img':
+
+     ::
+
+         cobbler profile edit --name bootstrap --kopts='initrd=initrd_update.img ksdevice=bootif lang=  locale=en_US text mco_user=mcollective priority=critical url=http://10.20.0.2:8000/api biosdevname=0 mco_pass=HfQqE2Td kssendmac'
+         cobbler sync
+
+
+Modifying initramfs image manually for bootstrap node
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+To edit the initramfs (initrd) image,
+you should unpack it, modify and pack back.
+Initramfs image is a gzip-ed cpio archive.
+
+To change initramfs image, follow these steps:
+
+#. Create a folder for modifying initramfs image and copy the initramfs image into it:
+
+   ::
+
+     mkdir /tmp/initrd-orig
+     dockerctl copy cobbler:/var/lib/tftpboot/images/bootstrap/initramfs.img /tmp/initrd-orig/
+
+#. Unpack initramfs image. First of all, unzip it:
+
+   ::
+
+      cd /tmp/initrd-orig/
+      mv initramfs.img initramfs.img.gz
+      gunzip initramfs.img.gz
+
+#. Unpack the cpio archive to the initramfs folder:
+
+   ::
+
+      mkdir initramfs
+      cd initramfs
+      cpio -i < ../initramfs.img
+
+#. Now you have the file system what you have in the RAM on the bootstrap:
+
+   ::
+
+     ls -l /tmp/initrd-orig/initramfs
+
+#. Modify it as you need. For example, copy files or modify the scripts:
+
+   ::
+
+      cp hpvsa.ko lib/modules/2.6.32-504.1.3.el6.x86_64/kernel/drivers/scsi/
+      echo "modprobe hpvsa" > etc/modprobe.d/hpvsa.conf
+
+
+    To get more information on how to pass options to
+    the module, start dependent modules or black-list modules please,
+    consult see the *modprobe.d* man page.
+
+    ::
+
+        vi etc/modprobe.d/blacklist.conf
+
+#. Pack the intiramfs back to **initfamfs.img.new** image:
+
+   ::
+
+      cd /tmp/initrd-orig/initramfs
+      find . | cpio --quiet -o -H newc | gzip -9 > /tmp/initramfs.img.new
+
+#. Clean up. Remove */tmp/initrd-orig* temporary folder:
+
+   ::
+
+      rm -Rf /tmp/initrd-orig/
+
+
+Creating a custom bootstrap node
+++++++++++++++++++++++++++++++++
+
+This option requires further investigation
+and will be introduced in the near future.
+
+
+**Replacing default bootstrap node with the custom one**
+
+Let's suppose that you have created or modified
+the initramfs image. It is placed in the */tmp* folder under **initramfs.img.new** name.
+
+To replace the default boostrap with the custom,
+follow these steps:
+
+#. Save the previous initramfs image:
+
+   ::
+
+       mv /var/www/nailgun/bootstrap/initramfs.img /var/www/nailgun/bootstrap/initramfs.img.old
+
+
+#. Copy the new initramfs image into the bootstrap folder:
+
+   ::
+
+      cd /tmp
+      cp initramfs.img.new /var/www/nailgun/bootstrap/initramfs.img
+      dockerctl copy /var/www/nailgun/bootstrap/initramfs.img cobbler:/var/lib/tftpboot/images/bootstrap/initramfs.img
+
+#. Make the Cobbler update the files:
+
+   ::
+
+      cobbler sync
+
