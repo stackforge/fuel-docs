@@ -124,7 +124,8 @@ Let's assume that the Fuel Master node has been deployed:
    ::
 
       tar -xzvf dd-src.tar.gz
-      find dd-src/ | cpio --quiet -o -H newc | gzip -9 > /tmp/initrd_update.img
+      cd dd-src
+      find . | cpio --quiet -o -H newc | gzip -9 > /tmp/initrd_update.img
 
 #. Copy into the TFTP (PXE) bootstrap folder:
 
@@ -223,7 +224,8 @@ To change initramfs image, follow these steps:
 
    ::
 
-      find /tmp/initrd-orig/initramfs | cpio --quiet -o -H newc | gzip -9 > /tmp/initramfs.img.new
+      cd /tmp/initrd-orig/initramfs
+      find . | cpio --quiet -o -H newc | gzip -9 > /tmp/initramfs.img.new
 
 #. Clean up. Remove */tmp/initrd-orig* temporary folder:
 
