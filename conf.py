@@ -101,16 +101,22 @@ pygments_style = 'sphinx'
 
 # -- Options for HTML output --------------------------------------------------
 
+import openstackdocstheme
+
+html_theme = 'openstackdocs'
+html_theme_path = [openstackdocstheme.get_html_theme_path()]
+
+
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = 'sphinxdoc'
+#html_theme = 'sphinxdoc'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # documentation.
 #html_theme_options = {}
 
 # Add any paths that contain custom themes here, relative to this directory.
-html_theme_path = ["devdocs/_templates"]
+#html_theme_path = ["devdocs/_templates"]
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
@@ -142,9 +148,9 @@ html_theme_path = ["devdocs/_templates"]
 #html_use_smartypants = True
 
 # Custom sidebar templates, maps document names to template names.
-html_sidebars = {
-   '**': ['localtoc.html', 'relations.html', 'sourcelink.html', 'sidebarpdf.html', 'searchbox.html'],
-}
+#html_sidebars = {
+#   '**': ['localtoc.html', 'relations.html', 'sourcelink.html', 'sidebarpdf.html', 'searchbox.html'],
+#}
 
 # Additional templates that should be rendered to pages, maps page names to
 # template names.

@@ -1,5 +1,5 @@
 sphinx==1.2.2
-cloud_sptheme
+openstackdocstheme
 sphinxcontrib-blockdiag
 rst2pdf
 sphinxcontrib-actdiag
