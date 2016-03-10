@@ -1,11 +1,10 @@
 .. _develop:
 
-Development Documentation
-=========================
+Developer Guide
+===============
 
 .. toctree::
    :maxdepth: 3
-   :numbered:
 
    develop/architecture
    develop/sequence

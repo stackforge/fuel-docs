@@ -1,5 +1,5 @@
 Jenkins Slave
-=============
+~~~~~~~~~~~~~
 
 The Jenkins Slave is a machine that is set up to run build projects scheduled
 from the master. Slave runs a dedicated program called a ``slave agent``
