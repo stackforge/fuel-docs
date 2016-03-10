@@ -18,3 +18,4 @@ Table of contents
    devdocs/infra/seed_server_deployment
    devdocs/infra/zabbix_server_deployment
    devdocs/packaging
+   userdocs/fuel-install-guide/source/index
