@@ -99,3 +99,6 @@ pdf_use_numbered_links = False
 
 # Background images fitting mode
 pdf_fit_background_mode = 'scale'
+pdf_stylesheets = ['letter', 'fuel']
+pdf_style_path = ['_templates']
+
