@@ -1,4 +1,4 @@
-Devops Guide
+DevOps Guide
 ============
 
 Introduction
