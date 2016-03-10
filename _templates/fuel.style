@@ -1,0 +1,50 @@
+#embeddedFonts: [ [ "PT Sans" ], [ "PT Mono" ], [ "PT Serif" ] ]
+#    ["PT_Sans-CaptionBold.ttf", "PT_Sans-Bold.ttf", PT_Sans-Italic.ttf, PTF75F.ttf, PT_Sans-BoldItalic.ttf,
+#        PT_Sans-Narrow.ttf, PTF76F.ttf, PT_Sans-Bold_0.ttf, PT_Sans-NarrowBold.ttf,
+#        PTZ55F.ttf, PT_Sans-Caption.ttf, PT_Sans-Regular.ttf]
+
+fontsAlias:
+    stdBold: PT Sans Bold
+    stdBoldItalic: PT Sans Bold Italic
+    stdFont: PT Sans
+    stdItalic: PT Sans Italic
+    stdMono: PT Mono
+    stdMonoBold: PT Mono Bold
+    stdMonoBoldItalic: PT Mono Bold
+    stdMonoItalic: PT Mono
+    stdSans: PT Sans
+    stdSansBold: PT Sans Bold
+    stdSansBoldItalic: PT Sans BoldItalic
+    stdSansItalic: PT Sans Italic
+    stdSerif: PT Serif
+
+pageSetup: 
+    firstTemplate: coverPage
+#    size: LETTER   
+
+pageTemplates:
+    coverPage: 
+        frames: []
+            [0cm, 0cm, 100%, 100%]
+        background : _images/title-page.png
+        showHeader : false
+        showFooter : false
+    oneColumn: 
+        frames: []
+            [0cm, 0cm, 100%, 100%]
+        showHeader : true
+        showFooter : true
+
+styles: 
+    seealso:
+        backColor: transparent
+        borderColor: transparent
+        parent: admonition 
+
+    seealso-heading:
+        parent: heading
+        fontName: PT Sans
+        fontSize: 150%
+        keepWithNext: true
+        spaceBefore: 0
+        spaceAfter: 10
