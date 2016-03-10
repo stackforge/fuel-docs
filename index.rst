@@ -17,3 +17,4 @@ Table of contents
    devdocs/infra/puppet_master_deployment
    devdocs/infra/third_party
    devdocs/packaging
+   userdocs/fuel-install-guide/source/index
