@@ -1,5 +1,7 @@
+.. _puppet_master:
+
 Puppet Master
-=============
+~~~~~~~~~~~~~
 
 Puppet is a tool which provides ability to manage configuration of systems in an
 automatic way using the declarative language. The so called 'manifests' are
@@ -36,9 +38,9 @@ The script does the following:
 
 When script finishes successfully, the Puppet Master installation is completed.
 
------------
+
 Using Hiera
------------
+~~~~~~~~~~~
 
 Puppet can use Hiera to look for data. Hiera allows to override manifest
 parameter values during the deployment, thus it is possible to create
