@@ -76,7 +76,7 @@ The test docstrings are another important piece and you should always stick to t
 
   - test duration - an estimate of how much a test will take
 
-deployment tags (optional) - gives information about what kind of environment the test will be run, possible values are CENTOS, Ubuntu, RHEL nova_network, Heat, Murano, Sahara)
+deployment tags (optional) - gives information about what kind of environment the test will be run, possible values are CENTOS, Ubuntu, RHEL nova_network, Heat, Sahara)
 
 Here's a test example which confirms the above explanations:
 
@@ -145,7 +145,7 @@ How to execute my tests?
 Simplest way is to install Fuel, and OSTF will be installed as part of it.
   - install virtualbox
   - build Fuel ISO: :ref:`building-fuel-iso`
-  - use `virtualbox scripts to run an ISO <https://github.com/openstack/fuel-main/tree/master/virtualbox>`_
+  - use `virtualbox scripts to run an ISO <https://github.com/openstack/fuel-virtualbox/tree/master/>`_
   - once the installation is finished, go to Fuel UI (usually it's 10.20.0.2:8000) and create a new cluster with necessary configuration
   - execute::
 

@@ -24,8 +24,8 @@ Fuel architecture, and the provisioning and deployment
 process:
 
 * `Fuel architecture on the OpenStack wiki <https://wiki.openstack.org/wiki/Fuel#Fuel_architecture>`_
-* :doc:`Architecture section of Fuel documentation </devdocs/develop/architecture>`
-* :doc:`Visual of provisioning tasks </devdocs/develop/sequence>`
+* :doc:`Architecture section of Fuel documentation <architecture>`
+* :doc:`Visual of provisioning tasks <sequence>`
 
 Adding Zabbix Role
 ------------------
@@ -52,7 +52,7 @@ Additions to Fuel-Web for Zabbix role
 
 In fuel-web, the `Support for Zabbix
 <https://review.openstack.org/#/c/84408/>`_ commit added the
-additional role to :doc:`Nailgun </devdocs/develop/nailgun>`. The
+additional role to :doc:`Nailgun <nailgun>`. The
 reader is urged to review this commit closely as a good
 example of where specific additions fit.  In order to
 include this as an option in the Fuel deployment process,

@@ -15,5 +15,6 @@ Table of contents
    devdocs/infra/jenkins_slave_deployment
    devdocs/infra/overview
    devdocs/infra/puppet_master_deployment
-   devdocs/infra/third_party
+   devdocs/infra/seed_server_deployment
+   devdocs/infra/zabbix_server_deployment
    devdocs/packaging

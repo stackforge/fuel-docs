@@ -8,24 +8,8 @@ For information on how to get source code see :ref:`getting-source`.
 Preparing Development Environment
 ---------------------------------
 
-.. warning:: Nailgun requires Python 2.6 with development files.  Please check
-    installed Python version using ``python --version``. If the version check
-    does not match, please install Python 2.6 as described in step 1.
-    If Python version matches, skip step 1.
-
-    Please note that these instructions were tested on Ubuntu 12.04.4/14.04.1 (64 bit)
-    that contains Python 2.7 and requires downgrade to Python 2.6.
-    PPA instructions listed below install Python 2.6 but do not remove Python 2.7.
-    The default Python version remains 2.7.
-    You will have to specify Python version when you create virtual environment (see 8.1.1.1. step 5).
-
-
-#. Install Python 2.6 using
-   `PPA <https://launchpad.net/~fkrull/+archive/ubuntu/deadsnakes>`::
-
-     sudo add-apt-repository --yes ppa:fkrull/deadsnakes
-     sudo apt-get update
-     sudo apt-get install --yes python2.6 python2.6-dev
+.. warning:: Nailgun requires Python 2.7. Please check
+    installed Python version using ``python --version``.
 
 #. Nailgun can be found in fuel-web/nailgun
 
@@ -59,17 +43,12 @@ Preparing Development Environment
     sudo apt-get install --yes python-dev python-pip
 
 #. Install virtualenv. This step increases flexibility
-   when dealing with environment settings and package installation.
-   This step is obligatory if you need to downgrade to Python version 2.6
-   (that Nailgun depends on)::
+   when dealing with environment settings and package installation::
 
     sudo pip install virtualenv virtualenvwrapper
     . /usr/local/bin/virtualenvwrapper.sh  # you can save this to .bashrc
-    whereis python2.6 # Prints the intall path of python 2.6, let's say /usr/bin/python2.6.
-                      # Copy the output and paste it in the command below for option -p
-    mkvirtualenv fuel -p /usr/bin/python2.6  # you can use any name instead of 'fuel'
+    mkvirtualenv fuel # you can use any name instead of 'fuel'
     workon fuel  # command selects the particular environment
-    python --version # verify that default Python version inside virtual environment is 2.6
 
 #. Install Python dependencies. This section assumes that you use virtual environment.
    Otherwise, you must install all packages globally.
@@ -80,23 +59,20 @@ Preparing Development Environment
     cd fuel-web
     pip install --allow-all-external -r nailgun/test-requirements.txt
 
+#. Install Nailgun in the developers mode by running the command below in the
+   `nailgun` folder. Thanks to that, Nailgun extensions will be discovered::
+
+    python setup.py develop
+
+   Or if you are using pip::
+
+    pip install -e .
+
 #. Create required folder for log files::
 
     sudo mkdir /var/log/nailgun
     sudo chown -R `whoami`.`whoami` /var/log/nailgun
     sudo chmod -R a+w /var/log/nailgun
-
-#. Install NodeJS and JS dependencies::
-
-    sudo apt-get remove --yes nodejs nodejs-legacy
-    sudo apt-get install --yes software-properties-common
-    sudo add-apt-repository --yes ppa:chris-lea/node.js
-    sudo apt-get update
-    sudo apt-get install --yes nodejs
-    sudo npm install -g gulp
-    sudo chown -R `whoami`.`whoami` ~/.npm
-    cd nailgun
-    npm install
 
 Setup for Nailgun Unit Tests
 ----------------------------
@@ -111,14 +87,10 @@ Setup for Nailgun Unit Tests
     workon fuel #activate virtual environment created in the previous section
     pip install tox
 
-#. Run the Nailgun backend unit tests::
+#. Run the Nailgun backend unit tests and flake8 test::
 
     sudo apt-get install puppet-common #install missing package required by tasklib tests
-    ./run_tests.sh --no-webui
-
-#. Run the Nailgun flake8 test::
-
-    ./run_tests.sh --flake8
+    ./run_tests.sh
 
 #. You can also run the same tests by hand, using tox itself::
 
@@ -158,28 +130,6 @@ For example:
 
 * run_tests.sh -N - run all tests except for Nailgun regular and
   performance tests.
-
-
-
-Setup for Web UI Tests
-----------------------
-
-#. UI tests use Selenium server, so you need to install Java Runtime
-   Environment (JRE) 1.6 or newer version.
-
-#. You also need to install Firefox - it is used as the default browser for
-   tests.
-
-#. Run full Web UI test suite (this will wipe your Nailgun database in
-   PostgreSQL)::
-
-    cd fuel-web
-    ./run_tests.sh --webui
-
-   By default Firefox browser is used. You can specify the browser using
-   BROWSER environment variable::
-
-    BROWSER=chrome ./run_tests.sh --webui
 
 
 .. _running-parallel-tests-py:
@@ -253,52 +203,9 @@ Running Nailgun in Fake Mode
 
     python manage.py run -p 8000 --fake-tasks-amqp | egrep --line-buffered -v '^$|HTTP' >> /var/log/nailgun.log 2>&1 &
 
-#. If you plan to use Fuel UI:
-
-  * Update JS dependencies::
-
-      npm install
-
-  * If you don't plan to modify Fuel UI, you may want just to build static
-    version which is served by nailgun::
-
-      gulp build
-
-    Please note that after pulling updates from fuel-web repo you may need to
-    run this command again.
-
-    To specify custom output directory location use
-    `static-dir` option::
-
-      gulp build --static-dir=static_compressed
-
-    To speed up build process you may also want to disable uglification and
-    source maps generation::
-
-      gulp build --no-uglify --no-sourcemaps
-
-  * If you plan to modify Fuel UI, there is more convenient option --
-    a development server. It watches for file changes and automatically
-    rebuilds changed modules (significantly faster than full rebuild)
-    and triggers page refresh in browsers::
-
-      gulp dev-server
-
-    By default it runs on port 8080 and assumes that nailgun runs on
-    port 8000. You can override this by using the following options::
-
-      gulp dev-server --dev-server-host=127.0.0.1 --dev-server-port=8080 --nailgun-host=127.0.0.1 --nailgun-port=8000
-
-    If you don't want to use a development server but would like to recompile
-    the bundle on any change, use::
-
-      gulp build --watch
-
-    If automatic rebuild on change doesn't work, most likely you need to
-    increase the limit of inotify watches::
-
-      echo 100000 | sudo tee /proc/sys/fs/inotify/max_user_watches
-
+Nailgun in fake mode is usually used for Fuel UI development and Fuel UI
+functional tests. For more information, please check out README file in
+the fuel-ui repo.
 
 Note: Diagnostic Snapshot is not available in a Fake mode.
 
