@@ -13,6 +13,8 @@
 
 import os
 import sys
+import subprocess
+import openstackdocstheme
 
 sys.path.insert(0, os.path.join(os.path.abspath('.')))
 
@@ -103,14 +105,14 @@ pygments_style = 'sphinx'
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = 'sphinxdoc'
+html_theme = 'openstackdocs'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # documentation.
 #html_theme_options = {}
 
 # Add any paths that contain custom themes here, relative to this directory.
-html_theme_path = ["devdocs/_templates"]
+html_theme_path = [openstackdocstheme.get_html_theme_path()]
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
@@ -256,4 +258,20 @@ texinfo_documents = [(
 # How to display URL addresses: 'footnote', 'no', or 'inline'.
 #texinfo_show_urls = 'footnote'
 # -- Additional Settings ------------------------------------------------------
+# The variables to make "Log a bug" link send
+# metadata for the project where the docs reside:
+
+# We ask git for the SHA checksum
+# The git SHA checksum is used by "log-a-bug"
+git_cmd = ["/usr/bin/git", "rev-parse", "HEAD"]
+gitsha = subprocess.Popen(git_cmd, stdout=subprocess.PIPE).communicate()[0].strip('\n')
+# tag that reported bugs will be tagged with
+bug_tag = ""
+# source tree
+pwd = os.getcwd()
+# html_context allows us to pass arbitrary values into the html template
+html_context = {"pwd": pwd, "gitsha": gitsha}
+# Must set this variable to include year, month, day, hours, and minutes.
+html_last_updated_fmt = '%Y-%m-%d %H:%M'
+
 execfile('./common_conf.py')

@@ -9,3 +9,4 @@ sphinxcontrib-seqdiag
 sphinxcontrib-nwdiag
 sphinxcontrib-plantuml
 beautifulsoup4==4.4.0
+openstackdocstheme
