@@ -11,7 +11,9 @@ Preparing Development Environment
 .. warning:: Nailgun requires Python 2.7. Please check
     installed Python version using ``python --version``.
 
-#. Nailgun can be found in fuel-web/nailgun
+#. Get the source code::
+
+    git clone https://github.com/openstack/fuel-web.git
 
 #. Install and configure PostgreSQL database. Please note that
    Ubuntu 12.04 requires postgresql-server-dev-9.1 while
@@ -22,8 +24,13 @@ Preparing Development Environment
     sudo sed -ir 's/peer/trust/' /etc/postgresql/9.*/main/pg_hba.conf
     sudo service postgresql restart
 
-    sudo -u postgres psql -c "CREATE ROLE nailgun WITH LOGIN PASSWORD 'nailgun'"
+    sudo -u postgres psql -c "CREATE ROLE nailgun WITH LOGIN PASSWORD 'nailgun' CREATEDB"
     sudo -u postgres createdb nailgun
+
+#. tox (see below) configuration requires openstack_citest db & user::
+
+    sudo -u postgres psql -c "CREATE ROLE openstack_citest WITH LOGIN PASSWORD 'openstack_citest' CREATEDB"
+    sudo -u postgres createdb openstack_citest
 
    If required, you can specify Unix-domain
    socket in 'host' settings to connect to PostgreSQL database:
@@ -40,39 +47,8 @@ Preparing Development Environment
 
 #. Install pip and development tools::
 
-    sudo apt-get install --yes python-dev python-pip
+    sudo apt-get install --yes python-dev python-pip libjpeg-dev
 
-#. Install virtualenv. This step increases flexibility
-   when dealing with environment settings and package installation::
-
-    sudo pip install virtualenv virtualenvwrapper
-    . /usr/local/bin/virtualenvwrapper.sh  # you can save this to .bashrc
-    mkvirtualenv fuel # you can use any name instead of 'fuel'
-    workon fuel  # command selects the particular environment
-
-#. Install Python dependencies. This section assumes that you use virtual environment.
-   Otherwise, you must install all packages globally.
-   You can install pip and use it to require all the other packages at once::
-
-    sudo apt-get install --yes git
-    git clone https://github.com/openstack/fuel-web.git
-    cd fuel-web
-    pip install --allow-all-external -r nailgun/test-requirements.txt
-
-#. Install Nailgun in the developers mode by running the command below in the
-   `nailgun` folder. Thanks to that, Nailgun extensions will be discovered::
-
-    python setup.py develop
-
-   Or if you are using pip::
-
-    pip install -e .
-
-#. Create required folder for log files::
-
-    sudo mkdir /var/log/nailgun
-    sudo chown -R `whoami`.`whoami` /var/log/nailgun
-    sudo chmod -R a+w /var/log/nailgun
 
 Setup for Nailgun Unit Tests
 ----------------------------
@@ -81,100 +57,37 @@ Setup for Nailgun Unit Tests
    environments. This means that you don't need to install all Python packages required
    for the project to run them, because Tox does this by itself.
 
-#. First, create a virtualenv the way it's described in previous section. Then, install
-   the Tox package::
+#. Install the Tox package::
 
-    workon fuel #activate virtual environment created in the previous section
     pip install tox
 
-#. Run the Nailgun backend unit tests and flake8 test::
+#. Running tests is easy::
 
-    sudo apt-get install puppet-common #install missing package required by tasklib tests
-    ./run_tests.sh
-
-#. You can also run the same tests by hand, using tox itself::
-
-    cd nailgun
-    tox -epy26 -- -vv nailgun/test
+    tox -epy27
     tox -epep8
 
 #. Tox reuses the previously created environment. After making some changes with package
    dependencies, tox should be run with **-r** option to recreate existing virtualenvs::
 
-    tox -r -epy26 -- -vv nailgun/test
-    tox -r -epep8
+    tox -r -epy27
+
+#. You can use `pytest <http://pytest.org/latest/usage.html>`_ directly in order to run particular test. --pdb option allows one to drop into the PDB prompt on every failure::
+
+    .tox/py27/bin/py.test --pdb -vv nailgun/nailgun/test/integration/test_task_managers.py::TestTaskManagers::test_deletion_empty_cluster_task_manager
+
+.. _running-parallel-tests-py:
+
+#. Now tests can be run over several processes in a distributed manner; each test is executed within an isolated database::
+
+    .tox/py27/bin/py.test -n 4 nailgun/nailgun/test
+
 
 Running Nailgun Performance Tests
 +++++++++++++++++++++++++++++++++
 
-Now you can run performance tests using -x option:
+Now you can run performance tests using -x option::
 
-::
-
-  ./run_tests.sh -x
-
-
-If -x is not specified, run_tests.sh will not run performance tests.
-
-The -n or -N option works exactly as before: it states whether
-tests should be launched or not.
-
-For example:
-
-* run_tests.sh -n -x - run both regular and performance Nailgun tests.
-
-* run_tests.sh -x - run nailgun performance tests only, do not run
-  regular Nailgun tests.
-
-* run_tests.sh -n - run regular Naigun tests only.
-
-* run_tests.sh -N - run all tests except for Nailgun regular and
-  performance tests.
-
-
-.. _running-parallel-tests-py:
-
-Running parallel tests with py.test
------------------------------------
-
-Now tests can be run over several processes
-in a distributed manner; each test is executed
-within an isolated database.
-
-Prerequisites
-+++++++++++++
-
-- Nailgun user requires createdb permission.
-
-- Postgres database is used for initial connection.
-
-- If createdb cannot be granted for the environment,
-  then several databases should be created. The number of
-  databases should be equal to *TEST_WORKERS* variable.
-  The *createdb* permission
-  should have the following format: *nailgun0*, *nailgun1*.
-
-- If no *TEST_WORKERS* variable is provided, then a default
-  database name will be used. Often it is nailgun,
-  but you can overwrite it with *TEST_NAILGUN_DB*
-  environment variable.
-
-- To execute parallel tests on your local environment,
-  run the following command from *fuel-web/nailgun*:
-
-  ::
-
-       py.test -n 4 nailgun/test
-
-
-
-  You can also run the it from *fuel-web*:
-
-  ::
-
-
-     py.test -n 4 nailgun/nailgun/test
-
+   ./run_tests.sh -x
 
 
 .. _running-nailgun-in-fake-mode:
@@ -182,26 +95,33 @@ Prerequisites
 Running Nailgun in Fake Mode
 ----------------------------
 
-#. Switch to virtual environment::
+#. Create required folder for log files::
 
-    workon fuel
+    sudo mkdir /var/log/nailgun
+    sudo chown -R `whoami`.`whoami` /var/log/nailgun
+    sudo chmod -R a+w /var/log/nailgun
 
 #. Populate the database from fixtures::
 
-    cd nailgun
+    cd .tox/py27/bin/  # or you can use your own virtualenv
     ./manage.py syncdb
-    ./manage.py loaddefault # It loads all basic fixtures listed in settings.yaml
-    ./manage.py loaddata nailgun/fixtures/sample_environment.json  # Loads fake nodes
+    ./manage.py loaddefault  # It loads all basic fixtures listed in settings.yaml
+    ./manage.py loaddata ../../../nailgun/nailgun/fixtures/sample_environment.json  # Loads fake nodes
 
-#. Start application in "fake" mode, when no real calls to orchestrator
+#. Download and run `UI server <https://github.com/openstack/fuel-ui.git>`_::
+
+    git clone https://github.com/openstack/fuel-ui.git
+    # follow README file in order to run Fuel UI
+
+#. Start Nailgun in "fake" mode, when no real calls to task executor (Astute)
    are performed::
 
-    python manage.py run -p 8000 --fake-tasks | egrep --line-buffered -v '^$|HTTP' >> /var/log/nailgun.log 2>&1 &
+    ./manage.py run -p 8000 --fake-tasks | egrep --line-buffered -v '^$|HTTP' >> /var/log/nailgun.log 2>&1 &
 
 #. (optional) You can also use --fake-tasks-amqp option if you want to
    make fake environment use real RabbitMQ instead of fake one::
 
-    python manage.py run -p 8000 --fake-tasks-amqp | egrep --line-buffered -v '^$|HTTP' >> /var/log/nailgun.log 2>&1 &
+    ./manage.py run -p 8000 --fake-tasks-amqp | egrep --line-buffered -v '^$|HTTP' >> /var/log/nailgun.log 2>&1 &
 
 Nailgun in fake mode is usually used for Fuel UI development and Fuel UI
 functional tests. For more information, please check out README file in
