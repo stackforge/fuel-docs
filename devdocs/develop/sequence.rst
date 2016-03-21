@@ -3,91 +3,18 @@ Sequence Diagrams
 
 OS Provisioning
 ---------------
-# .. uml::
-#    title Nodes Provisioning
-#    actor WebUser
-
-#    box "Physical Server"
-#        participant NodePXE
-#        participant NodeAgent
-#    end box
-
-#    NodePXE -> Cobbler: PXE discovery
-#    Cobbler --> NodePXE: bootstrap OS image
-#    NodePXE -> Cobbler: network settings request
-#    Cobbler --> NodePXE: IP, DNS response
-#    NodePXE -> NodePXE: OS installation
-#    NodePXE -> NodeAgent: starts agent
-#    NodePXE -> MC: starts MCollective
-#    NodeAgent -> Ohai: get info
-#    Ohai --> NodeAgent: info
-#    NodeAgent -> NodePXE: get admin node IP
-#    NodePXE --> NodeAgent: admin node IP
-#    NodeAgent -> Nailgun: Registration
-#    |||
-#    WebUser -> Nailgun: create cluster
-#    WebUser -> Nailgun: add nodes to cluster
-#    WebUser -> Nailgun: deploy cluster
-#    |||
-#    Nailgun -> Astute: Provision CentOS
-#    Astute -> Cobbler: Provision CentOS
-#    Cobbler -> NodePXE: ssh to reboot
-#    Cobbler --> NodePXE: CentOS image
-#    NodePXE -> NodeAgent: starts agent
-#    NodePXE -> MC: starts MC agent
-#    NodeAgent -> Nailgun: Node metadata
+.. image:: _images/uml/nodes_provisioning.png
+   :width: 100%
 
 Networks Verification
 ---------------------
-# .. uml::
-#    title Network Verification
-#    actor WebUser
-
-#    WebUser -> Nailgun: verify networks (cluster #1)
-#    Nailgun -> Astute: verify nets (100-120 vlans)
-#    Astute -> MC: start listeners
-#    MC -> net_probe.py: forks to listen
-#    MC --> Astute: listening
-#    Astute -> MC: send frames
-#    MC -> net_probe.py: send frames
-#    net_probe.py --> MC: sent
-#    MC --> Astute: sent
-
-#    Astute -> MC: get result
-#    MC -> net_probe.py: stop listeners
-#    net_probe.py --> MC: result
-#    MC --> Astute: result graph
-#    Astute --> Nailgun: response vlans Ok
-#    Nailgun --> WebUser: response
-
+.. image:: _images/uml/network_verification.png
+   :width: 100%
 
 Details on Cluster Provisioning & Deployment (via Facter extension)
 -------------------------------------------------------------------
-# .. uml::
-#    title Cluster Deployment
-#    actor WebUser
-
-#    Nailgun -> Astute: Provision,Deploy
-#    Astute -> MC: Type of nodes?
-#    MC -> Astute: bootstrap
-#    Astute -> Cobbler: create system,reboot
-#    Astute -> MC: Type of nodes?
-
-#    MC --> Astute: booted in target OS
-#    Astute --> Nailgun: provisioned
-#    Nailgun --> WebUser: status on UI
-#    Astute -> MC: Create /etc/astute.yaml
-
-#    Astute -> MC: run puppet
-#    MC -> Puppet: runonce
-#    Puppet -> Facter: get facts
-#    Facter --> Puppet: set facts and parse astute.yaml
-
-#    Puppet -> Puppet: applies $role
-#    Puppet --> MC: done
-#    MC --> Astute: deploy is done
-#    Astute --> Nailgun: deploy is done
-#    Nailgun --> WebUser: deploy is done
+.. image:: _images/uml/cluster_deployment.png
+   :width: 100%
 
 Once deploy and provisioning messages are accepted by Astute, provisioning
 method is called.  Provisioning part creates system in Cobbler and

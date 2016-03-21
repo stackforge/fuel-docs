@@ -1,12 +1,6 @@
 sphinx==1.3b3
-cloud_sptheme
-sphinxcontrib-blockdiag
 rst2pdf
 funcparserlib
 webcolors
-sphinxcontrib-actdiag
-sphinxcontrib-seqdiag
-sphinxcontrib-nwdiag
-sphinxcontrib-plantuml
 beautifulsoup4==4.4.0
 openstackdocstheme
