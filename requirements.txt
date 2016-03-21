@@ -1,4 +1,4 @@
-sphinx==1.3b3
+sphinx==1.3
 cloud_sptheme
 sphinxcontrib-blockdiag
 rst2pdf
@@ -9,4 +9,4 @@ sphinxcontrib-seqdiag
 sphinxcontrib-nwdiag
 sphinxcontrib-plantuml
 beautifulsoup4==4.4.0
-openstackdocstheme
+oslosphinx
