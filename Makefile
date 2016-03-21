@@ -1,19 +1,16 @@
 # Makefile for Sphinx documentation
-#
 
 # You can set these variables from the command line.
 SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
 PAPER         =
 BUILDDIR      = _build
-#PLANTUML      = plantuml.jar
-PLANTUML_FROM_PKG  = /usr/share/plantuml/plantuml.jar
-
 
 # Internal variables.
 PAPEROPT_a4     = -D latex_paper_size=a4
 PAPEROPT_letter = -D latex_paper_size=letter
 ALLSPHINXOPTS   = -d $(BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
+
 # the i18n builder cannot share the environment and doctrees with the others
 I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 
@@ -45,19 +42,7 @@ help:
 clean:
 	-rm -rf $(BUILDDIR)/*
 
-#$(PLANTUML):
-#	@if [ -f $(PLANTUML_FROM_PKG) ]; \
-#	then \
-#		echo "Have installed plantuml. Creating link $(PLANTUML) on $(PLANTUML_FROM_PKG)."; \
-#		ln -sf $(PLANTUML_FROM_PKG) $(PLANTUML); \
-#	else \
-#		echo "Downloading plantuml.jar."; \
-#		wget https://downloads.sourceforge.net/project/plantuml/plantuml.jar -O $(PLANTUML); \
-#	fi
-#	$(ACTION.TOUCH)
-
-html: 
-#$(PLANTUML)
+html:
 	$(SPHINXBUILD) -b html -W $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."

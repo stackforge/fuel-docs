@@ -36,9 +36,7 @@ autodoc_member_order = 'bysource'
 extensions = [
     'sphinx.ext.autodoc',
     'rst2pdf.pdfbuilder'
-#    'sphinxcontrib.plantuml'
 ]
-#plantuml = ['java', '-jar', 'plantuml.jar']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['devdocs/_templates']
