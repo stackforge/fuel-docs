@@ -21,30 +21,8 @@ the hardware configuration of all discovered managed nodes, the roles,
 environment settings, current deployment status and progress of
 running deployments.
 
-#.. uml::
-
-#    package "Discovered Node" {
-#      component "Nailgun Agent"
-#    }
-
-#    package "Master Node" {
-#      component "Nailgun"
-#      component "Database"
-#      interface "REST API"
-#      component "Fuel Web"
-#    }
-
-#    actor "User"
-#    component "CLI tool"
-
-#    [User] -> [CLI tool]
-#    [User] -> [Fuel Web]
-#    [Nailgun Agent] -> [REST API] : Upload hardware profile
-
-#    [CLI tool] -> [REST API]
-#    [Fuel Web] -> [REST API]
-#    [REST API] -> [Nailgun]
-#    [Nailgun] -> [Database]
+.. image:: _images/uml/nailgun-agent.png
+   :width: 100%
 
 Managed nodes are discovered over PXE using a special bootstrap image
 and the PXE boot server located on the master node. The bootstrap image
@@ -59,23 +37,8 @@ file into the *RabbitMQ* queue. This message should be received by one
 of the worker processes who will actually deploy the environment. These
 processes are called *Astute*.
 
-#.. uml::
-#    package "Master Node" {
-#      component "Nailgun"
-#      interface "RabbitMQ"
-
-#      package "Astute Worker" {
-#        component Astute
-#      }
-
-#      component "Cobbler"
-#      component "DHCP and TFTP"
-#    }
-
-#    [Nailgun] -> [RabbitMQ] : Put task into Nailgun queue
-#    [Astute] <- [RabbitMQ] : Take task from Nailgun queue
-#    [Astute] -> [Cobbler] : Set node's settings through XML-RPC
-#    [Cobbler] -> [DHCP and TFTP]
+.. image:: _images/uml/astute.png
+   :width: 100%
 
 The Astute workers are listening to the RabbitMQ queue and receives
 messages. They use the *Astute* library which implements all deployment
@@ -105,43 +68,8 @@ modules and manifests. This agent runs an rsync process that connects
 to the rsyncd server on the Master node and downloads the latest version
 of Puppet modules and manifests.
 
-#.. uml::
-#    package "Master Node" {
-#      interface "RabbitMQ"
-#      component "Rsyncd"
-#      component "Astute"
-#    }
-
-#    package "Managed Node" {
-#      interface "MCollective"
-#      package "MCollective Agents" {
-#        component "uploadfile"
-#        component "puppetsync"
-#        component "puppetd"
-#        component "shell"
-#      }
-#      component "Puppet"
-#      component "Rsync"
-#      interface "astute.yaml"
-#      component "Puppet Modules"
-#    }
-
-#    [Astute] <-> [RabbitMQ]
-#    [RabbitMQ] <-> [MCollective]
-#
-#    [MCollective] -> [uploadfile]
-#    [MCollective] -> [puppetsync]
-#    [MCollective] -> [puppetd]
-#    [MCollective] -> [shell]
-
-#    [uploadfile] ..> [astute.yaml]
-#    [puppetsync] -> [Rsync]
-#    [puppetd] -> [Puppet]
-#    [Rsync] <..> [Rsyncd]
-
-#    [Rsync] ..> [Puppet Modules]
-#    [astute.yaml] ..> [Puppet]
-#    [Puppet Modules] ..> [Puppet]
+.. image:: _images/uml/puppetsync.png
+   :width: 100%
 
 When the modules are synchronized, Astute can run the actual deployment
 by applying the main Puppet manifest **site.pp**. MCollective agent runs
