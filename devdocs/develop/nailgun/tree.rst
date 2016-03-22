@@ -23,3 +23,4 @@ Nailgun Customization Instructions
     customization/roles
     customization/settings
     customization/bonding_in_ui
+    customization/extensions
