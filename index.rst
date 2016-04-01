@@ -18,9 +18,10 @@ Learn how to install and configure Fuel, as well as how to deploy your
 OpenStack environments and manage them after deployment.
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 3
 
    userdocs/fuel-install-guide
+   userdocs/fuel-user-guide
 
 Developer documentation
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -29,7 +30,7 @@ Learn about Fuel internals, software architecture, and how Fuel components
 interact with each other.
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 3
 
    devdocs/develop
    devdocs/devops
