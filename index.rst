@@ -21,6 +21,7 @@ OpenStack environments and manage them after deployment.
    :maxdepth: 1
 
    userdocs/fuel-install-guide
+   userdocs/fuel-user-guide
 
 Developer documentation
 ~~~~~~~~~~~~~~~~~~~~~~~
