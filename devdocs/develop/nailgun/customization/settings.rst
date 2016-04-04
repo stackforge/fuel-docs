@@ -50,6 +50,7 @@ structure includes the following attributes::
   The following types are supported:
 
   * *text* - single line input
+  * *number* - number input
   * *password* - password input
   * *textarea* - multiline input
   * *checkbox* - multiple-options selector
@@ -69,10 +70,14 @@ structure includes the following attributes::
 * *values* list is needed for settings of "radio" or "select" type to declare
   its possible values. Options from "values" list also support dependencies
   and conflcits declaration.
-* *min* is actual for settings of "text_list" or "textarea_list" type
-  to declare a minimum input list length for the setting
-* *max* is actual for settings of "text_list" or "textarea_list" type
-  to declare a maximum input list length for the setting
+* *min* is used for setting the "number", "text_list" or "textarea_list" type.
+  For the "number" type, "min" declares the minimum input number value.
+  For the "text_list" and "textarea_list" types, it declares the minimum list length for the
+  setting.
+* *max* is used for setting the "number", "text_list", or "textarea_list" type.
+  For the "number" type, "max" declares the maximim input number value.
+  For the "text_list" and "textarea_list" types, it declares the maximim list length for the
+  setting.
 
 .. _restrictions:
 
