@@ -96,8 +96,7 @@ implement this feature, these steps were followed:
    hypervisor, you can follow the instructions found in the
    :doc:`Devops Guide </devdocs/devops>` to create a robust testing
    environment.  Otherwise you can test the ISO with
-   Virtualbox (the download link can be found at
-   `https://software.mirantis.com/ <https://software.mirantis.com/>`_)
+   Virtualbox.
 
 #. Once your code has been merged, you can return your local
    repo to the master branch so you can start fresh on your

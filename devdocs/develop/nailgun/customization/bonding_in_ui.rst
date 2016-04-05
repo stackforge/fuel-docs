@@ -24,10 +24,7 @@ be used on bonds now. Three modes are supported now: 'active-backup',
 Deployment serialization
 ------------------------
 
-Most detailed docs on deployment serialization for neutron are here:
-
-1. http://docs.mirantis.com/fuel/fuel-4.0/reference-architecture.html#advanced-network-configuration-using-open-vswitch
-2. https://etherpad.openstack.org/p/neutron-orchestrator-serialization
+For details on deployment serialization for neutron, see: https://etherpad.openstack.org/p/neutron-orchestrator-serialization
 
 Changes related to bonding are in the “transformations” section:
 
