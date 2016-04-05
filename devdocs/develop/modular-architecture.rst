@@ -52,8 +52,6 @@ Each tasks reports back if it is successful. Astute stops the deployment on any 
 
 .. image:: _images/granularDeployment.png
 
-See also `Fuel Reference Architecture: Task Deployment <https://docs.mirantis.com/openstack/fuel/fuel-6.1/reference-architecture.html#task-deployment>_`.
-
 Task Graph
 ----------
 

@@ -246,7 +246,7 @@ Other options
 
 * **USE_MIRROR** - pre-built mirrors from Fuel infrastructure.
   The following mirrors can be used:
-  * ext (external mirror, available from outside of Mirantis network)
+  * ext (external mirror, publicly available one)
   * none (reserved for building local mirrors: in this case
   CentOS and Ubuntu packages will be fetched from upstream mirrors, so
   that it will make the build process much slower).
@@ -262,6 +262,6 @@ Other options
   tuple with repo-name and repo-path:
   <first_repo_name>,<repo_path> <second_repo_name>,<second_repo_path>
   For example,
-  *qemu2,http://osci-obs.vm.mirantis.net:82/centos-fuel-5.1-stable-15943/centos/ libvirt,http://osci-obs.vm.mirantis.net:82/centos-fuel-5.1-stable-17019/centos/*.
+  qemu2,http://hostname.domain.tld/some/path/ libvirt,http://hostname.domain.tld/another/path/
 
 Note that if you want to add more packages to the Fuel Master node, you should update the **requirements-rpm.txt** file.

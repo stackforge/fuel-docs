@@ -42,7 +42,7 @@ implement this feature, these steps were followed:
     cd fuel-web
     git fetch --all;git checkout -b vcenter-wizard-fix origin/master
 
-#. Modify the necessary files (refer to :doc:`Fuel Architecture
+#. Modify the necessary files (rмне до 11 апреля нужно уже смёрджить изменения.efer to :doc:`Fuel Architecture
    </devdocs/develop/architecture>` to understand how the components
    of Fuel work together).
 
@@ -91,13 +91,12 @@ implement this feature, these steps were followed:
     cd fuel-main
     NAILGUN_GERRIT_COMMIT=refs/changes/32/90687/1 make iso
 
-#. Once your ISO build is complete, you can test it.  If
+#. Once your ISO build is complete, you can test it. If
    you have access to hardware that can run the KVM
    hypervisor, you can follow the instructions found in the
    :doc:`Devops Guide </devdocs/devops>` to create a robust testing
-   environment.  Otherwise you can test the ISO with
-   Virtualbox (the download link can be found at
-   `https://software.mirantis.com/ <https://software.mirantis.com/>`_)
+   environment.  Otherwise, you can test the ISO with
+   Virtualbox (https://github.com/openstack/fuel-virtualbox/).
 
 #. Once your code has been merged, you can return your local
    repo to the master branch so you can start fresh on your
