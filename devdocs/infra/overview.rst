@@ -202,7 +202,7 @@ a few steps:
 
 #. In all files you need to make changes:
 
-   * Change email devops+alert@mirantis.com to your own
+   * Change email alert@example.com to your own
 
    * If you don't need reporting jobs you should delete triggering of
      fuel_community_build_reports in all jobs or disable reporting job
