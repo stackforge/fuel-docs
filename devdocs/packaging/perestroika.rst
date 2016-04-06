@@ -13,9 +13,8 @@ standard upstream Linux distribution tools in order to:
 
 Every package is built in a clean and up-to-date buildroot. Packages,
 their dependencies, and build dependencies are fully self-contained
-for each Mirantis OpenStack release. Any package included in any
-release can be rebuilt at any point in time using only the packages
-from that release.
+for each OpenStack release. Any package included in any release can be rebuilt
+at any point in time using only the packages from that release.
 
 The package build CI is reproducible and can be recreated from scratch
 in a repeatable way.
@@ -30,38 +29,6 @@ For the advantages of Perestroika over OBS build system, see
 Perestroika structure
 ---------------------
 
-Code storage
-~~~~~~~~~~~~
-
-Gerrit code review system is used as a code storage.
-
-Gerrit projects structure:
-
-* Mirantis OpenStack/Fuel Master node packages:
-
-  - code projects: *[customer-name]/openstack/{package name}*
-  - spec projects: *[customer-name]/openstack-build/{package name}-build*
-
-* Mirantis OpenStack Linux packages:
-
-  - code/spec projects: *[customer-name]/packages/{distribution}/{packagename}*
-
-* Fuel Master node Linux packages (separated from Mirantis OpenStack
-  Linux in 7.0):
-
-  - code/spec projects: *[customer-name]/packages/fuel/{distribution}/{package name}*
-
-* Versioning scheme supported by project branches:
-
-  - OpenStack: *openstack-ci/fuel-{fuel version}/{openstack version}*
-  - Mirantis OpenStack Linux/Fuel Master node: *{fuel version}*
-
-**where**
- *  *customer-name* should be empty for Mirantis OpenStack projects due
-    to a backward compatibility with releases older than 7.0.
- *  supported values of the ``{distribution}`` parameter are {centos6},
-    {centos7} and {trusty}. 
-
 Scheduler
 ~~~~~~~~~
 
@@ -74,8 +41,7 @@ Gerrit projects.
 Each set of jobs contains:
 
 * jobs for OpenStack packages for a cluster (``.rpm`` and ``.deb``)
-* jobs for Mirantis OpenStack Linux packages for a cluster (``.rpm``
-  and ``.deb``)
+* jobs for Linux packages for a cluster (``.rpm`` and ``.deb``)
 * jobs for OpenStack packages for Fuel Master node (``.rpm``). In case
   of using cluster packages, they are optional.
 * jobs for non-OpenStack Fuel Master node packages (``.rpm``)
