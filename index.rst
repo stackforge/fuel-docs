@@ -1,5 +1,6 @@
 .. _contents:
 
+==============================
 Welcome to Fuel Documentation!
 ==============================
 
@@ -22,6 +23,7 @@ OpenStack environments and manage them after deployment.
 
    userdocs/fuel-install-guide
    userdocs/fuel-user-guide
+   userdocs/release-notes
 
 Developer documentation
 ~~~~~~~~~~~~~~~~~~~~~~~
