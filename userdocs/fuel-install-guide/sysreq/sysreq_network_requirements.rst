@@ -114,3 +114,46 @@ Neutron with tunneling segmentation
  * Administrative network or only the Fuel Master node: must have the Internet
    access through a dedicated NIC.
  * Storage and Private networks (VLANs): isolate from other networks.
+
+Fuel creates the *default* node network group that includes the Public,
+Storage, Management, and Baremetal networks if you installed
+the OpenStack Bare Metal service. The Private network will appear
+in  the default node network group if the environment networking segmentation
+type is tunneling segmentation only.
+
+The requirements for Public, Storage, and Management networks are:
+
+* For Public network
+
+  * Floating IP range must fit into Public network CIDR of any
+    of the node network groups in the environment and share that
+    CIDR with Public IP ranges of that network.
+  * Each deployed Controller node requires one IP address from the Public IP range.
+  * If you set :guilabel:`Assign public network to all nodes` option
+    in the Settings tab, then each deployed node requires one IP.
+  * Virtual IPs and the default gateway require three additional IP addresses for
+    the environment: two IP addresses for Virtual IPs and one IP address for
+    the default gateway.
+  * If the Neutron DVR feature is enabled, the DVR requires one additional IP address
+    for each Compute node in case you plan to use Floating IPs in the deployment.
+  * If you install plugins, refer to the plugin guides for Public IP requirements.
+
+* For Storage and Management networks
+
+  * These are internal networks and, hence, the address range should be private,
+    not globally routable.
+
+Neutron L2 and L3 requirements are:
+
+* Each project's network requires one unique VLAN ID.
+* Internal network must be isolated from both private and public networks
+  for security reasons.
+* For floating network each defined project, including the Admin project,
+  requires one IP address from the floating IP address range.
+  This IP address goes to the virtual interface of the project's virtual router.
+* Each VM instance connected to the external network requires one IP address
+  from the floating IP range.
+* The floating IP address range should not intersect with the Public network
+  address range.
+* Specify adresses for the guest OS DNS servers if you do not want to use
+  the default DNS servers.
