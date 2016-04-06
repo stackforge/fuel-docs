@@ -119,9 +119,9 @@ Fuel creates the *default* node network group that includes the Public,
 Storage, Management, and Baremetal networks if you installed
 the OpenStack Bare Metal service.
 
-The Private network appears in the Network Settings tab if the
+The Private network appears in the network settings tab if the
 environment networking segmentation type is tunneling segmentation.
-It does not appear in the Network Settings tab in case of VLAN segmentation
+It does not appear in the network settings tab in case of VLAN segmentation
 as it has no L3 settings.
 
 The Private network will (always) appear in the Node Interfaces Configuration
