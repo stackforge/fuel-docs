@@ -1,0 +1,11 @@
+Verified+1: Fuel CI <fuel-ci-bot@mirantis.com>
+Code-Review+1: Cody Eilrich <cody.eilrich@ericsson.com>
+Code-Review+1: Vinod Kumar Yadav <vinod.kumar.v.yadav@ericsson.com>
+Code-Review+2: Svetlana Karslioglu <skarslioglu@mirantis.com>
+Workflow+1: Svetlana Karslioglu <skarslioglu@mirantis.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Wed, 06 Apr 2016 22:46:59 +0000
+Reviewed-on: https://review.openstack.org/301153
+Project: openstack/fuel-docs
+Branch: refs/heads/master
