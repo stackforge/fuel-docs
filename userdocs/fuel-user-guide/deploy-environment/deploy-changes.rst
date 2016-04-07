@@ -1,24 +1,35 @@
 .. _deploy-changes:
 
+==============
 Deploy changes
---------------
+==============
 
-When you have completed configuring your OpenStack environment as
-described in :ref:`create-env-ug` and :ref:`configure-env-ug`, you
-can start the deployment.
+When you have completed configuration as described in :ref:`create-env-ug`,
+and :ref:`configure-env-ug`, you can deploy your OpenStack environment.
 
-.. warning::
-   After you deploy an OpenStack environment, you will not be able to
-   modify many of the OpenStack parameters, such as network topology,
-   disk partitioning, and so on. Verify that you have applied correct
-   settings.
+Depending on the environment configuration, deployment may take from thirty
+minutes to an hour.
 
-**To deploy an OpenStack environment:**
+**To run a standard deployment of the entire OpenStack environment:**
 
 #. In the Fuel web UI, select the :guilabel:`Dashboard` tab.
-#. Click :guilabel:`Deploy changes`.
+#. Set the :guilabel:`Deployment mode` to :guilabel:`Provisioning + Deployment`.
+#. Click :guilabel:`Deploy Changes` to run both provisioning
+   and deployment for the entire environment. Such deployment affects
+   the OpenStack environment nodes as follows:
 
-   Fuel deploys your OpenStack environment. Depending on the configuration
-   of the environment, the deployment may take from fifteen minutes
-   to an hour.
+   * Not provisioned discovered nodes are provisioned and deployed.
+   * Provisioned and not deployed nodes are deployed.
+   * Already deployed nodes are re-deployed.
 
+**To run a separate deployment for the OpenStack environment nodes:**
+
+#. In the Fuel web UI, select the :guilabel:`Dashboard` tab.
+#. Set the :guilabel:`Deployment mode` to :guilabel:`Deployment Only`.
+
+   * If you want to deploy all nodes, click :guilabel:`Deploy Nodes`.
+   * If you want to deploy specific nodes:
+
+     #. Unfold :guilabel:`If you want to deploy specific nodes:` and
+        select nodes.
+     #. Click :guilabel:`Deploy Nodes`.
