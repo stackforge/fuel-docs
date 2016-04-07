@@ -2,4 +2,4 @@
 Known Issues
 ============
 
-This section lists the known issues:
+This section lists known issues in this release:

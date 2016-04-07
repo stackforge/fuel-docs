@@ -18,7 +18,7 @@ This section lists these improvements:
   User Guide.
   See `blueprint <https://blueprints.launchpad.net/fuel/+spec/graceful-stop-restart-deployment>`__.
 
-* Improved deployment orchestration to reduce deployment time and to minimize
+* Improved deployment orchestration to reduce deployment time and minimize
   technical and architectural efforts through task-based deployment with Astute.
 
 * All Fuel tasks are now idempotent. This makes Fuel lifecycle-manageable.
@@ -28,11 +28,11 @@ This section lists these improvements:
   See `blueprint <https://blueprints.launchpad.net/fuel/+spec/deploy-with-uca-packages>`__.
 
 * Operators can now change deployment settings on the :guilabel:`Settings` tab
-  of the Fuel web UI in the post-deployment stage. The new settings can then
-  be redeployed for an existing environment.
+  of the Fuel web UI after deploying an OpenStack environment.
+  The new settings can then be redeployed for an existing environment.
   See `blueprint <https://blueprints.launchpad.net/fuel/+spec/granular-task-lcm-readiness>`__.
 
-* Fuel API now allows to manually set Virtual IP address to any valid
+* Fuel API now allows to manually set virtual IP address to any valid
   IP address.
   See `blueprint <https://blueprints.launchpad.net/fuel/+spec/allow-any-vip>`__.
 
@@ -40,6 +40,6 @@ This section lists these improvements:
   for the standard screen estate.
   See `blueprint <https://blueprints.launchpad.net/fuel/+spec/redesign-of-node-roles-panel>`__.
 
-* Enabled separate node deployment and operating system provisioning on the
+* Enabled separate node deployment and operating system provisioning in the
   Fuel web UI.
   See `blueprint <https://blueprints.launchpad.net/fuel/+spec/allow-choosing-nodes-for-provisioning-and-deployment>`__.
