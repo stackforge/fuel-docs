@@ -5,16 +5,24 @@ __________________
 Overview of extensions
 ======================
 
-Nailgun extensions provide a capability to extend Fuel features.
-Extensions were introduced to provide *pythonic way* for adding integrations
-with external services, extending existing features, or adding new features
-**without** changing the Nailgun source code.
+Nailgun extensions provide a capability for Fuel Developers to extend Fuel
+features. Extensions were introduced to provide *pythonic way* for adding
+integrations with external services, extending existing features, or adding
+new features **without** changing the Nailgun source code.
 
 A Nailgun extension can execute its method on specific events
 such as ``on_node_create`` or ``on_cluster_delete`` (more about event handlers
 in the `Available Events`_ section) and also to change deployment and
 provisioning data just before it is sent to orchestrator by the means of
 Data Pipelines classes.
+
+.. note::
+    The extensions mechanism does not provide a sufficient level
+    of isolation. Therefore, the extension may not work after you upgrade Fuel.
+
+    On the contrary, Fuel plugins provide backward compatibility and a friendly
+    UI for the end user. Use plugins for all changes in the system performed
+    by the Fuel user.
 
 
 Required properties
@@ -26,8 +34,8 @@ All Nailgun extensions must populate the following class variables:
   extension. It should consist only of lowercase letters with "_" (underscore)
   separator and digits.
 
-* ``version`` - a string which should look like *X.Y.Z* where X is a major
-  version, Y is minor, and Z is bug fix update or build number.
+* ``version`` - a string with version. It should follow semantic versioning:
+  http://semver.org/
 
 * ``description`` - a short text which briefly describes the actions that the
   extension performs.
@@ -99,8 +107,8 @@ Database interaction
 ====================
 
 There is a possibility to use the Nailgun database to store the data needed by
-a Nailgun extension. To use it, provide alembic migration scripts which should
-be placed in::
+a Nailgun extension. To use it you must provide alembic migration scripts which
+should be placed in::
 
   extension_module/alembic_migrations/migrations/
 
@@ -114,10 +122,16 @@ You can also change this directory by overriding the classmethod::
 It should return an absolute path (string) to alembic migrations
 directory.
 
-.. important::
-   Do not use the direct db calls to Nailgun core tables in the extension
-   class. Use the ``nailgun.objects`` module which ensures compatibility
-   between the Nailgun DB and the configuration implemented in your extension.
+Also you must use table name with extension specific prefix in models classes
+and in alembic migration scripts. It is recommended to use ``table_prefix``
+extension method to retrieve the prefix (string).
+
+.. note::
+  Do not use the direct db calls to Nailgun core tables in the extension
+  class. Use the ``nailgun.objects`` module which ensures compatibility
+  between the Nailgun DB and the configuration implemented in your extension.
+
+  There **must be no** relations between extension models and core models.
 
 
 Extension Data Pipelines
