@@ -7,8 +7,7 @@ you can create, update or delete roles
 using Nailgun
 REST API and Fuel Client.
 
-For Fuel CLI command reference, see
-:ref:`Role operations <roles-operations>`.
+For Fuel CLI command reference, see :ref:`cli-roles`.
 
 This section provides the Controller
 role example:

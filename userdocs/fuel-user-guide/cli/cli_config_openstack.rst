@@ -1,169 +1,114 @@
-.. _fuel-cli-config-openstack-services:
+.. _cli-config-openstack-services:
 
-Changing the configuration of Nova, Neutron, and Keystone
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Modify the configuration of the OpenStack services
+--------------------------------------------------
 
-Using CLI, you can override the hardcoded, or provided by Nailgun,
+You can customize the hardcoded, or provided by Nailgun,
 configuration values, as well as introduce new configuration options
-for OpenStack services.
+for the OpenStack services, such as Nova, Neutron, and Keystone using CLI.
 
-You can change the Nova, Neutron, and Keystone configuration for:
+You can change the Nova, Neutron, and Keystone configuration for a single
+node, all nodes with a specific role, or a whole OpenStack environment.
 
-- A single node
-- All nodes with a certain role
-- An environment
+Changes to the OpenStack services configuration can be applied before
+or after you deploy an OpenStack environment.
 
-You can change the configuration before or after the environment deployment.
-
-The services the configuration of which you change restart automatically
-after applying the changes.
+After you apply changes, the services will be automatically restarted.
 
 The ``override_resources`` Puppet resource applies changes to the existing
 configuration resources and creates the new ones that were not previously
 defined.
 
-To change the configuration of OpenStack Services
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**To modify the configuration of the OpenStack services:**
 
 #. Log in to the Fuel Master node.
-#. Edit the YAML file with the configuration options of the services that
-   you are going to change. Example:
+#. Edit the ``.yaml`` file with the configuration options of the services that
+   you want to change. 
 
-   .. code-block:: yaml
+   **Example:**
 
-        configuration:
-          nova_config:
-            DEFAULT/debug:
-              value: True
-            DEFAULT/amqp_durable_queues:
-              value: False
-          keystone_config:
-            DEFAULT/default_publisher_id:
-              ensure: absent
-            DEFAULT/crypt_strength:
-              value: 6000
+   ::
 
-#. Upload the YAML file:
+    .. code-block:: yaml
 
-   * To upload the changes for the environment:
+         configuration:
+           nova_config:
+             DEFAULT/debug:
+               value: True
+             DEFAULT/amqp_durable_queues:
+               value: False
+           keystone_config:
+             DEFAULT/default_publisher_id:
+               ensure: absent
+             DEFAULT/crypt_strength:
+               value: 6000
+
+#. Upload the ``.yaml`` file:
+
+   * To upload the changes for an OpenStack environment:
+ 
+     .. code-block:: console
+
+         fuel openstack-config --env <env_id> --upload file.yaml
+
+   * To upload the changes for all nodes with a specific role:
 
      .. code-block:: console
 
-         fuel openstack-config --env 1 --upload file.yaml
+        fuel openstack-config --env <env_id> --role compute \ 
+        --upload <file.yaml>
 
-   * To upload the changes for all nodes with a role:
-
-     .. code-block:: console
-
-         fuel openstack-config --env 1 --role compute --upload file.yaml
-
-   * To upload the changes for certain nodes:
+   * To upload the changes for selected nodes:
 
      .. code-block:: console
 
-         fuel openstack-config --env 1 --node 1,2,3 --upload file.yaml
+         fuel openstack-config --env <env_id> --node 1,2,3 \
+         --upload <file.yaml>
 
-#. Execute the changes:
+#. Apply the changes:
 
-   * To execute the changes for the environment:
-
-     .. code-block:: console
-
-         fuel openstack-config --env 1 --execute
-
-   * To execute the changes for all nodes with a role:
+   * To apply the changes for the environment:
 
      .. code-block:: console
 
-         fuel openstack-config --env 1 --role compute --execute
+         fuel openstack-config --env <env_id> --execute
 
-   * To execute the changes for certain nodes:
+   * To apply the changes for all nodes with a role:
 
      .. code-block:: console
 
-         fuel openstack-config --env 1 --node 1,2,3 --execute
+         fuel openstack-config --env <env_id> --role compute --execute
 
-The services will restart automatically.
+   * To apply the changes for certain nodes:
 
-**Additional commands**
+     .. code-block:: console
 
-* List the configuration changes history:
+         fuel openstack-config --env <env_id> --node 1,2,3 --execute
 
-  .. code-block:: console
+   The services will restart automatically.
+#. Optionally, run these additional commands:
 
-      fuel openstack-config --env 1 --list
+   #. List the configuration changes history:
 
-  This command returns a list of configuration changes, each of them with
-  a respective ID record.
+      .. code-block:: console
 
-* Download a previously uploaded YAML file with the configuration changes:
+         fuel openstack-config --env <env_id> --list
 
-  .. code-block:: console
+   #. Download the previously uploaded ``.yaml`` file with the configuration
+      changes:
 
-      fuel openstack-config --id 1 --download
+      #. Obtain the record number from the changes history:
 
-  The ``id`` parameter is the record number from the changes history that
-  you can get with the :command:`fuel openstack-config --env 1 --list` command.
+         .. code-block:: console
 
-**Workflow of the configuration change override**
+            fuel openstack-config --env <env_id> --list
 
-The ``override_resources`` Puppet resource overrides the already existing
-resources and creates the previously not defined resources.
+      #. Download the ``.yaml`` file: 
 
-.. note:: ``override_resources`` must always be used as the first resource
-          in manifests.
+         .. code-block:: console
 
-Example:
+            fuel openstack-config --id <id> --download
 
-.. code-block:: puppet
+.. seealso::
 
- keystone_config {
-   'DEFAULT/debug': {value => True}
- }
- override_resource {'keystone_config':
-   data => {
-      'DEFAULT/debug': {'value' => False},
-      'DEFAULT/max_param_size': {'value' => 128}
-   }
- }
-
-The Nova, Keystone, and Neutron top-level granular tasks use
-``override_resources``. The new parameter hash used in the Puppet resources
-is passed to ``override_resources`` from hiera.
-
-The three following hiera files cover the hierarchical configuration
-overrides:
-
-- ``/etc/hiera/override/config/%{::fqdn}``
-- ``/etc/hiera/override/config/role``
-- ``/etc/hiera/override/config/cluster``
-
-Hiera delivers the hierarchical structure of data.
-
-The top-level granular tasks used to override the configuration have
-the ``refresh_on`` parameter.
-
-Example:
-
-.. code-block:: yaml
-
- - id: keystone
-   type: puppet
-   groups: [primary-controller, controller]
-   required_for: [openstack-controller]
-   requires: [openstack-haproxy, database, rabbitmq]
-   refresh_on: [keystone_config]
-   parameters:
-     puppet_manifest:
-        /etc/puppet/modules/osnailyfacter/modular/keystone/keystone.pp
-     puppet_modules: /etc/puppet/modules
-     timeout: 3600
-   test_pre:
-     cmd: ruby
-        /etc/puppet/modules/osnailyfacter/modular/keystone/keystone_pre.rb
-   test_post:
-     cmd: ruby
-        /etc/puppet/modules/osnailyfacter/modular/keystone/keystone_post.rb
-
-Nailgun uses the ``refresh_on`` parameter to run the respective task when user changes the
-OpenStack configuration.
+   - :ref:`cli-config-openstack-services-workflow`

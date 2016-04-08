@@ -24,6 +24,19 @@ This section includes the following topics:
    :maxdepth: 3
 
    cli/cli_acronyms.rst
-   cli/cli_usage.rst
+   cli/cli_basic_usage.rst
+   cli/cli_management.rst
+   cli/cli_environment.rst
+   cli/cli_deploy.rst
+   cli/cli_network.rst
+   cli/cli_network_group.rst
+   cli/cli_network_template.rst
+   cli/cli_vip.rst
+   cli/cli_nodes.rst
+   cli/cli_node_group.rst
+   cli/cli_roles.rst
+   cli/cli_plugins.rst
    cli/cli_config_openstack.rst
+   cli/cli_config_openstack_services_workflow.rst
    cli/cli_change_ip_range.rst
+   cli/cli_modify_environment.rst
