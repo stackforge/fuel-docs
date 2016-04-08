@@ -32,4 +32,4 @@ You must resolve all errors before you deploy an OpenStack environment.
 
 .. seealso::
 
-   * :ref:`post-deployment-network`
+   * :ref:`post-deployment-settings`
