@@ -130,8 +130,6 @@ To verify the packages are up-to-date on the Fuel Slave nodes:
 
 .. note::
    The rollback instructions listed here are for advanced administrators.
-   If you are not sure how to plan and execute the rollbacks,
-   your best option is to contact `Mirantis support <https://www.mirantis.com/services/enterprise-support-services/>`__.
 
 Roll back the Fuel Master node
 ------------------------------
