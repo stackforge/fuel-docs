@@ -3,8 +3,8 @@
 Configure ESXi host networking
 ------------------------------
 
-To integrate Mirantis OpenStack with VMware vCenter,
-you must configure the VMware ESXi host networking.
+To integrate OpenStack with VMware vCenter, you must configure the VMware ESXi
+host networking.
 
 **To configure ESXi host networking**:
 

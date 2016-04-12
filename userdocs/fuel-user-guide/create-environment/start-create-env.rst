@@ -12,9 +12,9 @@ Fuel plugins may have additional hardware requirements and architectural
 limitations. For more information, see: *System requirements* in the
 *Fuel Installation Guide*.
 
-.. If you are deploying a Mirantis OpenStack environment
-    that is integrated with VMware vSphere, your environment must meet
-   the prerequisites listed in *Install VMware* in *Fuel Installation Guide*.
+.. If you are deploying an OpenStack environment that is integrated with
+   VMware vSphere, your environment must meet the prerequisites listed in
+   *Install VMware* in *Fuel Installation Guide*.
 
 **To create an OpenStack environment:**
 

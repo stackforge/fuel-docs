@@ -16,7 +16,7 @@ following error messages:
     While you don't activate any bootstrap - new nodes cannot be discovered
     and added to cluster.
     For more information please visit
-    https://docs.mirantis.com/openstack/fuel/fuel-master/"
+    http://docs.openstack.org/developer/fuel-docs/userdocs/fuel-install-guide/bootstrap/bootstrap_troubleshoot.html"
 
 or
 
@@ -29,7 +29,7 @@ or
     While you don't activate any bootstrap - new nodes cannot be discovered
     and added to cluster.
     For more information please visit
-    https://docs.mirantis.com/openstack/fuel/fuel-master/"
+    http://docs.openstack.org/developer/fuel-docs/userdocs/fuel-install-guide/bootstrap/bootstrap_troubleshoot.html"
 
 
 You typically receive such error messages when software

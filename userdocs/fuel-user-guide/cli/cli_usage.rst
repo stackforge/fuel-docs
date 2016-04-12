@@ -170,7 +170,7 @@ To delete the environment:
 
   fuel --env <env_id> env delete
 
-To update the Mirantis OpenStack environment to a newer version
+To update the OpenStack environment to a newer version
 (available since Fuel 5.1):
 
 ::

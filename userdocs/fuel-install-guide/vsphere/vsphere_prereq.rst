@@ -3,9 +3,8 @@
 VMware vSphere prerequisites
 ----------------------------
 
-Before you install Fuel and use your Mirantis OpenStack environment
-in intergration with vSphere, you must configure all components
-of VMware vSphere.
+Before you install Fuel and use your OpenStack environment in intergration
+with vSphere, you must configure all components of VMware vSphere.
 
 .. note::
 

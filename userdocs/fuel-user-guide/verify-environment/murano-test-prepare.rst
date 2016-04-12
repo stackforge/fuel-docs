@@ -15,7 +15,7 @@ add a Linux based image to Murano.
 To prepare the OpenStack Application Catalog for testing,
 add a Linux-based image to Murano. You can download the `pre-built
 Murano image
-<http://murano-files.mirantis.com/ubuntu_14_04-murano-agent_stable_juno.qcow2¬>`_
+<http://storage.apps.openstack.org/images/ubuntu-14.04-m-agent.qcow2>`_
 or build your own as described in  `Murano documentation
 <http://murano.readthedocs.org/en/latest/image_builders/index.html>`_.
 

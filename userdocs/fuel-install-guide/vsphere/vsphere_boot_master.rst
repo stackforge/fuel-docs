@@ -3,9 +3,8 @@
 Boot the Fuel Master node
 -------------------------
 
-#. When the Mirantis ISO boot menu appears, press the **Tab** key
-   on the keyboard and modify the last kernel parameter ``showmenu``
-   to ``yes``. Press **Enter**.
+#. When the boot menu appears, press the **Tab** key on the keyboard and
+   modify the last kernel parameter ``showmenu`` to ``yes``. Press **Enter**.
 #. Wait for the Fuel Master node installation to complete.
 
 To access the Fuel Web UI, your browser must have an access

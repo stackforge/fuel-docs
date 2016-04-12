@@ -13,5 +13,5 @@ and upload it do a vSphere datastore.
 #. Go to the Datastores and choose your datastore.
 #. Go to the Actions menu and select **Browse Files**.
 #. Click the **Upload Files** icon, browse your filesystem,
-   and select your Mirantis ISO.
+   and select your Fuel ISO.
 #. Proceed to :ref:`vsphere_configure_network`.

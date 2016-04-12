@@ -12,8 +12,7 @@ operating system to run the Fuel Master node on it.
 #. Click **Create a Virtual Machine**.
 #. Click **Create a new virtual machine**.
     Do not use templates.
-#. Name your new VM and choose the datacenter where the Mirantis ISO
-   is located.
+#. Name your new VM and select the datacenter where the Fuel ISO is located.
 #. Select a compute resource (ESXi host), storage, and compatibility
    for the VM.
 #. Select a guest operating system.
