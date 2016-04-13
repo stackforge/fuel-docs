@@ -18,6 +18,7 @@ Fuel User Guide
    fuel-user-guide/next-steps.rst
    fuel-user-guide/configure-additional-components.rst
    fuel-user-guide/verify-environment.rst
+   fuel-user-guide/manage-environment.rst
    fuel-user-guide/maintain-environment.rst
    fuel-user-guide/cli.rst
 
