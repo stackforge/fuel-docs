@@ -2,8 +2,7 @@
 Role object
 ------------
 
-Beginning with Fuel 6.1,
-you can create, update or delete roles
+You can create, update or delete roles
 using Nailgun
 REST API and Fuel Client.
 

@@ -1,11 +1,11 @@
 .. _maintain-environment:
 
-Maintain your environment
-=========================
+Maintain your OpenStack environment
+===================================
 
-After your deployed your OpenStack environment, you
+After your deploye your OpenStack environment, you
 manage many operations through the Horizon dashboard.
-However, such operations as adding or removing nodes,
+However, operations such as adding or removing nodes,
 changing environment settings, and so on must be performed
 in the Fuel UI or CLI.
 
@@ -16,4 +16,3 @@ This section includes the following topics:
 
    maintain-environment/rollback-ug.rst
    maintain-environment/use-shotgun.rst
-   maintain-environment/role-operations.rst
