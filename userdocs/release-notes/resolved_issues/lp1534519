@@ -1,0 +1,2 @@
+* Fixed the rabbitmqctl issue that caused atom table overflow in Erlang VM.
+  See LP1534519 <https://bugs.launchpad.net/fuel/+bug/1534519>`_.
