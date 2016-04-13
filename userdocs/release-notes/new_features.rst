@@ -16,20 +16,27 @@ This section lists these improvements:
 * Added ability to stop and restart environment deployment without resetting
   the deployment process. See the :ref:`stop_deployment` section in the Fuel
   User Guide.
+  This allows users to fix deployment errors and resume the deployment process
+  without having to start it over completely.
   See `blueprint <https://blueprints.launchpad.net/fuel/+spec/graceful-stop-restart-deployment>`__.
 
 * Improved deployment orchestration to reduce deployment time and minimize
   technical and architectural efforts through task-based deployment with Astute.
+  This further enables Fuel to provide the lifecycle management features such
+  as :guilabel:`Unlocked Settings Tab`.
 
-* All Fuel tasks are now idempotent. This makes Fuel lifecycle-manageable.
+* All deployment tasks that Fuel uses when configuring OpenStack are now
+  idempotent. This enables the lifecycle management features that require
+  re-running of deployment tasks with the updated input data in the
+  post-deployment stage of cloud lifecycle.
   See `blueprint <https://blueprints.launchpad.net/fuel/+spec/granular-task-lcm-readiness>`__.
 
 * Fuel can now deploy UCA packages.
   See `blueprint <https://blueprints.launchpad.net/fuel/+spec/deploy-with-uca-packages>`__.
 
-* Operators can now change deployment settings on the :guilabel:`Settings` tab
-  of the Fuel web UI after deploying an OpenStack environment.
-  The new settings can then be redeployed for an existing environment.
+* Operators can now change OpenStack settings on the :guilable:`Settings`
+  tab in Fuel web UI for the cloud that is already deployed and apply the
+  settings.
   See `blueprint <https://blueprints.launchpad.net/fuel/+spec/granular-task-lcm-readiness>`__.
 
 * Fuel API now allows to manually set virtual IP address to any valid
@@ -42,4 +49,7 @@ This section lists these improvements:
 
 * Enabled separate node deployment and operating system provisioning in the
   Fuel web UI.
+  This allows users to adjust configuration and fix errors on a specific node
+  or a subset of nodes without having to re-deploy or re-provision the entire
+  cloud environment.
   See `blueprint <https://blueprints.launchpad.net/fuel/+spec/allow-choosing-nodes-for-provisioning-and-deployment>`__.
