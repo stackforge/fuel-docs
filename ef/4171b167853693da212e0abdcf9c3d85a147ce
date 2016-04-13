@@ -1,0 +1,11 @@
+Code-Review+1: Igor Zinovik <izinovik@mirantis.com>
+Verified+1: Fuel CI <fuel-ci-bot@mirantis.com>
+Code-Review+1: Alexander Arzhanov <aarzhanov@mirantis.com>
+Code-Review+2: Evgeny Konstantinov <evkonstantinov@mirantis.com>
+Workflow+1: Evgeny Konstantinov <evkonstantinov@mirantis.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Wed, 13 Apr 2016 12:56:43 +0000
+Reviewed-on: https://review.openstack.org/305156
+Project: openstack/fuel-docs
+Branch: refs/heads/master
