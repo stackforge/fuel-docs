@@ -1,0 +1,5 @@
+* Previously, when specifying ``heartbeat`` and ``handshake_timeout``
+  parameters in ``rabbitmq.config``, the default parameters disappeared. Now,
+  ``rabbit.* ``configuration options can be handled by
+  ``rabbit_config_variables`` in hiera.
+  See LP1560687 <https://bugs.launchpad.net/fuel/+bug/1560687>`_.
