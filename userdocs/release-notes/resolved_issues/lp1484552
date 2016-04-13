@@ -1,0 +1,4 @@
+* Fixed the issue with MySQL server going down because of the incorrect
+  processing of the ``ignore-db-dir`` option.
+  See `LP1484552 <https://bugs.launchpad.net/fuel/+bug/1484552>`_.
+  
