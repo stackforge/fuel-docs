@@ -1,0 +1,6 @@
+* Changed the Fuel serialization process to fix the Nailgun behavior
+  in complex OVS+VLAN network environments with multiple node groups
+  and network templates. Previously, it was impossible to use network
+  templates and multiple node groups with OVS+VLAN Neutron providers
+  due to unnumbered ``br-prv`` networks. See
+  `LP1556917 <https://bugs.launchpad.net/fuel/+bug/1556917>`_.
