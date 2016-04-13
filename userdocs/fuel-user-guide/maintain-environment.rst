@@ -1,7 +1,7 @@
 .. _maintain-environment:
 
-Maintain your environment
-=========================
+Maintain your OpenStack environment
+===================================
 
 After your deployed your OpenStack environment, you
 manage many operations through the Horizon dashboard.
@@ -16,4 +16,3 @@ This section includes the following topics:
 
    maintain-environment/rollback-ug.rst
    maintain-environment/use-shotgun.rst
-   maintain-environment/role-operations.rst
