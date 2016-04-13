@@ -1,0 +1,200 @@
+.. _cgroups-intro:
+
+Manage control groups
+---------------------
+
+Control groups, or ``cgroups``, enable you to efficiently allocate
+a specific amount of system resources, including CPU and memory,
+to particular resource groups. Using control groups you can assign
+specific amount of resources to particular OpenStack services, as well as
+to the underlying middleware components, such as RabbitMQ, MySQL, and others.
+Rational assignment may significantly improve performance of your system.
+
+Fuel implementation of control groups enables you to create one group for one
+process and then create an hierarchy of groups. By default, ``cgroups``
+are disabled.
+
+.. note::
+   Fuel support control groups only for Ubuntu 14.04. If you have integrated
+   nodes with any other Linux distributions in your OpenStack environment,
+   control groups will not work.
+
+Fuel supports all standard Linux ``cgroups`` resource controllers, or
+subsystems.
+However, to optimize the performance of your system you will mostly use
+the following resource controllers and limits.
+
+.. list-table:: **Resource controllers and limits**
+   :widths: 10 10
+   :header-rows: 1
+
+   * - Parameter
+     - Description
+   * - ``blkio``
+     - Controls input and output operations on block devices.
+       You can specify the following limits:
+
+       ``blkio.weight``
+        Defines a proportion of disk I/O available to the control group
+        on all devices. Apply to Cinder and Glance back ends
+        for better performance.
+
+   * - ``memory``
+     - Controls the use of memory.
+
+       You can specify the following limits:
+
+       ``memory.soft_limit_in_bytes``
+        Enables soft limit on memory which means that the group can
+        temporarily go beyond the soft limit to accommodate the workload
+        and will be automatically reduced back to the soft limit when
+        the system is low on memory.
+
+       ``memory.limit_in_bytes``
+        The maximum amount of memory that the control group can use.
+        Specify a value in bytes. 
+
+       ``memory.swappiness``
+        Controls swap priority. Determines whether kernel can claim memory
+        from the control group.
+
+   * - ``cpu``
+     - Controls the use of CPU.
+
+       You can specify the following limits:
+
+       ``cpu.cfs_quota_us``
+        Defines the time during which all tasks in the control group can run
+        in one period. After the period expires the tasks are throlled and not
+        allowed to run until the next period starts. The default value for
+        all control groups is *-1* which does not limit CPU usage.
+
+       ``cpu.cfs_period_us``
+        A period of time. The default value is 100_000.
+
+       ``cpu.shares``
+        Defines a share of CPU resources available to each control group.
+        The default value is 1024. For example, if you assign *512* to one
+        process and *1024* to other process, the CPU usage will be
+        assigned with 1:2 ratio. 
+
+
+.. _cgroups-configure:
+
+Configure control groups
+++++++++++++++++++++++++
+
+You can configure ``cgroups`` for multiple nodes before you deploy an
+OpenStack environment by editing the ``settings_1.yaml`` file on the
+Fuel Master node.
+
+**To configure control groups:**
+
+#. Log in to the Fuel Master node CLI.
+#. Open the ``settings_1.yaml`` file for editing.
+#. Add the ``cgroups`` section.
+
+   **Example:**
+
+   .. code-block:: console
+ 
+      editable:
+       cgroups:
+         metadata:
+           always_editable: true
+           group: general
+           label: Cgroups conguration for services
+           restrictions:
+             - action: hide
+               condition: 'true'
+               weight: 90
+       mysqld:
+         label: mysqld
+         type:  text
+         value: '{"memory":{"memory.swappiness":0,
+                "memory.soft_limit_in_bytes":"%5, 10, 20"}}}'
+       rabbitmq:
+         label: rabbitmq
+         type:  text
+         value: '{"memory":{"memory.swappiness":0}}'
+       cinder:
+         label: cinder
+         type:  text
+         value: '{"blkio":{"blkio.weight":500}}'
+       keystone:
+         label: keystone
+         type:  text
+         value: '{"cpu":{"cpu.shares":70}}'
+       neutron:
+         label: neutron
+         type:  text
+         value: '{"memory":{"memory.soft_limit_in_bytes":"%total, min, max"}}'
+
+#. Save and exit.
+
+
+.. _cgroups-modify-multiple-nodes:
+
+Modify control groups for multiple nodes
+++++++++++++++++++++++++++++++++++++++++
+
+You can modify ``cgroups`` for a particular process on multiple nodes by
+creating a separate file with the ``cgroups`` configuration, uploading
+the new configuration file to fuel, and restarting the ``cgroups`` task.
+
+**To modify control groups on multiple nodes:**
+
+#. Log in to the Fuel Master node CLI.
+#. Open the ``settings.yaml`` file for editing.
+#. Copy the ``cgroups`` section.
+#. Create a blank ``.yaml`` file.
+#. Paster the copied ``cgroups`` configuration into the file.
+#. Edit as required.
+#. Upload the new configuration file to Fuel:
+
+   .. code-block:: console
+
+   fuel settings --dir <path_to_new_yaml> --env-id <env_id> --upload
+
+#. Restart the ``cgroups`` task:
+
+   .. code-block:: console
+
+      fuel node --node-id <node_1> <node_2> <node_3> --tasks cgroups
+
+
+.. _cgroups-modify-single-node:
+
+Modify control groups for a single node
++++++++++++++++++++++++++++++++++++++++
+
+If you want to change the control group settings on a single node, you must
+edit the control groups configuration file ``/etc/cgconfig.conf``, as well
+as create, if needed, and configure the ``/etc/cgrules.conf`` file.
+
+**To modify control groups for a single node:**
+
+#. Log in to the CLI of corresponding node.
+#. Open the ``/etc/cgconfig.conf`` file for editing.
+#. Apply the required changes.
+#. Save and exit.
+#. If needed, create the ``/etc/cgrules.conf`` file.
+#. Add the corresponding parameters to the ``/etc/cgrules.conf`` file.
+
+   **Example:**
+
+   TBA
+
+#. Restart ``cgconfigparser``:
+
+   .. code-block:: console
+
+      TBA
+
+#. For each running process, type:
+
+   .. code-block:: console
+
+      cgclassify 'pidof -x <name_of_process>'
+
+#. Restart ``cgrulesengd``.
