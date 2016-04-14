@@ -1,0 +1,11 @@
+* Added the capability to forcefully update the settings and apply
+  the changes to an operational environment by adding an optional
+  ``--force`` flag  to the following commands:
+
+  .. code-block:: console
+
+   fuel settings --env <env_id> --upload --force
+   fuel env --env <env_id> --attributes --upload --force
+   fuel deploy-changes --env <env_id> --force
+
+  See `LP1540434 <https://bugs.launchpad.net/fuel/+bug/1540434>`_.
