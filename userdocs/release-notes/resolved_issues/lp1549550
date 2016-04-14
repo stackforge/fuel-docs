@@ -1,0 +1,3 @@
+The empty gateway parameter ``gateway:""`` is now correctly processed
+by netconfig.
+See `LP1549550 <https://bugs.launchpad.net/fuel/+bug/1549550>`__.
