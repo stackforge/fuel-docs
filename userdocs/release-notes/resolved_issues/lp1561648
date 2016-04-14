@@ -1,0 +1,4 @@
+The order of tasks in the YAML file in ``/openstack-network/`` is
+now strict to avoid incorrect functioning when introducting new
+elements.
+See `LP1561648 <https://bugs.launchpad.net/fuel/+bug/1561648>`__.
