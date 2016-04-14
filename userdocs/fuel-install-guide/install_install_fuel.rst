@@ -13,10 +13,7 @@ Fuel web UI or Fuel CLI. The Fuel Master node provisions the dedicated Fuel
 Slave nodes with the selected operating system, OpenStack or other
 components and roles when you deploy an OpenStack environment.
 
-If you install Fuel on VMware vSphere, see: : ref: `Installing Fuel on VMware¬
-vSphere`.¬
-¬
-If you install Fuel for testing purposes, see: : ref: `Fuel QuickStart Guide`.
+If you install Fuel on VMware vSphere, see: :ref:`vsphere_intro`.
 
 This section includes the following topics:
 
