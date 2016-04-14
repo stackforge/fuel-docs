@@ -1,0 +1,6 @@
+* Enabled the user to specify the disk on which to install
+  the Fuel Master node and whether to format the disk before
+  the installation or not by passing the ``installdrive`` and
+  ``forceformat`` parameters while configuring installation
+  with the Fuel installation menu. See
+  `LP1535712 <https://bugs.launchpad.net/fuel/+bug/1535712>`__.
