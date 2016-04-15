@@ -27,6 +27,7 @@ This section includes the following topics:
    configure-environment/add-label.rst
    configure-environment/change-roles.rst
    configure-environment/change-hostname-slave-nodes.rst
+   configure-environment/select-bootable-device.rst
    configure-environment/network-settings.rst
    configure-environment/nic-bonding-ui.rst
    configure-environment/selectable-offload.rst
@@ -35,4 +36,5 @@ This section includes the following topics:
    configure-environment/customize-partitions.rst
    configure-environment/settings.rst
    configure-environment/dns-ntp-support.rst
+   configure-environment/configure-multipath.rst
 
