@@ -1,3 +1,0 @@
-Added possibility to control restries count for Puppet-based
-tasks. See `example <https://review.openstack.org/#/c/222149/4/fuel_plugin_example_v3/tasks.yaml>`__.
-See `LP1457794 <https://bugs.launchpad.net/fuel/+bug/1457794>`__.

@@ -1,0 +1,3 @@
+* Nodes do not enter the ``error`` state when running :command:`puppet apply`
+  and detecting other Puppet instances.
+  See `LP1552805 <https://bugs.launchpad.net/fuel/+bug/1552805>`__.

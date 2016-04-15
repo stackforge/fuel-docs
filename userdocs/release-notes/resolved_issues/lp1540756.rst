@@ -1,0 +1,3 @@
+* Enabled ``compute-vmware`` and ``cinder-vmware`` roles combination
+  for the same node.
+  See `LP1540756 <https://bugs.launchpad.net/fuel/+bug/1540756>`__.

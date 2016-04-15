@@ -1,3 +1,3 @@
  * Introduced a feature that allows specifying the order of network
    templates execution for a deployment. See
-  `LP1540374 <https://bugs.launchpad.net/fuel/+bug/1540374>`_.
+   `LP1540374 <https://bugs.launchpad.net/fuel/+bug/1540374>`_.
