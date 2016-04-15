@@ -1,0 +1,3 @@
+* Added an ability to connect to virtual machines in an OpenStack environment
+  integrated with VMware vSphere through the VNC client.
+  See `LP1511422 <https://bugs.launchpad.net/fuel/+bug/1511422>`__.

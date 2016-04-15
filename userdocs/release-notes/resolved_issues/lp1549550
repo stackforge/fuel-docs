@@ -1,3 +1,0 @@
-You can now allow removing the default gateway by overriding it
-as an emprty string.
-See `LP1549550 <https://bugs.launchpad.net/fuel/+bug/1549550>`__.
