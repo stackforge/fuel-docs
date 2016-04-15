@@ -35,4 +35,5 @@ This section includes the following topics:
    configure-environment/customize-partitions.rst
    configure-environment/settings.rst
    configure-environment/dns-ntp-support.rst
+   configure-environment/multipath.rst
 
