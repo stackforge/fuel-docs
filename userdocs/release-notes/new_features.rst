@@ -25,6 +25,30 @@ This section lists these improvements:
   This further enables Fuel to provide the lifecycle management features such
   as :guilabel:`Unlocked Settings Tab`.
 
+* Fuel plugins can now be managed through the Fuel web UI in
+  :guilabel:`Unlocked Settings Tab`:
+
+  * You can install plugins through the Fuel web UI.
+  * Plugins can insert tasks in deployment graphs.
+  * You can now change the settings of a plugin if supported. Consult with
+    the plugin developer if not sure.
+
+* Fuel now stores detailed information about all deployments. You can download
+  the actual cluster settings, network configuration, and serialized cluster
+  data.
+
+* You can now execute a particular deployment graph with the ability to merge
+  it with the existing deployment graphs of the upstream master release.
+  This allows you to implement complex orchestrated workflows -- bugfixes
+  application, reference architecture altering, or even upgrades.
+
+* Fuel now supports lifecycle management tasks based on the history of
+  cluster states. This data-driven feature allows the deployment engineers
+  and plugin developers that use Fuel library deployment tasks to introduce
+  expressions that can be computed within the context of cluster configuration.
+  You can now control the tasks assignment and execution depending on the
+  configuration or changes in the configuration.
+
 * All deployment tasks that Fuel uses when configuring OpenStack are now
   idempotent. This enables the lifecycle management features that require
   re-running of deployment tasks with the updated input data in the
