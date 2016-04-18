@@ -53,3 +53,9 @@ This section lists these improvements:
   or a subset of nodes without having to re-deploy or re-provision the entire
   cloud environment.
   See `blueprint <https://blueprints.launchpad.net/fuel/+spec/allow-choosing-nodes-for-provisioning-and-deployment>`__.
+
+* Enabled control groups management. OpenStack operators can now configure
+  resource utilization thresholds for the OpenStack services and underlying
+  software components using ``cgroups``. Specifying optimal values helps
+  to increase performance and reliability of your cloud.
+  See `blueprint <https://blueprints.launchpad.net/fuel/+spec/cgroups>`__
