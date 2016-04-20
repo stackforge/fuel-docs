@@ -36,11 +36,14 @@ This section lists these improvements:
 * Fuel now stores detailed information about all deployments. You can download
   the actual cluster settings, network configuration, and serialized cluster
   data.
+  See :ref:`deployment-history` and :ref:`deployment-information`.
 
 * You can now execute a particular deployment graph with the ability to merge
   it with the existing deployment graphs of the upstream master release.
   This allows you to implement complex orchestrated workflows -- bugfixes
   application, reference architecture altering, or even upgrades.
+
+  See :ref:`custom-graph`.
 
 * Fuel now supports lifecycle management tasks based on the history of
   cluster states. This data-driven feature allows the deployment engineers
@@ -48,6 +51,8 @@ This section lists these improvements:
   expressions that can be computed within the context of cluster configuration.
   You can now control the tasks assignment and execution depending on the
   configuration or changes in the configuration.
+
+  See :ref:`data-driven`.
 
 * All deployment tasks that Fuel uses when configuring OpenStack are now
   idempotent. This enables the lifecycle management features that require
@@ -82,4 +87,4 @@ This section lists these improvements:
   resource utilization thresholds for the OpenStack services and underlying
   software components using ``cgroups``. Specifying optimal values helps
   to increase performance and reliability of your cloud.
-  See `blueprint <https://blueprints.launchpad.net/fuel/+spec/cgroups>`__.
+  See :ref:`cgroups-intro`.
