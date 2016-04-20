@@ -22,7 +22,7 @@ To get the information on a deployment task:
   .. code-block:: console
 
      fuel deployment-tasks --task-id <task-id> --statuses ready, pending --nodes 1,2
-     fuel2 task history show <task-id> --nodes 3 --statuses error skipped 
+     fuel2 task history show <task-id> --nodes 3 --statuses error skipped
 
   where <task-id> is the ID of the deployment task.
 
@@ -32,4 +32,4 @@ To get the information on a deployment task:
              The commands ``fuel deployment-tasks`` and
              ``fuel2 task history show`` show the deployment tasks
              running on nodes; for example, database, upload_configuration,
-            hiera, and so on.
+             hiera, and so on.
