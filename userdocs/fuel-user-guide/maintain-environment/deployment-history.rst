@@ -32,4 +32,4 @@ To get the information on a deployment task:
              The commands ``fuel deployment-tasks`` and
              ``fuel2 task history show`` show the deployment tasks
              running on nodes; for example, database, upload_configuration,
-            hiera, and so on.
+             hiera, and so on.
