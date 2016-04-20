@@ -16,3 +16,7 @@ This section includes the following topics:
 
    maintain-environment/rollback-ug.rst
    maintain-environment/use-shotgun.rst
+   maintain-environment/custom-graph.rst
+   maintain-environment/data-driven.rst
+   maintain-environment/deployment-history.rst
+   maintain-environment/deployment-information.rst
