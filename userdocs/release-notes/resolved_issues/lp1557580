@@ -1,3 +1,0 @@
-Fixed the issue with the double allocation of Admin network to
-NIC when using multiple node groups.
-See `LP1557580 <https://bugs.launchpad.net/fuel/+bug/1557580>`__.

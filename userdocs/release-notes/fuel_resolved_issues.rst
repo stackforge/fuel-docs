@@ -49,9 +49,9 @@ project.
   FQDN in cases when Ceph was deployed with RadosGW.
   See `LP1540133 <https://bugs.launchpad.net/fuel/+bug/1540133>`_.
 
- * Introduced a feature that allows specifying the order of network
-   templates execution for a deployment. See
-   `LP1540374 <https://bugs.launchpad.net/fuel/+bug/1540374>`_.
+* Introduced a feature that allows specifying the order of network
+  templates execution for a deployment. See
+  `LP1540374 <https://bugs.launchpad.net/fuel/+bug/1540374>`_.
 
 * Added the capability to forcefully update the settings and the
   attributes of an environment in the operational state by
