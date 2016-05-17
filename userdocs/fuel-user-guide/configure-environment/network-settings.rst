@@ -69,3 +69,4 @@ to perform the following checks:
    - :ref:`nic-bonding-ui`
    - :ref:`selectable-offload`
    - :ref:`map-logical-to-physical`
+   - :ref:`ug-network`

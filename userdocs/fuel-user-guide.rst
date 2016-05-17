@@ -23,3 +23,4 @@ Fuel User Guide
    fuel-user-guide/plugins/hot-plugable.rst
    fuel-user-guide/file-ref.rst
    fuel-user-guide/cli.rst
+   fuel-user-guide/troubleshooting.rst
