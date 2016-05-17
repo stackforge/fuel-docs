@@ -14,8 +14,12 @@ environment with new parameters.
 #. In the Fuel web UI, click the :guilabel:`Settings` tab.
 #. Reconfigure the OpenStack settings as required:
 
-   * To modify the OpenStack environment settings, see `settings-ug`.
+   * To modify the OpenStack environment settings, see :ref:`settings-ug`.
    * To modify network settings, see :ref:`network-settings-ug`.
+
+     .. seealso::
+
+        * :ref:`ug-network`
 
 #. Click :guilabel:`Save Settings`.
 
