@@ -33,6 +33,7 @@ This section includes the following topics:
    configure-environment/map-logical-to-physical-nic.rst
    configure-environment/verify-networks.rst
    configure-environment/customize-partitions.rst
+   configure-environment/config-drive-format.rst
    configure-environment/settings.rst
    configure-environment/dns-ntp-support.rst
 
