@@ -3,7 +3,7 @@
 Use the Fuel CLI
 ================
 
-Using the Fuel Command Line Interface (CLI) you can:
+Using the Fuel Command Line Interface (CLI), you can:
 
 * Operate your OpenStack environments using Fuel text commands, as well as
   using standard Linux commands.
@@ -11,8 +11,8 @@ Using the Fuel Command Line Interface (CLI) you can:
   modify using the Fuel Web UI.
 
 .. warning::
-   We do not recommend to use Fuel CLi for unexperienced users.
-   Fuel CLI may break your environment if not used carefully.
+   We recommend using Fuel CLI only to experienced users as it may break
+   your environment if not used carefully.
 
 Modifications that you make using the Fuel CLI take precedence over the
 settings applied from the Fuel Web UI. If a change has been applied using
@@ -36,6 +36,7 @@ This section includes the following topics:
    cli/cli_node_group.rst
    cli/cli_roles.rst
    cli/cli_plugins.rst
+   cli/cli_graphs.rst
    cli/cli_config_openstack.rst
    cli/cli_config_openstack_services_workflow.rst
    cli/cli_change_ip_range.rst
