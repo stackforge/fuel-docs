@@ -3,7 +3,8 @@
 Use the Fuel CLI
 ================
 
-Using the Fuel Command Line Interface (CLI), you can:
+The Fuel CLI is a command-line interface for Fuel that installs automatically
+when you install Fuel. Using the Fuel CLI you can:
 
 * Operate your OpenStack environments using Fuel text commands, as well as
   using standard Linux commands.
@@ -25,6 +26,7 @@ This section includes the following topics:
 
    cli/cli_acronyms.rst
    cli/cli_basic_usage.rst
+   cli/cli_client_config_file.rst
    cli/cli_management.rst
    cli/cli_environment.rst
    cli/cli_deploy.rst
