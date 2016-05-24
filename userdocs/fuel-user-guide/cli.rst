@@ -25,6 +25,7 @@ This section includes the following topics:
 
    cli/cli_acronyms.rst
    cli/cli_basic_usage.rst
+   cli/cli_client_config_file.rst
    cli/cli_management.rst
    cli/cli_environment.rst
    cli/cli_deploy.rst
