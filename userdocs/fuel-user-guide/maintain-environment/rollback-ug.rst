@@ -10,13 +10,54 @@ a node to its original state (e.g. the state before the node failed).
 This can be used to revert changes during a failed upgrade or other
 node malfunction.
 
-The rollback is done in two major steps:
+The rollback is done in five major steps:
 
+#. Maintenance mode -- disable scheduling of new VMs.
+#. Shutting the VMs off. Alternatively, live migrating the VMs.
 #. Partition preservation -- prevent the node redeployment process
    from deleting data on the partition. This way you will not have to
    manually back up and restore the data to perform the rollback.
-
 #. Node reinstallation -- restore the node to its original state.
+#. Enabling the nova-compute service.
+
+Maintenance mode
+----------------
+
+Disable the nova-compute service to prevent scheduling of new VMs on this
+nova-compute instance:
+
+.. code-block:: console
+
+   $ nova service-disable <host> nova-compute
+
+Shutting the VMs off
+--------------------
+
+To shut off all the VMs running on the node to be re-installed, use the
+following command:
+
+.. code-block:: console
+
+   $ nova stop [vm-name]
+
+Live migrating the VMs
+----------------------
+
+Alternatively to shutting off, live migrate the VMs: 
+
+* Manually live migrate instances to other hosts when using shared storage for
+  instance disk images:
+  
+  .. code-block:: console
+  
+     $ nova live-migration <instance>
+     
+* Manually live migrate instances to other hosts when not using shared storage
+  for instance disk images:
+  
+  .. code-block:: console
+  
+     $ nova live-migration --block-migrate {instance} <host>
 
 Partition preservation
 ----------------------
@@ -181,3 +222,23 @@ Reduced Footprint feature enabled.
 
    where <NODE_ID> points to a specific node identified by its ID
    (a number) that you can get by issuing the ``fuel nodes`` command.
+
+Enabling nova-compute
+---------------------
+
+Enable the nova-compute service:
+
+.. code-block:: console
+
+   $ nova service-enable <host> nova-compute
+   
+If you did not perform the live migration, start the VMs that are in the
+``SHUTOFF`` status:
+
+.. code-block:: console
+
+   $ nova start [vm-name]
+
+.. seealso::
+
+   * `Planned Maintenance <http://docs.openstack.org/ops-guide/ops_maintenance_compute.html#planned-maintenance>`_
