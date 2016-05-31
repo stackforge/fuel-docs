@@ -12,9 +12,10 @@ in the Fuel UI or CLI.
 This section includes the following topics:
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 1
 
    maintain-environment/rollback-ug.rst
+   maintain-environment/reinstall-node.rst
    maintain-environment/use-shotgun.rst
    maintain-environment/custom-graph.rst
    maintain-environment/data-driven.rst
