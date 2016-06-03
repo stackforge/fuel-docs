@@ -39,3 +39,13 @@ interact with each other.
    devdocs/buildsystem
    devdocs/infra
    devdocs/packaging
+
+Plugin documentation
+~~~~~~~~~~~~~~~~~~~~
+
+Learn how to develop and work with Fuel plugins
+
+.. toctree::
+   :maxdepth: 1
+
+   plugindocs/fuel-plugin-sdk-guide
