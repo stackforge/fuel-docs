@@ -18,7 +18,7 @@ available in the Fuel CLI.
      - Command
      - Example
    * - Install a Fuel plugin from an ``.fp`` package.
-     - `` fuel plugins --install <fuel-plugin-file>``
+     - ``fuel plugins --install <fuel-plugin-file>``
      -
    * - Install a Fuel plugin from an ``.rpm`` package.
      - ``yum install <fuel-plugin-file>``
@@ -52,5 +52,5 @@ available in the Fuel CLI.
           ``.fp`` packages. For example, you can only upgrade a Fuel plugin
           installed from an ``.rpm`` package from version 
           1.0.0 to 1.0.1.
-     - fuel plugins --update <fuel-plugin-file>
+     - ``fuel plugins --update <fuel-plugin-file>``
      -

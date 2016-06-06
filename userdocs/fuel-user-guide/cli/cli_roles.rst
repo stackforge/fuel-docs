@@ -74,7 +74,7 @@ available in the Fuel CLI.
               swift         | 17
 
    * - Update the role data
-     - `` fuel role --rel <release_id> --update --file <file>``
+     - ``fuel role --rel <release_id> --update --file <file>``
      - ::
 
           fuel role --rel <2> --update --file <swift.yaml>
