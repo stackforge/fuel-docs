@@ -152,14 +152,15 @@ The requirements for Public, Storage, and Management networks are:
 
 Neutron L2 and L3 requirements are:
 
-* Each project's network requires one unique VLAN ID.
-* Internal network must be isolated from both private and public networks
-  for security reasons.
+* Each project's network requires one unique VLAN ID (using VLAN segmentation) or
+  unique segmentation ID (using GRE or VxLAN)
+* Admin project network is isolated from both private and public networks for
+  security reasons.
 * For floating network each defined project, including the Admin project,
   requires one IP address from the floating IP address range.
   This IP address goes to the virtual interface of the project's virtual router.
-* Each VM instance connected to the external network requires one IP address
-  from the floating IP range.
+* Each VM instance connected directly to the external network requires one IP
+  address from the floating IP range.
 * The floating IP address range should not intersect with the Public network
   address ranges.
 * Specify addresses for the guest OS DNS servers if you do not want to use
