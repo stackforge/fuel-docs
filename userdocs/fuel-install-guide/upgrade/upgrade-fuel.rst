@@ -34,13 +34,13 @@ of Fuel will remain operational.
 
    .. code-block:: console
 
-     octane fuel-backup --to <path-to-archive> --admin-password <admin-password>
+     octane fuel-backup --to <path-to-archive>
 
    **Example:**
 
    .. code-block:: console
 
-    $ octane fuel-backup --to /tmp/fuel-backup.7.0.tar.gz --admin-password admin
+    $ octane fuel-backup --to /tmp/fuel-backup.7.0.tar.gz
 
 #. Back up package repositories and other binary artifacts from the Fuel
    Master node:
