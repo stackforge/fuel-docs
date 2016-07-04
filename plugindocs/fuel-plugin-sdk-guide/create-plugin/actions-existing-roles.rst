@@ -250,5 +250,5 @@ See also `Deployment Tasks on Fuel Wiki <https://wiki.openstack.org/wiki/Fuel/Pl
 .. toctree::
    :maxdepth: 3
 
-   create-plugin/actions-existing-roles/deployment-stages.rst
-   create-plugin/actions-existing-roles/skip-core-tasks.rst
+   actions-existing-roles/deployment-stages.rst
+   actions-existing-roles/skip-core-tasks.rst
