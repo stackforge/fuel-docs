@@ -1,11 +1,8 @@
-.. raw:: pdf
-
-   PageBreak oneColumn
-
 .. _upgrade_intro:
 
+============
 Upgrade Fuel
-~~~~~~~~~~~~
+============
 
 You can upgrade the Fuel Master node to the latest Fuel version.
 
@@ -78,8 +75,10 @@ This section includes the following topics.
 .. toctree::
    :maxdepth: 3
 
-   upgrade/upgrade-fuel
    upgrade/upgrade-internals
+   upgrade/backup-fuel
+   upgrade/restore-fuel
+   upgrade/upgrade-fuel
    upgrade/upgrade-local-repo
    upgrade/upgrade-apply-patches
 
