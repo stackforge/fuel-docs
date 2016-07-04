@@ -28,7 +28,7 @@ Like plugin tasks and unlike plugin settings, role definitions are affected by
 the :command:`fuel --sync`` command and can be easily updated.
 
 To verify that your new role is defined and can be assigned to new nodes use
-the button :guilabel:`Add nodes` in the :guilable:`Nodes` UI tab:
+the button :guilabel:`Add nodes` in the :guilabel:`Nodes` UI tab:
 url ``http://<fuel ip>:8000/#cluster/<cluster id>/nodes/add``. 
 
 .. note:: Keep in mind that a plugin should be enabled for its roles to appear

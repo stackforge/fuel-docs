@@ -10,7 +10,7 @@ conditions, and override the core task settings.
 .. toctree::
    :maxdepth: 3
 
-   create-plugin/plugin-settings/add-settings.rst
-   create-plugin/plugin-settings/settings-restrictions.rst
-   create-plugin/plugin-settings/task-conditions.rst
-   create-plugin/plugin-settings/override-core-settings.rst
+   plugin-settings/add-settings.rst
+   plugin-settings/settings-restrictions.rst
+   plugin-settings/task-conditions.rst
+   plugin-settings/override-core-settings.rst

@@ -140,7 +140,7 @@ browser's cache.
           cache before trying to debug issues with the Fuel web UI.
 
 Before the deployment starts, Astute uploads all settings to the the
-``/etc/astute.yam``l file on each of the target nodes. This file contains
+``/etc/astute.yaml`` file on each of the target nodes. This file contains
 the section for the plugin:
 
 .. code-block:: ini
@@ -198,7 +198,7 @@ Ruby:
    glanced = hiera.lookup 'glance', {} , {}, nil, :hash 
    nodes_array = hiera.lookup 'nodes', [], {}, nil, :array
 
-Use :command:`hiera <plugin name>' to verify all of the plugin settings
+Use :command:`hiera <plugin name>` to verify all of the plugin settings
 from the shell prompt on a target node:
 
 .. code-block:: console

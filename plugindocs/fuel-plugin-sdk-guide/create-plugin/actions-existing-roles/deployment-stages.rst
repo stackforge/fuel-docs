@@ -46,7 +46,7 @@ to
           format using the command
           :command:`fuel graph --env 1 --download > graph.gv`. After that you
           can generate the picture in the PNG format from it, using the
-          command :command:`fuel graph --render graph.gv --tred; ensure you
+          command :command:`fuel graph --render graph.gv --tred`, ensure you
           install additional packages to the Fuel Master node with the
           following commands:
 
