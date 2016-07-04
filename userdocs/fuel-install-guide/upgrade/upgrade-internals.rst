@@ -13,15 +13,15 @@ modules:
   #. Installs a package and all the required dependencies such as
      Puppet manifests, bootstrap images, provisioning images etc.
 
-* **Docker engine:**
+.. * **Docker engine:**
 
-  #. Points the supervisor to a new directory with the configuration
-     files. No containers are started by the supervisor at this time.
-  #. Stops old containers.
-  #. Uploads new Docker images.
-  #. Runs containers one by one.
-  #. Generates new supervisor configuration files.
-  #. Verifies the services running in the containers.
+   #. Points the supervisor to a new directory with the configuration
+      files. No containers are started by the supervisor at this time.
+   #. Stops old containers.
+   #. Uploads new Docker images.
+   #. Runs containers one by one.
+   #. Generates new supervisor configuration files.
+   #. Verifies the services running in the containers.
 
 * **OpenStack engine:**
 
