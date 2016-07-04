@@ -17,7 +17,6 @@ Before you read this document, you must do the following:
 
 #. Install Fuel 8.0. See :ref:`fuel-install-guide`.
 #. Update the Fuel Master node to Maintenance Update 1.
-   See :ref:`upgrade_apply_patches`.
 #. Deploy an OpenStack environment with one controller and one compute node.
    See :ref:`create-env-ug`.
 
