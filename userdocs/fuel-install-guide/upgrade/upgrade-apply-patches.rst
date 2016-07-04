@@ -1,7 +1,8 @@
 .. _upgrade_apply_patches:
 
+=============
 Apply patches
--------------
+=============
 
 You can apply only the patches you need one by one or you can
 apply all accumulated patches in one go.
@@ -49,12 +50,14 @@ the upgrade packages from these repositories.
 Patch the Fuel Master node
 ++++++++++++++++++++++++++
 
-#. Back up your data with dockerctl backup. This will save the data
-   to ``/var/backup/fuel/``.
-#. Run ``yum update``.
-#. Run ``dockerctl destroy all``.
-#. Run ``dockerctl start all``.
-#. Wait for the new containers deployment to finish.
+#. Back up your data using the ``octane`` script and copy backup archives
+   outside of the Fuel Master node as described in :ref:`back-up-fuel`.
+
+#. Update the Fuel Master node by typing:
+
+   .. code-block:: console
+
+      yum update
 
 Patch an Ubuntu slave node
 ++++++++++++++++++++++++++
@@ -85,8 +88,6 @@ granular task so that Fuel Puppet changes take effect.
    The tasks rsync_core_puppet, hiera, and globals are required for
    processing any Puppet changes.
 
-**Verify a patch:**
-
 Verify a patch on the Fuel Master node
 ++++++++++++++++++++++++++++++++++++++
 
@@ -95,10 +96,10 @@ To verify the packages on the Fuel Master node:
 #. Log in to the Fuel Master node CLI.
 #. Type:
 
-::
+   ::
 
-   yum clean expire-cache
-   yum -y update
+     yum clean expire-cache
+     yum -y update
 
 Verify a patch on a Fuel slave node
 +++++++++++++++++++++++++++++++++++
@@ -108,11 +109,11 @@ To verify the packages are up-to-date on the Fuel Slave nodes:
 #. Log in to the Fuel Master node CLI.
 #. Update the list of available packages::
 
-      apt-get update
+     apt-get update
 
 #. Update all packages::
 
-      apt-get dist-upgrade
+     apt-get dist-upgrade
 
 #. Log in to the Fuel Master node GUI:
 #. Click :guilabel:`Support`.
@@ -125,11 +126,6 @@ To verify the packages are up-to-date on the Fuel Slave nodes:
 
    Additionally, you can analyze the ``ubuntu_repo_list.txt`` file to verify
    the repositories.
-
-**Roll back a patch:**
-
-.. note::
-   The rollback instructions listed here are for advanced administrators.
 
 Roll back the Fuel Master node
 ++++++++++++++++++++++++++++++
