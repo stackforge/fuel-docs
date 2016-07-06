@@ -1,11 +1,11 @@
 
 .. _install-plugin-builder:
 
-Install Fuel Plugin Builder
----------------------------
+Install Fuel Plugin Builder on Fuel Master Node
+-----------------------------------------------
 
-You must install the Fuel Plugin Builder on the Fuel Master node.
-You must use the Fuel Master node as the build environment.
+You may install the Fuel Plugin Builder on the Fuel Master node.
+You may use the Fuel Master node as the build environment.
 
 **To install the Fuel Plugin Builder**
 
@@ -65,3 +65,23 @@ You must use the Fuel Master node as the build environment.
       python -c 'import pkg_resources; print pkg_resources.get_distribution("fuel-plugin-builder").version'
   
    This should display ``4.0.0``.
+
+Install Fuel Plugin Builder on Ubuntu 14.04
+-------------------------------------------
+
+You may install the Fuel Plugin Builder on Ubuntu 14.04.
+
+**To install the Fuel Plugin Builder**
+
+#. Install the required packages:
+
+   .. code-block:: console
+
+      sudo apt-get install -y ruby-dev rubygems-integration python-pip rpm createrepo dpkg-dev
+
+#. Install the Fuel Plugin Builder:
+
+   .. code-block:: console
+
+      gem install fpm
+      pip install fuel-plugin-builder
