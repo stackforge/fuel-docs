@@ -53,7 +53,8 @@ to
           .. code-block:: console
 
              yum install graphviz
-             rpm -i https://www.dropbox.com/s/1fyv9p55kslbxkg/python-pygraphviz-1.3-3.rc2.el7-mos1.x86_64.rpm
+             rpm -i https://www.dropbox.com/s/1fyv9p55kslbxkg/
+             python-pygraphviz-1.3-3.rc2.el7-mos1.x86_64.rpm
 
           The key ``--tred`` is optional, but it forces the graph to be
           `transitionally reducted <https://en.wikipedia.org/wiki/Transitive_reduction>`_,
