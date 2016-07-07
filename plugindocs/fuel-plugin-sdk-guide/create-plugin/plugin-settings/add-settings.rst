@@ -136,6 +136,20 @@ Ensure that your browser does not use a stale page cache. In many browsers you
 can use the shortcut SHIFT-F5 (CMD-R in Mac OS) to reload the page skipping
 browser's cache.
 
+.. note:: This is also true for minor version updates. If the new minor
+          version has new UI settings, they will not be present on the
+          :guilabel:`Settings` tab for an existing environments after
+          the update. This is crucial for hot-pluggable plugins, as they
+          are should work on the already deployed environments.
+          To resolve this, do the following:
+
+          #. Create a new environment with the new version of the plugin.
+          #. Download the new plugin's UI settings and the settings
+             for the environment that you update.
+          #. Copy the downloaded settings of the plugin to the existing
+             environment and upload edited settings back to the existing
+             environment.
+
 .. note:: This is always a good idea to ensure that your browser bypasses
           cache before trying to debug issues with the Fuel web UI.
 
