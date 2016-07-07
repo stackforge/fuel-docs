@@ -39,11 +39,11 @@ You must use the Fuel Master node as the build environment.
    in the plugin, even if it is empty or the plugin will not build.
 
    .. note:: If the plugin metadata does not specify the same version of
-            OpenStack as the one supported by the Fuel Master node,
-            on which the plugin is installed, you will not see any
-            plugin fields in the Fuel web UI. To be compatible with Fuel 8.0,
-            the ``metadata.yaml`` file of the plugin must contain the
-            following lines:
+             OpenStack as the one supported by the Fuel Master node,
+             on which the plugin is installed, you will not see any
+             plugin fields in the Fuel web UI. To be compatible with Fuel 8.0,
+             the ``metadata.yaml`` file of the plugin must contain the
+             following lines:
 
             .. code-block:: ini
 
