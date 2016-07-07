@@ -54,7 +54,7 @@ should proceed if there are multiple nodes to be deployed with the role.
 
 The possible values for ``strategy`` are:
 
- * ``one-by-one`` -- all the nodes with the role will be deployed
+* ``one-by-one`` -- all the nodes with the role will be deployed
                      sequentially, one after another
 
 * ``parallel`` -- nodes will be deployed in parallel, at the same time
@@ -104,14 +104,19 @@ with pre-existing roles.
 
             # fuel env create --name test-plugin-role-1 --rel 2
             Environment 'test-plugin-role-1' with id=3 was created!
-            # id=`fuel env | grep test-plugin-role-1 | tr -d  ' ' |cut -d\| -f1`
+            # id=`fuel env | grep test-plugin-role-1 | tr -d  ' ' |cut -d\|
+              -f1`
             # fuel --env $id settings download
-            # awk -F: 'BEGIN {OFS = FS} $1 ~ "fuel-plugin-example" { f=1 }  f && $1 ~
-            "enabled" { f=0; $2=" true"} { print } ' settings_${id}.yaml > tmp && mv
+            # awk -F: 'BEGIN {OFS = FS} $1 ~ "fuel-plugin-example" { f=1 }
+              f && $1 ~
+            "enabled" { f=0; $2=" true"} { print } ' settings_${id}.yaml >
+             tmp && mv
             tmp settings_${id}.yaml
             # fuel --env $id settings upload
-            # fuel --env $id node set --node 10 --role fuel-plugin-example_role
-            Nodes [10] with roles ['fuel-plugin-example_role'] were added to environment 3
+            # fuel --env $id node set --node 10 --role
+              fuel-plugin-example_role
+            Nodes [10] with roles ['fuel-plugin-example_role'] were added
+            to environment 3
             # fuel --env $id deploy-changes
 
          This example does the following: 
