@@ -18,7 +18,8 @@ in the group :guilabel:`Other`:
 
    attributes:
     metadata:
-     # Settings group can be one of "general", "security", "compute", "network",
+     # Settings group can be one of "general", "security", "compute",
+       "network",
      # "storage", "logging", "openstack_services" and "other".
      group: 'other'
     fuel-plugin-example_text:
@@ -113,9 +114,9 @@ To debug the Fuel web UI settings, use one of the following approaches:
 
   .. code-block:: console
 
-     # fuel env create --name settings-test --rel 2 ; read -p 'Press any key
-     to delete test env...' key;  fuel env --delete --env `fuel env | grep
-     settings-test | cut -d\| -f1`
+     # fuel env create --name settings-test --rel 2 ; read -p 'Press\
+     any key to delete test env...' key;  fuel env --delete --env\
+     `fuel env | grep settings-test | cut -d\| -f1`
      Environment 'test2' with id=20 was created!
      Press any key to delete test env...
      Environment with id=20 was deleted
@@ -135,6 +136,20 @@ To debug the Fuel web UI settings, use one of the following approaches:
 Ensure that your browser does not use a stale page cache. In many browsers you
 can use the shortcut SHIFT-F5 (CMD-R in Mac OS) to reload the page skipping
 browser's cache.
+
+.. note:: This is also true for minor version updates. If the new minor
+          version has new UI settings, they will not be present on the
+          :guilabel:`Settings` tab for an existing environment after
+          the update. This is crucial for hot-pluggable plugins, as they
+          should work on the already deployed environments.
+          To resolve this, do the following:
+
+          #. Create a new environment with the new version of the plugin.
+          #. Download the new plugin's UI settings and the settings
+             for the environment that you update.
+          #. Copy the downloaded settings of the plugin to the existing
+             environment and upload edited settings back to the existing
+             environment.
 
 .. note:: This is always a good idea to ensure that your browser bypasses
           cache before trying to debug issues with the Fuel web UI.
@@ -250,7 +265,8 @@ variable ``fuel_plugin_example_packages``, which it will get from hiera:
    notice('MODULAR: fuel-plugin-example/iotop')
 
    $fuel_plugin_example = hiera(fuel-plugin-example, {})
-   $packages = split($fuel_plugin_example['fuel_plugin_example_packages'], '\n')
+   $packages = split($fuel_plugin_example['fuel_plugin_
+   example_packages'], '\n')
 
    package { $packages:
      ensure => 'installed',

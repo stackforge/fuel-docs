@@ -53,7 +53,8 @@ to
           .. code-block:: console
 
              yum install graphviz
-             rpm -i https://www.dropbox.com/s/1fyv9p55kslbxkg/python-pygraphviz-1.3-3.rc2.el7-mos1.x86_64.rpm
+             rpm -i https://www.dropbox.com/s/1fyv9p55kslbxkg/\
+             python-pygraphviz-1.3-3.rc2.el7-mos1.x86_64.rpm
 
           The key ``--tred`` is optional, but it forces the graph to be
           `transitionally reducted <https://en.wikipedia.org/wiki/Transitive_reduction>`_,
@@ -96,9 +97,9 @@ A working example for the main deployment stage:
 
           .. code-block:: console
 
-             fuel node --node <node-id>--start <name of the first task> 
-             --end <name of the last task> [ --skip <list of the tasks that
-             should be skipped> ]
+             fuel node --node <node-id>--start <name of the first task>\ 
+             --end <name of the last task> [ --skip <list of the
+             tasks that should be skipped> ]
 
              For example, to make the task run between the main stage's tasks
              ``firewall`` and ``hosts``:
@@ -120,7 +121,7 @@ A working example for the main deployment stage:
 
           .. code-block:: console
 
-             fuel node --node 2 --start firewall --end hosts --skip
+             fuel node --node 2 --start firewall --end hosts --skip \
              ssl-add-trust-chain ssl-keys-saving ssl-dns-setup
              Started tasks [u'firewall', u'fuel-plugin-example-iotop',
              u'hosts'] for nodes nodes [7].
