@@ -78,9 +78,21 @@ The automatically generated plugin does the following:
 
    .. code-block:: console
 
-      fuel plugins --install fuel-plugin-example/fuel-plugin-example-1.0-1.0.0-1.noarch.rpm
+      fuel plugins --install
+      fuel-plugin-example/fuel-plugin-example-1.0-1.0.0-1.noarch.rpm
 
    The resulting RPM file is what you need to redistribute to the end user.
+
+.. note:: The RPM file resulting from the :command:`fpb --build` command is
+          usually all you need to redistribute the plugin to the end user.
+          But, despite the plugin's package being a standard RPM package, the
+          user must not install it directly using the RPM CLI tool, because
+          the nailgun database cannot be updated with the plugin information
+          this way. The correct method to install Fuel plugins is by using
+          the :command:`fuel plugins` command. The benefit of distributing in
+          RPM format is the ability to automatically upgrade plugins using
+          YUM. Keep in mind that currently Fuel does not support plugin
+          upgrades from one major version to another.
 
 After installing the plugin, you can view it in the Fuel web UI on the
 :guilabel:`Plugins` tab.

@@ -35,23 +35,67 @@ The Fuel Plugin Builder generates three files:
 #. Edit the ``metadata.yaml`` file with the list of required parameters:
 
    * ``name`` -- Name of the plugin that will be in the plugin's RPM filename.
-   * ``title`` -- Human-readable plugin name.
-   * ``version`` -- Plugin version.
-   * ``description`` -- A short description of the plugin purpose. This will
-     be displayed in the Fuel web UI, once the environment with the plugin is
-     deployed.
+     The allowed name characters are lowercase letters, dash ``-``, and
+     underscore ``_``.
+   * ``title`` -- Human-readable plugin name displayed on the Fuel web UI.
+   * ``version`` -- Plugin version. For guidelines, see
+     `Semantic Versioning 2.0.0 <http://semver.org/>`_.
    * ``fuel_version`` -- The Fuel version that your plugin is compatible with.
+     Currently, the builder verifies ``fuel_version`` only against
+     ``package_version``. The ``package_version`` field must be supported
+     by the Fuel versions listed at the bottom of this section.
+     Leaving this field empty will skip the check. For format guidelines,
+     see `_ClassType StrictVersion <http://epydoc.sourceforge.net/stdlib/distutils.version.StrictVersion-class.html>`_.
    * ``licenses`` -- List the licenses under which your plugin can be
      distributed.
    * ``authors`` -- Name of the plugin author. A company or an individual.
    * ``homepage`` -- A link to page with your plugin. This can be your plugin's
      GitHub repository page.
+   * ``is_hotpluggable`` -- State if the plugin is hotpluggable.
+     See :ref:`plugin-hotpluggable`.
    * ``groups`` -- A group to which your plugin belongs on the Fuel web UI.
-   * ``releases: os`` -- A compatible operating system for the plugin.
-   * ``releases: version`` -- A compatible OpenStack version.
-   * ``releases: mode`` -- Plugin mode.
-   * ``releases: deployment_scripts_path`` -- A path for the deployment script.
-   * ``releases: repository_path`` -- A path for the compatible operating system.
-   * ``package_version`` -- Version of the plugin package.
+   * ``releases`` --  A list of OpenStack releases compatible with the plugin.
+
+     * ``releases: os`` -- A compatible Linux distribution for the plugin.
+       The supported values are ``ubuntu`` and ``centos``. Fuel 8.0 supports
+       only Ubuntu.
+     * ``releases: version`` -- A compatible OpenStack release version.
+       Fuel Plugin Builder does not validate the ``releases: version``
+       field; but if there is no OpenStack release with the same version
+       on the Fuel Master, the user cannot enable the plugin. See also a
+       note in :ref:`install-plugin-builder`.
+     * ``releases: mode`` -- A list of compatible cluster deployment modes.
+       Fuel 8.0 supports only the ``haz`` value.
+     * ``releases: deployment_scripts_path`` -- A path in your plugin directory
+       where all the deployment scripts for the release are. The path is
+       relative to the plugin root.
+     * ``releases: repository_path`` -- A path in your plugin directory where
+       all the packages for the release are. Relative to the plugin root.
+
+   * ``package_version`` -- A version of the compatible plugin format.
+     To build your plugin, the Fuel Plugin Builder version must be the same
+     as the version of the compatible plugin format or newer. Each new plugin
+     format version introduces new features and, possibly, deprecates some of
+     the old ones. The Fuel master node must support the specific
+     ``package_version``, otherwise you cannot install the plugin.
 
    See the `metadata.yaml example <https://github.com/openstack/fuel-plugin-openbook/blob/master/metadata.yaml>`_.
+
+It is recommended that you create a directory ``doc`` in your plugin root
+directory and put extensive documentation there.
+
+You can find more information about preparing documentation for Fuel plugins
+on `GitHub <https://github.com/Mirantis/fuel-plugin-docs>`_.
+
+Plugin format: Fuel versions mapping
+------------------------------------
+
+The table below shows the existing plugin format versions and the versions of
+Fuel starting from which they are supported:
+
++---------------+-------+-------+-------+-------+-------+
+| Plugin format | 1.0.0 | 2.0.0 | 3.0.0 | 4.0.0 | 5.0.0 |
++---------------+-------+-------+-------+-------+-------+
+| Fuel          | 6.0   | 6.1   | 7.0   | 8.0   | 9.0   |
++---------------+-------+-------+-------+-------+-------+
+
