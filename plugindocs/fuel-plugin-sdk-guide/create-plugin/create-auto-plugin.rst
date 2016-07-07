@@ -22,47 +22,47 @@ The automatically generated plugin does the following:
 
       fpb --create fuel-plugin-example
 
-  This will generate the following files:
+   This will generate the following files:
 
-  +----------------------------------------------+--------------------------------------------------+
-  | File                                         | Descrption                                       |
-  +==============================================+==================================================+
-  |``components.yaml``                           |Fuel web UI components                            |
-  +----------------------------------------------+--------------------------------------------------+
-  |``deployment_scripts``                        |Directory for the plugin tasks code               |
-  +----------------------------------------------+--------------------------------------------------+
-  |``deployment_scripts/deploy.sh``              |Shell script sample                               |
-  +----------------------------------------------+--------------------------------------------------+
-  |``deployment_tasks.yaml``                     |Definition of plugin tasks                        |
-  +----------------------------------------------+--------------------------------------------------+
-  |``environment_config.yaml``                   |Fuel web UI plugin parameters                     |
-  +----------------------------------------------+--------------------------------------------------+
-  |``fuel-plugin-example-1.0-1.0.0-1.noarch.rpm``|A plugin package created after you build a plugin |
-  +----------------------------------------------+--------------------------------------------------+
-  |``LICENSE``                                   |Standard Apache 2.0 license file                  |
-  +----------------------------------------------+--------------------------------------------------+
-  |``metadata.yaml``                             |Plugin information                                |
-  +----------------------------------------------+--------------------------------------------------+
-  |``network_roles.yaml``                        |Network roles data                                |
-  +----------------------------------------------+--------------------------------------------------+
-  |``node_roles.yaml``                           |Definition of new node roles created by the plugin|
-  +----------------------------------------------+--------------------------------------------------+
-  |``pre_build_hook``                            |Actions to run on plugin build                    |
-  +----------------------------------------------+--------------------------------------------------+
-  |``README.md``                                 |Free-form description of plugin                   |
-  +----------------------------------------------+--------------------------------------------------+
-  |``repositories``                              |Directory for plugin specific packages            |
-  +----------------------------------------------+--------------------------------------------------+
-  |``repositories/centos``                       |Directory for plugin CentOS packages              |
-  +----------------------------------------------+--------------------------------------------------+
-  |``repositories/ubuntu``                       |Directory for plugin Ubuntu packages              |
-  +----------------------------------------------+--------------------------------------------------+
-  |``tasks.yaml``                                |Deprecated, use ``deployment_tasks.yaml`` instead |
-  +----------------------------------------------+--------------------------------------------------+
-  |``volumes.yaml``                              |Mapping between node roles and volume allocation. |
-  |                                              |You can also define new volumes and map them to   |
-  |                                              |the new or existing nodes.                        |
-  +----------------------------------------------+--------------------------------------------------+
+   +----------------------------------------------+--------------------------------------------------+
+   | File                                         | Descrption                                       |
+   +==============================================+==================================================+
+   |``components.yaml``                           |Fuel web UI components                            |
+   +----------------------------------------------+--------------------------------------------------+
+   |``deployment_scripts``                        |Directory for the plugin tasks code               |
+   +----------------------------------------------+--------------------------------------------------+
+   |``deployment_scripts/deploy.sh``              |Shell script sample                               |
+   +----------------------------------------------+--------------------------------------------------+
+   |``deployment_tasks.yaml``                     |Definition of plugin tasks                        |
+   +----------------------------------------------+--------------------------------------------------+
+   |``environment_config.yaml``                   |Fuel web UI plugin parameters                     |
+   +----------------------------------------------+--------------------------------------------------+
+   |``fuel-plugin-example-1.0-1.0.0-1.noarch.rpm``|A plugin package created after you build a plugin |
+   +----------------------------------------------+--------------------------------------------------+
+   |``LICENSE``                                   |Standard Apache 2.0 license file                  |
+   +----------------------------------------------+--------------------------------------------------+
+   |``metadata.yaml``                             |Plugin information                                |
+   +----------------------------------------------+--------------------------------------------------+
+   |``network_roles.yaml``                        |Network roles data                                |
+   +----------------------------------------------+--------------------------------------------------+
+   |``node_roles.yaml``                           |Definition of new node roles created by the plugin|
+   +----------------------------------------------+--------------------------------------------------+
+   |``pre_build_hook``                            |Actions to run on plugin build                    |
+   +----------------------------------------------+--------------------------------------------------+
+   |``README.md``                                 |Free-form description of plugin                   |
+   +----------------------------------------------+--------------------------------------------------+
+   |``repositories``                              |Directory for plugin specific packages            |
+   +----------------------------------------------+--------------------------------------------------+
+   |``repositories/centos``                       |Directory for plugin CentOS packages              |
+   +----------------------------------------------+--------------------------------------------------+
+   |``repositories/ubuntu``                       |Directory for plugin Ubuntu packages              |
+   +----------------------------------------------+--------------------------------------------------+
+   |``tasks.yaml``                                |Deprecated, use ``deployment_tasks.yaml`` instead |
+   +----------------------------------------------+--------------------------------------------------+
+   |``volumes.yaml``                              |Mapping between node roles and volume allocation. |
+   |                                              |You can also define new volumes and map them to   |
+   |                                              |the new or existing nodes.                        |
+   +----------------------------------------------+--------------------------------------------------+
 
 #. Build the automatically generated plugin:
 
@@ -78,9 +78,21 @@ The automatically generated plugin does the following:
 
    .. code-block:: console
 
-      fuel plugins --install fuel-plugin-example/fuel-plugin-example-1.0-1.0.0-1.noarch.rpm
+      fuel plugins --install
+      fuel-plugin-example/fuel-plugin-example-1.0-1.0.0-1.noarch.rpm
 
    The resulting RPM file is what you need to redistribute to the end user.
+
+.. note:: The RPM file resulting from the :command:`fpb --build` command is
+          usually all you need to redistribute the plugin to the end user.
+          But, despite the plugin's package being a standard RPM package, the
+          user must not install it directly using the RPM CLI tool, because
+          the nailgun database cannot be updated with the plugin information
+          this way. The correct method to install Fuel plugins is by using
+          the :command:`fuel plugins` command. The benefit of distributing in
+          RPM format is the ability to automatically upgrade plugins using
+          YUM. Keep in mind that currently Fuel does not support plugin
+          upgrades from one major version to another.
 
 After installing the plugin, you can view it in the Fuel web UI on the
 :guilabel:`Plugins` tab.
