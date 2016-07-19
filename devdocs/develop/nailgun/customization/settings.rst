@@ -12,12 +12,15 @@ with the following attributes::
     toggleable: true
     enabled: false
     weight: 40
+    group: "security"
 
 * *toggleable* defines an ability to enable/disable the whole setting group
   on UI (checkbox control is presented near a setting group label)
 * *enabled* indicates whether the group is checked on the UI
 * *weight* defines the order in which this group is displayed on the tab.
 * *restrictions*: see restrictions_.
+* *group* identifies which subtab on the UI this group of settings will be
+  displayed on.
 
 Other sections of a setting group represent separate settings. A setting
 structure includes the following attributes::
@@ -42,6 +45,7 @@ structure includes the following attributes::
       error: "Invalid data"
     min: 1
     max: 3
+    group: "logging"
 
 * *label* is a setting title that is displayed on UI
 * *weight* defines the order in which this setting is displayed in its group.
@@ -78,6 +82,18 @@ structure includes the following attributes::
   For the "number" type, "max" declares the maximum input number value.
   For the "text_list" and "textarea_list" types, it declares the maximum list length for the
   setting.
+* *group* specifies which subtab on the UI settings/networks page this setting will be
+  displayed on. Inherited from the *metadata* section if not provided.
+  The following values are supported by UI:
+
+  * *general* - Main cluster settings
+  * *security* - Security settings
+  * *compute* - Common compute settings
+  * *network* - Network settings (are collected on the separate "Networks" tab)
+  * *storage* - Storage settings
+  * *logging* - Logging settings
+  * *openstack_services* - OpenStack Services (Additional Components) settings
+  * *other* - Other settings (everything out of the above list)
 
 .. _restrictions:
 
