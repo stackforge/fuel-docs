@@ -58,13 +58,23 @@ settings and proceed to :ref:`install_install_fuel_master_node`.
    |                                      |                                  |
    |                                      | Modify these settings as needed. |
    +--------------------------------------+----------------------------------+
-   | 4. Configure DNS and hostname.       | Configure the DNS and hostname   |
+   | 4. Configure the security settings.  | By default, the network for SSH  |
+   |                                      | access to the Fuel Master node is|
+   |                                      | restricted by the Admin (PXE)    |
+   |                                      | network. You can change it, if   |
+   |                                      | needed, by entering a new network|
+   |                                      | address in the CIDR format. Once |
+   |                                      | applied, SSH access to the Fuel  |
+   |                                      | Master node will be allowed on   |
+   |                                      | the provided network only.       |
+   +--------------------------------------+----------------------------------+
+   | 5. Configure DNS and hostname.       | Configure the DNS and hostname   |
    |                                      | settings, if needed. If your Fuel|
    |                                      | Master node is not connected to  |
    |                                      | the Internet, leave the External |
    |                                      | DNS field blank.                 |
    +--------------------------------------+----------------------------------+
-   | 5. Configure the bootstrap image that| Fuel ISO includes the CentOS     |
+   | 6. Configure the bootstrap image that| Fuel ISO includes the CentOS     |
    |    Fuel will use to discover the Fuel| bootstrap image that Fuel uses   |
    |    Slave nodes through PXE.          | to discover the Fuel Slave nodes.|
    |                                      | Although CentOS is the default   |
@@ -94,21 +104,21 @@ settings and proceed to :ref:`install_install_fuel_master_node`.
    |                                      | For more information, see:       |
    |                                      | :ref:`upgrade_local_repo`.       |
    +--------------------------------------+----------------------------------+
-   | 6. Configure the network time        | To avoid issues with the time    |
+   | 7. Configure the network time        | To avoid issues with the time    |
    |    protocol.                         | settings inconsistency on the    |
    |                                      | Fuel Master node and other       |
    |                                      | servers in your IT environment,  |
    |                                      | verify that the Fuel Master node |
    |                                      | uses correct NTP settings.       |
    +--------------------------------------+----------------------------------+
-   | 7. Change the root password.         | For security reasons, change the |
+   | 8. Change the root password.         | For security reasons, change the |
    |                                      | default root password. Fuel will |
    |                                      | apply this password to all new   |
    |                                      | OpenStack nodes. Existing        |
    |                                      | OpenStack nodes will continue to |
    |                                      | use the old password.            |
    +--------------------------------------+----------------------------------+
-   | 8. Configure network settings using  | You can configure all settings   |
+   | 9. Configure network settings using  | You can configure all settings   |
    |    shell.                            | available on the Fuel Setup      |
    |                                      | screen using shell.              |
    |                                      | Particularly, use shell to       |
