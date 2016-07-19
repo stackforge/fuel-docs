@@ -78,6 +78,17 @@ structure includes the following attributes::
   For the "number" type, "max" declares the maximum input number value.
   For the "text_list" and "textarea_list" types, it declares the maximum list length for the
   setting.
+* *group* specifies how settings are logically groupped together on UI.
+  The following groups are supported by UI:
+
+  * *general* - Main cluster settings
+  * *security* - Security settings
+  * *compute* - Common compute settings
+  * *network* - Network settings (are collected on the separate "Networks" tab)
+  * *storage* - Storage settings
+  * *logging* - Logging settings
+  * *openstack_services* - OpenStack Services (Additional Components) settings
+  * *other* - Other settings (everything out of the above list)
 
 .. _restrictions:
 
