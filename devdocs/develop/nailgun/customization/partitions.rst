@@ -1,3 +1,5 @@
+.. _dev-create-partition:
+
 Creating Partitions on Nodes
 ============================
 
