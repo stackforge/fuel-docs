@@ -58,10 +58,11 @@ settings and proceed to :ref:`install_install_fuel_master_node`.
    |                                      |                                  |
    |                                      | Modify these settings as needed. |
    +--------------------------------------+----------------------------------+
-   | 4. Configure the security settings.  | By default, the network for SSH  |
-   |                                      | access to the Fuel Master node is|
-   |                                      | restricted by the Admin (PXE)    |
-   |                                      | network. You can change it, if   |
+   | 4. Configure the security settings.  | By default, SSH access to the    |
+   |                                      | to the Fuel Master node is       |
+   |                                      | restricted to the Admin (PXE)    |
+   |                                      | network.                         |
+   |                                      | You can change it, if            |
    |                                      | needed, by entering a new network|
    |                                      | address in the CIDR format. Once |
    |                                      | applied, SSH access to the Fuel  |
