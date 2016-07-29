@@ -20,6 +20,7 @@ This section includes the following topics:
 .. toctree::
    :maxdepth: 3
 
+   create-environment/prerequisites-limitations.rst
    create-environment/start-create-env.rst
    create-environment/change-password.rst
 
