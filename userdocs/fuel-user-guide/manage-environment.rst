@@ -17,3 +17,5 @@ This section includes the following sections:
    manage-environment/cgroups/cgroups-modify-single-node.rst
    manage-environment/cgroups/cgroups-example.rst
    manage-environment/role-operations.rst
+   manage-environment/nfv-run.rst
+   manage-environment/enable-experimental-features.rst
