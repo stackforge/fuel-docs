@@ -38,4 +38,4 @@ This section includes the following topics:
    configure-environment/settings.rst
    configure-environment/dns-ntp-support.rst
    configure-environment/configure-multipath.rst
-
+   configure-environment/nfv.rst
