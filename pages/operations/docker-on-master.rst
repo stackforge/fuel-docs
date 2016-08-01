@@ -163,10 +163,10 @@ between containers to operate smoothly:
 Fuel Master architecture changes for Docker
 -------------------------------------------
 
-Starting with Fuel 5.1, in order to enable containerization of the Fuel
-Master's services, several pieces of the Fuel Master node design were changed.
-Most of that change came from Puppet, but below is a list of modifications
-to Fuel to enable Docker:
+In order to enable containerization of the Fuel 5.0 Master's services,
+several pieces of the Fuel Master node design were changed.
+Most of this change came from Puppet,
+but below is a list of modifications to Fuel to enable Docker:
 
 * DNS lookups come from Cobbler container
 * App containers launch in order, but not in a synchronous manner.

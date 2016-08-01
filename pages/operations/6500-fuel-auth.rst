@@ -84,7 +84,7 @@ that Fuel installs in a new :ref:`docker<docker-term>` container on the Fuel Mas
   in the Keystone container.
 
 - Support for storing authentication token in cookies
-  is added in releases 5.1.1 and later;
+  is added in releases 5.1.1 and 6.0;
   this allows the API to be tested from the browser.
 
 - The **keystonemiddleware** python package replaces
@@ -94,7 +94,7 @@ that Fuel installs in a new :ref:`docker<docker-term>` container on the Fuel Mas
   which was extracted from **keystoneclinet.middleware**
   in earlier releases.
 
-Beginning with releases 5.1.1 and later,
+Beginning with releases 5.1.1 and 6.0,
 the user must supply a password
 when upgrading Fuel from an earlier release.
 This password can be supplied on the command line
