@@ -37,6 +37,7 @@ This section includes the following topics:
    cli/cli_nodes.rst
    cli/cli_node_group.rst
    cli/cli_roles.rst
+   cli/cli_nodes_empty_role.rst
    cli/cli_plugins.rst
    cli/cli_graphs.rst
    cli/cli_config_openstack.rst
