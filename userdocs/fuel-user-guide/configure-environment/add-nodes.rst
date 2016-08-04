@@ -43,3 +43,4 @@ For more information, see
    - *System requirements* in *Fuel Installation Guide*
    - :ref:`add-label-ug`
    - :ref:`change-hostname-slave-nodes`
+   - :ref:`cli-nodes-empty-role`
