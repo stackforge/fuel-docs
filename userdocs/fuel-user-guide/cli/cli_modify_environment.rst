@@ -9,7 +9,7 @@ then uploading the configuration files back to the Nailgun
 server. After uploading the files, you must redeploy your OpenStack
 environment.
 
-Before modifying any settings, back up your OpenStack environment 
+Before modifying any settings, back up your OpenStack environment
 configuration.
 
 If you upload any changes for provisioning or deployment operations,
@@ -22,15 +22,26 @@ each node's configuration file and then apply the changes using Fuel CLI.
 You can download the following configurations:
 
 * ``network``
-* ``settings`` 
+* ``settings``
 * ``node --disk``
 * ``node --network``
 * ``provisioning``
 * ``deployment``
 
-.. note::
-   Operations with ``deployment`` and ``provisioning`` can be node
-   specific. For example: ``fuel --env 1 deployment --node-id=1,2``.
+Operations with ``deployment`` and ``provisioning`` can be node
+specific. For example: ``fuel --env 1 deployment --node-id=1,2``.
+
+Download operations generate specific set of files:
+
+* Provisioning facts contain:
+
+  * ``engine.yaml`` with the engine configuration
+  * ``node-<NODE_ID>.yaml`` with per node provisioning details
+
+* Deployment facts contain:
+
+  * ``master.yaml`` with deployment details of the Fuel Master node for a specified cluster
+  * ``<NODE_ID>.yaml`` with per node deployment details
 
 **To modify an OpenStack environment using CLI:**
 
