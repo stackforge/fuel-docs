@@ -29,6 +29,7 @@ This section includes the following topics:
    cli/cli_client_config_file.rst
    cli/cli_management.rst
    cli/cli_environment.rst
+   cli/cli_provision.rst
    cli/cli_deploy.rst
    cli/cli_network.rst
    cli/cli_network_group.rst
