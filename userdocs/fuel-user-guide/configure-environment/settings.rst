@@ -78,11 +78,13 @@ by editing the corresponding configuration files.
                backward compatibility is provided, the system may panic or
                fail in other ways even with this parameter set.
       * - **Security settings**
-        - Modify security access settings, such as TLS for OpenStack public
-          checkpoints, HTTPS for Horizon, SSH Public to access Fuel Slave
-          nodes.
-          You can use a self-signed certificate or upload a pre-generated key
-          and certificate.
+        - * Public TLS
+             Contains settings to enable TLS for OpenStack public
+             endpoints and HTTPS for Horizon.
+          * SSH security
+             Contains settings to restrict SSH service on network and access
+             to the specified range of IP addresses, as well as to enable
+             brute force protection.
       * - **Compute settings**
         - * Hypervisor
              Enables you to modify the previously selected option.
