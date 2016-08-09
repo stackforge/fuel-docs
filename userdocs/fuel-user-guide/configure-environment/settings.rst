@@ -78,11 +78,52 @@ by editing the corresponding configuration files.
                backward compatibility is provided, the system may panic or
                fail in other ways even with this parameter set.
       * - **Security settings**
-        - Modify security access settings, such as TLS for OpenStack public
-          checkpoints, HTTPS for Horizon, SSH Public to access Fuel Slave
-          nodes.
-          You can use a self-signed certificate or upload a pre-generated key
-          and certificate.
+        - **Public TLS**
+
+          * TLS for OpenStack public endpoints
+             Enables TLS termination on HAProxy for OpenStack services.
+          * HTTPS for Horizon
+             Secures access to Horizon enabling HTTPS instead of HTTP.
+
+          * Select source for certificate
+             You can generate a private key with certificate or
+             use the pre-generated ones.
+
+            * Self-signed
+               Generates a private key and certificate to be signed by this key.
+            * I have my own keypair with certificate
+               Uses the pre-generated key and certificate. If selected, you need
+               to specify a certificate and private key data concatenated into a single file.
+
+            .. note::
+
+               You need to enable :guilabel:`TLS for OpenStack public endpoints`
+               first to select a certificate.
+
+          * DNS hostname for public TLS endpoints
+             Your DNS entries should point to this name.
+             Self-signed certificates also use this hostname.
+             The default value is ``public.fuel.local``.
+
+            .. note::
+
+               You need to enable :guilabel:`TLS for OpenStack public endpoints`
+               first to specify a DNS hostname.
+
+          **SSH security**
+
+          * Restrict SSH service on network
+             When enabled, provide at least one working IP address
+             (the Fuel Master node IP is already added).
+             Add new addresses instead of replacing the provided
+             Fuel Master node IP address.
+             When disabled (by default), the admin, management, and storage networks
+             can connect only to the SSH service.
+          * Restrict access to
+             The option sets access restriction to the specified range of IP addresses.
+          * Brute force protection
+             Grants access from all networks (except the provided ones),
+             but Fuel checks the networks against the brute force attack.
       * - **Compute settings**
         - * Hypervisor
              Enables you to modify the previously selected option.
