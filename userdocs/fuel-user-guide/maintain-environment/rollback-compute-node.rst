@@ -57,4 +57,5 @@ before it failed.
 
 .. seealso::
 
+   * :ref:`access_shell`
    * `Planned Maintenance <http://docs.openstack.org/ops-guide/ops_maintenance_compute.html#planned-maintenance>`_
