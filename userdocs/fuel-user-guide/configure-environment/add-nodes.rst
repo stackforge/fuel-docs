@@ -44,3 +44,4 @@ For more information, see
    - :ref:`add-label-ug`
    - :ref:`change-hostname-slave-nodes`
    - :ref:`cli-nodes-empty-role`
+   - :ref:`add-mongodb-ug`

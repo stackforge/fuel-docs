@@ -14,3 +14,4 @@ This section includes the following topics:
    :maxdepth: 3
 
    configure-environment/post-deployment-settings.rst
+   configure-environment/add-mongodb-node.rst
