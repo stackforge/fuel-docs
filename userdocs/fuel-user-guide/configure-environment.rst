@@ -5,7 +5,7 @@
 
 .. _configure-env-ug:
 
-Configure your Environment
+Configure your environment
 ==========================
 
 After you create an OpenStack environment as described in
@@ -24,6 +24,7 @@ This section includes the following topics:
    :maxdepth: 3
 
    configure-environment/add-nodes.rst
+   configure-environment/add-mongodb-node.rst
    configure-environment/add-label.rst
    configure-environment/change-roles.rst
    configure-environment/change-hostname-slave-nodes.rst

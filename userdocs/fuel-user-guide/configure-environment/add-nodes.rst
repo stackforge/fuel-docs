@@ -41,6 +41,7 @@ For more information, see
 .. seealso::
 
    - *System requirements* in *Fuel Installation Guide*
+   - :ref:`add-mongodb-ug`
    - :ref:`add-label-ug`
    - :ref:`change-hostname-slave-nodes`
    - :ref:`cli-nodes-empty-role`
