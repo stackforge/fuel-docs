@@ -23,28 +23,28 @@ defined.
 
 #. Log in to the Fuel Master node.
 #. Edit the ``.yaml`` file with the configuration options of the services that
-   you want to change. 
+   you want to change.
 
    **Example:**
 
-    .. code-block:: yaml
+   .. code-block:: yaml
 
-         configuration:
-           nova_config:
-             DEFAULT/debug:
-               value: True
-             DEFAULT/amqp_durable_queues:
-               value: False
-           keystone_config:
-             DEFAULT/default_publisher_id:
-               ensure: absent
-             DEFAULT/crypt_strength:
-               value: 6000
+        configuration:
+          nova_config:
+            DEFAULT/debug:
+              value: True
+            DEFAULT/amqp_durable_queues:
+              value: False
+          keystone_config:
+            DEFAULT/default_publisher_id:
+              ensure: absent
+            DEFAULT/crypt_strength:
+              value: 6000
 
 #. Upload the ``.yaml`` file:
 
    * To upload the changes for an OpenStack environment:
- 
+
      .. code-block:: console
 
          fuel openstack-config --env <env_id> --upload file.yaml
@@ -53,7 +53,7 @@ defined.
 
      .. code-block:: console
 
-        fuel openstack-config --env <env_id> --role compute \ 
+        fuel openstack-config --env <env_id> --role compute \
         --upload <file.yaml>
 
    * To upload the changes for selected nodes:
