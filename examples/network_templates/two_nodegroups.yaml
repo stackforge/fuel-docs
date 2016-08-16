@@ -1,0 +1,285 @@
+adv_net_template:
+  default:
+    nic_mapping:
+      default:
+        if11: eth0       # admin
+        if12: eth1       # public
+        if13: eth2       # management
+        if14: eth3       # private
+        if15: eth4       # storage
+    templates_for_node_role:
+        controller:
+          - admin
+          - public
+          - management
+          - private
+          - storage
+        compute:
+          - admin
+          - public
+          - management
+          - private
+          - storage
+        cinder:
+          - admin
+          - public
+          - management
+          - private
+          - storage
+    network_assignments:
+        storage:
+          ep: br-storage
+        private:
+          ep: br-prv
+        public:
+          ep: br-ex
+        management:
+          ep: br-mgmt
+        fuelweb_admin:
+          ep: br-fw-admin
+    network_scheme:
+      admin:
+        transformations:
+          - action: add-br
+            name: br-fw-admin
+          - action: add-port
+            bridge: br-fw-admin
+            name: eth0
+        endpoints:
+          - br-fw-admin
+        roles:
+          admin/pxe: br-fw-admin
+          fw-admin: br-fw-admin
+      public:
+        transformations:
+          - action: add-br
+            name: br-ex
+          - action: add-br
+            name: br-floating
+            provider: ovs
+          - action: add-patch
+            bridges:
+            - br-floating
+            - br-ex
+            provider: ovs
+            mtu: 65000
+          - action: add-port
+            bridge: br-ex
+            name: eth1
+        endpoints:
+          - br-ex
+        roles:
+          public/vip: br-ex
+          neutron/floating: br-ex
+          ex: br-ex
+          public: br-ex
+      management:
+        transformations:
+          - action: add-br
+            name: br-mgmt
+          - action: add-port
+            bridge: br-mgmt
+            name: eth2
+        endpoints:
+          - br-mgmt
+        roles:
+          management: br-mgmt
+          mgmt/vip: br-mgmt
+          mgmt/api: br-mgmt
+          mongo/db: br-mgmt
+          keystone/api: br-mgmt
+          neutron/api: br-mgmt
+          neutron/mesh: br-mgmt
+          swift/api: br-mgmt
+          sahara/api: br-mgmt
+          ceilometer/api: br-mgmt
+          cinder/api: br-mgmt
+          glance/api: br-mgmt
+          heat/api: br-mgmt
+          nova/api: br-mgmt
+          nova/migration: br-mgmt
+          murano/api: br-mgmt
+          horizon: br-mgmt
+          mgmt/messaging: br-mgmt
+          mgmt/corosync: br-mgmt
+          mgmt/memcache: br-mgmt
+          mgmt/database: br-mgmt
+          cinder/iscsi: br-mgmt
+          swift/replication: br-mgmt
+          ceph/replication: br-mgmt
+          ceph/radosgw: br-mgmt
+      private:
+        transformations:
+          - action: add-br
+            name: br-prv
+            provider: ovs
+          - action: add-br
+            name: br-aux
+          - action: add-patch
+            bridges:
+            - br-prv
+            - br-aux
+            provider: ovs
+            mtu: 65000
+          - action: add-port
+            bridge: br-aux
+            name: eth3
+        endpoints:
+          - br-prv
+        roles:
+          private: br-prv
+          neutron/private: br-prv
+      storage:
+        transformations:
+          - action: add-br
+            name: br-storage
+          - action: add-port
+            bridge: br-storage
+            name: eth4
+        endpoints:
+          - br-storage
+        roles:
+          storage: br-storage
+          ceph/public: br-storage
+  group-custom-1:
+    nic_mapping:
+      default:
+        if11: eth0       # admin
+        if12: eth1       # public
+        if13: eth2       # management
+        if14: eth3       # private
+        if15: eth4       # storage
+    templates_for_node_role:
+        controller:
+          - admin
+          - public
+          - management
+          - private
+          - storage
+        compute:
+          - admin
+          - public
+          - management
+          - private
+          - storage
+        cinder:
+          - admin
+          - public
+          - management
+          - private
+          - storage
+    network_assignments:
+        storage:
+          ep: br-storage
+        private:
+          ep: br-prv
+        public:
+          ep: br-ex
+        management:
+          ep: br-mgmt
+        fuelweb_admin:
+          ep: br-fw-admin
+    network_scheme:
+      admin:
+        transformations:
+          - action: add-br
+            name: br-fw-admin
+          - action: add-port
+            bridge: br-fw-admin
+            name: eth0
+        endpoints:
+          - br-fw-admin
+        roles:
+          admin/pxe: br-fw-admin
+          fw-admin: br-fw-admin
+      public:
+        transformations:
+          - action: add-br
+            name: br-ex
+          - action: add-br
+            name: br-floating
+            provider: ovs
+          - action: add-patch
+            bridges:
+            - br-floating
+            - br-ex
+            provider: ovs
+            mtu: 65000
+          - action: add-port
+            bridge: br-ex
+            name: eth1
+        endpoints:
+          - br-ex
+        roles:
+          public/vip: br-ex
+          neutron/floating: br-ex
+          ex: br-ex
+          public: br-ex
+      management:
+        transformations:
+          - action: add-br
+            name: br-mgmt
+          - action: add-port
+            bridge: br-mgmt
+            name: eth2
+        endpoints:
+          - br-mgmt
+        roles:
+          management: br-mgmt
+          mgmt/vip: br-mgmt
+          mgmt/api: br-mgmt
+          mongo/db: br-mgmt
+          keystone/api: br-mgmt
+          neutron/api: br-mgmt
+          neutron/mesh: br-mgmt
+          swift/api: br-mgmt
+          sahara/api: br-mgmt
+          ceilometer/api: br-mgmt
+          cinder/api: br-mgmt
+          glance/api: br-mgmt
+          heat/api: br-mgmt
+          nova/api: br-mgmt
+          nova/migration: br-mgmt
+          murano/api: br-mgmt
+          horizon: br-mgmt
+          mgmt/messaging: br-mgmt
+          mgmt/corosync: br-mgmt
+          mgmt/memcache: br-mgmt
+          mgmt/database: br-mgmt
+          cinder/iscsi: br-mgmt
+          swift/replication: br-mgmt
+          ceph/replication: br-mgmt
+          ceph/radosgw: br-mgmt
+      private:
+        transformations:
+          - action: add-br
+            name: br-prv
+            provider: ovs
+          - action: add-br
+            name: br-aux
+          - action: add-patch
+            bridges:
+            - br-prv
+            - br-aux
+            provider: ovs
+            mtu: 65000
+          - action: add-port
+            bridge: br-aux
+            name: eth3
+        endpoints:
+          - br-prv
+        roles:
+          private: br-prv
+          neutron/private: br-prv
+      storage:
+        transformations:
+          - action: add-br
+            name: br-storage
+          - action: add-port
+            bridge: br-storage
+            name: eth4
+        endpoints:
+          - br-storage
+        roles:
+          storage: br-storage
+          ceph/public: br-storage
