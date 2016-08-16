@@ -33,6 +33,7 @@ This section includes the following topics:
    configure-environment/selectable-offload.rst
    configure-environment/map-logical-to-physical-nic.rst
    configure-environment/verify-networks.rst
+   configure-environment/network-templates.rst
    configure-environment/customize-partitions.rst
    configure-environment/config-drive-format.rst
    configure-environment/settings.rst
