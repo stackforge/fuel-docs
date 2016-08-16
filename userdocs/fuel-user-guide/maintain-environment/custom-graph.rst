@@ -62,9 +62,9 @@ information about the graph. It has no impact on the business logic.
 
       fuel2 graph list --env env_id
 
-  where ``env_id`` is the ID of the environment.
+   where ``env_id`` is the ID of the environment.
 
-To upload a graph:
+**To upload a graph:**
 
 #. Log in to the Fuel master node.
 #. Run the following command:
@@ -75,16 +75,16 @@ To upload a graph:
       fuel2 graph upload --release release_id [--type graph_type] --file tasks.yaml
       fuel2 graph upload --plugin plugin_id [--type graph_type] --file tasks.yaml
 
-  where ``--type`` is an optional parameter. The ``default`` graph type with
-  confirmation should be used if no type is defined.
+   where ``--type`` is an optional parameter. The ``default`` graph type with
+   confirmation should be used if no type is defined.
 
-Thw graphs downloaded with the keys ``--all`` and ``--plugins`` are the
+The graphs downloaded with the keys ``--all`` and ``--plugins`` are the
 result of other graphs merge performed by Nailgun and are not supposed to be
 edited and uploaded back.
 In most cases because they will completely override further changes made in
 source graphs.
 
-To download a graph:
+**To download a graph:**
 
 #. Log in to the Fuel master node.
 #. Run the following command:
@@ -99,7 +99,7 @@ To download a graph:
      where ``--type`` is an optional parameter. The command downloads the
      ``default``if no type is defined.
 
-To execute a graph:
+**To execute a graph:**
 
 #. Log in to the Fuel master node.
 #. Run the following command:
