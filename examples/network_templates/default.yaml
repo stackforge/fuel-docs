@@ -1,0 +1,180 @@
+adv_net_template:
+#default - is the name of the network group. If you have additional network groups, add descriptions with all parameters for all network group. 
+  default: 
+    nic_mapping:
+      default:
+# add custom or remove default networks in this section.
+        adm: eth0
+        pub: eth1
+        man: eth4
+        priv: eth2
+        stor: eth3
+    templates_for_node_role:
+# specify networks for each type of node. For example, if you have a dedicated Ceph OSD node, specify what networks should exist on this node.
+        controller:
+          - public
+          - private
+          - storage
+          - common
+        compute:
+          - common
+          - private
+          - storage
+        cinder:
+          - common
+          - storage
+        ceph-osd:
+          - common
+          - storage
+    network_assignments: 
+#Add an endpoint for each network, if you add addtional custom networks, add endpoints for these networks as well.
+        storage:
+          ep: br-storage
+        private:
+          ep: br-prv
+        public:
+          ep: br-ex
+        management:
+          ep: br-mgmt
+        fuelweb_admin:
+          ep: br-fw-admin
+    network_scheme:
+# Describe the network scheme for all networks.
+# - transformations - describe actions required to create a network.
+#   For service networks, such as Storage, Management, and Admin,
+#   create a Linux bridge. For workload networks that
+#   communicated with the OpenStack Networking service, such as
+#   Private and Public service, create an Open vSwitch (OVS),
+#   a Linux Bridge, a patch that connects the OVS with the Linux
+#   bridge, and a port.
+#   Availale commands and properties:
+#
+#   * ``add-bridge`` - creates a bridge. By default, creates a Linux
+#     bridge. You can specify the following parameters for this command:
+#
+#     * ``provider`` - a network technology such as Open vSwitch (OVS) or
+#       Linux Bridge, that connects physical interface with
+#       the OpenStack Networking service. Default provider is Linux
+#       Bridge. The options are: ``ovs``.
+#
+#     * ``mtu`` - enables you to specify MTU for this network bridge.
+#
+#     * ``add-port`` - create a port that connects a Linux bridge with a
+#       physical network interface.
+#
+#     * ``add-patch`` - adds connection between a Linux bridge and OVS. You can
+#       specify same parameters as for the Linux bridge. All networks that serve
+#       traffic to the control plane must have this action specified.
+# 
+# - endpoints - specify an endpoint for the network that you have
+#   defined in th network_assignments section.
+#
+# - roles - map network traffic to logical endpoints in the
+#   <type_of_traffic>: <endpoint> format. The list of roles is 
+#   available in the nailgun/nailgun/fixtures/openstack.yaml file.
+#   Do not repeat a type of traffic. Any type of traffic must be mentioned only
+#   once in the whole file. Otherwise, a network conflict may occur. The roles
+#   section cannot be empty. If you do not want to specify any type of traffic,
+#   create a fake mapping. For example:
+#     roles:
+#       fake/ext: br-pub-ext
+#
+      storage:
+        transformations:
+          - action: add-br
+            name: br-storage
+          - action: add-port
+            bridge: br-storage
+            name: <% stor %>
+        endpoints:
+          - br-storage
+        roles:
+          cinder/iscsi: br-storage
+          swift/replication: br-storage
+          ceph/replication: br-storage
+          storage: br-storage
+      private:
+        transformations:
+          - action: add-br
+            name: br-prv
+            provider: ovs
+          - action: add-br
+            name: br-aux
+          - action: add-patch
+            bridges:
+            - br-prv
+            - br-aux
+            provider: ovs
+            mtu: 65000
+          - action: add-port
+            bridge: br-aux
+            name: <% prv %>
+        endpoints:
+          - br-prv
+        roles:
+          neutron/private: br-prv
+      public:
+        transformations:
+          - action: add-br
+            name: br-ex
+          - action: add-br
+            name: br-floating
+            provider: ovs
+          - action: add-patch
+            bridges:
+            - br-floating
+            - br-ex
+            provider: ovs
+            mtu: 65000
+          - action: add-port
+            bridge: br-ex
+            name: <% if2 %>
+        endpoints:
+          - br-ex
+        roles:
+          public/vip: br-ex
+          neutron/floating: br-floating
+          ceph/radosgw: br-ex
+          ex: br-ex
+      common:
+# In this example the common network is created for Management and Admin traffic.
+        transformations:
+          - action: add-br
+            name: br-fw-admin
+          - action: add-port
+            bridge: br-fw-admin
+            name: <% if1 %>
+          - action: add-br
+            name: br-mgmt
+          - action: add-port
+            bridge: br-mgmt
+            name: <% if3 %>
+        endpoints:
+          - br-fw-admin
+          - br-mgmt
+        roles:
+          admin/pxe: br-fw-admin
+          fw-admin: br-fw-admin
+          mongo/db: br-mgmt
+          management: br-mgmt
+          keystone/api: br-mgmt
+          neutron/api: br-mgmt
+          neutron/mesh: br-mgmt
+          swift/api: br-mgmt
+          sahara/api: br-mgmt
+          ceilometer/api: br-mgmt
+          cinder/api: br-mgmt
+          glance/api: br-mgmt
+          heat/api: br-mgmt
+          nova/api: br-mgmt
+          nova/migration: br-mgmt
+          murano/api: br-mgmt
+          horizon: br-mgmt
+          mgmt/api: br-mgmt
+          mgmt/memcache: br-mgmt
+          mgmt/database: br-mgmt
+          mgmt/messaging: br-mgmt
+          mgmt/corosync: br-mgmt
+          mgmt/vip: br-mgmt
+          mgmt/api: br-mgmt
+          ceph/public: br-mgmt
