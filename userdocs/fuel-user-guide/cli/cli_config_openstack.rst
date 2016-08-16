@@ -27,19 +27,19 @@ defined.
 
    **Example:**
 
-    .. code-block:: yaml
+   .. code-block:: yaml
 
-         configuration:
-           nova_config:
-             DEFAULT/debug:
-               value: True
-             DEFAULT/amqp_durable_queues:
-               value: False
-           keystone_config:
-             DEFAULT/default_publisher_id:
-               ensure: absent
-             DEFAULT/crypt_strength:
-               value: 6000
+        configuration:
+          nova_config:
+            DEFAULT/debug:
+              value: True
+            DEFAULT/amqp_durable_queues:
+              value: False
+          keystone_config:
+            DEFAULT/default_publisher_id:
+              ensure: absent
+            DEFAULT/crypt_strength:
+              value: 6000
 
 #. Upload the ``.yaml`` file:
 

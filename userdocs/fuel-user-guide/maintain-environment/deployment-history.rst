@@ -12,16 +12,16 @@ To get the information on a deployment task:
 #. Log in to the Fuel master node.
 #. Find the ID of the deployment task:
 
-  .. code-block:: console
+   .. code-block:: console
   
-     fuel task
-     fuel2 task list
+      fuel task
+      fuel2 task list
 
 #. Get the information on the deployment task:
 
-  .. code-block:: console
+   .. code-block:: console
 
-     fuel deployment-tasks --task-id <task-id> --statuses ready, pending --nodes 1,2
+      fuel deployment-tasks --task-id <task-id> --statuses ready, pending --nodes 1,2
      fuel2 task history show <task-id> --nodes 3 --statuses error skipped
 
   where <task-id> is the ID of the deployment task.
