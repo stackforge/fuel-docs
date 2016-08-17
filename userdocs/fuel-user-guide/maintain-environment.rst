@@ -1,5 +1,6 @@
 .. _maintain-environment:
 
+===================================
 Maintain your OpenStack environment
 ===================================
 
@@ -16,6 +17,7 @@ This section includes the following topics:
 
    maintain-environment/access-shell.rst
    maintain-environment/rollback-ug.rst
+   maintain-environment/remove-ceph-osd.rst
    maintain-environment/reinstall-node.rst
    maintain-environment/reinstall-virtual-role.rst
    maintain-environment/use-shotgun.rst

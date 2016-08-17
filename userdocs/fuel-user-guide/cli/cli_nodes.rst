@@ -1,7 +1,8 @@
 .. _cli-nodes:
 
+========================
 Node management commands
-------------------------
+========================
 
 The following table describes node management commands
 available in the Fuel CLI.
