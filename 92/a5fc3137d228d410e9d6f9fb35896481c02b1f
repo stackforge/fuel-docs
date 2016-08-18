@@ -1,0 +1,10 @@
+Verified+1: Fuel CI <fuel-ci-bot@mirantis.com>
+Code-Review+1: Alexander Adamov <aadamov@mirantis.com>
+Code-Review+2: Maria Zlatkova <mzlatkova@mirantis.com>
+Workflow+1: Maria Zlatkova <mzlatkova@mirantis.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Thu, 18 Aug 2016 09:17:27 +0000
+Reviewed-on: https://review.openstack.org/353467
+Project: openstack/fuel-docs
+Branch: refs/heads/master
