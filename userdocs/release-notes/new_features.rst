@@ -86,3 +86,10 @@ This section lists these improvements:
   software components using ``cgroups``. Specifying optimal values helps
   to increase performance and reliability of your cloud.
   See :ref:`cgroups-intro`.
+
+* The OpenStack Application Catalog service is now also installable as a
+  plugin for Fuel. This plugin is designed to enable upgrading of the
+  OpenStack Application Catalog together with plugin installation. This plugin
+  update mechanism will be used to deliver future updates to the OpenStack
+  Application Catalog service.
+  See `Murano plugin for Fuel <https://github.com/openstack/fuel-plugin-murano>`__.
