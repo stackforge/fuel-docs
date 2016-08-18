@@ -22,7 +22,7 @@ available in the Fuel CLI.
        ``multinode`` mode, and the ``nova`` network mode.
        To specify other modes, you can add optional arguments:
 
-       ::
+       .. code-block:: console
 
         fuel env create --name <env_name> --rel <release_number> \
         --mode ha --network-mode neutron --net-segment-type vlan
@@ -30,9 +30,9 @@ available in the Fuel CLI.
        Use the ``set`` action to change the name, mode, or network mode
        for an OpenStack environment:
 
-       ::
+       .. code-block:: console
 
-        fuel --env <env_id> env set --name <NewEmvName> --mode ha_compact
+        fuel --env <env_id> env set --name <NewEnvName> --mode ha_compact
 
    * - Delete an OpenStack environment.
      - ``fuel --env <env_id> env delete``
@@ -41,4 +41,3 @@ available in the Fuel CLI.
        failed update, use the same command with the previous release number.
      - ``fuel env --update --env <env_id> --rel <release_number>``
      -
-     
