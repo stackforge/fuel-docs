@@ -36,3 +36,5 @@ environment with new parameters.
    with the new configuration.
    Or click :guilabel:`Discard` to discard the changes and load the last
    successfully deployed OpenStack environment configuration.
+
+.. seealso:: :ref:`redeploy-node`
