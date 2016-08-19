@@ -1,7 +1,8 @@
 .. _rollback-compute-node:
 
+=======================
 Rollback a compute node
------------------------
+=======================
 
 You can rollback a compute node to its original state, for example, the state
 before it failed.

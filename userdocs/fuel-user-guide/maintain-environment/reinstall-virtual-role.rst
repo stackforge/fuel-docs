@@ -1,7 +1,8 @@
 .. _reinstall-virtual-role:
 
+========================
 Reinstall a virtual role
-------------------------
+========================
 
 If you have the Reduced Footprint feature enabled, you may need to reinstall
 the virtual role.

@@ -1,7 +1,8 @@
 .. _preserve-partition:
 
+====================
 Preserve a partition
-~~~~~~~~~~~~~~~~~~~~
+====================
 
 This section is a part of the :ref:`Rollback a node <rollback-ug>` procedure.
 With partition preservation you can keep any type of data that meets the

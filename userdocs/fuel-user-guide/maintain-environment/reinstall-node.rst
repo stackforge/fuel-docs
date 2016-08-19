@@ -1,5 +1,6 @@
 .. _reinstall-node:
 
+================
 Reinstall a node
 ================
 

@@ -1,6 +1,7 @@
 
 .. _custom-graph:
 
+==================
 Run a custom graph
 ==================
 

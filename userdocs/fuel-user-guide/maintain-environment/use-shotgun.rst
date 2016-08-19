@@ -1,6 +1,7 @@
 
 .. _shotgun-ug:
 
+========================================
 Create diagnostic snapshot using shotgun
 ========================================
 
