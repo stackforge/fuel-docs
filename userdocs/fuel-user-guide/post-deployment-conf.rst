@@ -14,3 +14,4 @@ This section includes the following topics:
    :maxdepth: 3
 
    configure-environment/post-deployment-settings.rst
+   maintain-environment/redeploy-node.rst
