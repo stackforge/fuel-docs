@@ -49,3 +49,13 @@ Learn how to develop and work with Fuel plugins
    :maxdepth: 1
 
    plugindocs/fuel-plugin-sdk-guide
+
+Glossary
+~~~~~~~~
+
+Fuel documentation glossary
+
+.. toctree::
+   :maxdepth: 1
+
+   glossary/glossary.rst
