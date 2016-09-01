@@ -20,3 +20,4 @@ This section includes the following topics:
    create-plugin/actions-existing-roles.rst
    create-plugin/plugin-settings.rst
    create-plugin/plugin-node-roles.rst
+   create-plugin/add-driverlog.rst
