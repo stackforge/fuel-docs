@@ -39,3 +39,17 @@ No additional configuration is required.
      - ``fuel2 graph execute --env <env_id> [--type <graph_type>] [--node <node_id>]``
 
        | The ``--type`` parameter is optional. If not specified, the default graph is downloaded.
+
+   * - Run any task graph in a ``noop`` mode to detect customizations.
+     - ``fuel2 graph execute --env <env_id> [--type <graph_type>] --noop``
+
+
+
+
+
+
+
+
+
+
+
