@@ -1,7 +1,8 @@
 .. _cli-graphs:
 
+=====================================
 Deployment graphs management commands
--------------------------------------
+=====================================
 
 The following table describes the deployment graphs management commands
 supported by the Fuel CLI v2. To execute these commands, you need to have
@@ -39,3 +40,9 @@ No additional configuration is required.
      - ``fuel2 graph execute --env <env_id> [--type <graph_type>] [--node <node_id>]``
 
        | The ``--type`` parameter is optional. If not specified, the default graph is downloaded.
+
+   * - Run any task graph in a ``noop`` mode to detect customizations.
+     - ``fuel2 graph execute --env <env_id> [--type <graph_type>] --noop --force``
+
+       | The ``--force`` parameter is optional. If specified, the Noop run
+         will be executed on each task from the default graph.
