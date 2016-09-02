@@ -45,3 +45,4 @@ This section includes the following topics:
    cli/cli_config_openstack_services_workflow.rst
    cli/cli_change_ip_range.rst
    cli/cli_modify_environment.rst
+   cli/cli_noop.rst
