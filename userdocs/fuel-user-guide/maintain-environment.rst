@@ -20,7 +20,7 @@ This section includes the following topics:
    maintain-environment/rollback-ug.rst
    maintain-environment/reinstall-node.rst
    maintain-environment/reinstall-virtual-role.rst
-   maintain-environment/use-shotgun.rst
+   maintain-environment/create-snapshot.rst
    maintain-environment/custom-graph.rst
    maintain-environment/data-driven.rst
    maintain-environment/deployment-history.rst
