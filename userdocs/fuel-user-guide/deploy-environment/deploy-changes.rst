@@ -33,3 +33,15 @@ minutes to an hour.
      #. Unfold :guilabel:`Choose nodes for deployment` and
         select nodes.
      #. Click :guilabel:`Deploy Nodes`.
+
+**To view the deployment details in the Fuel web UI:**
+
+* To view a deployment task in progress:
+
+  #. Select the :guilabel:`Dashboard` tab.
+  #. Click :guilabel:`Show Details` under the deployment progress bar.
+
+* To view information about a deployed OpenStack environment:
+
+  #. Select the :guilabel:`History` tab.
+  #. Select the required deployment.
