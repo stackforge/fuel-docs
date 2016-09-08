@@ -105,7 +105,7 @@ Then sync the plugin tasks, execute the newly defined one, and verify the result
 .. code-block:: console
 
    # fuel plugins --sync
-   # fuel node  --nodes 1,2 --tasks fuel-plugin-example-iotop
+   # fuel node  --node 1,2 --tasks fuel-plugin-example-iotop
    # ssh node-1 "cat  /tmp/post_deployment;  iotop --version"
    Fri May 20 12:48:08 UTC 2016  iotop installed
    iotop 0.6
@@ -117,7 +117,7 @@ Then sync the plugin tasks, execute the newly defined one, and verify the result
 
 The task in the example executes the shell commands listed in the parameter
 ``cmd``: the task installs the package iotop on all the nodes in the
-environment; or, in our test, in the subset listed after the key '--nodes'.
+environment; or, in our test, in the subset listed after the key '--node'.
 Pay attention to the parameters ``requires`` and ``required_for``: they define
 when exactly during installation the task will run and are required for the
 task execution. The task will usually run in the post-deployment stage, but in
