@@ -3,7 +3,7 @@
 Limitations
 ===========
 
-* Core functionality of Fuel plugins can only be installed before configuring
+* Core-functionality Fuel plugins can only be installed before configuring
   and deploying the environment. Otherwise, you will have to redeploy the
   environment to enable the core plugin. Application-level plugins can be
   installed later on top of the already deployed environments.
