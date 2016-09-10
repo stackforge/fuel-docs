@@ -1,8 +1,8 @@
-
 .. _modify-ui:
 
+======================
 Modify the Fuel web UI
-----------------------
+======================
 
 The Fuel web UI provides the ability to quickly choose which components
 to enable for a new environment.

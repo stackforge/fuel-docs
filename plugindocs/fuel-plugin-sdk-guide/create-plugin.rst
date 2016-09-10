@@ -1,5 +1,6 @@
 .. _create-plugin:
 
+====================
 Create a Fuel plugin
 ====================
 
@@ -20,3 +21,5 @@ This section includes the following topics:
    create-plugin/actions-existing-roles.rst
    create-plugin/plugin-settings.rst
    create-plugin/plugin-node-roles.rst
+   create-plugin/modify-ui.rst
+   create-plugin/plugin-repos.rst

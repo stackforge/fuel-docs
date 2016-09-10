@@ -1,8 +1,8 @@
-
 .. _plugin-node-roles:
 
-Plugin node roles
------------------
+==========================
+Plugin specific node roles
+==========================
 
 Defining a new role allows you to explicitly define all the tasks that run on
 it.
@@ -24,5 +24,3 @@ separate nodes:
    plugin-node-roles/define-new-role.rst
    plugin-node-roles/volume-allocation.rst
    plugin-node-roles/hot-pluggable.rst
-   plugin-node-roles/modify-ui.rst
-   plugin-node-roles/plugin-repos.rst
