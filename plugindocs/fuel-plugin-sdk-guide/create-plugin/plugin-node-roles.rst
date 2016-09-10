@@ -1,8 +1,8 @@
 .. _plugin-node-roles:
 
-=================
-Plugin node roles
-=================
+==========================
+Plugin specific node roles
+==========================
 
 Defining a new role allows you to explicitly define all the tasks that run on
 it.
