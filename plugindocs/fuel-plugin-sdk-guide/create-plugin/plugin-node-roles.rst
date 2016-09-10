@@ -24,5 +24,5 @@ separate nodes:
    plugin-node-roles/define-new-role.rst
    plugin-node-roles/volume-allocation.rst
    plugin-node-roles/hot-pluggable.rst
-   plugin-node-roles/modify-ui.rst
+   plugin-node-roles/modify-ui-wizard.rst
    plugin-node-roles/plugin-repos.rst

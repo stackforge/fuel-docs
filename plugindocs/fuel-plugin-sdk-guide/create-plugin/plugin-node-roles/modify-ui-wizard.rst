@@ -1,7 +1,7 @@
 
 .. _modify-ui:
 
-Modify the Fuel web UI
+Modify the Fuel web UI Wizard. Components registry.
 ----------------------
 
 The Fuel web UI provides the ability to quickly choose which components
