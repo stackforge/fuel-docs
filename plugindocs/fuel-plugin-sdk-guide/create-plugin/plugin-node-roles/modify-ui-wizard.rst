@@ -1,8 +1,8 @@
-
 .. _modify-ui:
 
-Modify the Fuel web UI
-----------------------
+=====================================
+Modify the Components registry wizard
+=====================================
 
 The Fuel web UI provides the ability to quickly choose which components
 to enable for a new environment.
@@ -106,7 +106,7 @@ The properties ``label`` and ``description`` are self-explanatory.
           choose some settings that enable features of an incompatible
           component after the wizard is finished. Plugin developers should not
           only specify incompatible components but also provide appropriate
-          restrictions for the incompatible settings. 
+          restrictions for the incompatible settings.
 
 See `components.yaml <https://github.com/openstack/fuel-plugin-xenserver/blob/master/components.yaml>`_
 and `environment_config.yaml <https://github.com/openstack/fuel-plugin-xenserver/blob/master/environment_config.yaml>`_
