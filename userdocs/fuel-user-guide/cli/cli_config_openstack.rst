@@ -1,7 +1,10 @@
 .. _cli-config-openstack-services:
 
+==================================================
 Modify the configuration of the OpenStack services
---------------------------------------------------
+==================================================
+
+.. include:: /userdocs/snippets/notes/deprecated-cli-v1.rst
 
 You can customize the hardcoded, or provided by Nailgun,
 configuration values, as well as introduce new configuration options
