@@ -1,7 +1,10 @@
 .. _cli-nodes-empty-role:
 
+================================
 Deploy a node with an empty role
---------------------------------
+================================
+
+.. include:: /userdocs/snippets/notes/deprecated-cli-v1.rst
 
 You may need to deploy a node with an operating system installed only,
 that is an empty role, where you can further deploy your own service
