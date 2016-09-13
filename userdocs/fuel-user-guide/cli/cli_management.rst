@@ -1,7 +1,10 @@
 .. _cli-management:
 
+========================
 Fuel management commands
-------------------------
+========================
+
+.. include:: /userdocs/snippets/notes/deprecated-cli-v1.rst
 
 The following table describes basic management commands
 available in the Fuel CLI.
@@ -19,7 +22,7 @@ available in the Fuel CLI.
 
        .. code-block:: console
 
-         fuel <namespace> --help
+        fuel <namespace> --help
    * - View the list of all available releases
      - ``fuel release``
 
