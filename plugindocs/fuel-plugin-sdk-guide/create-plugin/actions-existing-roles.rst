@@ -11,12 +11,14 @@ Basic syntax for a task definition:
 
 .. code-block:: ini
 
-   type: <type of task>
+  - id: <task id>
+    type: <type of task>
     groups: [<one or more of existing roles>]
     required_for: [<the list of tasks, which requires this one>]
     requires: [<the list of tasks, which a required for this one>]
     parameters:
      <parameter name>: <parameter value>
+     ...
 
 .. note:: You can represent the lists in the full form or the abbreviated
           form:
