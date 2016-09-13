@@ -24,5 +24,7 @@ This section includes the following topics:
    maintain-environment/create-snapshot.rst
    maintain-environment/manage-workflows.rst
    maintain-environment/data-driven.rst
+   maintain-environment/deployment-history.rst
+   maintain-environment/deployment-information.rst
    maintain-environment/shutdown-env.rst
    maintain-environment/start-env.rst
