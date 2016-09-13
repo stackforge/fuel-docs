@@ -36,13 +36,13 @@ This section lists these improvements:
 * Fuel now stores detailed information about all deployments. You can download
   the actual cluster settings, network configuration, and serialized cluster
   data.
-  See :ref:`deployment-history` and :ref:`deployment-information`.
+  See :ref:`view_history` and :ref:`deployment-information`.
 
-* You can now execute a particular deployment graph with the ability to merge
-  it with the existing deployment graphs of the upstream master release.
+* You can now execute a particular deployment workflow with the ability to merge
+  it with the existing deployment workflows of the upstream master release.
   This allows you to implement complex orchestrated workflows -- bugfixes
   application, reference architecture altering, or even upgrades.
-  See :ref:`custom-graph`.
+  See :ref:`manage_workflows`.
 
 * Fuel now supports lifecycle management tasks based on the history of
   cluster states. This data-driven feature allows the deployment engineers
