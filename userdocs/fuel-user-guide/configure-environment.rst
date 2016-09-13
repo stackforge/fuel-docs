@@ -40,3 +40,4 @@ This section includes the following topics:
    configure-environment/dns-ntp-support.rst
    configure-environment/configure-multipath.rst
    configure-environment/nfv.rst
+   configure-environment/workflows.rst
