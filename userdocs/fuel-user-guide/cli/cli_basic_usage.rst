@@ -1,7 +1,10 @@
 .. _cli_basic_usage:
 
+===========
 Basic usage
------------
+===========
+
+.. include:: /userdocs/snippets/notes/deprecated-cli-v1.rst
 
 Use the following usage pattern for Fuel commands:
 

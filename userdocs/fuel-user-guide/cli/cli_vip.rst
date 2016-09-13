@@ -1,7 +1,10 @@
 .. _cli-vip:
 
+==============================
 Virtual IP management commands
-------------------------------
+==============================
+
+.. include:: /userdocs/snippets/notes/deprecated-cli-v1.rst
 
 The following table describes virtual IP management commands
 available in the Fuel CLI.

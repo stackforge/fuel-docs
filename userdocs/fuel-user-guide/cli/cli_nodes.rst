@@ -1,7 +1,10 @@
 .. _cli-nodes:
 
+========================
 Node management commands
-------------------------
+========================
+
+.. include:: /userdocs/snippets/notes/deprecated-cli-v1.rst
 
 The following table describes node management commands
 available in the Fuel CLI.
