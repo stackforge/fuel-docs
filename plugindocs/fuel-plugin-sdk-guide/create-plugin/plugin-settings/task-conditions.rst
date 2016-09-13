@@ -13,7 +13,7 @@ running if the condition is not true.
 
 Here is an example.
 
-``deployment_tasks.yaml``:
+:ref:`deployment_tasks.yaml`:
 
 .. code-block:: ini
 

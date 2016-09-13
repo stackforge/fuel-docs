@@ -22,13 +22,13 @@ All actions that a plugin can execute fall into the following categories:
   There are options to do this.
 
 .. note:: There are two files with the definitions of plugin actions:
-          ``tasks.yaml`` and ``deployment_tasks.yaml``.
+          ``tasks.yaml`` and :ref:`deployment_tasks.yaml`.
           The ``tasks.yaml`` file is deprecated and can only contain
           definitions of tasks in the outdated format used in Fuel 6.0.
           You can only describe the pre- and post-deployment tasks using
           the old format. 
-          The file ``deployment_tasks.yaml`` can contain tasks in the same old
+          The file :ref:`deployment_tasks.yaml` can contain tasks in the same old
           format, but also tasks in the new format, which supports the main
           deployment tasks and task dependencies.
-          Use ``deployment_tasks.yaml`` and only the new format for all task
+          Use :ref:`deployment_tasks.yaml` and only the new format for all task
           definitions.

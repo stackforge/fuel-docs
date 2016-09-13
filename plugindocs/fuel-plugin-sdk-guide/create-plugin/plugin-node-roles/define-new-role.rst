@@ -35,7 +35,7 @@ url ``http://<fuel ip>:8000/#cluster/<cluster id>/nodes/add``.
           in the Fuel web UI.
 
 You must define a new group for the tasks that belong to the new role in
-``deployment_tasks.yaml``:
+:ref:`deployment_tasks.yaml`:
 
 .. code-block:: ini
 
