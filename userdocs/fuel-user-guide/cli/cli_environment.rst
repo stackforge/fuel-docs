@@ -4,6 +4,8 @@
 Environment commands
 ====================
 
+.. include:: /userdocs/snippets/notes/deprecated-cli-v1.rst
+
 The following table describes environment management commands
 available in the Fuel CLI.
 

@@ -1,7 +1,10 @@
 .. _cli-roles:
 
+========================
 Role management commands
-------------------------
+========================
+
+.. include:: /userdocs/snippets/notes/deprecated-cli-v1.rst
 
 Fuel CLI implements standard CRUD for operations on a node role.
 The following table describes the role management commands
