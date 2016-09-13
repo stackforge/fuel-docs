@@ -1,7 +1,10 @@
 .. _cli-network:
 
+================
 Network commands
-----------------
+================
+
+.. include:: /userdocs/snippets/notes/deprecated-cli-v1.rst
 
 You can manage network configurations using the following command:
 
