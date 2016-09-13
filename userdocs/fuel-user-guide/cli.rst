@@ -16,7 +16,7 @@ when you install Fuel. Using the Fuel CLI you can:
    your environment if not used carefully.
 
 Modifications that you make using the Fuel CLI take precedence over the
-settings applied from the Fuel Web UI. If a change has been applied using
+settings applied from the Fuel web UI. If a change has been applied using
 the Fuel CLI, Fuel displays the corresponding message in the Fuel web UI.
 
 This section includes the following topics:
@@ -24,6 +24,7 @@ This section includes the following topics:
 .. toctree::
    :maxdepth: 3
 
+   cli/cli_consolidated_commands.rst
    cli/cli_acronyms.rst
    cli/cli_basic_usage.rst
    cli/cli_client_config_file.rst

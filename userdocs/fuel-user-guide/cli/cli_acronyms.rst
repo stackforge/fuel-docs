@@ -1,28 +1,25 @@
-
 .. _cli-acronyms:
 
+.. include:: /userdocs/snippets/notes/deprecated-cli-v1.rst
 
+===========================================
 Interpretation of acronyms in Fuel commands
--------------------------------------------
+===========================================
 
-CLI commands contain a number
-of acronyms.
-For better understanding of those,
-see the example command output below.
-
+Fuel CLI commands contain a number of acronyms. For a better understanding of
+those, see the example command output below.
 
 .. note:: Nailgun populates the database
           with hardware configuration information
           about all the managed nodes it discovers
           as well as the configuration and status of each node.
 
-The ``fuel node list`` command is used on the Fuel Master node
-to list out the current information about the nodes
-for the environment:
+The :command:`node list` command is used on the Fuel Master node to list out
+the current information about the nodes for the environment:
 
-::
+.. code-block:: console
 
-    [root@fuel ~]# fuel nodes
+    [root@fuel ~]# node list
 
     id | status   | name             | cluster | ip        | mac               | ...
     ---|----------|------------------|---------|-----------|-------------------| ...
@@ -87,13 +84,12 @@ The meaning of these fields is:
 The following two columns appear at the right end of this display;
 they are not shown here:
 
-:pending_roles:    Before deployment, lists the roles that have been assigned to this node.
-                   When deployment is complete,
-                   the contents of this field are moved to the **roles** column
+:pending_roles:    Before deployment, lists the roles that have been assigned
+                   to this node. When deployment is complete, the contents
+                   of this field are moved to the **roles** column.
 
-                   For Release 6.x and later,
-                   this field can also contain the **primary** value
-                   to indicate that this node is the Primary Controller node.
+                   This field can also contain the **primary** value
+                   to indicate that this node is the primary controller node.
                    The **primary** value is persisted in the database
                    through the use of the **has_primary** field
                    in the ``openstack.yaml`` file.
@@ -106,7 +102,5 @@ they are not shown here:
 
 :group_id: The group node identifier.
            When you assign roles to your target nodes,
-           Fuel tries to automatically determine the node's group based on the DHCP address.
-
-
-
+           Fuel tries to automatically determine the node's group based on
+           the DHCP address.
