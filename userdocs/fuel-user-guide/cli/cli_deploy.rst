@@ -4,6 +4,8 @@
 Deployment commands
 ===================
 
+.. include:: /userdocs/snippets/notes/deprecated-cli-v1.rst
+
 The following table describes the usage of the :command:`fuel deployment`
 command available in the Fuel CLI.
 
