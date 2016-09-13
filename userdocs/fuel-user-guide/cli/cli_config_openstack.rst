@@ -84,6 +84,7 @@ defined.
          fuel openstack-config --env <env_id> --node 1,2,3 --execute
 
    The services will restart automatically.
+
 #. Optionally, run these additional commands:
 
    #. List the configuration changes history:
@@ -91,6 +92,9 @@ defined.
       .. code-block:: console
 
          fuel openstack-config --env <env_id> --list
+
+      .. note: The :command:`--list` parameters shows historical data only
+               for the active configuration.
 
    #. Download the previously uploaded ``.yaml`` file with the configuration
       changes:
