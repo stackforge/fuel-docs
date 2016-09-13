@@ -1,7 +1,10 @@
 .. _cli-client-config-file:
 
+======================================
 Modify the Fuel CLI configuration file
---------------------------------------
+======================================
+
+.. include:: /userdocs/snippets/notes/deprecated-cli-v1.rst
 
 The Fuel CLI uses the ``fuel_client.yaml`` file as a source for default
 settings. By default, Fuel stores the ``fuel_client.yaml`` file in the
