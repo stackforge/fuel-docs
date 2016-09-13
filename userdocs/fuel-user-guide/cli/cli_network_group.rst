@@ -1,7 +1,10 @@
 .. _cli-network-group:
 
+=================================
 Network group management commands
----------------------------------
+=================================
+
+.. include:: /userdocs/snippets/notes/deprecated-cli-v1.rst
 
 The following table describes network group management commands
 available in the Fuel CLI.

@@ -1,7 +1,10 @@
 .. _cli-network-template:
 
+====================================
 Network template management commands
-------------------------------------
+====================================
+
+.. include:: /userdocs/snippets/notes/deprecated-cli-v1.rst
 
 The following table describes network template management commands
 available in the Fuel CLI.
