@@ -9,11 +9,11 @@ settings in the Fuel web UI are enabled or not. The syntax slightly differs
 from the one for the settings restriction as in the case of the task you
 provide the opposite to the restriction -- a condition that must be true for
 the task to run, but the net result is the same -- restricting the task from
-running if the condition is not true. 
+running if the condition is not true.
 
 Here is an example.
 
-``deployment_tasks.yaml``:
+:ref:`deployment_tasks.yaml`:
 
 .. code-block:: ini
 

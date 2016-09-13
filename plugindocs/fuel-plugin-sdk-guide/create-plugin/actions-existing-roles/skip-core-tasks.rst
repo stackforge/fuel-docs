@@ -14,7 +14,7 @@ networks, which are usually created by Fuel during deployment. You can
 do this by describing the task with the same ID as the existing one and
 the type ``skipped``:
 
-``deployment_tasks.yaml``:
+:ref:`deployment_tasks.yaml`:
 
 .. code-block:: ini
 

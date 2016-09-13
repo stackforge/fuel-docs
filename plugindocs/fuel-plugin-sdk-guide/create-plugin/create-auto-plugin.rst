@@ -33,7 +33,7 @@ The automatically generated plugin does the following:
    +----------------------------------------------+--------------------------------------------------+
    |``deployment_scripts/deploy.sh``              |Shell script sample                               |
    +----------------------------------------------+--------------------------------------------------+
-   |``deployment_tasks.yaml``                     |Definition of plugin tasks                        |
+   |:ref:`deployment_tasks.yaml`                  |Definition of plugin tasks                        |
    +----------------------------------------------+--------------------------------------------------+
    |``environment_config.yaml``                   |Fuel web UI plugin parameters                     |
    +----------------------------------------------+--------------------------------------------------+
@@ -57,7 +57,7 @@ The automatically generated plugin does the following:
    +----------------------------------------------+--------------------------------------------------+
    |``repositories/ubuntu``                       |Directory for plugin Ubuntu packages              |
    +----------------------------------------------+--------------------------------------------------+
-   |``tasks.yaml``                                |Deprecated, use ``deployment_tasks.yaml`` instead |
+   |``tasks.yaml``                                |Deprecated, use :ref:`deployment_tasks.yaml`      |
    +----------------------------------------------+--------------------------------------------------+
    |``volumes.yaml``                              |Mapping between node roles and volume allocation. |
    |                                              |You can also define new volumes and map them to   |

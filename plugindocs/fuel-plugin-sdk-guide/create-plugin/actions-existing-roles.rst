@@ -1,10 +1,10 @@
 
 .. _actions-existing-roles:
 
-Actions for existing roles 
+Actions for existing roles
 --------------------------
 
-The ``deployment_tasks.yaml`` file contains tasks that define actions.
+The :ref:`deployment_tasks.yaml` file contains tasks that define actions.
 The tasks that define actions execute on the existing roles.
 
 Basic syntax for a task definition:
@@ -83,8 +83,8 @@ reinstallation for every task change.
          guide.
 
 To make it simple, we will delete the automatically generated ``tasks.yaml``
-and ``deployment_tasks.yaml`` files. We will create a new
-``deployment_tasks.yaml`` from scratch.
+and :ref:`deployment_tasks.yaml` files. We will create a new
+:ref:`deployment_tasks.yaml` from scratch.
 
 Add a task to execute shell commands:
 
@@ -127,7 +127,7 @@ the command :command:`iotop` to monitor the I/O on the environment nodes.
 .. note:: If you receive the error message ``400 Client Error: Bad Request
           (Problem with loading YAML file /var/www/nailgun/plugins/
           fuel-plugin-example-1.0/deployment_tasks.yaml)``, verify the syntax
-          of ``deployment_tasks.yaml``. 
+          of :ref:`deployment_tasks.yaml`.
 
           The error ``400 Client Error: Bad Request (Tasks fuel-plugin-example
           -iotop are not present in deployment graph)`` means that your tasks
@@ -170,7 +170,7 @@ a shell script and call the script instead:
 Put the script ``install_iotop.sh`` in the subdirectory ``deployment_scripts``
 in ``plugin root``. If you run the plugin task, the result will be the same as
 in the previous case, when we defined all the commands in
-``deployment_tasks.yaml``. 
+:ref:`deployment_tasks.yaml`.
 
 The mechanism behind this is as follows. Before the plugin task runs, all the
 files inside the ``plugin root`` are synced by rsync protocol to the directory
@@ -190,7 +190,7 @@ is support for Puppet tasks.
 
 Let us rewrite the same task using Puppet manifests.
 
-``deployment_tasks.yaml``:
+:ref:`deployment_tasks.yaml`:
 
 .. code-block:: ini
 
