@@ -4,6 +4,8 @@
 Modify an Openstack environment using CLI
 =========================================
 
+.. include:: /userdocs/snippets/notes/deprecated-cli-v1.rst
+
 You can modify your OpenStack environment after deployment
 by downloading the ``.yaml`` configuration files, editing settings, and
 then uploading the configuration files back to the Nailgun
