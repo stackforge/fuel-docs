@@ -37,5 +37,7 @@ itself can be defined as:
     label: "Enable upload test"
     description: "Upload cirros base image when the deployment is done"
 
+Since Fuel 9.0, also you can perform lifecycle management tasks based on the history of the cluster states. You can introduce expressions that can be computed within the context of cluster configuration, so that you can control how the task assignment and execution depending on the configuration the changes in the configuration. For more information, please reffer to :ref:`data-driven`. 
+
 .. note:: Conditions can only use settings and cluster contexts of the
           Fuel API.
