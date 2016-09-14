@@ -86,6 +86,27 @@ Change the file to include more UI elements definitions:
          label: "Label data3"
          description: "Description data3"
 
+  # Multiple sigle line text inputs - since Fuel 9.0
+  fuel_plugin_example_text_list:
+    value: ['text1','text2']
+    label: 'Multiple Text field'
+    description: 'Description for text field'
+    weight: 25
+    type: "text_list"
+    min: 1
+    max: 5
+
+  # Multiple multiline text inputs - since Fuel 9.0
+  fuel_plugin_example_textarea_list:
+    value: ['textarea1']
+    label: 'Multiple text area field'
+    description: 'Description for textarea field'
+    weight: 25
+    type: "textarea_list"
+    min: 1
+    max: 2
+
+
 .. note:: There is no ``group`` for plugin settings in this example, so the
           settings for the plugin are under the default group
           :guilabel:`Other` in the :guilabel:`Settings` tab of the Fuel web
