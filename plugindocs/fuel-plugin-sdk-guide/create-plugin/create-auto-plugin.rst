@@ -41,7 +41,7 @@ The automatically generated plugin does the following:
    +----------------------------------------------+--------------------------------------------------+
    |``LICENSE``                                   |Standard Apache 2.0 license file                  |
    +----------------------------------------------+--------------------------------------------------+
-   |``metadata.yaml``                             |Plugin information                                |
+   |:ref:`metadata.yaml`                          |Plugin information                                |
    +----------------------------------------------+--------------------------------------------------+
    |``network_roles.yaml``                        |Network roles data                                |
    +----------------------------------------------+--------------------------------------------------+
@@ -114,15 +114,15 @@ You can also verify the plugin installation using Fuel CLI:
 .. note:: If you can see your plugin in the ``fuel plugins --list`` output,
           but not in the Fuel web UI, then your plugin does not support the
           installed version of Fuel. Specifically, the plugin does not have
-          the version of the Fuel Master node in its ``metadata.yaml``.
+          the version of the Fuel Master node in its :ref:`metadata.yaml`.
 
 .. tip:: By default, all plugin settings are under the group 'Other'. To place
          your plugin settings to a different group, specify it
          in :ref:`environment_config.yaml`.
 
-.. tip:: Tip: Although after you install the plugin, you see the plugin
-         settings in the deployed environment, you cannot enable the plugin.
+.. tip:: Tip: Although you can see the plugin settings in the deployed
+         environment after installation, you cannot enable the plugin.
          Enabling a plugin after deployment makes sense only in one case:
          when this adds a new node role and a node with this role can be
          added after the environment is deployed. In this case use the keyword
-         ``is_hotppluggable`` in ``metadata.yaml``
+         ``is_hotppluggable`` in :ref:`metadata.yaml`
