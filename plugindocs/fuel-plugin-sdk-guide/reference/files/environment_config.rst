@@ -4,7 +4,7 @@
 environment_config.yaml
 =======================
 
-The file ``environment_config.yaml`` is used to additional attributes that will appear on the Settings tab of the Fuel web UI. When the environment is deployed, these attributes are passed to the task executor so that the data is available in the /etc/astute.yaml file on each target node and can be accessed from your bash or puppet scripts.
+The file :ref:`environment_config.yaml` is used to additional attributes that will appear on the Settings tab of the Fuel web UI. When the environment is deployed, these attributes are passed to the task executor so that the data is available in the /etc/astute.yaml file on each target node and can be accessed from your bash or puppet scripts.
 
 
 Example:

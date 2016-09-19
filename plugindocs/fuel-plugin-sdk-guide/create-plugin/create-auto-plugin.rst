@@ -35,7 +35,7 @@ The automatically generated plugin does the following:
    +----------------------------------------------+--------------------------------------------------+
    |:ref:`deployment_tasks.yaml`                  |Definition of plugin tasks                        |
    +----------------------------------------------+--------------------------------------------------+
-   |``environment_config.yaml``                   |Fuel web UI plugin parameters                     |
+   |:ref:`environment_config.yaml`                   |Fuel web UI plugin parameters                     |
    +----------------------------------------------+--------------------------------------------------+
    |``fuel-plugin-example-1.0-1.0.0-1.noarch.rpm``|A plugin package created after you build a plugin |
    +----------------------------------------------+--------------------------------------------------+

@@ -9,7 +9,7 @@ You can add your plugin settings to the Fuel web UI.
 **To add plugin settings to the Fuel web UI**
 
 To place plugin specific settings to the Fuel web UI on the
-:guilabel:`Settings` tab, you must edit the ``environment_config.yaml`` file.
+:guilabel:`Settings` tab, you must edit the :ref:`environment_config.yaml` file.
 
 An automatically generated plugin contains only one example text field setting
 in the group :guilabel:`Other`:
@@ -120,7 +120,7 @@ Change the file to include more UI elements definitions:
 
 **Debug the Fuel web UI settings**
 
-Changes in ``environment_config.yaml`` affect only the environments which you
+Changes in :ref:`environment_config.yaml` affect only the environments which you
 create after the changes, even if you use :command:`fuel plugins --sync`.
 The Nailgun database stores each piece of the environment settings at the time
 of the environment creation. During this time the synchronisation process does
@@ -196,7 +196,7 @@ the section for the plugin:
      weight: 70
 
 The metadata fields, which are not defined explicitly in
-``environment_config.yaml``, receive default values, while each of the UI
+:ref:`environment_config.yaml`, receive default values, while each of the UI
 elements sets a corresponding parameter in ``astute.yaml``.
 
 One of the core tasks named ``hiera`` configures hiera so that ``astute.yaml``
@@ -263,7 +263,7 @@ to install on the target node, one per line.
 .. note:: You can dynamically add setting starting with Fuel 9.0.
           See the `blueprint <https://blueprints.launchpad.net/fuel/+spec/dynamic-fields>`_.
 
-``environment_config.yaml``:
+:ref:`environment_config.yaml`:
 
 .. code-block:: ini
 
@@ -294,4 +294,4 @@ variable ``fuel_plugin_example_packages``, which it will get from hiera:
 
 .. note:: If you do not want to provide Fuel web UI settings for your plugin,
           except for the :guilabel:`Enable plugin` checkbox, you still need to
-          fill the ``environment_config.yaml`` with metadata for that checkbox.
+          fill the :ref:`environment_config.yaml` with metadata for that checkbox.
