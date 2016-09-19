@@ -8,8 +8,8 @@ The Fuel Plugin Builder generates three files:
 
 * LICENSE -- free-form information file.
 * README.md -- free-form information file.
-* ``metadata.yaml`` -- mandatory file in YAML format. Your plugin cannot
-  build without ``metadata.yaml``.
+* :ref:`metadata.yaml` -- mandatory file in YAML format. Your plugin cannot
+  build without :ref:`metadata.yaml`.
 
 .. note:: You can put any files -- even the ones not directly related to
    Fuel Plugin Builder -- in the plugin directory. Fuel Plugin Builder
@@ -32,52 +32,7 @@ The Fuel Plugin Builder generates three files:
    `Mellanox <https://github.com/openstack/fuel-plugin-mellanox/blob/stable/3.0.0/README.md>`_
    and `LMA Collector <https://github.com/openstack/fuel-plugin-lma-collector>`_.
 
-#. Edit the ``metadata.yaml`` file with the list of required parameters:
-
-   * ``name`` -- Name of the plugin that will be in the plugin's RPM file name.
-     The allowed name characters are lowercase letters, dash ``-``, and
-     underscore ``_``.
-   * ``title`` -- Human-readable plugin name displayed on the Fuel web UI.
-   * ``version`` -- Plugin version. For guidelines, see
-     `Semantic Versioning 2.0.0 <http://semver.org/>`_.
-   * ``fuel_version`` -- The Fuel version that your plugin is compatible with.
-     Currently, the builder verifies ``fuel_version`` only against
-     ``package_version``. The ``package_version`` field must be supported
-     by the Fuel versions listed at the bottom of this section.
-     Leaving this field empty will skip the check. For format guidelines,
-     see `_ClassType StrictVersion <http://epydoc.sourceforge.net/stdlib/distutils.version.StrictVersion-class.html>`_.
-   * ``licenses`` -- List the licenses under which your plugin can be
-     distributed.
-   * ``authors`` -- Name of the plugin author. A company or an individual.
-   * ``homepage`` -- A link to page with your plugin. This can be your plugin's
-     GitHub repository page.
-   * ``is_hotpluggable`` -- State if the plugin is hot-pluggable.
-     See :ref:`plugin-hotpluggable`.
-   * ``groups`` -- A group to which your plugin belongs in the Fuel web UI.
-   * ``releases`` --  A list of OpenStack releases compatible with the plugin.
-
-     * ``releases: os`` -- A compatible Linux distribution for the plugin.
-       The supported values are ``ubuntu`` and ``centos``. Fuel 8.0 supports
-       only Ubuntu.
-     * ``releases: version`` -- A compatible OpenStack release version.
-       Fuel Plugin Builder does not validate the ``releases: version``
-       field; but if there is no OpenStack release with the same version
-       on the Fuel Master, the user cannot enable the plugin. See also a
-       note in :ref:`install-plugin-builder`.
-     * ``releases: mode`` -- A list of compatible cluster deployment modes.
-       Fuel 8.0 supports only the ``haz`` value.
-     * ``releases: deployment_scripts_path`` -- A path in your plugin directory
-       where all the deployment scripts for the release are. The path is
-       relative to the plugin root.
-     * ``releases: repository_path`` -- A path in your plugin directory where
-       all the packages for the release are. Relative to the plugin root.
-
-   * ``package_version`` -- A version of the compatible plugin format.
-     To build your plugin, the Fuel Plugin Builder version must be the same
-     as the version of the compatible plugin format or newer. Each new plugin
-     format version introduces new features and, possibly, deprecates some of
-     the old ones. The Fuel master node must support the specific
-     ``package_version``, otherwise, you cannot install the plugin.
+#. Edit the :ref:`metadata.yaml` file with the list of required parameters.
 
    See the `metadata.yaml example <https://github.com/openstack/fuel-plugin-openbook/blob/master/metadata.yaml>`_.
 
