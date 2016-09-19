@@ -24,17 +24,17 @@ Compare these to the plugins that affect Fuel core functionality, such as SDN
 or storage plugins. These plugins can only be installed before deploying an
 environment.
 
-Defining tasks for exisiting roles in a hot-pluggalbe plugin executes these
+Defining tasks for existing roles in a hot-pluggable plugin executes these
 tasks with the corresponding roles if these nodes are installed after the
 plugin is enabled. This option, however, is error-prone, as you cannot
 differentiate between the nodes deployed before and after the plugin is
-enabled. In this case, nodes have the same role but different fucntionality.
+enabled. In this case, nodes have the same role but different functionality.
 
 The recommended use case for a hot-pluggable plugin is to add a node with a
 plugin-specific role to an already existing environment.
 
 An application-level plugin must have the ``is_hotpluggable`` attribute
-set to ``true`` in the ``metadata.yaml`` file:
+set to ``true`` in the :ref:`metadata.yaml` file:
 
 .. code-block:: ini
 

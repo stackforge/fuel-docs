@@ -36,14 +36,14 @@ You must use the Fuel Master node as the build environment.
 
       git checkout a22bc32
 
-   Without this commit you should always have the deprecated ``tasks.yaml``
-   in the plugin, even if it is empty or the plugin will not build.
-
+   The ``tasks.yaml`` file is required for the plugin to build, even if
+   the file is empty.
+   
    .. note:: If the plugin metadata does not specify the same version of
              OpenStack as the one supported by the Fuel Master node,
              on which the plugin is installed, you will not see any
              plugin fields in the Fuel web UI. To be compatible with Fuel 8.0,
-             the ``metadata.yaml`` file of the plugin must contain the
+             the :ref:`metadata.yaml` file of the plugin must contain the
              following lines:
 
             .. code-block:: ini
