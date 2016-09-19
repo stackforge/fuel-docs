@@ -34,7 +34,7 @@ The recommended use case for a hot-pluggable plugin is to add a node with a
 plugin-specific role to an already existing environment.
 
 An application-level plugin must have the ``is_hotpluggable`` attribute
-set to ``true`` in the ``metadata.yaml`` file:
+set to ``true`` in the :ref:`metadata.yaml` file:
 
 .. code-block:: ini
 
