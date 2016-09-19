@@ -13,7 +13,7 @@ a way to dynamically change the settings provided by a plugin. The general
 information on the settings restrictions is in 
 *Developer Guide* -> *Extending OpenStack Settings* -> *Restrictions*.
 
-Settings restrictions are defined in ``environment_config.yaml`` and can be
+Settings restrictions are defined in :ref:`environment_config.yaml` and can be
 applied not only to any specific setting but also for a plugin as a whole.
 In this case, the restrictions should be applied to plugin metadata.
 

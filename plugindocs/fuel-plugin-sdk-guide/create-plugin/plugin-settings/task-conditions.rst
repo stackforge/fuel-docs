@@ -26,7 +26,7 @@ In this example, the default task ``upload_cirros`` will only run when
 a specific setting for it is enabled in the Fuel web UI. The setting
 itself can be defined as:
 
-``environment_config.yaml``:
+:ref:`environment_config.yaml`:
 
 .. code-block:: ini
 
