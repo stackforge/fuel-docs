@@ -16,4 +16,5 @@ Fuel Plugin SDK Guide
    fuel-plugin-sdk-guide/create-plugin.rst
    fuel-plugin-sdk-guide/requirements.rst
    fuel-plugin-sdk-guide/limitations.rst
+   fuel-plugin-sdk-guide/faq.rst
    fuel-plugin-sdk-guide/additional-information.rst
