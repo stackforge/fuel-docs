@@ -15,6 +15,8 @@ This section includes the following topics:
 .. toctree::
    :maxdepth: 1
 
+   maintain-environment/backup-fuel
+   maintain-environment/restore-fuel
    maintain-environment/remove-node.rst
    maintain-environment/redeploy-node.rst
    maintain-environment/access-shell.rst
