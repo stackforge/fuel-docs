@@ -1,0 +1,12 @@
+Verified+1: Fuel CI <fuel-ci-bot@mirantis.com>
+Code-Review+1: Eugene Korekin <ekorekin@mirantis.com>
+Code-Review+1: Svetlana Karslioglu <skarslioglu@mirantis.com>
+Code-Review+2: Irina <ipovolotskaya@mirantis.com>
+Code-Review+2: Evgeny Konstantinov <evkonstantinov@mirantis.com>
+Workflow+1: Evgeny Konstantinov <evkonstantinov@mirantis.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Thu, 29 Sep 2016 09:31:10 +0000
+Reviewed-on: https://review.openstack.org/368811
+Project: openstack/fuel-docs
+Branch: refs/heads/master
