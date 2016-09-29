@@ -52,4 +52,4 @@ Now, you can upgrade or restore the Fuel Master node from the backup files.
 .. seealso::
 
   * :ref:`restore-fuel`
-  * :ref:`upgrade-patch-top-ug`
+  * :ref:`upgrade_liberty`
