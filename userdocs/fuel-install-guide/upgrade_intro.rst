@@ -13,9 +13,7 @@ This section includes the following topics.
    :maxdepth: 1
 
    upgrade/upgrade-internals
-   upgrade/backup-fuel
-   upgrade/restore-fuel
-   upgrade/upgrade-fuel
+   upgrade/upgrade-liberty
    upgrade/upgrade-local-repo
 
 .. note:: Fuel does not support upgrades for plugins. The old plugin
