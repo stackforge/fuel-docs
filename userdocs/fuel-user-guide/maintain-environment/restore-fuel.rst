@@ -58,4 +58,4 @@ procedure.
 .. seealso::
 
    * :ref:`back-up-fuel`
-   * :ref:`upgrade-patch-top-ug`
+   * :ref:`upgrade_liberty`

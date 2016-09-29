@@ -1,8 +1,8 @@
 .. _upgrade-internals:
 
-====================================
-Overview of the Fuel upgrade process
-====================================
+========
+Overview
+========
 
 The upgrade is implemented with upgrade engines, which are python
 modules:
