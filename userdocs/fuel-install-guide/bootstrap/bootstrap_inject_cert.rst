@@ -8,7 +8,7 @@ a bootstrap using ``fuel-bootstrap``.
 For example, you can add custom certificates to access
 an https repository.
 
-** To inject certificate files:**
+**To inject certificate files:**
 
 #. Add a certificate to the Fuel Master system to provide
    correct work of debootstrap run on the Fuel Master node:
