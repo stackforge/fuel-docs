@@ -1,0 +1,8 @@
+Code-Review+2: Olga Gusarenko <ogusarenko@mirantis.com>
+Workflow+1: Olga Gusarenko <ogusarenko@mirantis.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Fri, 07 Oct 2016 07:42:30 +0000
+Reviewed-on: https://review.openstack.org/383567
+Project: openstack/fuel-docs
+Branch: refs/heads/master
