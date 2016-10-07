@@ -81,3 +81,4 @@ initial configuration.
 .. seealso::
 
    - :ref:`Log in to the Fuel Master node with multiple NICs <install_login_fuel_master_node_multiple_nics>`
+   - :ref:`update_fuel`
