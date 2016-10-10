@@ -47,8 +47,10 @@ Example:
 			deployment_scripts_path: deployment_scripts/
 			repository_path: repositories/ubuntu
 
-	# Version of plugin package
+	# Version of the plugin package
 	package_version: '4.0.0'
+	# Version of the plugin build
+	build_version: '1476097405'
 
 Fields:
 
@@ -58,7 +60,7 @@ Fields:
      underscore ``_``.
    * ``title`` -- Human-readable plugin name displayed on the Fuel web UI.
    * ``version`` -- Plugin version. For guidelines, see
-     `Semantic Versioning 2.0.0 <http://semver.org/>`_.
+     :ref:`plugin_versioning_system`.
    * ``fuel_version`` -- The Fuel version that your plugin is compatible with.
      Currently, the builder verifies ``fuel_version`` only against
      ``package_version``. The ``package_version`` field must be supported
@@ -106,3 +108,5 @@ Fields:
      +---------------+-------+-------+-------+-------+-------+
      | Fuel          | 6.0   | 6.1   | 7.0   | 8.0   | 9.0   |
      +---------------+-------+-------+-------+-------+-------+
+   * ``build_version`` -- A version of the build that allows to iterate package
+     version without updating the plugin version.

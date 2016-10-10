@@ -24,3 +24,4 @@ This section includes the following topics:
    create-plugin/modify-ui.rst
    create-plugin/plugin-repos.rst
    create-plugin/add-driverlog.rst
+   create-plugin/plugin-versioning-system.rst

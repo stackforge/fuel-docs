@@ -38,8 +38,7 @@ The Fuel Plugin Builder generates three files:
      The allowed name characters are lowercase letters, dash ``-``, and
      underscore ``_``.
    * ``title`` -- Human-readable plugin name displayed on the Fuel web UI.
-   * ``version`` -- Plugin version. For guidelines, see
-     `Semantic Versioning 2.0.0 <http://semver.org/>`_.
+   * ``version`` -- Plugin version. For guidelines, see :ref:`plugin_versioning_system`.
    * ``licenses`` -- List the licenses under which your plugin can be
      distributed.
    * ``authors`` -- Name of the plugin author. A company or an individual.
@@ -97,6 +96,11 @@ The Fuel Plugin Builder generates three files:
      format version introduces new features and, possibly, deprecates some of
      the old ones. The Fuel master node must support the specific
      ``package_version``, otherwise, you cannot install the plugin.
+   * ``build_version`` -- A version of the build that allows to iterate the
+     package version without updating the plugin version. You can specify
+     a value in any format, such as timestamp and so on. If the value is empty,
+    fpb adds "1" at the end of the plugin's output file name. For example,
+    ``plugin-x.x-x.x.x-1.rpm``.
 
    See the `metadata.yaml example <https://github.com/openstack/fuel-plugin-openbook/blob/master/metadata.yaml>`_.
 
