@@ -141,9 +141,7 @@ Simplest way is to install Fuel, and OSTF will be installed as part of it.
   - execute::
 
       ssh root@10.20.0.2
-      ps uax | grep supervisor
-      kill <supervisord process number>
-      service supervisord start
+      service ostf restart
   - go to Fuel UI and run your new tests
 
 Now I'm done, what's next?
