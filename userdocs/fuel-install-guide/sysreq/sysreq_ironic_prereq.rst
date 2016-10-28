@@ -15,12 +15,19 @@ required to succesfully deploy and use the OpenStack Bare Metal service.
 * Prepare the nodes on which you plan to deploy ``ironic`` by configuring the
   following:
 
-  * A separate network interface for the *baremetal* network.
+  * Prepare the *baremetal* network.
 
-    You must assign a separate network interface or a VLAN for the
-    *baremetal* network on the controller node. If you need to configure
-    this network interface only on some nodes, such as nodes with ``ironic``
-    and ``controller`` roles, use network templates.
+    In fuel, the *baremetal* network consists of a virtual subnet range and
+    a solid subnet range. The virtual subnet range is a part of the OpenStack
+    Network service and will be mapped to the Fuel private network. Baremetal
+    servers get their IP addresses from this virtual subnet range in the same
+    manner as virtual instances. The solid subnet range is similar to the Fuel
+    management network and is used for communication between Ironic services
+    (ironic-api, ironic-conductor, ...) and agents that run on baremetal servers.
+    Therefore, configure the *baremetal* network with care and ensure that the
+    baremetal servers PXE boot interface are plugged into this network. If you
+    need to configure this network interface only on some nodes, such as nodes
+    with ``ironic`` and ``controller`` roles, use network templates.
 
   * Access to the IPMI network
 
