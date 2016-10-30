@@ -17,8 +17,8 @@ The Fuel developers team recommends that you follow this CI workflow:
 
      .. code-block:: console
 
-        $ fuel-main/utils/jenkins/system_tests -t test -j\
-        dis_fuelweb_test -i (path to downloaded Fuel-ISO)\
+        $ fuel-main/utils/jenkins/system_tests -t test -j \
+        dis_fuelweb_test -i (path to downloaded Fuel-ISO) \
         -o --group=setup -V ${VIRTUAL_ENV} -k
 
    * Create or restore the required empty VMs from snapshots.

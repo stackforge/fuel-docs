@@ -53,8 +53,7 @@ Follow these additional guidelines on creating and formating your own tests:
 
    .. code-block:: console
 
-      ./utils/jenkins/system_tests.sh -t test -w\
-      $(pwd) -j fuelweb_test -i $ISO_PATH -o --group=setup
+      ./utils/jenkins/system_tests.sh -t test -w $(pwd) -j fuelweb_test -i $ISO_PATH -o --group=setup
 
 #. For additional information, type:
 

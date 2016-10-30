@@ -14,8 +14,7 @@ You must use the Fuel Master node as the build environment.
 
    .. code-block:: console
 
-      yum install -y git python-mako createrepo dpkg-devel dpkg-dev rpm\
-      rpm-build
+      yum install -y git python-mako createrepo dpkg-devel dpkg-dev rpm rpm-build
 
 #. Clone the Fuel Plugin Builder repository:
 

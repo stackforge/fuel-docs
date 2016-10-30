@@ -13,19 +13,13 @@ for plugins.
      #!/bin/bash
      set -ex
 
-     export SYSTEM_TESTS="${WORKSPACE}/utils/\
-     jenkins/system_tests.sh"
-     export LOGS_DIR=${WORKSPACE}/logs/\
-     ${BUILD_NUMBER}
-     export VENV_PATH='/home/jenkins/\
-     venv-nailgun-tests-2.9'
-     YOUR_PLUGIN_PATH="$(ls ./*rpm)"\#Change\
-     this to appropriate fuel-qa variable for your plugin
-     export YOUR_PLUGIN_PATH#
+     export SYSTEM_TESTS="${WORKSPACE}/utils/jenkins/system_tests.sh"
+     export LOGS_DIR=${WORKSPACE}/logs/${BUILD_NUMBER}
+     export VENV_PATH='/home/jenkins/venv-nailgun-tests-2.9'
+     YOUR_PLUGIN_PATH="$(ls ./*rpm)"\#Change this to appropriate fuel-qa variable for your plugin
+     export YOUR_PLUGIN_PATH
 
-     sh -x "${SYSTEM_TESTS}" -w "${WORKSPACE}" -V\
-     "${VENV_PATH}" -i "${ISO_PATH}" -t test -o\
-     --group="${TEST_GROUP}"
+     sh -x "${SYSTEM_TESTS}" -w "${WORKSPACE}" -V "${VENV_PATH}" -i "${ISO_PATH}" -t test -o --group="${TEST_GROUP}"
 
 * prepare_env.sh:
 
@@ -34,22 +28,17 @@ for plugins.
       #!/bin/bash
       set -ex
 
-      export VENV_PATH="/home/jenkins/\
-      venv-nailgun-tests-2.9"
+      export VENV_PATH="/home/jenkins/venv-nailgun-tests-2.9"
 
       rm -rf "${VENV_PATH}"
 
-      REQS_PATH="${WORKSPACE}/fuel-qa/\
-      fuelweb_test/requirements.txt"
+      REQS_PATH="${WORKSPACE}/fuel-qa/fuelweb_test/requirements.txt"
 
-      virtualenv --system-site-packages\
-      "${VENV_PATH}"
+      virtualenv --system-site-packages "${VENV_PATH}"
       source "${VENV_PATH}/bin/activate"
       pip install -r "${REQS_PATH}" --upgrade
-      django-admin.py syncdb --settings=devops.\
-      settings --noinput
-      django-admin.py migrate devops --settings\
-      =devops.settings --noinput
+      django-admin.py syncdb --settings=devops.settings --noinput
+      django-admin.py migrate devops --settings=devops.settings --noinput
       deactivate
 
 * syntax-build-plugin.sh:
@@ -59,11 +48,9 @@ for plugins.
       #!/bin/bash
       set -ex
 
-      find . -name '*.erb' -print 0 | xargs -0 -P1\
-      -I '%' erb -P -x -T '-' % | ruby -c
-      find . -name '*.pp' -print 0| xargs -0 -P1\
-      puppet parser validate --verbose
-      find . -name '*.pp' -print 0| xargs -0 -P1\
+      find . -name '*.erb' -print 0 | xargs -0 -P1 -I '%' erb -P -x -T '-' % | ruby -c
+      find . -name '*.pp' -print 0| xargs -0 -P1 puppet parser validate --verbose
+      find . -name '*.pp' -print 0| xargs -0 -P1 \
       puppet-lint \
         --fail-on-warnings \
         --with-context \
@@ -86,12 +73,9 @@ for plugins.
       - project:
           name: plugin_name #Your plugin mame
           path_to_fuel_iso: $PWD #Path to FuelISO
-          plugin_repo: plugin_repo #Your plugin repo name\
-          at stackforge
-          email_to: emails_list #List of emails separated\
-          by comma
-          test_group: test_group #Test group in fuel-qa for\
-          deployment tests of your plugin
+          plugin_repo: plugin_repo #Your plugin repo name at stackforge
+          email_to: emails_list #List of emails separated by comma
+          test_group: test_group #Test group in fuel-qa for deployment tests of your plugin
           jobs:
             - 'prepare_env'
             - '{name}.build'
@@ -131,11 +115,8 @@ for plugins.
           name: '{name}.build'
           builders:
             - shell:
-                !include-raw-escape './builders/syntax-\
-                build-plugin.sh'
-          description: '<a href=https://github.com/\
-          stackforge/{plugin_repo}>Build {name} plugin\
-          from fuel-plugins project</a>'
+                !include-raw-escape './builders/syntax-build-plugin.sh'
+          description: '<a href=https://github.com/stackforge/{plugin_repo}>Build {name} plugin from fuel-plugins project</a>'
           logrotate:
             numToKeep: 10
           parameters:
@@ -148,16 +129,14 @@ for plugins.
                   - $GERRIT_BRANCH
                 name: ''
                 refspec: $GERRIT_REFSPEC
-                url: 'https://review.openstack.org/\
-                stackforge/{plugin_repo}'
+                url: 'https://review.openstack.org/stackforge/{plugin_repo}'
                 choosing-strategy: gerrit
                 clean:
                   before: true
           triggers:
             - gerrit:
                 trigger-on:
-                  - patchset-created-event #Trigger\
-                  plugin build for every gerrit patchset
+                  - patchset-created-event #Trigger plugin build for every gerrit patchset
                 projects:
                   - project-compare-type: 'PLAIN'
                     project-pattern: '{plugin_repo}'
@@ -185,8 +164,7 @@ for plugins.
                   TEST_GROUP={test_group}
                   ISO_PATH={path_to_fuel_iso}
             - shell:
-                !include-raw-escape './builders/\
-                deploy-plugin.sh'
+                !include-raw-escape './builders/deploy-plugin.sh'
           description: 'fuel-qa system test for {name}'
           logrotate:
             numToKeep: 10
@@ -199,8 +177,7 @@ for plugins.
                 branches:
                   - $GERRIT_BRANCH
                 refspec: $GERRIT_REFSPEC
-                url: 'https://review.openstack.org/\
-                stackforge/fuel-qa'
+                url: 'https://review.openstack.org/stackforge/fuel-qa'
                 choosing-strategy: gerrit
                 clean:
                   before: true
