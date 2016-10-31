@@ -10,6 +10,6 @@ Requirements
 * If you use plugin pre-deployment scripts that somehow change the state of
   the Fuel Master node -- for example, changes to Nailgun database --
   ensure that all these changes are removed in the post-deployment script.
-* TBD Fuel code style guidelines
-* TBD Use puppet-lint and pep8 (+bash?)
-* TBD recommendation on pre_build_hook
+* See :ref:`code-style` and 
+  `Fuel contribution guidelines <https://wiki.openstack.org/wiki/Fuel/How_to_contribute>`_
+* recommendation on pre_build_hook
