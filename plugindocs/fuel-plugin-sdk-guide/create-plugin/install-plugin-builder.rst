@@ -30,11 +30,11 @@ You must use the Fuel Master node as the build environment.
       cd fuel-plugins
 
 #. Check out a specific commit from the Fuel Plugin Builder repository
-   compatible with Fuel 8.0:
+   compatible with Fuel 9.0:
 
    .. code-block:: console
 
-      git checkout a22bc32
+      git checkout 40bca6b
 
    The ``tasks.yaml`` file is required for the plugin to build, even if
    the file is empty.
