@@ -63,6 +63,11 @@ The automatically generated plugin does the following:
    |                                              |You can also define new volumes and map them to   |
    |                                              |the new or existing nodes.                        |
    +----------------------------------------------+--------------------------------------------------+
+   | ``bond_config.yaml``                         | Mechanism to provide extra attributes for bond   |
+   |                                              | interfaces. See the blueprint_                   |
+   +----------------------------------------------+--------------------------------------------------+
+   | ``nic_config.yaml``                          | Mechanism to define extra attributes for NICs.   |
+   +----------------------------------------------+--------------------------------------------------+
 
 #. Build the automatically generated plugin:
 
@@ -126,3 +131,5 @@ You can also verify the plugin installation using Fuel CLI:
          when this adds a new node role and a node with this role can be
          added after the environment is deployed. In this case use the keyword
          ``is_hotppluggable`` in :ref:`metadata.yaml`.
+
+.. _blueprint: https://specs.openstack.org/openstack/fuel-specs/specs/10.0/nics-and-nodes-attributes-via-plugin.html

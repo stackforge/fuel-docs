@@ -30,15 +30,15 @@ You must use the Fuel Master node as the build environment.
       cd fuel-plugins
 
 #. Check out a specific commit from the Fuel Plugin Builder repository
-   compatible with Fuel 8.0:
+   compatible with the latest version of Fuel:
 
    .. code-block:: console
 
-      git checkout a22bc32
+      git checkout 40bca6b
 
    The ``tasks.yaml`` file is required for the plugin to build, even if
    the file is empty.
-   
+  
    .. note:: If the plugin metadata does not specify the same version of
              OpenStack as the one supported by the Fuel Master node,
              on which the plugin is installed, you will not see any
@@ -66,5 +66,7 @@ You must use the Fuel Master node as the build environment.
       python -c 'import pkg_resources;
       print pkg_resources.get_distribution\
       ("fuel-plugin-builder").version'
-  
-   This should display ``4.0.0``.
+
+
+
+  This should display ``4.1.1.dev18`.
