@@ -12,7 +12,8 @@ As a plugin developer, your repository workflow must be the following:
    repository in the OpenStack namespace, you need to do the following:
 
    * Have your code reviewed by the `Fuel team <https://bugs.launchpad.net/fuel/>`_.
-     You can also request a review in the #fuel-dev channel in IRC.
+     You can also request a review in the #fuel-dev channel in IRC. You are welcome
+     to request peer review from your development team's mates, as well.
    * Plan to set up a CI for the plugin. See :ref:`plugin-ci`.
    * Confirm that you are going to support the plugin for more than one
      version of Fuel.

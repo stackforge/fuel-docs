@@ -10,15 +10,12 @@ The Fuel Plugin SDK Guide provides instructions on how to build, test, and
 troubleshoot your plugins; the guide also gives an overview of the existing
 plugins.
 
-This guide focuses on Fuel Plugin Builder Version 4 delivered with Fuel 8.0
-Maintenance Update 1.
-
 Before you read this document, you must do the following:
 
-#. Install Fuel 8.0. See :ref:`fuel-install-guide`.
-#. Update the Fuel Master node to Maintenance Update 1.
+#. Install the latest Fuel version. See :ref:`fuel-install-guide`.
 #. Deploy an OpenStack environment with one controller and one compute node.
-   See :ref:`create-env-ug`.
+   See :ref:`create-env-ug`. Please note that for testing purposes you will need to use at
+   least 3 Controller nodes for high availability.
 
 This guide is a work in progress and will eventually have most of
 the information you need on Fuel Plugin SDK. In the meantime, use
