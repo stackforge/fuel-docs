@@ -63,6 +63,11 @@ The automatically generated plugin does the following:
    |                                              |You can also define new volumes and map them to   |
    |                                              |the new or existing nodes.                        |
    +----------------------------------------------+--------------------------------------------------+
+   | ``bond_config.yaml``                         | Mechanism to provide extra attributes for bond   |
+   |                                              | interfaces.                                      |
+   +----------------------------------------------+--------------------------------------------------+
+   | ``nic_config.yaml``                          | Mechanism to define extra attributes for NICs.   |
+   +----------------------------------------------+--------------------------------------------------+
 
 #. Build the automatically generated plugin:
 
