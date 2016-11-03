@@ -16,3 +16,5 @@ of terminology in the Fuel documentation.
    n.rst
    p.rst
    s.rst
+   t.rst
+   y.rst
