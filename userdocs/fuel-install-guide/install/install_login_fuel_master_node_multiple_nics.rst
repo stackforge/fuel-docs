@@ -23,4 +23,4 @@ NIC.
 .. seealso::
 
    - :ref:`install_login_fuel_master_node`
-
+   - :ref:`update_fuel`

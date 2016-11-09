@@ -25,10 +25,9 @@ environment with new parameters.
 
    .. note::
 
-      To restore the last successfully deployed OpenStack settings
-      for your environment, click :guilabel:`Load Deployed`.
-      The :guilabel:`Load Deployed` button does not display
-      for the OpenStack environments with the ``new`` status.
+      To restore the last deployed OpenStack settings for your environment,
+      click :guilabel:`Load Deployed`. Fuel displays the :guilabel:`Load Deployed`
+      button only for the successfully deployed OpenStack environments.
 
 #. In the :guilabel:`Dashboard` tab, view :guilabel:`List of changes`
    to deploy.

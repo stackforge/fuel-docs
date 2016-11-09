@@ -25,6 +25,15 @@ the connected external repository through the ``fuel-bootstrap`` builder script.
     ...
     Bootstrap image a778efad-88ca-41fe-b592-f02101c11d22 has been built: /root/example1/a778efad-88ca-41fe-b592-f02101c11d22.tar.gz
 
+   You can also specify a path to a custom configuration file with parameters
+   for building a new bootstrap instead of using parameters from the default
+   configuration file.
+
+   For example:
+
+   .. code-block:: console
+
+      $ fuel-bootstrap build --config /etc/fuel-bootstrap-cli/my-config-xenial.yaml
 
 #. After the build process is completed, you can import and activate the new bootstrap image:
 

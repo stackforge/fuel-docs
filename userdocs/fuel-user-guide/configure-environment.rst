@@ -21,7 +21,7 @@ This section includes the following topics:
   PageBreak
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 1
 
    configure-environment/add-nodes.rst
    configure-environment/add-label.rst
@@ -33,9 +33,13 @@ This section includes the following topics:
    configure-environment/selectable-offload.rst
    configure-environment/map-logical-to-physical-nic.rst
    configure-environment/verify-networks.rst
+   configure-environment/network-templates.rst
    configure-environment/customize-partitions.rst
    configure-environment/config-drive-format.rst
    configure-environment/settings.rst
    configure-environment/dns-ntp-support.rst
    configure-environment/configure-multipath.rst
    configure-environment/nfv.rst
+   configure-environment/workflows.rst
+   configure-environment/enable-usb-discovery.rst
+   configure-environment/configure-vmware-vcenter-settings.rst

@@ -35,7 +35,7 @@ or through Fuel CLI using the ``fuel-createmirror`` script.
 
         fuel-createmirror --password PASSWORD
 
-#. Restart the the docker daemon
+#. Restart the docker daemon
 
    ::
 

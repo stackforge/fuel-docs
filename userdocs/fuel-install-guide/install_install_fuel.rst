@@ -29,3 +29,7 @@ This section includes the following topics:
    install/install_login_fuel_master_node
    install/install_login_fuel_master_node_multiple_nics
    install/install_boot_slave_nodes
+
+.. seealso::
+
+   * :ref:`update_fuel`

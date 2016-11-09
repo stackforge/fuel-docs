@@ -1,7 +1,10 @@
 .. _cli-roles:
 
+========================
 Role management commands
-------------------------
+========================
+
+.. include:: /userdocs/snippets/notes/deprecated-cli-v1.rst
 
 Fuel CLI implements standard CRUD for operations on a node role.
 The following table describes the role management commands
@@ -74,7 +77,7 @@ available in the Fuel CLI.
               swift         | 17
 
    * - Update the role data
-     - `` fuel role --rel <release_id> --update --file <file>``
+     - ``fuel role --rel <release_id> --update --file <file>``
      - ::
 
           fuel role --rel <2> --update --file <swift.yaml>

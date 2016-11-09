@@ -33,3 +33,7 @@ minutes to an hour.
      #. Unfold :guilabel:`Choose nodes for deployment` and
         select nodes.
      #. Click :guilabel:`Deploy Nodes`.
+
+.. seealso::
+
+   * :ref:`view_workflows`

@@ -1,7 +1,8 @@
 .. _ug-network:
 
+====================
 Troubleshoot network
-~~~~~~~~~~~~~~~~~~~~
+====================
 
 This section describes network errors that Fuel displays in the Fuel web UI
 or CLI.

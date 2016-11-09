@@ -12,4 +12,8 @@ This section includes the following topics:
 .. toctree::
    :maxdepth: 3
 
+   troubleshooting/service-status.rst
+   troubleshooting/restart-service.rst
+   troubleshooting/logging.rst
+   troubleshooting/debug-mode.rst
    troubleshooting/network.rst

@@ -1,12 +1,8 @@
-
-.. raw:: pdf
-
-  PageBreak
-
 .. _verify-networks-ug:
 
+============================
 Verify network configuration
-----------------------------
+============================
 
 After you configure network settings, verify your network configuration.
 Network verification tests connectivity between nodes through configured
@@ -33,3 +29,4 @@ You must resolve all errors before you deploy an OpenStack environment.
 .. seealso::
 
    * :ref:`post-deployment-settings`
+   * :ref:`ug-network`

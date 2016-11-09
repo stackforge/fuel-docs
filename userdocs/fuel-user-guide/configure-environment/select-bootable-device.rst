@@ -16,12 +16,12 @@ By default, Fuel boots the first disk it detects.
 
 * Using the Fuel CLI:
 
-  #. Log in to the the Fuel Master node CLI.
+  #. Log in to the Fuel Master node CLI.
   #. Download the configuration file of the node:
 
      .. code-block:: console
 
-        fuel node --node-id <node_id> --disks --download
+        fuel node --node-id <node_id> --disk --download
 
   #. In the ``disks.yaml``, set ``bootable: True`` for the required node's
      disk. For example:
@@ -44,4 +44,4 @@ By default, Fuel boots the first disk it detects.
 
      .. code-block:: console
 
-        fuel node --node-id <node_id> --disks --upload
+        fuel node --node-id <node_id> --disk --upload

@@ -1,5 +1,6 @@
 .. _maintain-environment:
 
+===================================
 Maintain your OpenStack environment
 ===================================
 
@@ -14,11 +15,15 @@ This section includes the following topics:
 .. toctree::
    :maxdepth: 1
 
+   maintain-environment/backup-fuel
+   maintain-environment/restore-fuel
+   maintain-environment/remove-node.rst
+   maintain-environment/redeploy-node.rst
+   maintain-environment/access-shell.rst
    maintain-environment/rollback-ug.rst
    maintain-environment/reinstall-node.rst
    maintain-environment/reinstall-virtual-role.rst
-   maintain-environment/use-shotgun.rst
-   maintain-environment/custom-graph.rst
-   maintain-environment/data-driven.rst
-   maintain-environment/deployment-history.rst
-   maintain-environment/deployment-information.rst
+   maintain-environment/create-snapshot.rst
+   maintain-environment/workflows-manage.rst
+   maintain-environment/shutdown-env.rst
+   maintain-environment/start-env.rst

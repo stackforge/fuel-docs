@@ -20,12 +20,12 @@ You can configure Fuel bootstrap images using the ``fuel-bootstrap`` command:
 
 .. code-block:: console
 
-    usage: fuel-bootstrap [--version] [-v] [--log-file LOG_FILE] [-q] [-h]
-                          [--debug]
+    usage: fuel-bootstrap [--version] [-v] [--log-file <LOG_FILE>] [-q] [-h]
+                          [--debug] [--config <CONFIG_FILE>]
 
 
 .. list-table:: **Optional arguments**
-   :widths: 10 25
+   :widths: 15 25
    :header-rows: 0
 
    * - Option
@@ -34,7 +34,7 @@ You can configure Fuel bootstrap images using the ``fuel-bootstrap`` command:
      - Shows a program's version number and exits.
    * - ``-v``, ``--verbose``
      - Increases a verbosity of output. Can be repeated.
-   * - ``--log-file LOG_FILE``
+   * - ``--log-file <LOG_FILE>``
      - Specify a file to log output. Disabled by default.
    * - ``-q``, ``--quiet``
      - Suppress output except for warnings and errors.
@@ -42,6 +42,8 @@ You can configure Fuel bootstrap images using the ``fuel-bootstrap`` command:
      - Shows this help message and exits.
    * - ``--debug``
      - Shows tracebacks on errors.
+   * - ``--config <CONFIG_FILE>``
+     - Specify a configuration file with bootstrap settings.
 
 
 .. list-table:: **Commands to operate with a bootstrap image**

@@ -36,13 +36,13 @@ This section lists these improvements:
 * Fuel now stores detailed information about all deployments. You can download
   the actual cluster settings, network configuration, and serialized cluster
   data.
-  See :ref:`deployment-history` and :ref:`deployment-information`.
+  See :ref:`view_history` and :ref:`deployment-information`.
 
-* You can now execute a particular deployment graph with the ability to merge
-  it with the existing deployment graphs of the upstream master release.
+* You can now execute a particular deployment workflow with the ability to merge
+  it with the existing deployment workflows of the upstream master release.
   This allows you to implement complex orchestrated workflows -- bugfixes
   application, reference architecture altering, or even upgrades.
-  See :ref:`custom-graph`.
+  See :ref:`workflows_manage`.
 
 * Fuel now supports lifecycle management tasks based on the history of
   cluster states. This data-driven feature allows the deployment engineers
@@ -86,3 +86,10 @@ This section lists these improvements:
   software components using ``cgroups``. Specifying optimal values helps
   to increase performance and reliability of your cloud.
   See :ref:`cgroups-intro`.
+
+* The OpenStack Application Catalog service is now also installable as a
+  plugin for Fuel. This plugin is designed to enable upgrading of the
+  OpenStack Application Catalog together with plugin installation. This plugin
+  update mechanism will be used to deliver future updates to the OpenStack
+  Application Catalog service.
+  See `Murano plugin for Fuel <https://github.com/openstack/fuel-plugin-murano>`__.

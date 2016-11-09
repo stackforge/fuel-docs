@@ -26,7 +26,7 @@ Usage
 
        fuel --env 1 settings default
 
-   where ``--env 1`` that to the specific environment
+   where ``--env 1`` points to the specific environment
    (id=1 in this example).
 
 

@@ -1,24 +1,31 @@
 .. _cli-deploy:
 
+===================
 Deployment commands
--------------------
+===================
 
-The following table describes the deployment commands
-available in the Fuel CLI.
+.. include:: /userdocs/snippets/notes/deprecated-cli-v1.rst
+
+The following table describes the usage of the :command:`fuel deployment`
+command available in the Fuel CLI.
 
 .. list-table:: **Deployment commands**
-   :widths: 10 10 20
+   :widths: 7 10
    :header-rows: 1
 
    * - Description
      - Command
-     - Example
-   * - Deploy an OpenStack environment.
-     - ``fuel --env <env_id> deploy-changes``
-     -
-   * - Deploy specific nodes.
-     - ``fuel node --deploy --node <node1_id>,<node2_id>``
-     -
-   * - Provision specific nodes.
-     - ``fuel node --provision --node <node1_id>,<node2_id>``
-     -
+   * - Delete current deployment data
+     - ``fuel --env <ENV> deployment --delete``
+   * - Download current deployment data
+     - ``fuel --env <ENV> deployment --download``
+   * - Download default deployment data
+     - ``fuel --env <ENV> deployment --default``
+   * - Get default deployment information for specific nodes
+     - ``fuel --env <ENV> deployment --default --node <NODE_ID [NODE_ID ...]>``
+   * - Upload provisioning deployment to a specific directory
+     - ``fuel --env <ENV> deployment -u --dir path/to/directory``
+   * - Download deployment information to a specific directory
+     - ``fuel --env <ENV> deployment -d --dir path/to/directory``
+
+

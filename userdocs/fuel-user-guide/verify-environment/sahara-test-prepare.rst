@@ -27,7 +27,7 @@ for Sahara platform tests. Otherwise, some tests may fail.
 #. If you use VMware vSphere as a hypervisor for your OpenStack environment,
    convert the `qcow2` image format to `vmdk`:
 
-   .. code-block: console
+   .. code-block:: console
 
       qemu-img convert -O vmdk <original_image>.qcow2 <converted_image>.vmdk
 

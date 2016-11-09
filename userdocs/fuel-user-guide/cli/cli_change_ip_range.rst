@@ -1,9 +1,10 @@
-
 .. _cli_change_ip_range:
 
-
+==================
 Add network ranges
-------------------
+==================
+
+.. include:: /userdocs/snippets/notes/deprecated-cli-v1.rst
 
 To add network ranges, edit the network configuration file:
 add the IP network range to ``ip_ranges`` and change

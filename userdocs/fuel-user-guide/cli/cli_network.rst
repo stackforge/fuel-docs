@@ -1,7 +1,10 @@
 .. _cli-network:
 
+================
 Network commands
-----------------
+================
+
+.. include:: /userdocs/snippets/notes/deprecated-cli-v1.rst
 
 You can manage network configurations using the following command:
 
@@ -19,7 +22,7 @@ You can manage network configurations using the following command:
      - ID of an OpenStack environment
    * - ``<PATH>``
      - Path to directory
-   * - <action>
+   * - ``<action>``
      - Action that will be performed for the network configuration.
 
 The following table describes network management commands
@@ -46,9 +49,9 @@ available in the Fuel CLI.
      - Upload network configuration for the environment with
        ID ``1`` from the current directory:
 
-         .. code-block:: console
+       .. code-block:: console
 
-            fuel --env 1 network --upload
+          fuel --env 1 network --upload
 
        .. note::
          The :command:`fuel network` command can update configuration of

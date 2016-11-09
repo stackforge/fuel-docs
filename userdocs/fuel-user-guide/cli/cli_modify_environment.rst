@@ -1,7 +1,10 @@
 .. _cli-modify-env:
 
+=========================================
 Modify an Openstack environment using CLI
------------------------------------------
+=========================================
+
+.. include:: /userdocs/snippets/notes/deprecated-cli-v1.rst
 
 You can modify your OpenStack environment after deployment
 by downloading the ``.yaml`` configuration files, editing settings, and
@@ -9,7 +12,7 @@ then uploading the configuration files back to the Nailgun
 server. After uploading the files, you must redeploy your OpenStack
 environment.
 
-Before modifying any settings, back up your OpenStack environment 
+Before modifying any settings, back up your OpenStack environment
 configuration.
 
 If you upload any changes for provisioning or deployment operations,
@@ -22,15 +25,49 @@ each node's configuration file and then apply the changes using Fuel CLI.
 You can download the following configurations:
 
 * ``network``
-* ``settings`` 
+* ``settings``
 * ``node --disk``
 * ``node --network``
 * ``provisioning``
 * ``deployment``
 
-.. note::
-   Operations with ``deployment`` and ``provisioning`` can be node
-   specific. For example: ``fuel --env 1 deployment --node-id=1,2``.
+When performing operations with nodes using :command:`fuel deployment` and
+:command:`fuel provisioning` commands, you can indicate specific nodes.
+For example:
+
+.. code-block:: console
+
+   fuel --env 1 deployment --node 1,2,3
+
+When downloading configurations using :command:`fuel deployment` and
+:command:`fuel provisioning` commands, Fuel automatically generates
+the following files:
+
+* For deployment:
+
+  ``master.yaml``
+   Includes details about the Fuel Master node configuration for a specified
+   OpenStack environment.
+
+  ``<NODE_ID>.yaml``
+   Includes details about the node deployment. The ``<NODE_ID>.yaml`` file
+   contains deployment details and is identical to the ``astute.yaml`` file
+   stored on a specific node. The deployment tasks consume parameters
+   included in ``<NODE_ID>.yaml`` through hiera.
+
+* For provisioning:
+
+  ``engine.yaml``
+   Includes credentials for the provisioning service (Cobbler) engine.
+
+  ``node-<NODE_ID>.yaml``
+   Includes details about provisioning for each node.
+
+.. seealso::
+
+   * :ref:`file-ref`
+   * :ref:`cli-provision`
+   * :ref:`cli-deploy`
 
 **To modify an OpenStack environment using CLI:**
 

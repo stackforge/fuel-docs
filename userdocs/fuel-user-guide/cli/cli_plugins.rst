@@ -1,7 +1,10 @@
 .. _cli_plugins:
 
+==========================
 Plugin management commands
---------------------------
+==========================
+
+.. include:: /userdocs/snippets/notes/deprecated-cli-v1.rst
 
 The following table describes the plugin management commands
 available in the Fuel CLI.
@@ -18,12 +21,12 @@ available in the Fuel CLI.
      - Command
      - Example
    * - Install a Fuel plugin from an ``.fp`` package.
-     - `` fuel plugins --install <fuel-plugin-file>``
+     - ``fuel plugins --install <fuel-plugin-file>``
      -
    * - Install a Fuel plugin from an ``.rpm`` package.
      - ``yum install <fuel-plugin-file>``
      -
-   * - Register a Fuel plugin installed using 
+   * - Register a Fuel plugin installed using
        ``yum install`` from an ``.rpm`` package in Nailgun.
      - ``fuel plugins --register <fuel-plugin-name>==<fuel-plugin-version>``
      -
@@ -50,7 +53,7 @@ available in the Fuel CLI.
           Upgrades are not supported for major versions of plugins installed
           from the ``.rpm`` package, as well as for plugins installed from the
           ``.fp`` packages. For example, you can only upgrade a Fuel plugin
-          installed from an ``.rpm`` package from version 
+          installed from an ``.rpm`` package from version
           1.0.0 to 1.0.1.
-     - fuel plugins --update <fuel-plugin-file>
+     - ``fuel plugins --update <fuel-plugin-file>``
      -

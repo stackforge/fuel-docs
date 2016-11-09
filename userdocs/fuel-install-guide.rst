@@ -13,5 +13,6 @@ Fuel Installation Guide
    fuel-install-guide/bootstrap_intro
    fuel-install-guide/plugins_intro
    fuel-install-guide/vsphere_intro
+   fuel-install-guide/update-fuel
    fuel-install-guide/upgrade_intro
    fuel-install-guide/preinstall_intro

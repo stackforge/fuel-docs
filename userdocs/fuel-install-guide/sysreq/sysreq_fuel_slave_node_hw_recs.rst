@@ -36,6 +36,16 @@ General guidelines for the Fuel Slave nodes:
    nodes. Therefore, the storage configuration for every deployment will
    vary significantly.
 
+* Telemetry - MongoDB nodes
+   Fuel deploys MongoDB version 2.6 with a replica set. To install Telemetry
+   with the MongoDB database, we recommend that you add three dedicated nodes.
+   You can also configure one MongoDB role for each controller node.
+
+   Since a MongoDB node is configured in the polling mode, you cannot add
+   more than seven MongoDB nodes. This is a MongoDB limitation for voting
+   replica set members, and it is not controlled by Fuel. For more details,
+   see `MongoDB documenation <https://docs.mongodb.com>`_.
+
 .. seealso::
 
    - `OpenStack Architecture Design Guide
