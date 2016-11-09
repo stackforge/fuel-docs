@@ -1,95 +1,218 @@
 ============
-New Features
+New features
 ============
 
-Fuel Mitaka is the release of new features and bug fixes for
-the leading purpose-built open source deployment and management tool
-for OpenStack.
+Fuel Newton introduces a set of new features and enhancements.
 
-Fuel Mitaka introduces a set of new features and enhancements.
-This section lists these improvements:
+Fuel Master node backup and restore
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* Plugin developers can now dynamically add configuration fields to their
-  plugins.
-  See `blueprint <https://blueprints.launchpad.net/fuel/+spec/dynamic-fields>`__.
+Added support for the backup and restore of the Fuel Master node features.
+Creating a backup of the Fuel Master node is an essential step in the upgrade
+process which ensures integrity of your environment. Additionally, you can use
+the backup archives to restore the Fuel Master node in case of a hardware
+failure or other system malfunction.
 
-* Added ability to stop and restart environment deployment without resetting
-  the deployment process. See the :ref:`stop_deployment` section in the Fuel
-  User Guide.
-  This allows users to fix deployment errors and resume the deployment process
-  without having to start it over completely.
-  See `blueprint <https://blueprints.launchpad.net/fuel/+spec/graceful-stop-restart-deployment>`__.
+See the Fuel User guide:
 
-* Improved deployment orchestration to reduce deployment time and minimize
-  technical and architectural efforts through task-based deployment with Astute.
-  This further enables Fuel to provide the lifecycle management features such
-  as :guilabel:`Unlocked Settings Tab`.
+* :ref:`back-up-fuel`
+* :ref:`restore-fuel`
 
-* Fuel plugins can now be managed on a deployed cloud through the Fuel web UI
-  in :guilabel:`Unlocked Settings Tab`:
+Fuel web UI features
+~~~~~~~~~~~~~~~~~~~~
 
-  * You can install plugins through the Fuel web UI.
-  * Plugins can insert tasks in deployment graphs.
-  * You can now change the settings of a plugin if supported. Consult with
-    the plugin developer if not sure.
+Fuel Newton includes a number of enhancements related to the Fuel web UI.
 
-* Fuel now stores detailed information about all deployments. You can download
-  the actual cluster settings, network configuration, and serialized cluster
-  data.
-  See :ref:`view_history` and :ref:`deployment-information`.
+Custom deployment workflows management
+--------------------------------------
 
-* You can now execute a particular deployment workflow with the ability to merge
-  it with the existing deployment workflows of the upstream master release.
-  This allows you to implement complex orchestrated workflows -- bugfixes
-  application, reference architecture altering, or even upgrades.
-  See :ref:`workflows_manage`.
+Extended the Fuel web UI with an ability to manage custom deployment
+workflows. Now, you can list, remove, upload, download, and execute custom
+deployment workflows in the :guilabel:`Dashboard` and :guilabel:`Workflows`
+tabs on the :guilabel:`Environments` page.
 
-* Fuel now supports lifecycle management tasks based on the history of
-  cluster states. This data-driven feature allows the deployment engineers
-  and plugin developers that use Fuel library deployment tasks to introduce
-  expressions that can be computed within the context of cluster configuration.
-  You can now control the tasks assignment and execution depending on the
-  configuration or changes in the configuration.
-  See :ref:`data-driven`.
+See :ref:`workflows_manage` | `blueprint <https://blueprints.launchpad.net/fuel/+spec/ui-custom-graph>`__
 
-* All deployment tasks that Fuel uses when configuring OpenStack are now
-  idempotent. This enables the lifecycle management features that require
-  re-running of deployment tasks with the updated input data in the
-  post-deployment stage of cloud lifecycle.
-  See `blueprint <https://blueprints.launchpad.net/fuel/+spec/granular-task-lcm-readiness>`__.
+Deployment details overview
+---------------------------
 
-* Fuel can now deploy UCA packages.
-  See `blueprint <https://blueprints.launchpad.net/fuel/+spec/deploy-with-uca-packages>`__.
+Enabled the capability to view details about deployments for specific
+OpenStack environments and their nodes in the Fuel web UI:
 
-* Operators can now change OpenStack settings on the :guilabel:`Settings`
-  tab in Fuel web UI for the cloud that is already deployed and apply the
-  settings.
-  See `blueprint <https://blueprints.launchpad.net/fuel/+spec/granular-task-lcm-readiness>`__.
+* To view a deployment task in progress, click :guilabel:`Show Details`
+  under the deployment progress bar on the :guilabel:`Dashboard` tab.
+* To view information about a deployed OpenStack environment, go to
+  the :guilabel:`History` tab and select the required deployment.
 
-* Fuel API now allows to manually set virtual IP address to any valid
-  IP address.
-  See `blueprint <https://blueprints.launchpad.net/fuel/+spec/allow-any-vip>`__.
+See :ref:`view_history` | `blueprint <https://blueprints.launchpad.net/fuel/+spec/ui-deployment-history>`__
 
-* The node roles panel on the Fuel web UI has been redesigned to accommodate
-  for the standard screen estate.
-  See `blueprint <https://blueprints.launchpad.net/fuel/+spec/redesign-of-node-roles-panel>`__.
+Fuel CLI versions consolidation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* Enabled separate node deployment and operating system provisioning in the
-  Fuel web UI.
-  This allows users to adjust configuration and fix errors on a specific node
-  or a subset of nodes without having to re-deploy or re-provision the entire
-  cloud environment.
-  See `blueprint <https://blueprints.launchpad.net/fuel/+spec/allow-choosing-nodes-for-provisioning-and-deployment>`__.
+Consolidated two versions of the Fuel CLI ``fuel`` and ``fuel2``. The ``fuel2``
+entry point now provides a complete set of features as well as contains
+advanced capabilities and a better structured syntax of commands. The old
+Fuel CLI will be deprecated in one of the future releases.
 
-* Enabled control groups management. OpenStack operators can configure
-  resource utilization thresholds for the OpenStack services and underlying
-  software components using ``cgroups``. Specifying optimal values helps
-  to increase performance and reliability of your cloud.
-  See :ref:`cgroups-intro`.
+See :ref:`cli_comparison_matrix` | `blueprint <https://blueprints.launchpad.net/fuel/+spec/re-thinking-fuel-client>`__
 
-* The OpenStack Application Catalog service is now also installable as a
-  plugin for Fuel. This plugin is designed to enable upgrading of the
-  OpenStack Application Catalog together with plugin installation. This plugin
-  update mechanism will be used to deliver future updates to the OpenStack
-  Application Catalog service.
-  See `Murano plugin for Fuel <https://github.com/openstack/fuel-plugin-murano>`__.
+Fuel plugins features
+~~~~~~~~~~~~~~~~~~~~~
+
+Fuel Newton includes a number of enhancements related to Fuel
+plugins.
+
+Consumption of Fuel plugins from a public YUM repository
+--------------------------------------------------------
+
+Extended the Fuel plugins distribution model by installing and updating
+plugins from YUM repositories.
+
+The advantages of such approach are as follows:
+
+* Installation of a plugin on the Fuel Master node using
+  the :command:`yum install <PLUGIN_NAME>` command.
+
+* Updating a plugin on the Fuel Master node using
+  the :command:`yum update <PLUGIN_NAME>` command.
+
+* Ability to pre-populate a plugin YUM repository into Fuel Master node
+  settings based on the Fuel Master node version.
+
+See :ref:`plugins_install_userguide`
+
+Deployment of plugins updates on a running environment
+------------------------------------------------------
+
+Implemented a mechanism enabling plugins to bring their own scenarios
+that can prepare a deployed Mirantis OpenStack environment for plugins
+updates.
+
+See :ref:`plugins_update_userguide`
+
+Definition of Fuel release through the plugin framework
+-------------------------------------------------------
+
+Introduced a capability to express a Fuel release as a Fuel plugin.
+The new functionality enables the user to define, maintain, and deploy
+various flavors of customized OpenStack deployments. For example, the user
+can deploy OpenStack Kilo using Fuel Mitaka or deploy a standalone Ceph
+environment specifying a particular Ceph-only release.
+
+See :ref:`describe-plugin` | `spec <https://specs.openstack.org/openstack/fuel-specs/specs/10.0/release-as-a-plugin.html>`__
+
+Data-driven task graphs for basic environment actions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In addition to a node deployment task graph, introduced a capability
+to execute task graphs for the following basic actions in an environment:
+
+* Node provisioning
+* Node deletion
+* Environment verification, that is network configuration check
+
+See :ref:`workflow-intro` | `blueprint <https://blueprints.launchpad.net/fuel/+spec/graph-concept-extension>`__
+
+Verification of the VMware vCenter server certificate
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Added a capability to specify a Certificate Authority (CA) bundle file
+to use for verifying the VMware vCenter server certificate for
+the OpenStack Compute service, OpenStack Block Storage service, and
+OpenStack Image service.
+
+Depending on the needs of your environment, you can configure the VMware
+vCenter server certificate verification on the :guilabel:`VMware` tab in
+the Fuel web UI:
+
+* If you plan to deploy an environment for testing purposes or want
+  to speed up the deployment process, you can disable the certificate
+  verification by checking
+  :guilabel:`Bypass vCenter certificate verification`.
+
+* If VMware vCenter is using a self-signed certificate, upload a CA
+  certificate in the :guilabel:`CA file` field.
+  Leave :guilabel:`Bypass vCenter certificate verification` unchecked.
+
+* If a VMware vCenter server certificate is emitted by a known CA,
+  for example, GeoTrust, leave the :guilabel:`CA file` field empty
+  and :guilabel:`Bypass vCenter certificate verification` unchecked.
+
+See :ref:`configure-vmware-vcenter-settings`
+
+SSH brute force protection
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Implemented the possibility to add SSH brute force protection
+for your OpenStack environment.
+
+To activate SSH brute force protection:
+
+#. Log in to the Fuel web UI.
+#. Open the :guilabel:`Settings` tab.
+#. Expand :guilabel:`Security` section.
+#. In the :guilabel:`SSH Security` section, select
+   :guilabel:`Restrict SSH service on network` check box.
+#. Optionally, add secure networks.
+#. Select :guilabel:`Brute force protection` check box.
+
+See :ref:`settings-ug` | `LP1563721 <https://bugs.launchpad.net/fuel/+bug/1563721>`__
+
+Creation of targeted diagnostic snapshots with Timmy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Replaced Shotgun with Timmy, a diagnostic utility for OpenStack environments
+that simplifies and optimizes OpenStack troubleshooting.
+
+Timmy enables you to create a diagnostic snapshot of your OpenStack
+environment through CLI depending on your needs:
+
+* Gather logging information from a single node or a subset of nodes
+  filtered by an assigned role or a service running on the node.
+* Designate the time frame which logging information should cover.
+* Specify services, the logging information of which to be included into
+  a snapshot.
+* Specify a folder or a list of folders from where logging information
+  should be retrieved, filter the logging files included in that folders
+  by date and time, and include this logging information into the diagnostic
+  snapshot.
+
+See :ref:`create-snapshot` | `blueprint <https://blueprints.launchpad.net/fuel/+spec/shotgun-retirement>`__
+
+S3 API authentication through Keystone
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Implemented the possibility to enable Keystone to authenticate queries
+to S3 API on RadosGW using the Fuel CLI and Fuel web UI.
+
+.. note::
+
+   Enablement of the Keystone authentication for S3 API increases the load
+   on the Keystone service. Consult with documentation and Mirantis support
+   on mitigating the risks related with the high load of the Keystone service.
+
+See `LP1540426`_ | `spec`_
+
+.. _`LP1540426`: https://bugs.launchpad.net/mos/+bug/1540426
+.. _`spec`: https://specs.openstack.org/openstack/fuel-specs/specs/10.0/s3-keystone-integration.html
+
+Basic DMZ enablement
+~~~~~~~~~~~~~~~~~~~~
+
+Implemented the possibility to place public API endpoints and
+OpenStack Dashboard into a separate secured network segment
+usually called demilitarized zone (DMZ).
+
+See `blueprint <https://blueprints.launchpad.net/fuel/+spec/separate-public-floating>`__
+
+User documentation
+~~~~~~~~~~~~~~~~~~
+
+Fuel Newton includes a number of major user documentation updates:
+
+* :ref:`upgrade_intro`
+* :ref:`cli_comparison_matrix`
+* :ref:`workflow-intro`
+* :ref:`workflows_manage`
+* :ref:`create-snapshot`
+* :ref:`ug-troubleshooting`
