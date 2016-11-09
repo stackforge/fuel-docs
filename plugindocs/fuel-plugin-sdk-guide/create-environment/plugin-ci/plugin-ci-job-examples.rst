@@ -19,12 +19,13 @@ for plugins.
      ${BUILD_NUMBER}
      export VENV_PATH='/home/jenkins/\
      venv-nailgun-tests-2.9'
-     YOUR_PLUGIN_PATH="$(ls ./*rpm)"\#Change\
-     this to appropriate fuel-qa variable for your plugin
-     export YOUR_PLUGIN_PATH#
+     # Change this to appropriate fuel-qa 
+     # variable for your plugin
+     YOUR_PLUGIN_PATH="$(ls ./*rpm)"
+     export YOUR_PLUGIN_PATH
 
-     sh -x "${SYSTEM_TESTS}" -w "${WORKSPACE}" -V\
-     "${VENV_PATH}" -i "${ISO_PATH}" -t test -o\
+     sh -x "${SYSTEM_TESTS}" -w "${WORKSPACE}" -V \
+     "${VENV_PATH}" -i "${ISO_PATH}" -t test -o \
      --group="${TEST_GROUP}"
 
 * prepare_env.sh:
@@ -42,7 +43,7 @@ for plugins.
       REQS_PATH="${WORKSPACE}/fuel-qa/\
       fuelweb_test/requirements.txt"
 
-      virtualenv --system-site-packages\
+      virtualenv --system-site-packages \
       "${VENV_PATH}"
       source "${VENV_PATH}/bin/activate"
       pip install -r "${REQS_PATH}" --upgrade
@@ -59,11 +60,11 @@ for plugins.
       #!/bin/bash
       set -ex
 
-      find . -name '*.erb' -print 0 | xargs -0 -P1\
+      find . -name '*.erb' -print 0 | xargs -0 -P1 \
       -I '%' erb -P -x -T '-' % | ruby -c
-      find . -name '*.pp' -print 0| xargs -0 -P1\
+      find . -name '*.pp' -print 0| xargs -0 -P1 \
       puppet parser validate --verbose
-      find . -name '*.pp' -print 0| xargs -0 -P1\
+      find . -name '*.pp' -print 0| xargs -0 -P1 \
       puppet-lint \
         --fail-on-warnings \
         --with-context \
