@@ -48,10 +48,17 @@ new ``fuel2`` commands and their alternatives in the ``fuel`` CLI.
    ``fuel2 env stop-deployment``, Stop deployment process for a specific environment, ``fuel stop``
    ``fuel2 env update``, Change given attributes for an environment, ``fuel env --set``
    ``fuel2 fuel-version``, Show the current version of Fuel, ``fuel --fuel-version``
+   ``fuel2 graph delete``, Delete a deployment graph, None
    ``fuel2 graph download``, Download a deployment graph configuration, ``fuel env --deployment-tasks --download``
    ``fuel2 graph execute``, Start a deployment with a given graph type, None
    ``fuel2 graph list``, List deployment graphs, None
    ``fuel2 graph upload``, Upload a deployment graph configuration, ``fuel env --deployment-tasks --upload``
+   ``fuel2 health list``, List all available test sets for a given environment, ``fuel health --list``
+   ``fuel2 health restart``, Restart a test set with a given ID, None
+   ``fuel2 health start``, Run specified test sets for a given environment, None
+   ``fuel2 health status list``, Show a list of statuses of all test sets that have ever been executed, None
+   ``fuel2 health status show``, Show status of a test set with a given ID, None
+   ``fuel2 health stop``, Stop a test set with a given ID, None
    ``fuel2 network-group create``, Create a new network group, ``fuel network-group --create``
    ``fuel2 network-group delete``, Delete a specified network group, ``fuel network-group --delete``
    ``fuel2 network-group list``, List all network groups, ``fuel network-group``
