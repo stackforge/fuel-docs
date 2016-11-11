@@ -1,0 +1,11 @@
+Verified+1: Fuel CI <fuel-ci-bot@mirantis.com>
+Code-Review+1: Alexander Adamov <aadamov@mirantis.com>
+Code-Review+2: Olga Gusarenko <ogusarenko@mirantis.com>
+Code-Review+2: Maria Zlatkova <mzlatkova@mirantis.com>
+Workflow+1: Olga Gusarenko <ogusarenko@mirantis.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Fri, 11 Nov 2016 09:11:21 +0000
+Reviewed-on: https://review.openstack.org/395600
+Project: openstack/fuel-docs
+Branch: refs/heads/stable/mitaka
