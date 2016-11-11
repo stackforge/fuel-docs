@@ -48,6 +48,7 @@ new ``fuel2`` commands and their alternatives in the ``fuel`` CLI.
    ``fuel2 env stop-deployment``, Stop deployment process for a specific environment, ``fuel stop``
    ``fuel2 env update``, Change given attributes for an environment, ``fuel env --set``
    ``fuel2 fuel-version``, Show the current version of Fuel, ``fuel --fuel-version``
+   ``fuel2 graph delete``,	Delete a deployment graph,	None
    ``fuel2 graph download``, Download a deployment graph configuration, ``fuel env --deployment-tasks --download``
    ``fuel2 graph execute``, Start a deployment with a given graph type, None
    ``fuel2 graph list``, List deployment graphs, None
