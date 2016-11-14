@@ -150,7 +150,7 @@ your Fuel ISO build environment on Ubuntu 14.04:
           <https://www.virtualbox.org/manual/ch04.html#sharedfolders>`_
           documentation
 
-        - `Synced folders of Vargant
+        - `Synced folders of Vagrant
           <https://docs.vagrantup.com/v2/synced-folders/>`_
           documentation
 

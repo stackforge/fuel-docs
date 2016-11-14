@@ -137,7 +137,7 @@ volume with type "partition" instead of "vg"::
 
 Note how you can set mount point to "none" and define a disk label to
 identify the partition instead. Its only possible to set a disk label on
-a formatted portition, so you have to set "file_system" parameter to use
+a formatted partition, so you have to set "file_system" parameter to use
 disk labels.
 
 Updating the Node Role to Volumes Mapping
