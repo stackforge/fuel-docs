@@ -24,7 +24,7 @@ This section describes how to build and use the Ubuntu bootstrap.
  ``/var/www/nailgun/bootstraps/active`` folder.
  The bootstrap location can be changed in the future releases.
 
-To modify a bootsrtap, use one of the following options:
+To modify a bootstrap, use one of the following options:
 
 * Create a custom image for bootstrap to replace the default one.
 

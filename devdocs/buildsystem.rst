@@ -59,7 +59,7 @@ If git is not found, install it with the following command:
    ./prepare-build-env.sh
 
   and wait until **prepare-build-env.sh**
-  installs the Fuel build evironment on your computer.
+  installs the Fuel build environment on your computer.
 
 5. After the script runs successfully, issue the following command to build a
    Fuel ISO:
