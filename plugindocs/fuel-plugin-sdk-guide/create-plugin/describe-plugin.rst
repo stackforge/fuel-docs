@@ -65,7 +65,7 @@ The Fuel Plugin Builder generates three files:
      * ``releases: repository_path`` -- A path in your plugin directory where
        all the packages for the release are. Relative to the plugin root.
      * ``base_release_path`` -- Defines the template from which to inherit
-        the data tree by overriding keys.
+       the data tree by overriding keys.
      * ``networks_path`` -- Path to the ``networks.yaml`` file.
      * ``volumes_path`` -- Path to the ``volumes.yaml`` file.
      * ``roles_path`` -- Path to the ``roles.yaml`` file.
