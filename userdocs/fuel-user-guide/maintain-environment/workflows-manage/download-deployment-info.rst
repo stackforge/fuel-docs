@@ -19,6 +19,8 @@ deployment.
      fuel task
      fuel2 task list
 
+   .. include:: /userdocs/snippets/notes/fuel2-task-list-filters.rst
+
 #. Download the deployment information:
 
    .. code-block:: console
