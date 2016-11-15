@@ -35,6 +35,8 @@ the Fuel web UI (timeline or table view mode) as well as the Fuel CLI.
       fuel task
       fuel2 task list
 
+   .. include:: /userdocs/snippets/notes/fuel2-task-list-filters.rst
+
 #. Get the information on deployment tasks running on nodes:
 
    .. code-block:: console
