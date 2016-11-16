@@ -30,5 +30,5 @@ This section includes the following topics:
 .. seealso::
 
    - :ref:`workflows_manage`
-   - :ref:`cli-graphs`
+   - :ref:`cli-workflows`
    - :ref:`data-driven`
