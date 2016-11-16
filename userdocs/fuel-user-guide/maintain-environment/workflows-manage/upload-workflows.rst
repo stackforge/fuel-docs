@@ -27,8 +27,8 @@ Fuel CLI.
 
    .. code-block:: console
 
-      fuel2 graph upload --env 1 --file tasks.yaml
+      fuel2 graph upload -e 1 -t provision -f tasks.yaml
 
 .. seealso::
 
-   * :ref:`cli-graphs`
+   * :ref:`cli-workflows`
