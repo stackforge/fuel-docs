@@ -42,6 +42,12 @@ supported by the Fuel CLI.
 
        | The ``--type`` parameter is optional. If not specified, the default graph is downloaded.
 
+   * - Delete deployment graphs. Available for environments only.
+     - ``fuel2 graph delete -e <ENV_ID> [-r <RELEASE_ID>] [-p <PLUGIN_ID>] [-t <GRAPH_TYPE>]``
+
+       | The ``-t`` parameter is optional. If not specified, the default
+         graph is deleted.
+
    * - Run any task graph in a ``noop`` mode to detect customizations.
      - ``fuel2 graph execute --env <env_id> [--type <graph_type>] --noop --force``
 
