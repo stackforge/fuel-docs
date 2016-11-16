@@ -42,4 +42,4 @@ or Fuel CLI.
 
 .. seealso::
 
-   * :ref:`cli-graphs`
+   * :ref:`cli-workflows`

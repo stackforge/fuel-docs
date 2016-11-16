@@ -41,7 +41,7 @@ This section includes the following topics:
    cli/cli_roles.rst
    cli/cli_nodes_empty_role.rst
    cli/cli_plugins.rst
-   cli/cli_graphs.rst
+   cli/cli_workflows.rst
    cli/cli_config_openstack.rst
    cli/cli_config_openstack_services_workflow.rst
    cli/cli_change_ip_range.rst

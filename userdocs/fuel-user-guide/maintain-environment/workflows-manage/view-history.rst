@@ -8,7 +8,7 @@ Fuel stores the information about all deployment workflows associated with each
 deployment of an environment. You can view the deployment history through
 the Fuel web UI (timeline or table view mode) as well as the Fuel CLI.
 
-**To view the deployment history using the Fuel Web UI:**
+**To view the deployment history using the Fuel web UI:**
 
 #. Log in to the Fuel web UI.
 #. Select the required OpenStack environment.
@@ -25,7 +25,7 @@ the Fuel web UI (timeline or table view mode) as well as the Fuel CLI.
      #. Go the :guilabel:`History` tab.
      #. Select the required deployment.
 
-**To view the deployment history using the Fuel Web CLI:**
+**To view the deployment history using the Fuel CLI:**
 
 #. Log in to the Fuel Master node.
 #. Obtain the ID of the deployment task using one of the following commands:
