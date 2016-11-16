@@ -25,7 +25,7 @@ the Fuel web UI (timeline or table view mode) as well as the Fuel CLI.
      #. Go the :guilabel:`History` tab.
      #. Select the required deployment.
 
-**To view the deployment history using the Fuel Web CLI:**
+**To view the deployment history using the Fuel CLI:**
 
 #. Log in to the Fuel Master node.
 #. Obtain the ID of the deployment task using one of the following commands:
