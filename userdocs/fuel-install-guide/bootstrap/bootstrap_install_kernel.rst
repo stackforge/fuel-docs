@@ -61,7 +61,7 @@ available in the repositories will be fetched.
 
 #. Verify if the node applied the kernel succesfully:
 
-   #. View infomation about the installed kernel image:
+   #. View information about the installed kernel image:
 
       .. code-block:: console
 
@@ -73,7 +73,7 @@ available in the repositories will be fetched.
 
          ii  linux-image-generic-lts-wily       4.2.0.27.21  amd64   Generic Linux kernel image
 
-   #. View infomation about the current kernel:
+   #. View information about the current kernel:
 
       .. code-block:: console
 
@@ -163,7 +163,7 @@ the latest kernel as described above.
 
 #. Verify if the node applied the kernel succesfully:
 
-   #. View infomation about the current kernel:
+   #. View information about the current kernel:
 
       .. code-block:: console
 
@@ -175,7 +175,7 @@ the latest kernel as described above.
 
          Linux bootstrap 3.19.0-25-generic #26~14.04.1-Ubuntu SMP Fri Jul 24 21:16:20 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
 
-   #. View infomation about the installed kernel image:
+   #. View information about the installed kernel image:
 
       .. code-block:: console
 
