@@ -16,6 +16,9 @@ the Internet. In this case, set up a local repository with the required
 installation packages and configure these repositories on the Fuel Master
 node.
 
+.. warning:: You can run only one Fuel Master node in a network set, or the
+             product will behave unexpectedly.
+
 .. seealso::
 
     - :ref:`upgrade_local_repo`
