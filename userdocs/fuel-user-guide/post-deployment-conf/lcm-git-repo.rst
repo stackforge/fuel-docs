@@ -9,12 +9,12 @@ configurations in this repository and apply changes to your
 environments. This approach enables you to modify the settings
 you typically cannot modify through the Fuel web UI.
 
-The functionality is implemented through an additional Infrastructure-as-
-a-Code extension to Fuel. You need to clone the
-``fuel-nailgun-extension-iac`` repository
-on your Fuel Master node before you can use this feature.
+The functionality is implemented through an additional Infrastructure-as-Code
+(IaC) extension to Fuel. The extension is distributed as an ``.rpm`` package.
+Therefore, you need to download and install the package on your Fuel Master
+node before you can use this feature.
 
-With the Infrastructure-as-a-Code extension to Fuel you can:
+With the Infrastructure-as-Code extension to Fuel you can:
 
 * Associate a Git repository with a specific OpenStack environment.
 * Perform management operations, such as create, read, update, and delete
