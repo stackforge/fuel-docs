@@ -32,3 +32,5 @@ This section includes the following topics:
    lcm-git-repo/configure-iac.rst
    lcm-git-repo/repo-structure.rst
    lcm-git-repo/set-up-git-repo.rst
+   lcm-git-repo/audit-enforce-changes.rst
+   lcm-git-repo/filter-results.rst
