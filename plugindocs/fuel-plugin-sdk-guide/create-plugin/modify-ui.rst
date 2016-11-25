@@ -108,6 +108,6 @@ The properties ``label`` and ``description`` are self-explanatory.
           only specify incompatible components but also provide appropriate
           restrictions for the incompatible settings. 
 
-See `components.yaml <https://github.com/openstack/fuel-plugin-xenserver/blob/master/components.yaml>`_
-and `environment_config.yaml <https://github.com/openstack/fuel-plugin-xenserver/blob/master/environment_config.yaml>`_
+See `components.yaml <https://github.com/openstack/fuel-plugin-xenserver/blob/master/plugin_source/components.yaml>`_
+and `environment_config.yaml <https://github.com/openstack/fuel-plugin-xenserver/blob/master/plugin_source/environment_config.yaml>`_
 from the Fuel XenServer plugin as an example.
