@@ -53,7 +53,8 @@ For the purpose of example, the following configuration is used:
 #. Follow the prompts of the wizard to create a new OpenStack environment.
 #. In the :menuselection:`Compute` screen, select :guilabel:`QEMU-KVM`.
 #. In the :menuselection:`Networking Setup` screen, select
-   :guilabel:`Neutron with VLAN segmentation`.
+   :guilabel:`Neutron with VLAN segmentation` or :guilabel:`Neutron with VXLAN
+   segmentation`.
 #. Complete the configuration wizard as required and click :guilabel:`Create`.
 #. Select the environment you have just created.
 #. Click :menuselection:`Settings -> Compute`.

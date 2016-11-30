@@ -35,4 +35,5 @@ your software configurations meet the corresponding requirements.
        * DPDK requires Huge Pages, NIC support, Intel CPU (or QEMU)
          NFV workload.
      - * VMware vSphere as a compute back end is not supported.
-       * The only supported network topology is Neutron with VLAN segmentation
+       * The only supported network topology is Neutron with VLAN or VXLAN
+         segmentation
