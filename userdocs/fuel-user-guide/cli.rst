@@ -47,3 +47,5 @@ This section includes the following topics:
    cli/cli_change_ip_range.rst
    cli/cli_modify_environment.rst
    cli/cli_noop.rst
+   cli/cli_manage_gitrepo.rst
+   cli/cli_audit_enforce.rst

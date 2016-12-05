@@ -32,3 +32,10 @@ This section includes the following topics:
    lcm-git-repo/configure-iac.rst
    lcm-git-repo/repo-structure.rst
    lcm-git-repo/set-up-git-repo.rst
+
+.. seealso::
+
+*   :ref:`cli-manage-gitrepo`
+*   :ref:`cli-audit-enforce`
+*   `Fuel IaC extension API documentation
+    <https://github.com/openstack/fuel-nailgun-extension-iac/blob/stable/mitaka/doc/api.md>`_
