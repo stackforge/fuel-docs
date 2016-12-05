@@ -178,7 +178,7 @@ following table on *all controller nodes* unless indicated otherwise.
 
           It may take some time for this resource to be stopped on all
           controller nodes.
-       #. Disable the ``clone_p_mysql`` resource:
+       #. Enable the ``clone_p_mysql`` resource:
 
           .. code-block:: console
 
