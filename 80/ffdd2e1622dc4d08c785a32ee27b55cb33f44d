@@ -1,0 +1,11 @@
+Verified+1: Fuel CI <fuel-ci-bot@mirantis.com>
+Code-Review+1: Tatyana Gladysheva <tgladysheva@mirantis.com>
+Code-Review+1: Michael Glaser <mg6596@att.com>
+Code-Review+2: Maria Zlatkova <mzlatkova@mirantis.com>
+Workflow+1: Maria Zlatkova <mzlatkova@mirantis.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Fri, 09 Dec 2016 09:35:47 +0000
+Reviewed-on: https://review.openstack.org/408753
+Project: openstack/fuel-docs
+Branch: refs/heads/stable/mitaka
