@@ -48,13 +48,13 @@ supported by the Fuel CLI.
    * - Start a deployment with given workflow types.
 
        Available for environments only.
-     - * ``fuel2 graph execute -e <ENV_ID> -t GRAPH_TYPES <GRAPH_TYPES>``
+     - * ``fuel2 graph execute -e <ENV_ID> -t [<GRAPH_TYPE1> <GRAPH_TYPE2>]``
 
-       The ``-t GRAPH_TYPES`` parameter specifies the types of deployment
+       The ``-t`` parameter specifies the types of deployment
        workflow in order of execution.
 
    * - Run any task workflow in the ``noop`` mode to detect customizations.
-     - * ``fuel2 graph execute -e <ENV_ID> -t GRAPH_TYPES <GRAPH_TYPES> --noop --force``
+     - * ``fuel2 graph execute -e <ENV_ID> -t [<GRAPH_TYPE1> <GRAPH_TYPE2>] --noop --force``
 
        The ``--force`` parameter is optional and is necessary for previously
        executed workflows or tasks to prevent tasks skipping by Fuel
