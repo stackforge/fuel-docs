@@ -104,6 +104,16 @@ by editing the corresponding configuration files.
           Brute force protection
            Grants access from all networks (except the provided ones),
            but Fuel checks the networks against the brute force attack.
+
+          The :guilabel:`Security Groups` configuration includes:
+
+          Open vSwitch Firewall Driver
+           Select the Open vSwitch Firewall Driver if you use OVS Bridges
+           for networking.
+          IPtables-based Firewall Driver
+           Select the IPtables-based Firewall Driver if you use Linux
+           Bridges for networking. Do not select this option if you have
+           DPDK enabled as this results in not having a firewall at all.
       * - **Compute settings**
         - Hypervisor
            Enables you to modify the previously selected option.
