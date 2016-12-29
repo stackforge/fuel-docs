@@ -157,8 +157,9 @@ replace the value with the list of roles on which to run; for example:
           ``primary-controller`` role, so they should be specified explicitly.
 
 .. note:: While you can run tasks on particular roles, you cannot run tasks on
-          all roles except a particular role. For example, there is option
-          to run tasks on all roles except for a compute role.
+          all roles except a particular role. For example, there is no option
+          to run tasks on all roles except for a compute role, other than
+          specifying every role you want to run tasks on.
 
 Our example task with the commands listed in the cmd parameter is not suitable
 for more than two shell commands; but we always can put the commands in
