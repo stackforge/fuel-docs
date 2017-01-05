@@ -27,3 +27,4 @@ This section includes the following topics:
    maintain-environment/workflows-manage.rst
    maintain-environment/shutdown-env.rst
    maintain-environment/start-env.rst
+   maintain-environment/decompose-services.rst
