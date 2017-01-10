@@ -54,7 +54,7 @@ For the purpose of example, the following configuration is used:
 #. In the :menuselection:`Compute` screen, select :guilabel:`QEMU-KVM`.
 #. In the :menuselection:`Networking Setup` screen, select
    :guilabel:`Neutron with VLAN segmentation` or :guilabel:`Neutron with
-   tunneling segmentation`.
+   tunneling segmentation` (VXLAN).
 #. Complete the configuration wizard as required and click :guilabel:`Create`.
 #. Select the environment you have just created.
 #. Click :menuselection:`Settings -> Compute`.
