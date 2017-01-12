@@ -31,7 +31,7 @@ by editing the corresponding configuration files.
            packages required to install and update Fuel and OpenStack
            components. If you do not have an Internet connection, you can
            set up a local repository and provide the URL to the repository on
-           this page.
+           this page. For details, see: :ref:`local-repo`.
           Kernel parameters
            Enables you to modify kernel parameters. This field does not set
            kernel parameters for the Fuel Master node or for nodes that have
