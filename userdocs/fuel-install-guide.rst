@@ -11,6 +11,7 @@ Fuel Installation Guide
    fuel-install-guide/sysreq_intro
    fuel-install-guide/install_install_fuel
    fuel-install-guide/bootstrap_intro
+   fuel-install-guide/local-repo
    fuel-install-guide/plugins_intro
    fuel-install-guide/vsphere_intro
    fuel-install-guide/update-fuel
