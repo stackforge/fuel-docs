@@ -13,7 +13,7 @@ requirements and sequence of tasks that you must complete.
 #. Verify that your environment meets the recommendations in
    :ref:`System requirements <sysreq_intro>`.
 
-#. Verify your hardware using the 
+#. Verify your hardware using the
    :ref:`Hardware checklist <preinstall_chklist_hardware_checklist>`.
 
 #. Determine whether the server on which you plan to install the Fuel
@@ -21,7 +21,7 @@ requirements and sequence of tasks that you must complete.
 
    * If the server does not have an Internet
      connection, then you must configure a local repository. For more
-     information, see: :ref:`Set up a local repository <install_set_up_fuel>`.
+     information, see: :ref:`Set up a local repository <local-repo>`.
 
 #. If you plan to install Fuel on VMware vSphere, verify that your environment
    meets the :ref:`VMware vSphere prerequisites <vsphere_intro>`
