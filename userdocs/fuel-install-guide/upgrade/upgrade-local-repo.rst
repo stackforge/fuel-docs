@@ -1,7 +1,8 @@
-﻿.. _upgrade_local_repo:
+.. _upgrade_local_repo:
 
+=========================
 Set up a local repository
--------------------------
+=========================
 
 Fuel downloads the OpenStack and operating system packages
 from the predefined repositories on the Fuel Master node.
@@ -9,69 +10,95 @@ If your Fuel Master node does not have an Internet connection,
 you must configure a local repository mirror with the required
 packages and configure Fuel to use this repository.
 
-You can set up a local repository in the Fuel web UI
-or through Fuel CLI using the ``fuel-createmirror`` script.
+You can set up a local repository using the Fuel web UI
+or the Fuel CLI with the help of the ``fuel-mirror`` script.
 
-**To set up a local repository in the Fuel web UI**
+.. caution:: The ``fuel-createmirror`` script is deprecated. Use
+             ``fuel-mirror`` instead.
+
+**To set up a local repository using the Fuel web UI:**
 
 #. In the Fuel web UI, navigate to the :guilabel:`Settings` tab
    and then scroll down to the :guilabel:`Repositories` section.
 #. Change the path under :guilabel:`URI`.
 
-**To set up a local repository with the ``fuel-createmirror`` script**
+**To set up a local repository using the Fuel CLI:**
 
 #. Log in to the Fuel Master node CLI.
-#. Run the ``fuel-createmirror`` script:
+#. Create a new local mirror on the Fuel Master node: 
 
-   * If you use the default Fuel root password, type: 
+   .. code-block:: console
 
-     ::
+    fuel-mirror create -P REPO_NAME -G GROUP
 
-        fuel-createmirror
+   **Example:**
 
-   * If you change the default Fuel root password, type: 
+   .. code-block:: console
 
-     ::
+    fuel-mirror create -P ubuntu -G ubuntu
 
-        fuel-createmirror --password PASSWORD
+#. Apply the local mirror to an environment:
 
-#. Restart the docker daemon
+   .. code-block:: console
 
-   ::
+    fuel-mirror apply -P REPO_NAME -G GROUP
 
-      service docker restart
+   **Example:**
+
+   .. code-block:: console
+
+    fuel-mirror apply -P ubuntu -G ubuntu
+
+#. Restart the Docker daemon:
+
+   .. code-block:: console
+
+    service docker restart
 
    Alternatively (recommended), reboot the Fuel Master node.
 
-About the fuel-createmirror script
-++++++++++++++++++++++++++++++++++
+.. note:: If you change the default Fuel root password, add the
+          ``--fuel-password YOUR_PASSWORD`` flag to the script command.
 
-The ``fuel-createmirror`` is a built-in Fuel script that enables
-you to modify the Fuel repository sources from the CLI.
+.. important:: If you do not specify any parameters, running the ``fuel-mirror``
+               script will:
 
-* The script supports only RSYNC  mirrors.
+               #. Create or update both Mirantis OpenStack and Ubuntu local
+                  mirrors.
+               #. Set these mirrors as repositories for existing
+                  environments.
+               #. Set the mirrors as the default repositories for new
+                  environments.
+
+About the fuel-mirror script
+----------------------------
+
+The ``fuel-mirror`` is a built-in Fuel utility that enables
+you to modify the Fuel repository sources through the Fuel CLI.
+
+* The script supports only RSYNC mirrors.
   See the `the list of official upstream Ubuntu mirrors <https://launchpad.net/ubuntu/+archivemirrors>`_.
 
 * The script uses a Docker container with Ubuntu to support dependencies
   resolution.
 
-* To view help information, type ``fuel-createmirror -h``.
+* To view help information, type ``fuel-mirror -h``.
 
 * The script supports running behind an HTTP proxy configured to
-  Port 873 (rsync). The following environment variables can be set either
-  system-wide (via ~/.bashrc), or in the script configuration file:
+  port 873 (RSYNC). The following environment variables can be set either
+  system-wide (through ``~/.bashrc``), or in the script configuration file:
 
-  ::
+  .. code-block:: console
 
-       http_proxy=http://username:password@host:port/
-       RSYNC_PROXY=username:password@host:port
+   http_proxy=http://username:password@host:port/
+   RSYNC_PROXY=username:password@host:port
 
-* You can also configure Docker to use the proxy to download the Ubuntu
+* You can also configure Docker to use proxy to download the Ubuntu
   image needed to resolve the packages dependencies. Add the environment
-  variables to the `/etc/sysconfig/docker` file, and export them: 
+  variables to the ``/etc/sysconfig/docker`` file and export them: 
 
-  ::
+  .. code-block:: console
 
-     http_proxy=http://username:password@host:port/
-     RSYNC_PROXY=username:password@host:port
-     export http_proxy RYSNC_PROXY
+   http_proxy=http://username:password@host:port/
+   RSYNC_PROXY=username:password@host:port
+   export http_proxy RYSNC_PROXY
