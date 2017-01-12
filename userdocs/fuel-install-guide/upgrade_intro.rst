@@ -14,7 +14,6 @@ This section includes the following topics.
 
    upgrade/upgrade-internals
    upgrade/upgrade-liberty
-   upgrade/upgrade-local-repo
 
 .. note:: Fuel does not support upgrades for plugins. The old plugin
           versions may not be compatible with the new version of Fuel.
