@@ -98,11 +98,11 @@ settings and proceed to :ref:`install_install_fuel_master_node`.
    |                                      | repository field. To configure   |
    |                                      | the Ubuntu repository mirror     |
    |                                      | on a local host, use the         |
-   |                                      | ``fuel-createmirror`` script     |
+   |                                      | ``fuel-mirror`` script           |
    |                                      | shipped with the Fuel ISO.       |
    |                                      |                                  |
    |                                      | For more information, see:       |
-   |                                      | :ref:`upgrade_local_repo`.       |
+   |                                      | :ref:`local-repo`.               |
    +--------------------------------------+----------------------------------+
    | 7. Configure the network time        | To avoid issues with the time    |
    |    protocol.                         | settings inconsistency on the    |
