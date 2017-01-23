@@ -14,4 +14,3 @@ This section includes the following topics:
    :maxdepth: 3
 
    rollback-compute-node.rst
-   preserve-partition.rst
