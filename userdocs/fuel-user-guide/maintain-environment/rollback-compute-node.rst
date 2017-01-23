@@ -39,8 +39,6 @@ before it failed.
 
          $ nova live-migration <instance>
 
-#. (Optional) Preserve partitions as described in :ref:`preserve-partition`.
-
 #. Reinstall the node as described in :ref:`reinstall-node`.
 
 #. Enable the nova-compute service:
