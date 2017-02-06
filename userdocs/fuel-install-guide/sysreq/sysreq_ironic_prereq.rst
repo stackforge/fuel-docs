@@ -5,7 +5,7 @@ Prerequisites for the OpenStack bare-metal service
 
 Before you deploy an OpenStack environment, you must verify that your
 environment meets the following network, hardware, and software prerequisites
-required to succesfully deploy and use the OpenStack Bare Metal service.
+required to successfully deploy and use the OpenStack Bare Metal service.
 
 **Network prerequisites:**
 
