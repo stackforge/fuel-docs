@@ -180,7 +180,7 @@ and pull the repository to the builder following the steps below:
 
       $ ssh 10.109.0.3 reboot
 
-#. Check that the driver has been installed succesfully:
+#. Check that the driver has been installed successfully:
 
    #. View the information about the installed packages:
 

@@ -59,7 +59,7 @@ available in the repositories will be fetched.
 
       $ ssh 10.109.0.3
 
-#. Verify if the node applied the kernel succesfully:
+#. Verify if the node applied the kernel successfully:
 
    #. View infomation about the installed kernel image:
 
@@ -161,7 +161,7 @@ the latest kernel as described above.
 
       $ ssh 10.109.0.3
 
-#. Verify if the node applied the kernel succesfully:
+#. Verify if the node applied the kernel successfully:
 
    #. View infomation about the current kernel:
 
