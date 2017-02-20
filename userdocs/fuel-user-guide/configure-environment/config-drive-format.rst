@@ -28,7 +28,7 @@ VFAT to the ISO 9660 format using the ``config_drive_format`` option.
       .. code-block:: console
 
         compute:
-         config_drive_format option: iso9660
+         config_drive_format: iso9660
 
 #. Upload the updated configuration files to the ``/<cwd>/deployment_<env_ID>``
    directory:
