@@ -12,7 +12,7 @@ installing an operating system, and then deploying OpenStack services to
 create a cloud environment. *Nailgun* is the most important service.
 It is a RESTful application written in Python that contains all the
 business logic of the system. A user can interact with it either using
-the *Fuel Web* interface or by the means of *CLI utility*. He can create
+the *Fuel Web* interface or with the help of *CLI utility*. He can create
 a new environment, edit its settings, assign roles to the discovered
 nodes, and start the deployment process of the new OpenStack cluster.
 
@@ -30,17 +30,17 @@ runs a special script called Nailgun agent. The agent **nailgun-agent.rb**
 collects the server's hardware information and submits it to Nailgun
 through the REST API.
 
-The deployment process is started by the user after he has configured
-a new environment. The Nailgun service creates a JSON data structure
+The deployment process is started by the user after a new environment
+has been configured. The Nailgun service creates a JSON data structure
 with the environment settings, its nodes and their roles and puts this
 file into the *RabbitMQ* queue. This message should be received by one
-of the worker processes who will actually deploy the environment. These
+of the worker processes which will actually deploy the environment. These
 processes are called *Astute*.
 
 .. image:: _images/uml/astute.png
    :width: 100%
 
-The Astute workers are listening to the RabbitMQ queue and receives
+The Astute workers are listening to the RabbitMQ queue and receive
 messages. They use the *Astute* library which implements all deployment
 actions. First, it starts the provisioning of the environment's nodes.
 Astute uses XML-RPC to set these nodes' configuration in Cobbler and
@@ -59,7 +59,7 @@ MCollective server can run when asked to.
 
 When the managed node's OS is installed, Astute can start the deployment
 of OpenStack services. First, it uploads the node's configuration
-to the **/etc/astute.yaml** file on node using the **uploadfile** agent.
+to the **/etc/astute.yaml** file on the node using the **uploadfile** agent.
 This file contains all the variables and settings that will be needed
 for the deployment.
 
