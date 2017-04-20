@@ -90,7 +90,9 @@ new ``fuel2`` commands and their alternatives in the ``fuel`` CLI.
    ``fuel2 openstack-config execute``, Execute an OpenStack configuration deployment, ``fuel openstack-config --execute``
    ``fuel2 openstack-config list``, List all OpenStack configurations, ``fuel openstack-config --list``
    ``fuel2 openstack-config upload``, Upload a new OpenStack configuration from file, ``fuel openstack-config --upload``
+   ``fuel2 plugins install``, Install a plugin. Provide an installation path after the ``install`` parameter, None
    ``fuel2 plugins list``, Show a list of all available plugins, ``fuel plugins --list``
+   ``fuel2 plugins remove``, Remove a plugin. Provide a plugin name and version after the ``remove`` parameter, None
    ``fuel2 plugins sync``, Synchronize plugins on a file system with plugins in the API service, ``fuel plugins --sync``
    ``fuel2 release component list``, Show a list of components for a given release, None
    ``fuel2 release list``, Show a list of all available releases, ``fuel release``
