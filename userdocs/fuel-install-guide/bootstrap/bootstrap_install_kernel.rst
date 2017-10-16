@@ -10,7 +10,7 @@ or an older version of the kernel intended to fix regressions.
 .. warning::
 
    Non-standard kernels, which were not verified with the Fuel packages,
-   can brake your system.
+   can break your system.
 
 Install the latest kernel
 -------------------------
