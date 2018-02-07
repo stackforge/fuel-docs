@@ -11,7 +11,7 @@ Single-Root I/O Virtualization (SR-IOV), Data Plane Developer Kit (DPDK),
 Non-Uniform Memory Access (NUMA) and CPU pining automatically during
 the deployment of an OpenStack environment.
 
-Huge Pages accelerate the translation of virtual address of a Linux proccess
+Huge Pages accelerate the translation of virtual address of a Linux process
 to
 physical address which enables virtual machine memory allocation from a
 predefined memory pool. Using Huge Pages helps to prevent hypervisor overhead
