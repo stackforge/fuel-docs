@@ -124,4 +124,4 @@ A working example for the main deployment stage:
              fuel node --node 2 --start firewall --end hosts --skip \
              ssl-add-trust-chain ssl-keys-saving ssl-dns-setup
              Started tasks [u'firewall', u'fuel-plugin-example-iotop',
-             u'hosts'] for nodes nodes [7].
+             u'hosts'] for nodes [7].
