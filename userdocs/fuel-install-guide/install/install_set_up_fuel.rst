@@ -49,7 +49,7 @@ settings and proceed to :ref:`install_install_fuel_master_node`.
    +--------------------------------------+----------------------------------+
    | 3. Configure the Admin (PXE) network | By default, Fuel configures the  |
    |    and a DHCP pool for the Fuel Slave| Admin (PXE) network on `eth0` and|
-   |    nodes.                            | configures the following DHP pool|
+   |    nodes.                            | configures the following DHCP pool|
    |                                      | settings:                        |
    |                                      |                                  |
    |                                      | * DHCP pool start: 10.20.0.3     |
